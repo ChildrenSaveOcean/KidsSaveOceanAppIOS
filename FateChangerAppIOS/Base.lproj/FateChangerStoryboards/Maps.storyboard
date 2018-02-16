@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SQ6-LC-PyW">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Maps-->
+        <scene sceneID="4pt-hY-u0X">
+            <objects>
+                <viewController title="Maps" id="SQ6-LC-PyW" customClass="MapsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jfe-Vv-v1e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Maps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqS-vv-UeE">
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EqS-vv-UeE" firstAttribute="bottom" secondItem="IDv-G3-KxW" secondAttribute="bottom" id="bm7-St-hyr"/>
+                            <constraint firstItem="EqS-vv-UeE" firstAttribute="top" secondItem="IDv-G3-KxW" secondAttribute="top" id="nYz-XA-KU8"/>
+                            <constraint firstItem="EqS-vv-UeE" firstAttribute="trailing" secondItem="Jfe-Vv-v1e" secondAttribute="trailingMargin" id="yUc-wz-fLz"/>
+                            <constraint firstItem="EqS-vv-UeE" firstAttribute="leading" secondItem="Jfe-Vv-v1e" secondAttribute="leadingMargin" id="yVf-3a-otn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IDv-G3-KxW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="feu-1Z-6pc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXO-v0-1NB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="-596"/>
+        </scene>
+    </scenes>
+</document>
