@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -733,36 +732,6 @@
             </objects>
             <point key="canvasLocation" x="4148" y="1185"/>
         </scene>
-        <!--Maps-->
-        <scene sceneID="4pt-hY-u0X">
-            <objects>
-                <viewController title="Maps" id="SQ6-LC-PyW" customClass="MapsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jfe-Vv-v1e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Maps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqS-vv-UeE">
-                                <rect key="frame" x="16" y="64" width="343" height="554"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="EqS-vv-UeE" firstAttribute="bottom" secondItem="IDv-G3-KxW" secondAttribute="bottom" id="bm7-St-hyr"/>
-                            <constraint firstItem="EqS-vv-UeE" firstAttribute="top" secondItem="IDv-G3-KxW" secondAttribute="top" id="nYz-XA-KU8"/>
-                            <constraint firstItem="EqS-vv-UeE" firstAttribute="trailing" secondItem="Jfe-Vv-v1e" secondAttribute="trailingMargin" id="yUc-wz-fLz"/>
-                            <constraint firstItem="EqS-vv-UeE" firstAttribute="leading" secondItem="Jfe-Vv-v1e" secondAttribute="leadingMargin" id="yVf-3a-otn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="IDv-G3-KxW"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="feu-1Z-6pc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BXO-v0-1NB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2396" y="-1013.3433283358322"/>
-        </scene>
         <!--Maps NVC-->
         <scene sceneID="4ZT-AN-PuW">
             <objects>
@@ -775,7 +744,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="SQ6-LC-PyW" kind="relationship" relationship="rootViewController" id="OjZ-nK-bCr"/>
+                        <segue destination="jGH-DK-yv4" kind="relationship" relationship="rootViewController" id="OjZ-nK-bCr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPd-O4-Ksg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -818,6 +787,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIN-wf-ZTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8215" y="-690"/>
+        </scene>
+        <!--Maps-->
+        <scene sceneID="lKk-8j-8Z5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Maps" id="jGH-DK-yv4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4AG-qa-nXs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RG0-gR-Pww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2396" y="-1013.3433283358322"/>
         </scene>
     </scenes>
     <resources>

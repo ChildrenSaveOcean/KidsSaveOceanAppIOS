@@ -36,6 +36,7 @@
 		34298BEF20080F2200A50E49 /* FateChangerAppIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BEE20080F2200A50E49 /* FateChangerAppIOSTests.m */; };
 		34298BFA20080F2200A50E49 /* FateChangerAppIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BF920080F2200A50E49 /* FateChangerAppIOSUITests.m */; };
 		34298C092008134D00A50E49 /* launchscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34298C082008134C00A50E49 /* launchscreen.jpg */; };
+		3454CA0B20379DDD003D8750 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3454CA0A20379DDD003D8750 /* Maps.storyboard */; };
 		348331A1201F88640027CD03 /* FateChangerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 348331A0201F88640027CD03 /* FateChangerModel.m */; };
 		34C89EBD200903930086FABB /* OpeningScreenImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34C89EBC200903930086FABB /* OpeningScreenImage.jpg */; };
 		34DEED15200C586400AF6468 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEED14200C586400AF6468 /* LearnViewController.m */; };
@@ -114,6 +115,7 @@
 		34298BF920080F2200A50E49 /* FateChangerAppIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FateChangerAppIOSUITests.m; sourceTree = "<group>"; };
 		34298BFB20080F2200A50E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34298C082008134C00A50E49 /* launchscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launchscreen.jpg; sourceTree = "<group>"; };
+		3454CA0A20379DDD003D8750 /* Maps.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		3483319F201F88640027CD03 /* FateChangerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FateChangerModel.h; sourceTree = "<group>"; };
 		348331A0201F88640027CD03 /* FateChangerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FateChangerModel.m; sourceTree = "<group>"; };
 		34B0E928202C99E6003BE328 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +196,7 @@
 		340FB1E3200912D4006C78FC /* FateChangerStoryboards */ = {
 			isa = PBXGroup;
 			children = (
+				3454CA0A20379DDD003D8750 /* Maps.storyboard */,
 			);
 			name = FateChangerStoryboards;
 			path = ../FateChangerStoryboards;
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34298BE220080F2200A50E49 /* LaunchScreen.storyboard in Resources */,
+				3454CA0B20379DDD003D8750 /* Maps.storyboard in Resources */,
 				340FB21920095A66006C78FC /* FateFinderIconDonate30X30.png in Resources */,
 				340FB22120095A66006C78FC /* Contents.json in Resources */,
 				340FB21C20095A66006C78FC /* FateFinderAppleStoreIcon.png in Resources */,
