@@ -37,7 +37,6 @@
 		34298BFA20080F2200A50E49 /* FateChangerAppIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BF920080F2200A50E49 /* FateChangerAppIOSUITests.m */; };
 		34298C092008134D00A50E49 /* launchscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34298C082008134C00A50E49 /* launchscreen.jpg */; };
 		348331A1201F88640027CD03 /* FateChangerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 348331A0201F88640027CD03 /* FateChangerModel.m */; };
-		34B0E923202C95FC003BE328 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 34B0E922202C95FC003BE328 /* awsconfiguration.json */; };
 		34C89EBD200903930086FABB /* OpeningScreenImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34C89EBC200903930086FABB /* OpeningScreenImage.jpg */; };
 		34DEED15200C586400AF6468 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEED14200C586400AF6468 /* LearnViewController.m */; };
 		34DEED18200C587100AF6468 /* SpreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEED17200C587100AF6468 /* SpreadViewController.m */; };
@@ -117,7 +116,6 @@
 		34298C082008134C00A50E49 /* launchscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launchscreen.jpg; sourceTree = "<group>"; };
 		3483319F201F88640027CD03 /* FateChangerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FateChangerModel.h; sourceTree = "<group>"; };
 		348331A0201F88640027CD03 /* FateChangerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FateChangerModel.m; sourceTree = "<group>"; };
-		34B0E922202C95FC003BE328 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		34B0E928202C99E6003BE328 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C89EBC200903930086FABB /* OpeningScreenImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = OpeningScreenImage.jpg; sourceTree = "<group>"; };
 		34DEED13200C586400AF6468 /* LearnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnViewController.h; sourceTree = "<group>"; };
@@ -339,7 +337,6 @@
 				340FB20D20095A65006C78FC /* AppIcon.appiconset */,
 				340FB21120095A66006C78FC /* Contents.json */,
 				34298BE020080F2200A50E49 /* LaunchScreen.storyboard */,
-				34B0E922202C95FC003BE328 /* awsconfiguration.json */,
 				34298BE320080F2200A50E49 /* Info.plist */,
 				34298BE420080F2200A50E49 /* main.m */,
 			);
@@ -527,7 +524,6 @@
 				340FB22020095A66006C78FC /* FateFinderIconMap30X30.png in Resources */,
 				340FB22320095A66006C78FC /* FateFinderIconPlay30X30.png in Resources */,
 				34298C092008134D00A50E49 /* launchscreen.jpg in Resources */,
-				34B0E923202C95FC003BE328 /* awsconfiguration.json in Resources */,
 				340FB21B20095A66006C78FC /* Contents.json in Resources */,
 				34298BDD20080F2200A50E49 /* Main.storyboard in Resources */,
 				340FB21E20095A66006C78FC /* Contents.json in Resources */,

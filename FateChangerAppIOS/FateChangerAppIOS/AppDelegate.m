@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "UIKit/UIKit.h"
-#import "TeacherResourceRequests.h"
 
 
 @interface AppDelegate ()
