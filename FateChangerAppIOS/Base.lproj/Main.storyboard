@@ -252,10 +252,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lai-g8-2c8" userLabel="Content View">
                                 <rect key="frame" x="16" y="64" width="343" height="534"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dear Student" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OlL-jd-zG9" userLabel="Dear Student Text">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OlL-jd-zG9" userLabel="Dear Student Text">
                                         <rect key="frame" x="8" y="8" width="327" height="518"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">Dear student, 
+
+The best way to change fate and protect the ocean starts by initiating a letter-writing campaign in your school by telling your teachers about it.
+This app will walk them through what to do and notify you when a government responds. Together we can do more to save the oceans and all that live in them from pollution. We must.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cls-nA-5PZ">
@@ -308,10 +312,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnl-v5-8fw" userLabel="Content View">
                                 <rect key="frame" x="16" y="64" width="343" height="534"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dear Teacher" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xvo-WB-8W8" userLabel="Dear Student Text">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xvo-WB-8W8" userLabel="Dear Student Text">
                                         <rect key="frame" x="8" y="8" width="327" height="518"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">Dear teacher, 
+
+By helping your students write letters to influential government members, you can both empower them and maybe change the world. This app walks you through the why and to where, and will notify you when real change occurs. Together we can do more to save the oceans. 
+We must.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-XZ-T9I">
@@ -469,10 +477,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xj-w9-boV" userLabel="Content View">
                                 <rect key="frame" x="16" y="64" width="343" height="534"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dear Someone Else" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kmi-ds-EZV" userLabel="Dear Student Text">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kmi-ds-EZV" userLabel="Dear Student Text">
                                         <rect key="frame" x="8" y="8" width="327" height="518"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">Hi there, 
+There are two ways you can help change the fate of our polluted oceans.
+1) Follow this app and write a letter.
+2) Share news of this campaign with a teacher or student.
+
+Together we can do more to save oceans and all the live in them from pollution. We must.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kC-Ps-A3P">
@@ -812,6 +826,6 @@
         <image name="ic_action_preferences_32X32" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fza-Ly-xta"/>
+        <segue reference="tdg-r8-7TS"/>
     </inferredMetricsTieBreakers>
 </document>
