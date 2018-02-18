@@ -42,6 +42,22 @@
 {
     [self stopModel];
 }
+#pragma mark - Share Action
+-(void) shareActionMessage:(NSString *) message from:(UIViewController *) vcSelf;
+{
+    //create a message
+    NSString *theMessage = message;
+    NSArray *items = @[theMessage];
+    
+    // build an activity view controller
+    UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+    
+    // and present it
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [vcSelf presentViewController:controller animated:YES completion:nil];
+    });
+
+}
 
 -(void) postTeacherRequestForResource: (NSString *) teacherEmail
 {

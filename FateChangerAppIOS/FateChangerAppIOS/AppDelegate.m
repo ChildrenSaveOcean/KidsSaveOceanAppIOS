@@ -11,6 +11,7 @@
 
 
 @interface AppDelegate ()
+@property (strong, nonatomic, readwrite) FateChangerModel *model;
 
 
 
@@ -52,6 +53,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - lazy instantiation
+
+-(FateChangerModel *)model
+{
+    if (!_model) {
+        _model = [[FateChangerModel  alloc] init];
+    }
+    return _model;
+}
+
 
 
 @end

@@ -36,6 +36,7 @@
 		34298BEF20080F2200A50E49 /* FateChangerAppIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BEE20080F2200A50E49 /* FateChangerAppIOSTests.m */; };
 		34298BFA20080F2200A50E49 /* FateChangerAppIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BF920080F2200A50E49 /* FateChangerAppIOSUITests.m */; };
 		34298C092008134D00A50E49 /* launchscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34298C082008134C00A50E49 /* launchscreen.jpg */; };
+		344520F620388F8A009F7DFF /* LearnVideoPlays.png in Resources */ = {isa = PBXBuildFile; fileRef = 344520F520388F8A009F7DFF /* LearnVideoPlays.png */; };
 		3454CA0B20379DDD003D8750 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3454CA0A20379DDD003D8750 /* Maps.storyboard */; };
 		348331A1201F88640027CD03 /* FateChangerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 348331A0201F88640027CD03 /* FateChangerModel.m */; };
 		34C89EBD200903930086FABB /* OpeningScreenImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34C89EBC200903930086FABB /* OpeningScreenImage.jpg */; };
@@ -115,6 +116,7 @@
 		34298BF920080F2200A50E49 /* FateChangerAppIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FateChangerAppIOSUITests.m; sourceTree = "<group>"; };
 		34298BFB20080F2200A50E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34298C082008134C00A50E49 /* launchscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launchscreen.jpg; sourceTree = "<group>"; };
+		344520F520388F8A009F7DFF /* LearnVideoPlays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LearnVideoPlays.png; sourceTree = "<group>"; };
 		3454CA0A20379DDD003D8750 /* Maps.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		3483319F201F88640027CD03 /* FateChangerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FateChangerModel.h; sourceTree = "<group>"; };
 		348331A0201F88640027CD03 /* FateChangerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FateChangerModel.m; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				34C89EBC200903930086FABB /* OpeningScreenImage.jpg */,
+				344520F520388F8A009F7DFF /* LearnVideoPlays.png */,
 				34298C082008134C00A50E49 /* launchscreen.jpg */,
 			);
 			name = FateChangerMedia;
@@ -527,6 +530,7 @@
 				340FB22220095A66006C78FC /* Contents.json in Resources */,
 				340FB22020095A66006C78FC /* FateFinderIconMap30X30.png in Resources */,
 				340FB22320095A66006C78FC /* FateFinderIconPlay30X30.png in Resources */,
+				344520F620388F8A009F7DFF /* LearnVideoPlays.png in Resources */,
 				34298C092008134D00A50E49 /* launchscreen.jpg in Resources */,
 				340FB21B20095A66006C78FC /* Contents.json in Resources */,
 				34298BDD20080F2200A50E49 /* Main.storyboard in Resources */,
