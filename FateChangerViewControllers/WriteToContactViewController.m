@@ -1,19 +1,20 @@
 //
-//  MediaViewController.m
+//  WriteToContactViewController.m
 //  FateChangerAppIOS
 //
-//  Created by Bill Weatherwax on 1/12/18.
+//  Created by Bill Weatherwax on 2/19/18.
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
 #import "AppDelegate.h"
 #import "FateChangerModel.h"
-#import "MediaViewController.h"
+#import "WriteToContactViewController.h"
 
-@interface MediaViewController ()
+@interface WriteToContactViewController ()
 @property (nonatomic, strong) FateChangerModel *model;
+
 @end
 
-@implementation MediaViewController
+@implementation WriteToContactViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,11 +25,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - actions
-- (IBAction)playVideo:(id)sender {
-}
+#pragma mark - action
 
-- (IBAction)displayPhoto:(id)sender {
+- (IBAction)finishedWritingInstructions:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:NO];
 }
 
 - (IBAction)shareFateChanger:(id)sender {

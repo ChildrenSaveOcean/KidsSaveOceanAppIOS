@@ -1,19 +1,20 @@
 //
-//  MediaViewController.m
+//  WriteSelectionViewController.m
 //  FateChangerAppIOS
 //
-//  Created by Bill Weatherwax on 1/12/18.
+//  Created by Bill Weatherwax on 2/19/18.
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
 #import "AppDelegate.h"
 #import "FateChangerModel.h"
-#import "MediaViewController.h"
+#import "WriteSelectionViewController.h"
 
-@interface MediaViewController ()
+@interface WriteSelectionViewController ()
 @property (nonatomic, strong) FateChangerModel *model;
+
 @end
 
-@implementation MediaViewController
+@implementation WriteSelectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,17 +25,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - actions
-- (IBAction)playVideo:(id)sender {
-}
 
-- (IBAction)displayPhoto:(id)sender {
-}
+#pragma mark - actions
 
 - (IBAction)shareFateChanger:(id)sender {
     [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];
 }
-
 
 /*
 #pragma mark - Navigation

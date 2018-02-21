@@ -1,24 +1,23 @@
 //
-//  ChangeFateViewController.m
+//  PlayYouTubeVideoViewController.m
 //  FateChangerAppIOS
 //
-//  Created by Bill Weatherwax on 1/14/18.
+//  Created by Bill Weatherwax on 2/19/18.
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
-#import "AppDelegate.h"
-#import "FateChangerModel.h"
-#import "ChangeFateViewController.h"
+#import <YTPlayerView.h>
+#import "PlayYouTubeVideoViewController.h"
 
-@interface ChangeFateViewController ()
-@property (nonatomic, strong) FateChangerModel *model;
+@interface PlayYouTubeVideoViewController ()
+@property (weak, nonatomic) IBOutlet YTPlayerView *playerViewer;
 
 @end
 
-@implementation ChangeFateViewController
+@implementation PlayYouTubeVideoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.model = [(AppDelegate *)[[UIApplication sharedApplication] delegate] model];
+    [self.playerViewer loadWithVideoId:@"XWS40EQ3fj8"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,11 +25,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - actions
-
-- (IBAction)shareFateChanger:(id)sender {
-    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];
-}
 /*
 #pragma mark - Navigation
 

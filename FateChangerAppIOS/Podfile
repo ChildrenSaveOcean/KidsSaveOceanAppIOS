@@ -5,6 +5,7 @@
   target 'FateChangerAppIOS' do
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+    pod "youtube-ios-player-helper", "~> 0.1.4"
   end
   target 'FateChangerAppIOSTests' do
     inherit! :search_paths

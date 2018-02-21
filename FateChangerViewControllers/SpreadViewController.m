@@ -6,9 +6,11 @@
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "SpreadViewController.h"
 
 @interface SpreadViewController ()
+@property (nonatomic, strong) FateChangerModel *model;
 
 @end
 
@@ -16,12 +18,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.model = [(AppDelegate *)[[UIApplication sharedApplication] delegate] model];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - actions
+
+- (IBAction)shareFateChanger:(id)sender {
+    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];
+}
+
+- (IBAction)shareOnFacebook:(id)sender {
+    [self.model shareActionMessage:@"Facebook message:  Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:@"Facebook"];
+}
+
+- (IBAction)shareOnYouTube:(id)sender {
+    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Checkout https://www.kidssaveocean.com/ Try it! (Shared from Fate Changer" from:self onlyTo:nil];
+}
+
+- (IBAction)shareOnTwitter:(id)sender {
+    [self.model shareActionMessage:@"Facebook message:  Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:@"Twitter"];
+}
+
+- (IBAction)shareWithPeople:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:NO];
+}
+
+- (IBAction)shared:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:NO];
+}
+
+- (IBAction)shareLater:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:NO];
 }
 
 /*

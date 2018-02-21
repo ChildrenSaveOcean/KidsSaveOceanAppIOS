@@ -15,8 +15,7 @@
 -(void) stopModel;
 -(void) saveUserDefaultValues;
 // Share
--(void) shareActionMessage:(NSString *) message from:(UIViewController *) vcSelf;
-
+-(void) shareActionMessage:(NSString *) message from:(UIViewController *) vcSelf onlyTo: (NSString *) toApp;
 
 
 

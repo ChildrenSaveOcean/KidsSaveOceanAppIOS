@@ -47,7 +47,7 @@
 #pragma mark - actions
 
 - (IBAction)shareFateChanger:(id)sender {
-    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self];
+    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];
     }
 
 //- (IBAction)selectedBackButtonOnHomeView:(id)sender {

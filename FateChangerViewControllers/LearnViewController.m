@@ -28,6 +28,17 @@
 {
     [super viewWillAppear:animated];
 }
+
+#pragma mark - actions
+- (IBAction)playIntroduction:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:NO];
+}
+
+
+- (IBAction)skipIntroduction:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:NO];
+
+}
 /*
 #pragma mark - Navigation
 

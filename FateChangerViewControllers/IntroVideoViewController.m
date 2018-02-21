@@ -6,7 +6,6 @@
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
 #import "AppDelegate.h"
-#import "DearSomeoneViewController.h"
 #import "IntroVideoViewController.h"
 #import "HomeViewController.h"
 @interface IntroVideoViewController ()
@@ -36,7 +35,7 @@
     [self.tabBarController setSelectedIndex:0];
 }
 - (IBAction)shareFateChanger:(id)sender {
-    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self];
+    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];
 }
 
 /*
