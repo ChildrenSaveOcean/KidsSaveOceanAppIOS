@@ -1,19 +1,20 @@
 //
-//  MediaViewController.m
+//  ChangeNotifyViewController.m
 //  FateChangerAppIOS
 //
-//  Created by Bill Weatherwax on 1/12/18.
+//  Created by Bill Weatherwax on 2/20/18.
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
 #import "AppDelegate.h"
 #import "FateChangerModel.h"
-#import "MediaViewController.h"
+#import "ChangeNotifyViewController.h"
 
-@interface MediaViewController ()
+@interface ChangeNotifyViewController ()
 @property (nonatomic, strong) FateChangerModel *model;
+
 @end
 
-@implementation MediaViewController
+@implementation ChangeNotifyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,16 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - actions
-- (IBAction)playVideo:(id)sender {
-}
-
-- (IBAction)displayPhoto:(id)sender {
-}
 
 - (IBAction)shareFateChanger:(id)sender {
     [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];
 }
-
 
 /*
 #pragma mark - Navigation

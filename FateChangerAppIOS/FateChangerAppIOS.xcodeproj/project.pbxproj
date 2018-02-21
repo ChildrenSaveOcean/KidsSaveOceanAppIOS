@@ -28,6 +28,12 @@
 		340FB22120095A66006C78FC /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 340FB21420095A66006C78FC /* Contents.json */; };
 		340FB22220095A66006C78FC /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 340FB21620095A66006C78FC /* Contents.json */; };
 		340FB22320095A66006C78FC /* FateFinderIconPlay30X30.png in Resources */ = {isa = PBXBuildFile; fileRef = 340FB21720095A66006C78FC /* FateFinderIconPlay30X30.png */; };
+		34234C2E2039D1E3006AB9F5 /* FacebookShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34234C282039D1E1006AB9F5 /* FacebookShareIcon.png */; };
+		34234C2F2039D1E3006AB9F5 /* LaterShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34234C292039D1E1006AB9F5 /* LaterShareIcon.png */; };
+		34234C302039D1E3006AB9F5 /* SimplyTellIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34234C2A2039D1E2006AB9F5 /* SimplyTellIcon.png */; };
+		34234C312039D1E3006AB9F5 /* ISharedIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34234C2B2039D1E2006AB9F5 /* ISharedIcon.png */; };
+		34234C322039D1E3006AB9F5 /* YouTubeShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34234C2C2039D1E2006AB9F5 /* YouTubeShareIcon.png */; };
+		34234C332039D1E3006AB9F5 /* TwitterShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34234C2D2039D1E3006AB9F5 /* TwitterShareIcon.png */; };
 		34298BD720080F2200A50E49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BD620080F2200A50E49 /* AppDelegate.m */; };
 		34298BDD20080F2200A50E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34298BDB20080F2200A50E49 /* Main.storyboard */; };
 		34298BDF20080F2200A50E49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34298BDE20080F2200A50E49 /* Assets.xcassets */; };
@@ -36,13 +42,28 @@
 		34298BEF20080F2200A50E49 /* FateChangerAppIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BEE20080F2200A50E49 /* FateChangerAppIOSTests.m */; };
 		34298BFA20080F2200A50E49 /* FateChangerAppIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34298BF920080F2200A50E49 /* FateChangerAppIOSUITests.m */; };
 		34298C092008134D00A50E49 /* launchscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34298C082008134C00A50E49 /* launchscreen.jpg */; };
+		344520F620388F8A009F7DFF /* LearnVideoPlays.png in Resources */ = {isa = PBXBuildFile; fileRef = 344520F520388F8A009F7DFF /* LearnVideoPlays.png */; };
 		3454CA0B20379DDD003D8750 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3454CA0A20379DDD003D8750 /* Maps.storyboard */; };
+		347A1C98203C958C0090413A /* ChangeNotify.png in Resources */ = {isa = PBXBuildFile; fileRef = 347A1C96203C958C0090413A /* ChangeNotify.png */; };
+		347A1C99203C958C0090413A /* Changes.png in Resources */ = {isa = PBXBuildFile; fileRef = 347A1C97203C958C0090413A /* Changes.png */; };
+		347A1C9C203C97070090413A /* ChangeNotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347A1C9B203C97070090413A /* ChangeNotifyViewController.m */; };
 		348331A1201F88640027CD03 /* FateChangerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 348331A0201F88640027CD03 /* FateChangerModel.m */; };
 		34C89EBD200903930086FABB /* OpeningScreenImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34C89EBC200903930086FABB /* OpeningScreenImage.jpg */; };
 		34DEED15200C586400AF6468 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEED14200C586400AF6468 /* LearnViewController.m */; };
 		34DEED18200C587100AF6468 /* SpreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEED17200C587100AF6468 /* SpreadViewController.m */; };
 		34DEED1B200C587E00AF6468 /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEED1A200C587E00AF6468 /* WriteViewController.m */; };
 		34DEED1E200C588D00AF6468 /* ChangeFateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEED1D200C588D00AF6468 /* ChangeFateViewController.m */; };
+		34E12622203B38AD000D9E63 /* Turtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E12621203B38AC000D9E63 /* Turtle.png */; };
+		34E12625203BB57B000D9E63 /* PlayYouTubeVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E12624203BB57B000D9E63 /* PlayYouTubeVideoViewController.m */; };
+		34E12627203BBC91000D9E63 /* whalemodel.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E12626203BBC91000D9E63 /* whalemodel.png */; };
+		34E1262A203BBCE3000D9E63 /* ShowPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E12629203BBCE3000D9E63 /* ShowPhotoViewController.m */; };
+		34E12635203BC0F4000D9E63 /* WhoToWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E12634203BC0F4000D9E63 /* WhoToWriteViewController.m */; };
+		34E1263A203BC348000D9E63 /* WriteScene4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E12636203BC346000D9E63 /* WriteScene4.png */; };
+		34E1263B203BC348000D9E63 /* WriteScene1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E12637203BC347000D9E63 /* WriteScene1.png */; };
+		34E1263C203BC348000D9E63 /* WriteScene3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E12638203BC347000D9E63 /* WriteScene3.png */; };
+		34E1263D203BC348000D9E63 /* WriteScene2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E12639203BC348000D9E63 /* WriteScene2.png */; };
+		34E12640203BC413000D9E63 /* WriteSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E1263F203BC413000D9E63 /* WriteSelectionViewController.m */; };
+		34E12643203BC512000D9E63 /* WriteToContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E12642203BC512000D9E63 /* WriteToContactViewController.m */; };
 		34E25715200D9FD400D069C2 /* DearStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E25714200D9FD400D069C2 /* DearStudentViewController.m */; };
 		34E25718200DA00D00D069C2 /* LearnMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E25717200DA00D00D069C2 /* LearnMoreViewController.m */; };
 		34E2571B200DA07A00D069C2 /* IntroVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E2571A200DA07A00D069C2 /* IntroVideoViewController.m */; };
@@ -100,6 +121,12 @@
 		340FB21420095A66006C78FC /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		340FB21620095A66006C78FC /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		340FB21720095A66006C78FC /* FateFinderIconPlay30X30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FateFinderIconPlay30X30.png; sourceTree = "<group>"; };
+		34234C282039D1E1006AB9F5 /* FacebookShareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookShareIcon.png; sourceTree = "<group>"; };
+		34234C292039D1E1006AB9F5 /* LaterShareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaterShareIcon.png; sourceTree = "<group>"; };
+		34234C2A2039D1E2006AB9F5 /* SimplyTellIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimplyTellIcon.png; sourceTree = "<group>"; };
+		34234C2B2039D1E2006AB9F5 /* ISharedIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISharedIcon.png; sourceTree = "<group>"; };
+		34234C2C2039D1E2006AB9F5 /* YouTubeShareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouTubeShareIcon.png; sourceTree = "<group>"; };
+		34234C2D2039D1E3006AB9F5 /* TwitterShareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterShareIcon.png; sourceTree = "<group>"; };
 		34298BD220080F2200A50E49 /* FateChangerAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FateChangerAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34298BD520080F2200A50E49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34298BD620080F2200A50E49 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,7 +142,12 @@
 		34298BF920080F2200A50E49 /* FateChangerAppIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FateChangerAppIOSUITests.m; sourceTree = "<group>"; };
 		34298BFB20080F2200A50E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34298C082008134C00A50E49 /* launchscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launchscreen.jpg; sourceTree = "<group>"; };
+		344520F520388F8A009F7DFF /* LearnVideoPlays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LearnVideoPlays.png; sourceTree = "<group>"; };
 		3454CA0A20379DDD003D8750 /* Maps.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
+		347A1C96203C958C0090413A /* ChangeNotify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChangeNotify.png; sourceTree = "<group>"; };
+		347A1C97203C958C0090413A /* Changes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Changes.png; sourceTree = "<group>"; };
+		347A1C9A203C97070090413A /* ChangeNotifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeNotifyViewController.h; sourceTree = "<group>"; };
+		347A1C9B203C97070090413A /* ChangeNotifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeNotifyViewController.m; sourceTree = "<group>"; };
 		3483319F201F88640027CD03 /* FateChangerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FateChangerModel.h; sourceTree = "<group>"; };
 		348331A0201F88640027CD03 /* FateChangerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FateChangerModel.m; sourceTree = "<group>"; };
 		34B0E928202C99E6003BE328 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +160,22 @@
 		34DEED1A200C587E00AF6468 /* WriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
 		34DEED1C200C588D00AF6468 /* ChangeFateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeFateViewController.h; sourceTree = "<group>"; };
 		34DEED1D200C588D00AF6468 /* ChangeFateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeFateViewController.m; sourceTree = "<group>"; };
+		34E12621203B38AC000D9E63 /* Turtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Turtle.png; sourceTree = "<group>"; };
+		34E12623203BB57B000D9E63 /* PlayYouTubeVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayYouTubeVideoViewController.h; sourceTree = "<group>"; };
+		34E12624203BB57B000D9E63 /* PlayYouTubeVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayYouTubeVideoViewController.m; sourceTree = "<group>"; };
+		34E12626203BBC91000D9E63 /* whalemodel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whalemodel.png; sourceTree = "<group>"; };
+		34E12628203BBCE3000D9E63 /* ShowPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowPhotoViewController.h; sourceTree = "<group>"; };
+		34E12629203BBCE3000D9E63 /* ShowPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowPhotoViewController.m; sourceTree = "<group>"; };
+		34E12633203BC0F4000D9E63 /* WhoToWriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoToWriteViewController.h; sourceTree = "<group>"; };
+		34E12634203BC0F4000D9E63 /* WhoToWriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoToWriteViewController.m; sourceTree = "<group>"; };
+		34E12636203BC346000D9E63 /* WriteScene4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WriteScene4.png; sourceTree = "<group>"; };
+		34E12637203BC347000D9E63 /* WriteScene1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WriteScene1.png; sourceTree = "<group>"; };
+		34E12638203BC347000D9E63 /* WriteScene3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WriteScene3.png; sourceTree = "<group>"; };
+		34E12639203BC348000D9E63 /* WriteScene2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WriteScene2.png; sourceTree = "<group>"; };
+		34E1263E203BC413000D9E63 /* WriteSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WriteSelectionViewController.h; sourceTree = "<group>"; };
+		34E1263F203BC413000D9E63 /* WriteSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteSelectionViewController.m; sourceTree = "<group>"; };
+		34E12641203BC512000D9E63 /* WriteToContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WriteToContactViewController.h; sourceTree = "<group>"; };
+		34E12642203BC512000D9E63 /* WriteToContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteToContactViewController.m; sourceTree = "<group>"; };
 		34E25713200D9FD400D069C2 /* DearStudentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DearStudentViewController.h; sourceTree = "<group>"; };
 		34E25714200D9FD400D069C2 /* DearStudentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DearStudentViewController.m; sourceTree = "<group>"; };
 		34E25716200DA00D00D069C2 /* LearnMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnMoreViewController.h; sourceTree = "<group>"; };
@@ -213,6 +261,8 @@
 		340FB1E520091307006C78FC /* FateChangerViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34DEED1C200C588D00AF6468 /* ChangeFateViewController.h */,
+				34DEED1D200C588D00AF6468 /* ChangeFateViewController.m */,
 				34F4007F2018EBA700869B47 /* DearSomeoneViewController.h */,
 				34F400802018EBA700869B47 /* DearSomeoneViewController.m */,
 				34E25713200D9FD400D069C2 /* DearStudentViewController.h */,
@@ -223,30 +273,40 @@
 				340FB1FF20091D25006C78FC /* DonationViewController.m */,
 				340FB1F120091838006C78FC /* HomeViewController.h */,
 				340FB1F220091838006C78FC /* HomeViewController.m */,
+				34DEED13200C586400AF6468 /* LearnViewController.h */,
+				34DEED14200C586400AF6468 /* LearnViewController.m */,
 				340FB1FB20091CF7006C78FC /* MediaViewController.h */,
 				340FB20420091DE0006C78FC /* MapsViewController.h */,
 				340FB20520091DE0006C78FC /* MapsViewController.m */,
 				340FB1FC20091CF7006C78FC /* MediaViewController.m */,
+				34E12623203BB57B000D9E63 /* PlayYouTubeVideoViewController.h */,
+				34E12624203BB57B000D9E63 /* PlayYouTubeVideoViewController.m */,
 				340FB1E720091307006C78FC /* RoleSelectionViewController.h */,
 				340FB1E620091307006C78FC /* RoleSelectionViewController.m */,
+				34DEED16200C587100AF6468 /* SpreadViewController.h */,
+				34DEED17200C587100AF6468 /* SpreadViewController.m */,
 				340FB1EE200916E5006C78FC /* TabsViewController.h */,
 				340FB1EF200916E5006C78FC /* TabsViewController.m */,
 				340FB20120091D61006C78FC /* TeacherResourcesViewController.h */,
 				340FB20220091D61006C78FC /* TeacherResourcesViewController.m */,
-				34DEED13200C586400AF6468 /* LearnViewController.h */,
-				34DEED14200C586400AF6468 /* LearnViewController.m */,
-				34DEED16200C587100AF6468 /* SpreadViewController.h */,
-				34DEED17200C587100AF6468 /* SpreadViewController.m */,
 				34DEED19200C587E00AF6468 /* WriteViewController.h */,
 				34DEED1A200C587E00AF6468 /* WriteViewController.m */,
-				34DEED1C200C588D00AF6468 /* ChangeFateViewController.h */,
-				34DEED1D200C588D00AF6468 /* ChangeFateViewController.m */,
 				34E25716200DA00D00D069C2 /* LearnMoreViewController.h */,
 				34E25717200DA00D00D069C2 /* LearnMoreViewController.m */,
 				34E25719200DA07A00D069C2 /* IntroVideoViewController.h */,
 				34E2571A200DA07A00D069C2 /* IntroVideoViewController.m */,
 				340B084B202220C50062B9E8 /* PlayIntroductionViewController.h */,
 				340B084C202220C50062B9E8 /* PlayIntroductionViewController.m */,
+				34E12628203BBCE3000D9E63 /* ShowPhotoViewController.h */,
+				34E12629203BBCE3000D9E63 /* ShowPhotoViewController.m */,
+				34E12633203BC0F4000D9E63 /* WhoToWriteViewController.h */,
+				34E12634203BC0F4000D9E63 /* WhoToWriteViewController.m */,
+				34E1263E203BC413000D9E63 /* WriteSelectionViewController.h */,
+				34E1263F203BC413000D9E63 /* WriteSelectionViewController.m */,
+				34E12641203BC512000D9E63 /* WriteToContactViewController.h */,
+				34E12642203BC512000D9E63 /* WriteToContactViewController.m */,
+				347A1C9A203C97070090413A /* ChangeNotifyViewController.h */,
+				347A1C9B203C97070090413A /* ChangeNotifyViewController.m */,
 			);
 			name = FateChangerViewControllers;
 			path = ../FateChangerViewControllers;
@@ -367,7 +427,22 @@
 		34298C072008134C00A50E49 /* FateChangerMedia */ = {
 			isa = PBXGroup;
 			children = (
+				34E12621203B38AC000D9E63 /* Turtle.png */,
+				34234C282039D1E1006AB9F5 /* FacebookShareIcon.png */,
+				34234C2B2039D1E2006AB9F5 /* ISharedIcon.png */,
+				34234C292039D1E1006AB9F5 /* LaterShareIcon.png */,
+				34234C2A2039D1E2006AB9F5 /* SimplyTellIcon.png */,
+				34E12626203BBC91000D9E63 /* whalemodel.png */,
+				34E12637203BC347000D9E63 /* WriteScene1.png */,
+				347A1C96203C958C0090413A /* ChangeNotify.png */,
+				347A1C97203C958C0090413A /* Changes.png */,
+				34E12639203BC348000D9E63 /* WriteScene2.png */,
+				34E12638203BC347000D9E63 /* WriteScene3.png */,
+				34E12636203BC346000D9E63 /* WriteScene4.png */,
+				34234C2D2039D1E3006AB9F5 /* TwitterShareIcon.png */,
+				34234C2C2039D1E2006AB9F5 /* YouTubeShareIcon.png */,
 				34C89EBC200903930086FABB /* OpeningScreenImage.jpg */,
+				344520F520388F8A009F7DFF /* LearnVideoPlays.png */,
 				34298C082008134C00A50E49 /* launchscreen.jpg */,
 			);
 			name = FateChangerMedia;
@@ -515,18 +590,33 @@
 			files = (
 				34298BE220080F2200A50E49 /* LaunchScreen.storyboard in Resources */,
 				3454CA0B20379DDD003D8750 /* Maps.storyboard in Resources */,
+				347A1C98203C958C0090413A /* ChangeNotify.png in Resources */,
+				34E1263C203BC348000D9E63 /* WriteScene3.png in Resources */,
+				34234C332039D1E3006AB9F5 /* TwitterShareIcon.png in Resources */,
+				34E1263A203BC348000D9E63 /* WriteScene4.png in Resources */,
 				340FB21920095A66006C78FC /* FateFinderIconDonate30X30.png in Resources */,
 				340FB22120095A66006C78FC /* Contents.json in Resources */,
 				340FB21C20095A66006C78FC /* FateFinderAppleStoreIcon.png in Resources */,
 				34298BDF20080F2200A50E49 /* Assets.xcassets in Resources */,
+				34234C2E2039D1E3006AB9F5 /* FacebookShareIcon.png in Resources */,
 				340FB21F20095A66006C78FC /* Contents.json in Resources */,
 				340FB21D20095A66006C78FC /* FateChangerAppStoreIconNoAlphaChannel1024X1024.png in Resources */,
+				34234C302039D1E3006AB9F5 /* SimplyTellIcon.png in Resources */,
+				34E12627203BBC91000D9E63 /* whalemodel.png in Resources */,
 				340FB21820095A66006C78FC /* Contents.json in Resources */,
 				34C89EBD200903930086FABB /* OpeningScreenImage.jpg in Resources */,
 				340FB21A20095A66006C78FC /* FateFinderIconHome30X30.png in Resources */,
+				34234C312039D1E3006AB9F5 /* ISharedIcon.png in Resources */,
+				34E1263B203BC348000D9E63 /* WriteScene1.png in Resources */,
 				340FB22220095A66006C78FC /* Contents.json in Resources */,
+				347A1C99203C958C0090413A /* Changes.png in Resources */,
 				340FB22020095A66006C78FC /* FateFinderIconMap30X30.png in Resources */,
+				34234C322039D1E3006AB9F5 /* YouTubeShareIcon.png in Resources */,
 				340FB22320095A66006C78FC /* FateFinderIconPlay30X30.png in Resources */,
+				34234C2F2039D1E3006AB9F5 /* LaterShareIcon.png in Resources */,
+				34E12622203B38AD000D9E63 /* Turtle.png in Resources */,
+				34E1263D203BC348000D9E63 /* WriteScene2.png in Resources */,
+				344520F620388F8A009F7DFF /* LearnVideoPlays.png in Resources */,
 				34298C092008134D00A50E49 /* launchscreen.jpg in Resources */,
 				340FB21B20095A66006C78FC /* Contents.json in Resources */,
 				34298BDD20080F2200A50E49 /* Main.storyboard in Resources */,
@@ -665,6 +755,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FateChangerAppIOS/Pods-FateChangerAppIOS-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/youtube-ios-player-helper/youtube-ios-player-helper/Assets.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -716,22 +807,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				340FB1F0200916E5006C78FC /* TabsViewController.m in Sources */,
+				34E12640203BC413000D9E63 /* WriteSelectionViewController.m in Sources */,
 				340FB1FD20091CF7006C78FC /* MediaViewController.m in Sources */,
 				340FB20320091D61006C78FC /* TeacherResourcesViewController.m in Sources */,
 				34DEED18200C587100AF6468 /* SpreadViewController.m in Sources */,
+				34E12635203BC0F4000D9E63 /* WhoToWriteViewController.m in Sources */,
 				340FB20020091D25006C78FC /* DonationViewController.m in Sources */,
 				34E25715200D9FD400D069C2 /* DearStudentViewController.m in Sources */,
 				348331A1201F88640027CD03 /* FateChangerModel.m in Sources */,
 				34E2571B200DA07A00D069C2 /* IntroVideoViewController.m in Sources */,
+				34E12625203BB57B000D9E63 /* PlayYouTubeVideoViewController.m in Sources */,
 				34298BE520080F2200A50E49 /* main.m in Sources */,
 				34E25718200DA00D00D069C2 /* LearnMoreViewController.m in Sources */,
 				340FB20620091DE0006C78FC /* MapsViewController.m in Sources */,
+				34E12643203BC512000D9E63 /* WriteToContactViewController.m in Sources */,
 				34DEED1E200C588D00AF6468 /* ChangeFateViewController.m in Sources */,
 				340B084D202220C50062B9E8 /* PlayIntroductionViewController.m in Sources */,
 				34F400812018EBA700869B47 /* DearSomeoneViewController.m in Sources */,
 				34298BD720080F2200A50E49 /* AppDelegate.m in Sources */,
 				340FB1F320091838006C78FC /* HomeViewController.m in Sources */,
 				340FB1E820091307006C78FC /* RoleSelectionViewController.m in Sources */,
+				347A1C9C203C97070090413A /* ChangeNotifyViewController.m in Sources */,
+				34E1262A203BBCE3000D9E63 /* ShowPhotoViewController.m in Sources */,
 				34F4007E2018EB8900869B47 /* DearTeacherViewController.m in Sources */,
 				34DEED1B200C587E00AF6468 /* WriteViewController.m in Sources */,
 				34DEED15200C586400AF6468 /* LearnViewController.m in Sources */,

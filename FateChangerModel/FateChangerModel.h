@@ -7,12 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface FateChangerModel : NSObject
 #pragma methods
 -(void) startOfModel;
 -(void) stopModel;
 -(void) saveUserDefaultValues;
+// Share
+-(void) shareActionMessage:(NSString *) message from:(UIViewController *) vcSelf onlyTo: (NSString *) toApp;
+
+
+
+// database methods
 -(void) postTeacherRequestForResource: (NSString *) teacherEmail;
 -(NSString *) requestBestPersonContinent: (NSString *) continent forCountry: (NSString *) country;
 -(void)selectedRole: (NSString *) role;

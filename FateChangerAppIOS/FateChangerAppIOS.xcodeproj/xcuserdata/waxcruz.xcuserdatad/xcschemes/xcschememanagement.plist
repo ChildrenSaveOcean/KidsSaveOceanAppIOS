@@ -8,6 +8,27 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
+<<<<<<< HEAD
+=======
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>34298BD120080F2200A50E49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>34298BE920080F2200A50E49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>34298BF420080F2200A50E49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+>>>>>>> AddVisualsToNavigationPrototype
 		</dict>
 	</dict>
 </dict>

@@ -42,6 +42,62 @@
 {
     [self stopModel];
 }
+#pragma mark - Share Action
+-(void) shareActionMessage:(NSString *) message from:(UIViewController *) vcSelf onlyTo: (NSString *) toApp;
+{
+    
+    //create a message
+    NSString *theMessage = message;
+    NSArray *items = @[theMessage];
+    
+    // build an activity view controller
+    UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+    if ([toApp isEqualToString:@"Facebook"]) {
+        controller.excludedActivityTypes = @[UIActivityTypePostToWeibo,
+                                             UIActivityTypeMessage,
+                                             UIActivityTypeMail,
+                                             UIActivityTypePrint,
+                                             UIActivityTypeCopyToPasteboard,
+                                             UIActivityTypeAssignToContact,
+                                             UIActivityTypeSaveToCameraRoll,
+                                             UIActivityTypeAddToReadingList,
+                                             UIActivityTypePostToFlickr,
+                                             UIActivityTypePostToVimeo,
+                                             UIActivityTypePostToTencentWeibo,
+                                             UIActivityTypeAirDrop,
+                                             UIActivityTypePostToTwitter,
+                                             @"com.apple.reminders.RemindersEditorExtension",
+                                             @"com.apple.mobilenotes.SharingExtension"
+                                             ];
+
+    } else
+        if ([toApp isEqualToString:@"Twitter"]) {
+            controller.excludedActivityTypes = @[UIActivityTypePostToWeibo,
+                                                 UIActivityTypeMessage,
+                                                 UIActivityTypeMail,
+                                                 UIActivityTypePrint,
+                                                 UIActivityTypeCopyToPasteboard,
+                                                 UIActivityTypeAssignToContact,
+                                                 UIActivityTypeSaveToCameraRoll,
+                                                 UIActivityTypeAddToReadingList,
+                                                 UIActivityTypePostToFlickr,
+                                                 UIActivityTypePostToVimeo,
+                                                 UIActivityTypePostToTencentWeibo,
+                                                 UIActivityTypeAirDrop,
+                                                 UIActivityTypePostToFacebook,
+                                                 @"com.apple.reminders.RemindersEditorExtension",
+                                                 @"com.apple.mobilenotes.SharingExtension"
+                                                 ];
+
+        } else {
+            controller.excludedActivityTypes = nil;
+        }
+    // and present it
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [vcSelf presentViewController:controller animated:YES completion:nil];
+    });
+
+}
 
 -(void) postTeacherRequestForResource: (NSString *) teacherEmail
 {

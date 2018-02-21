@@ -5,25 +5,29 @@
 //  Created by Bill Weatherwax on 1/24/18.
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
-
+#import "AppDelegate.h"
 #import "DearSomeoneViewController.h"
+#import "FateChangerModel.h"
 
 @interface DearSomeoneViewController ()
-
+@property (nonatomic, strong) FateChangerModel *model;
 @end
 
 @implementation DearSomeoneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.model = [(AppDelegate *)[[UIApplication sharedApplication] delegate] model];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - actions
 
+- (IBAction)shareFateChanger:(id)sender {
+    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];}
 /*
 #pragma mark - Navigation
 

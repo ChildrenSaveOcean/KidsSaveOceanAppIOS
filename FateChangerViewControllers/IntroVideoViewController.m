@@ -5,10 +5,11 @@
 //  Created by Bill Weatherwax on 1/15/18.
 //  Copyright © 2018 waxcruz. All rights reserved.
 //
-
+#import "AppDelegate.h"
 #import "IntroVideoViewController.h"
 #import "HomeViewController.h"
 @interface IntroVideoViewController ()
+@property (nonatomic, strong) FateChangerModel *model;
 
 @end
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.model = [(AppDelegate *)[[UIApplication sharedApplication] delegate] model];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -29,7 +30,12 @@
 }
 - (IBAction)goHomeTab:(id)sender {
     [self.tabBarController setSelectedIndex:0];
-//    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+- (IBAction)skipVideo:(id)sender {
+    [self.tabBarController setSelectedIndex:0];
+}
+- (IBAction)shareFateChanger:(id)sender {
+    [self.model shareActionMessage:@"Great app for saving the ocean and its whales. Try it! (Shared from Fate Changer" from:self onlyTo:nil];
 }
 
 /*
