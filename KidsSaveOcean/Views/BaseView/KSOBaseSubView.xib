@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KSOBaseSubView" customModule="KidsSaveOcean" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="lp4-SX-bJR" id="WuO-pJ-hAd"/>
+                <outlet property="image" destination="ITQ-Lb-F3q" id="8lh-zF-wRz"/>
+                <outlet property="subTitleLabel" destination="Eao-r5-qQZ" id="hpT-AB-eqg"/>
+                <outlet property="titleLabel" destination="WnW-lz-v0C" id="fvb-rt-j6T"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="440"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITQ-Lb-F3q">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="440"/>
+                    <state key="normal" image="ClownFish"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="imageView.layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Description text which is supposed to be long enough for fill at least 2 lines, probably 3" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-SX-bJR">
+                    <rect key="frame" x="14" y="389" width="329" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="fMw-se-pyi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who I am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnW-lz-v0C">
+                    <rect key="frame" x="14" y="349" width="329" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW YOU CAN HELP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eao-r5-qQZ">
+                    <rect key="frame" x="14" y="337" width="329" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.77309089900000005" green="0.57934433220000003" blue="0.15006676320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lp4-SX-bJR" firstAttribute="top" secondItem="WnW-lz-v0C" secondAttribute="bottom" constant="11" id="0P8-vF-37Z"/>
+                <constraint firstItem="ITQ-Lb-F3q" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="2Ye-ft-lsU"/>
+                <constraint firstAttribute="trailing" secondItem="lp4-SX-bJR" secondAttribute="trailing" id="54N-9N-MPJ"/>
+                <constraint firstAttribute="trailing" secondItem="Eao-r5-qQZ" secondAttribute="trailing" id="OdR-YT-ut9"/>
+                <constraint firstItem="lp4-SX-bJR" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-15" id="S2R-Og-aJm"/>
+                <constraint firstItem="WnW-lz-v0C" firstAttribute="leading" secondItem="Eao-r5-qQZ" secondAttribute="leading" id="UoT-VD-AZk"/>
+                <constraint firstAttribute="trailing" secondItem="WnW-lz-v0C" secondAttribute="trailing" id="e2U-PY-Vly"/>
+                <constraint firstItem="ITQ-Lb-F3q" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="ljn-4t-It2"/>
+                <constraint firstItem="ITQ-Lb-F3q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oY8-yl-Wo5"/>
+                <constraint firstItem="WnW-lz-v0C" firstAttribute="leading" secondItem="lp4-SX-bJR" secondAttribute="leading" id="r65-Oh-9Kt"/>
+                <constraint firstItem="ITQ-Lb-F3q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sZ1-l3-xCZ"/>
+                <constraint firstAttribute="trailing" secondItem="Eao-r5-qQZ" secondAttribute="trailing" id="td9-S1-2df"/>
+                <constraint firstAttribute="leading" secondItem="lp4-SX-bJR" secondAttribute="leading" constant="-14" id="vO6-qG-Ypf"/>
+                <constraint firstItem="WnW-lz-v0C" firstAttribute="top" secondItem="Eao-r5-qQZ" secondAttribute="bottom" constant="-2" id="wxe-a1-K24"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="14.5" y="-22"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ClownFish" width="334" height="409"/>
+    </resources>
+</document>
