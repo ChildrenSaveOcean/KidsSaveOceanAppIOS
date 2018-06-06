@@ -10,7 +10,7 @@ import UIKit
 
 final class KSOStartPageViewController: UIPageViewController {
 
-    // TODO: Move logic from Storyboard to here
+    // TODO: Move logic from Storyboard to here   
     
     fileprivate lazy var pages: [UIViewController] = {
         return [
