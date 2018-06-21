@@ -1,2 +1,4 @@
 # ignore Pods
 FateChangerAppIOS/Pods/
+.DS_Store
+*xcuserdatad/UserInterfaceState.xcuserstate*
