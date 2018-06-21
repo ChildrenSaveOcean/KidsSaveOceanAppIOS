@@ -9,7 +9,7 @@
 import UIKit
 
 class KSOBaseTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var tableViewTitle: UILabel!
     @IBOutlet weak var tableViewSubTitle: UILabel!
     @IBOutlet weak var tableViewIcon: UIImageView!
@@ -17,14 +17,14 @@ class KSOBaseTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
-   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         loadFromNib()
     }
@@ -38,4 +38,18 @@ class KSOBaseTableViewCell: UITableViewCell {
         tableViewIcon.clipsToBounds = true
     }
     
+    //// TODO refactor it
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            var frame = newFrame
+            frame.origin.x += kStandardViewGap
+            frame.size.width -= 2 * kStandardViewGap
+            super.frame = frame
+        }
+    }
+    
 }
+

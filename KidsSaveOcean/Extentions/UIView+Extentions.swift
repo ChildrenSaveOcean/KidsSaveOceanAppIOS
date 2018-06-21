@@ -8,21 +8,17 @@
 
 import UIKit
 
-extension NSLayoutConstraint {
-    
-    func scaleConstraint() -> () {
-        guard UIScreen.main.bounds.width == 640.0 else {
-            return
-        }
-        
-        let newValue = self.constant * 0.7
-        self.constant = newValue
-    }
-    
+enum ViewOrientation {
+    case horisontal
+    case vertical
 }
 
+let kStandardViewGap:CGFloat      = 15
+let kStandardCornerRadius:CGFloat = 10
+let kStandardTableHeaderHeight:CGFloat = 40
+
 extension UIView {
-   
+    
     @discardableResult
     func loadFromNib<T : UIView>() -> T? {
         
@@ -32,9 +28,6 @@ extension UIView {
         self.addSubview(contentView)
         
         contentView.frame = self.bounds
-        if (contentView.frame.height > 0) {
-            contentView.layoutIfNeeded()
-        }
         
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         contentView.translatesAutoresizingMaskIntoConstraints = true
@@ -43,6 +36,7 @@ extension UIView {
             subView.autoresizingMask = contentView.autoresizingMask
             subView.translatesAutoresizingMaskIntoConstraints = contentView.translatesAutoresizingMaskIntoConstraints
         }
+        
         return contentView
     }
     
@@ -60,24 +54,3 @@ extension UIView {
     }
     
 }
-
-extension UIStackView {
-    
-    func applyToScrollView(_ scrollView:UIScrollView) {
-        
-        axis = UILayoutConstraintAxis.vertical
-        distribution = UIStackViewDistribution.fillEqually
-        alignment = UIStackViewAlignment.center
-        spacing = 10.0
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        
-        layoutIfNeeded()
-    }
-    
-    
-}
-

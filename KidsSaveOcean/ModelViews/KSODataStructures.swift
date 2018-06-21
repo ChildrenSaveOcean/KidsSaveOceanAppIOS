@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct StandartViewData {
+struct BaseViewData {
     
     let image:UIImage
     let title:String
@@ -21,26 +21,42 @@ struct StandartViewData {
             let titleStr = dictionary["title"] as? String,
             let subTitleStr = dictionary["subTitle"] as? String,
             let descriptionStr = dictionary["description"] as? String {
-                self.image = imageNew
-                self.title = titleStr
-                self.subTitle = subTitleStr
-                self.decription = descriptionStr
-            } else {
-                return nil
-            }
+            self.image = imageNew
+            self.title = titleStr
+            self.subTitle = subTitleStr
+            self.decription = descriptionStr
+        } else {
+            return nil
+        }
     }
 }
 
-
-
-struct NewsViewData {
+struct BaseTableViewData {
+    let image:UIImage?
+    let title:String
+    let subTitle:String
     
-}
-
-struct NewsTableViewData {
-    
+    init?(dictionary: KSODataDictionary) {
+        
+        var imageNew:UIImage?
+        if ((dictionary["image"]) != nil) {
+            imageNew = dictionary["image"] as? UIImage
+        }
+        
+        if
+            //let imageNew = dictionary["image"] as? UIImage, /// TODO, the same question
+            let titleStr = dictionary["title"] as? String,
+            let subTitleStr = dictionary["subTitle"] as? String {
+            self.image = imageNew
+            self.title = titleStr
+            self.subTitle = subTitleStr
+        } else {
+            return nil
+        }
+    }
 }
 
 class KSODataStructures: NSObject {
-
+    
 }
+
