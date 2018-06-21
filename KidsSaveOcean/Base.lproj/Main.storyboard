@@ -64,62 +64,62 @@
 </scene>
 <!--Donate-->
 <scene sceneID="eEP-wK-JFh">
-<objects>
-<viewController title="Donate" id="sJp-3E-rs5" sceneMemberID="viewController">
-<view key="view" contentMode="scaleToFill" id="e8f-2T-EDf">
-<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-<subviews>
-<imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkJellyFish" translatesAutoresizingMaskIntoConstraints="NO" id="31g-GU-4ci">
-<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-</imageView>
-<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW CAN I HELP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRg-Ti-QUN">
-<rect key="frame" x="20" y="61" width="355" height="16"/>
-<fontDescription key="fontDescription" type="system" pointSize="13"/>
-<color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-<nil key="highlightedColor"/>
-</label>
-<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-v0-JFj">
-<rect key="frame" x="20" y="77" width="355" height="27"/>
-<fontDescription key="fontDescription" type="system" pointSize="22"/>
-<color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-<nil key="highlightedColor"/>
-</label>
-<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donation are tax-deductible nd 100% of proceeds to go to support saving the ocean" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9N-eU-5JX">
-<rect key="frame" x="20" y="112" width="355" height="38"/>
-<constraints>
-<constraint firstAttribute="height" constant="38" id="lzD-z1-IAb"/>
-</constraints>
-<fontDescription key="fontDescription" type="system" pointSize="12"/>
-<color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-<nil key="highlightedColor"/>
-</label>
-</subviews>
-<color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-<constraints>
-<constraint firstItem="s9N-eU-5JX" firstAttribute="trailing" secondItem="tKN-v0-JFj" secondAttribute="trailing" id="1tA-qn-RIK"/>
-<constraint firstItem="s9N-eU-5JX" firstAttribute="leading" secondItem="tKN-v0-JFj" secondAttribute="leading" id="5uO-GU-l6h"/>
-<constraint firstItem="31g-GU-4ci" firstAttribute="top" secondItem="lRg-Ti-QUN" secondAttribute="bottom" constant="-77" id="BA3-RT-UoE"/>
-<constraint firstItem="31g-GU-4ci" firstAttribute="centerX" secondItem="e8f-2T-EDf" secondAttribute="centerX" id="G17-KY-ZrS"/>
-<constraint firstAttribute="bottom" secondItem="31g-GU-4ci" secondAttribute="bottom" id="GSy-a7-8Nu"/>
-<constraint firstItem="tKN-v0-JFj" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="HZN-Nm-x5C"/>
-<constraint firstItem="lRg-Ti-QUN" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="LU6-JI-gOa"/>
-<constraint firstItem="31g-GU-4ci" firstAttribute="centerY" secondItem="e8f-2T-EDf" secondAttribute="centerY" id="LvF-k7-ETv"/>
-<constraint firstItem="lRg-Ti-QUN" firstAttribute="leading" secondItem="e8f-2T-EDf" secondAttribute="leading" constant="20" id="Yfq-F3-7F4"/>
-<constraint firstItem="31g-GU-4ci" firstAttribute="top" secondItem="e8f-2T-EDf" secondAttribute="top" id="fV9-Gr-OPy"/>
-<constraint firstItem="31g-GU-4ci" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="gKH-6p-RwK"/>
-<constraint firstItem="s9N-eU-5JX" firstAttribute="top" secondItem="tKN-v0-JFj" secondAttribute="bottom" constant="8" symbolic="YES" id="ioG-EO-8ch"/>
-<constraint firstItem="tKN-v0-JFj" firstAttribute="top" secondItem="lRg-Ti-QUN" secondAttribute="bottom" id="mDf-h9-16L"/>
-<constraint firstItem="tKN-v0-JFj" firstAttribute="leading" secondItem="lRg-Ti-QUN" secondAttribute="leading" id="wmQ-zm-OdY"/>
-<constraint firstItem="31g-GU-4ci" firstAttribute="leading" secondItem="yEj-5v-5T9" secondAttribute="leading" id="yIo-Xn-hac"/>
-</constraints>
-<viewLayoutGuide key="safeArea" id="yEj-5v-5T9"/>
-</view>
-<tabBarItem key="tabBarItem" title="Donate" image="DonateTabItem" id="qRS-gx-OGc"/>
-</viewController>
-<placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Z9-PlQ" sceneMemberID="firstResponder"/>
-</objects>
-<point key="canvasLocation" x="3629.5999999999999" y="-434.03298350824593"/>
+    <objects>
+        <viewController title="Donate" id="sJp-3E-rs5" customClass="KSODonateViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+            <view key="view" contentMode="scaleToFill" id="e8f-2T-EDf">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkJellyFish" translatesAutoresizingMaskIntoConstraints="NO" id="31g-GU-4ci">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW CAN I HELP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRg-Ti-QUN">
+                        <rect key="frame" x="20" y="61" width="355" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-v0-JFj">
+                        <rect key="frame" x="20" y="77" width="355" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donation are tax-deductible nd 100% of proceeds to go to support saving the ocean" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9N-eU-5JX">
+                        <rect key="frame" x="20" y="112" width="355" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="lzD-z1-IAb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="s9N-eU-5JX" firstAttribute="trailing" secondItem="tKN-v0-JFj" secondAttribute="trailing" id="1tA-qn-RIK"/>
+                    <constraint firstItem="s9N-eU-5JX" firstAttribute="leading" secondItem="tKN-v0-JFj" secondAttribute="leading" id="5uO-GU-l6h"/>
+                    <constraint firstItem="31g-GU-4ci" firstAttribute="top" secondItem="lRg-Ti-QUN" secondAttribute="bottom" constant="-77" id="BA3-RT-UoE"/>
+                    <constraint firstItem="31g-GU-4ci" firstAttribute="centerX" secondItem="e8f-2T-EDf" secondAttribute="centerX" id="G17-KY-ZrS"/>
+                    <constraint firstAttribute="bottom" secondItem="31g-GU-4ci" secondAttribute="bottom" id="GSy-a7-8Nu"/>
+                    <constraint firstItem="tKN-v0-JFj" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="HZN-Nm-x5C"/>
+                    <constraint firstItem="lRg-Ti-QUN" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="LU6-JI-gOa"/>
+                    <constraint firstItem="31g-GU-4ci" firstAttribute="centerY" secondItem="e8f-2T-EDf" secondAttribute="centerY" id="LvF-k7-ETv"/>
+                    <constraint firstItem="lRg-Ti-QUN" firstAttribute="leading" secondItem="e8f-2T-EDf" secondAttribute="leading" constant="20" id="Yfq-F3-7F4"/>
+                    <constraint firstItem="31g-GU-4ci" firstAttribute="top" secondItem="e8f-2T-EDf" secondAttribute="top" id="fV9-Gr-OPy"/>
+                    <constraint firstItem="31g-GU-4ci" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="gKH-6p-RwK"/>
+                    <constraint firstItem="s9N-eU-5JX" firstAttribute="top" secondItem="tKN-v0-JFj" secondAttribute="bottom" constant="8" symbolic="YES" id="ioG-EO-8ch"/>
+                    <constraint firstItem="tKN-v0-JFj" firstAttribute="top" secondItem="lRg-Ti-QUN" secondAttribute="bottom" id="mDf-h9-16L"/>
+                    <constraint firstItem="tKN-v0-JFj" firstAttribute="leading" secondItem="lRg-Ti-QUN" secondAttribute="leading" id="wmQ-zm-OdY"/>
+                    <constraint firstItem="31g-GU-4ci" firstAttribute="leading" secondItem="yEj-5v-5T9" secondAttribute="leading" id="yIo-Xn-hac"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="yEj-5v-5T9"/>
+            </view>
+            <tabBarItem key="tabBarItem" title="Donate" image="DonateTabItem" id="qRS-gx-OGc"/>
+        </viewController>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Z9-PlQ" sceneMemberID="firstResponder"/>
+    </objects>
+    <point key="canvasLocation" x="3629.5999999999999" y="-434.03298350824593"/>
 </scene>
 <!--Resources-->
 <scene sceneID="hOD-ak-YFC">
@@ -154,32 +154,45 @@
 </scene>
 <!--Media-->
 <scene sceneID="o6B-WA-9Pk">
-<objects>
-<viewController title="Media" id="wnG-Pi-KAa" sceneMemberID="viewController">
-<view key="view" contentMode="scaleToFill" id="kMl-gn-r5w">
-<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-<subviews>
-<imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="60.00 Media Screen" translatesAutoresizingMaskIntoConstraints="NO" id="f9n-x2-J6z">
-<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-</imageView>
-</subviews>
-<color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-<constraints>
-<constraint firstItem="f9n-x2-J6z" firstAttribute="centerX" secondItem="kMl-gn-r5w" secondAttribute="centerX" id="ZPK-DQ-29a"/>
-<constraint firstAttribute="bottom" secondItem="f9n-x2-J6z" secondAttribute="bottom" id="dNs-kE-7aN"/>
-<constraint firstItem="f9n-x2-J6z" firstAttribute="centerY" secondItem="kMl-gn-r5w" secondAttribute="centerY" id="iId-Uv-83W"/>
-<constraint firstItem="f9n-x2-J6z" firstAttribute="leading" secondItem="TWU-nT-fJj" secondAttribute="leading" id="izo-RC-JIi"/>
-<constraint firstItem="f9n-x2-J6z" firstAttribute="top" secondItem="kMl-gn-r5w" secondAttribute="top" id="jXv-be-AfS"/>
-<constraint firstItem="f9n-x2-J6z" firstAttribute="trailing" secondItem="TWU-nT-fJj" secondAttribute="trailing" id="wTL-iD-30N"/>
-</constraints>
-<viewLayoutGuide key="safeArea" id="TWU-nT-fJj"/>
-</view>
-<tabBarItem key="tabBarItem" title="Media" image="MediaTabItem" id="LSz-6M-lfg"/>
-</viewController>
-<placeholder placeholderIdentifier="IBFirstResponder" id="gIp-h0-t99" sceneMemberID="firstResponder"/>
-</objects>
-<point key="canvasLocation" x="1738" y="54"/>
+    <objects>
+        <viewController title="Media" id="wnG-Pi-KAa" customClass="KSOMediaViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+            <view key="view" contentMode="scaleToFill" id="kMl-gn-r5w">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sz1-lg-bdZ">
+                        <rect key="frame" x="10" y="30" width="355" height="627"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u5x-b9-W00">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="wnG-Pi-KAa" id="Xb2-3p-rjC"/>
+                            <outlet property="delegate" destination="wnG-Pi-KAa" id="2lt-4G-YL7"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Sz1-lg-bdZ" secondAttribute="trailing" constant="10" id="EYH-Y3-rAi"/>
+                    <constraint firstAttribute="bottom" secondItem="Sz1-lg-bdZ" secondAttribute="bottom" constant="10" id="Hj9-BF-aWl"/>
+                    <constraint firstItem="Sz1-lg-bdZ" firstAttribute="top" secondItem="TWU-nT-fJj" secondAttribute="top" constant="10" id="JF8-nt-XlX"/>
+                    <constraint firstItem="Sz1-lg-bdZ" firstAttribute="leading" secondItem="TWU-nT-fJj" secondAttribute="leading" constant="10" id="Ut4-Lr-Pua"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="TWU-nT-fJj"/>
+            </view>
+            <tabBarItem key="tabBarItem" title="Media" image="MediaTabItem" id="LSz-6M-lfg"/>
+            <connections>
+                <outlet property="mediaCollectionView" destination="Sz1-lg-bdZ" id="SSy-hJ-U5J"/>
+            </connections>
+        </viewController>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="gIp-h0-t99" sceneMemberID="firstResponder"/>
+    </objects>
+    <point key="canvasLocation" x="1736.8" y="53.523238380809602"/>
 </scene>
 <!--onBoarding1-->
 <scene sceneID="abE-1Q-r5r">
