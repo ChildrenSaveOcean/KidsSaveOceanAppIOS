@@ -16,6 +16,9 @@
 		16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16559BDA20ADF9D5002D4F78 /* LaunchScreen.storyboard */; };
 		16559BE720ADF9D5002D4F78 /* KidsSaveOceanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BE620ADF9D5002D4F78 /* KidsSaveOceanTests.swift */; };
 		16559BF220ADF9D6002D4F78 /* KidsSaveOceanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BF120ADF9D6002D4F78 /* KidsSaveOceanUITests.swift */; };
+		165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA120DB565500DB556F /* UIColor+Extentions.swift */; };
+		165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA320DB567900DB556F /* UIImage+Extentions.swift */; };
+		165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA520DB570300DB556F /* KSOBaseTableHeaderView.swift */; };
 		1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */; };
 		1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C08320C8503500E17DAF /* KSOTabViewController.swift */; };
 		166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */; };
@@ -61,6 +64,9 @@
 		16559BED20ADF9D6002D4F78 /* KidsSaveOceanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidsSaveOceanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BF120ADF9D6002D4F78 /* KidsSaveOceanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsSaveOceanUITests.swift; sourceTree = "<group>"; };
 		16559BF320ADF9D6002D4F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		165FBFA120DB565500DB556F /* UIColor+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extentions.swift"; sourceTree = "<group>"; };
+		165FBFA320DB567900DB556F /* UIImage+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extentions.swift"; sourceTree = "<group>"; };
+		165FBFA520DB570300DB556F /* KSOBaseTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableHeaderView.swift; sourceTree = "<group>"; };
 		1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 		1668C08320C8503500E17DAF /* KSOTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOTabViewController.swift; sourceTree = "<group>"; };
 		166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseSubView.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 				16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */,
 				16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */,
 				163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */,
+				165FBFA520DB570300DB556F /* KSOBaseTableHeaderView.swift */,
 			);
 			path = BaseTableView;
 			sourceTree = "<group>";
@@ -230,6 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */,
+				165FBFA120DB565500DB556F /* UIColor+Extentions.swift */,
+				165FBFA320DB567900DB556F /* UIImage+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -392,14 +401,17 @@
 				16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */,
 				166A3A8920B895260006CFBF /* KSOMainViewController.swift in Sources */,
 				16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */,
+				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */,
 				16CF5A2B20AF1EC900C4E57E /* KSOStartPageViewController.swift in Sources */,
 				163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */,
 				16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */,
 				16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */,
 				1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */,
+				165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */,
 				16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */,
 				164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */,
+				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

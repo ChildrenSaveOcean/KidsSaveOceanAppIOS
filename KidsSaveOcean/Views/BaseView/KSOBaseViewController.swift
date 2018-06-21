@@ -9,28 +9,41 @@
 import UIKit
 
 class KSOBaseViewController: UIViewController {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     var subViewsData:KSODataArray!
-    var subViewHeight:CGFloat = 0
-    
     var stackView:UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.backgroundGray
+        
         var subViews = [KSOBaseSubView]()
         
         for subViewFields in subViewsData {
-            subViews.append(createSubView(subViewFields))
+            subViews.append(createSubView(subViewFields, orientation:.vertical))
         }
         
         stackView = UIStackView(arrangedSubviews: subViews)
+        
         scrollView.addSubview(stackView)
         
-        stackView.applyToScrollView(scrollView)
-        scrollView.contentSize = stackView.frame.size
+        stackView.axis = UILayoutConstraintAxis.vertical
+        stackView.distribution = UIStackViewDistribution.fillEqually
+        stackView.alignment = UIStackViewAlignment.center
+        stackView.spacing = kStandardViewGap
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        stackView.backgroundColor = UIColor.blue
+        stackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: kStandardViewGap).isActive = true
+        
+        stackView.layoutIfNeeded()
+        scrollView.contentInsetAdjustmentBehavior =  .always
+        scrollView.contentSize = CGSize(width:scrollView.frame.width, height: stackView.frame.height + 2*kStandardViewGap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,12 +51,11 @@ class KSOBaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func createSubView(_ subViewF:KSODataDictionary) ->(KSOBaseSubView) {
+    func createSubView(_ subViewF:KSODataDictionary, orientation:ViewOrientation) ->(KSOBaseSubView) {
         
-        let subViewData = StandartViewData(dictionary: subViewF)
+        let subViewData = BaseViewData(dictionary: subViewF)
         
-        let subViewFrame = CGRect(x:0, y:0, width:343, height:subViewHeight) //// TODO: aware 343 !!!
-        let subView = KSOBaseSubView(frame:subViewFrame)
+        let subView = KSOBaseSubView(orientation)
         
         subView.image?.setImage(subViewData?.image, for: .normal)
         
@@ -51,9 +63,9 @@ class KSOBaseViewController: UIViewController {
         subView.subTitleLabel.text = subViewData?.subTitle
         subView.descriptionLabel?.text = subViewData?.decription
         
-        subView.translatesAutoresizingMaskIntoConstraints = false
-        
         return subView
         
     }
+    // TODO Delete Horizontal Bouncing
 }
+
