@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rpp-cZ-ODA">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,11 +12,11 @@
             <objects>
                 <viewController title="Main" automaticallyAdjustsScrollViewInsets="NO" id="9pv-A4-QxB" customClass="KSOMainViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="scrollableAxes" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fag-TX-ZBn">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-1224"/>
+            <point key="canvasLocation" x="71" y="-1269"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -60,33 +56,33 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-435" y="118"/>
+            <point key="canvasLocation" x="-851" y="118"/>
         </scene>
         <!--Donate-->
         <scene sceneID="eEP-wK-JFh">
             <objects>
                 <viewController title="Donate" id="sJp-3E-rs5" customClass="KSODonateViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e8f-2T-EDf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkJellyFish" translatesAutoresizingMaskIntoConstraints="NO" id="31g-GU-4ci">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW CAN I HELP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRg-Ti-QUN">
-                                <rect key="frame" x="20" y="61" width="300" height="16"/>
+                                <rect key="frame" x="20" y="61" width="580" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-v0-JFj">
-                                <rect key="frame" x="20" y="77" width="300" height="27"/>
+                                <rect key="frame" x="20" y="77" width="580" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donation are tax-deductible nd 100% of proceeds to go to support saving the ocean" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9N-eU-5JX">
-                                <rect key="frame" x="20" y="112" width="300" height="38"/>
+                                <rect key="frame" x="20" y="112" width="580" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="lzD-z1-IAb"/>
                                 </constraints>
@@ -119,23 +115,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Z9-PlQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="1480"/>
+            <point key="canvasLocation" x="72" y="1470"/>
         </scene>
         <!--Resources-->
         <scene sceneID="hOD-ak-YFC">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="5Mr-jh-a7S" customClass="KSOResourcesTableViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uqk-EB-Ahf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uep-qi-FJY">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uep-qi-FJY" id="dw3-Ik-fM4">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -150,18 +146,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9e-uR-OA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="117"/>
+            <point key="canvasLocation" x="72" y="118"/>
         </scene>
         <!--Media-->
         <scene sceneID="o6B-WA-9Pk">
             <objects>
                 <viewController title="Media" id="wnG-Pi-KAa" customClass="KSOMediaViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMl-gn-r5w">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OuT-mO-sas">
-                                <rect key="frame" x="0.0" y="10" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="10" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="wnG-Pi-KAa" id="kHB-hN-cXI"/>
@@ -181,26 +177,26 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Media" image="MediaTabItem" id="LSz-6M-lfg"/>
                     <connections>
-                        <outlet property="mediaCollectionView" destination="OuT-mO-sas" id="PA4-wF-eY0"/>
+                        <outlet property="mediaTableView" destination="OuT-mO-sas" id="PA4-wF-eY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIp-h0-t99" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-559"/>
+            <point key="canvasLocation" x="72" y="-569"/>
         </scene>
         <!--onBoarding1-->
         <scene sceneID="abE-1Q-r5r">
             <objects>
                 <viewController storyboardIdentifier="onBoardingPage1" title="onBoarding1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MLh-Ej-alu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OH7-vG-hTb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhaleTail" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-Hy-hdu" userLabel="PageImage">
-                                <rect key="frame" x="0.0" y="20" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="300"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children saving the ocean" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zS5-Mu-4eE" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="369" width="320" height="16"/>
+                                <rect key="frame" x="0.0" y="385" width="600" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -209,7 +205,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irW-7F-Hf5" userLabel="Description">
-                                <rect key="frame" x="16" y="405" width="288" height="107.5"/>
+                                <rect key="frame" x="30" y="421" width="540" height="54"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Our core mission is to give children, teachers and people everywhere a voice about our planet's environment. Our future plan is to become a dynamic non-profit platform to give children a powerful voice both now and forever.</string>
@@ -233,7 +229,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Welcome to Fatechager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKk-Ys-9sk" userLabel="Header">
-                                <rect key="frame" x="0.0" y="329" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="345" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -263,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fd-hb-Wpw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1787" y="-653"/>
+            <point key="canvasLocation" x="-2824" y="-646"/>
         </scene>
         <!--StartPageViewController-->
         <scene sceneID="wYy-tp-vul">
@@ -275,21 +271,21 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </pageControl>
             </objects>
-            <point key="canvasLocation" x="-1101" y="-1371"/>
+            <point key="canvasLocation" x="-2173" y="-1339"/>
         </scene>
         <!--onBoarding2-->
         <scene sceneID="xjc-QP-MXZ">
             <objects>
                 <viewController storyboardIdentifier="onBoardingPage2" title="onBoarding2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cLp-k0-ZMD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vuT-Oj-cI9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="actinia" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-UP-cn4" userLabel="PageImage">
-                                <rect key="frame" x="0.0" y="20" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="300"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write, Engage, Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s73-tq-Imi" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="369" width="320" height="16"/>
+                                <rect key="frame" x="0.0" y="385" width="600" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -298,7 +294,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How You Can Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xek-yd-0Kj" userLabel="Header">
-                                <rect key="frame" x="0.0" y="329" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="345" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -307,7 +303,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYN-ll-pw6" userLabel="Description">
-                                <rect key="frame" x="16" y="405" width="288" height="88"/>
+                                <rect key="frame" x="30" y="421" width="540" height="53"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">As a student, you can start a letter-writing campaign in your school. As a teacher, we have lesson plans and resources available. As an individual, we can use your support and donations</string>
@@ -371,21 +367,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7J3-Dw-nIo" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1099" y="-653"/>
+            <point key="canvasLocation" x="-2173" y="-646"/>
         </scene>
         <!--onBoarding3-->
         <scene sceneID="OHl-dF-paZ">
             <objects>
                 <viewController storyboardIdentifier="onBoardingPage3" title="onBoarding3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hou-Fb-bpP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2p-mE-arN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reef" translatesAutoresizingMaskIntoConstraints="NO" id="As2-W1-W3i" userLabel="PageImage">
-                                <rect key="frame" x="0.0" y="20" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="300"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stay connected for updates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecs-Ay-AS4" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="372" width="320" height="16"/>
+                                <rect key="frame" x="0.0" y="388" width="600" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -394,7 +390,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Engage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="baa-aU-VCR" userLabel="Header">
-                                <rect key="frame" x="0.0" y="329" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="345" width="600" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5zk-6g-K7V"/>
                                 </constraints>
@@ -406,7 +402,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-vc-b6s">
-                                <rect key="frame" x="102" y="478" width="116" height="30"/>
+                                <rect key="frame" x="235" y="459" width="130" height="30"/>
                                 <color key="backgroundColor" red="0.1256549656" green="0.76238316299999997" blue="0.87107938529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -421,7 +417,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fdH-sV-TJg" userLabel="Description">
-                                <rect key="frame" x="32" y="398" width="256" height="70"/>
+                                <rect key="frame" x="60" y="414" width="480" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="2M6-mD-BFe"/>
                                 </constraints>
@@ -482,18 +478,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCV-pn-T9s" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-435" y="-652"/>
+            <point key="canvasLocation" x="-1440" y="-646"/>
         </scene>
         <!--News-->
         <scene sceneID="xW6-Ug-MTb">
             <objects>
                 <viewController id="aX9-O8-tnB" customClass="KSONewsViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kmd-5v-68E">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JkJ-Qp-sTb">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -512,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbr-u8-mqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="796"/>
+            <point key="canvasLocation" x="72" y="786"/>
         </scene>
     </scenes>
     <resources>

@@ -17,7 +17,9 @@ class KSOMediaViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = mediaCollectionView.dequeueReusableCell(withIdentifier: "mediaCell", for: indexPath) as! KSOMediaTableViewCell
+        let cell = mediaTableView.dequeueReusableCell(withIdentifier: "mediaCell", for: indexPath) as! KSOMediaTableViewCell
+        cell.lblComment.text! = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        cell.lblPostComment.text! = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam tincidunt velit ac placerat. Nunc viverra consectetur neque quis iaculis. Vestibulum fringilla viverra justo eu dapibus. Nulla facilisi. Quisque porta efficitur enim in posuere. Morbi et semper neque. Morbi rutrum vel nisi eu accumsan."
         return cell
     }
     
@@ -25,17 +27,19 @@ class KSOMediaViewController: UIViewController, UITableViewDelegate, UITableView
     //for example, I will use random images
     private var storedPictures = [#imageLiteral(resourceName: "Turtle"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia")]
     
-    @IBOutlet weak var mediaCollectionView : UITableView!
+    @IBOutlet weak var mediaTableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //registering my cell to use in table view
-        mediaCollectionView.register(UINib(nibName: "KSOMediaTableViewCell", bundle: nil), forCellReuseIdentifier: "mediaCell")
+        mediaTableView.register(UINib(nibName: "KSOMediaTableViewCell", bundle: nil), forCellReuseIdentifier: "mediaCell")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        mediaCollectionView.estimatedRowHeight = 100
-        mediaCollectionView.rowHeight = UITableViewAutomaticDimension
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+        //#MARK:TODO: Fix the automatic size of cells
     }
     
     override func didReceiveMemoryWarning() {
