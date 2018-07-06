@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="220" id="KGk-i7-Jjw" customClass="KSOMediaTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="455" height="224"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="455" height="223.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClownFish" translatesAutoresizingMaskIntoConstraints="NO" id="yZ2-qd-C9c">
+                        <rect key="frame" x="15" y="10" width="45.5" height="45.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="yZ2-qd-C9c" secondAttribute="height" multiplier="1:1" id="3NT-Px-geI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Kids Save Ocean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9ei-ZJ-gby">
+                        <rect key="frame" x="65.5" y="10" width="129" height="34"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@KidsSaveOcean " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vIl-oO-ZBw">
+                        <rect key="frame" x="199.5" y="10" width="131" height="34"/>
+                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="16"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KMa-Xk-HDr">
+                        <rect key="frame" x="65.5" y="54" width="379.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKd-AR-IqA">
+                        <rect key="frame" x="415" y="10" width="30" height="34"/>
+                        <color key="backgroundColor" red="0.0" green="0.25098039220000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-EM-Ayn">
+                        <rect key="frame" x="65.5" y="76.5" width="379.5" height="137"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KYC-bU-Lbg">
+                                <rect key="frame" x="0.0" y="6" width="379.5" height="123.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="240" verticalHuggingPriority="251" image="Surfer" translatesAutoresizingMaskIntoConstraints="NO" id="wn3-on-QaG">
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="123.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wn3-on-QaG" secondAttribute="height" multiplier="1:1" id="Jcb-Xh-3eZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="941-hh-rLB">
+                                        <rect key="frame" x="133" y="0.0" width="246.5" height="74.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="od3-Ea-uvf">
+                                                <rect key="frame" x="0.0" y="0.0" width="205.5" height="14.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kids Save Ocean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zEw-4D-e2b">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="@KidsSaveOcean " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eXb-Ot-vua">
+                                                        <rect key="frame" x="104" y="0.0" width="101.5" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiU-2J-iXo">
+                                                <rect key="frame" x="0.0" y="14.5" width="246.5" height="60"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempmet, consectetaur cillium adipisicing pecu, sed do eiusmod tempmet, consectetaur cillium adipisicing pecu, sed do eiusmod temp</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KYC-bU-Lbg" firstAttribute="centerY" secondItem="9J5-EM-Ayn" secondAttribute="centerY" id="Bau-xG-TZT"/>
+                            <constraint firstItem="KYC-bU-Lbg" firstAttribute="height" secondItem="9J5-EM-Ayn" secondAttribute="height" multiplier="0.9" id="N42-GJ-5sa"/>
+                            <constraint firstItem="KYC-bU-Lbg" firstAttribute="leading" secondItem="9J5-EM-Ayn" secondAttribute="leading" id="igm-ep-Wzl"/>
+                            <constraint firstItem="KYC-bU-Lbg" firstAttribute="width" secondItem="9J5-EM-Ayn" secondAttribute="width" id="qMe-IT-JQB"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" name="headerColor" catalog="System" colorSpace="catalog"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Apr 16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zMs-RH-ya1">
+                        <rect key="frame" x="335.5" y="10" width="57" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="RiO-I0-5iw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="16"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TKd-AR-IqA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zMs-RH-ya1" secondAttribute="trailing" constant="5" id="6hx-CZ-uhg"/>
+                    <constraint firstItem="9ei-ZJ-gby" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yZ2-qd-C9c" secondAttribute="trailing" constant="5" id="7dX-Ye-662"/>
+                    <constraint firstItem="KMa-Xk-HDr" firstAttribute="leading" secondItem="9ei-ZJ-gby" secondAttribute="leading" id="A6S-zK-tnK"/>
+                    <constraint firstItem="yZ2-qd-C9c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="B7W-MM-dKA"/>
+                    <constraint firstItem="TKd-AR-IqA" firstAttribute="baseline" secondItem="vIl-oO-ZBw" secondAttribute="baseline" id="Fbr-UZ-icX"/>
+                    <constraint firstItem="zMs-RH-ya1" firstAttribute="centerY" secondItem="vIl-oO-ZBw" secondAttribute="centerY" id="FxA-Qf-Wb4"/>
+                    <constraint firstItem="9J5-EM-Ayn" firstAttribute="leading" secondItem="KMa-Xk-HDr" secondAttribute="leading" id="KJT-eB-pTu"/>
+                    <constraint firstItem="zMs-RH-ya1" firstAttribute="top" secondItem="vIl-oO-ZBw" secondAttribute="top" id="M8B-Tg-E4J"/>
+                    <constraint firstItem="vIl-oO-ZBw" firstAttribute="bottom" secondItem="9ei-ZJ-gby" secondAttribute="bottom" id="OQH-fS-7ad"/>
+                    <constraint firstItem="9J5-EM-Ayn" firstAttribute="trailing" secondItem="KMa-Xk-HDr" secondAttribute="trailing" id="Xor-FL-0sy"/>
+                    <constraint firstItem="yZ2-qd-C9c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Z4v-n6-BxW"/>
+                    <constraint firstItem="zMs-RH-ya1" firstAttribute="leading" secondItem="vIl-oO-ZBw" secondAttribute="trailing" constant="5" id="avG-oS-L7j"/>
+                    <constraint firstItem="vIl-oO-ZBw" firstAttribute="top" secondItem="9ei-ZJ-gby" secondAttribute="top" id="cx0-46-Hyh"/>
+                    <constraint firstItem="KMa-Xk-HDr" firstAttribute="top" secondItem="TKd-AR-IqA" secondAttribute="bottom" constant="10" id="fbr-iz-AqV"/>
+                    <constraint firstItem="TKd-AR-IqA" firstAttribute="top" secondItem="vIl-oO-ZBw" secondAttribute="top" id="foh-vX-1i1"/>
+                    <constraint firstItem="9J5-EM-Ayn" firstAttribute="top" secondItem="KMa-Xk-HDr" secondAttribute="bottom" constant="10" id="gGQ-x8-hh8"/>
+                    <constraint firstAttribute="bottom" secondItem="9J5-EM-Ayn" secondAttribute="bottom" constant="10" id="kA0-LN-uly"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TKd-AR-IqA" secondAttribute="trailing" constant="10" id="kqz-57-f6p"/>
+                    <constraint firstItem="KMa-Xk-HDr" firstAttribute="top" secondItem="9ei-ZJ-gby" secondAttribute="bottom" constant="10" id="lB5-Qk-PS9"/>
+                    <constraint firstItem="9ei-ZJ-gby" firstAttribute="top" secondItem="yZ2-qd-C9c" secondAttribute="top" id="lRW-80-LoK"/>
+                    <constraint firstItem="KMa-Xk-HDr" firstAttribute="trailing" secondItem="TKd-AR-IqA" secondAttribute="trailing" id="tzY-Gk-iZj"/>
+                    <constraint firstItem="yZ2-qd-C9c" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.1" id="vRM-bg-LY0"/>
+                    <constraint firstItem="vIl-oO-ZBw" firstAttribute="leading" secondItem="9ei-ZJ-gby" secondAttribute="trailing" constant="5" id="xkL-iY-e63"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblComentAuthor" destination="9ei-ZJ-gby" id="yAr-mP-fNJ"/>
+                <outlet property="lblComentAuthorNickName" destination="vIl-oO-ZBw" id="9NG-0f-Ni6"/>
+                <outlet property="lblComment" destination="KMa-Xk-HDr" id="4WH-3Q-BPP"/>
+                <outlet property="lblPostComment" destination="UiU-2J-iXo" id="pMX-BE-94S"/>
+                <outlet property="newsAndMediasContentView" destination="9J5-EM-Ayn" id="faW-7m-7He"/>
+            </connections>
+            <point key="canvasLocation" x="123.5" y="187"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ClownFish" width="334" height="409"/>
+        <image name="Surfer" width="343" height="210"/>
+    </resources>
+</document>

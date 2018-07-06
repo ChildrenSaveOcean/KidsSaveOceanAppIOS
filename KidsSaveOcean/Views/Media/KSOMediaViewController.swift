@@ -10,58 +10,40 @@ import UIKit
 
 
 //Need to modify main storyboard to test it
-class KSOMediaViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class KSOMediaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //for example, I will use random images
-    private var storedPictures = [#imageLiteral(resourceName: "Turtle"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia")]
-    
-    @IBOutlet weak var mediaCollectionView : UICollectionView!
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       //create an array of stored pictures and return the count of it
-        let numberOfStoragePicture = storedPictures.count
-        return numberOfStoragePicture
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return storedPictures.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = mediaCollectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath) as! KSOMediaCollectionViewCell
-        cell.imgMedia.image = storedPictures[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = mediaTableView.dequeueReusableCell(withIdentifier: "mediaCell", for: indexPath) as! KSOMediaTableViewCell
+        cell.lblComment.text! = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        cell.lblPostComment.text! = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam tincidunt velit ac placerat. Nunc viverra consectetur neque quis iaculis. Vestibulum fringilla viverra justo eu dapibus. Nulla facilisi. Quisque porta efficitur enim in posuere. Morbi et semper neque. Morbi rutrum vel nisi eu accumsan."
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let cellSize = (collectionView.frame.size.width / 2) - 2.5 // 2.3 is equal to the half of space between cell 
-        
-        //here need to put numbers to change the size of the cells
-        return CGSize(width:cellSize , height: cellSize)
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        //space between cells (vertical)
-        return 5
-    }
+    //for example, I will use random images
+    private var storedPictures = [#imageLiteral(resourceName: "Turtle"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia")]
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        //space between cells (horizontal)
-        return 0
-    }
-
+    @IBOutlet weak var mediaTableView : UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //registering my cell to use in table view
-        mediaCollectionView.register(UINib(nibName: "KSOMediaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mediaCell")
-        
+        mediaTableView.register(UINib(nibName: "KSOMediaTableViewCell", bundle: nil), forCellReuseIdentifier: "mediaCell")
     }
+    
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+        //#MARK:TODO: Fix the automatic size of cells
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-
-    
 }
