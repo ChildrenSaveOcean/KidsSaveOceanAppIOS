@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */; };
+		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		164D8B0C20C639BB0067EE52 /* KSOBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */; };
 		164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */; };
 		16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */; };
@@ -26,7 +27,6 @@
 		166A3A8920B895260006CFBF /* KSOMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A3A8820B895260006CFBF /* KSOMainViewController.swift */; };
 		16C2417620BCE1FA00F5884B /* KSOBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */; };
 		16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417A20C037D100F5884B /* KSONewsViewController.swift */; };
-		16CF5A2B20AF1EC900C4E57E /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF5A2A20AF1EC900C4E57E /* KSOStartPageViewController.swift */; };
 		16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAD20C35288005BF4E1 /* KSOBaseViewController.swift */; };
@@ -57,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewController.swift; sourceTree = "<group>"; };
+		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOResourcesTableViewController.swift; sourceTree = "<group>"; };
 		16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSaveOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewCell.swift; sourceTree = "<group>"; };
 		16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOBaseTableViewCell.xib; sourceTree = "<group>"; };
 		16C2417A20C037D100F5884B /* KSONewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSONewsViewController.swift; sourceTree = "<group>"; };
-		16CF5A2A20AF1EC900C4E57E /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KSOStartPageViewController.swift; path = "../New Group/KSOStartPageViewController.swift"; sourceTree = "<group>"; };
 		16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
 		16ED9DAD20C35288005BF4E1 /* KSOBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseViewController.swift; sourceTree = "<group>"; };
@@ -223,11 +223,11 @@
 				164D8B0D20C6BC170067EE52 /* Resources */,
 				16C2417720C02D6C00F5884B /* Media */,
 				16B2A6CD20BC8B31008E24B2 /* News */,
-				16F2681720B6225700AA0CCD /* Start */,
 				16B2A6CC20BC8ADA008E24B2 /* Main */,
 				163366D120C5ECBD009ACC45 /* BaseTableView */,
 				16ED9DAF20C35443005BF4E1 /* BaseView */,
 				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
+				163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,14 +266,6 @@
 				16ED9DAD20C35288005BF4E1 /* KSOBaseViewController.swift */,
 			);
 			path = BaseView;
-			sourceTree = "<group>";
-		};
-		16F2681720B6225700AA0CCD /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				16CF5A2A20AF1EC900C4E57E /* KSOStartPageViewController.swift */,
-			);
-			path = Start;
 			sourceTree = "<group>";
 		};
 		945A088F20F64355006ED13D /* Map */ = {
@@ -456,8 +448,8 @@
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */,
 				94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */,
+				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,
 				945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */,
-				16CF5A2B20AF1EC900C4E57E /* KSOStartPageViewController.swift in Sources */,
 				163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */,
 				16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */,
 				16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */,

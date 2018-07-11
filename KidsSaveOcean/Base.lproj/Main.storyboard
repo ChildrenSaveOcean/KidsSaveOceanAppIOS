@@ -63,7 +63,7 @@
                         <viewLayoutGuide key="safeArea" id="UCF-gs-cAV"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Map" image="MediaTabItem" id="cy0-sW-ebj"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapTabItem" id="cy0-sW-ebj"/>
                     <connections>
                         <outlet property="map" destination="1lr-Pl-Wju" id="XFb-hn-wcB"/>
                     </connections>
@@ -547,14 +547,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DonateTabItem" width="48" height="32"/>
+        <image name="DonateTabItem" width="21" height="21"/>
+        <image name="MapTabItem" width="21" height="21"/>
         <image name="MediaTabItem" width="48" height="32"/>
         <image name="NewsTabItem" width="48" height="32"/>
         <image name="PinkJellyFish" width="759" height="1249"/>
         <image name="Reef" width="737" height="675"/>
-        <image name="ResourcesTabItem" width="48" height="32"/>
+        <image name="ResourcesTabItem" width="21" height="21"/>
         <image name="WhaleTail" width="527" height="352"/>
-        <image name="WorldTabItem" width="26" height="26"/>
+        <image name="WorldTabItem" width="21" height="21"/>
         <image name="actinia" width="478" height="359"/>
     </resources>
 </document>
