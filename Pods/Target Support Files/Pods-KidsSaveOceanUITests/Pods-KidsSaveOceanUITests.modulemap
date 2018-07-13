@@ -1,0 +1,6 @@
+framework module Pods_KidsSaveOceanUITests {
+  umbrella header "Pods-KidsSaveOceanUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
