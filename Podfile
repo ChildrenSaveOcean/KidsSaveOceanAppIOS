@@ -8,6 +8,7 @@ target 'KidsSaveOcean' do
   # Pods for KidsSaveOcean
 
 	pod 'Firebase/Core'
+	pod 'Firebase/Database'
 
   target 'KidsSaveOceanTests' do
     inherit! :search_paths

@@ -26,10 +26,11 @@
 		166A3A8920B895260006CFBF /* KSOMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A3A8820B895260006CFBF /* KSOMainViewController.swift */; };
 		16C2417620BCE1FA00F5884B /* KSOBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */; };
 		16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417A20C037D100F5884B /* KSONewsViewController.swift */; };
-		16CF5A2B20AF1EC900C4E57E /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF5A2A20AF1EC900C4E57E /* KSOStartPageViewController.swift */; };
 		16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAD20C35288005BF4E1 /* KSOBaseViewController.swift */; };
+		9430EB0220F95F4D00C42E80 /* KSOStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9430EB0120F95F4D00C42E80 /* KSOStartViewController.swift */; };
+		9430EB0620F9622B00C42E80 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9430EB0520F9622B00C42E80 /* KSOStartPageViewController.swift */; };
 		945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* KSOMapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */; };
@@ -86,7 +87,6 @@
 		16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewCell.swift; sourceTree = "<group>"; };
 		16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOBaseTableViewCell.xib; sourceTree = "<group>"; };
 		16C2417A20C037D100F5884B /* KSONewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSONewsViewController.swift; sourceTree = "<group>"; };
-		16CF5A2A20AF1EC900C4E57E /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KSOStartPageViewController.swift; path = "../New Group/KSOStartPageViewController.swift"; sourceTree = "<group>"; };
 		16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
 		16ED9DAD20C35288005BF4E1 /* KSOBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 		5C4DB8319625C9074CAC514A /* Pods-KidsSaveOceanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6ECC311FA8BE1141A29B231E /* Pods-KidsSaveOcean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.release.xcconfig"; sourceTree = "<group>"; };
 		749B92EFB33A2884EF8D8D45 /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9430EB0120F95F4D00C42E80 /* KSOStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KSOStartViewController.swift; path = KidsSaveOcean/Views/Start/KSOStartViewController.swift; sourceTree = SOURCE_ROOT; };
+		9430EB0520F9622B00C42E80 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		945A089020F643EB006ED13D /* KSOMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -237,13 +239,13 @@
 		16CF5A2620AF1E4100C4E57E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9430EB0320F9615700C42E80 /* Start */,
 				945A088F20F64355006ED13D /* Map */,
 				94C2BCE920C8B03E0067C6A4 /* Media */,
 				94C2BCE420C8AD680067C6A4 /* Donate */,
 				164D8B0D20C6BC170067EE52 /* Resources */,
 				16C2417720C02D6C00F5884B /* Media */,
 				16B2A6CD20BC8B31008E24B2 /* News */,
-				16F2681720B6225700AA0CCD /* Start */,
 				16B2A6CC20BC8ADA008E24B2 /* Main */,
 				163366D120C5ECBD009ACC45 /* BaseTableView */,
 				16ED9DAF20C35443005BF4E1 /* BaseView */,
@@ -288,14 +290,6 @@
 			path = BaseView;
 			sourceTree = "<group>";
 		};
-		16F2681720B6225700AA0CCD /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				16CF5A2A20AF1EC900C4E57E /* KSOStartPageViewController.swift */,
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
 		55B8CE8EF924186CBCCC1A6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +311,15 @@
 				1B9B46CE9FFC13368BB0989F /* Pods-KidsSaveOceanUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9430EB0320F9615700C42E80 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				9430EB0120F95F4D00C42E80 /* KSOStartViewController.swift */,
+				9430EB0520F9622B00C42E80 /* KSOStartPageViewController.swift */,
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 		945A088F20F64355006ED13D /* Map */ = {
@@ -518,11 +521,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,13 +581,13 @@
 				164D8B0C20C639BB0067EE52 /* KSOBaseTableViewCell.swift in Sources */,
 				16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */,
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
+				9430EB0220F95F4D00C42E80 /* KSOStartViewController.swift in Sources */,
 				166A3A8920B895260006CFBF /* KSOMainViewController.swift in Sources */,
 				16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */,
 				94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */,
 				945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */,
-				16CF5A2B20AF1EC900C4E57E /* KSOStartPageViewController.swift in Sources */,
 				163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */,
 				16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */,
 				16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */,
@@ -593,6 +598,7 @@
 				94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */,
 				164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
+				9430EB0620F9622B00C42E80 /* KSOStartPageViewController.swift in Sources */,
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
