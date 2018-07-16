@@ -12,28 +12,55 @@ typealias KSODataDictionary = Dictionary<String,Any>
 typealias KSODataArray = Array<KSODataDictionary>
 
 
-let KSOMainViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "ClownFish"),
+let KSOUserTypeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "ClownFish"),
                                      "title":"I am a Student",
                                      "subTitle" :"HOW I CAN HELP",
-                                     "description":"Get started on a letter-writting campaign, we'll show you how."],
+                                     "description":"Get started on a letter-writting campaign, we'll show you how.",
+                                     "action":"aWbPiPh_gaU"],
                                     ["image" : #imageLiteral(resourceName: "JellyFish"),
                                      "title":"I am a Teacher",
                                      "subTitle" :"HOW I CAN HELP",
-                                     "description":"We have a lot of learning materials to help you engage your students."],
+                                     "description":"We have a lot of learning materials to help you engage your students.",
+                                     "action":"aWbPiPh_gaU"],
                                     ["image" : #imageLiteral(resourceName: "Turtle"),
                                      "title":"I want to support",
                                      "subTitle" :"HOW I CAN HELP",
-                                     "description":"We need your support donations. Learn how you can engage with..."]]
+                                     "description":"We need your support donations. Learn how you can engage with...",
+                                     "action":"aWbPiPh_gaU"]]
 
 ///// Perhaps we will get it later dynamically from web-services from backend.
-let KSONewsViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "Map"),
+let KSOHomeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "Map"),
                                      "title":"Letter Writting Campaign",
                                      "subTitle" :"UPDATES",
-                                     "description":"See our progress"],
+                                     "description":"See our progress",
+                                     "action":""],
                                     ["image" : #imageLiteral(resourceName: "Surfer"),
                                      "title":"Peder Hill",
                                      "subTitle" :"INTERVIEW",
-                                     "description":"Q&A with the founder"]]
+                                     "description":"Q&A with the founder",
+                                     "action":""],
+                                    ["image" : #imageLiteral(resourceName: "WhaleTail"),
+                                     "title":"Third thing in this screen",
+                                     "subTitle" :"SOME TEXT",
+                                     "description":"Some sub text",
+                                     "action":""],
+                                    ["image" : #imageLiteral(resourceName: "actinia"),
+                                     "title":"Something else",
+                                     "subTitle" :"HELLO WORLD",
+                                     "description":"All you need is love",
+                                     "action":""]]
+
+let KSONewsViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "Map"),
+                                     "title":"Letter Writting Campaign",
+                                     "subTitle" :"UPDATES",
+                                     "description":"See our progress",
+                                     "action":""],
+                                    ["image" : #imageLiteral(resourceName: "Surfer"),
+                                     "title":"Peder Hill",
+                                     "subTitle" :"INTERVIEW",
+                                     "description":"Q&A with the founder",
+                                     "action":""]
+                                    ]
 
 let KSONewsTableViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "Whale"),
                                           "title":"The Last Whale",

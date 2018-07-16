@@ -63,9 +63,18 @@ class KSOBaseViewController: UIViewController {
         subView.subTitleLabel.text = subViewData?.subTitle
         subView.descriptionLabel?.text = subViewData?.decription
         
+        subView.image.addTargetClosure { (sender) in
+            self.touchView((subViewData?.action)!)
+        }
+        
         return subView
         
     }
+    
+    func touchView(_ actionString:String) {
+        print("Needs to implement the action with string \(actionString)")
+    }
+    
     // TODO Delete Horizontal Bouncing
 }
 

@@ -49,5 +49,4 @@ class KSOBaseSubView: UIView {
         image.backgroundColor = UIColor.backgroundGray
         image.imageView?.applyGradient()
     }
-    
 }

@@ -53,4 +53,13 @@ extension UIView {
         self.layer.insertSublayer(gradient, at: 0)
     }
     
+    func roundCorners() {
+        roundCornersWith(10)
+    }
+    
+    func roundCornersWith(_ radius:CGFloat) {
+        layer.cornerRadius = radius
+        clipsToBounds = true
+    }
+    
 }
