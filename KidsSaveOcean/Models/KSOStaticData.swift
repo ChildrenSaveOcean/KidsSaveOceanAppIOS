@@ -72,24 +72,36 @@ let KSONewsTableViewData:KSODataArray = [["image" : #imageLiteral(resourceName: 
                                           "title":"Kickstarter",
                                           "subTitle" :"We're live! Help give kids a voice"]]
 
-let KSOResourcesStudentsTableViewData:KSODataArray = [["image" : "",
+let KSOResourcesStudentsTableViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "letter_tmp"),
                                                        "title":"Example Letters",
                                                        "subTitle" :"Here is some examples of letters students have written"],
-                                                      ["image" : "",
+                                                      ["image" : #imageLiteral(resourceName: "Contacts_tmp"),
                                                        "title":"Country Contacts",
                                                        "subTitle" :"Look up who is the best person to write to in your contry"],
                                                       ["image" : "",
-                                                       "title":"Resource Title ...",
+                                                       "title":"Resource Title 3...",
+                                                       "subTitle" :"Subtitle and synopsis pm resource would go here"],
+                                                      ["image" : "",
+                                                       "title":"Resource Title 4...",
+                                                       "subTitle" :"Subtitle and synopsis pm resource would go here"],
+                                                      ["image" : "",
+                                                       "title":"Resource Title 5...",
                                                        "subTitle" :"Subtitle and synopsis pm resource would go here"]]
 
-let KSOResourcesTeacherTableViewData:KSODataArray = [["image" : "",
+let KSOResourcesTeacherTableViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "teaching_tmp"),
                                                       "title":"Resource Title 1",
                                                       "subTitle" :"Subtitle and synopsis pm resource would go here"],
-                                                     ["image" : "",
+                                                     ["image" : #imageLiteral(resourceName: "teaching_tmp"),
                                                       "title":"Resource Title 2",
                                                       "subTitle" :"Subtitle and synopsis pm resource would go here"],
                                                      ["image" : "",
                                                       "title":"Resource Title 3",
+                                                      "subTitle" :"Subtitle and synopsis pm resource would go here adjfhadlskfhladskhf"],
+                                                     ["image" : "",
+                                                      "title":"Resource Title 4",
+                                                      "subTitle" :"Subtitle and synopsis pm resource would go here adjfhadlskfhladskhf"],
+                                                     ["image" : "",
+                                                      "title":"Resource Title 5",
                                                       "subTitle" :"Subtitle and synopsis pm resource would go here adjfhadlskfhladskhf"]]
 
 
