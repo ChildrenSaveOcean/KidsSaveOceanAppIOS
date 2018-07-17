@@ -16,8 +16,8 @@ final class KSOUserTypeViewController: KSOBaseViewController  {
     }
     
     // TODO:
-    // 1) do loading video in background thread
-    // 2) move all about webView to its own class (or extention) ?
+    // 1) do loading video in background thread, show the activity indicator, show buttons when video is loaded.
+    // 2) move all about webView to its own class (or extention) ? if it would be used later in another VC
     // 3) show this VC only once (like and Start Page View Controller)
     // 4) Check the internet connection and implement the logic what to do without internet.
     

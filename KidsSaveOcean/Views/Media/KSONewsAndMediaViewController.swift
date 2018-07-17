@@ -10,7 +10,7 @@ import UIKit
 
 
 //Need to modify main storyboard to test it
-class KSOMediaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class KSONewsAndMediaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storedPictures.count

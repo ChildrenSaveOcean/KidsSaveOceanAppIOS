@@ -35,7 +35,7 @@
 		945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* KSOMapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2BCE520C8AD7C0067C6A4 /* KSODonateViewController.swift */; };
-		94C2BCEB20C8B0540067C6A4 /* KSOMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2BCEA20C8B0540067C6A4 /* KSOMediaViewController.swift */; };
+		94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2BCEA20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift */; };
 		94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D572DA20EBE24D00F82932 /* KSOMediaTableViewCell.swift */; };
 		94D572DD20EBE24D00F82932 /* KSOMediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D572DB20EBE24D00F82932 /* KSOMediaTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -92,7 +92,7 @@
 		945A089020F643EB006ED13D /* KSOMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		94C2BCE520C8AD7C0067C6A4 /* KSODonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODonateViewController.swift; sourceTree = "<group>"; };
-		94C2BCEA20C8B0540067C6A4 /* KSOMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMediaViewController.swift; sourceTree = "<group>"; };
+		94C2BCEA20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSONewsAndMediaViewController.swift; sourceTree = "<group>"; };
 		94D572DA20EBE24D00F82932 /* KSOMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMediaTableViewCell.swift; sourceTree = "<group>"; };
 		94D572DB20EBE24D00F82932 /* KSOMediaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOMediaTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,7 +302,7 @@
 		94C2BCE920C8B03E0067C6A4 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				94C2BCEA20C8B0540067C6A4 /* KSOMediaViewController.swift */,
+				94C2BCEA20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift */,
 				94C2BCEC20C8B2380067C6A4 /* MediaCells */,
 			);
 			path = Media;
@@ -472,7 +472,7 @@
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
 				165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */,
 				16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */,
-				94C2BCEB20C8B0540067C6A4 /* KSOMediaViewController.swift in Sources */,
+				94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */,
 				94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */,
 				164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
