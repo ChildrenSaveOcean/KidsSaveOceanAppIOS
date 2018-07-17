@@ -20,7 +20,7 @@ final class KSOUserTypeViewController: KSOBaseViewController  {
     // 2) move all about webView to its own class (or extention) ? if it would be used later in another VC
     // 3) show this VC only once (like and Start Page View Controller)
     // 4) Check the internet connection and implement the logic what to do without internet.
-    
+    // 5) Check the constrains warning message
     
     override func touchView(_ actionString: String) {
         
