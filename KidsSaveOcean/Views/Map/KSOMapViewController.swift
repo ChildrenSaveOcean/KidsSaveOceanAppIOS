@@ -8,33 +8,61 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class KSOMapViewController: UIViewController {
 
-    
+    var ref : DatabaseReference!
     var letters = [MKAnnotation]()
     
     @IBOutlet weak var map: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
         returnLetters()
-        addPinsInMap()
     }
 
+    func reloadMap(){
+        addPinsInMap()
+        self.map.reloadInputViews()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func returnLetters() {
-        // TODO: Put the stored data here and delete the test data
-        let test = KSOPinOfLetters(with: "Brazil", CLLocationCoordinate2D(latitude: -3.98, longitude: -38.61), 2)
-        let test2 = KSOPinOfLetters(with: "Czech Republic", CLLocationCoordinate2D(latitude: 49.20, longitude: 16.43), 15)
-        let test3 = KSOPinOfLetters(with: "USA", CLLocationCoordinate2D(latitude: 36.18, longitude: -87.06), 35)
-        
-        self.letters.append(test)
-        self.letters.append(test2)
-        self.letters.append(test3)
+        ref = Database.database().reference()
+        ref.child("MapPins").observeSingleEvent(of: .value, with: { (snapshot) in
+            for pins in (snapshot.value as? NSDictionary)! {
+                var pinInfos = [String:String]()
+                for pinInfo in (pins.value as? NSDictionary)! {
+                    switch pinInfo.key as? String {
+                    case "country":
+                        pinInfos["country"] = pinInfo.value as? String
+                        break
+                    case "latitude":
+                        pinInfos["latitude"] = pinInfo.value as? String
+                        break
+                    case "longitude":
+                        pinInfos["longitude"] = pinInfo.value as? String
+                        break
+                    case "numberOfLetters":
+                        pinInfos["numberOfLetters"] = pinInfo.value as? String
+                        break
+                    default: break
+                    }
+                }
+                
+                    //isso ta errado
+                let newPin = KSOPinOfLetters(with:  pinInfos["country"]!, CLLocationCoordinate2D(latitude: Double(pinInfos["latitude"]!)!, longitude: Double(pinInfos["longitude"]!)!), Int(pinInfos["numberOfLetters"]!)!)
+                    self.letters.append(newPin)
+                    self.reloadMap()
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func addPinsInMap() {
