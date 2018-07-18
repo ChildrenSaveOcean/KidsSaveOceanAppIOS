@@ -22,6 +22,7 @@
 		165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA120DB565500DB556F /* UIColor+Extentions.swift */; };
 		165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA320DB567900DB556F /* UIImage+Extentions.swift */; };
 		165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA520DB570300DB556F /* KSOBaseTableHeaderView.swift */; };
+		16649E9220FEC72B000BCB48 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16649E9120FEC72B000BCB48 /* Settings.swift */; };
 		1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */; };
 		1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C08320C8503500E17DAF /* KSOTabViewController.swift */; };
 		166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */; };
@@ -83,6 +84,7 @@
 		165FBFA120DB565500DB556F /* UIColor+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extentions.swift"; sourceTree = "<group>"; };
 		165FBFA320DB567900DB556F /* UIImage+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extentions.swift"; sourceTree = "<group>"; };
 		165FBFA520DB570300DB556F /* KSOBaseTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableHeaderView.swift; sourceTree = "<group>"; };
+		16649E9120FEC72B000BCB48 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 		1668C08320C8503500E17DAF /* KSOTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOTabViewController.swift; sourceTree = "<group>"; };
 		166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseSubView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		16559BCE20ADF9D5002D4F78 /* KidsSaveOcean */ = {
 			isa = PBXGroup;
 			children = (
+				16649E9120FEC72B000BCB48 /* Settings.swift */,
 				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				16CF5A2920AF1E6200C4E57E /* Extentions */,
 				16CF5A2820AF1E5600C4E57E /* ModelViews */,
@@ -609,6 +612,7 @@
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
 				165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */,
 				16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */,
+				16649E9220FEC72B000BCB48 /* Settings.swift in Sources */,
 				94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */,
 				94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */,
 				164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */,

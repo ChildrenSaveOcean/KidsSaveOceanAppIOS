@@ -299,7 +299,7 @@
         <!--StartPageViewController-->
         <scene sceneID="wYy-tp-vul">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="StartPageViewController" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="rpp-cZ-ODA" customClass="KSOStartPageViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="onBoardingViewController" autoresizesArchivedViewToFullSize="NO" title="StartPageViewController" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="rpp-cZ-ODA" customClass="KSOStartPageViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8p-XZ-boq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="5eE-oR-Ebp" customClass="KSOStartPageViewController">
                     <rect key="frame" x="0.0" y="0.0" width="77" height="37"/>

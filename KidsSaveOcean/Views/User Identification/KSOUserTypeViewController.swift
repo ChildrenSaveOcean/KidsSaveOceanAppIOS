@@ -52,9 +52,9 @@ final class KSOUserTypeViewController: KSOBaseViewController  {
         
         goButton.addTargetClosure { (sender) in
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabViewController = storyBoard.instantiateViewController(withIdentifier: "tabViewController")
+            let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
+            Settings.saveOnBoardingHasBeenShown()
             self.present(tabViewController, animated: true, completion: nil)
-            //self.performSegue(withIdentifier: "gotoHomeScreen", sender: nil)
         }
         
         let backButton = UIButton(frame: CGRect(x: view.bounds.width - buttonsWidth - shiftX, y: shiftY, width:buttonsWidth, height:buttonsHeight))
