@@ -33,22 +33,17 @@ class KSOBaseViewController: UIViewController {
         stackView.axis = UILayoutConstraintAxis.vertical
         stackView.distribution = UIStackViewDistribution.fillEqually
         stackView.alignment = UIStackViewAlignment.center
-        stackView.spacing = kStandardViewGap
+        stackView.spacing = StandardViewGap
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         stackView.backgroundColor = UIColor.blue
         stackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: kStandardViewGap).isActive = true
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: StandardViewGap).isActive = true
         
         stackView.layoutIfNeeded()
         scrollView.contentInsetAdjustmentBehavior =  .always
-        scrollView.contentSize = CGSize(width:scrollView.frame.width, height: stackView.frame.height + 2*kStandardViewGap)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: stackView.frame.height + 2 * StandardViewGap)
     }
     
     func createSubView(_ subViewF:KSODataDictionary, orientation:ViewOrientation) ->(KSOBaseSubView) {

@@ -41,7 +41,7 @@ final class KSONewsViewController: KSOBaseViewController, UITableViewDelegate, U
             containerView.widthAnchor.constraint(equalToConstant: stackView.bounds.width),
             containerView.heightAnchor.constraint(equalToConstant: newsTableViewController.tableView.contentSize.height),
             containerView.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
-            containerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: stackView.frame.height + 2*kStandardViewGap)
+            containerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: stackView.frame.height + 2 * StandardViewGap)
             ])
         
         addChildViewController(newsTableViewController)
@@ -57,7 +57,8 @@ final class KSONewsViewController: KSOBaseViewController, UITableViewDelegate, U
         containerView.layoutIfNeeded()
         newsTableViewController.didMove(toParentViewController: self)
         
-        scrollView.contentSize =  CGSize(width: scrollView.contentSize.width, height: stackView.frame.height + containerView.frame.height + 2*kStandardViewGap)
+        scrollView.contentSize =  CGSize(width: scrollView.contentSize.width,
+                                         height: stackView.frame.height + containerView.frame.height + 2 * StandardViewGap)
     }
     
     
@@ -86,7 +87,7 @@ final class KSONewsViewController: KSOBaseViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return kStandardTableHeaderHeight
+        return StandardTableHeaderHeight
     }
     
     // MARK: DataSource methods
@@ -95,7 +96,7 @@ final class KSONewsViewController: KSOBaseViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = newsTableViewController.getCellFor(indexPath)
+        let cell = newsTableViewController.createCell(at: indexPath)
         return cell
     }
     

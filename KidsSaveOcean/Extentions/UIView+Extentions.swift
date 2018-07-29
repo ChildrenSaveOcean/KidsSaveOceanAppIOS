@@ -13,9 +13,9 @@ enum ViewOrientation {
     case vertical
 }
 
-let kStandardViewGap:CGFloat      = 15
-let kStandardCornerRadius:CGFloat = 10
-let kStandardTableHeaderHeight:CGFloat = 40
+let StandardViewGap: CGFloat = 15
+let StandardCornerRadius: CGFloat = 10
+let StandardTableHeaderHeight: CGFloat = 40
 
 extension UIView {
     

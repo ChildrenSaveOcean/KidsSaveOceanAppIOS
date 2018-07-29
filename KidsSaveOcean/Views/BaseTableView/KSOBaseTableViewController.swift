@@ -12,7 +12,7 @@ fileprivate let kCellIdentefire = "baseTableViewCellIdentefier"
 
 class KSOBaseTableViewController: UITableViewController {
     
-    var tableViewData:KSODataArray!
+    var tableViewData: KSODataArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,28 +33,20 @@ class KSOBaseTableViewController: UITableViewController {
         tableView.register(KSOBaseTableViewCell.self, forCellReuseIdentifier: kCellIdentefire)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tableViewData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = getCellFor(indexPath)
-        return cell
+        return createCell(at: indexPath)
     }
     
-    func getCellFor(_ indexPath:IndexPath) -> KSOBaseTableViewCell {
+    func createCell(at indexPath:IndexPath) -> KSOBaseTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentefire, for: indexPath)  as! KSOBaseTableViewCell
         
         // TODO: make an exception about the data does not set up
@@ -69,6 +61,7 @@ class KSOBaseTableViewController: UITableViewController {
         }
         
         cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
@@ -78,7 +71,7 @@ class KSOBaseTableViewController: UITableViewController {
         cell.separatorInset = UIEdgeInsetsMake(0, (cell as! KSOBaseTableViewCell).tableViewTitle.frame.origin.x, 0, 5)
         
         let rowsCount = tableView.numberOfRows(inSection: indexPath.section)
-        let cornerRadius:CGFloat = kStandardViewGap
+        let cornerRadius: CGFloat = StandardViewGap
         if indexPath.row == rowsCount-1 {
             
             cell.clipsToBounds = true
@@ -87,21 +80,22 @@ class KSOBaseTableViewController: UITableViewController {
         }
         
         cell.layoutIfNeeded()
-        (cell as! KSOBaseTableViewCell).makeRoundIcon()
+        (cell as! KSOBaseTableViewCell).roundIcon()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = KSOBaseTableHeaderView(frame: CGRect(x:0, y:0, width:tableView.frame.width, height: kStandardTableHeaderHeight))
+        let view = KSOBaseTableHeaderView(frame: CGRect(x: 0, y: 0, width:tableView.frame.width, height: StandardTableHeaderHeight))
+        
         return view
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return kStandardTableHeaderHeight
+        return StandardTableHeaderHeight
         
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return kStandardViewGap
+        return StandardViewGap
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
