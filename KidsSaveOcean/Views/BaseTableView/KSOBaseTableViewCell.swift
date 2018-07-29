@@ -26,6 +26,7 @@ class KSOBaseTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         loadFromNib()
     }
     
@@ -33,7 +34,7 @@ class KSOBaseTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func makeRoundIcon() {
+    func roundIcon() {
         tableViewIcon.layer.cornerRadius = tableViewIcon.frame.height/2
         tableViewIcon.clipsToBounds = true
     }
@@ -43,10 +44,11 @@ class KSOBaseTableViewCell: UITableViewCell {
         get {
             return super.frame
         }
+        
         set (newFrame) {
             var frame = newFrame
-            frame.origin.x += kStandardViewGap
-            frame.size.width -= 2 * kStandardViewGap
+            frame.origin.x += StandardViewGap
+            frame.size.width -= 2 * StandardViewGap
             super.frame = frame
         }
     }

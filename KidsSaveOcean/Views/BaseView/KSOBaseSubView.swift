@@ -17,7 +17,7 @@ class KSOBaseSubView: UIView {
     
     var orientation:ViewOrientation
     
-    init(_ v:ViewOrientation) {
+    init(_ v: ViewOrientation) {
         self.orientation = v
         super.init(frame:CGRect.zero)
         initialiaze()
@@ -32,7 +32,7 @@ class KSOBaseSubView: UIView {
     private func initialiaze() {
         loadFromNib()
         
-        let viewWidth = UIScreen.main.bounds.width - 2*kStandardViewGap
+        let viewWidth = UIScreen.main.bounds.width - 2 * StandardViewGap
         let ratio = (orientation == .horisontal) ? 0.6 : image.frame.height/image.frame.width // TODO avoid 0.6
         
         frame = CGRect(x:0, y:0, width:viewWidth, height:viewWidth*ratio)

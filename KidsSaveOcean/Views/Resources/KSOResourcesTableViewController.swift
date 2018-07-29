@@ -12,17 +12,12 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ///
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        tableView.contentInset = UIEdgeInsets(top:kStandardViewGap, left:0, bottom:0, right:0)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        tableView.contentInset = UIEdgeInsets(top: StandardViewGap, left: 0, bottom: 0, right: 0)
     }
     
     // MARK: - Table view data source
@@ -40,20 +35,22 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         let view = super.tableView(tableView, viewForHeaderInSection: section) as! KSOBaseTableHeaderView
+        
         switch section {
         case 0:
             view.headerTitle.text = "For Students"
         default:
             view.headerTitle.text = "For Teachers"
         }
+        
         return view
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = UIColor.clear
+        
         return view
     }
     
@@ -65,9 +62,8 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
         default:
             tableViewData = KSOResourcesTeacherTableViewData
         }
-        let cell = getCellFor(indexPath)
         
-        return cell
+        return createCell(at: indexPath)
     }
     
 }
