@@ -211,22 +211,13 @@
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFS-Yr-gO4">
-                                <rect key="frame" x="16" y="480.33333333333337" width="69" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick your country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gz2-uL-L42">
-                                <rect key="frame" x="95" y="480.33333333333337" width="303" height="30"/>
-                                <color key="backgroundColor" white="0.77842287385844744" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYl-GP-cEd" customClass="CountryPickerView" customModule="CountryPickerView">
+                                <rect key="frame" x="20" y="478.33333333333337" width="374" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="agk-YP-3jJ"/>
+                                    <constraint firstAttribute="height" constant="45" id="Gjw-Q6-Blt"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="country-name"/>
-                            </textField>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -237,21 +228,19 @@
                             <constraint firstItem="wIi-RY-iJ3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="7gH-U5-cN1"/>
                             <constraint firstItem="qSC-jP-epx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="H20-iK-ngf"/>
                             <constraint firstItem="JtP-iU-dzB" firstAttribute="centerX" secondItem="yeq-W2-5Py" secondAttribute="centerX" id="Hlt-gF-Jf3"/>
-                            <constraint firstItem="gz2-uL-L42" firstAttribute="leading" secondItem="wFS-Yr-gO4" secondAttribute="trailing" constant="10" id="IQR-vP-sdq"/>
-                            <constraint firstItem="gz2-uL-L42" firstAttribute="centerY" secondItem="wFS-Yr-gO4" secondAttribute="centerY" id="IZ1-CK-42x"/>
                             <constraint firstItem="JtP-iU-dzB" firstAttribute="centerY" secondItem="yeq-W2-5Py" secondAttribute="centerY" id="NEy-vL-XWe"/>
                             <constraint firstItem="qSC-jP-epx" firstAttribute="top" secondItem="wIi-RY-iJ3" secondAttribute="bottom" constant="15" id="OhK-8n-h7T"/>
                             <constraint firstItem="VEU-vJ-uWd" firstAttribute="top" secondItem="a4G-Vm-wrL" secondAttribute="top" id="Sb6-7j-LLm"/>
                             <constraint firstItem="VEU-vJ-uWd" firstAttribute="trailing" secondItem="a4G-Vm-wrL" secondAttribute="trailing" id="U3f-ad-iR4"/>
+                            <constraint firstItem="a4G-Vm-wrL" firstAttribute="trailing" secondItem="nYl-GP-cEd" secondAttribute="trailing" constant="20" id="YC2-Cr-08O"/>
                             <constraint firstAttribute="trailing" secondItem="qSC-jP-epx" secondAttribute="trailing" constant="16" id="Zxs-hM-NJK"/>
-                            <constraint firstItem="gz2-uL-L42" firstAttribute="top" secondItem="qSC-jP-epx" secondAttribute="bottom" constant="10" id="abB-CN-jhU"/>
-                            <constraint firstItem="wFS-Yr-gO4" firstAttribute="top" secondItem="qSC-jP-epx" secondAttribute="bottom" constant="10" id="dPf-ll-m1C"/>
+                            <constraint firstItem="nYl-GP-cEd" firstAttribute="leading" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="20" id="fz5-xn-gSx"/>
                             <constraint firstItem="JtP-iU-dzB" firstAttribute="top" secondItem="VEU-vJ-uWd" secondAttribute="bottom" constant="10" id="hRk-GX-bea"/>
                             <constraint firstItem="a4G-Vm-wrL" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wIi-RY-iJ3" secondAttribute="trailing" constant="16" id="jdY-Zk-IlB"/>
                             <constraint firstItem="JtP-iU-dzB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="kXi-zJ-rRu"/>
                             <constraint firstItem="wIi-RY-iJ3" firstAttribute="top" secondItem="JtP-iU-dzB" secondAttribute="bottom" constant="10" id="lKw-xl-PcQ"/>
-                            <constraint firstItem="a4G-Vm-wrL" firstAttribute="trailing" secondItem="gz2-uL-L42" secondAttribute="trailing" constant="16" id="sgP-cG-JD5"/>
-                            <constraint firstItem="wFS-Yr-gO4" firstAttribute="leading" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="wQJ-7c-Hus"/>
+                            <constraint firstItem="nYl-GP-cEd" firstAttribute="top" secondItem="qSC-jP-epx" secondAttribute="bottom" constant="8" id="lqT-jt-FGX"/>
+                            <constraint firstItem="a4G-Vm-wrL" firstAttribute="trailing" secondItem="nYl-GP-cEd" secondAttribute="trailing" constant="20" id="wkN-Ny-47z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a4G-Vm-wrL"/>
                         <connections>
@@ -262,7 +251,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="countryTextField" destination="gz2-uL-L42" id="qFn-aB-mHZ"/>
+                        <outlet property="countryPickerView" destination="nYl-GP-cEd" id="SDN-1T-fT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOl-GM-64X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,7 +261,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1140" y="115.27093596059113"/>
+            <point key="canvasLocation" x="1139.1304347826087" y="114.94565217391305"/>
         </scene>
         <!--Media-->
         <scene sceneID="o6B-WA-9Pk">
