@@ -29,7 +29,10 @@ final class CountryContactsViewController: UIViewController {
         let image = UIImage.init(named: "CancelBarButtonItem")
         let cancelButton = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(dismissView))
         
+        let nextButton = UIBarButtonItem.init(title: "Next", style: .plain, target: self, action: #selector(showContactDetailsView))
+        
         navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = nextButton
     }
     
     func setupCountryPickerView() {
@@ -52,8 +55,20 @@ final class CountryContactsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func showContactDetailsView() {
+        performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+    }
+    
     @IBAction func didTapView(_ sender: Any) {
         countryTextField.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contactDetailsViewController = segue.destination as? ContactDetailsViewController else {
+            return
+        }
+        
+        contactDetailsViewController.selectedCountry = countryPickerView.selectedCountry.name
     }
 }
 

@@ -36,6 +36,7 @@
 		16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAD20C35288005BF4E1 /* KSOBaseViewController.swift */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
+		7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */; };
 		945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* KSOMapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */; };
@@ -107,6 +108,7 @@
 		749B92EFB33A2884EF8D8D45 /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C00FFB921185B7000320309 /* CountryContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewController.swift; sourceTree = "<group>"; };
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
+		7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		9430EB0520F9622B00C42E80 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		945A089020F643EB006ED13D /* KSOMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */,
 				7C00FFB921185B7000320309 /* CountryContactsViewController.swift */,
 				7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */,
+				7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */,
 				16649E9220FEC72B000BCB48 /* Settings.swift in Sources */,
 				94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */,
+				7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */,
 				94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */,
 				164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
