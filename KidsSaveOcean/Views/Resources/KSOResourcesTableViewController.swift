@@ -12,17 +12,13 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ///
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         tableView.contentInset = UIEdgeInsets(top:kStandardViewGap, left:0, bottom:0, right:0)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // MARK: - Table view data source
@@ -48,12 +44,14 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
         default:
             view.headerTitle.text = "For Teachers"
         }
+        
         return view
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = UIColor.clear
+        
         return view
     }
     
@@ -65,10 +63,28 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
         default:
             tableViewData = KSOResourcesTeacherTableViewData
         }
+        
         let cell = getCellFor(indexPath)
         
         return cell
     }
     
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch (indexPath.section, indexPath.row) {
+        case (0, 1):
+            self.showCountryContactView()
+        default:
+            break
+        }
+    }
+    
+    func showCountryContactView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: "CountryContactsViewController")
+        let navigationController = UINavigationController.init(rootViewController: countryContactsViewController)
+        
+        self.present(navigationController, animated: true, completion: nil)
+    }
 }
 
