@@ -15,7 +15,20 @@ class ContactDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = selectedCountry
+        
+        setupNavigationBar()
     }
-
+    
+    func setupNavigationBar() {
+        title = selectedCountry
+        
+        let doneButton = UIBarButtonItem.init(title: "Done", style: .plain, target: self, action: #selector(dismissView))
+        
+        navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    // MARK: - Actions
+    @objc func dismissView() {
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -11,7 +11,6 @@ import CountryPickerView
 
 final class CountryContactsViewController: UIViewController {
     
-    @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var countryPickerView: CountryPickerView!
     
     private let viewModel = CountryContactsViewModel()
@@ -57,10 +56,6 @@ final class CountryContactsViewController: UIViewController {
     
     @objc func showContactDetailsView() {
         performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
-    }
-    
-    @IBAction func didTapView(_ sender: Any) {
-        countryTextField.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
