@@ -8,12 +8,14 @@
 
 import UIKit
 import CountryPickerView
+import Firebase
 
 final class CountryContactsViewController: UIViewController {
     
     @IBOutlet weak var countryPickerView: CountryPickerView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private let viewModel = CountryContactsViewModel()
+    private lazy var viewModel = CountryContactsViewModel(databaseReferenece: Database.database().reference())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +57,18 @@ final class CountryContactsViewController: UIViewController {
     }
     
     @objc func showContactDetailsView() {
-        performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+        if (viewModel.countriesContacts.count > 0) {
+            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+            
+            return
+        }
+        
+        self.activityIndicator.startAnimating()
+        
+        viewModel.fetchContacts { [unowned self] in
+            self.activityIndicator.stopAnimating()
+            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,7 +76,8 @@ final class CountryContactsViewController: UIViewController {
             return
         }
         
-        contactDetailsViewController.selectedCountry = countryPickerView.selectedCountry.name
+        contactDetailsViewController.selectedCountry = viewModel.contact(of: countryPickerView.selectedCountry)
+        contactDetailsViewController.countryName = countryPickerView.selectedCountry.name
     }
 }
 

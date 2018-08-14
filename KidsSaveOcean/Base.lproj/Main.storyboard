@@ -161,7 +161,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="scrollIndicatorInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uep-qi-FJY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResourcesTableViewCell" id="uep-qi-FJY">
                                 <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uep-qi-FJY" id="dw3-Ik-fM4">
@@ -201,7 +201,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To tell my government how I feel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wIi-RY-iJ3">
                                 <rect key="frame" x="16" y="388.66666666666669" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.047058823529411764" green="0.37254901960784315" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -218,6 +218,10 @@
                                     <constraint firstAttribute="height" constant="45" id="Gjw-Q6-Blt"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="d0U-GD-vVm">
+                                <rect key="frame" x="169" y="564.33333333333337" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -225,6 +229,7 @@
                             <constraint firstItem="a4G-Vm-wrL" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="JtP-iU-dzB" secondAttribute="trailing" constant="16" id="2Vm-ye-yhv"/>
                             <constraint firstItem="VEU-vJ-uWd" firstAttribute="leading" secondItem="a4G-Vm-wrL" secondAttribute="leading" id="4Fl-mM-bIT"/>
                             <constraint firstItem="qSC-jP-epx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="4hv-1A-lw0"/>
+                            <constraint firstItem="d0U-GD-vVm" firstAttribute="centerX" secondItem="yeq-W2-5Py" secondAttribute="centerX" id="5gV-oB-nkk"/>
                             <constraint firstItem="wIi-RY-iJ3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="7gH-U5-cN1"/>
                             <constraint firstItem="qSC-jP-epx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="H20-iK-ngf"/>
                             <constraint firstItem="JtP-iU-dzB" firstAttribute="centerX" secondItem="yeq-W2-5Py" secondAttribute="centerX" id="Hlt-gF-Jf3"/>
@@ -240,6 +245,7 @@
                             <constraint firstItem="JtP-iU-dzB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="a4G-Vm-wrL" secondAttribute="leading" constant="16" id="kXi-zJ-rRu"/>
                             <constraint firstItem="wIi-RY-iJ3" firstAttribute="top" secondItem="JtP-iU-dzB" secondAttribute="bottom" constant="10" id="lKw-xl-PcQ"/>
                             <constraint firstItem="nYl-GP-cEd" firstAttribute="top" secondItem="qSC-jP-epx" secondAttribute="bottom" constant="8" id="lqT-jt-FGX"/>
+                            <constraint firstItem="d0U-GD-vVm" firstAttribute="top" secondItem="nYl-GP-cEd" secondAttribute="bottom" constant="15" id="opi-A7-6Zg"/>
                             <constraint firstItem="a4G-Vm-wrL" firstAttribute="trailing" secondItem="nYl-GP-cEd" secondAttribute="trailing" constant="20" id="wkN-Ny-47z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a4G-Vm-wrL"/>
@@ -251,6 +257,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="d0U-GD-vVm" id="3Vd-r7-IK0"/>
                         <outlet property="countryPickerView" destination="nYl-GP-cEd" id="SDN-1T-fT2"/>
                         <segue destination="nQk-jm-7xQ" kind="show" identifier="countryListToContactDetailsSegue" id="QoW-x9-zch"/>
                     </connections>
@@ -258,7 +265,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOl-GM-64X" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="m4w-4v-ytM"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="118"/>
+            <point key="canvasLocation" x="1175" y="-73"/>
         </scene>
         <!--Contact Details View Controller-->
         <scene sceneID="ASQ-gc-6Dc">
@@ -279,28 +286,24 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And fight to keep our oceans clean" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0t7-Ay-WgY">
                                 <rect key="frame" x="16" y="388.66666666666669" width="343" height="21.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.047058823530000002" green="0.37254901959999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a letter to the following:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3q-j1-zib">
-                                <rect key="frame" x="16" y="425" width="343" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="16" y="425" width="343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RIp-D7-asA">
-                                <rect key="frame" x="35" y="459" width="324" height="81.333333333333371"/>
-                                <string key="text">Justin Trudeau
-House of Commons
-Ottawa, ON
-K1A 0A6</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, there is no address for this country yet." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RIp-D7-asA">
+                                <rect key="frame" x="35" y="455.33333333333337" width="324" height="42.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwQ-cP-xMM">
-                                <rect key="frame" x="16" y="550.33333333333337" width="343" height="81.333333333333371"/>
+                                <rect key="frame" x="16" y="507.66666666666657" width="343" height="81.333333333333314"/>
                                 <string key="text">Stamp, mail it, and enter it in the tracker through the map. And invite at least one person to join this very, very real battle. Let’s raise an army.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
@@ -334,10 +337,13 @@ K1A 0A6</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oAc-TF-Sfg"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="RIp-D7-asA" id="3Fq-wD-tYM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQG-tN-Tev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895.6521739130437" y="118.20652173913044"/>
+            <point key="canvasLocation" x="1685" y="-73"/>
         </scene>
         <!--Media-->
         <scene sceneID="o6B-WA-9Pk">
@@ -674,7 +680,7 @@ K1A 0A6</string>
         <!--News-->
         <scene sceneID="xW6-Ug-MTb">
             <objects>
-                <viewController id="aX9-O8-tnB" customClass="KSONewsViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KSONewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aX9-O8-tnB" customClass="KSONewsViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kmd-5v-68E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
