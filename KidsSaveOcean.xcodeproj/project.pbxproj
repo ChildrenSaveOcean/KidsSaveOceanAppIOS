@@ -41,6 +41,7 @@
 		945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* KSOMapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */; };
+		946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946847D82139E299007A1158 /* KSOCustomMapPin.swift */; };
 		94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2BCE520C8AD7C0067C6A4 /* KSODonateViewController.swift */; };
 		94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2BCEA20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift */; };
 		94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D572DA20EBE24D00F82932 /* KSOMediaTableViewCell.swift */; };
@@ -115,6 +116,7 @@
 		945A089020F643EB006ED13D /* KSOMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		946847D82139E299007A1158 /* KSOCustomMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOCustomMapPin.swift; sourceTree = "<group>"; };
 		94C2BCE520C8AD7C0067C6A4 /* KSODonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODonateViewController.swift; sourceTree = "<group>"; };
 		94C2BCEA20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSONewsAndMediaViewController.swift; sourceTree = "<group>"; };
 		94D572DA20EBE24D00F82932 /* KSOMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMediaTableViewCell.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			children = (
 				945A089020F643EB006ED13D /* KSOMapViewController.swift */,
 				945A089220F64520006ED13D /* KSOPinOfLetters.swift */,
+				946847D82139E299007A1158 /* KSOCustomMapPin.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
+				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */,
 				94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,

@@ -29,4 +29,8 @@ class KSOPinOfLetters: NSObject, MKAnnotation {
         return "number of letters: \(self.numberOfLetters)"
     }
     
+    func getNumberOfLetters() -> Int{
+        return numberOfLetters
+    }
+  
 }

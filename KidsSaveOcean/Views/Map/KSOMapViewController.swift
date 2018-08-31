@@ -18,6 +18,8 @@ class KSOMapViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        map.register(KSOCustomMapPin.self,
+                         forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         returnLetters()
     }
 
