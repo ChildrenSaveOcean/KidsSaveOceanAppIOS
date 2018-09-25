@@ -39,7 +39,6 @@ class UserTypeTableViewController: UITableViewController {
     cell.titleLabel.text = staticData?.title
     cell.subTitleLabel.text = staticData?.subTitle
     cell.descriptionLabel.text = staticData?.decription
-    cell.videoAccessString = staticData?.action
     return cell
   }
   
