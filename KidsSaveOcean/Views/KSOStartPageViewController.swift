@@ -47,8 +47,8 @@ final class KSOStartPageViewController: UIPageViewController {
     }
 
     func configurePageControl() {
-        pageControl = UIPageControl(frame: CGRect(x: UIScreen.main.bounds.maxX - 180,
-                                                  y: UIScreen.main.bounds.maxY - 100,
+        pageControl = UIPageControl(frame: CGRect(x: UIScreen.main.bounds.maxX - 130, //180,
+                                                  y: UIScreen.main.bounds.maxY - 50, //100,
                                                   width: 200,
                                                   height: 50))
         pageControl.numberOfPages = pages.count
