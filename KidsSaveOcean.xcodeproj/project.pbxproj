@@ -12,7 +12,6 @@
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
-		163F23A420FCFC6B00022B38 /* KSOHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A320FCFC6B00022B38 /* KSOHomeViewController.swift */; };
 		164D8B0C20C639BB0067EE52 /* KSOBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */; };
 		164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */; };
 		16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */; };
@@ -31,6 +30,8 @@
 		166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */; };
 		166A3A8520B8925A0006CFBF /* KSOBaseSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166A3A8320B8925A0006CFBF /* KSOBaseSubView.xib */; };
 		1674330E20FED2E300F929C0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674330D20FED2E300F929C0 /* Reachability.swift */; };
+		16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768110215AD41D00EE4E1F /* HomeTableViewController.swift */; };
+		16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768112215AD71100EE4E1F /* HomeTableViewCell.swift */; };
 		16C2417620BCE1FA00F5884B /* KSOBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */; };
 		16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417A20C037D100F5884B /* KSONewsViewController.swift */; };
 		16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */; };
@@ -77,7 +78,6 @@
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
-		163F23A320FCFC6B00022B38 /* KSOHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOHomeViewController.swift; sourceTree = "<group>"; };
 		164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOResourcesTableViewController.swift; sourceTree = "<group>"; };
 		16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSaveOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseSubView.swift; sourceTree = "<group>"; };
 		166A3A8320B8925A0006CFBF /* KSOBaseSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOBaseSubView.xib; sourceTree = "<group>"; };
 		1674330D20FED2E300F929C0 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		16768110215AD41D00EE4E1F /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		16768112215AD71100EE4E1F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewCell.swift; sourceTree = "<group>"; };
 		16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOBaseTableViewCell.xib; sourceTree = "<group>"; };
 		16C2417A20C037D100F5884B /* KSONewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSONewsViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +174,8 @@
 		163F23A220FCFC3800022B38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				163F23A320FCFC6B00022B38 /* KSOHomeViewController.swift */,
+				16768110215AD41D00EE4E1F /* HomeTableViewController.swift */,
+				16768112215AD71100EE4E1F /* HomeTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -624,7 +627,6 @@
 				16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */,
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
-				163F23A420FCFC6B00022B38 /* KSOHomeViewController.swift in Sources */,
 				16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
@@ -632,6 +634,7 @@
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */,
+				16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */,
 				94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
 				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,
@@ -651,6 +654,7 @@
 				164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
 				1674330E20FED2E300F929C0 /* Reachability.swift in Sources */,
+				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
