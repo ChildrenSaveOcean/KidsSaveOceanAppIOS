@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-class UIImage_Extentions: UIImage {
-    
-}
-
 extension UIImage {
     public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
