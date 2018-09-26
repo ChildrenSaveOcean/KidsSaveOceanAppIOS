@@ -16,9 +16,9 @@ class KSOMapViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     var ref : DatabaseReference!
     var letters = [MKAnnotation]()
-    var numberOfCountries = 0
+    var countriesLetters = [String:Int]()
     var numberOfLetters = 0
-    
+    var orderedCountries = [(String, Int)]()
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var lblLettersWritten: UILabel!
     @IBOutlet weak var lblNumberCountries: UILabel!
@@ -51,17 +51,21 @@ class KSOMapViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     //#MARK: table view methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return countriesLetters.count < 11 ? countriesLetters.count : 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tbvTop10.dequeueReusableCell(withIdentifier: "cell")
-        return cell!
+        let cell =  tbvTop10.dequeueReusableCell(withIdentifier: "cell") as! KSOMapTop10TableViewCell
+        cell.lblCountryName.text = orderedCountries[indexPath.row].0
+        cell.lblNumberOfLetters.text = String(orderedCountries[indexPath.row].1)
+        return cell
     }
     
     func reloadMap(){
         addPinsInMap()
         self.map.reloadInputViews()
+        self.tbvTop10.reloadData()
+        orderedCountries = countriesLetters.sorted { $0.1 > $1.1 }
     }
     
     //#MARK: backend methods
@@ -73,7 +77,6 @@ class KSOMapViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 for pinInfo in (pins.value as? NSDictionary)! {
                     switch pinInfo.key as? String {
                     case "country":
-                        self.numberOfCountries += 1
                         pinInfos["country"] = pinInfo.value as? String
                         break
                     case "latitude":
@@ -91,15 +94,15 @@ class KSOMapViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     default: break
                     }
                 }
-                
                     //isso ta errado
+                self.countriesLetters[pinInfos["country"]!] = Int(pinInfos["numberOfLetters"]!)
                 let newPin = KSOPinOfLetters(with:  pinInfos["country"]!, CLLocationCoordinate2D(latitude: Double(pinInfos["latitude"]!)!, longitude: Double(pinInfos["longitude"]!)!), Int(pinInfos["numberOfLetters"]!)!)
                     self.letters.append(newPin)
                     self.reloadMap()
             }
             
             // change the label
-            self.lblNumberCountries.text! = "\(self.numberOfCountries)"
+            self.lblNumberCountries.text! = "\(self.countriesLetters.count)"
             self.lblLettersWritten.text! = "\(self.numberOfLetters)"
             
         }) { (error) in
