@@ -25,7 +25,7 @@ class KSONewsAndMediaViewController: UIViewController, UITableViewDelegate, UITa
     
     
     //for example, I will use random images
-    private var storedPictures = [#imageLiteral(resourceName: "Turtle"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "WhaleTail"), #imageLiteral(resourceName: "Reef"), #imageLiteral(resourceName: "actinia")]
+    private var storedPictures = [#imageLiteral(resourceName: "Turtle"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "turtleInNet"), #imageLiteral(resourceName: "deadBird"), #imageLiteral(resourceName: "surferOnWave"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "turtleInNet"), #imageLiteral(resourceName: "deadBird"), #imageLiteral(resourceName: "surferOnWave"), #imageLiteral(resourceName: "Whale"), #imageLiteral(resourceName: "deadBird"), #imageLiteral(resourceName: "turtleInNet"), #imageLiteral(resourceName: "surferOnWave")]
     
     @IBOutlet weak var mediaTableView : UITableView!
     

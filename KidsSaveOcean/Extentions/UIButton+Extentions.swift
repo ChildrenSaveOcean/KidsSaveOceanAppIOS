@@ -17,11 +17,11 @@ class ClosureWrapper: NSObject {
 }
 
 extension UIButton {
-    
+  
     private struct AssociatedKeys {
         static var targetClosure = "targetClosure"
     }
-    
+  
     private var targetClosure: UIButtonTargetClosure? {
         get {
             guard let closureWrapper = objc_getAssociatedObject(self, &AssociatedKeys.targetClosure) as? ClosureWrapper else { return nil }

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Turtle.jpg",
+      "filename" : "surferOnWave.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Turtle@2x.jpg",
+      "filename" : "surferOnWave@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Turtle@3x.jpg",
+      "filename" : "surferOnWave@3x.jpg",
       "scale" : "3x"
     }
   ],
