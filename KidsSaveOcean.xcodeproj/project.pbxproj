@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */; };
+		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
+		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
 		163F23A420FCFC6B00022B38 /* KSOHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A320FCFC6B00022B38 /* KSOHomeViewController.swift */; };
@@ -24,10 +26,10 @@
 		165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA520DB570300DB556F /* KSOBaseTableHeaderView.swift */; };
 		16649E9220FEC72B000BCB48 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16649E9120FEC72B000BCB48 /* Settings.swift */; };
 		1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */; };
+		16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */; };
 		1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C08320C8503500E17DAF /* KSOTabViewController.swift */; };
 		166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */; };
 		166A3A8520B8925A0006CFBF /* KSOBaseSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166A3A8320B8925A0006CFBF /* KSOBaseSubView.xib */; };
-		166A3A8920B895260006CFBF /* KSOUserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A3A8820B895260006CFBF /* KSOUserTypeViewController.swift */; };
 		1674330E20FED2E300F929C0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674330D20FED2E300F929C0 /* Reachability.swift */; };
 		16C2417620BCE1FA00F5884B /* KSOBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */; };
 		16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417A20C037D100F5884B /* KSONewsViewController.swift */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		10C28DDC38CD641F55A470AD /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewController.swift; sourceTree = "<group>"; };
+		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
+		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
 		163F23A320FCFC6B00022B38 /* KSOHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOHomeViewController.swift; sourceTree = "<group>"; };
@@ -92,10 +96,10 @@
 		165FBFA520DB570300DB556F /* KSOBaseTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableHeaderView.swift; sourceTree = "<group>"; };
 		16649E9120FEC72B000BCB48 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
+		16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extentions.swift"; sourceTree = "<group>"; };
 		1668C08320C8503500E17DAF /* KSOTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOTabViewController.swift; sourceTree = "<group>"; };
 		166A3A8220B8925A0006CFBF /* KSOBaseSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseSubView.swift; sourceTree = "<group>"; };
 		166A3A8320B8925A0006CFBF /* KSOBaseSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOBaseSubView.xib; sourceTree = "<group>"; };
-		166A3A8820B895260006CFBF /* KSOUserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOUserTypeViewController.swift; sourceTree = "<group>"; };
 		1674330D20FED2E300F929C0 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewCell.swift; sourceTree = "<group>"; };
 		16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOBaseTableViewCell.xib; sourceTree = "<group>"; };
@@ -245,12 +249,13 @@
 			path = KidsSaveOceanUITests;
 			sourceTree = "<group>";
 		};
-		16B2A6CC20BC8ADA008E24B2 /* User Identification */ = {
+		16B2A6CC20BC8ADA008E24B2 /* User Type */ = {
 			isa = PBXGroup;
 			children = (
-				166A3A8820B895260006CFBF /* KSOUserTypeViewController.swift */,
+				163416FD215976E200C98646 /* UserTypeTableViewController.swift */,
+				163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */,
 			);
-			path = "User Identification";
+			path = "User Type";
 			sourceTree = "<group>";
 		};
 		16B2A6CD20BC8B31008E24B2 /* News */ = {
@@ -278,7 +283,7 @@
 				164D8B0D20C6BC170067EE52 /* Resources */,
 				16C2417720C02D6C00F5884B /* Media */,
 				16B2A6CD20BC8B31008E24B2 /* News */,
-				16B2A6CC20BC8ADA008E24B2 /* User Identification */,
+				16B2A6CC20BC8ADA008E24B2 /* User Type */,
 				163366D120C5ECBD009ACC45 /* BaseTableView */,
 				16ED9DAF20C35443005BF4E1 /* BaseView */,
 				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
@@ -307,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */,
+				16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */,
 				165FBFA120DB565500DB556F /* UIColor+Extentions.swift */,
 				165FBFA320DB567900DB556F /* UIImage+Extentions.swift */,
 				163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */,
@@ -617,12 +623,13 @@
 				164D8B0C20C639BB0067EE52 /* KSOBaseTableViewCell.swift in Sources */,
 				16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */,
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
-				166A3A8920B895260006CFBF /* KSOUserTypeViewController.swift in Sources */,
+				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
 				163F23A420FCFC6B00022B38 /* KSOHomeViewController.swift in Sources */,
 				16C2417B20C037D100F5884B /* KSONewsViewController.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
+				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				166A3A8420B8925A0006CFBF /* KSOBaseSubView.swift in Sources */,
 				94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */,
@@ -635,6 +642,7 @@
 				1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */,
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
 				165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */,
+				16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */,
 				16ED9DAE20C35288005BF4E1 /* KSOBaseViewController.swift in Sources */,
 				16649E9220FEC72B000BCB48 /* Settings.swift in Sources */,
 				94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */,

@@ -12,20 +12,20 @@ typealias KSODataDictionary = Dictionary<String,Any>
 typealias KSODataArray = Array<KSODataDictionary>
 
 
-let KSOUserTypeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "ClownFish"),
+let UserTypeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "clownFish"),
                                      "title":"I am a Student",
                                      "subTitle" :"HOW I CAN HELP",
-                                     "description":"Get started on a letter-writting campaign, we'll show you how.",
+                                     "description":"Get started on a letter-writing campaign,\nwe’ll show you how!",
                                      "action":"aWbPiPh_gaU"],
-                                    ["image" : #imageLiteral(resourceName: "JellyFish"),
+                                    ["image" : #imageLiteral(resourceName: "jellyFish"),
                                      "title":"I am a Teacher",
                                      "subTitle" :"HOW I CAN HELP",
-                                     "description":"We have a lot of learning materials to help you engage your students.",
+                                     "description":"We have lots of learning materials available to\nhelp you engage students.",
                                      "action":"aWbPiPh_gaU"],
                                     ["image" : #imageLiteral(resourceName: "Turtle"),
                                      "title":"I want to support",
                                      "subTitle" :"HOW I CAN HELP",
-                                     "description":"We need your support donations. Learn how you can engage with...",
+                                     "description":"Not a student or teacher? Your support is the\nbedrock of Fatechanger. Learn more.",
                                      "action":"aWbPiPh_gaU"]]
 
 ///// Perhaps we will get it later dynamically from web-services from backend.
@@ -39,12 +39,12 @@ let KSOHomeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "Map"
                                      "subTitle" :"INTERVIEW",
                                      "description":"Q&A with the founder",
                                      "action":""],
-                                    ["image" : #imageLiteral(resourceName: "WhaleTail"),
+                                    ["image" : #imageLiteral(resourceName: "turtleInNet"),
                                      "title":"Third thing in this screen",
                                      "subTitle" :"SOME TEXT",
                                      "description":"Some sub text",
                                      "action":""],
-                                    ["image" : #imageLiteral(resourceName: "actinia"),
+                                    ["image" : #imageLiteral(resourceName: "deadBird"),
                                      "title":"Something else",
                                      "subTitle" :"HELLO WORLD",
                                      "description":"All you need is love",
