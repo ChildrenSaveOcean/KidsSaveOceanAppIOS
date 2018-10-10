@@ -155,7 +155,7 @@
                             <outlet property="delegate" destination="xTw-bw-8TV" id="0pc-bb-hbP"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Home" image="WorldTabItem" id="482-TN-iIO"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeTabItem" id="482-TN-iIO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMF-yE-Wnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -977,10 +977,10 @@
         <image name="CountryDetailsHeaderImage" width="344" height="286"/>
         <image name="PinkJellyFish" width="759" height="1249"/>
         <image name="Surfer" width="343" height="210"/>
-        <image name="WorldTabItem" width="21" height="21"/>
         <image name="clownFish" width="343" height="420"/>
         <image name="deadBird" width="375" height="343"/>
         <image name="donateTabItem" width="48" height="32"/>
+        <image name="homeTabItem" width="48" height="32"/>
         <image name="mapTabItem" width="48" height="32"/>
         <image name="mapViewB-1" width="866" height="574"/>
         <image name="newsTabItem" width="48" height="32"/>
