@@ -274,7 +274,7 @@
                         <viewLayoutGuide key="safeArea" id="UCF-gs-cAV"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Map" image="MapTabItem" id="cy0-sW-ebj"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mapTabItem" id="cy0-sW-ebj"/>
                     <connections>
                         <outlet property="lblLettersWritten" destination="ekq-hk-ASa" id="xCd-Ls-49q"/>
                         <outlet property="lblNumberCountries" destination="iD3-nG-VcO" id="q3u-Mu-lYR"/>
@@ -360,7 +360,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yEj-5v-5T9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Donate" image="DonateTabItem" id="qRS-gx-OGc"/>
+                    <tabBarItem key="tabBarItem" title="Donate" image="donateTabItem" id="qRS-gx-OGc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Z9-PlQ" sceneMemberID="firstResponder"/>
             </objects>
@@ -391,7 +391,7 @@
                             <outlet property="delegate" destination="5Mr-jh-a7S" id="7Zd-dQ-OQg"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Resources" image="ResourcesTabItem" id="s5f-Iu-XjE"/>
+                    <tabBarItem key="tabBarItem" title="Resources" image="resourcesTabItem" id="s5f-Iu-XjE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9e-uR-OA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -587,7 +587,7 @@
                         <viewLayoutGuide key="safeArea" id="TWU-nT-fJj"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Media" image="NewsTabItem" id="LSz-6M-lfg"/>
+                    <tabBarItem key="tabBarItem" title="Media" image="newsTabItem" id="LSz-6M-lfg"/>
                     <connections>
                         <outlet property="mediaTableView" destination="OuT-mO-sas" id="PA4-wF-eY0"/>
                     </connections>
@@ -975,17 +975,17 @@
     <resources>
         <image name="CountryContactsHeaderImage" width="563" height="472"/>
         <image name="CountryDetailsHeaderImage" width="344" height="286"/>
-        <image name="DonateTabItem" width="21" height="21"/>
-        <image name="MapTabItem" width="21" height="21"/>
-        <image name="NewsTabItem" width="21" height="21"/>
         <image name="PinkJellyFish" width="759" height="1249"/>
-        <image name="ResourcesTabItem" width="21" height="21"/>
         <image name="Surfer" width="343" height="210"/>
         <image name="WorldTabItem" width="21" height="21"/>
         <image name="clownFish" width="343" height="420"/>
         <image name="deadBird" width="375" height="343"/>
+        <image name="donateTabItem" width="48" height="32"/>
+        <image name="mapTabItem" width="48" height="32"/>
         <image name="mapViewB-1" width="866" height="574"/>
+        <image name="newsTabItem" width="48" height="32"/>
         <image name="overlay" width="343" height="412"/>
+        <image name="resourcesTabItem" width="48" height="32"/>
         <image name="surferOnWave" width="375" height="343"/>
         <image name="theWavEs" width="343" height="141"/>
         <image name="turtleInNet" width="375" height="343"/>

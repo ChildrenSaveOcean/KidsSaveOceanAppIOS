@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "donateTabItem.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "donate.png",
+      "filename" : "donateTabItem@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "donateTabItem@3x.png",
       "scale" : "3x"
     }
   ],
