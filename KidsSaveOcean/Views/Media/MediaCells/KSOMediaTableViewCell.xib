@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -21,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="455" height="223.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClownFish" translatesAutoresizingMaskIntoConstraints="NO" id="yZ2-qd-C9c">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clownFish" translatesAutoresizingMaskIntoConstraints="NO" id="yZ2-qd-C9c">
                         <rect key="frame" x="15" y="10" width="45.5" height="45.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="yZ2-qd-C9c" secondAttribute="height" multiplier="1:1" id="3NT-Px-geI"/>
@@ -156,7 +155,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ClownFish" width="334" height="409"/>
         <image name="Surfer" width="343" height="210"/>
+        <image name="clownFish" width="343" height="420"/>
     </resources>
 </document>
