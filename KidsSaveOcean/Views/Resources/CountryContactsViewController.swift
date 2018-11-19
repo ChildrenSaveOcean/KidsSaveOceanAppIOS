@@ -18,6 +18,9 @@ final class CountryContactsViewController: UIViewController {
     @IBOutlet weak var selectCountryLabel: UILabel!
     @IBOutlet weak var countriesPickerView: UIPickerView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private var selectedCountry: CountryContact?
     
     private lazy var viewModel = CountryContactsViewModel(databaseReferenece: Database.database().reference())
     
@@ -25,10 +28,8 @@ final class CountryContactsViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.fetchCountries()
-        
         setupViewElements()
-        
-        setupNavigationBar()
+        selectedCountry = viewModel.allCountries?.first
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +111,10 @@ final class CountryContactsViewController: UIViewController {
             make.width.equalTo(screenWidth * 0.45)
         }
         
+        activityIndicator.snp.updateConstraints { (make) in
+            make.center.equalTo(view)
+        }
+        
         super.updateViewConstraints()
     }
     
@@ -117,30 +122,31 @@ final class CountryContactsViewController: UIViewController {
     @objc func dismissView() {
         navigationController?.popViewController(animated: true)
     }
-//
-//    @objc func showContactDetailsView() {
-//        if (viewModel.countriesContacts.count > 0) {
-//            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
-//
-//            return
-//        }
-//
-//        self.activityIndicator.startAnimating()
-//
-//        viewModel.fetchContacts { [unowned self] in
-//            self.activityIndicator.stopAnimating()
-//            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
-//        }
-//    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let contactDetailsViewController = segue.destination as? ContactDetailsViewController else {
-//            return
-//        }
-//
-//        contactDetailsViewController.selectedCountry = viewModel.contact(of: countryPickerView.selectedCountry)
-//        contactDetailsViewController.countryName = countryPickerView.selectedCountry.name
-//    }
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        if (viewModel.countriesContacts.count > 0) {
+            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+            
+            return
+        }
+        
+        self.activityIndicator.startAnimating()
+        
+        viewModel.fetchContacts { [unowned self] in
+            self.activityIndicator.stopAnimating()
+            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? ContactDetailsViewController else {
+            return
+        }
+        
+        if let selectedCountry = selectedCountry {
+            destination.selectedCountry = viewModel.contact(of: selectedCountry.name)
+        }
+    }
 }
 
 // MARK: - UIPickerViewDataSource
@@ -162,5 +168,9 @@ extension CountryContactsViewController: UIPickerViewDelegate {
         label.textAlignment = .center
         
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCountry = viewModel.allCountries?[row]
     }
 }

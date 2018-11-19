@@ -13,6 +13,9 @@
         <array key="SF-Pro-Display-Semibold.otf">
             <string>SFProDisplay-Semibold</string>
         </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
         <array key="SF-Pro-Text-Semibold.otf">
             <string>SFProText-Semibold</string>
         </array>
@@ -838,7 +841,14 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="KwK-Pl-sqk" eventType="touchUpInside" id="kKR-h7-dfg"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KvX-fE-tXV">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -850,18 +860,68 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IfZ-XC-eCQ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="KvX-fE-tXV" id="zGu-Tm-whh"/>
                         <outlet property="countriesPickerView" destination="DOf-Kz-ga6" id="RGQ-Q7-AlK"/>
                         <outlet property="descriptionLabel" destination="2Jv-W6-dOJ" id="H3h-Va-PCn"/>
                         <outlet property="selectCountryLabel" destination="HAf-pJ-npN" id="vBx-Ht-sTn"/>
                         <outlet property="submitButton" destination="zGs-uz-wod" id="AeN-rI-BQd"/>
                         <outlet property="titleLabel" destination="E8I-Lv-iE7" id="ykR-uV-kvK"/>
                         <outlet property="whalesImageView" destination="M4K-sz-cN4" id="Nz8-Bv-L5a"/>
+                        <segue destination="iKm-IV-Qdx" kind="show" identifier="countryListToContactDetailsSegue" id="cyI-L2-40n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4K-vj-HH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="e9p-UZ-oJ8"/>
             </objects>
-            <point key="canvasLocation" x="1731.8840579710147" y="92.934782608695656"/>
+            <point key="canvasLocation" x="1678" y="93"/>
+        </scene>
+        <!--Contact Details View Controller-->
+        <scene sceneID="VET-k8-RaY">
+            <objects>
+                <viewController storyboardIdentifier="ContactDetailsViewController" id="iKm-IV-Qdx" customClass="ContactDetailsViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6i6-zL-Zwl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CountryDetailsHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="6NN-13-7KK">
+                                <rect key="frame" x="0.0" y="10" width="414" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stamp, mail it off, and then enter it in the Fatechanger Map’s Tracker. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDm-rs-hRz">
+                                <rect key="frame" x="20" y="631" width="374" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write a letter to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btf-6I-jX8">
+                                <rect key="frame" x="34" y="411" width="168" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-u6-ad9">
+                                <rect key="frame" x="34" y="448" width="340" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="seg-VP-4uH"/>
+                    </view>
+                    <connections>
+                        <outlet property="adressLabel" destination="7sH-u6-ad9" id="Dc2-1Z-Di8"/>
+                        <outlet property="descriptionLabel" destination="btf-6I-jX8" id="fSc-Ww-HY9"/>
+                        <outlet property="headerImageView" destination="6NN-13-7KK" id="eEU-6N-Zub"/>
+                        <outlet property="instructionLabel" destination="yDm-rs-hRz" id="Ufl-vc-JEC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YX-mY-m1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485.507246376812" y="92.934782608695656"/>
         </scene>
         <!--Resources-->
         <scene sceneID="Tk0-UB-bMC">
@@ -916,6 +976,7 @@
     </scenes>
     <resources>
         <image name="CountryContactsWhales" width="375" height="322"/>
+        <image name="CountryDetailsHeaderImage" width="344" height="286"/>
         <image name="DonateTabItem" width="48" height="32"/>
         <image name="HomeTabItem" width="48" height="32"/>
         <image name="MapTabItem" width="48" height="32"/>

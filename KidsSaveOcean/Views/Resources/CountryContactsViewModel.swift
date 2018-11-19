@@ -64,6 +64,7 @@ final class CountryContactsViewModel: NSObject {
                 let countryContact = CountryContact(name: name, code: code, address: address)
                 self.countriesContacts.append(countryContact)
             }
+            
             completion?()
         }) { (error) in
             completion?()
