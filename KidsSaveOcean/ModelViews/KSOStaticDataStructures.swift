@@ -59,7 +59,7 @@ struct BaseTableViewData {
     }
 }
 
-class KSODataStructures: NSObject {
+class KSOStaticDataStructures: NSObject {
     
 }
 

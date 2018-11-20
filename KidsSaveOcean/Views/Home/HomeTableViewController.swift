@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
-class HomeTableViewController: UITableViewController {
+final class HomeTableViewController: UITableViewController {
 
   private let homeCellIdenteficator = "homeViewCellIdentificator"
   private let scoreCellIdenteficator = "scoreViewCellIdentificator"
+  
+  private lazy var viewModel = CountryLetterScoresViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,8 +28,6 @@ class HomeTableViewController: UITableViewController {
     tableView.rowHeight = view.bounds.height * 156/667 // (for keeping design proportions iPhone8 for cell)
     tableView.dataSource = self
     tableView.delegate   = self
-    
-    print ("view bounds are \(view.bounds)")
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,10 +36,32 @@ class HomeTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let staticData = BaseTableViewData(dictionary: HomeViewData[indexPath.row])
+    
     if indexPath.row == 3 {
-      let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as! HomeTableViewCell
-      
+      let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as! HomeScoreTableViewCell
+      viewModel.fetchCountryScores {
+        let scores = self.viewModel.topCountryScores()
+        
+        if scores.count > 0 {
+          cell.country1NumLabel.text = "1"
+          cell.country1Label.text = scores[0].country
+          cell.country1ScoreLabel.text = String( scores[0].numberOfLetters )
+        }
+        
+        if scores.indices.contains(1) {
+          cell.country2NumLabel.text = "2"
+          cell.country2Label.text = scores[1].country
+          cell.country2ScoreLabel.text = String( scores[1].numberOfLetters )
+        }
+        
+        if scores.indices.contains(2) {
+          cell.country3NumLabel.text = "3"
+          cell.country3Label.text = scores[2].country
+          cell.country3ScoreLabel.text = String( scores[2].numberOfLetters )
+        }
+      }
       return cell
+      
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdenteficator, for: indexPath) as! HomeTableViewCell
       cell.imageCover.image =  staticData?.image
@@ -53,6 +76,10 @@ class HomeTableViewController: UITableViewController {
     }
   }
   
+  func setScoresLavel() {
+    
+  }
+  
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 8
   }
@@ -62,9 +89,27 @@ class HomeTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let videoURL = BaseViewData(dictionary: HomeViewData[indexPath.row])?.action else {
+    switch indexPath.row {
+    case 0:
+      tabBarController?.selectedIndex = 1
+      
+    case 1:
+      tabBarController?.selectedIndex = 3
+      
+      let resourcesVC = tabBarController?.selectedViewController as! KSOResourcesTableViewController
+      let i = NSIndexPath(row: 1, section: 0) as IndexPath
+      resourcesVC.tableView.delegate?.tableView!(resourcesVC.tableView, didSelectRowAt: i)
+      
+    case 2, 3:
+      tabBarController?.selectedIndex = 4
+      let mapVC =  (tabBarController?.selectedViewController as! KSOMapViewController)
+      mapVC.segmentControl.selectedSegmentIndex = indexPath.row == 2 ? 0 : 1
+      mapVC.didChangeSegment(mapVC.segmentControl)
+      
+    default:
       return
     }
+
   }
   
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

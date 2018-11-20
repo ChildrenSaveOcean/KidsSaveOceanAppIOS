@@ -10,6 +10,9 @@
 		163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
+		163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20352170F12200069294 /* HomeScoreTableViewCell.swift */; };
+		163D20382171ECA200069294 /* CountryLetterScoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20372171ECA200069294 /* CountryLetterScoresViewModel.swift */; };
+		163D203A217253E500069294 /* CountryScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D2039217253E500069294 /* CountryScore.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
 		164D8B0C20C639BB0067EE52 /* KSOBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */; };
@@ -31,7 +34,7 @@
 		16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768110215AD41D00EE4E1F /* HomeTableViewController.swift */; };
 		16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768112215AD71100EE4E1F /* HomeTableViewCell.swift */; };
 		16C2417620BCE1FA00F5884B /* KSOBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */; };
-		16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */; };
+		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
@@ -76,6 +79,9 @@
 		163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewController.swift; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
+		163D20352170F12200069294 /* HomeScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScoreTableViewCell.swift; sourceTree = "<group>"; };
+		163D20372171ECA200069294 /* CountryLetterScoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLetterScoresViewModel.swift; sourceTree = "<group>"; };
+		163D2039217253E500069294 /* CountryScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryScore.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
 		164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOResourcesTableViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 		16768112215AD71100EE4E1F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewCell.swift; sourceTree = "<group>"; };
 		16C2417420BCE1FA00F5884B /* KSOBaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOBaseTableViewCell.xib; sourceTree = "<group>"; };
-		16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODataStructures.swift; sourceTree = "<group>"; };
+		16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticDataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
 		1B9B46CE9FFC13368BB0989F /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4786B480CF1E5BF9CAB95C83 /* Pods-KidsSaveOceanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,11 +179,21 @@
 			path = BaseTableView;
 			sourceTree = "<group>";
 		};
+		163D203B2172577900069294 /* CountryScores */ = {
+			isa = PBXGroup;
+			children = (
+				163D20372171ECA200069294 /* CountryLetterScoresViewModel.swift */,
+				163D2039217253E500069294 /* CountryScore.swift */,
+			);
+			path = CountryScores;
+			sourceTree = "<group>";
+		};
 		163F23A220FCFC3800022B38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				16768110215AD41D00EE4E1F /* HomeTableViewController.swift */,
 				16768112215AD71100EE4E1F /* HomeTableViewCell.swift */,
+				163D20352170F12200069294 /* HomeScoreTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -264,13 +280,6 @@
 			path = "User Type";
 			sourceTree = "<group>";
 		};
-		16C2417720C02D6C00F5884B /* Media */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Media;
-			sourceTree = "<group>";
-		};
 		16CF5A2620AF1E4100C4E57E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,7 +288,6 @@
 				94C2BCE920C8B03E0067C6A4 /* Media */,
 				94C2BCE420C8AD680067C6A4 /* Donate */,
 				164D8B0D20C6BC170067EE52 /* Resources */,
-				16C2417720C02D6C00F5884B /* Media */,
 				16B2A6CC20BC8ADA008E24B2 /* User Type */,
 				163366D120C5ECBD009ACC45 /* BaseTableView */,
 				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
@@ -299,7 +307,8 @@
 		16CF5A2820AF1E5600C4E57E /* ModelViews */ = {
 			isa = PBXGroup;
 			children = (
-				16ED9DA920C343DB005BF4E1 /* KSODataStructures.swift */,
+				16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */,
+				163D203B2172577900069294 /* CountryScores */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -320,7 +329,6 @@
 		16D54E8920FE69D0003F5113 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				9430EB0520F9622B00C42E80 /* KSOStartPageViewController.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -645,18 +653,21 @@
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
+				163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */,
 				16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */,
 				94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
+				163D203A217253E500069294 /* CountryScore.swift in Sources */,
 				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,
 				945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */,
 				C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */,
 				163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */,
-				16ED9DAA20C343DB005BF4E1 /* KSODataStructures.swift in Sources */,
+				16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */,
 				16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */,
 				1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */,
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
 				165FBFA620DB570300DB556F /* KSOBaseTableHeaderView.swift in Sources */,
+				163D20382171ECA200069294 /* CountryLetterScoresViewModel.swift in Sources */,
 				16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */,
 				16649E9220FEC72B000BCB48 /* Settings.swift in Sources */,
 				94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */,

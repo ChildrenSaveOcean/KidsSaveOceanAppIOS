@@ -23,7 +23,8 @@ class KSOMapViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var lblLettersWritten: UILabel!
     @IBOutlet weak var lblNumberCountries: UILabel!
     @IBOutlet weak var tbvTop10: UITableView!
-    
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+  
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             self.map.isHidden = true
