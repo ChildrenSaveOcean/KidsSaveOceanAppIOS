@@ -61,8 +61,8 @@ final class CountryContactsViewController: UIViewController {
         let range = NSMakeRange(0, length)
         let font =  UIFont(name: "SF-Pro-Text-Regular", size: 20) ?? UIFont.systemFont(ofSize: 20)
         
-        attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: fontColor, range: range)
+        attributedString.addAttribute(NSAttributedStringKey.font, value: font, range: range)
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: fontColor, range: range)
         
         titleLalel.attributedText = attributedString
         titleLalel.adjustsFontSizeToFitWidth = true
