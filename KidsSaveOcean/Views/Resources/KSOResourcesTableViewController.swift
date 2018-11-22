@@ -82,9 +82,8 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
     func showCountryContactView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: "CountryContactsViewController")
-        let navigationController = UINavigationController.init(rootViewController: countryContactsViewController)
         
-        self.present(navigationController, animated: true, completion: nil)
+        navigationController?.pushViewController(countryContactsViewController, animated: true)
     }
 }
 

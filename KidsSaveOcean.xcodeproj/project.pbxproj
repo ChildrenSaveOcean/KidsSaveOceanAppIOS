@@ -40,6 +40,7 @@
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
 		7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */; };
 		7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */; };
+		7CE89F9521A2005F00C2D6DA /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */; };
 		945A089120F643EB006ED13D /* KSOMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* KSOMapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */; };
@@ -119,6 +120,10 @@
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
 		7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContact.swift; sourceTree = "<group>"; };
+		7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		9430EB0520F9622B00C42E80 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		945A089020F643EB006ED13D /* KSOMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -240,6 +245,7 @@
 				16CF5A2620AF1E4100C4E57E /* Views */,
 				16559BD520ADF9D5002D4F78 /* Main.storyboard */,
 				16559BD820ADF9D5002D4F78 /* Assets.xcassets */,
+				7CE89F9221A1FF5B00C2D6DA /* Supporting Files */,
 				16559BDA20ADF9D5002D4F78 /* LaunchScreen.storyboard */,
 				16559BDD20ADF9D5002D4F78 /* Info.plist */,
 				9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */,
@@ -348,6 +354,24 @@
 				1B9B46CE9FFC13368BB0989F /* Pods-KidsSaveOceanUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7CE89F9221A1FF5B00C2D6DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CE89F9321A1FF7500C2D6DA /* Fonts */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CE89F9321A1FF7500C2D6DA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */,
+				7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */,
+				7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		945A088F20F64355006ED13D /* Map */ = {
@@ -512,6 +536,7 @@
 				94D572DD20EBE24D00F82932 /* KSOMediaTableViewCell.xib in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
 				16559BD920ADF9D5002D4F78 /* Assets.xcassets in Resources */,
+				7CE89F9521A2005F00C2D6DA /* SF-Pro-Text-Regular.otf in Resources */,
 				16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */,
 				C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */,
 			);
@@ -559,15 +584,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CountryPickerView/CountryPickerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPickerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -821,7 +846,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GHQ5M9295;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KidsSaveOcean/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.KidsSaveOcean;
@@ -837,7 +862,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GHQ5M9295;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KidsSaveOcean/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.KidsSaveOcean;

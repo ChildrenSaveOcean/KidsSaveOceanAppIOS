@@ -7,7 +7,7 @@ target 'KidsSaveOcean' do
 
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
-    pod 'CountryPickerView'
+    pod 'SnapKit'
 
   target 'KidsSaveOceanTests' do
     inherit! :search_paths
