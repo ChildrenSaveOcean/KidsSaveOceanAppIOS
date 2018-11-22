@@ -96,9 +96,9 @@ final class HomeTableViewController: UITableViewController {
     case 1:
       tabBarController?.selectedIndex = 3
       
-      let resourcesVC = tabBarController?.selectedViewController as! KSOResourcesTableViewController
-      let i = NSIndexPath(row: 1, section: 0) as IndexPath
-      resourcesVC.tableView.delegate?.tableView!(resourcesVC.tableView, didSelectRowAt: i)
+      let navController = tabBarController?.selectedViewController as! UINavigationController
+      let resourcesVC = navController.childViewControllers.first as! KSOResourcesTableViewController
+      resourcesVC.showCountryContactView()
       
     case 2, 3:
       tabBarController?.selectedIndex = 4
