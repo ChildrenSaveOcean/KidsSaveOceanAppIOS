@@ -102,7 +102,7 @@ final class HomeTableViewController: UITableViewController {
       
     case 2, 3:
       tabBarController?.selectedIndex = 4
-      let mapVC =  (tabBarController?.selectedViewController as! KSOMapViewController)
+      let mapVC =  (tabBarController?.selectedViewController as! MapViewController)
       mapVC.segmentControl.selectedSegmentIndex = indexPath.row == 2 ? 0 : 1
       mapVC.didChangeSegment(mapVC.segmentControl)
       

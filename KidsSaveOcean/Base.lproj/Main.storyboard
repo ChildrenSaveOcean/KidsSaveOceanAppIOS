@@ -234,10 +234,10 @@
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="-1341.0326086956522"/>
         </scene>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="O9p-MZ-ngk">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="8N1-tj-3aY" customClass="KSOMapViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="8N1-tj-3aY" customClass="MapViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oY4-dZ-3zN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,6 +300,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="hPe-St-gil" kind="show" id="uWB-M8-tXv"/>
+                                </connections>
                             </button>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="USN-9K-Xm0">
                                 <rect key="frame" x="0.0" y="274.66666666666674" width="414" height="412.33333333333326"/>
@@ -347,7 +350,8 @@
                         <viewLayoutGuide key="safeArea" id="UCF-gs-cAV"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Map" image="MapTabItem" id="cy0-sW-ebj"/>
+                    <navigationItem key="navigationItem" id="ULZ-Fg-mhx"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="lblLettersWritten" destination="ekq-hk-ASa" id="xCd-Ls-49q"/>
                         <outlet property="lblNumberCountries" destination="iD3-nG-VcO" id="q3u-Mu-lYR"/>
@@ -358,7 +362,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHC-zs-qDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.599999999999994" y="-590.55472263868069"/>
+            <point key="canvasLocation" x="851" y="-591"/>
+        </scene>
+        <!--Letter Tracker View Controller-->
+        <scene sceneID="DYQ-mA-REG">
+            <objects>
+                <viewController id="hPe-St-gil" customClass="LetterTrackerViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ckn-Gu-8ym">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-hr-raz">
+                                <rect key="frame" x="132" y="564" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.1256549656" green="0.76238316299999997" blue="0.87107938529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3yP-bW-7bC"/>
+                                    <constraint firstAttribute="width" constant="150" id="v57-Jh-H2j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Letter in the Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-Ho-QN6">
+                                <rect key="frame" x="69" y="15" width="276" height="28"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written a letter, stamped, and mailed it off? You’re awesome. You’ve got fire in your belly and stood up to change fate. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-x5-j2M">
+                                <rect key="frame" x="15" y="58" width="384" height="61"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Submit only after you’ve mailed it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGn-ZY-2ux">
+                                <rect key="frame" x="52" y="530.33333333333337" width="310" height="21.666666666666629"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9ia-hr-raz" firstAttribute="top" secondItem="MGn-ZY-2ux" secondAttribute="bottom" constant="12" id="BnY-5a-ua6"/>
+                            <constraint firstItem="KSF-TO-tWk" firstAttribute="bottom" secondItem="9ia-hr-raz" secondAttribute="bottom" constant="15" id="DeI-D5-zBj"/>
+                            <constraint firstAttribute="trailing" secondItem="n4d-x5-j2M" secondAttribute="trailing" constant="15" id="GBZ-JB-4fq"/>
+                            <constraint firstItem="wHK-Ho-QN6" firstAttribute="centerX" secondItem="Ckn-Gu-8ym" secondAttribute="centerX" id="Gc0-BW-Ssx"/>
+                            <constraint firstItem="n4d-x5-j2M" firstAttribute="centerX" secondItem="Ckn-Gu-8ym" secondAttribute="centerX" id="IvF-3g-9w5"/>
+                            <constraint firstItem="n4d-x5-j2M" firstAttribute="top" secondItem="wHK-Ho-QN6" secondAttribute="bottom" constant="15" id="QX8-Ba-LKl"/>
+                            <constraint firstItem="n4d-x5-j2M" firstAttribute="leading" secondItem="Ckn-Gu-8ym" secondAttribute="leading" constant="15" id="SkX-fo-8rR"/>
+                            <constraint firstItem="wHK-Ho-QN6" firstAttribute="top" secondItem="KSF-TO-tWk" secondAttribute="top" constant="15" id="cFi-GD-pBJ"/>
+                            <constraint firstItem="MGn-ZY-2ux" firstAttribute="centerX" secondItem="Ckn-Gu-8ym" secondAttribute="centerX" id="l07-Ih-QaB"/>
+                            <constraint firstItem="9ia-hr-raz" firstAttribute="centerX" secondItem="Ckn-Gu-8ym" secondAttribute="centerX" id="yKt-G0-g4B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KSF-TO-tWk"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="submitButton" destination="9ia-hr-raz" id="bzy-3A-CBM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxs-et-4A2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.0000000000002" y="-591.03260869565224"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -374,7 +446,7 @@
                         <segue destination="wnG-Pi-KAa" kind="relationship" relationship="viewControllers" id="7aK-K1-cUQ"/>
                         <segue destination="sJp-3E-rs5" kind="relationship" relationship="viewControllers" id="srv-Xb-ztQ"/>
                         <segue destination="e6q-vk-hqe" kind="relationship" relationship="viewControllers" id="Vxo-mM-NTO"/>
-                        <segue destination="8N1-tj-3aY" kind="relationship" relationship="viewControllers" id="jlv-gn-Yyp"/>
+                        <segue destination="F2L-PV-nvl" kind="relationship" relationship="viewControllers" id="jlv-gn-Yyp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -937,7 +1009,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4K-vj-HH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="e9p-UZ-oJ8"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="93"/>
+            <point key="canvasLocation" x="1676.8115942028987" y="92.934782608695656"/>
         </scene>
         <!--Contact Details View Controller-->
         <scene sceneID="VET-k8-RaY">
@@ -1036,6 +1108,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0j-nL-Kae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="70" y="93"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="cmg-OW-qeS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="F2L-PV-nvl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="MapTabItem" id="cy0-sW-ebj"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5ef-qO-gXa">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8N1-tj-3aY" kind="relationship" relationship="rootViewController" id="Ni6-Ez-IF3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtn-HC-FP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="-591.03260869565224"/>
         </scene>
     </scenes>
     <resources>
