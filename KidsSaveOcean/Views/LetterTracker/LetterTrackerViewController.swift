@@ -12,9 +12,14 @@ import SnapKit
 final class LetterTrackerViewController: UIViewController {
 
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    private lazy var viewModel = LetterTrackerViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.fetchCountries()
         
         setupViewElements()
     }
@@ -51,5 +56,27 @@ final class LetterTrackerViewController: UIViewController {
     
     private func setupSubmitButton() {
         submitButton.layer.cornerRadius = 5
+    }
+}
+
+// MARK: - UIPickerViewDataSource
+extension LetterTrackerViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.allCountries?.count ?? 0
+    }
+}
+
+// MARK: - UIPickerViewDelegate
+extension LetterTrackerViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        label.text = viewModel.allCountries?[row].name
+        label.textAlignment = .center
+        
+        return label
     }
 }
