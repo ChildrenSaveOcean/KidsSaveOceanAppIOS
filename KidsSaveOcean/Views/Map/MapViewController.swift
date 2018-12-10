@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Firebase
 
-class KSOMapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //# MARK: Var, lets and outlets
 
@@ -45,9 +45,11 @@ class KSOMapViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tbvTop10.register(UINib(nibName: "KSOMapTop10TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         returnLetters()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     //#MARK: table view methods
