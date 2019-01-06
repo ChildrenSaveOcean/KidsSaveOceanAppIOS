@@ -19,6 +19,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var countriesLetters = [String:Int]()
     var numberOfLetters = 0
     var orderedCountries = [(String, Int)]()
+    var segmentControlDefaultIndex = 0
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var lblLettersWritten: UILabel!
     @IBOutlet weak var lblNumberCountries: UILabel!
@@ -50,6 +51,12 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        segmentControl.selectedSegmentIndex = segmentControlDefaultIndex
+        didChangeSegment(segmentControl)
     }
 
     //#MARK: table view methods
