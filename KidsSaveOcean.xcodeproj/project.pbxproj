@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
 		163366D320C63197009ACC45 /* KSOBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
@@ -16,7 +17,7 @@
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
 		164D8B0C20C639BB0067EE52 /* KSOBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2417320BCE1FA00F5884B /* KSOBaseTableViewCell.swift */; };
-		164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */; };
+
 		16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */; };
 		16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16559BD520ADF9D5002D4F78 /* Main.storyboard */; };
 		16559BD920ADF9D5002D4F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16559BD820ADF9D5002D4F78 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		10C28DDC38CD641F55A470AD /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		163366D220C63197009ACC45 /* KSOBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOBaseTableViewController.swift; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,7 +88,6 @@
 		163D2039217253E500069294 /* CountryScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryScore.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
-		164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOResourcesTableViewController.swift; sourceTree = "<group>"; };
 		16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSaveOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16559BD620ADF9D5002D4F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -204,11 +205,11 @@
 		164D8B0D20C6BC170067EE52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				164D8B0E20C6BC390067EE52 /* KSOResourcesTableViewController.swift */,
 				7C00FFB921185B7000320309 /* CountryContactsViewController.swift */,
 				7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */,
 				7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */,
 				7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */,
+				1617111021E25B5300BE9B2E /* ResourcesViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -692,10 +693,10 @@
 				7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */,
 				94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */,
 				C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */,
-				164D8B0F20C6BC390067EE52 /* KSOResourcesTableViewController.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
 				1674330E20FED2E300F929C0 /* Reachability.swift in Sources */,
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
+				1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */,
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
