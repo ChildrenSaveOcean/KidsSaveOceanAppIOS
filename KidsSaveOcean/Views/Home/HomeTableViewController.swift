@@ -97,7 +97,7 @@ final class HomeTableViewController: UITableViewController {
       tabBarController?.selectedIndex = 3
       
       let navController = tabBarController?.selectedViewController as! UINavigationController
-      let resourcesVC = navController.childViewControllers.first as! KSOResourcesTableViewController
+      let resourcesVC = navController.children.first as! KSOResourcesTableViewController
       resourcesVC.showCountryContactView()
       
     case 2, 3:
