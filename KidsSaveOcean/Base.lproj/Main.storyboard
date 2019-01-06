@@ -710,7 +710,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clownFish" translatesAutoresizingMaskIntoConstraints="NO" id="kXh-MB-hkO">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClownFish" translatesAutoresizingMaskIntoConstraints="NO" id="kXh-MB-hkO">
                                             <rect key="frame" x="16" y="8" width="382" height="432"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="kXh-MB-hkO" secondAttribute="height" multiplier="343:420" priority="999" id="4Be-gP-pQp"/>
@@ -1163,8 +1163,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CountryContactsWhales" width="375" height="322"/>
-        <image name="CountryDetailsHeaderImage" width="344" height="286"/>
+        <image name="ClownFish" width="150" height="183.66667175292969"/>
+        <image name="CountryContactsWhales" width="150" height="128.66667175292969"/>
+        <image name="CountryDetailsHeaderImage" width="150" height="124.5"/>
         <image name="DonateTabItem" width="48" height="32"/>
         <image name="HomeTabItem" width="48" height="32"/>
         <image name="MapTabItem" width="48" height="32"/>
@@ -1172,8 +1173,7 @@
         <image name="PinkJellyFish" width="759" height="1249"/>
         <image name="ResourcesTabItem" width="48" height="32"/>
         <image name="Surfer" width="343" height="210"/>
-        <image name="clownFish" width="343" height="420"/>
-        <image name="deadBird" width="375" height="343"/>
+        <image name="deadBird" width="200" height="183"/>
         <image name="mapViewB-1" width="433" height="287"/>
         <image name="overlay" width="343" height="412"/>
         <image name="surferOnWave" width="375" height="343"/>

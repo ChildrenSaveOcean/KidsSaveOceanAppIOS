@@ -38,7 +38,7 @@ class KSONewsAndMediaViewController: UIViewController, UITableViewDelegate, UITa
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
         //#MARK:TODO: Fix the automatic size of cells
     }
     

@@ -75,7 +75,7 @@ class KSOBaseTableViewController: UITableViewController {
     // MARK: - make last row in section corners rounded
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.separatorInset = UIEdgeInsetsMake(0, (cell as! KSOBaseTableViewCell).tableViewTitle.frame.origin.x, 0, 5)
+        cell.separatorInset = UIEdgeInsets.init(top: 0, left: (cell as! KSOBaseTableViewCell).tableViewTitle.frame.origin.x, bottom: 0, right: 5)
         
         let rowsCount = tableView.numberOfRows(inSection: indexPath.section)
         let cornerRadius:CGFloat = kStandardViewGap

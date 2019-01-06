@@ -9,7 +9,7 @@
 import UIKit
 
 class UserTypeTableViewController: UITableViewController {
-  let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:.gray)
+  let activityIndicator = UIActivityIndicatorView(style:.gray)
   let webView = UIWebView()
   
   private let cellIdenteficator = "userIdCellIdentificator"
@@ -22,7 +22,7 @@ class UserTypeTableViewController: UITableViewController {
     tableView.separatorStyle = .none
     tableView.separatorColor = UIColor.backgroundGray
     tableView.showsVerticalScrollIndicator = false
-    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.rowHeight = UITableView.automaticDimension
     tableView.dataSource = self
     tableView.delegate   = self
   }
@@ -66,7 +66,7 @@ class UserTypeTableViewController: UITableViewController {
     webView.delegate = self as UIWebViewDelegate
     
     view.addSubview(webView)
-    view.bringSubview(toFront: webView)
+    view.bringSubviewToFront(webView)
     
     guard
       let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoAddressString)")
@@ -98,7 +98,7 @@ class UserTypeTableViewController: UITableViewController {
       self.gotoTabViewController()
     }
     webView.addSubview(goButton)
-    webView.bringSubview(toFront: goButton)
+    webView.bringSubviewToFront(goButton)
     
     let backButton = self.createButtonWithTitle("BACK")
     backButton.frame = CGRect(x: self.view.bounds.width - buttonsWidth - shiftX, y: shiftY, width:buttonsWidth, height:buttonsHeight)
@@ -108,7 +108,7 @@ class UserTypeTableViewController: UITableViewController {
       self.webView.removeFromSuperview()
     }
     webView.addSubview(backButton)
-    webView.bringSubview(toFront: backButton)
+    webView.bringSubviewToFront(backButton)
   }
   
   private func createButtonWithTitle(_ title:String) -> UIButton {
@@ -152,7 +152,7 @@ extension UserTypeTableViewController: UIWebViewDelegate {
   func webViewDidStartLoad(_ webView: UIWebView) {
     activityIndicator.frame = CGRect(x:view.bounds.width/2, y:view.bounds.height/2, width:30, height:30)
     view.addSubview(activityIndicator)
-    view.bringSubview(toFront: activityIndicator)
+    view.bringSubviewToFront(activityIndicator)
     activityIndicator.startAnimating()
   }
   
