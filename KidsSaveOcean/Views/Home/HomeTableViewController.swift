@@ -17,7 +17,10 @@ final class HomeTableViewController: UITableViewController {
   private lazy var viewModel = CountryLetterScoresViewModel()
   
   override func viewDidLoad() {
+    
     super.viewDidLoad()
+    navigationController?.navigationBar.isHidden = true
+    navigationController?.navigationBar.isTranslucent = true
     tableView.backgroundColor = UIColor.backgroundGray
     tableView.isScrollEnabled = true
     tableView.bounces = false
@@ -28,6 +31,16 @@ final class HomeTableViewController: UITableViewController {
     tableView.rowHeight = view.bounds.height * 156/667 // (for keeping design proportions iPhone8 for cell)
     tableView.dataSource = self
     tableView.delegate   = self
+  }
+    
+  override func viewWillDisappear(_ animated: Bool) {
+     super.viewWillDisappear(animated)
+     navigationController?.navigationBar.isHidden = false
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.navigationBar.isHidden = true
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,17 +107,15 @@ final class HomeTableViewController: UITableViewController {
       tabBarController?.selectedIndex = 1
       
     case 1:
-      tabBarController?.selectedIndex = 3
-      
-      let navController = tabBarController?.selectedViewController as! UINavigationController
-      let resourcesVC = navController.children.first as! KSOResourcesTableViewController
-      resourcesVC.showCountryContactView()
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: "CountryContactsViewController")
+      navigationController?.pushViewController(countryContactsViewController, animated: true)
       
     case 2, 3:
       tabBarController?.selectedIndex = 4
-      let mapVC =  (tabBarController?.selectedViewController as! MapViewController)
-      mapVC.segmentControl.selectedSegmentIndex = indexPath.row == 2 ? 0 : 1
-      mapVC.didChangeSegment(mapVC.segmentControl)
+      let navigationController = tabBarController?.selectedViewController as! UINavigationController
+      let mapVC = navigationController.viewControllers.first as! MapViewController
+      mapVC.segmentControlDefaultIndex = indexPath.row == 2 ? 0 : 1
       
     default:
       return
@@ -125,6 +136,4 @@ final class HomeTableViewController: UITableViewController {
     viewH.backgroundColor = .white
     return viewH
   }
-  
-
 }
