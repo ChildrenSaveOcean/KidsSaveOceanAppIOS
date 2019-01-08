@@ -539,7 +539,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yEj-5v-5T9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Donate" image="DonateTabItem" id="qRS-gx-OGc"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="DonateTabItem" id="qRS-gx-OGc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Z9-PlQ" sceneMemberID="firstResponder"/>
             </objects>
@@ -959,8 +959,6 @@
         <!--Country Contacts-->
         <scene sceneID="Zpc-k3-OMO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j4K-vj-HH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="e9p-UZ-oJ8"/>
                 <viewController storyboardIdentifier="CountryContactsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KwK-Pl-sqk" userLabel="Country Contacts" customClass="CountryContactsViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0V-Us-Xu3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -1041,6 +1039,8 @@
                         <segue destination="iKm-IV-Qdx" kind="show" identifier="countryListToContactDetailsSegue" id="cyI-L2-40n"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4K-vj-HH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="e9p-UZ-oJ8"/>
             </objects>
             <point key="canvasLocation" x="1574" y="937"/>
         </scene>

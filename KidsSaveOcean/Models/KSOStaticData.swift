@@ -12,12 +12,12 @@ typealias KSODataDictionary = Dictionary<String,Any>
 typealias KSODataArray = Array<KSODataDictionary>
 
 
-let UserTypeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "ClownFish"),
+let UserTypeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "theWavEs"),
                                      "title":"I am a Student",
                                      "subTitle" :"HOW I CAN HELP",
                                      "description":"Get started on a letter-writing campaign,\nwe’ll show you how!",
                                      "action":"aWbPiPh_gaU"],
-                                    ["image" : #imageLiteral(resourceName: "JellyFish"),
+                                    ["image" : #imageLiteral(resourceName: "theWavEs"),
                                      "title":"I am a Teacher",
                                      "subTitle" :"HOW I CAN HELP",
                                      "description":"We have lots of learning materials available to\nhelp you engage students.",
@@ -41,10 +41,14 @@ let HomeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "theWavE
                                      "title":"Letter Writting Campaign",
                                      "subTitle" :"WATCH IT SPREAD",
                                      "action":""],
+                                    ["image" : #imageLiteral(resourceName: "dashboardCopyForHomeScreenPic"),
+                                     "title":"Light it up",
+                                     "subTitle" :"Your Activist Dashboard",
+                                     "action":""],
                                     ["image" : #imageLiteral(resourceName: "theWavEs"),
-                                     "title":"High Scores",
-                                     "subTitle" :"there will be scores",
-                                     "action":""]]
+                                    "title":"High Scores",
+                                    "subTitle" :"there will be scores",
+                                    "action":""],]
 
 let KSONewsViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "Map"),
                                      "title":"Letter Writting Campaign",
