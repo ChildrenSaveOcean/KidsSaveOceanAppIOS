@@ -50,7 +50,7 @@ final class HomeTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let staticData = BaseTableViewData(dictionary: HomeViewData[indexPath.row])
     
-    if indexPath.row == 3 {
+    if indexPath.row == 4 {
       let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as! HomeScoreTableViewCell
       viewModel.fetchCountryScores {
         let scores = self.viewModel.topCountryScores()
@@ -111,7 +111,10 @@ final class HomeTableViewController: UITableViewController {
       let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: "CountryContactsViewController")
       navigationController?.pushViewController(countryContactsViewController, animated: true)
       
-    case 2, 3:
+    case 3:
+        tabBarController?.selectedIndex = 2
+        
+    case 2, 4:
       tabBarController?.selectedIndex = 4
       let navigationController = tabBarController?.selectedViewController as! UINavigationController
       let mapVC = navigationController.viewControllers.first as! MapViewController
