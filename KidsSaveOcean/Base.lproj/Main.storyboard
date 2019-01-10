@@ -539,7 +539,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yEj-5v-5T9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="DonateTabItem" id="qRS-gx-OGc"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboardTabItem" id="qRS-gx-OGc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Z9-PlQ" sceneMemberID="firstResponder"/>
             </objects>
@@ -1169,13 +1169,13 @@
         <image name="ClownFish" width="150" height="183.66667175292969"/>
         <image name="CountryContactsWhales" width="150" height="128.66667175292969"/>
         <image name="CountryDetailsHeaderImage" width="150" height="124.5"/>
-        <image name="DonateTabItem" width="48" height="32"/>
         <image name="HomeTabItem" width="48" height="32"/>
         <image name="MapTabItem" width="48" height="32"/>
         <image name="NewsTabItem" width="48" height="32"/>
         <image name="PinkJellyFish" width="759" height="1249"/>
         <image name="ResourcesTabItem" width="48" height="32"/>
         <image name="Surfer" width="343" height="210"/>
+        <image name="dashboardTabItem" width="48" height="32"/>
         <image name="deadBird" width="200" height="183"/>
         <image name="mapViewB-1" width="433" height="287"/>
         <image name="overlay" width="343" height="412"/>
