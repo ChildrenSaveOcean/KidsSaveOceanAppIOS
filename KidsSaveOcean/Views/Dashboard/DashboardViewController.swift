@@ -42,11 +42,13 @@ class DashboardViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     var previousTaskSwitched = -1
+    let halfOfPi = CGFloat.pi/CGFloat(2)
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3,  self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
     
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         do {
             guard let url = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else { return }
@@ -67,9 +69,14 @@ class DashboardViewController: UIViewController {
         placeholder.removeFromSuperview()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        chooseTaskWithNum(0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
+        print("aaaaa")
+        //chooseTaskWithNum(0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
     }
     
     // MARK: actions methods
@@ -110,7 +117,7 @@ class DashboardViewController: UIViewController {
         
         selectTopIcon(num)
         switchWheelPointerPosition(num)
-        
+        rotateMeterPointer(num)
         // rotate Meter Pointer
         // show Task on the task label
         // change target for howButton
@@ -126,9 +133,6 @@ class DashboardViewController: UIViewController {
         previousTaskSwitched = num
     }
     
-    private func rotateMeterPointer(to position:CGPoint) {
-        
-    }
     private func selectTopIcon(_ num:Int) {
         
         /*Peder [3:15 PM]
@@ -155,6 +159,19 @@ class DashboardViewController: UIViewController {
         previousIcon.layer.shadowOffset = .zero
     }
     
+    lazy var center = self.meterPointer.layer.position
+    private func rotateMeterPointer(_ num: Int) {
+        
+        meterPointer.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
+        meterPointer.layer.position = CGPoint(x:center.x + meterPointer.bounds.width/2, y:center.y)
+        
+        let oneAngle = CGFloat.pi / CGFloat(6)
+        let angle = oneAngle * CGFloat(num + 1)
+        let time = Double(abs(previousTaskSwitched - num)) * 0.2
+        UIView.animate(withDuration: time) {
+            self.meterPointer.transform = CGAffineTransform(rotationAngle: angle)
+        }
+    }
     
     private func switchWheelPointerPosition(_ num:Int) {
         let keyFrameAnimation = CAKeyframeAnimation()
@@ -162,7 +179,6 @@ class DashboardViewController: UIViewController {
         
         let center = CGPoint(x:wheelVolume.center.x, y:wheelVolume.center.y - 3)
         let oneAngle = 2 * CGFloat.pi / CGFloat(7)
-        let halfOfPi = CGFloat.pi/CGFloat(2)
         
         let clockWise = previousTaskSwitched > num
         let startAngle = halfOfPi + oneAngle * CGFloat(previousTaskSwitched + 1)
