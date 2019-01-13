@@ -142,6 +142,7 @@ class DashboardViewController: UIViewController {
         
         if num == currentTaskSwitched {
             correctMeterPointerPosition()
+            selectTopIcon()
             return
         }
         
