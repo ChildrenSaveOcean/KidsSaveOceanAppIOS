@@ -43,6 +43,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var wheelPositionButton6: UIButton!
     
     var audioPlayer = AVAudioPlayer()
+    var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
     
@@ -125,25 +126,31 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func completeAction(_ sender: Any) {
-        print("DID IT?")
+        let newState = !completionTasksStates[currentTaskSwitched]
+        completionTasksStates[currentTaskSwitched] = newState
+        Settings.saveCompletionTasksStatus(completionTasksStates)
+        
+        topIcons[currentTaskSwitched]?.completed = newState
+        selectTopIcon()
+        setUpDidItSection()
+        
     }
     
     // MARK: Private methods
     private func chooseTaskWithNum(_ num:Int) {
+        if num == currentTaskSwitched { return }
+        previousTaskSwitched = currentTaskSwitched
+        currentTaskSwitched = num
         
-        if num == previousTaskSwitched { return }
-        
-        selectTopIcon(num)
-        switchWheelPointerPosition(num)
-        rotateMeterPointer(num)
-        setTaskLabel(num)
-        setUpDidItSection(num)
+        selectTopIcon()
+        switchWheelPointerPosition()
+        rotateMeterPointer()
+        setTaskLabel()
+        setUpDidItSection()
         
         // change target for howButton
-        setUpHowToButton(num)
-
+        setUpHowToButton()
         playSound()
-        previousTaskSwitched = num
     }
     
     private func setUpTopIcons() {
@@ -153,16 +160,12 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    private func setUpStateOfCompletion(_ num:Int) {
-        
+    private func setTaskLabel() {
+        taskLabel.text = taskScope[currentTaskSwitched]
     }
     
-    private func setTaskLabel(_ num:Int) {
-        taskLabel.text = taskScope[num]
-    }
-    
-    private func setUpDidItSection(_ num:Int) {
-        if completionTasksStates[num] {
+    private func setUpDidItSection() {
+        if completionTasksStates[currentTaskSwitched] {
             completedFistImage.image = #imageLiteral(resourceName: "fist_xvmush")
             didItButton.setTitle("Not yet", for: .normal)
         } else {
@@ -171,12 +174,12 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    private func setUpHowToButton(_ num:Int) {
+    private func setUpHowToButton() {
         
     }
     
-    private func selectTopIcon(_ num:Int) {
-        topIcons[num]!.setSelected()
+    private func selectTopIcon() {
+        topIcons[currentTaskSwitched]!.setSelected()
         
         // clear previous icon
         if previousTaskSwitched < 0 { return }
@@ -184,34 +187,34 @@ class DashboardViewController: UIViewController {
     }
     
     lazy var center = self.meterPointer.layer.position
-    private func rotateMeterPointer(_ num: Int) {
+    private func rotateMeterPointer() {
         
         meterPointer.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
         meterPointer.layer.position = CGPoint(x:center.x + meterPointer.bounds.width/2, y:center.y)
         
         let oneAngle = CGFloat.pi / CGFloat(6)
-        let angle = oneAngle * CGFloat(num + 1)
-        let time = Double(abs(previousTaskSwitched - num)) * 0.2
+        let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
+        let time = Double(abs(previousTaskSwitched - currentTaskSwitched)) * 0.2
         UIView.animate(withDuration: time) {
             self.meterPointer.transform = CGAffineTransform(rotationAngle: angle)
         }
     }
     
-    private func switchWheelPointerPosition(_ num:Int) {
+    private func switchWheelPointerPosition() {
         let keyFrameAnimation = CAKeyframeAnimation()
         let path = CGMutablePath()
         
         let center = CGPoint(x:wheelVolume.center.x, y:wheelVolume.center.y - 3)
         let oneAngle = 2 * CGFloat.pi / CGFloat(7)
         
-        let clockWise = previousTaskSwitched > num
+        let clockWise = previousTaskSwitched > currentTaskSwitched
         let startAngle = halfOfPi + oneAngle * CGFloat(previousTaskSwitched + 1)
-        let endAngle = startAngle + oneAngle * CGFloat(num - previousTaskSwitched)
+        let endAngle = startAngle + oneAngle * CGFloat(currentTaskSwitched - previousTaskSwitched)
         
         path.addArc(center: center, radius: 25, startAngle: startAngle, endAngle: endAngle, clockwise: clockWise)
         
         keyFrameAnimation.path = path
-        keyFrameAnimation.duration = 0.2 * Double(abs(num - previousTaskSwitched))
+        keyFrameAnimation.duration = 0.2 * Double(abs(currentTaskSwitched - previousTaskSwitched))
         keyFrameAnimation.isRemovedOnCompletion = true
         wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
         wheelPoint.layer.position = path.currentPoint
