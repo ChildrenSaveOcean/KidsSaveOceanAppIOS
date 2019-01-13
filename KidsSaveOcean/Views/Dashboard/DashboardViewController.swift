@@ -88,7 +88,8 @@ class DashboardViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setUpTopIcons()
-        chooseTaskWithNum(0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
+        let firstIncompetedTask = completionTasksStates.firstIndex(of: false)
+        chooseTaskWithNum(firstIncompetedTask ?? 0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
     }
     
     // MARK: actions methods
