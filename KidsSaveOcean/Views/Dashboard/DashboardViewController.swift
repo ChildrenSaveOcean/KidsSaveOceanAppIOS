@@ -139,7 +139,12 @@ class DashboardViewController: UIViewController {
     
     // MARK: Private methods
     private func chooseTaskWithNum(_ num:Int) {
-        if num == currentTaskSwitched { return }
+        
+        if num == currentTaskSwitched {
+            correctMeterPointerPosition()
+            return
+        }
+        
         previousTaskSwitched = currentTaskSwitched
         currentTaskSwitched = num
         
@@ -191,9 +196,7 @@ class DashboardViewController: UIViewController {
     private func rotateMeterPointer() {
         
         meterPointer.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        if meterPointer.layer.position == center {
-            meterPointer.layer.position = CGPoint(x:center.x + meterPointer.bounds.width/2, y:center.y)
-        }
+        correctMeterPointerPosition()
         
         let oneAngle = CGFloat.pi / CGFloat(6)
         let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
@@ -221,6 +224,10 @@ class DashboardViewController: UIViewController {
         keyFrameAnimation.isRemovedOnCompletion = true
         wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
         wheelPoint.layer.position = path.currentPoint
+    }
+    
+    private func correctMeterPointerPosition() {
+        meterPointer.layer.position = CGPoint(x:center.x + meterPointer.bounds.width/2, y:center.y)
     }
     
     private func playSound() {
