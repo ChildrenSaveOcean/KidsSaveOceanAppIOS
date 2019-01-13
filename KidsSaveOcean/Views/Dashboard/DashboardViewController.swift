@@ -9,14 +9,16 @@
 import UIKit
 import AVFoundation
 
+//typealias DashboardTopIconType = UIButton
+
 class DashboardViewController: UIViewController {
 
-    @IBOutlet weak var topTaskIcon1: UIButton!
-    @IBOutlet weak var topTaskIcon2: UIButton!
-    @IBOutlet weak var topTaskIcon3: UIButton!
-    @IBOutlet weak var topTaskIcon4: UIButton!
-    @IBOutlet weak var topTaskIcon5: UIButton!
-    @IBOutlet weak var topTaskIcon6: UIButton!
+    @IBOutlet weak var topTaskIcon1: DashboardTopIcon!
+    @IBOutlet weak var topTaskIcon2: DashboardTopIcon!
+    @IBOutlet weak var topTaskIcon3: DashboardTopIcon!
+    @IBOutlet weak var topTaskIcon4: DashboardTopIcon!
+    @IBOutlet weak var topTaskIcon5: DashboardTopIcon!
+    @IBOutlet weak var topTaskIcon6: DashboardTopIcon!
     
     @IBOutlet weak var meterPointer: UIImageView!
     @IBOutlet weak var wheelPoint: UIImageView!
@@ -43,8 +45,18 @@ class DashboardViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
-    lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3,  self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
     
+    let taskScope = ["Research plastic ocean pollution",
+                 "Write your goverment a letter",
+                 "Spread Fatechanger by sharing",
+                 "Start a letter writing campaign",
+                 "Seek change throuhg local goverment",
+                 "Taks part in or orgonize a protest"]
+    
+    var completionTasksStates = Settings.getCompletionTasksStatus()
+    
+    lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3,  self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
+
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +70,6 @@ class DashboardViewController: UIViewController {
         } catch {
             return
         }
-
     }
     
     override func awakeFromNib() {
@@ -75,8 +86,8 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print("aaaaa")
-        //chooseTaskWithNum(0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
+        setUpTopIcons()
+        chooseTaskWithNum(0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
     }
     
     // MARK: actions methods
@@ -109,7 +120,14 @@ class DashboardViewController: UIViewController {
         // show custom alert view
     }
     
-
+    @IBAction func howToAction(_ sender: Any) {
+        print("HOW TO?")
+    }
+    
+    @IBAction func completeAction(_ sender: Any) {
+        print("DID IT?")
+    }
+    
     // MARK: Private methods
     private func chooseTaskWithNum(_ num:Int) {
         
@@ -118,45 +136,51 @@ class DashboardViewController: UIViewController {
         selectTopIcon(num)
         switchWheelPointerPosition(num)
         rotateMeterPointer(num)
-        // rotate Meter Pointer
-        // show Task on the task label
+        setTaskLabel(num)
+        setUpDidItSection(num)
+        
         // change target for howButton
-        
+        setUpHowToButton(num)
+
         playSound()
-        
-        // completed or not:
-        //    change color of icon , add halo,
-        //    show completed Image (fist)
-        //    completed Label text
-        //    set didItButton title
-        
         previousTaskSwitched = num
     }
     
+    private func setUpTopIcons() {
+        for (num, icon) in topIcons.enumerated() {
+            icon?.completed = completionTasksStates[num]
+            icon?.setUnselected()
+        }
+    }
+    
+    private func setUpStateOfCompletion(_ num:Int) {
+        
+    }
+    
+    private func setTaskLabel(_ num:Int) {
+        taskLabel.text = taskScope[num]
+    }
+    
+    private func setUpDidItSection(_ num:Int) {
+        if completionTasksStates[num] {
+            completedFistImage.image = #imageLiteral(resourceName: "fist_xvmush")
+            didItButton.setTitle("Not yet", for: .normal)
+        } else {
+            completedFistImage.image = #imageLiteral(resourceName: "Fist grey")
+            didItButton.setTitle("I did it!", for: .normal)
+        }
+    }
+    
+    private func setUpHowToButton(_ num:Int) {
+        
+    }
+    
     private func selectTopIcon(_ num:Int) {
-        
-        /*Peder [3:15 PM]
-        1) if selected and incomplete: halo added, background white, icon red
-        2) I selected and complete: halo, background white, icon blue
-        3) If unselected and incomplete: background darker, icon red
-        4) If unselected and complete: background white, icon blue */
-        
-        let icon:UIButton = topIcons[num]!
-        icon.setImage(#imageLiteral(resourceName: "dashboardIconRed"), for: .normal)
-        icon.backgroundColor = .clear
-        icon.layer.shadowColor = UIColor.white.cgColor
-        icon.layer.shadowRadius = 15.0
-        icon.layer.shadowOpacity = 1.0
-        icon.layer.shadowOffset = CGSize(width: 2, height: 2)
-        icon.layer.masksToBounds = false
+        topIcons[num]!.setSelected()
         
         // clear previous icon
         if previousTaskSwitched < 0 { return }
-        let previousIcon:UIButton = topIcons[previousTaskSwitched]!
-        previousIcon.setImage(#imageLiteral(resourceName: "dashboardIconRedNotFinished"), for: .normal)
-        previousIcon.layer.shadowRadius = 0
-        previousIcon.layer.shadowOpacity = 0
-        previousIcon.layer.shadowOffset = .zero
+        topIcons[previousTaskSwitched]!.setUnselected()
     }
     
     lazy var center = self.meterPointer.layer.position
