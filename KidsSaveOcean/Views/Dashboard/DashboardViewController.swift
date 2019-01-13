@@ -191,7 +191,9 @@ class DashboardViewController: UIViewController {
     private func rotateMeterPointer() {
         
         meterPointer.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        meterPointer.layer.position = CGPoint(x:center.x + meterPointer.bounds.width/2, y:center.y)
+        if meterPointer.layer.position == center {
+            meterPointer.layer.position = CGPoint(x:center.x + meterPointer.bounds.width/2, y:center.y)
+        }
         
         let oneAngle = CGFloat.pi / CGFloat(6)
         let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
