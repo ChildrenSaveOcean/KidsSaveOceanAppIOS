@@ -32,6 +32,7 @@ class DashboardTopIcon: UIButton {
         layer.shadowOpacity = 1.0
         layer.shadowOffset = CGSize(width: 2, height: 2)
         layer.masksToBounds = false
+        
     }
     
     /* Peder [3:15 PM]

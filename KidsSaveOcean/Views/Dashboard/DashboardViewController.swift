@@ -9,8 +9,6 @@
 import UIKit
 import AVFoundation
 
-//typealias DashboardTopIconType = UIButton
-
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var topTaskIcon1: DashboardTopIcon!
@@ -34,9 +32,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var actionAlertButton: UIButton!
     
     @IBOutlet weak var wheelPositionButton1: UIButton!
-    
     @IBOutlet weak var wheelPositionButton2: UIButton!
-    
     @IBOutlet weak var wheelPositionButton3: UIButton!
     @IBOutlet weak var wheelPositionButton4: UIButton!
     @IBOutlet weak var wheelPositionButton5: UIButton!
@@ -83,10 +79,6 @@ class DashboardViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         setUpTopIcons()
         let firstIncompetedTask = completionTasksStates.firstIndex(of: false)
         chooseTaskWithNum(firstIncompetedTask ?? 0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
@@ -141,7 +133,6 @@ class DashboardViewController: UIViewController {
     private func chooseTaskWithNum(_ num:Int) {
         
         if num == currentTaskSwitched {
-            correctMeterPointerPosition()
             selectTopIcon()
             return
         }
@@ -187,17 +178,14 @@ class DashboardViewController: UIViewController {
     
     private func selectTopIcon() {
         topIcons[currentTaskSwitched]!.setSelected()
-        
         // clear previous icon
-        if previousTaskSwitched < 0 { return }
-        topIcons[previousTaskSwitched]!.setUnselected()
+        if topIcons.indices.contains(previousTaskSwitched) {
+            topIcons[previousTaskSwitched]!.setUnselected()
+        }
     }
     
     lazy var center = self.meterPointer.layer.position
     private func rotateMeterPointer() {
-        
-        meterPointer.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
-        correctMeterPointerPosition()
         
         let oneAngle = CGFloat.pi / CGFloat(6)
         let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
@@ -225,10 +213,6 @@ class DashboardViewController: UIViewController {
         keyFrameAnimation.isRemovedOnCompletion = true
         wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
         wheelPoint.layer.position = path.currentPoint
-    }
-    
-    private func correctMeterPointerPosition() {
-        meterPointer.layer.position = CGPoint(x:center.x + meterPointer.bounds.width/2, y:center.y)
     }
     
     private func playSound() {
