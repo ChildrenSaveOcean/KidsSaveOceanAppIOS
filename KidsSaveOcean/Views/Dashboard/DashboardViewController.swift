@@ -58,7 +58,6 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         do {
             guard let url = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else { return }
             audioPlayer = try AVAudioPlayer(contentsOf: url)
@@ -80,8 +79,13 @@ class DashboardViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpTopIcons()
-        let firstIncompetedTask = completionTasksStates.firstIndex(of: false)
-        chooseTaskWithNum(firstIncompetedTask ?? 0) // it call this function from viewDidAppear, the wheelPointer will be moved to the start position
+        let firstIncompetedTask = self.completionTasksStates.firstIndex(of: false)
+        self.chooseTaskWithNum(firstIncompetedTask ?? 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        switchWheelPointerPosition(animated: false)
     }
     
     // MARK: actions methods
@@ -141,7 +145,7 @@ class DashboardViewController: UIViewController {
         currentTaskSwitched = num
         
         selectTopIcon()
-        switchWheelPointerPosition()
+        switchWheelPointerPosition(animated: true)
         rotateMeterPointer()
         setTaskLabel()
         setUpDidItSection()
@@ -166,9 +170,11 @@ class DashboardViewController: UIViewController {
         if completionTasksStates[currentTaskSwitched] {
             completedFistImage.image = #imageLiteral(resourceName: "fist_xvmush")
             didItButton.setTitle("Not yet", for: .normal)
+            completedLabel.text = "Completed!"
         } else {
             completedFistImage.image = #imageLiteral(resourceName: "Fist grey")
             didItButton.setTitle("I did it!", for: .normal)
+            completedLabel.text = "Completed?"
         }
     }
     
@@ -184,8 +190,7 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    lazy var center = self.meterPointer.layer.position
-    private func rotateMeterPointer() {
+   private func rotateMeterPointer() {
         
         let oneAngle = CGFloat.pi / CGFloat(6)
         let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
@@ -195,7 +200,8 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    private func switchWheelPointerPosition() {
+    private func switchWheelPointerPosition(animated:Bool?) {
+        
         let keyFrameAnimation = CAKeyframeAnimation()
         let path = CGMutablePath()
         
@@ -211,7 +217,9 @@ class DashboardViewController: UIViewController {
         keyFrameAnimation.path = path
         keyFrameAnimation.duration = 0.2 * Double(abs(currentTaskSwitched - previousTaskSwitched))
         keyFrameAnimation.isRemovedOnCompletion = true
-        wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
+        if animated! {
+            wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
+        }
         wheelPoint.layer.position = path.currentPoint
     }
     
