@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DashboardTopIcon: UIButton {
 
-    var completed:Bool = false /*{
-        didSet {
-            setSelected()
+    var completed:Bool = false
+    var audioPlayer:AVAudioPlayer? = { () -> AVAudioPlayer? in
+        do {
+            guard let soundURL = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else {return nil}
+            let audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer.numberOfLoops = 1
+            audioPlayer.prepareToPlay()
+            return audioPlayer
+        } catch {
+            return nil
         }
-    }*/
+    }()
     
     /*Peder [3:15 PM]
      1) if selected and incomplete: halo added, background white, icon red
@@ -32,7 +40,6 @@ class DashboardTopIcon: UIButton {
         layer.shadowOpacity = 1.0
         layer.shadowOffset = CGSize(width: 2, height: 2)
         layer.masksToBounds = false
-        
     }
     
     /* Peder [3:15 PM]
@@ -48,5 +55,21 @@ class DashboardTopIcon: UIButton {
         layer.shadowRadius = 0
         layer.shadowOpacity = 0
         layer.shadowOffset = .zero
+    }
+    
+    private func setUpPlayer() {
+        do {
+            guard let soundURL = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else {return}
+            let audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer.numberOfLoops = 1
+            audioPlayer.prepareToPlay()
+            self.audioPlayer = audioPlayer
+        } catch {
+            return
+        }
+    }
+    
+    func playSound() {
+        audioPlayer?.play()
     }
 }

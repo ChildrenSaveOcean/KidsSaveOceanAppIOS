@@ -38,7 +38,6 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var wheelPositionButton5: UIButton!
     @IBOutlet weak var wheelPositionButton6: UIButton!
     
-    var audioPlayer = AVAudioPlayer()
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
@@ -57,15 +56,6 @@ class DashboardViewController: UIViewController {
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do {
-            guard let url = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else { return }
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.prepareToPlay()
-            audioPlayer.numberOfLoops = 1
-        } catch {
-            return
-        }
     }
     
     override func awakeFromNib() {
@@ -157,7 +147,6 @@ class DashboardViewController: UIViewController {
         
         // change target for howButton
         setUpHowToButton()
-        playSound()
     }
     
     private func setUpTopIcons() {
@@ -188,7 +177,9 @@ class DashboardViewController: UIViewController {
     }
     
     private func selectTopIcon() {
-        topIcons[currentTaskSwitched]!.setSelected()
+        guard let selectedIcon = topIcons[currentTaskSwitched] else { return }
+        selectedIcon.playSound()
+        selectedIcon.setSelected()
         // clear previous icon
         if topIcons.indices.contains(previousTaskSwitched) {
             topIcons[previousTaskSwitched]!.setUnselected()
@@ -225,9 +216,5 @@ class DashboardViewController: UIViewController {
         keyFrameAnimation.isRemovedOnCompletion = true
         wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
         wheelPoint.layer.position = path.currentPoint
-    }
-    
-    private func playSound() {
-        audioPlayer.play()
     }
 }
