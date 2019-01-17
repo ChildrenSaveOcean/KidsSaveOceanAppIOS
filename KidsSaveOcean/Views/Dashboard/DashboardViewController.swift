@@ -76,6 +76,11 @@ class DashboardViewController: UIViewController {
         placeholder.removeFromSuperview()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpTopIcons()
@@ -85,7 +90,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        switchWheelPointerPosition(animated: false)
+        switchWheelPointerPosition(animated: false) // need to set wheelPointer to its position which broken after re-layout subviews
     }
     
     // MARK: actions methods
@@ -210,16 +215,15 @@ class DashboardViewController: UIViewController {
         
         let clockWise = previousTaskSwitched > currentTaskSwitched
         let startAngle = halfOfPi + oneAngle * CGFloat(previousTaskSwitched + 1)
-        let endAngle = startAngle + oneAngle * CGFloat(currentTaskSwitched - previousTaskSwitched)
-        
-        path.addArc(center: center, radius: 25, startAngle: startAngle, endAngle: endAngle, clockwise: clockWise)
+        let endAngle = startAngle + oneAngle * CGFloat(currentTaskSwitched - previousTaskSwitched)        
+        let radius = 25 * KSOLayoutConstraint.screenDimensionCorrectionFactor
+
+        path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockWise)
         
         keyFrameAnimation.path = path
-        keyFrameAnimation.duration = 0.2 * Double(abs(currentTaskSwitched - previousTaskSwitched))
+        keyFrameAnimation.duration = animated! ? 0.2 * Double(abs(currentTaskSwitched - previousTaskSwitched)) : 0.01
         keyFrameAnimation.isRemovedOnCompletion = true
-        if animated! {
-            wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
-        }
+        wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
         wheelPoint.layer.position = path.currentPoint
     }
     

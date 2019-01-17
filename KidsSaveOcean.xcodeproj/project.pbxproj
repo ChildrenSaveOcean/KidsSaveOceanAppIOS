@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
+		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20352170F12200069294 /* HomeScoreTableViewCell.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		10C28DDC38CD641F55A470AD /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		163D20352170F12200069294 /* HomeScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				165FBFA320DB567900DB556F /* UIImage+Extentions.swift */,
 				163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */,
 				C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */,
+				161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */,
 				16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */,
 				16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */,
+				161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */,
 				1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */,
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
 				1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */,
