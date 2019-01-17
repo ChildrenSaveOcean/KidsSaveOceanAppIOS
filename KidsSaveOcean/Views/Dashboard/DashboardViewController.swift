@@ -53,9 +53,15 @@ class DashboardViewController: UIViewController {
     
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3,  self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
 
+    var audioPlayers = [AVAudioPlayer]()
+    
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        for _ in 0...2 {
+            guard let audioPlayer = setUpAudioPlayer() else {continue}
+            audioPlayers.append(audioPlayer)
+        }
     }
     
     override func awakeFromNib() {
@@ -140,6 +146,7 @@ class DashboardViewController: UIViewController {
         currentTaskSwitched = num
         
         selectTopIcon()
+        playSound()
         switchWheelPointerPosition(animated: true)
         rotateMeterPointer()
         setTaskLabel()
@@ -178,7 +185,6 @@ class DashboardViewController: UIViewController {
     
     private func selectTopIcon() {
         guard let selectedIcon = topIcons[currentTaskSwitched] else { return }
-        selectedIcon.playSound()
         selectedIcon.setSelected()
         // clear previous icon
         if topIcons.indices.contains(previousTaskSwitched) {
@@ -216,5 +222,25 @@ class DashboardViewController: UIViewController {
         keyFrameAnimation.isRemovedOnCompletion = true
         wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
         wheelPoint.layer.position = path.currentPoint
+    }
+    
+    private func setUpAudioPlayer() -> AVAudioPlayer? {
+        do {
+            guard let soundURL = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else {return nil}
+            let audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer.numberOfLoops = 1
+            audioPlayer.prepareToPlay()
+            return audioPlayer
+        } catch {
+            return nil
+        }
+    }
+    
+    private func playSound() {
+        let audioPlayerNum = currentTaskSwitched.remainderReportingOverflow(dividingBy: 3).partialValue
+        guard audioPlayers.indices.contains(audioPlayerNum),
+            let audioPlayer:AVAudioPlayer = audioPlayers[audioPlayerNum]
+            else { return }
+        audioPlayer.play()
     }
 }
