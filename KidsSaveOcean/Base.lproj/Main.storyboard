@@ -486,60 +486,17 @@
             </objects>
             <point key="canvasLocation" x="-851" y="118"/>
         </scene>
-        <!--Donate-->
+        <!--Dashboard-->
         <scene sceneID="eEP-wK-JFh">
             <objects>
-                <viewController title="Donate" id="sJp-3E-rs5" customClass="KSODonateViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dashboard" id="sJp-3E-rs5" customClass="DashboardViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e8f-2T-EDf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkJellyFish" translatesAutoresizingMaskIntoConstraints="NO" id="31g-GU-4ci">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW CAN I HELP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRg-Ti-QUN">
-                                <rect key="frame" x="20" y="61" width="394" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-v0-JFj">
-                                <rect key="frame" x="20" y="77" width="394" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donation are tax-deductible nd 100% of proceeds to go to support saving the ocean" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9N-eU-5JX">
-                                <rect key="frame" x="20" y="112" width="394" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="lzD-z1-IAb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="s9N-eU-5JX" firstAttribute="trailing" secondItem="tKN-v0-JFj" secondAttribute="trailing" id="1tA-qn-RIK"/>
-                            <constraint firstItem="s9N-eU-5JX" firstAttribute="leading" secondItem="tKN-v0-JFj" secondAttribute="leading" id="5uO-GU-l6h"/>
-                            <constraint firstItem="31g-GU-4ci" firstAttribute="top" secondItem="lRg-Ti-QUN" secondAttribute="bottom" constant="-77" id="BA3-RT-UoE"/>
-                            <constraint firstItem="31g-GU-4ci" firstAttribute="centerX" secondItem="e8f-2T-EDf" secondAttribute="centerX" id="G17-KY-ZrS"/>
-                            <constraint firstAttribute="bottom" secondItem="31g-GU-4ci" secondAttribute="bottom" id="GSy-a7-8Nu"/>
-                            <constraint firstItem="tKN-v0-JFj" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="HZN-Nm-x5C"/>
-                            <constraint firstItem="lRg-Ti-QUN" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="LU6-JI-gOa"/>
-                            <constraint firstItem="31g-GU-4ci" firstAttribute="centerY" secondItem="e8f-2T-EDf" secondAttribute="centerY" id="LvF-k7-ETv"/>
-                            <constraint firstItem="lRg-Ti-QUN" firstAttribute="leading" secondItem="e8f-2T-EDf" secondAttribute="leading" constant="20" id="Yfq-F3-7F4"/>
-                            <constraint firstItem="31g-GU-4ci" firstAttribute="top" secondItem="e8f-2T-EDf" secondAttribute="top" id="fV9-Gr-OPy"/>
-                            <constraint firstItem="31g-GU-4ci" firstAttribute="trailing" secondItem="yEj-5v-5T9" secondAttribute="trailing" id="gKH-6p-RwK"/>
-                            <constraint firstItem="s9N-eU-5JX" firstAttribute="top" secondItem="tKN-v0-JFj" secondAttribute="bottom" constant="8" symbolic="YES" id="ioG-EO-8ch"/>
-                            <constraint firstItem="tKN-v0-JFj" firstAttribute="top" secondItem="lRg-Ti-QUN" secondAttribute="bottom" id="mDf-h9-16L"/>
-                            <constraint firstItem="tKN-v0-JFj" firstAttribute="leading" secondItem="lRg-Ti-QUN" secondAttribute="leading" id="wmQ-zm-OdY"/>
-                            <constraint firstItem="31g-GU-4ci" firstAttribute="leading" secondItem="yEj-5v-5T9" secondAttribute="leading" id="yIo-Xn-hac"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yEj-5v-5T9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="DonateTabItem" id="qRS-gx-OGc"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboardTabItem" id="qRS-gx-OGc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Z9-PlQ" sceneMemberID="firstResponder"/>
             </objects>
@@ -1169,13 +1126,12 @@
         <image name="ClownFish" width="150" height="183.66667175292969"/>
         <image name="CountryContactsWhales" width="150" height="128.66667175292969"/>
         <image name="CountryDetailsHeaderImage" width="150" height="124.5"/>
-        <image name="DonateTabItem" width="48" height="32"/>
         <image name="HomeTabItem" width="48" height="32"/>
         <image name="MapTabItem" width="48" height="32"/>
         <image name="NewsTabItem" width="48" height="32"/>
-        <image name="PinkJellyFish" width="759" height="1249"/>
         <image name="ResourcesTabItem" width="48" height="32"/>
         <image name="Surfer" width="343" height="210"/>
+        <image name="dashboardTabItem" width="48" height="32"/>
         <image name="deadBird" width="200" height="183"/>
         <image name="mapViewB-1" width="433" height="287"/>
         <image name="overlay" width="343" height="412"/>

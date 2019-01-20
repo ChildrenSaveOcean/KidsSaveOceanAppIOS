@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
+		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20352170F12200069294 /* HomeScoreTableViewCell.swift */; };
@@ -15,6 +16,7 @@
 		163D203A217253E500069294 /* CountryScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D2039217253E500069294 /* CountryScore.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
+		164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */; };
 		16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */; };
 		16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16559BD520ADF9D5002D4F78 /* Main.storyboard */; };
 		16559BD920ADF9D5002D4F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16559BD820ADF9D5002D4F78 /* Assets.xcassets */; };
@@ -30,6 +32,9 @@
 		1674330E20FED2E300F929C0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674330D20FED2E300F929C0 /* Reachability.swift */; };
 		16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768110215AD41D00EE4E1F /* HomeTableViewController.swift */; };
 		16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768112215AD71100EE4E1F /* HomeTableViewCell.swift */; };
+		1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679B06921E935D100C15F2A /* DashboardViewController.swift */; };
+		1679B06C21E935D100C15F2A /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06A21E935D100C15F2A /* DashboardViewController.xib */; };
+		1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06D21EA29E100C15F2A /* knobClick.mp3 */; };
 		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
@@ -75,6 +80,7 @@
 /* Begin PBXFileReference section */
 		10C28DDC38CD641F55A470AD /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		163D20352170F12200069294 /* HomeScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 		163D2039217253E500069294 /* CountryScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryScore.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
+		164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopIcon.swift; sourceTree = "<group>"; };
 		16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSaveOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16559BD620ADF9D5002D4F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +110,9 @@
 		1674330D20FED2E300F929C0 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		16768110215AD41D00EE4E1F /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		16768112215AD71100EE4E1F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		1679B06921E935D100C15F2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		1679B06A21E935D100C15F2A /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		1679B06D21EA29E100C15F2A /* knobClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knobClick.mp3; sourceTree = "<group>"; };
 		16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticDataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
 		1B9B46CE9FFC13368BB0989F /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +238,7 @@
 				16CF5A2720AF1E4C00C4E57E /* Models */,
 				16CF5A2620AF1E4100C4E57E /* Views */,
 				16559BD520ADF9D5002D4F78 /* Main.storyboard */,
+				1679B06D21EA29E100C15F2A /* knobClick.mp3 */,
 				16559BD820ADF9D5002D4F78 /* Assets.xcassets */,
 				7CE89F9221A1FF5B00C2D6DA /* Supporting Files */,
 				16559BDA20ADF9D5002D4F78 /* LaunchScreen.storyboard */,
@@ -255,6 +266,16 @@
 			path = KidsSaveOceanUITests;
 			sourceTree = "<group>";
 		};
+		1679B06821E935A400C15F2A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1679B06921E935D100C15F2A /* DashboardViewController.swift */,
+				1679B06A21E935D100C15F2A /* DashboardViewController.xib */,
+				164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		16B2A6CC20BC8ADA008E24B2 /* User Type */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +288,7 @@
 		16CF5A2620AF1E4100C4E57E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1679B06821E935A400C15F2A /* Dashboard */,
 				7C7BBAC721B864CF00C48D4E /* LetterTracker */,
 				163F23A220FCFC3800022B38 /* Home */,
 				945A088F20F64355006ED13D /* Map */,
@@ -306,6 +328,7 @@
 				165FBFA320DB567900DB556F /* UIImage+Extentions.swift */,
 				163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */,
 				C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */,
+				161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -530,6 +553,8 @@
 				9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */,
 				94D572DD20EBE24D00F82932 /* KSOMediaTableViewCell.xib in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
+				1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */,
+				1679B06C21E935D100C15F2A /* DashboardViewController.xib in Resources */,
 				16559BD920ADF9D5002D4F78 /* Assets.xcassets in Resources */,
 				7CE89F9521A2005F00C2D6DA /* SF-Pro-Text-Regular.otf in Resources */,
 				16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */,
@@ -659,8 +684,10 @@
 				C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */,
 				16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */,
 				16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */,
+				161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */,
 				1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */,
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
+				1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */,
 				163D20382171ECA200069294 /* CountryLetterScoresViewModel.swift in Sources */,
 				16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */,
 				16649E9220FEC72B000BCB48 /* Settings.swift in Sources */,
@@ -671,6 +698,7 @@
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
 				1674330E20FED2E300F929C0 /* Reachability.swift in Sources */,
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
+				164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */,
 				1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */,
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,
 			);
