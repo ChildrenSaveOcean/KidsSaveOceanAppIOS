@@ -62,71 +62,20 @@ class UserTypeTableViewController: UITableViewController {
   }
   
   private func showVideo(_ videoAddressString:String) {
-    webView.frame = view.bounds
-    webView.delegate = self as UIWebViewDelegate
+    let videoViewController = UserTypeVideoViewController()
+    videoViewController.urlString = videoAddressString
+    videoViewController.delegate = self
     
-    view.addSubview(webView)
-    view.bringSubviewToFront(webView)
+    navigationController?.pushViewController(videoViewController, animated: true)
+  }
     
-    guard
-      let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoAddressString)")
-      else {
-        self.showErrorMessage("Something goes wrong with video you've choosen.\nYou can go ahead without introducing video or try again", actionString: videoAddressString)
-        return
+    internal func gotoTabViewController() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
+        self.present(tabViewController, animated: true, completion: nil)
     }
-    
-    webView.loadRequest( URLRequest(url: youtubeURL) )
-  }
   
-  private func videoHasBeenLoaded() {
-    activityIndicator.stopAnimating()
-    activityIndicator.removeFromSuperview()
-    showActionButtons()
-  }
-  
-  private func showActionButtons() {
-    let buttonsWidth:CGFloat = 100
-    let buttonsHeight:CGFloat = 50
-    let shiftY = self.view.bounds.height - 90
-    let shiftX = (self.view.bounds.width - 2*buttonsWidth)/3
-    
-    let goButton = self.createButtonWithTitle("GO AHEAD")
-    goButton.frame = CGRect(x: shiftX, y: shiftY, width:buttonsWidth, height:buttonsHeight)
-    
-    goButton.addTargetClosure { (sender) in
-      Settings.saveOnBoardingHasBeenShown()
-      self.gotoTabViewController()
-    }
-    webView.addSubview(goButton)
-    webView.bringSubviewToFront(goButton)
-    
-    let backButton = self.createButtonWithTitle("BACK")
-    backButton.frame = CGRect(x: self.view.bounds.width - buttonsWidth - shiftX, y: shiftY, width:buttonsWidth, height:buttonsHeight)
-    
-    backButton.addTargetClosure { (sender) in
-      self.webView.stopLoading()
-      self.webView.removeFromSuperview()
-    }
-    webView.addSubview(backButton)
-    webView.bringSubviewToFront(backButton)
-  }
-  
-  private func createButtonWithTitle(_ title:String) -> UIButton {
-    let button = UIButton()
-    button.backgroundColor = .gray
-    button.setTitle(title, for: .normal)
-    button.titleLabel?.textColor = .black
-    button.roundCorners()
-    return button
-  }
-  
-  private func gotoTabViewController() {
-    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
-    self.present(tabViewController, animated: true, completion: nil)
-  }
-  
-  private func showErrorMessage(_ message:String, actionString:String) {
+   func showErrorMessage(_ message:String, actionString:String) {
     
     let warnMessage = UIAlertController(title: "Warning",
                                         message: message,
@@ -147,20 +96,7 @@ class UserTypeTableViewController: UITableViewController {
   }
 }
 
-// MARK: UIWebViewDelegate
-extension UserTypeTableViewController: UIWebViewDelegate {
-  func webViewDidStartLoad(_ webView: UIWebView) {
-    activityIndicator.frame = CGRect(x:view.bounds.width/2, y:view.bounds.height/2, width:30, height:30)
-    view.addSubview(activityIndicator)
-    view.bringSubviewToFront(activityIndicator)
-    activityIndicator.startAnimating()
-  }
-  
-  func webViewDidFinishLoad(_ webView: UIWebView) {
-    videoHasBeenLoaded()
-  }
-  
-  func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-    videoHasBeenLoaded()
-  }
+// MARK: UserTypeVideoDelegate
+extension UserTypeTableViewController: UserTypeVideoDelegate {
+    
 }
