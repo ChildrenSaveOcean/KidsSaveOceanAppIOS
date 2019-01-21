@@ -28,7 +28,9 @@ final class HomeTableViewController: UITableViewController {
     tableView.separatorStyle = .none
     tableView.separatorColor = UIColor.backgroundGray
     tableView.showsVerticalScrollIndicator = false
-    tableView.rowHeight = view.bounds.height * 156/667 // (for keeping design proportions iPhone8 for cell)
+    //tableView.rowHeight = 156 //* KSOLayoutConstraint.screenDimensionCorrectionFactor
+    tableView.estimatedRowHeight = 172
+    tableView.rowHeight = UITableView.automaticDimension
     tableView.dataSource = self
     tableView.delegate   = self
   }

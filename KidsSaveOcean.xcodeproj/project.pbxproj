@@ -17,6 +17,7 @@
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
 		164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */; };
+		1651315521F4F547003EEEF5 /* UserTypeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651315421F4F547003EEEF5 /* UserTypeVideoViewController.swift */; };
 		16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */; };
 		16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16559BD520ADF9D5002D4F78 /* Main.storyboard */; };
 		16559BD920ADF9D5002D4F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16559BD820ADF9D5002D4F78 /* Assets.xcassets */; };
@@ -48,7 +49,6 @@
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */; };
 		946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946847D82139E299007A1158 /* KSOCustomMapPin.swift */; };
-		94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2BCE520C8AD7C0067C6A4 /* KSODonateViewController.swift */; };
 		94C2BCEB20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2BCEA20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift */; };
 		94D572DC20EBE24D00F82932 /* KSOMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D572DA20EBE24D00F82932 /* KSOMediaTableViewCell.swift */; };
 		94D572DD20EBE24D00F82932 /* KSOMediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D572DB20EBE24D00F82932 /* KSOMediaTableViewCell.xib */; };
@@ -89,6 +89,7 @@
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
 		164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopIcon.swift; sourceTree = "<group>"; };
+		1651315421F4F547003EEEF5 /* UserTypeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeVideoViewController.swift; sourceTree = "<group>"; };
 		16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSaveOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16559BD620ADF9D5002D4F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,7 +134,6 @@
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		946847D82139E299007A1158 /* KSOCustomMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOCustomMapPin.swift; sourceTree = "<group>"; };
-		94C2BCE520C8AD7C0067C6A4 /* KSODonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODonateViewController.swift; sourceTree = "<group>"; };
 		94C2BCEA20C8B0540067C6A4 /* KSONewsAndMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSONewsAndMediaViewController.swift; sourceTree = "<group>"; };
 		94D572DA20EBE24D00F82932 /* KSOMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMediaTableViewCell.swift; sourceTree = "<group>"; };
 		94D572DB20EBE24D00F82932 /* KSOMediaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOMediaTableViewCell.xib; sourceTree = "<group>"; };
@@ -281,6 +281,7 @@
 			children = (
 				163416FD215976E200C98646 /* UserTypeTableViewController.swift */,
 				163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */,
+				1651315421F4F547003EEEF5 /* UserTypeVideoViewController.swift */,
 			);
 			path = "User Type";
 			sourceTree = "<group>";
@@ -293,7 +294,6 @@
 				163F23A220FCFC3800022B38 /* Home */,
 				945A088F20F64355006ED13D /* Map */,
 				94C2BCE920C8B03E0067C6A4 /* Media */,
-				94C2BCE420C8AD680067C6A4 /* Donate */,
 				164D8B0D20C6BC170067EE52 /* Resources */,
 				16B2A6CC20BC8ADA008E24B2 /* User Type */,
 				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
@@ -399,14 +399,6 @@
 				C55E06FA214EE222009B7BD6 /* cells */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		94C2BCE420C8AD680067C6A4 /* Donate */ = {
-			isa = PBXGroup;
-			children = (
-				94C2BCE520C8AD7C0067C6A4 /* KSODonateViewController.swift */,
-			);
-			path = Donate;
 			sourceTree = "<group>";
 		};
 		94C2BCE920C8B03E0067C6A4 /* Media */ = {
@@ -667,6 +659,7 @@
 				16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */,
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
+				1651315521F4F547003EEEF5 /* UserTypeVideoViewController.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
@@ -676,7 +669,6 @@
 				7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */,
 				163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */,
 				16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */,
-				94C2BCE620C8AD7C0067C6A4 /* KSODonateViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
 				163D203A217253E500069294 /* CountryScore.swift in Sources */,
 				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,

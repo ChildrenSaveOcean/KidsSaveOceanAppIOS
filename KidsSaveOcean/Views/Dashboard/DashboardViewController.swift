@@ -43,11 +43,11 @@ class DashboardViewController: UIViewController {
     let halfOfPi = CGFloat.pi/CGFloat(2)
     
     let taskScope = ["Research plastic ocean pollution",
-                 "Write your goverment a letter",
+                 "Write your government a letter",
                  "Spread Fatechanger by sharing",
                  "Start a letter writing campaign",
-                 "Seek change throuhg local goverment",
-                 "Taks part in or orgonize a protest"]
+                 "Seek change through local government",
+                 "Take part in or organize a protest"]
     
     var completionTasksStates = Settings.getCompletionTasksStatus()
     
