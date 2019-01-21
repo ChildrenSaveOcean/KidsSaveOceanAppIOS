@@ -38,9 +38,9 @@ class UserTypeVideoViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activityIndicator.frame = CGRect(x:view.bounds.width/2, y:view.bounds.height/2, width:30, height:30)
         view.addSubview(activityIndicator)
         view.bringSubviewToFront(activityIndicator)
+        activityIndicator.center = view.center
         activityIndicator.alpha = 1
         activityIndicator.startAnimating()
     }
