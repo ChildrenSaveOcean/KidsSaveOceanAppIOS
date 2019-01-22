@@ -17,6 +17,9 @@
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
 		164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */; };
+		164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164F14E921F68BD400823FF3 /* Onboarding.storyboard */; };
+		164F14F521F6914D00823FF3 /* HomeScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */; };
+		164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164F14F921F6919A00823FF3 /* HomeTableViewCell.xib */; };
 		1651315521F4F547003EEEF5 /* UserTypeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651315421F4F547003EEEF5 /* UserTypeVideoViewController.swift */; };
 		16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */; };
 		16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16559BD520ADF9D5002D4F78 /* Main.storyboard */; };
@@ -89,6 +92,9 @@
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
 		164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopIcon.swift; sourceTree = "<group>"; };
+		164F14E921F68BD400823FF3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScoreTableViewCell.xib; sourceTree = "<group>"; };
+		164F14F921F6919A00823FF3 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		1651315421F4F547003EEEF5 /* UserTypeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeVideoViewController.swift; sourceTree = "<group>"; };
 		16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSaveOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,8 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				16768110215AD41D00EE4E1F /* HomeTableViewController.swift */,
-				16768112215AD71100EE4E1F /* HomeTableViewCell.swift */,
-				163D20352170F12200069294 /* HomeScoreTableViewCell.swift */,
+				164F14ED21F690CA00823FF3 /* Home TableView Cells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -202,6 +207,35 @@
 				1617111021E25B5300BE9B2E /* ResourcesViewController.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		164F14E621F68B1C00823FF3 /* StartPages */ = {
+			isa = PBXGroup;
+			children = (
+				163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */,
+			);
+			path = StartPages;
+			sourceTree = "<group>";
+		};
+		164F14EC21F6900900823FF3 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				164F14E921F68BD400823FF3 /* Onboarding.storyboard */,
+				16B2A6CC20BC8ADA008E24B2 /* User Type */,
+				164F14E621F68B1C00823FF3 /* StartPages */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		164F14ED21F690CA00823FF3 /* Home TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				16768112215AD71100EE4E1F /* HomeTableViewCell.swift */,
+				164F14F921F6919A00823FF3 /* HomeTableViewCell.xib */,
+				164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */,
+				163D20352170F12200069294 /* HomeScoreTableViewCell.swift */,
+			);
+			path = "Home TableView Cells";
 			sourceTree = "<group>";
 		};
 		16559BC320ADF9D5002D4F78 = {
@@ -289,15 +323,14 @@
 		16CF5A2620AF1E4100C4E57E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
 				1679B06821E935A400C15F2A /* Dashboard */,
 				7C7BBAC721B864CF00C48D4E /* LetterTracker */,
 				163F23A220FCFC3800022B38 /* Home */,
 				945A088F20F64355006ED13D /* Map */,
 				94C2BCE920C8B03E0067C6A4 /* Media */,
 				164D8B0D20C6BC170067EE52 /* Resources */,
-				16B2A6CC20BC8ADA008E24B2 /* User Type */,
-				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
-				163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */,
+				164F14EC21F6900900823FF3 /* OnBoarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -542,6 +575,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */,
+				164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */,
 				9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */,
 				94D572DD20EBE24D00F82932 /* KSOMediaTableViewCell.xib in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
@@ -549,6 +584,7 @@
 				1679B06C21E935D100C15F2A /* DashboardViewController.xib in Resources */,
 				16559BD920ADF9D5002D4F78 /* Assets.xcassets in Resources */,
 				7CE89F9521A2005F00C2D6DA /* SF-Pro-Text-Regular.otf in Resources */,
+				164F14F521F6914D00823FF3 /* HomeScoreTableViewCell.xib in Resources */,
 				16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */,
 				C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */,
 			);

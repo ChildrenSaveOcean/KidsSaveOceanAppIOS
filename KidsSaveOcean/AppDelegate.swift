@@ -19,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         //# MARK: - Check if user already opened the tutorial screen
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if Settings.isOnBoardingHasBeenShown() == true {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
             window?.rootViewController = tabViewController
         } else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: Settings.onBoardingStoryboardName, bundle: nil)
             let onboardingViewController = storyBoard.instantiateViewController(withIdentifier: Settings.onBoardingViewControllerId)
             window?.rootViewController = onboardingViewController
         }

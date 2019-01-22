@@ -23,7 +23,7 @@ final class KSOStartPageViewController: UIPageViewController {
     private var pageControl = UIPageControl()
     
     private func getViewController(withIdentifier identifier: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)
+        return UIStoryboard(name: Settings.onBoardingStoryboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
     }
     
     override func viewDidLoad() {
