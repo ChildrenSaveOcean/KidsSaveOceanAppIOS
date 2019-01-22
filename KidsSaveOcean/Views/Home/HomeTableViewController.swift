@@ -28,11 +28,14 @@ final class HomeTableViewController: UITableViewController {
     tableView.separatorStyle = .none
     tableView.separatorColor = UIColor.backgroundGray
     tableView.showsVerticalScrollIndicator = false
-    //tableView.rowHeight = 156 //* KSOLayoutConstraint.screenDimensionCorrectionFactor
     tableView.estimatedRowHeight = 172
     tableView.rowHeight = UITableView.automaticDimension
     tableView.dataSource = self
     tableView.delegate   = self
+    
+    self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: homeCellIdenteficator)
+    self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
+    
   }
     
   override func viewWillDisappear(_ animated: Bool) {

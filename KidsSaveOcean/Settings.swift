@@ -14,6 +14,8 @@ class Settings:NSObject {
     static let onBoardingViewControllerId = "onBoardingViewController"
     static let onBoardingKey = "onBoarding"
     
+    static let onBoardingStoryboardName = "Onboarding"
+    
     static let completionStatusKey = "completionStatusKey"
     
     class func saveOnBoardingHasBeenShown() {
