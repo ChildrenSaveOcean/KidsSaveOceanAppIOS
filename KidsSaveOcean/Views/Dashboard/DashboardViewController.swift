@@ -38,6 +38,9 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var wheelPositionButton5: UIButton!
     @IBOutlet weak var wheelPositionButton6: UIButton!
     
+    @IBOutlet weak var wheelPointConstraintX: NSLayoutConstraint!
+    @IBOutlet weak var wheelPointConstraintY: NSLayoutConstraint!
+    
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
@@ -58,27 +61,28 @@ class DashboardViewController: UIViewController {
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.backgroundColor = .clear
+        
         for _ in 0...2 {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        let placeholder = self.view!
-        Bundle.main.loadNibNamed("DashboardViewController", owner: self, options: nil)
-        placeholder.superview?.insertSubview(self.view, aboveSubview: placeholder)
-        placeholder.removeFromSuperview()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        view.layoutIfNeeded()
+        
         setUpTopIcons()
         let firstIncompetedTask = self.completionTasksStates.firstIndex(of: false)
         self.chooseTaskWithNum(firstIncompetedTask ?? 0)
@@ -86,7 +90,11 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        switchWheelPointerPosition(animated: false) // need to set wheelPointer to its position which broken after re-layout subviews
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: actions methods
@@ -120,7 +128,28 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func howToAction(_ sender: Any) {
-        print("HOW TO?")
+        let taskViewControllerIds = ["task4ViewControllerId","task5ViewControllerId","task6ViewControllerId"]
+        switch self.currentTaskSwitched {
+        case 0:
+            self.tabBarController?.selectedIndex = 3
+            
+        case 1:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: Settings.countryContactController)
+            navigationController?.pushViewController(countryContactsViewController, animated: true)
+            
+        case 2:
+            break
+            
+        case 3, 4, 5:
+            let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+            let taskViewController = storyboard.instantiateViewController(withIdentifier: "task\(self.currentTaskSwitched + 1)ViewControllerId")
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+            
+        default:
+            break
+        }
     }
     
     @IBAction func completeAction(_ sender: Any) {
@@ -147,13 +176,10 @@ class DashboardViewController: UIViewController {
         
         selectTopIcon()
         playSound()
-        switchWheelPointerPosition(animated: true)
         rotateMeterPointer()
         setTaskLabel()
         setUpDidItSection()
-        
-        // change target for howButton
-        setUpHowToButton()
+        switchWheelPointerPosition()
     }
     
     private func setUpTopIcons() {
@@ -179,10 +205,6 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    private func setUpHowToButton() {
-        
-    }
-    
     private func selectTopIcon() {
         guard let selectedIcon = topIcons[currentTaskSwitched] else { return }
         selectedIcon.setSelected()
@@ -202,11 +224,10 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    private func switchWheelPointerPosition(animated:Bool?) {
-        
+    private func switchWheelPointerPosition() {
         let keyFrameAnimation = CAKeyframeAnimation()
         let path = CGMutablePath()
-        
+
         let center = CGPoint(x:wheelVolume.center.x, y:wheelVolume.center.y - 3)
         let oneAngle = 2 * CGFloat.pi / CGFloat(7)
         
@@ -218,10 +239,12 @@ class DashboardViewController: UIViewController {
         path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockWise)
         
         keyFrameAnimation.path = path
-        keyFrameAnimation.duration = animated! ? 0.2 * Double(abs(currentTaskSwitched - previousTaskSwitched)) : 0.01
+        keyFrameAnimation.duration = 0.2 * Double(abs(currentTaskSwitched - previousTaskSwitched))
         keyFrameAnimation.isRemovedOnCompletion = true
         wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
-        wheelPoint.layer.position = path.currentPoint
+        
+        wheelPointConstraintX.constant = path.currentPoint.x - wheelPoint.bounds.width/2
+        wheelPointConstraintY.constant = path.currentPoint.y - wheelPoint.bounds.width/2
     }
     
     private func setUpAudioPlayer() -> AVAudioPlayer? {
