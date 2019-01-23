@@ -27,6 +27,7 @@
 		16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16559BDA20ADF9D5002D4F78 /* LaunchScreen.storyboard */; };
 		16559BE720ADF9D5002D4F78 /* KidsSaveOceanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BE620ADF9D5002D4F78 /* KidsSaveOceanTests.swift */; };
 		16559BF220ADF9D6002D4F78 /* KidsSaveOceanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16559BF120ADF9D6002D4F78 /* KidsSaveOceanUITests.swift */; };
+		16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16573D3621F7C70900332FFF /* Dashboard.storyboard */; };
 		165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA120DB565500DB556F /* UIColor+Extentions.swift */; };
 		165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA320DB567900DB556F /* UIImage+Extentions.swift */; };
 		16649E9220FEC72B000BCB48 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16649E9120FEC72B000BCB48 /* Settings.swift */; };
@@ -108,6 +109,7 @@
 		16559BED20ADF9D6002D4F78 /* KidsSaveOceanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidsSaveOceanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BF120ADF9D6002D4F78 /* KidsSaveOceanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsSaveOceanUITests.swift; sourceTree = "<group>"; };
 		16559BF320ADF9D6002D4F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16573D3621F7C70900332FFF /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		165FBFA120DB565500DB556F /* UIColor+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extentions.swift"; sourceTree = "<group>"; };
 		165FBFA320DB567900DB556F /* UIImage+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extentions.swift"; sourceTree = "<group>"; };
 		16649E9120FEC72B000BCB48 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			children = (
 				1679B06921E935D100C15F2A /* DashboardViewController.swift */,
 				1679B06A21E935D100C15F2A /* DashboardViewController.xib */,
+				16573D3621F7C70900332FFF /* Dashboard.storyboard */,
 				164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */,
 			);
 			path = Dashboard;
@@ -579,6 +582,7 @@
 				164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */,
 				9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */,
 				94D572DD20EBE24D00F82932 /* KSOMediaTableViewCell.xib in Resources */,
+				16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
 				1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */,
 				1679B06C21E935D100C15F2A /* DashboardViewController.xib in Resources */,

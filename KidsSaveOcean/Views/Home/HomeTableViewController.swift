@@ -113,7 +113,7 @@ final class HomeTableViewController: UITableViewController {
       
     case 1:
       let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: "CountryContactsViewController")
+      let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: Settings.countryContactController)
       navigationController?.pushViewController(countryContactsViewController, animated: true)
       
     case 3:

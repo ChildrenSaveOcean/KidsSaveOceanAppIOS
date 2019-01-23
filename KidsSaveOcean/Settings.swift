@@ -12,6 +12,7 @@ class Settings:NSObject {
     
     static let tabViewControllerId = "tabViewController"
     static let onBoardingViewControllerId = "onBoardingViewController"
+    static let countryContactController = "CountryContactsViewController"
     static let onBoardingKey = "onBoarding"
     
     static let onBoardingStoryboardName = "Onboarding"
