@@ -139,7 +139,10 @@ class DashboardViewController: UIViewController {
             navigationController?.pushViewController(countryContactsViewController, animated: true)
             
         case 2:
-            break
+            let link = "test"
+            let objectsToShare = [link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
             
         case 3, 4, 5:
             let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
