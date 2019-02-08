@@ -2,49 +2,25 @@
 //  UserTypeVideoViewController.swift
 //  KidsSaveOcean
 //
-//  Created by Maria Soboleva on 1/20/19.
+//  Created by Maria Soboleva on 2/8/19.
 //  Copyright © 2019 KidsSaveOcean. All rights reserved.
 //
 
 import UIKit
+import WebKit
+
 
 protocol UserTypeVideoDelegate {
     func showErrorMessage(_ message:String, actionString:String)
     func gotoTabViewController()
 }
 
-class UserTypeVideoViewController: UIViewController {
-    
+class UserTypeVideoViewController: WebIntegrationViewController {
+
     var delegate:UserTypeVideoDelegate?
-    var urlString:String = ""
-    let webView = UIWebView()
-    let activityIndicator = UIActivityIndicatorView(style:.gray)
-    
-    override func viewDidLoad() {
-        webView.frame = view.bounds
-        webView.delegate = self as UIWebViewDelegate
-        
-        view.addSubview(webView)
-        
-        guard
-            let youtubeURL = URL(string: "https://www.youtube.com/embed/\(urlString)")
-            else {
-                self.delegate?.showErrorMessage("Something goes wrong with video you've choosen.\nYou can go ahead without introducing video or try again", actionString: urlString)
-                return
-        }
-        
-        webView.loadRequest( URLRequest(url: youtubeURL) )
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        view.addSubview(activityIndicator)
-        view.bringSubviewToFront(activityIndicator)
-        activityIndicator.center = view.center
-        activityIndicator.alpha = 1
-        activityIndicator.startAnimating()
-    }
-    
+    var urlString: String = ""
+    override var webUrlString: String { return "https://www.youtube.com/embed/\(urlString)" }
+
     private func showActionButtons() {
         let buttonsWidth:CGFloat = 100
         let buttonsHeight:CGFloat = 50
@@ -84,24 +60,8 @@ class UserTypeVideoViewController: UIViewController {
         return button
     }
     
-    private func videoIsLoaded() {
-        activityIndicator.alpha = 0
-        activityIndicator.stopAnimating()
+    override func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        super.webView(webView, didFinish: navigation)
         showActionButtons()
-    }
-}
-
-// MARK: UIWebViewDelegate
-extension UserTypeVideoViewController:UIWebViewDelegate {
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        //
-    }
-    
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        videoIsLoaded()
-    }
-    
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        videoIsLoaded()
     }
 }

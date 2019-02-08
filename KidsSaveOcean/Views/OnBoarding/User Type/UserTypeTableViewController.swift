@@ -65,7 +65,12 @@ class UserTypeTableViewController: UITableViewController {
     let videoViewController = UserTypeVideoViewController()
     videoViewController.urlString = videoAddressString
     videoViewController.delegate = self
-    
+    navigationController?.navigationBar.isHidden = false
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.isTranslucent = true
+    navigationController?.navigationBar.backgroundColor = .clear
+    navigationController?.navigationBar.frame = CGRect(x:0, y:0, width:view.bounds.width, height: 40)
     navigationController?.pushViewController(videoViewController, animated: true)
   }
     
