@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import MapKit
+
 final class LetterTrackerViewModel: NSObject {
     
     var allCountries: [CountryContact]?
@@ -19,7 +21,7 @@ final class LetterTrackerViewModel: NSObject {
         var countries = [CountryContact]()
         for code in Locale.isoRegionCodes as [String] {
             if let name = Locale.autoupdatingCurrent.localizedString(forRegionCode: code) {
-                countries.append(CountryContact(name: name, code: code, address: nil))
+                countries.append(CountryContact(name: name, code: code, address: nil, coordinates: nil))
             }
         }
         

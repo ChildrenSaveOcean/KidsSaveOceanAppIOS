@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1064306284858-v3punbe7649d4c6i7ouhmafrnu8gha7v.apps.googleusercontent.com</string>
+	<string>1064306284858-e6d45flursp5a1adrih183klm60mrkr2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1064306284858-v3punbe7649d4c6i7ouhmafrnu8gha7v</string>
+	<string>com.googleusercontent.apps.1064306284858-e6d45flursp5a1adrih183klm60mrkr2</string>
 	<key>API_KEY</key>
 	<string>AIzaSyASLhnJohMp06RWEBFffh5itgmZ8h8-xnQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,23 +17,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.test.KidsSaveOcean</string>
+	<string>com.KidsSaveOcean</string>
 	<key>PROJECT_ID</key>
 	<string>kids-save-ocean</string>
 	<key>STORAGE_BUCKET</key>
 	<string>kids-save-ocean.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1064306284858:ios:5927734780e9a25e</string>
+	<string>1:1064306284858:ios:bb7a1b658e407242</string>
 	<key>DATABASE_URL</key>
 	<string>https://kids-save-ocean.firebaseio.com</string>
 </dict>
