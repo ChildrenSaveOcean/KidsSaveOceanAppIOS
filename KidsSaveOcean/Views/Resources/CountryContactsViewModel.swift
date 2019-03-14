@@ -37,14 +37,14 @@ final class CountryContactsViewModel: NSObject {
     
     func fetchContacts(from service: CountriesService = CountriesService.shared(), _ completion: (() -> ())?) {
         if service.countriesContacts.count > 0 {
-            allCountries = service.countriesContacts
+            countriesContacts = service.countriesContacts
             completion?()
             
             return
         }
         
         service.fetchContacts(databaseReferenece: databaseReferenece, { [weak self] in
-            self?.allCountries = service.countriesContacts
+            self?.countriesContacts = service.countriesContacts
             completion?()
         })
     }
