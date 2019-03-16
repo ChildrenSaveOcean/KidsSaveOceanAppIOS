@@ -12,8 +12,8 @@ import MapKit
 class KSOPinOfLetters: NSObject, MKAnnotation {
 
     var coordinate: CLLocationCoordinate2D
-    private var name : String
-    private var numberOfLetters : Int
+    var name : String
+    var numberOfLetters : Int
     
     init(with name: String, _ location: CLLocationCoordinate2D, _ numberOfLetters : Int) {
         self.name = name

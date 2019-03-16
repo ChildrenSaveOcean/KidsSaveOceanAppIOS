@@ -45,6 +45,10 @@
 		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
+		7C0B1CCC222313720033F251 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CCB222313720033F251 /* Letter.swift */; };
+		7C0B1CCF222314300033F251 /* LettersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CCE222314300033F251 /* LettersService.swift */; };
+		7C0B1CD422232BE40033F251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */; };
+		7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD622232EC50033F251 /* CountriesService.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
 		7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */; };
 		7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */; };
@@ -53,7 +57,6 @@
 		7CE89F9521A2005F00C2D6DA /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */; };
 		945A089120F643EB006ED13D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* MapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
-		9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */; };
 		946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946847D82139E299007A1158 /* KSOCustomMapPin.swift */; };
 		AB6780177B9C6A11B891F4F0 /* Pods_KidsSaveOceanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749B92EFB33A2884EF8D8D45 /* Pods_KidsSaveOceanTests.framework */; };
 		ADAA6F229D2FD03E091A7053 /* Pods_KidsSaveOceanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9715FC010A43151B94C98D36 /* Pods_KidsSaveOceanUITests.framework */; };
@@ -131,6 +134,10 @@
 		6ECC311FA8BE1141A29B231E /* Pods-KidsSaveOcean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.release.xcconfig"; sourceTree = "<group>"; };
 		749B92EFB33A2884EF8D8D45 /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C00FFB921185B7000320309 /* CountryContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewController.swift; sourceTree = "<group>"; };
+		7C0B1CCB222313720033F251 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		7C0B1CCE222314300033F251 /* LettersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersService.swift; sourceTree = "<group>"; };
+		7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7C0B1CD622232EC50033F251 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
 		7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContact.swift; sourceTree = "<group>"; };
@@ -141,7 +148,6 @@
 		7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		945A089020F643EB006ED13D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
-		9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		946847D82139E299007A1158 /* KSOCustomMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOCustomMapPin.swift; sourceTree = "<group>"; };
 		95FA2CE124AEE69F30EDA8BE /* Pods-KidsSaveOcean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.debug.xcconfig"; sourceTree = "<group>"; };
 		9715FC010A43151B94C98D36 /* Pods_KidsSaveOceanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,7 +209,6 @@
 				7C00FFB921185B7000320309 /* CountryContactsViewController.swift */,
 				7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */,
 				7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */,
-				7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */,
 				1617111021E25B5300BE9B2E /* ResourcesViewController.swift */,
 			);
 			path = Resources;
@@ -264,8 +269,7 @@
 		16559BCE20ADF9D5002D4F78 /* KidsSaveOcean */ = {
 			isa = PBXGroup;
 			children = (
-				16649E9120FEC72B000BCB48 /* Settings.swift */,
-				1674330D20FED2E300F929C0 /* Reachability.swift */,
+				7C0B1CCD2223141D0033F251 /* Utils */,
 				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				16CF5A2920AF1E6200C4E57E /* Extentions */,
 				16CF5A2820AF1E5600C4E57E /* ModelViews */,
@@ -273,11 +277,11 @@
 				16CF5A2620AF1E4100C4E57E /* Views */,
 				16559BD520ADF9D5002D4F78 /* Main.storyboard */,
 				1679B06D21EA29E100C15F2A /* knobClick.mp3 */,
+				7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */,
 				16559BD820ADF9D5002D4F78 /* Assets.xcassets */,
 				7CE89F9221A1FF5B00C2D6DA /* Supporting Files */,
 				16559BDA20ADF9D5002D4F78 /* LaunchScreen.storyboard */,
 				16559BDD20ADF9D5002D4F78 /* Info.plist */,
-				9464BF1B20F94FBD00CCC40B /* GoogleService-Info.plist */,
 			);
 			path = KidsSaveOcean;
 			sourceTree = "<group>";
@@ -396,6 +400,35 @@
 				1B9B46CE9FFC13368BB0989F /* Pods-KidsSaveOceanUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7C0B1CCD2223141D0033F251 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				16649E9120FEC72B000BCB48 /* Settings.swift */,
+				1674330D20FED2E300F929C0 /* Reachability.swift */,
+				7C0B1CD522232E9C0033F251 /* CountriesService */,
+				7C0B1CD0222314E10033F251 /* LettersService */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7C0B1CD0222314E10033F251 /* LettersService */ = {
+			isa = PBXGroup;
+			children = (
+				7C0B1CCE222314300033F251 /* LettersService.swift */,
+				7C0B1CCB222313720033F251 /* Letter.swift */,
+			);
+			path = LettersService;
+			sourceTree = "<group>";
+		};
+		7C0B1CD522232E9C0033F251 /* CountriesService */ = {
+			isa = PBXGroup;
+			children = (
+				7C0B1CD622232EC50033F251 /* CountriesService.swift */,
+				7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */,
+			);
+			path = CountriesService;
 			sourceTree = "<group>";
 		};
 		7C7BBAC721B864CF00C48D4E /* LetterTracker */ = {
@@ -569,7 +602,7 @@
 			files = (
 				164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */,
 				164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */,
-				9464BF1C20F94FBD00CCC40B /* GoogleService-Info.plist in Resources */,
+				7C0B1CD422232BE40033F251 /* GoogleService-Info.plist in Resources */,
 				16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
 				1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */,
@@ -691,10 +724,12 @@
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				7C7BBAC921BBF44200C48D4E /* LetterTrackerViewModel.swift in Sources */,
+				7C0B1CCF222314300033F251 /* LettersService.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */,
 				163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */,
+				7C0B1CCC222313720033F251 /* Letter.swift in Sources */,
 				16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
 				163D203A217253E500069294 /* CountryScore.swift in Sources */,
@@ -720,6 +755,7 @@
 				164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */,
 				1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */,
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,
+				7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */,
 				16EA5FCE220CD5AD00DE062E /* MediaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -890,6 +926,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ATY5UD3SW;
 				INFOPLIST_FILE = KidsSaveOcean/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KidsSaveOcean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -906,6 +943,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ATY5UD3SW;
 				INFOPLIST_FILE = KidsSaveOcean/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KidsSaveOcean;
 				PRODUCT_NAME = "$(TARGET_NAME)";

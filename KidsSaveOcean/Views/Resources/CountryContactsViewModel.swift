@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 final class CountryContactsViewModel: NSObject {
     
@@ -27,49 +28,25 @@ final class CountryContactsViewModel: NSObject {
         var countries = [CountryContact]()
         for code in Locale.isoRegionCodes as [String] {
             if let name = Locale.autoupdatingCurrent.localizedString(forRegionCode: code) {
-                countries.append(CountryContact(name: name, code: code, address: nil))
+                countries.append(CountryContact(name: name, code: code, address: nil, coordinates: nil))
             }
         }
         
         allCountries = countries
     }
     
-    func fetchContacts(_ completion: (() -> ())?) {
-        countriesContacts.removeAll()
-
-        databaseReferenece.child("Countries").observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let snapshotValue = snapshot.value as? NSDictionary else {
-                completion?()
-
-                return
-            }
-
-            for country in snapshotValue {
-                guard let value = country.value as? NSDictionary else {
-                    continue
-                }
-
-                guard let name = value["name"] as? String else {
-                    continue
-                }
-
-                guard let code = value["code"] as? String else {
-                    continue
-                }
-
-                guard let address = value["address"] as? String else {
-                    continue
-                }
-
-                let countryContact = CountryContact(name: name, code: code, address: address)
-                self.countriesContacts.append(countryContact)
-            }
+    func fetchContacts(from service: CountriesService = CountriesService.shared(), _ completion: (() -> ())?) {
+        if service.countriesContacts.count > 0 {
+            countriesContacts = service.countriesContacts
+            completion?()
             
-            completion?()
-        }) { (error) in
-            completion?()
-            print(error.localizedDescription)
+            return
         }
+        
+        service.fetchContacts(databaseReferenece: databaseReferenece, { [weak self] in
+            self?.countriesContacts = service.countriesContacts
+            completion?()
+        })
     }
 
     func contact(of country: String) -> CountryContact? {
