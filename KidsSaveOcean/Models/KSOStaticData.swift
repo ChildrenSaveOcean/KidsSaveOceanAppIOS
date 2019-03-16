@@ -38,7 +38,7 @@ let HomeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "theWavE
                                      "subTitle" :"HOW YOU CAN HELP",
                                      "action":""],
                                     ["image" : #imageLiteral(resourceName: "mapForCampaign"),
-                                     "title":"Letter Writting Campaign",
+                                     "title":"Letter Writing Campaign",
                                      "subTitle" :"WATCH IT SPREAD",
                                      "action":""],
                                     ["image" : #imageLiteral(resourceName: "dashboardCopyForHomeScreenPic"),
@@ -51,7 +51,7 @@ let HomeViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "theWavE
                                     "action":""],]
 
 let KSONewsViewData:KSODataArray = [["image" : #imageLiteral(resourceName: "Map"),
-                                     "title":"Letter Writting Campaign",
+                                     "title":"Letter Writing Campaign",
                                      "subTitle" :"UPDATES",
                                      "description":"See our progress",
                                      "action":""],

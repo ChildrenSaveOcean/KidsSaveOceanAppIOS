@@ -158,7 +158,7 @@
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">As a student, you can be the one to start a letter-writing campaign in your school. As a teacher, we have lesson plans and resources available - and nothing boring. As an individual, we can use your support and donations</string>
+                                        <string key="content">As a student, you can be the one to start a letter-writing campaign in your school. As a teacher, we have lesson plans and resources available - and nothing boring! As an individual, we can use your support and donations</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
