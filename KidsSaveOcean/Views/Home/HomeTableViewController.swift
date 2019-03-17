@@ -57,26 +57,27 @@ final class HomeTableViewController: UITableViewController {
     
     if indexPath.row == 4 {
       let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as! HomeScoreTableViewCell
-      viewModel.fetchCountryScores {
-        let scores = self.viewModel.topCountryScores()
-        
+      DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(60)) {
+        let scores =  LettersService.shared().mapPins
+    
         if scores.count > 0 {
           cell.country1NumLabel.text = "1"
-          cell.country1Label.text = scores[0].country
+          cell.country1Label.text = scores[0].name
           cell.country1ScoreLabel.text = String( scores[0].numberOfLetters )
         }
         
         if scores.indices.contains(1) {
           cell.country2NumLabel.text = "2"
-          cell.country2Label.text = scores[1].country
+          cell.country2Label.text = scores[1].name
           cell.country2ScoreLabel.text = String( scores[1].numberOfLetters )
         }
         
         if scores.indices.contains(2) {
           cell.country3NumLabel.text = "3"
-          cell.country3Label.text = scores[2].country
+          cell.country3Label.text = scores[2].name
           cell.country3ScoreLabel.text = String( scores[2].numberOfLetters )
         }
+        self.tableView.reloadRows(at: [indexPath], with: .none)
       }
       return cell
       
