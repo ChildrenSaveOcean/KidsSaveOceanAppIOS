@@ -40,6 +40,7 @@ class DashboardViewController: UIViewController {
     
     @IBOutlet weak var wheelPointConstraintX: NSLayoutConstraint!
     @IBOutlet weak var wheelPointConstraintY: NSLayoutConstraint!
+    @IBOutlet weak var topSpaceContraint: NSLayoutConstraint!
     
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
@@ -71,6 +72,8 @@ class DashboardViewController: UIViewController {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
         }
+        
+        topSpaceContraint.constant = UIScreen.main.bounds.height >= 812 ? 70 : 28 * KSOLayoutConstraint.screenDimensionCorrectionFactor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -139,7 +142,10 @@ class DashboardViewController: UIViewController {
             navigationController?.pushViewController(countryContactsViewController, animated: true)
             
         case 2:
-            break
+            let link = "test"
+            let objectsToShare = [link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
             
         case 3, 4, 5:
             let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
@@ -199,9 +205,9 @@ class DashboardViewController: UIViewController {
             didItButton.setTitle("Not yet", for: .normal)
             completedLabel.text = "Completed!"
         } else {
-            completedFistImage.image = #imageLiteral(resourceName: "Fist grey")
+            completedFistImage.image = #imageLiteral(resourceName: "Incomplete fist and writing")
             didItButton.setTitle("I did it!", for: .normal)
-            completedLabel.text = "Completed?"
+            completedLabel.text = "Incomplete"
         }
     }
     
@@ -243,8 +249,12 @@ class DashboardViewController: UIViewController {
         keyFrameAnimation.isRemovedOnCompletion = true
         wheelPoint.layer.add(keyFrameAnimation, forKey: "position")
         
-        wheelPointConstraintX.constant = path.currentPoint.x - wheelPoint.bounds.width/2
-        wheelPointConstraintY.constant = path.currentPoint.y - wheelPoint.bounds.width/2
+        let newPosition = CGPoint(x:path.currentPoint.x - wheelPoint.bounds.width/2, y:path.currentPoint.y - wheelPoint.bounds.width/2)
+        wheelPointConstraintX.constant = newPosition.x
+        wheelPointConstraintY.constant = newPosition.y
+        /*var frame = wheelPoint.frame
+        frame.origin = newPosition
+        wheelPoint.frame = frame*/
     }
     
     private func setUpAudioPlayer() -> AVAudioPlayer? {
