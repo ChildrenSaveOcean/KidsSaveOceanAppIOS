@@ -73,6 +73,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func reloadMap(){
         addPinsInMap()
         self.map.reloadInputViews()
+        showMaxLettersScoreRegion()
         self.tbvTop10.reloadData()
     }
     
@@ -81,6 +82,18 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func addPinsInMap() {
         for pin in LettersService.shared().mapPins {
             map.addAnnotation(pin)
+        }
+    }
+    
+    private func showMaxLettersScoreRegion() {
+        
+        let maxPin = LettersService.shared().mapPins.max { (first: KSOPinOfLetters, second: KSOPinOfLetters) -> Bool in
+            first.numberOfLetters > second.numberOfLetters
+        }
+        
+        if maxPin != nil {
+            let region = MKCoordinateRegion(center: maxPin!.coordinate, span: map.region.span)
+            map.setRegion(region, animated: true)
         }
     }
 }
