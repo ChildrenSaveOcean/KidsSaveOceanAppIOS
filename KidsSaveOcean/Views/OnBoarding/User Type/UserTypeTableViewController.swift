@@ -54,10 +54,6 @@ class UserTypeTableViewController: UITableViewController {
     guard let videoURL = BaseViewData(dictionary: UserTypeViewData[indexPath.row])?.action else {
       return
     }
-    guard Reachability.isConnectedToNetwork() == true else {
-      self.showErrorMessage("No Internet Connection.\nYou can go ahead without introducing video or try again", actionString: videoURL)
-      return
-    }
     self.showVideo(videoURL)
   }
   
