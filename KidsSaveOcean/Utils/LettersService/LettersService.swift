@@ -93,7 +93,7 @@ class LettersService {
         }
         
         mapPins = mapPins.sorted { (first: KSOPinOfLetters, second: KSOPinOfLetters) -> Bool in
-            first.name > second.name
+            first.numberOfLetters > second.numberOfLetters
         }
     }
 }
