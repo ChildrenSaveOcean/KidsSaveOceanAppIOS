@@ -19,6 +19,8 @@ class Settings:NSObject {
     
     static let completionStatusKey = "completionStatusKey"
     
+    static let LettersHasBeenLoadedNotificationName = "LettersHasBeenLoaded"
+    
     class func saveOnBoardingHasBeenShown() {
         UserDefaults.standard.set(true, forKey: onBoardingKey)
         UserDefaults.standard.synchronize()

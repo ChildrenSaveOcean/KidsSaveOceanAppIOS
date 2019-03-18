@@ -17,7 +17,6 @@ final class HomeTableViewController: UITableViewController {
   private lazy var viewModel = CountryLetterScoresViewModel()
   
   override func viewDidLoad() {
-    
     super.viewDidLoad()
     navigationController?.navigationBar.isHidden = true
     navigationController?.navigationBar.isTranslucent = true
@@ -36,6 +35,7 @@ final class HomeTableViewController: UITableViewController {
     self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: homeCellIdenteficator)
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
     
+    NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.LettersHasBeenLoadedNotificationName), object: nil)
   }
     
   override func viewWillDisappear(_ animated: Bool) {
@@ -47,6 +47,10 @@ final class HomeTableViewController: UITableViewController {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
   }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return HomeViewData.count
@@ -57,10 +61,10 @@ final class HomeTableViewController: UITableViewController {
     
     if indexPath.row == 4 {
       let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as! HomeScoreTableViewCell
-      DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(60)) {
-        let scores =  LettersService.shared().mapPins
+
+      let scores =  LettersService.shared().mapPins
     
-        if scores.count > 0 {
+      if scores.count > 0 {
           cell.country1NumLabel.text = "1"
           cell.country1Label.text = scores[0].name
           cell.country1ScoreLabel.text = String( scores[0].numberOfLetters )
@@ -77,8 +81,6 @@ final class HomeTableViewController: UITableViewController {
           cell.country3Label.text = scores[2].name
           cell.country3ScoreLabel.text = String( scores[2].numberOfLetters )
         }
-        self.tableView.reloadRows(at: [indexPath], with: .none)
-      }
       return cell
       
     } else {
@@ -93,10 +95,6 @@ final class HomeTableViewController: UITableViewController {
       }
       return cell
     }
-  }
-  
-  func setScoresLavel() {
-    
   }
   
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -145,4 +143,8 @@ final class HomeTableViewController: UITableViewController {
     viewH.backgroundColor = .white
     return viewH
   }
+    
+    @objc private func reloadScores() {
+        tableView.reloadRows(at: [IndexPath(row: 4, section: 0)], with: UITableView.RowAnimation.none)
+    }
 }
