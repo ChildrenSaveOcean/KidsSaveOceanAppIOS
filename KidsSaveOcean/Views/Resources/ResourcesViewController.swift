@@ -12,5 +12,8 @@ import WebKit
 class ResourcesViewController: WebIntegrationViewController {
 
     override var webUrlString: String { return "https://www.kidssaveocean.com/fatechanger-resources" }
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
+    }
 }
