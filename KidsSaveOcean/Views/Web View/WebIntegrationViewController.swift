@@ -23,8 +23,9 @@ class WebIntegrationViewController: UIViewController {
     
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
-        let height = (navigationController?.navigationBar.bounds.height)! + (navigationController?.navigationBar.frame.origin.y)!
-        pV.frame = CGRect(x:0, y:height, width:view.bounds.width, height:5)
+        
+        let y = (navigationController?.navigationBar.frame.origin.y)! + ((navigationController?.navigationBar.isHidden)! ? 0 : (navigationController?.navigationBar.bounds.height)!)
+        pV.frame = CGRect(x:0, y:y, width:view.bounds.width, height:5)
         return pV
     }()
     
@@ -33,8 +34,6 @@ class WebIntegrationViewController: UIViewController {
     
     lazy var noInternetConnectionImageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
     
-    
-    //override func loadView() {
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -50,15 +49,19 @@ class WebIntegrationViewController: UIViewController {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.scrollView.bounces = false
-        //view = webView
         
         view.addSubview(webView)
         
-        backButton.isEnabled = false
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.backgroundColor = .clear
+        
+        //backButton.isEnabled = false
         navigationItem.leftBarButtonItem = backButton
         forwardButton.isEnabled = false
         navigationItem.rightBarButtonItem = forwardButton
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,11 +88,19 @@ class WebIntegrationViewController: UIViewController {
     }
     
     @objc func goBack() {
-        webView.goBack()
+        if webView.canGoBack {
+           webView.goBack()
+        } else if canPopViewController() {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func goForward() {
         webView.goForward()
+    }
+    
+    private func canPopViewController() -> Bool {
+        return  (navigationController?.viewControllers.first != self)
     }
     
     private func checkInternetConnection(reachability:Reachability) {
@@ -133,7 +144,8 @@ extension WebIntegrationViewController: WKUIDelegate {
 
 extension WebIntegrationViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        navigationItem.title = String((webView.title?.split(separator: "|").last)!)
+        let title = (webView.title ?? "").contains("|") ? String((webView.title?.split(separator: "|").last)!): webView.title
+        navigationItem.title = title
         checkNavigationButtons()
     }
     
@@ -142,7 +154,11 @@ extension WebIntegrationViewController: WKNavigationDelegate {
     }
     
     func checkNavigationButtons() {
-        backButton.isEnabled =  webView.canGoBack ? true : false
+        var canGoBack = webView.canGoBack
+        if !canGoBack {
+            canGoBack = canPopViewController()
+        }
+        backButton.isEnabled = canGoBack ? true : false
         forwardButton.isEnabled =  webView.canGoForward ? true : false
     }
 }
