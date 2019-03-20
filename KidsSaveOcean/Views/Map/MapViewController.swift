@@ -64,6 +64,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tbvTop10.dequeueReusableCell(withIdentifier: "cell") as! KSOMapTop10TableViewCell
+        cell.number.text = String(indexPath.row + 1)
         cell.lblCountryName.text = LettersService.shared().mapPins[indexPath.row].name
         cell.lblNumberOfLetters.text = String(LettersService.shared().mapPins[indexPath.row].numberOfLetters)
         
@@ -73,6 +74,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func reloadMap(){
         addPinsInMap()
         self.map.reloadInputViews()
+        showMaxLettersScoreRegion()
         self.tbvTop10.reloadData()
     }
     
@@ -81,6 +83,18 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func addPinsInMap() {
         for pin in LettersService.shared().mapPins {
             map.addAnnotation(pin)
+        }
+    }
+    
+    private func showMaxLettersScoreRegion() {
+        
+        let maxPin = LettersService.shared().mapPins.max { (first: KSOPinOfLetters, second: KSOPinOfLetters) -> Bool in
+            first.numberOfLetters > second.numberOfLetters
+        }
+        
+        if maxPin != nil {
+            let region = MKCoordinateRegion(center: maxPin!.coordinate, span: map.region.span)
+            map.setRegion(region, animated: true)
         }
     }
 }

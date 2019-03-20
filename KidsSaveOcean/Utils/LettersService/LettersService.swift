@@ -26,7 +26,10 @@ class LettersService {
     }
     
     func setup() {
-        self.fetchLetters(databaseReferenece: Database.database().reference(), nil)
+        //self.fetchLetters(databaseReferenece: Database.database().reference(), nil)
+        self.fetchLetters(databaseReferenece: Database.database().reference()) {
+            NotificationCenter.default.post(name: Notification.Name(Settings.LettersHasBeenLoadedNotificationName), object:nil)
+        }
     }
     
     func fetchLetters(databaseReferenece: DatabaseReference, _ completion: (() -> ())?) {
@@ -93,7 +96,7 @@ class LettersService {
         }
         
         mapPins = mapPins.sorted { (first: KSOPinOfLetters, second: KSOPinOfLetters) -> Bool in
-            first.name > second.name
+            first.numberOfLetters > second.numberOfLetters
         }
     }
 }

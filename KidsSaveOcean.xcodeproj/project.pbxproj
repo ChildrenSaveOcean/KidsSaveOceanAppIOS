@@ -33,12 +33,12 @@
 		1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */; };
 		16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */; };
 		1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C08320C8503500E17DAF /* KSOTabViewController.swift */; };
-		1674330E20FED2E300F929C0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674330D20FED2E300F929C0 /* Reachability.swift */; };
 		16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768110215AD41D00EE4E1F /* HomeTableViewController.swift */; };
 		16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768112215AD71100EE4E1F /* HomeTableViewCell.swift */; };
 		1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679B06921E935D100C15F2A /* DashboardViewController.swift */; };
 		1679B06C21E935D100C15F2A /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06A21E935D100C15F2A /* DashboardViewController.xib */; };
 		1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06D21EA29E100C15F2A /* knobClick.mp3 */; };
+		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
 		16EA5FCE220CD5AD00DE062E /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */; };
 		16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */; };
 		16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */; };
@@ -117,12 +117,12 @@
 		1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 		16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extentions.swift"; sourceTree = "<group>"; };
 		1668C08320C8503500E17DAF /* KSOTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOTabViewController.swift; sourceTree = "<group>"; };
-		1674330D20FED2E300F929C0 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		16768110215AD41D00EE4E1F /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		16768112215AD71100EE4E1F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		1679B06921E935D100C15F2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1679B06A21E935D100C15F2A /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
 		1679B06D21EA29E100C15F2A /* knobClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knobClick.mp3; sourceTree = "<group>"; };
+		168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionDashboardViewController.swift; sourceTree = "<group>"; };
 		16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIntegrationViewController.swift; sourceTree = "<group>"; };
 		16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeVideoViewController.swift; sourceTree = "<group>"; };
@@ -308,11 +308,20 @@
 			isa = PBXGroup;
 			children = (
 				1679B06921E935D100C15F2A /* DashboardViewController.swift */,
+				168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */,
 				1679B06A21E935D100C15F2A /* DashboardViewController.xib */,
 				16573D3621F7C70900332FFF /* Dashboard.storyboard */,
 				164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		168F9D52223D4543000A432D /* Web View */ = {
+			isa = PBXGroup;
+			children = (
+				16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */,
+			);
+			path = "Web View";
 			sourceTree = "<group>";
 		};
 		16B2A6CC20BC8ADA008E24B2 /* User Type */ = {
@@ -328,7 +337,7 @@
 		16CF5A2620AF1E4100C4E57E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */,
+				168F9D52223D4543000A432D /* Web View */,
 				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
 				1679B06821E935A400C15F2A /* Dashboard */,
 				7C7BBAC721B864CF00C48D4E /* LetterTracker */,
@@ -406,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				16649E9120FEC72B000BCB48 /* Settings.swift */,
-				1674330D20FED2E300F929C0 /* Reachability.swift */,
 				7C0B1CD522232E9C0033F251 /* CountriesService */,
 				7C0B1CD0222314E10033F251 /* LettersService */,
 			);
@@ -656,8 +664,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -665,13 +674,14 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DAE2C89A8509DEBDE34FD2AF /* [CP] Check Pods Manifest.lock */ = {
@@ -750,8 +760,8 @@
 				7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */,
 				C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
-				1674330E20FED2E300F929C0 /* Reachability.swift in Sources */,
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
+				168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */,
 				164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */,
 				1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */,
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,

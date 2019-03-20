@@ -53,6 +53,8 @@ class DashboardViewController: UIViewController {
                  "Seek change through local government",
                  "Take part in or organize a protest"]
     
+    let linkForSharing = "https://www.kidssaveocean.com/change-fate"
+    
     var completionTasksStates = Settings.getCompletionTasksStatus()
     
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3,  self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
@@ -128,6 +130,8 @@ class DashboardViewController: UIViewController {
     
     @IBAction func actionAlertAction(_ sender: Any) {
         // show custom alert view
+        let alertActionVC = AlertActionDashboardViewController()
+        navigationController?.pushViewController(alertActionVC, animated: true)
     }
     
     @IBAction func howToAction(_ sender: Any) {
@@ -142,10 +146,11 @@ class DashboardViewController: UIViewController {
             navigationController?.pushViewController(countryContactsViewController, animated: true)
             
         case 2:
-            let link = "test"
-            let objectsToShare = [link] as [Any]
+            let objectsToShare = [URL(string:linkForSharing)] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            self.present(activityVC, animated: true, completion: nil)
+            self.present(activityVC, animated: true) {
+                self.chooseTaskWithNum(2)
+            }
             
         case 3, 4, 5:
             let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)

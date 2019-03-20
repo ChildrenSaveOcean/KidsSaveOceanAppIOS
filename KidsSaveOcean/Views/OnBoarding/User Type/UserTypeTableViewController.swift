@@ -54,10 +54,6 @@ class UserTypeTableViewController: UITableViewController {
     guard let videoURL = BaseViewData(dictionary: UserTypeViewData[indexPath.row])?.action else {
       return
     }
-    guard Reachability.isConnectedToNetwork() == true else {
-      self.showErrorMessage("No Internet Connection.\nYou can go ahead without introducing video or try again", actionString: videoURL)
-      return
-    }
     self.showVideo(videoURL)
   }
   
@@ -65,12 +61,12 @@ class UserTypeTableViewController: UITableViewController {
     let videoViewController = UserTypeVideoViewController()
     videoViewController.urlString = videoAddressString
     videoViewController.delegate = self
-    navigationController?.navigationBar.isHidden = false
+    /*navigationController?.navigationBar.isHidden = false
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.isTranslucent = true
     navigationController?.navigationBar.backgroundColor = .clear
-    navigationController?.navigationBar.frame = CGRect(x:0, y:0, width:view.bounds.width, height: 40)
+    navigationController?.navigationBar.frame = CGRect(x:0, y:0, width:view.bounds.width, height: 40)*/
     navigationController?.pushViewController(videoViewController, animated: true)
   }
     
