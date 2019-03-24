@@ -19,8 +19,12 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
     var delegate:UserTypeVideoDelegate?
     var urlString: String = ""
-    override var webUrlString: String { return "https://www.youtube.com/embed/\(urlString)" }
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.webUrlString = "https://www.youtube.com/embed/\(urlString)"
+    }
+    
+    
     private func showActionButtons() {
         let buttonsWidth:CGFloat = 100
         let buttonsHeight:CGFloat = 50

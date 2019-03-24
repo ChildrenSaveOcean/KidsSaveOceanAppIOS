@@ -70,6 +70,8 @@ class DashboardViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.backgroundColor = .clear
         
+        //tabBarController?.delegate = self
+        
         for _ in 0...2 {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
@@ -282,3 +284,20 @@ class DashboardViewController: UIViewController {
         audioPlayer.play()
     }
 }
+
+/*extension DashboardViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        refreshView()
+    }
+    
+    private func refreshView() {
+        if (self.navigationController?.viewControllers.count)! > 1 {
+            if let dashBoardVC = self.navigationController?.viewControllers.first as? DashboardViewController {
+                self.navigationController?.popToViewController(dashBoardVC, animated: true)
+            } else {
+                print("what the shit???")
+                return
+            }
+        }
+    }
+}*/

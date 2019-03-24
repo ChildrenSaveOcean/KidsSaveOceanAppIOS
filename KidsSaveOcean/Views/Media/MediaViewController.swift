@@ -10,6 +10,9 @@ import UIKit
 
 class MediaViewController: WebIntegrationViewController {
     
-    override var webUrlString: String { return "https://www.kidssaveocean.com/updates" }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.webUrlString = "https://www.kidssaveocean.com/updates"
+    }
     
 }
