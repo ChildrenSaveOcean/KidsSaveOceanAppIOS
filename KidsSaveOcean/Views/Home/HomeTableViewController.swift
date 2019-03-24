@@ -32,6 +32,8 @@ final class HomeTableViewController: UITableViewController {
     tableView.dataSource = self
     tableView.delegate   = self
     
+    tabBarController?.delegate = self
+    
     self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: homeCellIdenteficator)
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
     
@@ -146,5 +148,22 @@ final class HomeTableViewController: UITableViewController {
     
     @objc private func reloadScores() {
         tableView.reloadRows(at: [IndexPath(row: 4, section: 0)], with: UITableView.RowAnimation.none)
+    }
+}
+
+extension HomeTableViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        refreshViewController(viewController)
+    }
+    
+    private func refreshViewController(_ viewController:UIViewController) {
+        guard let newNavController = viewController as? UINavigationController else {
+            return
+        }
+        
+        if (newNavController.viewControllers.count) > 1 {
+            newNavController.popToViewController(newNavController.viewControllers.first!, animated: true)
+        }
     }
 }

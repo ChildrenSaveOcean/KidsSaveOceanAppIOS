@@ -42,6 +42,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var wheelPointConstraintY: NSLayoutConstraint!
     @IBOutlet weak var topSpaceContraint: NSLayoutConstraint!
     
+    @IBOutlet weak var actionAlertView: UIView!
+    
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
@@ -70,6 +72,8 @@ class DashboardViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.backgroundColor = .clear
         
+        //tabBarController?.delegate = self
+        
         for _ in 0...2 {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
@@ -87,6 +91,10 @@ class DashboardViewController: UIViewController {
         super.viewDidAppear(animated)
         
         view.layoutIfNeeded()
+        
+        actionAlertView.alpha = 0
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
+        actionAlertView.addGestureRecognizer(tapGesture)
         
         setUpTopIcons()
         let firstIncompetedTask = self.completionTasksStates.firstIndex(of: false)
@@ -132,7 +140,13 @@ class DashboardViewController: UIViewController {
         // show custom alert view
         let alertActionVC = AlertActionDashboardViewController()
         navigationController?.pushViewController(alertActionVC, animated: true)
+        actionAlertView.alpha = 0
     }
+    
+    @IBAction func showActionAlertView(_ sender: Any) {
+        actionAlertView.alpha = 1
+    }
+    
     
     @IBAction func howToAction(_ sender: Any) {
         let taskViewControllerIds = ["task4ViewControllerId","task5ViewControllerId","task6ViewControllerId"]
@@ -172,6 +186,10 @@ class DashboardViewController: UIViewController {
         selectTopIcon()
         setUpDidItSection()
         
+    }
+    
+    @objc func closeActionAlertView() {
+        actionAlertView.alpha = 0
     }
     
     // MARK: Private methods
@@ -282,3 +300,20 @@ class DashboardViewController: UIViewController {
         audioPlayer.play()
     }
 }
+
+/*extension DashboardViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        refreshView()
+    }
+    
+    private func refreshView() {
+        if (self.navigationController?.viewControllers.count)! > 1 {
+            if let dashBoardVC = self.navigationController?.viewControllers.first as? DashboardViewController {
+                self.navigationController?.popToViewController(dashBoardVC, animated: true)
+            } else {
+                print("what the shit???")
+                return
+            }
+        }
+    }
+}*/

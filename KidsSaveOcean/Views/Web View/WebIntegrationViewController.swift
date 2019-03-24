@@ -12,7 +12,7 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
     
-    var webUrlString: String { return "" }
+    var webUrlString: String = "" 
     private var reachability = Reachability()
     
     lazy var webView = { () -> WKWebView in
@@ -108,7 +108,7 @@ class WebIntegrationViewController: UIViewController {
             showNoInternetConnection()
         } else {
             noInternetConnectionImageView.removeFromSuperview()
-            loadPage()
+            loadPage()/////
         }
     }
     
@@ -118,15 +118,17 @@ class WebIntegrationViewController: UIViewController {
         return
     }
     
-    private func loadPage() {
+    func loadPage() {
         view.addSubview(progressBarView)
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-        
+        print("url is " + webUrlString)
         let myURL = URL(string:webUrlString)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
+    
+    
     
     @objc func reachabilityChanged(note: Notification) {
         checkInternetConnection(reachability: note.object as! Reachability)

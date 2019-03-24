@@ -11,9 +11,16 @@ import WebKit
 
 class ResourcesViewController: WebIntegrationViewController {
 
-    override var webUrlString: String { return "https://www.kidssaveocean.com/fatechanger-resources" }
+    /*override var webUrlString: String {
+        get { return "https://www.kidssaveocean.com/fatechanger-resources" }
+        set(newValue) {
+            print("here we set the main url to " + newValue)
+            self.webUrlString = newValue
+        }
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
+        webUrlString = "https://www.kidssaveocean.com/fatechanger-resources"
         navigationController?.navigationBar.isHidden = true
     }
 }
