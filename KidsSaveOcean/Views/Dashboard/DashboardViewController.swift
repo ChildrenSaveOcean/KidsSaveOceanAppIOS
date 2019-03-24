@@ -42,6 +42,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var wheelPointConstraintY: NSLayoutConstraint!
     @IBOutlet weak var topSpaceContraint: NSLayoutConstraint!
     
+    @IBOutlet weak var actionAlertView: UIView!
+    
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
@@ -90,6 +92,10 @@ class DashboardViewController: UIViewController {
         
         view.layoutIfNeeded()
         
+        actionAlertView.alpha = 0
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
+        actionAlertView.addGestureRecognizer(tapGesture)
+        
         setUpTopIcons()
         let firstIncompetedTask = self.completionTasksStates.firstIndex(of: false)
         self.chooseTaskWithNum(firstIncompetedTask ?? 0)
@@ -134,7 +140,13 @@ class DashboardViewController: UIViewController {
         // show custom alert view
         let alertActionVC = AlertActionDashboardViewController()
         navigationController?.pushViewController(alertActionVC, animated: true)
+        actionAlertView.alpha = 0
     }
+    
+    @IBAction func showActionAlertView(_ sender: Any) {
+        actionAlertView.alpha = 1
+    }
+    
     
     @IBAction func howToAction(_ sender: Any) {
         let taskViewControllerIds = ["task4ViewControllerId","task5ViewControllerId","task6ViewControllerId"]
@@ -174,6 +186,10 @@ class DashboardViewController: UIViewController {
         selectTopIcon()
         setUpDidItSection()
         
+    }
+    
+    @objc func closeActionAlertView() {
+        actionAlertView.alpha = 0
     }
     
     // MARK: Private methods
