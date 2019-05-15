@@ -11,6 +11,8 @@ import AVFoundation
 
 class DashboardViewController: UIViewController {
 
+    @IBOutlet weak var deviceXbackground: UIImageView!
+    
     @IBOutlet weak var topTaskIcon1: DashboardTopIcon!
     @IBOutlet weak var topTaskIcon2: DashboardTopIcon!
     @IBOutlet weak var topTaskIcon3: DashboardTopIcon!
@@ -40,7 +42,7 @@ class DashboardViewController: UIViewController {
 
     @IBOutlet weak var wheelPointConstraintX: NSLayoutConstraint!
     @IBOutlet weak var wheelPointConstraintY: NSLayoutConstraint!
-    @IBOutlet weak var topSpaceContraint: NSLayoutConstraint!
+    @IBOutlet weak var topSpaceContraint: KSOLayoutConstraint!
 
     @IBOutlet weak var actionAlertView: UIView!
 
@@ -72,14 +74,16 @@ class DashboardViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.backgroundColor = .clear
 
-        //tabBarController?.delegate = self
-
+        if UIScreen.main.bounds.height > 800 {
+            deviceXbackground.alpha = 1
+        } else {
+            deviceXbackground.alpha = 0
+        }
+        
         for _ in 0...2 {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
         }
-
-        topSpaceContraint.constant = UIScreen.main.bounds.height >= 812 ? 70 : 28 * KSOLayoutConstraint.screenDimensionCorrectionFactor
     }
 
     override func viewWillAppear(_ animated: Bool) {
