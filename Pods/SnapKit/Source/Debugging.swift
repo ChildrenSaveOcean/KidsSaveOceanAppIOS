@@ -28,34 +28,34 @@
 #endif
 
 public extension LayoutConstraint {
-
-    override public var description: String {
+    
+    override var description: String {
         var description = "<"
-
+        
         description += descriptionForObject(self)
-
+        
         if let firstItem = conditionalOptional(from: self.firstItem) {
             description += " \(descriptionForObject(firstItem))"
         }
-
+        
         if self.firstAttribute != .notAnAttribute {
             description += ".\(descriptionForAttribute(self.firstAttribute))"
         }
-
+        
         description += " \(descriptionForRelation(self.relation))"
-
+        
         if let secondItem = self.secondItem {
             description += " \(descriptionForObject(secondItem))"
         }
-
+        
         if self.secondAttribute != .notAnAttribute {
             description += ".\(descriptionForAttribute(self.secondAttribute))"
         }
-
+        
         if self.multiplier != 1.0 {
             description += " * \(self.multiplier)"
         }
-
+        
         if self.secondAttribute == .notAnAttribute {
             description += " \(self.constant)"
         } else {
@@ -65,16 +65,16 @@ public extension LayoutConstraint {
                 description += " - \(abs(self.constant))"
             }
         }
-
+        
         if self.priority.rawValue != 1000.0 {
             description += " ^\(self.priority)"
         }
-
+        
         description += ">"
-
+        
         return description
     }
-
+    
 }
 
 private func descriptionForRelation(_ relation: LayoutRelation) -> String {
@@ -82,6 +82,9 @@ private func descriptionForRelation(_ relation: LayoutRelation) -> String {
     case .equal:                return "=="
     case .greaterThanOrEqual:   return ">="
     case .lessThanOrEqual:      return "<="
+    #if swift(>=5.0)
+    @unknown default:           return "unknown"
+    #endif
     }
 }
 
@@ -109,7 +112,10 @@ private func descriptionForAttribute(_ attribute: LayoutAttribute) -> String {
         case .trailingMargin:       return "trailingMargin"
         case .centerXWithinMargins: return "centerXWithinMargins"
         case .centerYWithinMargins: return "centerYWithinMargins"
-        }
+        #if swift(>=5.0)
+        @unknown default:           return "unknown"
+        #endif
+    }
     #else
         switch attribute {
         case .notAnAttribute:       return "notAnAttribute"
@@ -125,7 +131,10 @@ private func descriptionForAttribute(_ attribute: LayoutAttribute) -> String {
         case .centerY:              return "centerY"
         case .lastBaseline:         return "lastBaseline"
         case .firstBaseline:        return "firstBaseline"
-        }
+        #if swift(>=5.0)
+        @unknown default:           return "unknown"
+        #endif
+    }
     #endif
 }
 
@@ -140,9 +149,9 @@ private func conditionalOptional<T>(from object: T) -> Optional<T> {
 private func descriptionForObject(_ object: AnyObject) -> String {
     let pointerDescription = String(format: "%p", UInt(bitPattern: ObjectIdentifier(object)))
     var desc = ""
-
+    
     desc += type(of: object).description()
-
+    
     if let object = object as? ConstraintView {
         desc += ":\(object.snp.label() ?? pointerDescription)"
     } else if let object = object as? LayoutConstraint {
@@ -150,11 +159,11 @@ private func descriptionForObject(_ object: AnyObject) -> String {
     } else {
         desc += ":\(pointerDescription)"
     }
-
+    
     if let object = object as? LayoutConstraint, let file = object.constraint?.sourceLocation.0, let line = object.constraint?.sourceLocation.1 {
         desc += "@\((file as NSString).lastPathComponent)#\(line)"
     }
-
+    
     desc += ""
     return desc
 }
