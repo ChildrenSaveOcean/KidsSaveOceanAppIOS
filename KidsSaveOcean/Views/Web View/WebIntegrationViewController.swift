@@ -11,70 +11,71 @@ import WebKit
 import Reachability
 
 class WebIntegrationViewController: UIViewController {
-    
-    var webUrlString: String = "" 
+
+    var webUrlString: String = ""
     private var reachability = Reachability()
-    
+
     lazy var webView = { () -> WKWebView in
         let webConfiguration = WKWebViewConfiguration()
         let wV = WKWebView(frame: view.bounds, configuration: webConfiguration)
+        wV.isOpaque = false
+        wV.backgroundColor = .clear
         return wV
     }()
-    
+
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
-        
+
         let y = (navigationController?.navigationBar.frame.origin.y)! + ((navigationController?.navigationBar.isHidden)! ? 0 : (navigationController?.navigationBar.bounds.height)!)
-        pV.frame = CGRect(x:0, y:y, width:view.bounds.width, height:5)
+        pV.frame = CGRect(x: 0, y: y, width: view.bounds.width, height: 5)
         return pV
     }()
-    
+
     lazy var backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "chevron-back"), style: .plain, target: self, action: #selector(goBack))
     lazy var forwardButton = UIBarButtonItem(image: #imageLiteral(resourceName: "chevron"), style: .plain, target: self, action: #selector(goForward))
-    
+
     lazy var noInternetConnectionImageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
-    
+
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
-        do{
+        do {
             try reachability!.startNotifier()
-        }catch{
+        } catch {
             print("could not start reachability notifier")
         }
-        
-        webView.frame = view.bounds
+
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.scrollView.bounces = false
-        
+
         view.addSubview(webView)
-        
+
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.backgroundColor = .clear
-        
+
         //backButton.isEnabled = false
         navigationItem.leftBarButtonItem = backButton
         forwardButton.isEnabled = false
         navigationItem.rightBarButtonItem = forwardButton
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkInternetConnection(reachability: reachability!)
     }
-    
+
     deinit {
         reachability!.stopNotifier()
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             let progress = Float(webView.estimatedProgress)
             if progress < 1 {
@@ -86,7 +87,7 @@ class WebIntegrationViewController: UIViewController {
             }
         }
     }
-    
+
     @objc func goBack() {
         if webView.canGoBack {
            webView.goBack()
@@ -94,16 +95,16 @@ class WebIntegrationViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
-    
+
     @objc func goForward() {
         webView.goForward()
     }
-    
+
     private func canPopViewController() -> Bool {
         return  (navigationController?.viewControllers.first != self)
     }
-    
-    private func checkInternetConnection(reachability:Reachability) {
+
+    private func checkInternetConnection(reachability: Reachability) {
         if reachability.connection == .none {
             showNoInternetConnection()
         } else {
@@ -111,25 +112,22 @@ class WebIntegrationViewController: UIViewController {
             loadPage()/////
         }
     }
-    
+
     private func showNoInternetConnection() {
         navigationController?.navigationBar.isHidden = false
         webView.addSubview(noInternetConnectionImageView)
         return
     }
-    
+
     func loadPage() {
         view.addSubview(progressBarView)
-        
+
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-        print("url is " + webUrlString)
-        let myURL = URL(string:webUrlString)
+        let myURL = URL(string: webUrlString)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
-    
-    
-    
+
     @objc func reachabilityChanged(note: Notification) {
         checkInternetConnection(reachability: note.object as! Reachability)
     }
@@ -150,11 +148,11 @@ extension WebIntegrationViewController: WKNavigationDelegate {
         navigationItem.title = title
         checkNavigationButtons()
     }
-    
+
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         checkNavigationButtons()
     }
-    
+
     func checkNavigationButtons() {
         var canGoBack = webView.canGoBack
         if !canGoBack {
@@ -164,4 +162,3 @@ extension WebIntegrationViewController: WKNavigationDelegate {
         forwardButton.isEnabled =  webView.canGoForward ? true : false
     }
 }
-

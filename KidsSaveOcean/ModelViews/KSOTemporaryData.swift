@@ -11,11 +11,11 @@ import UIKit
 typealias KSODataDictionary = Dictionary<String, Any>
 
 struct MainViewData {
-    let image:UIImage
-    let title:String
-    let subTitle:String
-    let decription:String
-    
+    let image: UIImage
+    let title: String
+    let subTitle: String
+    let decription: String
+
     init?(dictionary: KSODataDictionary) {
         if
             let imageNew = dictionary["image"] as? UIImage,
@@ -32,14 +32,12 @@ struct MainViewData {
     }
 }
 
-
-
 struct NewsViewData {
-    
+
 }
 
 struct NewsTableViewData {
-    
+
 }
 
 class KSOTemporaryData: NSObject {

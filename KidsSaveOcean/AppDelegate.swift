@@ -14,10 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        
+
         //# MARK: - Check if user already opened the tutorial screen
         //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if Settings.isOnBoardingHasBeenShown() {
@@ -29,11 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let onboardingViewController = storyBoard.instantiateViewController(withIdentifier: Settings.onBoardingViewControllerId)
             window?.rootViewController = onboardingViewController
         }
-        
+
         CountriesService.shared().setup()
         LettersService.shared().setup()
-        
+
         return true
     }
 }
-

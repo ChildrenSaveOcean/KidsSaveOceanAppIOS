@@ -9,35 +9,35 @@
 import UIKit
 
 class KSOBaseTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var tableViewTitle: UILabel!
     @IBOutlet weak var tableViewSubTitle: UILabel!
     @IBOutlet weak var tableViewIcon: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         loadFromNib()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     func makeRoundIcon() {
         tableViewIcon.layer.cornerRadius = tableViewIcon.frame.height/2
         tableViewIcon.clipsToBounds = true
     }
-    
+
     //// TODO refactor it
     override var frame: CGRect {
         get {
@@ -50,6 +50,5 @@ class KSOBaseTableViewCell: UITableViewCell {
             super.frame = frame
         }
     }
-    
-}
 
+}

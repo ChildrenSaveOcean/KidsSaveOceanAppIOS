@@ -7,7 +7,7 @@
 //
 import UIKit
 
-typealias UIButtonTargetClosure = (UIButton) -> ()
+typealias UIButtonTargetClosure = (UIButton) -> Void
 
 class ClosureWrapper: NSObject {
     let closure: UIButtonTargetClosure
@@ -17,11 +17,11 @@ class ClosureWrapper: NSObject {
 }
 
 extension UIButton {
-  
+
     private struct AssociatedKeys {
         static var targetClosure = "targetClosure"
     }
-  
+
     private var targetClosure: UIButtonTargetClosure? {
         get {
             guard let closureWrapper = objc_getAssociatedObject(self, &AssociatedKeys.targetClosure) as? ClosureWrapper else { return nil }
@@ -32,15 +32,15 @@ extension UIButton {
             objc_setAssociatedObject(self, &AssociatedKeys.targetClosure, ClosureWrapper(newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    
+
     func addTargetClosure(closure: @escaping UIButtonTargetClosure) {
         targetClosure = closure
         addTarget(self, action: #selector(UIButton.closureAction), for: .touchUpInside)
     }
-    
+
     @objc func closureAction() {
         guard let targetClosure = targetClosure else { return }
         targetClosure(self)
     }
-    
+
 }

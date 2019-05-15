@@ -20,11 +20,10 @@ class KSOStartViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func btnStartClick(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: "AlreadyStart")
     }
-    
 
 }
