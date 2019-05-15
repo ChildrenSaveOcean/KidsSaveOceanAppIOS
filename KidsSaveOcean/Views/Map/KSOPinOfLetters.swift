@@ -12,25 +12,25 @@ import MapKit
 class KSOPinOfLetters: NSObject, MKAnnotation {
 
     var coordinate: CLLocationCoordinate2D
-    var name : String
-    var numberOfLetters : Int
-    
-    init(with name: String, _ location: CLLocationCoordinate2D, _ numberOfLetters : Int) {
+    var name: String
+    var numberOfLetters: Int
+
+    init(with name: String, _ location: CLLocationCoordinate2D, _ numberOfLetters: Int) {
         self.name = name
         self.coordinate = location
         self.numberOfLetters = numberOfLetters
     }
-    
+
     var title: String? {
         return self.name
     }
-    
+
     var subtitle: String? {
         return "number of letters: \(self.numberOfLetters)"
     }
-    
-    func getNumberOfLetters() -> Int{
+
+    func getNumberOfLetters() -> Int {
         return numberOfLetters
     }
-  
+
 }

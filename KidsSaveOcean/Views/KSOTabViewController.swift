@@ -10,9 +10,8 @@ import UIKit
 
 class KSOTabViewController: UITabBarController {
 
-    
     ///// TODO : move logic form Storyboard to here
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +22,6 @@ class KSOTabViewController: UITabBarController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

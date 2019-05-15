@@ -9,13 +9,13 @@
 import UIKit
 
 struct BaseViewData {
-    
-    let image:UIImage
-    let title:String
-    let subTitle:String
-    let decription:String
-    let action:String
-    
+
+    let image: UIImage
+    let title: String
+    let subTitle: String
+    let decription: String
+    let action: String
+
     init?(dictionary: KSODataDictionary) {
         if
             let imageNew = dictionary["image"] as? UIImage,
@@ -35,17 +35,17 @@ struct BaseViewData {
 }
 
 struct BaseTableViewData {
-    let image:UIImage?
-    let title:String
-    let subTitle:String
-    
+    let image: UIImage?
+    let title: String
+    let subTitle: String
+
     init?(dictionary: KSODataDictionary) {
-        
-        var imageNew:UIImage?
+
+        var imageNew: UIImage?
         if ((dictionary["image"]) != nil) {
             imageNew = dictionary["image"] as? UIImage
         }
-        
+
         if
             //let imageNew = dictionary["image"] as? UIImage, /// TODO, the same question
             let titleStr = dictionary["title"] as? String,
@@ -60,6 +60,5 @@ struct BaseTableViewData {
 }
 
 class KSOStaticDataStructures: NSObject {
-    
-}
 
+}

@@ -14,7 +14,7 @@ struct CountryContact {
     let code: String
     let address: String?
     let coordinates: CLLocationCoordinate2D?
-    
+
     init(name: String, code: String, address: String?, coordinates: CLLocationCoordinate2D?) {
         self.name = name
         self.code = code

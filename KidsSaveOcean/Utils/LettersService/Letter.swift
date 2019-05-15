@@ -12,7 +12,7 @@ import MapKit
 struct Letter {
     var country: String
     var coordinates: CLLocationCoordinate2D?
-    
+
     init(country: String, coordinates: CLLocationCoordinate2D?) {
         self.country = country
         self.coordinates = coordinates

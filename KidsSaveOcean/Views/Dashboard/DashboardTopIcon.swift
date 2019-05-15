@@ -10,8 +10,8 @@ import UIKit
 
 class DashboardTopIcon: UIButton {
 
-    var completed:Bool = false
-    
+    var completed: Bool = false
+
     /*Peder [3:15 PM]
      1) if selected and incomplete: halo added, background white, icon red
      2) I selected and complete: halo, background white, icon blue */
@@ -29,7 +29,7 @@ class DashboardTopIcon: UIButton {
         layer.shadowOffset = CGSize(width: 2, height: 2)
         layer.masksToBounds = false
     }
-    
+
     /* Peder [3:15 PM]
      3) If unselected and incomplete: background darker, icon red
      4) If unselected and complete: background white, icon blue */

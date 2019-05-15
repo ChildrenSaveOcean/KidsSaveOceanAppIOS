@@ -8,9 +8,9 @@
 
 import UIKit
 
-class KSOLayoutConstraint:NSLayoutConstraint {
+class KSOLayoutConstraint: NSLayoutConstraint {
 
-    static let screenDimensionCorrectionFactor:CGFloat = UIScreen.main.bounds.height < 667 ? 2/3 : 1
+    static let screenDimensionCorrectionFactor: CGFloat = UIScreen.main.bounds.height < 667 ? 2/3 : 1
 
    override var constant: CGFloat {
         set {
@@ -23,5 +23,5 @@ class KSOLayoutConstraint:NSLayoutConstraint {
 }
 
 extension NSLayoutConstraint {
- 
+
 }
