@@ -107,7 +107,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="hPe-St-gil" kind="show" id="uWB-M8-tXv"/>
+                                    <segue destination="hPe-St-gil" kind="show" identifier="LetterTrackerViewControllerSegueId" id="uWB-M8-tXv"/>
                                 </connections>
                             </button>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="USN-9K-Xm0">
@@ -194,6 +194,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="enterLetterInTheTracker:" destination="hPe-St-gil" eventType="touchUpInside" id="yLY-G9-O2y"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Letter in the Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-Ho-QN6">
                                 <rect key="frame" x="49.5" y="15" width="276" height="28"/>

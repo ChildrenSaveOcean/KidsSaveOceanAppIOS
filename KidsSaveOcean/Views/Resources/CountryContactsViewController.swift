@@ -29,13 +29,23 @@ final class CountryContactsViewController: UIViewController {
 
         viewModel.fetchCountries()
         setupViewElements()
-        selectedCountry = viewModel.allCountries?.first
+        selectedCountry = CountriesService.shared().getNearestCountryToUserLocation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         updateViewConstraints()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let indextOfCountry = viewModel.allCountries?.firstIndex(where: { (country) -> Bool in
+                country.name == self.selectedCountry!.name
+        }) {
+            countriesPickerView.selectRow(indextOfCountry, inComponent: 0, animated: true)
+        }
     }
 
     private func setupViewElements() {
