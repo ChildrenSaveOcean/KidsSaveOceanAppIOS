@@ -11,11 +11,13 @@ import MapKit
 
 struct CountryContact {
     let name: String
-    let code: String
+    let code: String?
     let address: String?
     let coordinates: CLLocationCoordinate2D?
+    var letters_written: Int = 0
+    var head_of_state: String?
 
-    init(name: String, code: String, address: String?, coordinates: CLLocationCoordinate2D?) {
+    init(name: String, code: String?, address: String?, coordinates: CLLocationCoordinate2D?) {
         self.name = name
         self.code = code
         self.address = address

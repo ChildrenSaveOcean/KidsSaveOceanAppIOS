@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-
+        
+        KSOAuthorization.anonymousAuthorization()
+        
         //# MARK: - Check if user already opened the tutorial screen
-        //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if Settings.isOnBoardingHasBeenShown() {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
@@ -30,8 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         CountriesService.shared().setup()
-        LettersService.shared().setup()
-
+        
         return true
     }
 }

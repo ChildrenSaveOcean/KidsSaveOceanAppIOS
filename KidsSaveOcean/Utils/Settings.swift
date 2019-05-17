@@ -19,7 +19,7 @@ class Settings: NSObject {
 
     static let completionStatusKey = "completionStatusKey"
 
-    static let LettersHasBeenLoadedNotificationName = "LettersHasBeenLoaded"
+    static let CountriesHasBeenLoadedNotificationName = "CountriesHasBeenLoaded"
 
     class func saveOnBoardingHasBeenShown() {
         UserDefaults.standard.set(true, forKey: onBoardingKey)

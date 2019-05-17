@@ -12,9 +12,8 @@
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
+		1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638882D228DD6080084D8CA /* KSOAuthorization.swift */; };
 		163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20352170F12200069294 /* HomeScoreTableViewCell.swift */; };
-		163D20382171ECA200069294 /* CountryLetterScoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20372171ECA200069294 /* CountryLetterScoresViewModel.swift */; };
-		163D203A217253E500069294 /* CountryScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D2039217253E500069294 /* CountryScore.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
 		164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */; };
@@ -39,14 +38,13 @@
 		1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679B06921E935D100C15F2A /* DashboardViewController.swift */; };
 		1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06D21EA29E100C15F2A /* knobClick.mp3 */; };
 		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
+		16C7E61F228DA82400B30B52 /* KSOKeyChainUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7E61D228DA82400B30B52 /* KSOKeyChainUtility.swift */; };
 		16EA5FCE220CD5AD00DE062E /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */; };
 		16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */; };
 		16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */; };
 		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
-		7C0B1CCC222313720033F251 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CCB222313720033F251 /* Letter.swift */; };
-		7C0B1CCF222314300033F251 /* LettersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CCE222314300033F251 /* LettersService.swift */; };
 		7C0B1CD422232BE40033F251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */; };
 		7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD622232EC50033F251 /* CountriesService.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
@@ -90,9 +88,8 @@
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
+		1638882D228DD6080084D8CA /* KSOAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOAuthorization.swift; sourceTree = "<group>"; };
 		163D20352170F12200069294 /* HomeScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScoreTableViewCell.swift; sourceTree = "<group>"; };
-		163D20372171ECA200069294 /* CountryLetterScoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLetterScoresViewModel.swift; sourceTree = "<group>"; };
-		163D2039217253E500069294 /* CountryScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryScore.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
 		164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopIcon.swift; sourceTree = "<group>"; };
@@ -123,6 +120,7 @@
 		1679B06921E935D100C15F2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1679B06D21EA29E100C15F2A /* knobClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knobClick.mp3; sourceTree = "<group>"; };
 		168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionDashboardViewController.swift; sourceTree = "<group>"; };
+		16C7E61D228DA82400B30B52 /* KSOKeyChainUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOKeyChainUtility.swift; sourceTree = "<group>"; };
 		16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIntegrationViewController.swift; sourceTree = "<group>"; };
 		16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeVideoViewController.swift; sourceTree = "<group>"; };
@@ -134,8 +132,6 @@
 		6ECC311FA8BE1141A29B231E /* Pods-KidsSaveOcean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.release.xcconfig"; sourceTree = "<group>"; };
 		749B92EFB33A2884EF8D8D45 /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C00FFB921185B7000320309 /* CountryContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewController.swift; sourceTree = "<group>"; };
-		7C0B1CCB222313720033F251 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
-		7C0B1CCE222314300033F251 /* LettersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersService.swift; sourceTree = "<group>"; };
 		7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C0B1CD622232EC50033F251 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
@@ -185,15 +181,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		163D203B2172577900069294 /* CountryScores */ = {
-			isa = PBXGroup;
-			children = (
-				163D20372171ECA200069294 /* CountryLetterScoresViewModel.swift */,
-				163D2039217253E500069294 /* CountryScore.swift */,
-			);
-			path = CountryScores;
-			sourceTree = "<group>";
-		};
 		163F23A220FCFC3800022B38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,10 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				7C0B1CCD2223141D0033F251 /* Utils */,
-				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				16CF5A2920AF1E6200C4E57E /* Extentions */,
-				16CF5A2820AF1E5600C4E57E /* ModelViews */,
-				16CF5A2720AF1E4C00C4E57E /* Models */,
+				16CF5A2820AF1E5600C4E57E /* ViewModel */,
 				16CF5A2620AF1E4100C4E57E /* Views */,
 				16559BD520ADF9D5002D4F78 /* Main.storyboard */,
 				1679B06D21EA29E100C15F2A /* knobClick.mp3 */,
@@ -334,6 +319,15 @@
 			path = "User Type";
 			sourceTree = "<group>";
 		};
+		16C7E61B228DA7F800B30B52 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				16C7E61D228DA82400B30B52 /* KSOKeyChainUtility.swift */,
+				1638882D228DD6080084D8CA /* KSOAuthorization.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		16CF5A2620AF1E4100C4E57E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,21 +344,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		16CF5A2720AF1E4C00C4E57E /* Models */ = {
+		16CF5A2820AF1E5600C4E57E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7C0B1CD522232E9C0033F251 /* CountriesService */,
+				16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */,
 				16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		16CF5A2820AF1E5600C4E57E /* ModelViews */ = {
-			isa = PBXGroup;
-			children = (
-				16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */,
-				163D203B2172577900069294 /* CountryScores */,
-			);
-			path = ModelViews;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		16CF5A2920AF1E6200C4E57E /* Extentions */ = {
@@ -414,20 +401,11 @@
 		7C0B1CCD2223141D0033F251 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				16649E9120FEC72B000BCB48 /* Settings.swift */,
-				7C0B1CD522232E9C0033F251 /* CountriesService */,
-				7C0B1CD0222314E10033F251 /* LettersService */,
+				16C7E61B228DA7F800B30B52 /* Auth */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		7C0B1CD0222314E10033F251 /* LettersService */ = {
-			isa = PBXGroup;
-			children = (
-				7C0B1CCE222314300033F251 /* LettersService.swift */,
-				7C0B1CCB222313720033F251 /* Letter.swift */,
-			);
-			path = LettersService;
 			sourceTree = "<group>";
 		};
 		7C0B1CD522232E9C0033F251 /* CountriesService */ = {
@@ -664,6 +642,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -672,6 +651,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -733,15 +713,13 @@
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				7C7BBAC921BBF44200C48D4E /* LetterTrackerViewModel.swift in Sources */,
-				7C0B1CCF222314300033F251 /* LettersService.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */,
 				163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */,
-				7C0B1CCC222313720033F251 /* Letter.swift in Sources */,
 				16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
-				163D203A217253E500069294 /* CountryScore.swift in Sources */,
+				1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */,
 				1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */,
 				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,
 				945A089120F643EB006ED13D /* MapViewController.swift in Sources */,
@@ -754,12 +732,12 @@
 				16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */,
 				16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */,
 				1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */,
-				163D20382171ECA200069294 /* CountryLetterScoresViewModel.swift in Sources */,
 				16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */,
 				16649E9220FEC72B000BCB48 /* Settings.swift in Sources */,
 				7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */,
 				C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
+				16C7E61F228DA82400B30B52 /* KSOKeyChainUtility.swift in Sources */,
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
 				168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */,
 				164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */,

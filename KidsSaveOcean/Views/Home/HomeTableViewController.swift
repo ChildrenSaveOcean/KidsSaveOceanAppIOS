@@ -14,8 +14,6 @@ final class HomeTableViewController: UITableViewController {
   private let homeCellIdenteficator = "homeViewCellIdentificator"
   private let scoreCellIdenteficator = "scoreViewCellIdentificator"
 
-  private lazy var viewModel = CountryLetterScoresViewModel()
-
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationController?.navigationBar.isHidden = true
@@ -37,7 +35,7 @@ final class HomeTableViewController: UITableViewController {
     self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: homeCellIdenteficator)
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
 
-    NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.LettersHasBeenLoadedNotificationName), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -50,9 +48,9 @@ final class HomeTableViewController: UITableViewController {
     navigationController?.navigationBar.isHidden = true
   }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return HomeViewData.count
@@ -64,24 +62,26 @@ final class HomeTableViewController: UITableViewController {
     if indexPath.row == 4 {
       let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as! HomeScoreTableViewCell
 
-      let scores =  LettersService.shared().mapPins
+        let scores = CountriesService.shared().countriesContacts.filter({$0.letters_written > 0}).sorted { (first, second) -> Bool in
+            first.letters_written > second.letters_written
+        }
 
       if scores.count > 0 {
           cell.country1NumLabel.text = "1"
           cell.country1Label.text = scores[0].name
-          cell.country1ScoreLabel.text = String( scores[0].numberOfLetters )
+          cell.country1ScoreLabel.text = String( scores[0].letters_written )
         }
 
         if scores.indices.contains(1) {
           cell.country2NumLabel.text = "2"
           cell.country2Label.text = scores[1].name
-          cell.country2ScoreLabel.text = String( scores[1].numberOfLetters )
+          cell.country2ScoreLabel.text = String( scores[1].letters_written )
         }
 
         if scores.indices.contains(2) {
           cell.country3NumLabel.text = "3"
           cell.country3Label.text = scores[2].name
-          cell.country3ScoreLabel.text = String( scores[2].numberOfLetters )
+          cell.country3ScoreLabel.text = String( scores[2].letters_written )
         }
       return cell
 

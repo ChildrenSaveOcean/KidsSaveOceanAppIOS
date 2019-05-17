@@ -25,13 +25,15 @@ class CountriesService {
     }
 
     func setup() {
-        self.fetchContacts(databaseReferenece: Database.database().reference(), nil)
+        self.fetchContacts(databaseReferenece: Database.database().reference()) {
+            NotificationCenter.default.post(name: Notification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
+        }
     }
 
     func fetchContacts(databaseReferenece: DatabaseReference, _ completion: (() -> Void)?) {
         countriesContacts.removeAll()
 
-        databaseReferenece.child("Countries").observeSingleEvent(of: .value, with: { (snapshot) in
+        databaseReferenece.child("COUNTRIES").observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 completion?()
 
@@ -39,31 +41,37 @@ class CountriesService {
             }
 
             for country in snapshotValue {
+                
                 guard let value = country.value as? NSDictionary else {
                     continue
                 }
 
-                guard let name = value["name"] as? String else {
+                guard let name = country.key as? String else {
+                    continue
+                }
+                
+                guard let address = value["country_address"] as? String else {
                     continue
                 }
 
-                guard let code = value["code"] as? String else {
-                    continue
+                var coordinates: CLLocationCoordinate2D? = nil
+                if let longitudeString = value["longitude"] as? String,
+                    let latitudeString = value["latitude"] as? String,
+                    let longitude = Double(longitudeString),
+                    let latitude = Double(latitudeString) {
+                    coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 }
 
-                guard let address = value["address"] as? String else {
-                    continue
+                var countryContact = CountryContact(name: name, code: nil, address: address, coordinates:coordinates)
+                
+                if let head = value["country_head_of_state_title"] as? String {
+                    countryContact.head_of_state = head
                 }
-
-                guard let longitudeString = value["longitude"] as? String, let latitudeString = value["latitude"] as? String else {
-                    continue
+                
+                if let lettersCount = value["letters_written_to_country"] as? Int {
+                    countryContact.letters_written = lettersCount
                 }
-
-                guard let longitude = Double(longitudeString), let latitude = Double(latitudeString) else {
-                    continue
-                }
-
-                let countryContact = CountryContact(name: name, code: code, address: address, coordinates: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                
                 self.countriesContacts.append(countryContact)
             }
 
