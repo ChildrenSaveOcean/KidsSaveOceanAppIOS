@@ -123,9 +123,10 @@ final class CountryContactsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    private let countryListToContactDetailsSegue = "countryListToContactDetailsSegue"
     @IBAction func submitButtonPressed(_ sender: Any) {
         if (viewModel.countriesContacts.count > 0) {
-            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+            self.performSegue(withIdentifier: countryListToContactDetailsSegue, sender: self)
 
             return
         }
@@ -134,7 +135,7 @@ final class CountryContactsViewController: UIViewController {
 
         viewModel.fetchContacts { [unowned self] in
             self.activityIndicator.stopAnimating()
-            self.performSegue(withIdentifier: "countryListToContactDetailsSegue", sender: self)
+            self.performSegue(withIdentifier: self.countryListToContactDetailsSegue, sender: self)
         }
     }
 
