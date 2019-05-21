@@ -106,6 +106,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 
     func reloadMap() {
+        _countriesData = nil
         addPinsInMap()
         self.map.reloadInputViews()
         showMaxLettersScoreRegion()
@@ -114,6 +115,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     // MARK: backend methods
     func addPinsInMap() {
+        map.removeAnnotations(map.annotations)
         for country in countriesData {
             if country.coordinates != nil {
                 let annotation = KSOPinOfLetters(with: country.name, country.coordinates!, country.letters_written)

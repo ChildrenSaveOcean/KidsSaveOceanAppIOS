@@ -49,14 +49,14 @@ class DashboardViewController: UIViewController {
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
-    
+
     let taskScope: [String] = UserViewModel.getDashboardFullTasks() //dashboardTasksScopes.allCases.map { $0.dashboardTasks }
     let tasks: [dashboardTasksScopes] = UserViewModel.getDashboardTasks() //dashboardTasksScopes.allCases.map { $0.rawValue }
-    
+
     let linkForSharing = "https://www.kidssaveocean.com/change-fate"
 
     lazy var completionTasksStates =  UserViewModel.shared().getCompletionTasksStatuses() // Settings.getCompletionTasksStatus()//
- 
+
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3, self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
 
     var audioPlayers = [AVAudioPlayer]()
@@ -178,10 +178,9 @@ class DashboardViewController: UIViewController {
     @IBAction func completeAction(_ sender: Any) {
         let newState = !completionTasksStates[currentTaskSwitched]
         completionTasksStates[currentTaskSwitched] = newState
-        
+
         Settings.saveCompletionTasksStatus(completionTasksStates)
         UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
-        
 
         topIcons[currentTaskSwitched]?.completed = newState
         selectTopIcon()
