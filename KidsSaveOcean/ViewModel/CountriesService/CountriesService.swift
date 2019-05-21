@@ -51,7 +51,7 @@ class CountriesService {
                 guard let name = country.key as? String else {
                     continue
                 }
-                
+
                 guard let address = value["country_address"] as? String else {
                     continue
                 }
@@ -116,11 +116,11 @@ class CountriesService {
 
         let lettersCount = country.letters_written + 1
 
-        var latitude = ""
-        var longitude = ""
+        var latitude: Double = 0
+        var longitude: Double = 0
         if country.coordinates != nil {
-            latitude = String(format: "%f", country.coordinates!.latitude)
-            longitude = String(format: "%f", country.coordinates!.longitude)
+            latitude = country.coordinates!.latitude  //String(format: "%f", country.coordinates!.latitude)
+            longitude = country.coordinates!.longitude //String(format: "%f", country.coordinates!.longitude)
         }
 
         Database.database().reference().child(childName)

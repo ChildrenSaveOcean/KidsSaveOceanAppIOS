@@ -25,7 +25,7 @@ class KSOAuthorization: NSObject {
                 print("\nThere is a problem with anonimous authorization! \n")
                 return
             }
-            
+
             if authResult != nil {
                 print("already signed in anonymously, UID: \(authResult!.user.uid)")
             }

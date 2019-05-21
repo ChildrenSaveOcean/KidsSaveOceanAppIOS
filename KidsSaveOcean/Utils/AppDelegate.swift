@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         CountriesService.shared().setup()
         UserViewModel.shared()
-        
+
         return true
     }
 }

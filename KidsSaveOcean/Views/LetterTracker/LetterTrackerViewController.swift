@@ -74,7 +74,7 @@ final class LetterTrackerViewController: UIViewController {
         let country = countriesData[pickerView.selectedRow(inComponent: 0)]
         CountriesService.shared().increaseLettersWrittenForCountry(country)
         UserViewModel.shared().increaseLetterWrittenCount()
-        
+
         guard let mapVC = navigationController?.viewControllers.first as? MapViewController else { navigationController?.popViewController(animated: true)
             return
         }
