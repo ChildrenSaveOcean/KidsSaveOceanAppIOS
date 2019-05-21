@@ -29,8 +29,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             self.tbvTop10.isHidden = true
         }
     }
-    
-    var _countriesData: [CountryContact]? = nil
+
+    var _countriesData: [CountryContact]?
     var countriesData: [CountryContact] {
         get {
             if _countriesData != nil {
@@ -49,7 +49,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             _countriesData = newValue
         }
     }
-    
+
 //    lazy var countriesData: [CountryContact]? = { () -> [CountryContact] in
 //        return CountriesService.shared()
 //            .countriesContacts
@@ -58,18 +58,18 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 //                first.letters_written > second.letters_written
 //            })
 //    }()
-    
+
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
-        
+
         map.register(KSOCustomMapPin.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         tbvTop10.register(UINib(nibName: "KSOMapTop10TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
 
-        let summaryLettersWritten = countriesData.reduce(0){$0 + $1.letters_written}
+        let summaryLettersWritten = countriesData.reduce(0) {$0 + $1.letters_written}
         lblLettersWritten.text = String(summaryLettersWritten)
         lblNumberCountries.text = String(countriesData.count)
     }
@@ -86,7 +86,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         segmentControl.selectedSegmentIndex = segmentControlDefaultIndex
         didChangeSegment(segmentControl)
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -125,18 +125,18 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     private func showMaxLettersScoreRegion() {
         guard let maxLettersCountry = countriesData.first else { return }
         guard let coordinates = maxLettersCountry.coordinates else { return }
-        
+
         let region = MKCoordinateRegion(center: coordinates, span: map.region.span)
         map.setRegion(region, animated: true)
     }
-    
-    func showCountry(_ country:CountryContact) {
+
+    func showCountry(_ country: CountryContact) {
         guard let coordinates = country.coordinates else { return }
-        
+
         let region = MKCoordinateRegion(center: coordinates, span: map.region.span)
         map.setRegion(region, animated: true)
     }
-    
+
     @objc private func reloadScores() {
         _countriesData = nil
         tbvTop10.reloadData()

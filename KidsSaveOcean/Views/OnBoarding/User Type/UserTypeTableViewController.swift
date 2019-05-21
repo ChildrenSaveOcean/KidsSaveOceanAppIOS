@@ -54,13 +54,14 @@ class UserTypeTableViewController: UITableViewController {
     guard let videoURL = BaseViewData(dictionary: UserTypeViewData[indexPath.row])?.action else {
       return
     }
-    self.showVideo(videoURL)
+    self.showVideo(videoURL, userType: UserType(rawValue: indexPath.row)!)
   }
 
-  private func showVideo(_ videoAddressString: String) {
+    private func showVideo(_ videoAddressString: String, userType: UserType) {
     let videoViewController = UserTypeVideoViewController()
     videoViewController.urlString = videoAddressString
     videoViewController.delegate = self
+    videoViewController.userType = userType
     /*navigationController?.navigationBar.isHidden = false
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()

@@ -23,6 +23,8 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         self.webUrlString = "https://www.youtube.com/embed/\(urlString)"
     }
 
+    var userType: UserType?
+
     private func showActionButtons() {
         let buttonsWidth: CGFloat = 100
         let buttonsHeight: CGFloat = 50
@@ -34,6 +36,13 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
         goButton.addTargetClosure { (_) in
             Settings.saveOnBoardingHasBeenShown()
+
+            if self.userType != nil {
+                let userViewModel = UserViewModel.shared()
+                userViewModel.user_type = self.userType!
+                userViewModel.saveUser()
+            }
+
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
             self.present(tabViewController, animated: true, completion: nil)

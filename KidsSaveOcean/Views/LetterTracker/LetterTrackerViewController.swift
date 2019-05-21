@@ -17,7 +17,7 @@ final class LetterTrackerViewController: UIViewController {
     private lazy var countriesData = CountriesService.shared().countriesContacts.sorted { (first, second) -> Bool in
         first.name < second.name
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +32,7 @@ final class LetterTrackerViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         if let nearestCountry = CountriesService.shared().getNearestCountryToUserLocation(),
             let indextOfCountry = countriesData.firstIndex(where: { (country) -> Bool in
                 country.name == nearestCountry.name
@@ -40,7 +40,7 @@ final class LetterTrackerViewController: UIViewController {
             pickerView.selectRow(indextOfCountry, inComponent: 0, animated: true)
         }
     }
-    
+
     private func setupViewElements() {
         setupNavigationBar()
         setupSubmitButton()
@@ -68,19 +68,20 @@ final class LetterTrackerViewController: UIViewController {
     private func setupSubmitButton() {
         submitButton.layer.cornerRadius = 5
     }
-    
+
     @IBAction func enterLetterInTheTracker(_ sender: Any) {
-        
+
         let country = countriesData[pickerView.selectedRow(inComponent: 0)]
         CountriesService.shared().increaseLettersWrittenForCountry(country)
+        UserViewModel.shared().increaseLetterWrittenCount()
         
         guard let mapVC = navigationController?.viewControllers.first as? MapViewController else { navigationController?.popViewController(animated: true)
             return
         }
-        
+
         navigationController?.popToViewController(mapVC, animated: true)
     }
-    
+
 }
 
 // MARK: - UIPickerViewDataSource

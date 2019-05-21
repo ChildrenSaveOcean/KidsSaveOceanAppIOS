@@ -37,10 +37,10 @@ final class CountryContactsViewController: UIViewController {
 
         updateViewConstraints()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         if let indextOfCountry = viewModel.allCountries?.firstIndex(where: { (country) -> Bool in
                 country.name == self.selectedCountry!.name
         }) {
