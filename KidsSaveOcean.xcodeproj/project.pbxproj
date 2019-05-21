@@ -38,7 +38,8 @@
 		1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679B06921E935D100C15F2A /* DashboardViewController.swift */; };
 		1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06D21EA29E100C15F2A /* knobClick.mp3 */; };
 		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
-		16C7E61F228DA82400B30B52 /* KSOKeyChainUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7E61D228DA82400B30B52 /* KSOKeyChainUtility.swift */; };
+		16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3B229027F100E36F25 /* UserViewModel.swift */; };
+		16BA0A3E2290281A00E36F25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3D2290281A00E36F25 /* User.swift */; };
 		16EA5FCE220CD5AD00DE062E /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */; };
 		16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */; };
 		16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */; };
@@ -120,7 +121,8 @@
 		1679B06921E935D100C15F2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1679B06D21EA29E100C15F2A /* knobClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knobClick.mp3; sourceTree = "<group>"; };
 		168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionDashboardViewController.swift; sourceTree = "<group>"; };
-		16C7E61D228DA82400B30B52 /* KSOKeyChainUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOKeyChainUtility.swift; sourceTree = "<group>"; };
+		16BA0A3B229027F100E36F25 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		16BA0A3D2290281A00E36F25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIntegrationViewController.swift; sourceTree = "<group>"; };
 		16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeVideoViewController.swift; sourceTree = "<group>"; };
@@ -319,10 +321,18 @@
 			path = "User Type";
 			sourceTree = "<group>";
 		};
+		16BA0A39229027B500E36F25 /* UserId */ = {
+			isa = PBXGroup;
+			children = (
+				16BA0A3B229027F100E36F25 /* UserViewModel.swift */,
+				16BA0A3D2290281A00E36F25 /* User.swift */,
+			);
+			path = UserId;
+			sourceTree = "<group>";
+		};
 		16C7E61B228DA7F800B30B52 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				16C7E61D228DA82400B30B52 /* KSOKeyChainUtility.swift */,
 				1638882D228DD6080084D8CA /* KSOAuthorization.swift */,
 			);
 			path = Auth;
@@ -347,6 +357,7 @@
 		16CF5A2820AF1E5600C4E57E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				16BA0A39229027B500E36F25 /* UserId */,
 				7C0B1CD522232E9C0033F251 /* CountriesService */,
 				16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */,
 				16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */,
@@ -660,7 +671,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n\nif which swiftlint >/dev/null; then\n    swiftlint --config .swiftlint.yml\n    swiftlint autocorrect\nelse\n    echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DAE2C89A8509DEBDE34FD2AF /* [CP] Check Pods Manifest.lock */ = {
@@ -709,6 +720,7 @@
 				16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */,
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
+				16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
@@ -723,6 +735,7 @@
 				1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */,
 				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,
 				945A089120F643EB006ED13D /* MapViewController.swift in Sources */,
+				16BA0A3E2290281A00E36F25 /* User.swift in Sources */,
 				C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */,
 				16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */,
 				16559BD020ADF9D5002D4F78 /* AppDelegate.swift in Sources */,
@@ -737,7 +750,6 @@
 				7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */,
 				C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
-				16C7E61F228DA82400B30B52 /* KSOKeyChainUtility.swift in Sources */,
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
 				168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */,
 				164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */,

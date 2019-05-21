@@ -12,7 +12,7 @@ import AVFoundation
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var deviceXbackground: UIImageView!
-    
+
     @IBOutlet weak var topTaskIcon1: DashboardTopIcon!
     @IBOutlet weak var topTaskIcon2: DashboardTopIcon!
     @IBOutlet weak var topTaskIcon3: DashboardTopIcon!
@@ -49,18 +49,14 @@ class DashboardViewController: UIViewController {
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
-
-    let taskScope = ["Research plastic ocean pollution",
-                 "Write your government a letter",
-                 "Spread Fatechanger by sharing",
-                 "Start a letter writing campaign",
-                 "Seek change through local government",
-                 "Take part in or organize a protest"]
-
+    
+    let taskScope: [String] = UserViewModel.getDashboardFullTasks() //dashboardTasksScopes.allCases.map { $0.dashboardTasks }
+    let tasks: [dashboardTasksScopes] = UserViewModel.getDashboardTasks() //dashboardTasksScopes.allCases.map { $0.rawValue }
+    
     let linkForSharing = "https://www.kidssaveocean.com/change-fate"
 
-    var completionTasksStates = Settings.getCompletionTasksStatus()
-
+    lazy var completionTasksStates =  UserViewModel.shared().getCompletionTasksStatuses() // Settings.getCompletionTasksStatus()//
+ 
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3, self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
 
     var audioPlayers = [AVAudioPlayer]()
@@ -79,7 +75,7 @@ class DashboardViewController: UIViewController {
         } else {
             deviceXbackground.alpha = 0
         }
-        
+
         for _ in 0...2 {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
@@ -111,6 +107,7 @@ class DashboardViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        UserViewModel.shared().saveUser()
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -181,7 +178,10 @@ class DashboardViewController: UIViewController {
     @IBAction func completeAction(_ sender: Any) {
         let newState = !completionTasksStates[currentTaskSwitched]
         completionTasksStates[currentTaskSwitched] = newState
+        
         Settings.saveCompletionTasksStatus(completionTasksStates)
+        UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
+        
 
         topIcons[currentTaskSwitched]?.completed = newState
         selectTopIcon()

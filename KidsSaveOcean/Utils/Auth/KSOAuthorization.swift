@@ -9,26 +9,26 @@
 import UIKit
 import FirebaseAuth
 
-
 let AUTORIZATION_URL_AUTHORIZE_DOMAIN  = "kids-save-ocean.firebaseapp.com"
 
 class KSOAuthorization: NSObject {
 
     class func anonymousAuthorization() {
-        
+
         if Auth.auth().currentUser != nil { // already signed in anonymously
-            print("already signed in anonymously, UID: \(Auth.auth().currentUser?.uid)")
+            print("already signed in anonymously, UID: \(Auth.auth().currentUser!.uid)")
             return
         }
-        
-        Auth.auth().signInAnonymously() { (authResult, error) in
-            let user = authResult!.user
+
+        Auth.auth().signInAnonymously { (authResult, error) in
+            if error != nil {
+                print("\nThere is a problem with anonimous authorization! \n")
+                return
+            }
             
-            let isAnonymous = user.isAnonymous  // true
-            let uid = user.uid
-            
-            print("already signed in anonymously, UID: \(uid)")
+            if authResult != nil {
+                print("already signed in anonymously, UID: \(authResult!.user.uid)")
+            }
         }
-        
     }
 }

@@ -14,12 +14,12 @@ final class LetterTrackerViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
 
-    private lazy var viewModel = LetterTrackerViewModel()
+    private lazy var countriesData = CountriesService.shared().countriesContacts.sorted { (first, second) -> Bool in
+        first.name < second.name
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel.fetchCountries()
 
         setupViewElements()
     }
@@ -28,6 +28,17 @@ final class LetterTrackerViewController: UIViewController {
         super.viewWillAppear(animated)
 
         updateViewConstraints()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let nearestCountry = CountriesService.shared().getNearestCountryToUserLocation(),
+            let indextOfCountry = countriesData.firstIndex(where: { (country) -> Bool in
+                country.name == nearestCountry.name
+            }) {
+            pickerView.selectRow(indextOfCountry, inComponent: 0, animated: true)
+        }
     }
 
     private func setupViewElements() {
@@ -57,6 +68,20 @@ final class LetterTrackerViewController: UIViewController {
     private func setupSubmitButton() {
         submitButton.layer.cornerRadius = 5
     }
+
+    @IBAction func enterLetterInTheTracker(_ sender: Any) {
+
+        let country = countriesData[pickerView.selectedRow(inComponent: 0)]
+        CountriesService.shared().increaseLettersWrittenForCountry(country)
+        UserViewModel.shared().increaseLetterWrittenCount()
+        
+        guard let mapVC = navigationController?.viewControllers.first as? MapViewController else { navigationController?.popViewController(animated: true)
+            return
+        }
+
+        navigationController?.popToViewController(mapVC, animated: true)
+    }
+
 }
 
 // MARK: - UIPickerViewDataSource
@@ -66,7 +91,7 @@ extension LetterTrackerViewController: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.allCountries?.count ?? 0
+        return countriesData.count
     }
 }
 
@@ -74,7 +99,7 @@ extension LetterTrackerViewController: UIPickerViewDataSource {
 extension LetterTrackerViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
-        label.text = viewModel.allCountries?[row].name
+        label.text = countriesData[row].name
         label.textAlignment = .center
 
         return label
