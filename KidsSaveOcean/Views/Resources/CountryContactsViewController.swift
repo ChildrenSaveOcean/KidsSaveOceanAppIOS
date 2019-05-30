@@ -136,7 +136,7 @@ final class CountryContactsViewController: UIViewController {
 
     private let countryListToContactDetailsSegue = "countryListToContactDetailsSegue"
     @IBAction func submitButtonPressed(_ sender: Any) {
-        if (viewModel.countriesContacts.count > 0) {
+        if viewModel.countriesContacts.count > 0 {
             self.performSegue(withIdentifier: countryListToContactDetailsSegue, sender: self)
 
             return

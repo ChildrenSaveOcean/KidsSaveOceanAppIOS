@@ -498,6 +498,7 @@
 				16559BC920ADF9D5002D4F78 /* Frameworks */,
 				16559BCA20ADF9D5002D4F78 /* Resources */,
 				9196C9AF7A3093111293B052 /* [CP] Embed Pods Frameworks */,
+				169DA531229F65EF00A58E9B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -649,6 +650,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		169DA531229F65EF00A58E9B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint --config .swiftlint.yml\n    swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		9196C9AF7A3093111293B052 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,7 +692,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n\nif which swiftlint >/dev/null; then\n    swiftlint --config .swiftlint.yml\n    swiftlint autocorrect\nelse\n    echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n\n";
 			showEnvVarsInLog = 0;
 		};
 		DAE2C89A8509DEBDE34FD2AF /* [CP] Check Pods Manifest.lock */ = {

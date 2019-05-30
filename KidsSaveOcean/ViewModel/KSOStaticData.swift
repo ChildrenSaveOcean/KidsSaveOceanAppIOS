@@ -8,8 +8,8 @@
 
 import UIKit
 
-typealias KSODataDictionary = Dictionary<String, Any>
-typealias KSODataArray = Array<KSODataDictionary>
+typealias KSODataDictionary = [String: Any]
+typealias KSODataArray = [KSODataDictionary]
 
 let UserTypeViewData: KSODataArray = [["image": #imageLiteral(resourceName: "Skater"),
                                      "title": "I am a Student",

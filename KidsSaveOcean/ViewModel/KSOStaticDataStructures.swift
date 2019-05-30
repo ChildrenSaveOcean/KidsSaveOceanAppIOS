@@ -42,12 +42,11 @@ struct BaseTableViewData {
     init?(dictionary: KSODataDictionary) {
 
         var imageNew: UIImage?
-        if ((dictionary["image"]) != nil) {
+        if dictionary["image"] != nil {
             imageNew = dictionary["image"] as? UIImage
         }
 
         if
-            //let imageNew = dictionary["image"] as? UIImage, /// TODO, the same question
             let titleStr = dictionary["title"] as? String,
             let subTitleStr = dictionary["subTitle"] as? String {
             self.image = imageNew

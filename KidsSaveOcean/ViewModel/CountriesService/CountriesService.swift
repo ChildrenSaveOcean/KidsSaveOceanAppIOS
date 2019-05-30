@@ -76,10 +76,11 @@ class CountriesService {
             }
 
             completion?()
-        }) { (error) in
-            completion?()
-            print(error.localizedDescription)
-        }
+        })
+//        { (error) in
+//            //completion?()
+//            print(error.localizedDescription)
+//        }
     }
 
     func contact(of country: String) -> CountryContact? {
@@ -128,8 +129,7 @@ class CountriesService {
                                            "country_head_of_state_title": country.head_of_state as Any,
                                            "country_address": country.address as Any,
                                            "latitude": latitude,
-                                           "longitude": longitude ]) {
-            (error: Error?, _: DatabaseReference) in
+                                           "longitude": longitude ]) { (error: Error?, _: DatabaseReference) in
             if let error = error {
                 print("Data could not be saved: \(error).") // TODO app should not crash if there is some problem with database
             } else {

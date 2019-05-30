@@ -17,7 +17,7 @@ enum UserType: Int { // we can get from from Firebase, bit it will stay here tem
     other
 }
 
-enum dashboardTasksScopes: Int, CaseIterable {
+enum DashboardTasksScopes: Int, CaseIterable {
     case research, write_letter, share, start_campaign, local_politics, protest
 
     var firebaseFieldName: String {
@@ -63,43 +63,43 @@ class UserViewModel {
     let authorizedUser = Auth.auth().currentUser
     let databaseReferenece: DatabaseReference //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
 ////// Zip2Sequence ? 
-    var parametersDisctionary: [String: Any] = [ dashboardTasksScopes.research.firebaseFieldName: false,
-                                                  dashboardTasksScopes.write_letter.firebaseFieldName: false,
-                                                  dashboardTasksScopes.share.firebaseFieldName: false,
-                                                  dashboardTasksScopes.start_campaign.firebaseFieldName: false,
-                                                  dashboardTasksScopes.local_politics.firebaseFieldName: false,
-                                                  dashboardTasksScopes.protest.firebaseFieldName: false,
+    var parametersDisctionary: [String: Any] = [ DashboardTasksScopes.research.firebaseFieldName: false,
+                                                  DashboardTasksScopes.write_letter.firebaseFieldName: false,
+                                                  DashboardTasksScopes.share.firebaseFieldName: false,
+                                                  DashboardTasksScopes.start_campaign.firebaseFieldName: false,
+                                                  DashboardTasksScopes.local_politics.firebaseFieldName: false,
+                                                  DashboardTasksScopes.protest.firebaseFieldName: false,
                                                   lettersWrittenKey: 0,
                                                   userTypeKey: 0 ]
 
     var local_politics: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[dashboardTasksScopes.local_politics.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.local_politics.firebaseFieldName] = newValue
         }
     }
     var research: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[dashboardTasksScopes.research.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.research.firebaseFieldName] = newValue
         }
     }
     var protest: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[dashboardTasksScopes.protest.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.protest.firebaseFieldName] = newValue
         }
     }
     var share: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[dashboardTasksScopes.share.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.share.firebaseFieldName] = newValue
         }
     }
     var start_campaign: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[dashboardTasksScopes.start_campaign.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.start_campaign.firebaseFieldName] = newValue
         }
     }
     var write_letter: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[dashboardTasksScopes.write_letter.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.write_letter.firebaseFieldName] = newValue
         }
     }
     var letters_written: Int = 0 {
@@ -129,6 +129,8 @@ class UserViewModel {
         }
     }
 
+    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable function_body_length
     func fetchUser(_ completion: (() -> Void)?) {
 
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -145,32 +147,32 @@ class UserViewModel {
                 //setTaskStatus(task: parameterName, value:  userFBData.value)
 
                 switch parameterName {
-                case dashboardTasksScopes.research.firebaseFieldName:
+                case DashboardTasksScopes.research.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.research = value
                     continue
 
-                case dashboardTasksScopes.write_letter.firebaseFieldName:
+                case DashboardTasksScopes.write_letter.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.write_letter = value
                     continue
 
-                case dashboardTasksScopes.share.firebaseFieldName:
+                case DashboardTasksScopes.share.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.share = value
                     continue
 
-                case dashboardTasksScopes.start_campaign.firebaseFieldName:
+                case DashboardTasksScopes.start_campaign.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.start_campaign = value
                     continue
 
-                case dashboardTasksScopes.local_politics.firebaseFieldName:
+                case DashboardTasksScopes.local_politics.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.local_politics = value
                     continue
 
-                case dashboardTasksScopes.protest.firebaseFieldName:
+                case DashboardTasksScopes.protest.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.protest = value
                     continue
@@ -197,8 +199,10 @@ class UserViewModel {
             }
         })
     }
+    // swiftlint:enable function_body_length
+    // swiftlint:enable cyclomatic_complexity
 
-    private func setTaskStatus(task: dashboardTasksScopes, value: Bool) {
+    private func setTaskStatus(task: DashboardTasksScopes, value: Bool) {
         switch task {
         case .research:
             self.research = value
@@ -220,7 +224,7 @@ class UserViewModel {
         }
     }
 
-    private func getTaskStatus(_ task: dashboardTasksScopes) -> Bool {
+    private func getTaskStatus(_ task: DashboardTasksScopes) -> Bool {
         switch task {
         case .research:
             return self.research
@@ -255,7 +259,7 @@ class UserViewModel {
 
     func saveCompletionTaskStatuses(_ values: [Bool]) {
         Settings.saveCompletionTasksStatus(values) // just for any case
-        for (i, task) in dashboardTasksScopes.allCases.enumerated() {
+        for (i, task) in DashboardTasksScopes.allCases.enumerated() {
             setTaskStatus(task: task, value: values[i])
         }
     }
@@ -265,7 +269,7 @@ class UserViewModel {
         //var userDefsStatuses = Settings.getCompletionTasksStatus()
         var taskStatuses = [Bool]()
 
-        for task in dashboardTasksScopes.allCases {
+        for task in DashboardTasksScopes.allCases {
             taskStatuses.append(getTaskStatus(task))
         }
         return taskStatuses
@@ -276,11 +280,11 @@ class UserViewModel {
         saveUser()
     }
 
-    class func getDashboardTasks() -> [dashboardTasksScopes] {
-       return dashboardTasksScopes.allCases.map { $0 }
+    class func getDashboardTasks() -> [DashboardTasksScopes] {
+       return DashboardTasksScopes.allCases.map { $0 }
     }
 
     class func getDashboardFullTasks() -> [String] {
-       return dashboardTasksScopes.allCases.map { $0.dashboardTasks }
+       return DashboardTasksScopes.allCases.map { $0.dashboardTasks }
     }
 }

@@ -50,8 +50,8 @@ class DashboardViewController: UIViewController {
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
 
-    let taskScope: [String] = UserViewModel.getDashboardFullTasks() //dashboardTasksScopes.allCases.map { $0.dashboardTasks }
-    let tasks: [dashboardTasksScopes] = UserViewModel.getDashboardTasks() //dashboardTasksScopes.allCases.map { $0.rawValue }
+    let taskScope: [String] = UserViewModel.getDashboardFullTasks() //DashboardTasksScopes.allCases.map { $0.dashboardTasks }
+    let tasks: [DashboardTasksScopes] = UserViewModel.getDashboardTasks() //DashboardTasksScopes.allCases.map { $0.rawValue }
 
     let linkForSharing = "https://www.kidssaveocean.com/change-fate"
 
@@ -294,9 +294,8 @@ class DashboardViewController: UIViewController {
 
     private func playSound() {
         let audioPlayerNum = currentTaskSwitched.remainderReportingOverflow(dividingBy: 3).partialValue
-        guard audioPlayers.indices.contains(audioPlayerNum),
-            let audioPlayer: AVAudioPlayer = audioPlayers[audioPlayerNum]
-            else { return }
+        let audioPlayer: AVAudioPlayer = audioPlayers[audioPlayerNum]
+        guard audioPlayers.indices.contains(audioPlayerNum) else { return }
         audioPlayer.play()
     }
 }

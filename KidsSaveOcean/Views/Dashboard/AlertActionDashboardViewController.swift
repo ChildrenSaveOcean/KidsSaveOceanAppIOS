@@ -14,5 +14,5 @@ class AlertActionDashboardViewController: WebIntegrationViewController {
         self.webUrlString = "https://www.kidssaveocean.com/action-alert"
         super.loadPage()
     }
-    
+
 }

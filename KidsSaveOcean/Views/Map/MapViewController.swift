@@ -87,7 +87,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tbvTop10.dequeueReusableCell(withIdentifier: "cell") as! KSOMapTop10TableViewCell
+        guard let cell =  tbvTop10.dequeueReusableCell(withIdentifier: "cell") as? KSOMapTop10TableViewCell else { fatalError("Wrong cell type. There is expected KSOMapTop10TableViewCell") }
         cell.number.text = String(indexPath.row + 1)
         cell.lblCountryName.text = countriesData[indexPath.row].name
         cell.lblNumberOfLetters.text = String(countriesData[indexPath.row].letters_written)
@@ -106,11 +106,9 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // MARK: backend methods
     func addPinsInMap() {
         map.removeAnnotations(map.annotations)
-        for country in countriesData {
-            if country.coordinates != nil {
-                let annotation = KSOPinOfLetters(with: country.name, country.coordinates!, country.letters_written)
-                map.addAnnotation(annotation)
-            }
+        for country in countriesData where country.coordinates != nil {
+            let annotation = KSOPinOfLetters(with: country.name, country.coordinates!, country.letters_written)
+            map.addAnnotation(annotation)
         }
     }
 

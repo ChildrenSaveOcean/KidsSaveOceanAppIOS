@@ -82,6 +82,7 @@ class WebIntegrationViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
 
+    // swiftlint:disable block_based_kvo
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             let progress = Float(webView.estimatedProgress)
@@ -94,7 +95,8 @@ class WebIntegrationViewController: UIViewController {
             }
         }
     }
-
+    // swiftlint:enable block_based_kvo
+    
     @objc func goBack() {
         if webView.canGoBack {
            webView.goBack()
@@ -144,7 +146,8 @@ class WebIntegrationViewController: UIViewController {
     }
 
     @objc func reachabilityChanged(note: Notification) {
-        checkInternetConnection(reachability: note.object as! Reachability)
+        guard let noteObject = note.object as? Reachability else {return}
+        checkInternetConnection(reachability: noteObject)
     }
 }
 
