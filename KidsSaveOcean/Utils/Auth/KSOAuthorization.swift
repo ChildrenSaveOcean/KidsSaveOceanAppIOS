@@ -13,10 +13,11 @@ let AUTORIZATION_URL_AUTHORIZE_DOMAIN  = "kids-save-ocean.firebaseapp.com"
 
 class KSOAuthorization: NSObject {
 
-    class func anonymousAuthorization() {
+    class func anonymousAuthorization(completion:(() -> Void)?) {
 
         if Auth.auth().currentUser != nil { // already signed in anonymously
             print("already signed in anonymously, UID: \(Auth.auth().currentUser!.uid)")
+            completion?()
             return
         }
 
@@ -26,8 +27,9 @@ class KSOAuthorization: NSObject {
                 return
             }
 
-            if authResult != nil {
+            if authResult != nil, authResult?.user.uid != nil {
                 print("already signed in anonymously, UID: \(authResult!.user.uid)")
+                completion?()
             }
         }
     }

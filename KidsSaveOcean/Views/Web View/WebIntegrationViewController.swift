@@ -67,7 +67,14 @@ class WebIntegrationViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkInternetConnection(reachability: reachability!)
+        if checkInternetConnection(reachability: reachability!) {
+            loadPage()/////
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        webUrlString = ""
     }
 
     deinit {
@@ -75,6 +82,7 @@ class WebIntegrationViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
 
+    // swiftlint:disable block_based_kvo
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             let progress = Float(webView.estimatedProgress)
@@ -87,7 +95,8 @@ class WebIntegrationViewController: UIViewController {
             }
         }
     }
-
+    // swiftlint:enable block_based_kvo
+    
     @objc func goBack() {
         if webView.canGoBack {
            webView.goBack()
@@ -104,12 +113,13 @@ class WebIntegrationViewController: UIViewController {
         return  (navigationController?.viewControllers.first != self)
     }
 
-    private func checkInternetConnection(reachability: Reachability) {
+    private func checkInternetConnection(reachability: Reachability) -> Bool {
         if reachability.connection == .none {
             showNoInternetConnection()
+            return false
         } else {
             noInternetConnectionImageView.removeFromSuperview()
-            loadPage()/////
+            return true
         }
     }
 
@@ -123,13 +133,21 @@ class WebIntegrationViewController: UIViewController {
         view.addSubview(progressBarView)
 
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        checkURLString()
         let myURL = URL(string: webUrlString)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
 
+    func checkURLString() {
+        if webUrlString.count == 0 {
+            fatalError("Set the URL string up!")
+        }
+    }
+
     @objc func reachabilityChanged(note: Notification) {
-        checkInternetConnection(reachability: note.object as! Reachability)
+        guard let noteObject = note.object as? Reachability else {return}
+        checkInternetConnection(reachability: noteObject)
     }
 }
 

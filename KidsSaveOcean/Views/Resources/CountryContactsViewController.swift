@@ -41,7 +41,8 @@ final class CountryContactsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let indextOfCountry = viewModel.allCountries?.firstIndex(where: { (country) -> Bool in
+        if self.selectedCountry != nil,
+            let indextOfCountry = viewModel.allCountries?.firstIndex(where: { (country) -> Bool in
                 country.name == self.selectedCountry!.name
         }) {
             countriesPickerView.selectRow(indextOfCountry, inComponent: 0, animated: true)
@@ -135,7 +136,7 @@ final class CountryContactsViewController: UIViewController {
 
     private let countryListToContactDetailsSegue = "countryListToContactDetailsSegue"
     @IBAction func submitButtonPressed(_ sender: Any) {
-        if (viewModel.countriesContacts.count > 0) {
+        if viewModel.countriesContacts.count > 0 {
             self.performSegue(withIdentifier: countryListToContactDetailsSegue, sender: self)
 
             return

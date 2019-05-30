@@ -32,7 +32,7 @@ class UserTypeTableViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: cellIdenteficator, for: indexPath) as! UserTypeTableViewCell
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdenteficator, for: indexPath) as? UserTypeTableViewCell else { fatalError("Wrong cell type. There is expected UserTypeTableViewCell")}
 
     let staticData = BaseViewData(dictionary: UserTypeViewData[indexPath.row])
     cell.coverImage.image =  staticData?.image
