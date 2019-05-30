@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias KSODataDictionary = Dictionary<String, Any>
+typealias KSODataDictionary = [String: Any]
 
 struct MainViewData {
     let image: UIImage

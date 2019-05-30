@@ -18,9 +18,18 @@ class ResourcesViewController: WebIntegrationViewController {
             self.webUrlString = newValue
         }
     }*/
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        webUrlString = "https://www.kidssaveocean.com/fatechanger-resources"
+    //override func viewDidLoad() {
+        //super.viewDidLoad()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+    }
+
+    override func loadPage() {
+        if webUrlString.count == 0 {
+            webUrlString = "https://www.kidssaveocean.com/fatechanger-resources"
+        }
+        super.loadPage()
     }
 }

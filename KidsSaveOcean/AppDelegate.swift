@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        //Database.database().isPersistenceEnabled = true
+        Database.database().isPersistenceEnabled = true // lets database to work offline, cash the data for syncronizing it later with the servser
 
-        KSOAuthorization.anonymousAuthorization()
-
+        KSOAuthorization.anonymousAuthorization {
+            UserViewModel.shared()
+        }
         //# MARK: - Check if user already opened the tutorial screen
         if Settings.isOnBoardingHasBeenShown() {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -32,8 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         CountriesService.shared().setup()
-        UserViewModel.shared()
-
         return true
     }
 }

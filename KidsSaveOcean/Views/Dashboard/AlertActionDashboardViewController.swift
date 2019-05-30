@@ -10,8 +10,9 @@ import UIKit
 
 class AlertActionDashboardViewController: WebIntegrationViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadPage() {
         self.webUrlString = "https://www.kidssaveocean.com/action-alert"
+        super.loadPage()
     }
+
 }

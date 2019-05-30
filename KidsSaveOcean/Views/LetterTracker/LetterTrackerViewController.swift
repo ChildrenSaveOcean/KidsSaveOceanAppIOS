@@ -14,9 +14,7 @@ final class LetterTrackerViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
 
-    private lazy var countriesData = CountriesService.shared().countriesContacts.sorted { (first, second) -> Bool in
-        first.name < second.name
-    }
+    private lazy var countriesData = CountriesService.shared().countriesContacts.sorted(by: {$0.name < $1.name})
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,16 +68,37 @@ final class LetterTrackerViewController: UIViewController {
     }
 
     @IBAction func enterLetterInTheTracker(_ sender: Any) {
+        let viewAlert = UIAlertController(title: "Are you certain you've stamped and mailed it?", message: "", preferredStyle: .alert)
+        viewAlert.addAction(UIAlertAction(title: "No, not yet", style: .cancel, handler: nil))
+        viewAlert.addAction(UIAlertAction(title: "Yes, I've already mailed it!", style: .default, handler: { _ in
+            self.updateLettersTracker()
+        }))
+        self.present(viewAlert, animated: true, completion: nil)
 
-        let country = countriesData[pickerView.selectedRow(inComponent: 0)]
-        CountriesService.shared().increaseLettersWrittenForCountry(country)
-        UserViewModel.shared().increaseLetterWrittenCount()
+    }
 
-        guard let mapVC = navigationController?.viewControllers.first as? MapViewController else { navigationController?.popViewController(animated: true)
-            return
+    private func updateLettersTracker() {
+
+        let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratilations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
+        viewAlert.addAction(UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
+            self.gotoDashBoard()
+        }))
+        self.present(viewAlert, animated: true, completion: nil)
+    }
+
+    private func gotoDashBoard() {
+        tabBarController?.selectedIndex = 2
+
+        guard let navigationController = tabBarController?.selectedViewController as? UINavigationController  else { return }
+
+        guard let dashboardVC = navigationController.viewControllers.first as? DashboardViewController
+            else { return }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
+            if dashboardVC.meterPointer != nil { //// TODO
+                dashboardVC.switchTask2(self)
+            }
         }
-
-        navigationController?.popToViewController(mapVC, animated: true)
     }
 
 }

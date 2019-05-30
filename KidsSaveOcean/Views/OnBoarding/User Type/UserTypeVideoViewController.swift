@@ -9,21 +9,22 @@
 import UIKit
 import WebKit
 
-protocol UserTypeVideoDelegate {
+protocol UserTypeVideoDelegate: AnyObject {
     func showErrorMessage(_ message: String, actionString: String)
     func gotoTabViewController()
 }
 
 class UserTypeVideoViewController: WebIntegrationViewController {
 
-    var delegate: UserTypeVideoDelegate?
+    weak var delegate: UserTypeVideoDelegate?
     var urlString: String = ""
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.webUrlString = "https://www.youtube.com/embed/\(urlString)"
-    }
 
     var userType: UserType?
+
+    override func loadPage() {
+        self.webUrlString = "https://www.youtube.com/embed/\(urlString)"
+        super.loadPage()
+    }
 
     private func showActionButtons() {
         let buttonsWidth: CGFloat = 100

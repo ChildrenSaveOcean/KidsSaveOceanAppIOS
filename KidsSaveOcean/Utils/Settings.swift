@@ -37,8 +37,10 @@ class Settings: NSObject {
     }
 
     class func getCompletionTasksStatus() -> [Bool] {
-        let states = UserDefaults.standard.array(forKey: completionStatusKey) ?? Array.init(repeating: false, count: 6)
-        return states as! [Bool]
+        guard let states = UserDefaults.standard.array(forKey: completionStatusKey) as? [Bool] else {
+            return Array.init(repeating: false, count: 6)
+        }
+        return states
     }
 
 }

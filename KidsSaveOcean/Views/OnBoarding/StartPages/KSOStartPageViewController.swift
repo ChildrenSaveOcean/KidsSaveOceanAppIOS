@@ -10,8 +10,6 @@ import UIKit
 
 final class KSOStartPageViewController: UIPageViewController {
 
-    // TODO: Move logic from Storyboard to here   
-
     fileprivate lazy var pages: [UIViewController] = {
         return [
             self.getViewController(withIdentifier: "onBoardingPage1"),
@@ -60,9 +58,9 @@ final class KSOStartPageViewController: UIPageViewController {
     }
 
     private func refuseBounces(_ scrollView: UIScrollView) {
-        if (pageControl.currentPage == 0 && scrollView.contentOffset.x < scrollView.bounds.size.width) {
+        if pageControl.currentPage == 0 && scrollView.contentOffset.x < scrollView.bounds.size.width {
             scrollView.contentOffset = CGPoint(x: scrollView.bounds.size.width, y: 0)
-        } else if (pageControl.currentPage == pages.count - 1 && scrollView.contentOffset.x > scrollView.bounds.size.width) {
+        } else if pageControl.currentPage == pages.count - 1 && scrollView.contentOffset.x > scrollView.bounds.size.width {
             scrollView.contentOffset = CGPoint(x: scrollView.bounds.size.width, y: 0)
         }
     }
@@ -97,9 +95,9 @@ extension KSOStartPageViewController: UIPageViewControllerDelegate { }
 
 extension KSOStartPageViewController: UIScrollViewDelegate {
   func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-    if (pageControl.currentPage == 0 && scrollView.contentOffset.x <= scrollView.bounds.size.width) {
+    if pageControl.currentPage == 0 && scrollView.contentOffset.x <= scrollView.bounds.size.width {
       targetContentOffset.pointee = CGPoint(x: scrollView.bounds.size.width, y: 0)
-    } else if (pageControl.currentPage == pages.count - 1 && scrollView.contentOffset.x >= scrollView.bounds.size.width) {
+    } else if pageControl.currentPage == pages.count - 1 && scrollView.contentOffset.x >= scrollView.bounds.size.width {
       targetContentOffset.pointee = CGPoint(x: scrollView.bounds.size.width, y: 0)
     }
   }

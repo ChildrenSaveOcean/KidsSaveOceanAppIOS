@@ -37,7 +37,7 @@ class KSOResourcesTableViewController: KSOBaseTableViewController {
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
-        let view = super.tableView(tableView, viewForHeaderInSection: section) as! KSOBaseTableHeaderView
+        guard let view = super.tableView(tableView, viewForHeaderInSection: section) as? KSOBaseTableHeaderView e else { fatalError("Wrong headerView type. There is expected KSOBaseTableHeaderView")}
         switch section {
         case 0:
             view.headerTitle.text = "For Students"
