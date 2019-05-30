@@ -67,7 +67,14 @@ class WebIntegrationViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkInternetConnection(reachability: reachability!)
+        if checkInternetConnection(reachability: reachability!) {
+            loadPage()/////
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        webUrlString = ""
     }
 
     deinit {
@@ -104,12 +111,13 @@ class WebIntegrationViewController: UIViewController {
         return  (navigationController?.viewControllers.first != self)
     }
 
-    private func checkInternetConnection(reachability: Reachability) {
+    private func checkInternetConnection(reachability: Reachability) -> Bool {
         if reachability.connection == .none {
             showNoInternetConnection()
+            return false
         } else {
             noInternetConnectionImageView.removeFromSuperview()
-            loadPage()/////
+            return true
         }
     }
 
@@ -123,9 +131,16 @@ class WebIntegrationViewController: UIViewController {
         view.addSubview(progressBarView)
 
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        checkURLString()
         let myURL = URL(string: webUrlString)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
+    }
+
+    func checkURLString() {
+        if webUrlString.count == 0 {
+            fatalError("Set the URL string up!")
+        }
     }
 
     @objc func reachabilityChanged(note: Notification) {

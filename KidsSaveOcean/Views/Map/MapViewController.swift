@@ -39,9 +39,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 _countriesData = CountriesService.shared()
                     .countriesContacts
                     .filter({$0.letters_written > 0})
-                    .sorted(by: { (first, second) -> Bool in
-                        first.letters_written > second.letters_written
-                    })
+                    .sorted { $0.letters_written > $1.letters_written }
+
                 return _countriesData!
             }
         }
@@ -49,15 +48,6 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             _countriesData = newValue
         }
     }
-
-//    lazy var countriesData: [CountryContact]? = { () -> [CountryContact] in
-//        return CountriesService.shared()
-//            .countriesContacts
-//            .filter({$0.letters_written > 0})
-//            .sorted(by: { (first, second) -> Bool in
-//                first.letters_written > second.letters_written
-//            })
-//    }()
 
     // MARK: View lifecycle
     override func viewDidLoad() {

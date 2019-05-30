@@ -62,9 +62,7 @@ final class HomeTableViewController: UITableViewController {
     if indexPath.row == 4 {
       let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as! HomeScoreTableViewCell
 
-        let scores = CountriesService.shared().countriesContacts.filter({$0.letters_written > 0}).sorted { (first, second) -> Bool in
-            first.letters_written > second.letters_written
-        }
+        let scores = CountriesService.shared().countriesContacts.filter({$0.letters_written > 0}).sorted { $0.letters_written > $1.letters_written}
 
       if scores.count > 0 {
           cell.country1NumLabel.text = "1"

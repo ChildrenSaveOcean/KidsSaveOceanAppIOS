@@ -43,7 +43,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUx-WR-4EK">
-                                <rect key="frame" x="108" y="554.5" width="159" height="51"/>
+                                <rect key="frame" x="108" y="571.5" width="159" height="51"/>
                                 <color key="backgroundColor" red="0.1256549656" green="0.76238316299999997" blue="0.87107938529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="zAK-JD-mTM"/>
@@ -63,13 +63,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-2e-fvH" userLabel="Description">
-                                <rect key="frame" x="16" y="429.5" width="343" height="52"/>
+                                <rect key="frame" x="16" y="429.5" width="343" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JF1-Y4-uJg"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Visit the app often to get news and updates on our progress and learn how your letter-writing campaigns are making a difference.</string>
+                                        <string key="content">Visit the app often for updates on our progress and for action alerts. See how your letter-writing and activist campaigns are saving the ocean and changing the world.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.33333000000000002" green="0.30196000000000001" blue="0.33724999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -158,7 +158,7 @@
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">As a student, you can be the one to start a letter-writing campaign in your school. As a teacher, we have lesson plans and resources available - and nothing boring! As an individual, we can use your support and donations</string>
+                                        <string key="content">As a student, fight to protect the ocean or prevent climate change by starting a letter-writing campaign in your school or by working with local government. As a teacher, we have rich and expanding resources. As an individual, we rely on your donations.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -230,12 +230,13 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO5-Oi-XHl" userLabel="Description">
-                                <rect key="frame" x="35" y="429.5" width="305" height="55"/>
+                                <rect key="frame" x="35" y="429.5" width="305" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="jHi-yo-HtA"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="This app was designed with a single purpose: to give kids a voice to save the ocean. It is no ordinary app. ">
+                                    <fragment>
+                                        <string key="content">This app was designed with a single purpose: to give youth a powerful voice to protect our world’s environment. It is no ordinary app, but a tool with teeth.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

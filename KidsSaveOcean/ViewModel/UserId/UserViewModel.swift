@@ -62,7 +62,7 @@ class UserViewModel {
 
     let authorizedUser = Auth.auth().currentUser
     let databaseReferenece: DatabaseReference //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
-
+////// Zip2Sequence ? 
     var parametersDisctionary: [String: Any] = [ dashboardTasksScopes.research.firebaseFieldName: false,
                                                   dashboardTasksScopes.write_letter.firebaseFieldName: false,
                                                   dashboardTasksScopes.share.firebaseFieldName: false,

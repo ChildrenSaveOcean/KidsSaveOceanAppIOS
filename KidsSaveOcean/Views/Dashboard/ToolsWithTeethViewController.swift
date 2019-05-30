@@ -22,7 +22,7 @@ class ToolsWithTeethViewController: UIViewController {
 
         if let resources = navVC.viewControllers.first as? ResourcesViewController {
             resources.webUrlString = "https://www.kidssaveocean.com/studentresources"
-            resources.loadPage()
+            //resources.loadPage()
         }
     }
 

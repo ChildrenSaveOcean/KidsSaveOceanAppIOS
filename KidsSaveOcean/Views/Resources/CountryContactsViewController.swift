@@ -41,7 +41,8 @@ final class CountryContactsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let indextOfCountry = viewModel.allCountries?.firstIndex(where: { (country) -> Bool in
+        if self.selectedCountry != nil,
+            let indextOfCountry = viewModel.allCountries?.firstIndex(where: { (country) -> Bool in
                 country.name == self.selectedCountry!.name
         }) {
             countriesPickerView.selectRow(indextOfCountry, inComponent: 0, animated: true)
