@@ -21,6 +21,8 @@ class Settings: NSObject {
 
     static let CountriesHasBeenLoadedNotificationName = "CountriesHasBeenLoaded"
     static let UserHasBeenLoadedNotificationName  = "UserHasBeenLoaded"
+    
+    static let unreadNotificationNumberKey = "UnreadNotificationNumber"
 
     class func saveOnBoardingHasBeenShown() {
         UserDefaults.standard.set(true, forKey: onBoardingKey)
@@ -41,6 +43,14 @@ class Settings: NSObject {
             return Array.init(repeating: false, count: 6)
         }
         return states
+    }
+    
+    class func saveUnreadNotificationNumber(_ num: Int) {
+        UserDefaults.standard.set(num, forKey: unreadNotificationNumberKey)
+        UserDefaults.standard.synchronize()
+    }
+    class func getUnreadNotificationNumber() -> Int {
+        return UserDefaults.standard.integer(forKey: unreadNotificationNumberKey) ?? 0
     }
 
 }

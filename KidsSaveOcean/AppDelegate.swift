@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        
+
         //Solicit permission from the user to receive notifications
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { (_, error) in
             guard error == nil else {
@@ -59,12 +59,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         application.registerForRemoteNotifications()
+        //application.applicationIconBadgeNumber = 0//Settings.getUnreadNotificationNumber() // TODO
+        
         return true
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print(userInfo.keys)
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
+        }
+        
+        // TODO
+        // this block will update app icon's badge from server side
+//        if let messageBody = userInfo["aps"] as? NSDictionary {
+//            guard let notificationCount = messageBody["badge"] as? Int else {return}
+//            let badgeNum = notificationCount// + Settings.getUnreadNotificationNumber()
+//            application.applicationIconBadgeNumber = badgeNum
+//            //Settings.saveUnreadNotificationNumber(badgeNum)
+//        }
+        
+        // the aps-parameter shoud send the "content-available = 1" for updating app icon's badge in the background mode.
+        let state = application.applicationState
+        switch state {
+            
+        case .inactive:
+            print("Inactive")
+            
+        case .background:
+            print("Background")
+            // update badge count here
+            application.applicationIconBadgeNumber += 1
+            // TODO somewehere in the app it should be reset. 
+            
+        case .active:
+            print("Active")
+            
         }
         
         // Print full message.
