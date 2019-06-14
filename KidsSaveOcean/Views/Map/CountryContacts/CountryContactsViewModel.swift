@@ -28,11 +28,13 @@ final class CountryContactsViewModel: NSObject {
         var countries = [CountryContact]()
         for code in Locale.isoRegionCodes as [String] {
             if let name = Locale.autoupdatingCurrent.localizedString(forRegionCode: code) {
-                countries.append(CountryContact(name: name, code: code, address: nil, coordinates: nil))
+                countries.append(CountryContact(code: code, name: name, address: nil, coordinates: nil))
             }
         }
 
-        allCountries = countries
+        allCountries = countries.sorted(by: { (country1, country2) -> Bool in
+            country1.name < country2.name
+        })
     }
 
     func fetchContacts(from service: CountriesService = CountriesService.shared(), _ completion: (() -> Void)?) {
@@ -49,9 +51,9 @@ final class CountryContactsViewModel: NSObject {
         })
     }
 
-    func contact(of country: String) -> CountryContact? {
+    func contact(of countryCode: String) -> CountryContact? {
         return countriesContacts.filter {
-            $0.name == country
+            $0.code == countryCode
             }.first
     }
 }
