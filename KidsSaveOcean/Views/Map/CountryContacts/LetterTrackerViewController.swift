@@ -31,7 +31,7 @@ final class LetterTrackerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let nearestCountry = CountriesService.shared().getNearestCountryToUserLocation(),
+        if let nearestCountry = CountriesService.shared().getUserCountry(),
             let indextOfCountry = countriesData.firstIndex(where: { (country) -> Bool in
                 country.name == nearestCountry.name
             }) {
@@ -79,6 +79,10 @@ final class LetterTrackerViewController: UIViewController {
 
     private func updateLettersTracker() {
 
+        let selectedCountryNum = pickerView.selectedRow(inComponent: 0)
+        let selectedCountry = countriesData[selectedCountryNum]
+        CountriesService.shared().increaseLettersWrittenForCountry(selectedCountry)
+        
         let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratilations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
         viewAlert.addAction(UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
             self.gotoDashBoard()

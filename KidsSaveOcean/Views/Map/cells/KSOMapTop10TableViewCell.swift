@@ -21,10 +21,10 @@ class KSOMapTop10TableViewCell: UITableViewCell {
         self.viewNumber.backgroundColor = UIColor.random
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(_ country: CountryContact, num: Int) {
+        self.number.text = String(num)
+        self.lblCountryName.text = country.name
+        self.lblNumberOfLetters.text = String(country.letters_written)
     }
 
 }

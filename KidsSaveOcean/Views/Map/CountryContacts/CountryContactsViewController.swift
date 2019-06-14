@@ -29,7 +29,7 @@ final class CountryContactsViewController: UIViewController {
 
         viewModel.fetchCountries()
         setupViewElements()
-        selectedCountry = CountriesService.shared().getNearestCountryToUserLocation()
+        selectedCountry = CountriesService.shared().getUserCountry()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +43,7 @@ final class CountryContactsViewController: UIViewController {
 
         if self.selectedCountry != nil,
             let indextOfCountry = viewModel.allCountries?.firstIndex(where: { (country) -> Bool in
-                country.name == self.selectedCountry!.name
+                country.code == self.selectedCountry!.code
         }) {
             countriesPickerView.selectRow(indextOfCountry, inComponent: 0, animated: true)
         }
@@ -156,7 +156,7 @@ final class CountryContactsViewController: UIViewController {
         }
 
         if let selectedCountry = selectedCountry {
-            destination.selectedCountry = viewModel.contact(of: selectedCountry.name)
+            destination.selectedCountry = viewModel.contact(of: selectedCountry.code) //(of: selectedCountry.name)
         }
     }
 }

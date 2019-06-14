@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */; };
 		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
+		161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A0C1122B291DC0047DD40 /* LocationService.swift */; };
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
@@ -53,7 +54,6 @@
 		7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */; };
 		7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */; };
 		7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7BBAC421B864B100C48D4E /* LetterTrackerViewController.swift */; };
-		7C7BBAC921BBF44200C48D4E /* LetterTrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7BBAC821BBF44200C48D4E /* LetterTrackerViewModel.swift */; };
 		7CE89F9521A2005F00C2D6DA /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */; };
 		945A089120F643EB006ED13D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* MapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
@@ -87,6 +87,7 @@
 		10C28DDC38CD641F55A470AD /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsWithTeethViewController.swift; sourceTree = "<group>"; };
 		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		161A0C1122B291DC0047DD40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,7 +144,6 @@
 		7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContact.swift; sourceTree = "<group>"; };
 		7C7BBAC421B864B100C48D4E /* LetterTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterTrackerViewController.swift; sourceTree = "<group>"; };
-		7C7BBAC821BBF44200C48D4E /* LetterTrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterTrackerViewModel.swift; sourceTree = "<group>"; };
 		7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -198,9 +198,6 @@
 		164D8B0D20C6BC170067EE52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7C00FFB921185B7000320309 /* CountryContactsViewController.swift */,
-				7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */,
-				7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */,
 				1617111021E25B5300BE9B2E /* ResourcesViewController.swift */,
 			);
 			path = Resources;
@@ -350,7 +347,6 @@
 				1668C08320C8503500E17DAF /* KSOTabViewController.swift */,
 				168F9D52223D4543000A432D /* Web View */,
 				1679B06821E935A400C15F2A /* Dashboard */,
-				7C7BBAC721B864CF00C48D4E /* LetterTracker */,
 				163F23A220FCFC3800022B38 /* Home */,
 				945A088F20F64355006ED13D /* Map */,
 				94C2BCE920C8B03E0067C6A4 /* Media */,
@@ -428,18 +424,21 @@
 			isa = PBXGroup;
 			children = (
 				7C0B1CD622232EC50033F251 /* CountriesService.swift */,
+				161A0C1122B291DC0047DD40 /* LocationService.swift */,
 				7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */,
 			);
 			path = CountriesService;
 			sourceTree = "<group>";
 		};
-		7C7BBAC721B864CF00C48D4E /* LetterTracker */ = {
+		7C7BBAC721B864CF00C48D4E /* CountryContacts */ = {
 			isa = PBXGroup;
 			children = (
 				7C7BBAC421B864B100C48D4E /* LetterTrackerViewController.swift */,
-				7C7BBAC821BBF44200C48D4E /* LetterTrackerViewModel.swift */,
+				7C00FFB921185B7000320309 /* CountryContactsViewController.swift */,
+				7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */,
+				7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */,
 			);
-			path = LetterTracker;
+			path = CountryContacts;
 			sourceTree = "<group>";
 		};
 		7CE89F9221A1FF5B00C2D6DA /* Supporting Files */ = {
@@ -463,6 +462,7 @@
 		945A088F20F64355006ED13D /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				7C7BBAC721B864CF00C48D4E /* CountryContacts */,
 				945A089020F643EB006ED13D /* MapViewController.swift */,
 				945A089220F64520006ED13D /* KSOPinOfLetters.swift */,
 				946847D82139E299007A1158 /* KSOCustomMapPin.swift */,
@@ -752,9 +752,9 @@
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
 				16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
+				161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
-				7C7BBAC921BBF44200C48D4E /* LetterTrackerViewModel.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */,

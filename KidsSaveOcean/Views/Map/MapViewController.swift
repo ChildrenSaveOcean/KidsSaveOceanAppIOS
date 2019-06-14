@@ -88,9 +88,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell =  tbvTop10.dequeueReusableCell(withIdentifier: "cell") as? KSOMapTop10TableViewCell else { fatalError("Wrong cell type. There is expected KSOMapTop10TableViewCell") }
-        cell.number.text = String(indexPath.row + 1)
-        cell.lblCountryName.text = countriesData[indexPath.row].name
-        cell.lblNumberOfLetters.text = String(countriesData[indexPath.row].letters_written)
+        cell.configure(countriesData[indexPath.row], num: indexPath.row + 1)
 
         return cell
     }

@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true // lets database to work offline, cash the data for syncronizing it later with the servser
 
+        LocationService.shared().autorizeLocation(completionHandler: nil)
+        
         KSOAuthorization.anonymousAuthorization {
             UserViewModel.shared()
         }

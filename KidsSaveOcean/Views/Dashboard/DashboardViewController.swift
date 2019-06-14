@@ -85,16 +85,16 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        
+        actionAlertView.alpha = 0
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
+        actionAlertView.addGestureRecognizer(tapGesture)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         view.layoutIfNeeded()
-
-        actionAlertView.alpha = 0
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
-        actionAlertView.addGestureRecognizer(tapGesture)
 
         setUpTopIcons()
         let firstIncompetedTask = self.completionTasksStates.firstIndex(of: false)
