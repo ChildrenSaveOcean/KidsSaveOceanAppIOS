@@ -5,9 +5,10 @@ target 'KidsSaveOcean' do
 
   # Pods for KidsSaveOcean
 
-	pod 'Firebase/Core'
-	pod 'Firebase/Database'
-        pod 'Firebase/Auth'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Messaging'
     pod 'SnapKit'
     pod 'ReachabilitySwift'
 

@@ -24,6 +24,7 @@
 #import <GoogleUtilities/GULAppEnvironmentUtil.h>
 #import "FIRInstanceID+Private.h"
 #import "FIRInstanceIDAuthService.h"
+#import "FIRInstanceIDCheckinPreferences.h"
 #import "FIRInstanceIDCombinedHandler.h"
 #import "FIRInstanceIDConstants.h"
 #import "FIRInstanceIDDefines.h"
@@ -257,8 +258,6 @@ static FIRInstanceID *gInstanceID;
                             scope:(NSString *)scope
                           options:(NSDictionary *)options
                           handler:(FIRInstanceIDTokenHandler)handler {
-  _FIRInstanceIDDevAssert(handler != nil && [authorizedEntity length] && [scope length],
-                          @"Invalid authorizedEntity or scope to new token");
   if (!handler) {
     FIRInstanceIDLoggerError(kFIRInstanceIDMessageCodeInstanceID000,
                              kFIRInstanceIDInvalidNilHandlerError);
@@ -366,9 +365,6 @@ static FIRInstanceID *gInstanceID;
 - (void)deleteTokenWithAuthorizedEntity:(NSString *)authorizedEntity
                                   scope:(NSString *)scope
                                 handler:(FIRInstanceIDDeleteTokenHandler)handler {
-  _FIRInstanceIDDevAssert(handler != nil && [authorizedEntity length] && [scope length],
-                          @"Invalid authorizedEntity or scope to delete token");
-
   if (!handler) {
     FIRInstanceIDLoggerError(kFIRInstanceIDMessageCodeInstanceID001,
                              kFIRInstanceIDInvalidNilHandlerError);
@@ -461,8 +457,6 @@ static FIRInstanceID *gInstanceID;
 #pragma mark - Identity
 
 - (void)getIDWithHandler:(FIRInstanceIDHandler)handler {
-  _FIRInstanceIDDevAssert(handler, @"Invalid nil handler to getIdentity");
-
   if (!handler) {
     FIRInstanceIDLoggerError(kFIRInstanceIDMessageCodeInstanceID003,
                              kFIRInstanceIDInvalidNilHandlerError);
@@ -496,8 +490,6 @@ static FIRInstanceID *gInstanceID;
 }
 
 - (void)deleteIDWithHandler:(FIRInstanceIDDeleteHandler)handler {
-  _FIRInstanceIDDevAssert(handler, @"Invalid nil handler to delete Identity");
-
   if (!handler) {
     FIRInstanceIDLoggerError(kFIRInstanceIDMessageCodeInstanceID004,
                              kFIRInstanceIDInvalidNilHandlerError);
@@ -609,6 +601,26 @@ static FIRInstanceID *gInstanceID;
                                     }];
                               }];
   }];
+}
+
+#pragma mark - Checkin
+
+- (BOOL)tryToLoadValidCheckinInfo {
+  FIRInstanceIDCheckinPreferences *checkinPreferences =
+      [self.tokenManager.authService checkinPreferences];
+  return [checkinPreferences hasValidCheckinInfo];
+}
+
+- (NSString *)deviceAuthID {
+  return [self.tokenManager.authService checkinPreferences].deviceID;
+}
+
+- (NSString *)secretToken {
+  return [self.tokenManager.authService checkinPreferences].secretToken;
+}
+
+- (NSString *)versionInfo {
+  return [self.tokenManager.authService checkinPreferences].versionInfo;
 }
 
 #pragma mark - Config
