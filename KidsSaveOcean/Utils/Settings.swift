@@ -23,7 +23,15 @@ class Settings: NSObject {
     static let UserHasBeenLoadedNotificationName  = "UserHasBeenLoaded"
     
     static let unreadNotificationNumberKey = "UnreadNotificationNumber"
-
+    
+    static let actionAlertStateKey = "UnreadNotificationNumber"
+    
+    static let dateFormatter: DateFormatter = {
+        let datef = DateFormatter()
+        datef.dateFormat = "dd.MM.yyyy"
+        return datef
+    }()
+    
     class func saveOnBoardingHasBeenShown() {
         UserDefaults.standard.set(true, forKey: onBoardingKey)
         UserDefaults.standard.synchronize()
@@ -45,12 +53,15 @@ class Settings: NSObject {
         return states
     }
     
-    class func saveUnreadNotificationNumber(_ num: Int) {
-        UserDefaults.standard.set(num, forKey: unreadNotificationNumberKey)
-        UserDefaults.standard.synchronize()
+    class func getNotificationStatusForTarget(_ target: NotificationTarget) -> Date? {
+        guard let expirationDate = UserDefaults.standard.string(forKey: target.decsription()) else {return nil}
+        return dateFormatter.date(from: expirationDate)
     }
-    class func getUnreadNotificationNumber() -> Int {
-        return UserDefaults.standard.integer(forKey: unreadNotificationNumberKey) ?? 0
+    
+    class func saveNotificationStatusForTarget(_ target: NotificationTarget, date: Date?) {
+        let expirationDate = date != nil ? dateFormatter.string(from: date!) : nil
+        UserDefaults.standard.set(expirationDate, forKey: target.decsription())
+        UserDefaults.standard.synchronize()
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlertActionDashboardViewController: WebIntegrationViewController {
+class AlertActionDashboardViewController: WebIntegrationViewController, Instantiatable {
 
     override func loadPage() {
         self.webUrlString = "https://www.kidssaveocean.com/action-alert"

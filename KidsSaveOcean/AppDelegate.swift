@@ -11,10 +11,9 @@ import Firebase
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let gcmMessageIDKey = "gcm.message_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -60,51 +59,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         application.registerForRemoteNotifications()
-        //application.applicationIconBadgeNumber = 0//Settings.getUnreadNotificationNumber() // TODO
         
         return true
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print(userInfo.keys)
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
-        // TODO
-        // this block will update app icon's badge from server side
-//        if let messageBody = userInfo["aps"] as? NSDictionary {
-//            guard let notificationCount = messageBody["badge"] as? Int else {return}
-//            let badgeNum = notificationCount// + Settings.getUnreadNotificationNumber()
-//            application.applicationIconBadgeNumber = badgeNum
-//            //Settings.saveUnreadNotificationNumber(badgeNum)
-//        }
-        
-        // the aps-parameter shoud send the "content-available = 1" for updating app icon's badge in the background mode.
-        let state = application.applicationState
-        switch state {
-            
-        case .inactive:
-            print("Inactive")
-            
-        case .background:
-            print("Background")
-            // update badge count here
-            application.applicationIconBadgeNumber += 1
-            // TODO somewehere in the app it should be reset. 
-            
-        case .active:
-            print("Active")
-            
-        }
-        
-        // Print full message.
-        print(userInfo)
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NotificationCenter.default.post(name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil, userInfo: nil)
+    }
+    
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
+     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+
+        NotificationController().processNotificationWithInfo(userInfo)
+    
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Unable to register for remote notifications: \(error.localizedDescription)")
     }
+}
+
+extension AppDelegate: MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
@@ -113,6 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
+        
+        messaging.subscribe(toTopic: "all")
     }
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {

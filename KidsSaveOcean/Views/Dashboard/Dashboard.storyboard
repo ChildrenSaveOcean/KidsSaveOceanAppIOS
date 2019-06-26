@@ -25,7 +25,7 @@
         <!--Dashboard ViewController-->
         <scene sceneID="hqK-BY-RP1">
             <objects>
-                <viewController title="Dashboard ViewController" id="V2a-cZ-Hf8" customClass="DashboardViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" title="Dashboard ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V2a-cZ-Hf8" customClass="DashboardViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ScW-O5-Pi7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,15 +227,12 @@
                                     <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="SCs-we-WTQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="KidsSaveOcean" customModuleProvider="target">
                                 <rect key="frame" x="205.5" y="404" width="140.5" height="166.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="155:184" id="APx-7i-Pc6"/>
                                 </constraints>
                                 <state key="normal" image="ACTION ALERT"/>
-                                <connections>
-                                    <action selector="showActionAlertView:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="WRp-kg-2Ia"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meterScale" translatesAutoresizingMaskIntoConstraints="NO" id="4br-dF-I5I">
                                 <rect key="frame" x="63" y="135" width="171" height="87.5"/>
@@ -276,7 +273,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="ACTION ALERT LIVE"/>
                                         <connections>
-                                            <action selector="actionAlertAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="V6w-Xk-ROT"/>
+                                            <action selector="actionAlertViewButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="l5T-PD-Lna"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTc-qX-7Hd" userLabel="Description">

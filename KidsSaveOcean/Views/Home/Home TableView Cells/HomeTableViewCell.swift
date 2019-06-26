@@ -8,10 +8,22 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class HomeTableViewCell: UITableViewCell, HomeTableViewCellProtocol, NotificationBadgeProtocol {
 
   @IBOutlet weak var imageCover: UIImageView!
   @IBOutlet weak var subTitleLabel: UILabel!
   @IBOutlet weak var titleLabel: UILabel!
 
+    func configure(with viewModel: AnyObject?) {
+        guard let viewModel = viewModel as? BaseTableViewData else {return}
+        
+        imageCover.image =  viewModel.image
+        titleLabel.text = viewModel.title
+        subTitleLabel.text = viewModel.subTitle
+    }
+    
+    func setDarkLetters() {
+        titleLabel.textColor = .black
+        subTitleLabel.textColor = .black
+    }
 }

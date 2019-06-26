@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MediaViewController: WebIntegrationViewController {
+class MediaViewController: WebIntegrationViewController, Instantiatable {
 
     override func loadPage() {
         self.webUrlString = "https://www.kidssaveocean.com/updates"

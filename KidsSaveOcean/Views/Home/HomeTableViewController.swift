@@ -36,6 +36,10 @@ final class HomeTableViewController: UITableViewController {
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
 
     NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(reload), name:
+    Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
+    
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -46,6 +50,7 @@ final class HomeTableViewController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
+    reload()
   }
 
   deinit {
@@ -63,41 +68,38 @@ final class HomeTableViewController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as? HomeScoreTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
 
-        let scores = CountriesService.shared().countriesContacts.filter({$0.letters_written > 0}).sorted { $0.letters_written > $1.letters_written}
-
-        if scores.count > 0 {
-            cell.country1NumLabel.text = "1"
-            cell.country1Label.text = scores[0].name
-            cell.country1ScoreLabel.text = String( scores[0].letters_written )
-        }
-
-        if scores.indices.contains(1) {
-            cell.country2NumLabel.text = "2"
-            cell.country2Label.text = scores[1].name
-            cell.country2ScoreLabel.text = String( scores[1].letters_written )
-        }
-
-        if scores.indices.contains(2) {
-            cell.country3NumLabel.text = "3"
-            cell.country3Label.text = scores[2].name
-            cell.country3ScoreLabel.text = String( scores[2].letters_written )
-        }
+        cell.configure(with: nil)
         return cell
 
     } else {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdenteficator, for: indexPath) as? HomeTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
         
-      cell.imageCover.image =  staticData?.image
-      cell.titleLabel.text = staticData?.title
-      cell.subTitleLabel.text = staticData?.subTitle
-
-      if indexPath.row == 2 { // TODO: need a better way
-        cell.titleLabel.textColor = .black
-        cell.subTitleLabel.textColor = .black
-      }
-      return cell
+        cell.configure(with: staticData as AnyObject?)
+        
+        if indexPath.row == 2 {
+            cell.setDarkLetters()
+        }
+        
+      return  cell
     }
   }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cellNP = (cell as? NotificationBadgeProtocol)  else {
+            return
+        }
+        switch indexPath.row {
+        case 0:
+            cellNP.checkNotificationStatusForTarget(NotificationTarget.newsAndMedia)
+            cellNP.checkNotificationStatusForTarget(NotificationTarget.policyChange)
+        case 3:
+            cellNP.checkNotificationStatusForTarget(NotificationTarget.actionAlert)
+        case 4:
+            cellNP.checkNotificationStatusForTarget(NotificationTarget.newHighScore)
+        default:
+            break
+        }
+    }
 
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 8
@@ -148,6 +150,10 @@ final class HomeTableViewController: UITableViewController {
 
     @objc private func reloadScores() {
         tableView.reloadRows(at: [IndexPath(row: 4, section: 0)], with: UITableView.RowAnimation.none)
+    }
+    
+    @objc private func reload() {
+        tableView.reloadData()
     }
 }
 

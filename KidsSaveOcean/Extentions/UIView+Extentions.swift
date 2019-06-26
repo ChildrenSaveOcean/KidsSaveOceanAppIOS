@@ -61,5 +61,23 @@ extension UIView {
         layer.cornerRadius = radius
         clipsToBounds = true
     }
+    
+    func addRedBadge(with num: Int) {
+        
+        let r: CGFloat = 10
+        let frame = CGRect(x: self.frame.width - 3*r, y: r/2, width: 2*r, height: 2*r)
+        let circleView = UIView(frame: frame)
+        circleView.backgroundColor = .red
+        circleView.roundCornersWith(r)
+        
+        let numLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 2*r, height: 2*r))
+        numLabel.textColor = .white
+        numLabel.textAlignment = .center
+        numLabel.text = String(num)
+        
+        circleView.addSubview(numLabel)
+        circleView.restorationIdentifier = notificationBadgeId
+        self.addSubview(circleView)
+    }
 
 }

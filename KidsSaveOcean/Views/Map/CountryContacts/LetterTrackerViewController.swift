@@ -99,7 +99,7 @@ final class LetterTrackerViewController: UIViewController {
             else { return }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
-            if dashboardVC.meterPointer != nil { //// TODO
+            if dashboardVC.meterPointer != nil {
                 dashboardVC.switchTask2(self)
             }
         }

@@ -31,7 +31,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var howButton: UIButton!
     @IBOutlet weak var didItButton: UIButton!
 
-    @IBOutlet weak var actionAlertButton: UIButton!
+    @IBOutlet weak var actionAlertButton: ActionAlertButton!
 
     @IBOutlet weak var wheelPositionButton1: UIButton!
     @IBOutlet weak var wheelPositionButton2: UIButton!
@@ -86,6 +86,7 @@ class DashboardViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         
+        actionAlertButton.delegate = self
         actionAlertView.alpha = 0
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
         actionAlertView.addGestureRecognizer(tapGesture)
@@ -136,17 +137,6 @@ class DashboardViewController: UIViewController {
         chooseTaskWithNum(5)
     }
 
-    @IBAction func actionAlertAction(_ sender: Any) {
-        // show custom alert view
-        let alertActionVC = AlertActionDashboardViewController()
-        navigationController?.pushViewController(alertActionVC, animated: true)
-        actionAlertView.alpha = 0
-    }
-
-    @IBAction func showActionAlertView(_ sender: Any) {
-        actionAlertView.alpha = 1
-    }
-
     @IBAction func howToAction(_ sender: Any) {
         switch self.currentTaskSwitched {
         case 0:
@@ -188,6 +178,10 @@ class DashboardViewController: UIViewController {
 
     }
 
+    @IBAction func actionAlertViewButtonAction(_ sender: Any) {
+        closeActionAlertView()
+    }
+    
     @objc func closeActionAlertView() {
         actionAlertView.alpha = 0
     }
@@ -300,19 +294,17 @@ class DashboardViewController: UIViewController {
     }
 }
 
-/*extension DashboardViewController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        refreshView()
+extension DashboardViewController: ActionAlertProtocol {
+    func showActionAlertView() {
+        actionAlertView.alpha = 1
     }
     
-    private func refreshView() {
-        if (self.navigationController?.viewControllers.count)! > 1 {
-            if let dashBoardVC = self.navigationController?.viewControllers.first as? DashboardViewController {
-                self.navigationController?.popToViewController(dashBoardVC, animated: true)
-            } else {
-                print("what the shit???")
-                return
-            }
-        }
+    func gotoActionAlertViewController() {
+        let alertActionVC = AlertActionDashboardViewController()
+        navigationController?.pushViewController(alertActionVC, animated: true)
+        actionAlertView.alpha = 0
+        
+        // clear the notification alert
     }
-}*/
+    
+}
