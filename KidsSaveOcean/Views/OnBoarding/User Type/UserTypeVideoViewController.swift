@@ -44,9 +44,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
                 userViewModel.saveUser()
             }
 
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
-            self.present(tabViewController, animated: true, completion: nil)
+            self.present(KSOTabViewController.instantiate(), animated: true, completion: nil)
         }
         webView.addSubview(goButton)
         webView.bringSubviewToFront(goButton)

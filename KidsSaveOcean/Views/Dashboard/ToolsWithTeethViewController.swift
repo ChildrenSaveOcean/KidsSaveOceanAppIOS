@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToolsWithTeethViewController: UIViewController {
+class ToolsWithTeethViewController: UIViewController, Instantiatable {
 
     override func viewDidLoad() {
         super.viewDidLoad()

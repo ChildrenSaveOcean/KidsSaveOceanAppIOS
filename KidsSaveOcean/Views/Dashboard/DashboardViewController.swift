@@ -143,9 +143,7 @@ class DashboardViewController: UIViewController {
             self.tabBarController?.selectedIndex = 3
 
         case 1:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: Settings.countryContactController)
-            navigationController?.pushViewController(countryContactsViewController, animated: true)
+            navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
 
         case 2:
             let objectsToShare = [URL(string: linkForSharing) as Any]
@@ -153,10 +151,19 @@ class DashboardViewController: UIViewController {
             self.present(activityVC, animated: true) {
                 self.chooseTaskWithNum(2)
             }
+            
+        case 3:
+            let taskViewController = ToolsWithTeethViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+            
+        case 4:
+            let taskViewController = PolicyViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
 
-        case 3, 4, 5:
-            let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-            let taskViewController = storyboard.instantiateViewController(withIdentifier: "task\(self.currentTaskSwitched + 1)ViewControllerId")
+        case 5:
+            let taskViewController = ActivistViewContoller.instantiate()
             taskViewController.title = ""
             navigationController?.pushViewController(taskViewController, animated: true)
 

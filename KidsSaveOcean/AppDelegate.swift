@@ -25,13 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         //# MARK: - Check if user already opened the tutorial screen
         if Settings.isOnBoardingHasBeenShown() {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
-            window?.rootViewController = tabViewController
+            window?.rootViewController = KSOTabViewController.instantiate()
         } else {
-            let storyBoard: UIStoryboard = UIStoryboard(name: Settings.onBoardingStoryboardName, bundle: nil)
-            let onboardingViewController = storyBoard.instantiateViewController(withIdentifier: Settings.onBoardingViewControllerId)
-            window?.rootViewController = onboardingViewController
+            window?.rootViewController = KSOStartPageViewController.instantiate()
         }
 
         CountriesService.shared().setup()

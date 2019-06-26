@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Task5ViewController: UIViewController {
+class PolicyViewController: UIViewController, Instantiatable {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,6 +8,6 @@
 
 import UIKit
 
-class KSOTabViewController: UITabBarController {
+class KSOTabViewController: UITabBarController, Instantiatable {
 
 }

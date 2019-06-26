@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class KSOStartPageViewController: UIPageViewController {
+final class KSOStartPageViewController: UIPageViewController, Instantiatable {
 
     fileprivate lazy var pages: [UIViewController] = {
         return [

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SnapKit
 
-final class CountryContactsViewController: UIViewController {
+final class CountryContactsViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var whalesImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
