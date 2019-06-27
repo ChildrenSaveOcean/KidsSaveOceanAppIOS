@@ -10,9 +10,17 @@ import UIKit
 
 class AlertActionDashboardViewController: WebIntegrationViewController, Instantiatable {
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        clearNotificationForTarget(.actionAlert)
+    }
+    
     override func loadPage() {
         self.webUrlString = "https://www.kidssaveocean.com/action-alert"
         super.loadPage()
     }
+}
 
+extension AlertActionDashboardViewController: NotificationProtocol {
+    
 }

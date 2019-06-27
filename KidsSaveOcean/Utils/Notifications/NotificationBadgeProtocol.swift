@@ -16,7 +16,7 @@ extension NotificationBadgeProtocol where Self: UIView {
     
     func checkNotificationStatusForTarget(_ target: NotificationTarget) {
         
-        guard let notificationIsActual = isNotificationActualForTarget(target) else {return}
+        let notificationIsActual = isNotificationActualForTarget(target) ?? false
         let redBadgeView = getRedBadge()
         
         if notificationIsActual && redBadgeView == nil {

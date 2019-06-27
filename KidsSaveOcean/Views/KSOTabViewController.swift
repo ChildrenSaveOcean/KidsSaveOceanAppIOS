@@ -28,7 +28,8 @@ extension UITabBarController {
     func switchToActionAlertScreen() {
         self.selectedIndex = 2
         guard let navigationController = getNavigationController() else {return}
-        navigationController.pushViewController(AlertActionDashboardViewController.instantiate(), animated: true)
+        let alertViewController = AlertActionDashboardViewController()
+        navigationController.pushViewController(alertViewController, animated: true)
     }
     
     func switchToResourcesScreen() {
@@ -58,6 +59,18 @@ extension UITabBarController {
     
     func getSelectedTabMainViewController<T: UIViewController>() -> T? {
         return (self.selectedViewController as? UINavigationController)?.viewControllers.first as? T
+    }
+    
+    func showLink(_ link: String) {
+        let navigationController = getNavigationController()
+        let webPageVC = WebIntegrationViewController()
+        webPageVC.webUrlString = link
+        navigationController?.pushViewController(webPageVC, animated: true)
+    }
+    
+    func refreshSelectedTab() {
+        guard let selectedViewController = getSelectedTabMainViewController() else {return}
+        getNavigationController()?.popToViewController(selectedViewController, animated: true)
     }
     
     private func getNavigationController() -> UINavigationController? {

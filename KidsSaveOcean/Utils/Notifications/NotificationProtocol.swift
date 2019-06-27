@@ -6,7 +6,7 @@
 //  Copyright © 2019 KidsSaveOcean. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol NotificationProtocol {
     func isNotificationActualForTarget(_ target: NotificationTarget) -> Bool?
@@ -31,5 +31,6 @@ extension NotificationProtocol {
     
     func clearNotificationForTarget(_ target: NotificationTarget) {
         Settings.saveNotificationStatusForTarget(target, date: nil)
+        UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
     }
 }

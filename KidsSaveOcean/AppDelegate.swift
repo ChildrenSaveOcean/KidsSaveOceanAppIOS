@@ -14,6 +14,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var notificationController = NotificationController() // TODO ??
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -56,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
+        UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
+        
         return true
     }
     
@@ -68,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        notificationController.openTargetViewController(in: window)
         completionHandler()
     }
     
@@ -77,11 +82,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
-        let notificationController = NotificationController(userInfo)
+        notificationController.processNotification(with: userInfo)
         notificationController.saveNotificationStatus()
-
-        if application.applicationState != .active {
-            notificationController.openTargetViewController(in: window)
+        if application.applicationState == .active {
+            notificationController.refreshReferencedView(in: window)
         }
     }
     

@@ -75,6 +75,10 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidAppear(animated)
         segmentControl.selectedSegmentIndex = segmentControlDefaultIndex
         didChangeSegment(segmentControl)
+        if self.segmentControl.selectedSegmentIndex == 1 {
+            clearNotificationForTarget(.newHighScore)
+            blinkNewHighScoreRow()
+        }
     }
 
     deinit {
@@ -130,4 +134,13 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tbvTop10.reloadData()
         reloadMap()
     }
+    
+    private func blinkNewHighScoreRow() {
+        
+    }
 }
+
+extension MapViewController: NotificationProtocol {
+    
+}
+

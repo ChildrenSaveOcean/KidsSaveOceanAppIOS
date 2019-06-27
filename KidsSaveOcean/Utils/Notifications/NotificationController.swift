@@ -11,6 +11,7 @@ import UIKit
 
 enum NotificationTarget: String, CaseIterable {
     case
+    unknown = " ",
     actionAlert = "ActionAlert",
     policyChange = "PolicyChange",
     newsAndMedia = "NewsAndMedia",
@@ -33,19 +34,14 @@ class NotificationController {
     var expirationDate: Date?
     var link: String?
     
-    convenience init(_  userInfo: [AnyHashable: Any] ) {
+    //convenience init(_  userInfo: [AnyHashable: Any] ) {
     
-        self.init()
-    //func processNotificationWithInfo(_ userInfo: [AnyHashable: Any] ) {
-        
-//        for key in userInfo.keys {
-//                    print("\n\n\(key)\n")
-//                    print(userInfo[key])
-//        }
-        
+     //   self.init()
+    
+    func processNotification(with userInfo: [AnyHashable: Any] ) {
         if let targetName = userInfo["target"] as? String,
-           let target = NotificationTarget.allCases.filter({ (n) -> Bool in
-                n.decsription() == targetName
+           let target = NotificationTarget.allCases.filter({ (notificationTarget) -> Bool in
+                notificationTarget.decsription() == targetName
             }).first {
         
             self.target = target
@@ -66,33 +62,43 @@ class NotificationController {
     }
     
     func saveNotificationStatus() {
-        UIApplication.shared.applicationIconBadgeNumber += 1
-        guard let target = target else { return }
-        Settings.saveNotificationStatusForTarget(target, date: expirationDate)
-        
+        if target != nil {
+            Settings.saveNotificationStatusForTarget(target!, date: expirationDate)
+        }
+        UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
     }
     
     func openTargetViewController(in window: UIWindow?) {
-        
-        guard let target = self.target else { return }
+    
         let tabBarController = KSOTabViewController.instantiate()
         
         switch target {
-        case .policyChange:
-            guard link != nil else {
-                break
-            }
-            ///.webUrlString = link!
-        case .actionAlert:
+        case .policyChange?:
+            guard let link = link else { break }
+            tabBarController.showLink(link)
+        case .actionAlert?:
             tabBarController.switchToActionAlertScreen()
-        case .newsAndMedia:
+        case .newsAndMedia?:
             tabBarController.switchToNewsAndMediaScreen()
-        case .newHighScore:
+        case .newHighScore?:
             tabBarController.switchToHighScoreScreen()
-        case .signatureCampaign: break
+        case .signatureCampaign?:
+            break
+        default:
+            break
         }
         
         window?.rootViewController = tabBarController
     }
     
+    func refreshReferencedView(in window: UIWindow?) {
+        if let tabBarController = window?.rootViewController as? KSOTabViewController,
+            let homeViewController = tabBarController.getSelectedTabMainViewController() as? HomeTableViewController {
+            homeViewController.reload()
+        }
+    }
+    
+    static func getNotificationCount() -> Int {
+        return NotificationTarget.allCases.filter({Settings.getNotificationStatusForTarget($0) != nil}).count
+    }
 }

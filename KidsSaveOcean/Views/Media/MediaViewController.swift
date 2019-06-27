@@ -10,8 +10,17 @@ import UIKit
 
 class MediaViewController: WebIntegrationViewController, Instantiatable {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        clearNotificationForTarget(.newsAndMedia)
+    }
+    
     override func loadPage() {
         self.webUrlString = "https://www.kidssaveocean.com/updates"
         super.loadPage()
     }
+}
+
+extension MediaViewController: NotificationProtocol {
+    
 }

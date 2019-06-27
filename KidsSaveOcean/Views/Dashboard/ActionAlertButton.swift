@@ -32,18 +32,8 @@ class ActionAlertButton: UIButton, NotificationProtocol {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initilaze()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initilaze()
-    }
-    
-    private func initilaze() {
-        actionAlertState = (isNotificationActualForTarget(NotificationTarget.actionAlert) == true) ? .active : .inactive
+    func setState() {
+        actionAlertState = (isNotificationActualForTarget(.actionAlert) == true) ? .active : .inactive
     }
     
     @objc func activeAction() {

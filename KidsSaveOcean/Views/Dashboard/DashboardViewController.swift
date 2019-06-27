@@ -87,6 +87,8 @@ class DashboardViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         actionAlertButton.delegate = self
+        actionAlertButton.setState()
+        
         actionAlertView.alpha = 0
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
         actionAlertView.addGestureRecognizer(tapGesture)

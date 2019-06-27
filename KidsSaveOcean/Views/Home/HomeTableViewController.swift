@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-final class HomeTableViewController: UITableViewController {
+final class HomeTableViewController: UITableViewController, NotificationProtocol {
 
   private let homeCellIdenteficator = "homeViewCellIdentificator"
   private let scoreCellIdenteficator = "scoreViewCellIdentificator"
@@ -50,8 +50,13 @@ final class HomeTableViewController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
-    reload()
   }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        clearNotificationForTarget(.unknown)
+//        reload()
+    }
 
   deinit {
     NotificationCenter.default.removeObserver(self)
@@ -90,12 +95,12 @@ final class HomeTableViewController: UITableViewController {
         }
         switch indexPath.row {
         case 0:
-            cellNP.checkNotificationStatusForTarget(NotificationTarget.newsAndMedia)
-            cellNP.checkNotificationStatusForTarget(NotificationTarget.policyChange)
+            cellNP.checkNotificationStatusForTarget(.newsAndMedia)
+            cellNP.checkNotificationStatusForTarget(.policyChange)
         case 3:
-            cellNP.checkNotificationStatusForTarget(NotificationTarget.actionAlert)
+            cellNP.checkNotificationStatusForTarget(.actionAlert)
         case 4:
-            cellNP.checkNotificationStatusForTarget(NotificationTarget.newHighScore)
+            cellNP.checkNotificationStatusForTarget(.newHighScore)
         default:
             break
         }
@@ -150,7 +155,7 @@ final class HomeTableViewController: UITableViewController {
         tableView.reloadRows(at: [IndexPath(row: 4, section: 0)], with: UITableView.RowAnimation.none)
     }
     
-    @objc private func reload() {
+    @objc func reload() {
         tableView.reloadData()
     }
 }
@@ -158,16 +163,12 @@ final class HomeTableViewController: UITableViewController {
 extension HomeTableViewController: UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        refreshViewController(viewController)
-    }
-
-    private func refreshViewController(_ viewController: UIViewController) {
-        guard let newNavController = viewController as? UINavigationController else {
-            return
-        }
-
-        if (newNavController.viewControllers.count) > 1 {
-            newNavController.popToViewController(newNavController.viewControllers.first!, animated: true)
+        tabBarController.refreshSelectedTab()
+        if tabBarController.selectedViewController == self.navigationController {
+            reload()
         }
     }
+    
+    //func tabBarCon
+    
 }
