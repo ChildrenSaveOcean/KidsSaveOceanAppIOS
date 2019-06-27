@@ -112,21 +112,19 @@ final class HomeTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch indexPath.row {
     case 0:
-      tabBarController?.selectedIndex = 1
+        tabBarController?.switchToNewsAndMediaScreen()
 
     case 1:
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: Settings.countryContactController)
-      navigationController?.pushViewController(countryContactsViewController, animated: true)
+      navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
+        
+    case 2:
+        tabBarController?.switchToMapScreen()
 
     case 3:
-        tabBarController?.selectedIndex = 2
+        tabBarController?.switchToDashboardScreen()
 
-    case 2, 4:
-      tabBarController?.selectedIndex = 4
-      guard let navigationController = tabBarController?.selectedViewController as? UINavigationController else {return}
-      guard let mapVC = navigationController.viewControllers.first as? MapViewController else {return}
-      mapVC.segmentControlDefaultIndex = indexPath.row == 2 ? 0 : 1
+    case 4:
+        tabBarController?.switchToHighScoreScreen()
 
     default:
       return

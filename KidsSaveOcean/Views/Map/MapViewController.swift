@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Instantiatable {
 
     //# MARK: Var, lets and outlets
 

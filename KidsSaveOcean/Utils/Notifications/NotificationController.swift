@@ -23,12 +23,20 @@ enum NotificationTarget: String, CaseIterable {
 }
 
 class NotificationController {
-    static let gcmMessageIDKey = "gcm.message_id"
-    static let googleNotificationNameIDKey = "google.c.a.c_l"
+    let gcmMessageIDKey = "gcm.message_id"
+    let googleNotificationNameIDKey = "google.c.a.c_l"
     let timeToLiveIDKey = "gcm.notification.time_to_live"
     
-    lazy var application = UIApplication.shared
-    func processNotificationWithInfo(_ userInfo: [AnyHashable: Any] ) {
+    //lazy var application = UIApplication.shared
+    
+    var target: NotificationTarget?
+    var expirationDate: Date?
+    var link: String?
+    
+    convenience init(_  userInfo: [AnyHashable: Any] ) {
+    
+        self.init()
+    //func processNotificationWithInfo(_ userInfo: [AnyHashable: Any] ) {
         
 //        for key in userInfo.keys {
 //                    print("\n\n\(key)\n")
@@ -40,7 +48,8 @@ class NotificationController {
                 n.decsription() == targetName
             }).first {
         
-            var expirationDate: Date
+            self.target = target
+            
             if let liveSecondsString = userInfo[timeToLiveIDKey] as? String,
                 let liveSecondsInt = Int(liveSecondsString),
                 liveSecondsInt > 0 {
@@ -49,39 +58,41 @@ class NotificationController {
                 expirationDate = Date().addingTimeInterval(TimeInterval(Int32.max))
             }
             
-            let link: String?
             if let linkFromNotification = userInfo["link"] as? String,
                 !linkFromNotification.isEmpty {
-                link = linkFromNotification
+                self.link = linkFromNotification
             }
-            
-            if application.applicationState != .active {
-                Settings.saveNotificationStatusForTarget(target, date: expirationDate)
-                application.applicationIconBadgeNumber += 1
-                return
-            }
-            
-            switch target {
-            case .policyChange: break
-                // open Policy screen with link from userInfo
-                // add badge to where?
-            case .actionAlert: break
-                // compare time
-                //let alertActionVC = AlertActionDashboardViewController()
-                //navigationController?.pushViewController(alertActionVC, animated: true)
-            //actionAlertView.alpha = 0
-            case .newsAndMedia: break
-                // go to news And Media VC
-                // red badge with num 1
-            case .newHighScore: break
-                // red badge on HighScoreCard
-                // go to main screen
-            case .signatureCampaign: break
-                // link... to version 2 to do
-            default: break
-           }
-            
         }
+    }
+    
+    func saveNotificationStatus() {
+        UIApplication.shared.applicationIconBadgeNumber += 1
+        guard let target = target else { return }
+        Settings.saveNotificationStatusForTarget(target, date: expirationDate)
+        
+    }
+    
+    func openTargetViewController(in window: UIWindow?) {
+        
+        guard let target = self.target else { return }
+        let tabBarController = KSOTabViewController.instantiate()
+        
+        switch target {
+        case .policyChange:
+            guard link != nil else {
+                break
+            }
+            ///.webUrlString = link!
+        case .actionAlert:
+            tabBarController.switchToActionAlertScreen()
+        case .newsAndMedia:
+            tabBarController.switchToNewsAndMediaScreen()
+        case .newHighScore:
+            tabBarController.switchToHighScoreScreen()
+        case .signatureCampaign: break
+        }
+        
+        window?.rootViewController = tabBarController
     }
     
 }

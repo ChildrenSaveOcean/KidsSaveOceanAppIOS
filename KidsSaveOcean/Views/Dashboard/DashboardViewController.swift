@@ -140,7 +140,7 @@ class DashboardViewController: UIViewController {
     @IBAction func howToAction(_ sender: Any) {
         switch self.currentTaskSwitched {
         case 0:
-            self.tabBarController?.selectedIndex = 3
+            tabBarController?.switchToResourcesScreen()
 
         case 1:
             navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
