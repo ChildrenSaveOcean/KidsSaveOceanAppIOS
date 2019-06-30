@@ -75,10 +75,6 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidAppear(animated)
         segmentControl.selectedSegmentIndex = segmentControlDefaultIndex
         didChangeSegment(segmentControl)
-        if self.segmentControl.selectedSegmentIndex == 1 {
-            clearNotificationForTarget(.newHighScore)
-            blinkNewHighScoreRow()
-        }
     }
 
     deinit {
@@ -96,7 +92,19 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//    }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0,
+            isNotificationActualForTarget(.newHighScore) == true {
+            cell.blinkBackColor(times: 5)
+            clearNotificationForTarget(.newHighScore)
+        }
+    }
+    
     func reloadMap() {
         _countriesData = nil
         addPinsInMap()
@@ -134,13 +142,10 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tbvTop10.reloadData()
         reloadMap()
     }
-    
-    private func blinkNewHighScoreRow() {
-        
-    }
 }
 
 extension MapViewController: NotificationProtocol {
-    
+    func updateViews() {
+        tbvTop10?.reloadData()
+    }
 }
-

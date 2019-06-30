@@ -38,9 +38,7 @@ extension UITabBarController {
     
     func switchToStudentResourcesScreen() {
         switchToResourcesScreen()
-        let navigationController = getNavigationController()
-        if let resources = navigationController?.viewControllers.first as? ResourcesViewController {
-            resources.webUrlString = "https://www.kidssaveocean.com/studentresources"
+        if let resources = getSelectedTabMainViewController() as? ResourcesViewController { resources.webUrlString = "https://www.kidssaveocean.com/studentresources"
         }
     }
     
@@ -61,16 +59,26 @@ extension UITabBarController {
         return (self.selectedViewController as? UINavigationController)?.viewControllers.first as? T
     }
     
-    func showLink(_ link: String) {
-        let navigationController = getNavigationController()
-        let webPageVC = WebIntegrationViewController()
-        webPageVC.webUrlString = link
-        navigationController?.pushViewController(webPageVC, animated: true)
+    func showLink(_ link: String, clear target: NotificationTarget?) {
+        
+        switchToHomeScreen()
+        let webViewController = ShowLinkWithClearNotificatinStatusViewController()
+        webViewController.webUrlString = link
+        guard let navigationController = getNavigationController() else {return}
+        navigationController.pushViewController(webViewController, animated: true)
+        if target != nil {
+            webViewController.clearNotificationForTarget(target!)
+        }
     }
     
     func refreshSelectedTab() {
         guard let selectedViewController = getSelectedTabMainViewController() else {return}
         getNavigationController()?.popToViewController(selectedViewController, animated: true)
+    }
+    
+    func updateNotificationStatusOfSelectedViewController() {
+        guard let selectedViewController = getSelectedTabMainViewController() as? NotificationProtocol else {return}
+        selectedViewController.updateViews()
     }
     
     private func getNavigationController() -> UINavigationController? {

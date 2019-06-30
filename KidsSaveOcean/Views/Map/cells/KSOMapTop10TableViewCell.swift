@@ -26,5 +26,15 @@ class KSOMapTop10TableViewCell: UITableViewCell {
         self.lblCountryName.text = country.name
         self.lblNumberOfLetters.text = String(country.letters_written)
     }
+    
+    func blink(completion: (() -> Void)?) {
+        
+        UIView.animate(withDuration: 10, delay: 0, options: [.curveLinear, .repeat, .autoreverse], animations: {
+            self.backgroundColor = .cyan })
+//        }) { (_) in
+//            self.backgroundColor = .clear
+//            completion
+//        }
+    }
 
 }

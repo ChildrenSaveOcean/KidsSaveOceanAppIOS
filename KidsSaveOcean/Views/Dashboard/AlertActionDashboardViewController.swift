@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlertActionDashboardViewController: WebIntegrationViewController, Instantiatable {
+class AlertActionDashboardViewController: WebIntegrationViewController, Instantiatable, NotificationProtocol {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -19,8 +19,4 @@ class AlertActionDashboardViewController: WebIntegrationViewController, Instanti
         self.webUrlString = "https://www.kidssaveocean.com/action-alert"
         super.loadPage()
     }
-}
-
-extension AlertActionDashboardViewController: NotificationProtocol {
-    
 }

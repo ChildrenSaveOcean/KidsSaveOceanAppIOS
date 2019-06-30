@@ -17,7 +17,7 @@ class ResourcesViewController: WebIntegrationViewController {
     }
 
     override func loadPage() {
-        if webUrlString.count == 0 {
+        if webUrlString.isEmpty {
             webUrlString = "https://www.kidssaveocean.com/fatechanger-resources"
         }
         super.loadPage()

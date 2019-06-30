@@ -8,19 +8,19 @@
 
 import UIKit
 
-class MediaViewController: WebIntegrationViewController, Instantiatable {
+class MediaViewController: WebIntegrationViewController, Instantiatable, NotificationProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         clearNotificationForTarget(.newsAndMedia)
+        clearNotificationForTarget(.policyChange)
     }
     
     override func loadPage() {
-        self.webUrlString = "https://www.kidssaveocean.com/updates"
+        if self.webUrlString.isEmpty {
+            self.webUrlString = "https://www.kidssaveocean.com/updates"
+        }
         super.loadPage()
     }
 }
 
-extension MediaViewController: NotificationProtocol {
-    
-}

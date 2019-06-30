@@ -30,7 +30,7 @@ class NotificationController {
     
     //lazy var application = UIApplication.shared
     
-    var target: NotificationTarget?
+    var target: NotificationTarget = .unknown
     var expirationDate: Date?
     var link: String?
     
@@ -39,6 +39,7 @@ class NotificationController {
      //   self.init()
     
     func processNotification(with userInfo: [AnyHashable: Any] ) {
+        self.target = .unknown
         if let targetName = userInfo["target"] as? String,
            let target = NotificationTarget.allCases.filter({ (notificationTarget) -> Bool in
                 notificationTarget.decsription() == targetName
@@ -62,9 +63,7 @@ class NotificationController {
     }
     
     func saveNotificationStatus() {
-        if target != nil {
-            Settings.saveNotificationStatusForTarget(target!, date: expirationDate)
-        }
+        Settings.saveNotificationStatusForTarget(target, date: expirationDate)
         UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
     }
     
@@ -73,16 +72,16 @@ class NotificationController {
         let tabBarController = KSOTabViewController.instantiate()
         
         switch target {
-        case .policyChange?:
+        case .policyChange:
             guard let link = link else { break }
-            tabBarController.showLink(link)
-        case .actionAlert?:
+            tabBarController.showLink(link, clear: target)
+        case .actionAlert:
             tabBarController.switchToActionAlertScreen()
-        case .newsAndMedia?:
+        case .newsAndMedia:
             tabBarController.switchToNewsAndMediaScreen()
-        case .newHighScore?:
+        case .newHighScore:
             tabBarController.switchToHighScoreScreen()
-        case .signatureCampaign?:
+        case .signatureCampaign:
             break
         default:
             break
@@ -92,10 +91,8 @@ class NotificationController {
     }
     
     func refreshReferencedView(in window: UIWindow?) {
-        if let tabBarController = window?.rootViewController as? KSOTabViewController,
-            let homeViewController = tabBarController.getSelectedTabMainViewController() as? HomeTableViewController {
-            homeViewController.reload()
-        }
+        guard let tabBarController = window?.rootViewController as? KSOTabViewController else {return}
+        tabBarController.updateNotificationStatusOfSelectedViewController()
     }
     
     static func getNotificationCount() -> Int {

@@ -24,9 +24,11 @@ class ActionAlertButton: UIButton, NotificationProtocol {
         willSet(newValue) {
             if newValue == .active { 
                 self.setImage(#imageLiteral(resourceName: "ACTION ALERT LIVE"), for: .normal)
+                self.removeTarget(self, action: #selector(inactiveAction), for: .touchUpInside)
                 self.addTarget(self, action: #selector(activeAction), for: .touchUpInside)
             } else {
                 self.setImage(#imageLiteral(resourceName: "ACTION ALERT"), for: .normal)
+                self.removeTarget(self, action: #selector(activeAction), for: .touchUpInside)
                 self.addTarget(self, action: #selector(inactiveAction), for: .touchUpInside)
             }
         }
@@ -43,5 +45,4 @@ class ActionAlertButton: UIButton, NotificationProtocol {
     @objc private func inactiveAction() {
         delegate?.showActionAlertView()
     }
-    
 }

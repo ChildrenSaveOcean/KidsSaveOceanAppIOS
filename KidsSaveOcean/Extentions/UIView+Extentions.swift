@@ -80,4 +80,25 @@ extension UIView {
         self.addSubview(circleView)
     }
 
+    func blinkOpacity(times: Float) {
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.duration = 0.2
+        animation.fromValue = 1
+        animation.toValue =  0.2
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        animation.autoreverses = true
+        animation.repeatCount = times
+        layer.add(animation, forKey: nil)
+    }
+    
+    func blinkBackColor(times: Float) {
+        let animation = CABasicAnimation(keyPath: "backgroundColor")
+        let startColor = backgroundColor?.cgColor ?? UIColor.clear.cgColor
+        animation.fromValue = startColor
+        animation.toValue = UIColor.appCyan.cgColor //UIColor.appCyan.cgColor
+        animation.duration = 0.2
+        animation.repeatCount = times
+        layer.add(animation, forKey: "colourAnimation")
+        layer.backgroundColor = startColor
+    }
 }

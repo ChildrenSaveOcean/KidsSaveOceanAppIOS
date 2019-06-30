@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-final class HomeTableViewController: UITableViewController, NotificationProtocol {
+final class HomeTableViewController: UITableViewController {
 
   private let homeCellIdenteficator = "homeViewCellIdentificator"
   private let scoreCellIdenteficator = "scoreViewCellIdentificator"
@@ -37,7 +37,7 @@ final class HomeTableViewController: UITableViewController, NotificationProtocol
 
     NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
     
-    NotificationCenter.default.addObserver(self, selector: #selector(reload), name:
+    NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name:
     Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
     
   }
@@ -55,7 +55,7 @@ final class HomeTableViewController: UITableViewController, NotificationProtocol
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         clearNotificationForTarget(.unknown)
-//        reload()
+        clearNotificationForTarget(.signatureCampaign)
     }
 
   deinit {
@@ -88,22 +88,45 @@ final class HomeTableViewController: UITableViewController, NotificationProtocol
       return  cell
     }
   }
-    
+
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let cellNP = (cell as? NotificationBadgeProtocol)  else {
-            return
+
+        if let hCell = (cell as? HomeTableViewCell) {
+
+            hCell.titleLabel.sizeToFit()
+
+            hCell.subTitleLabel.sizeToFit()
+
         }
+
+        guard let cell = (cell as? NotificationBadgeProtocol)  else { return }
+
         switch indexPath.row {
+
         case 0:
-            cellNP.checkNotificationStatusForTarget(.newsAndMedia)
-            cellNP.checkNotificationStatusForTarget(.policyChange)
+
+            cell.checkNotificationStatusForTarget(.newsAndMedia)
+
+            if cell.isNotificationActualForTarget(.newsAndMedia) != true {
+
+                cell.checkNotificationStatusForTarget(.policyChange)
+
+            }
+
         case 3:
-            cellNP.checkNotificationStatusForTarget(.actionAlert)
+
+            cell.checkNotificationStatusForTarget(.actionAlert)
+
         case 4:
-            cellNP.checkNotificationStatusForTarget(.newHighScore)
+
+            cell.checkNotificationStatusForTarget(.newHighScore)
+
         default:
+
             break
+
         }
+
     }
 
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -154,21 +177,17 @@ final class HomeTableViewController: UITableViewController, NotificationProtocol
     @objc private func reloadScores() {
         tableView.reloadRows(at: [IndexPath(row: 4, section: 0)], with: UITableView.RowAnimation.none)
     }
-    
-    @objc func reload() {
-        tableView.reloadData()
-    }
 }
 
 extension HomeTableViewController: UITabBarControllerDelegate {
-
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         tabBarController.refreshSelectedTab()
-        if tabBarController.selectedViewController == self.navigationController {
-            reload()
-        }
+        tabBarController.updateNotificationStatusOfSelectedViewController()
     }
-    
-    //func tabBarCon
-    
+}
+
+extension HomeTableViewController: NotificationProtocol {
+    @objc func updateViews() {
+        tableView.reloadData()
+    }
 }

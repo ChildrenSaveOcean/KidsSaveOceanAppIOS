@@ -312,8 +312,11 @@ extension DashboardViewController: ActionAlertProtocol {
         let alertActionVC = AlertActionDashboardViewController()
         navigationController?.pushViewController(alertActionVC, animated: true)
         actionAlertView.alpha = 0
-        
-        // clear the notification alert
     }
-    
+}
+
+extension DashboardViewController: NotificationProtocol {
+    func updateViews() {
+        actionAlertButton.setState()
+    }
 }

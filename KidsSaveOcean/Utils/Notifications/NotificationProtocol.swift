@@ -12,6 +12,7 @@ protocol NotificationProtocol {
     func isNotificationActualForTarget(_ target: NotificationTarget) -> Bool?
     func checkNotificationStatusForTarget(_ target: NotificationTarget)
     func clearNotificationForTarget(_ target: NotificationTarget)
+    func updateViews()
 }
 
 extension NotificationProtocol {
@@ -32,5 +33,9 @@ extension NotificationProtocol {
     func clearNotificationForTarget(_ target: NotificationTarget) {
         Settings.saveNotificationStatusForTarget(target, date: nil)
         UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
+    }
+    
+    func updateViews() {
+        //
     }
 }

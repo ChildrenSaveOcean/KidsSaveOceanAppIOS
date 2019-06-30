@@ -25,8 +25,8 @@ class WebIntegrationViewController: UIViewController {
 
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
-
-        let y = (navigationController?.navigationBar.frame.origin.y)! + ((navigationController?.navigationBar.isHidden)! ? 0 : (navigationController?.navigationBar.bounds.height)!)
+        let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
+        var y = frame.origin.y + frame.height
         pV.frame = CGRect(x: 0, y: y, width: view.bounds.width, height: 5)
         return pV
     }()
@@ -140,7 +140,7 @@ class WebIntegrationViewController: UIViewController {
     }
 
     func checkURLString() {
-        if webUrlString.count == 0 {
+        if webUrlString.isEmpty {
             fatalError("Set the URL string up!")
         }
     }
