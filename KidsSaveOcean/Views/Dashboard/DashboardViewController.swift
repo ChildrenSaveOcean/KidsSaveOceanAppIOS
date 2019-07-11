@@ -145,7 +145,10 @@ class DashboardViewController: UIViewController {
             tabBarController?.switchToStudentResourcesScreen()
 
         case 1:
-            navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
+            
+            let taskViewController = WriteToWhereViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
 
         case 2:
             let objectsToShare = [URL(string: linkForSharing) as Any]

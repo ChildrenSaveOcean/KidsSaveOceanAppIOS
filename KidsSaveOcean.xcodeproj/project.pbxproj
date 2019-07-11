@@ -42,6 +42,7 @@
 		1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679B06921E935D100C15F2A /* DashboardViewController.swift */; };
 		1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06D21EA29E100C15F2A /* knobClick.mp3 */; };
 		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
+		169D6CF222D73629008073DF /* WriteToWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D6CF122D73629008073DF /* WriteToWhereViewController.swift */; };
 		16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3B229027F100E36F25 /* UserViewModel.swift */; };
 		16BA0A3E2290281A00E36F25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3D2290281A00E36F25 /* User.swift */; };
 		16D4C27C22C1552F006DBC64 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C27B22C1552F006DBC64 /* NotificationController.swift */; };
@@ -134,6 +135,7 @@
 		1679B06921E935D100C15F2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1679B06D21EA29E100C15F2A /* knobClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knobClick.mp3; sourceTree = "<group>"; };
 		168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionDashboardViewController.swift; sourceTree = "<group>"; };
+		169D6CF122D73629008073DF /* WriteToWhereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteToWhereViewController.swift; sourceTree = "<group>"; };
 		16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsSaveOcean.entitlements; sourceTree = "<group>"; };
 		16BA0A3B229027F100E36F25 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		16BA0A3D2290281A00E36F25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */,
 				16ECE46F2299F11D0099C406 /* PolicyViewController.swift */,
 				16664B1522C4149D00F332A7 /* ActivistViewContoller.swift */,
+				169D6CF122D73629008073DF /* WriteToWhereViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */,
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
 				16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */,
+				169D6CF222D73629008073DF /* WriteToWhereViewController.swift in Sources */,
 				16ECE4702299F11D0099C406 /* PolicyViewController.swift in Sources */,
 				16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */,
 				1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */,
