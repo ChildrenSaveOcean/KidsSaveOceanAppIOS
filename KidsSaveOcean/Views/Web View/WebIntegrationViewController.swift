@@ -12,7 +12,14 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
-    var webUrlString: String = ""
+    var webUrlString: String = "" {
+        didSet(oldValue) {
+            if checkInternetConnection(reachability: reachability!) && !webUrlString.isEmpty {
+                loadPage()
+            }
+        }
+    }
+    
     private var reachability = Reachability()
 
     lazy var webView = { () -> WKWebView in

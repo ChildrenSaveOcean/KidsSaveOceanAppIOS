@@ -142,7 +142,7 @@ class DashboardViewController: UIViewController {
     @IBAction func howToAction(_ sender: Any) {
         switch self.currentTaskSwitched {
         case 0:
-            tabBarController?.switchToResourcesScreen()
+            tabBarController?.switchToStudentResourcesScreen()
 
         case 1:
             navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
@@ -317,6 +317,6 @@ extension DashboardViewController: ActionAlertProtocol {
 
 extension DashboardViewController: NotificationProtocol {
     func updateViews() {
-        actionAlertButton.setState()
+        actionAlertButton?.setState()
     }
 }

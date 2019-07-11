@@ -10,4 +10,7 @@ import UIKit
 
 class ActivistViewContoller: UIViewController, Instantiatable {
 
+    @IBAction func activistToolKitAction(_ sender: Any) {
+        tabBarController?.switchToStudentResourcesScreen()
+    }
 }
