@@ -46,7 +46,7 @@
                                 <rect key="frame" x="108" y="533" width="104" height="51"/>
                                 <color key="backgroundColor" red="0.1256549656" green="0.76238316299999997" blue="0.87107938529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="zAK-JD-mTM"/>
+                                    <constraint firstAttribute="height" constant="51" id="zAK-JD-mTM" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="START">
@@ -299,7 +299,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO5-Oi-XHl" userLabel="Description">
-                                <rect key="frame" x="35" y="380" width="250" height="100"/>
+                                <rect key="frame" x="35" y="380" width="250" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="jHi-yo-HtA"/>
                                 </constraints>
@@ -404,7 +404,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ol-ex-ofq">
-                                <rect key="frame" x="108.5" y="444" width="103" height="18"/>
+                                <rect key="frame" x="108.5" y="455" width="103" height="7"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -421,6 +421,7 @@ Cg
                             <constraint firstItem="QO5-Oi-XHl" firstAttribute="top" secondItem="JmH-E8-HZN" secondAttribute="bottom" constant="16" id="H9H-B8-4jt"/>
                             <constraint firstItem="8Ol-ex-ofq" firstAttribute="centerX" secondItem="jHu-la-qCT" secondAttribute="centerX" id="HvG-wi-YRa"/>
                             <constraint firstItem="d6U-Mc-DIt" firstAttribute="width" secondItem="mUX-fW-xku" secondAttribute="width" id="Nx7-sO-A8g"/>
+                            <constraint firstItem="8Ol-ex-ofq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QO5-Oi-XHl" secondAttribute="bottom" constant="5" id="PrX-Tl-ZwF"/>
                             <constraint firstItem="d6U-Mc-DIt" firstAttribute="centerX" secondItem="jHu-la-qCT" secondAttribute="centerX" id="UVR-Si-dj2"/>
                             <constraint firstItem="wiU-tb-7HU" firstAttribute="width" secondItem="mUX-fW-xku" secondAttribute="width" id="aci-16-8lc"/>
                             <constraint firstItem="wiU-tb-7HU" firstAttribute="top" secondItem="d6U-Mc-DIt" secondAttribute="bottom" constant="15" id="g1v-B2-jvf"/>
@@ -464,7 +465,7 @@ Cg
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="q1I-fE-Jmi">
-                                            <rect key="frame" x="16" y="8" width="288" height="432.00000000000011"/>
+                                            <rect key="frame" x="16" y="8" width="288" height="432"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                     <integer key="value" value="15"/>
