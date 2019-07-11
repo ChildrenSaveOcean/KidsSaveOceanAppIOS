@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TaZ-WG-oKp">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="onBoardingPage3" title="onBoarding3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SlK-gb-uRB" customClass="KSOStartViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wse-vl-wGc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="surferOnWave" translatesAutoresizingMaskIntoConstraints="NO" id="zil-Cj-jM6" userLabel="PageImage">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="304.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stay connected for updates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-cl-Wl9" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="397.5" width="375" height="16"/>
+                                <rect key="frame" x="0.0" y="348" width="320" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.2901960784" green="0.50588235290000005" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Engage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CfT-xy-gLK" userLabel="Header">
-                                <rect key="frame" x="0.0" y="369" width="375" height="26.5"/>
+                                <rect key="frame" x="0.0" y="319.5" width="320" height="26.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="FTv-tu-TWQ"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUx-WR-4EK">
-                                <rect key="frame" x="108" y="571.5" width="159" height="51"/>
+                                <rect key="frame" x="108" y="533" width="104" height="51"/>
                                 <color key="backgroundColor" red="0.1256549656" green="0.76238316299999997" blue="0.87107938529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="zAK-JD-mTM"/>
@@ -62,23 +62,57 @@
                                     <segue destination="I0w-ZF-aeq" kind="show" id="UYB-lg-Y1l"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-2e-fvH" userLabel="Description">
-                                <rect key="frame" x="16" y="429.5" width="343" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-2e-fvH" userLabel="Description">
+                                <rect key="frame" x="16" y="380" width="288" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JF1-Y4-uJg"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Visit the app often for updates on our progress and for action alerts. See how your letter-writing and activist campaigns are saving the ocean and changing the world.</string>
+                                    <fragment content="Visit the app often to track our progress and get Action Alerts. Watch a growing army of determined kids change the world.">
                                         <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="NSColor" red="0.33333000000000002" green="0.30196000000000001" blue="0.33724999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="15" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
+                                            <color key="NSColor" red="0.25882352941176473" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name="SFProText-Semibold"/>
+                                            <real key="NSKern" value="-0.25"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
                                             </paragraphStyle>
-                                            <color key="NSStrokeColor" red="0.33333000000000002" green="0.30196000000000001" blue="0.33724999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -98,7 +132,7 @@
                             <constraint firstItem="CfT-xy-gLK" firstAttribute="width" secondItem="wse-vl-wGc" secondAttribute="width" id="TOs-mX-Wri"/>
                             <constraint firstItem="zil-Cj-jM6" firstAttribute="top" secondItem="wse-vl-wGc" secondAttribute="top" id="YqL-Fb-PAa"/>
                             <constraint firstItem="fpD-2e-fvH" firstAttribute="top" secondItem="9tf-cl-Wl9" secondAttribute="bottom" constant="16" id="f1h-G4-GbA"/>
-                            <constraint firstItem="fUx-WR-4EK" firstAttribute="top" secondItem="fpD-2e-fvH" secondAttribute="bottom" constant="73" id="gcH-3D-rar"/>
+                            <constraint firstItem="fUx-WR-4EK" firstAttribute="top" secondItem="fpD-2e-fvH" secondAttribute="bottom" constant="73" id="gcH-3D-rar" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="9tf-cl-Wl9" firstAttribute="width" secondItem="wse-vl-wGc" secondAttribute="width" id="kuI-Wa-lFC"/>
                             <constraint firstItem="fUx-WR-4EK" firstAttribute="leading" secondItem="nug-R7-MG4" secondAttribute="leading" constant="108" id="o5a-V7-RPG"/>
                             <constraint firstItem="zil-Cj-jM6" firstAttribute="height" secondItem="wse-vl-wGc" secondAttribute="height" multiplier="0.5" constant="20.5" id="uAq-mQ-GuU"/>
@@ -124,14 +158,14 @@
             <objects>
                 <viewController storyboardIdentifier="onBoardingPage2" title="onBoarding2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vD4-2j-dpo" customClass="KSOStartViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BNQ-NQ-qLZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deadBird" translatesAutoresizingMaskIntoConstraints="NO" id="BFx-Vl-wwG" userLabel="PageImage">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="304.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Write, Engage, Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02o-s5-cXw" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="397.5" width="375" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Write, Share, Engage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02o-s5-cXw" userLabel="AdditionalHeader">
+                                <rect key="frame" x="0.0" y="348" width="320" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.2901960784" green="0.50588235290000005" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -140,7 +174,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="How You Can Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kKJ-hd-bqH" userLabel="Header">
-                                <rect key="frame" x="0.0" y="369" width="375" height="26.5"/>
+                                <rect key="frame" x="0.0" y="319.5" width="320" height="26.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="bxA-1V-2B6"/>
                                 </constraints>
@@ -151,23 +185,58 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK1-G3-eP9" userLabel="Description">
-                                <rect key="frame" x="35" y="429.5" width="305" height="103.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK1-G3-eP9" userLabel="Description">
+                                <rect key="frame" x="35" y="380" width="250" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="lOb-ZF-bzz"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">As a student, fight to protect the ocean or prevent climate change by starting a letter-writing campaign in your school or by working with local government. As a teacher, we have rich and expanding resources. As an individual, we rely on your donations.</string>
+                                        <string key="content">As a student, fight to protect the ocean or stop climate change by deeply engaging your government. We’ll show you how. As a teacher, we have rich and expanding resources. As a parent or individual, you can empower the kids</string>
                                         <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="NSColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.25882352941176473" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="15" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
+                                            <real key="NSKern" value="-0.25"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
                                             </paragraphStyle>
-                                            <color key="NSStrokeColor" red="0.99607999999999997" green="0.81176000000000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -180,7 +249,7 @@
                             <constraint firstItem="BFx-Vl-wwG" firstAttribute="width" secondItem="BNQ-NQ-qLZ" secondAttribute="width" id="5Js-Ge-Vly"/>
                             <constraint firstItem="BFx-Vl-wwG" firstAttribute="height" secondItem="BNQ-NQ-qLZ" secondAttribute="height" multiplier="0.5" constant="20.5" id="8p8-XJ-2HS"/>
                             <constraint firstItem="MK1-G3-eP9" firstAttribute="centerX" secondItem="1Da-I6-ULn" secondAttribute="centerX" id="JQw-en-quQ"/>
-                            <constraint firstItem="MK1-G3-eP9" firstAttribute="trailing" secondItem="1Da-I6-ULn" secondAttribute="trailing" constant="-35" id="Mj4-Pm-KLX"/>
+                            <constraint firstItem="MK1-G3-eP9" firstAttribute="trailing" secondItem="1Da-I6-ULn" secondAttribute="trailing" constant="-35" id="Mj4-Pm-KLX" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="02o-s5-cXw" firstAttribute="centerX" secondItem="1Da-I6-ULn" secondAttribute="centerX" id="TMS-PH-Num"/>
                             <constraint firstItem="kKJ-hd-bqH" firstAttribute="width" secondItem="BNQ-NQ-qLZ" secondAttribute="width" id="Thz-P1-WBH"/>
                             <constraint firstItem="kKJ-hd-bqH" firstAttribute="top" secondItem="BFx-Vl-wwG" secondAttribute="bottom" constant="15" id="Y1x-zv-j4s"/>
@@ -202,14 +271,14 @@
             <objects>
                 <viewController storyboardIdentifier="onBoardingPage1" title="onBoarding1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VBs-1t-KLe" customClass="KSOStartViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mUX-fW-xku">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turtleInNet" translatesAutoresizingMaskIntoConstraints="NO" id="d6U-Mc-DIt" userLabel="PageImage">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="304.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Kids Saving the Ocean" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmH-E8-HZN" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="397.5" width="375" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="A Tool With Teeth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmH-E8-HZN" userLabel="AdditionalHeader">
+                                <rect key="frame" x="0.0" y="348" width="320" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.2901960784" green="0.50588235290000005" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -218,7 +287,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Welcome to Fatechanger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-tb-7HU" userLabel="Header">
-                                <rect key="frame" x="0.0" y="369" width="375" height="26.5"/>
+                                <rect key="frame" x="0.0" y="319.5" width="320" height="26.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Ft3-GC-zhJ"/>
                                 </constraints>
@@ -229,30 +298,113 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO5-Oi-XHl" userLabel="Description">
-                                <rect key="frame" x="35" y="429.5" width="305" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO5-Oi-XHl" userLabel="Description">
+                                <rect key="frame" x="35" y="380" width="250" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="jHi-yo-HtA"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="jHi-yo-HtA"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">This app was designed with a single purpose: to give youth a powerful voice to protect our world’s environment. It is no ordinary app, but a tool with teeth.</string>
+                                        <string key="content">This app was designed with a single purpose: to give youth a powerful voice to protect our world’s environment. It is no ordinary app.</string>
                                         <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="NSColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.25882352941176473" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="15" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
+                                            <real key="NSKern" value="-0.25"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
                                             </paragraphStyle>
-                                            <color key="NSStrokeColor" red="0.33333000000000002" green="0.30196000000000001" blue="0.33724999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ol-ex-ofq">
-                                <rect key="frame" x="136" y="543" width="103" height="18"/>
+                                <rect key="frame" x="108.5" y="444" width="103" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -260,7 +412,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QO5-Oi-XHl" firstAttribute="trailing" secondItem="jHu-la-qCT" secondAttribute="trailing" constant="-35" id="1Fk-We-ogK"/>
+                            <constraint firstItem="QO5-Oi-XHl" firstAttribute="trailing" secondItem="jHu-la-qCT" secondAttribute="trailing" constant="-35" id="1Fk-We-ogK" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="d6U-Mc-DIt" firstAttribute="top" secondItem="mUX-fW-xku" secondAttribute="top" id="1mD-1F-wmn"/>
                             <constraint firstItem="JmH-E8-HZN" firstAttribute="top" secondItem="wiU-tb-7HU" secondAttribute="bottom" constant="2" id="7Zz-3c-oGO"/>
                             <constraint firstItem="JmH-E8-HZN" firstAttribute="centerX" secondItem="jHu-la-qCT" secondAttribute="centerX" id="97f-QD-OdA"/>
@@ -273,7 +425,7 @@
                             <constraint firstItem="wiU-tb-7HU" firstAttribute="width" secondItem="mUX-fW-xku" secondAttribute="width" id="aci-16-8lc"/>
                             <constraint firstItem="wiU-tb-7HU" firstAttribute="top" secondItem="d6U-Mc-DIt" secondAttribute="bottom" constant="15" id="g1v-B2-jvf"/>
                             <constraint firstItem="d6U-Mc-DIt" firstAttribute="height" secondItem="mUX-fW-xku" secondAttribute="height" multiplier="0.5" constant="20.5" id="hc5-6E-zCo"/>
-                            <constraint firstItem="jHu-la-qCT" firstAttribute="bottom" secondItem="8Ol-ex-ofq" secondAttribute="bottom" constant="106" id="hfx-qY-WY9"/>
+                            <constraint firstItem="jHu-la-qCT" firstAttribute="bottom" secondItem="8Ol-ex-ofq" secondAttribute="bottom" constant="106" id="hfx-qY-WY9" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="QO5-Oi-XHl" firstAttribute="centerX" secondItem="jHu-la-qCT" secondAttribute="centerX" id="pqI-hY-uR2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jHu-la-qCT"/>
@@ -288,19 +440,19 @@
             <objects>
                 <tableViewController id="oh3-Xy-ZtB" customClass="UserTypeTableViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OBt-LE-Hc3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userIdCellIdentificator" rowHeight="448" id="6OI-sN-FQ4" customClass="UserTypeTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="448"/>
+                                <rect key="frame" x="0.0" y="55.5" width="320" height="448"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6OI-sN-FQ4" id="axg-1f-VgH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="448"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uIx-xS-CJq">
-                                            <rect key="frame" x="16" y="8" width="343" height="432"/>
+                                            <rect key="frame" x="16" y="8" width="288" height="432"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="uIx-xS-CJq" secondAttribute="height" multiplier="343:420" priority="999" id="gjb-zK-f8G"/>
                                             </constraints>
@@ -312,7 +464,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="q1I-fE-Jmi">
-                                            <rect key="frame" x="16" y="8" width="343" height="432"/>
+                                            <rect key="frame" x="16" y="8" width="288" height="432.00000000000011"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                     <integer key="value" value="15"/>
@@ -327,7 +479,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Description text which is supposed to be long enough for fill at least 2 lines, probably 3" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXD-Qg-wKP">
-                                            <rect key="frame" x="32" y="380" width="317" height="40"/>
+                                            <rect key="frame" x="32" y="380" width="262" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="y9S-3t-hGs"/>
                                             </constraints>
