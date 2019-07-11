@@ -34,16 +34,16 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteDirectionLines" translatesAutoresizingMaskIntoConstraints="NO" id="Bqd-BT-4HJ">
-                                <rect key="frame" x="16" y="102" width="312" height="335"/>
+                                <rect key="frame" x="16" y="83" width="312" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bqd-BT-4HJ" secondAttribute="height" multiplier="312:335" id="qs0-Km-GdR"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="center" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kz5-ah-x5R">
-                                <rect key="frame" x="26" y="50" width="320" height="41"/>
+                                <rect key="frame" x="26" y="50" width="320" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-lA-40h" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g4b-lA-40h" secondAttribute="height" multiplier="1:1" id="oGN-nt-XBJ"/>
                                         </constraints>
@@ -53,7 +53,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUO-am-qhv" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="0.0" width="41" height="41"/>
+                                        <rect key="frame" x="59.5" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XUO-am-qhv" secondAttribute="height" multiplier="1:1" id="epZ-yS-rYP"/>
                                         </constraints>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-ym-lSy" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="111.5" y="0.0" width="41" height="41"/>
+                                        <rect key="frame" x="119" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TfB-ym-lSy" secondAttribute="height" multiplier="1:1" id="cvZ-aW-hMg"/>
                                         </constraints>
@@ -73,7 +73,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22F-dQ-MAC" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="167.5" y="0.0" width="41" height="41"/>
+                                        <rect key="frame" x="179" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="22F-dQ-MAC" secondAttribute="height" multiplier="1:1" id="7jy-Vg-DZM"/>
                                         </constraints>
@@ -83,7 +83,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLb-92-lzH" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="223" y="0.0" width="41" height="41"/>
+                                        <rect key="frame" x="238.5" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OLb-92-lzH" secondAttribute="height" multiplier="1:1" id="Ww5-72-pqj"/>
                                         </constraints>
@@ -93,7 +93,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-bt-1Cb" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="279" y="0.0" width="41" height="41"/>
+                                        <rect key="frame" x="298" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="H0c-bt-1Cb" secondAttribute="height" multiplier="1:1" id="QWi-RK-8rq"/>
                                         </constraints>
@@ -105,25 +105,25 @@
                                 </subviews>
                             </stackView>
                             <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main board" translatesAutoresizingMaskIntoConstraints="NO" id="Luv-j1-90t">
-                                <rect key="frame" x="43" y="132" width="315" height="262"/>
+                                <rect key="frame" x="43" y="113" width="315" height="262"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="height" multiplier="315:262" id="lcn-MS-daW"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Incomplete fist and writing" translatesAutoresizingMaskIntoConstraints="NO" id="cRy-QY-zOf">
-                                <rect key="frame" x="254" y="154" width="85" height="100.50000000000003"/>
+                                <rect key="frame" x="254" y="135" width="85" height="100.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cRy-QY-zOf" secondAttribute="height" multiplier="83:98" id="5OX-Aj-uMG"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seek change throuhg local goverment" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-l6-3J2">
-                                <rect key="frame" x="107" y="313" width="232" height="18"/>
+                                <rect key="frame" x="107" y="294" width="232" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TASK: " lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-kC-tnV">
-                                <rect key="frame" x="63" y="313" width="44" height="18"/>
+                                <rect key="frame" x="63" y="294" width="44" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="NL5-CF-6gI"/>
                                     <constraint firstAttribute="width" constant="44" id="Prc-Gw-ZhO"/>
@@ -133,13 +133,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incomplete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gII-Qq-3yG">
-                                <rect key="frame" x="254" y="265" width="85" height="18"/>
+                                <rect key="frame" x="254" y="246" width="85" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-mB-t2e">
-                                <rect key="frame" x="98" y="341" width="82" height="33"/>
+                                <rect key="frame" x="98" y="322" width="82" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lcc-mB-t2e" secondAttribute="height" multiplier="82:33" id="krp-8S-its"/>
                                 </constraints>
@@ -152,7 +152,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-M1-UBW">
-                                <rect key="frame" x="234" y="341" width="82" height="33"/>
+                                <rect key="frame" x="234" y="322" width="82" height="33"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                 <state key="normal" title="I did it!" backgroundImage="Not yet blank">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,7 +162,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjn-Sh-ltB" userLabel="Wheel Volume views">
-                                <rect key="frame" x="41" y="429" width="147" height="161.5"/>
+                                <rect key="frame" x="41" y="410" width="147" height="161.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wheel Volume" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-Bc-xcX">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="161.5"/>
@@ -188,13 +188,13 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-Xa-0a0">
-                                <rect key="frame" x="71" y="429" width="30" height="30"/>
+                                <rect key="frame" x="71" y="410" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask3:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="pc7-jF-lFA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-QJ-4bj">
-                                <rect key="frame" x="41" y="520.5" width="30" height="30"/>
+                                <rect key="frame" x="41" y="501.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="upi-QJ-4bj" secondAttribute="height" multiplier="1:1" id="3Id-VU-QAK"/>
                                     <constraint firstAttribute="width" constant="30" id="qzU-sG-lYL"/>
@@ -204,47 +204,47 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y0-IY-baO">
-                                <rect key="frame" x="125" y="429" width="30" height="30"/>
+                                <rect key="frame" x="125" y="410" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask4:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="3gI-rY-pe3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-lO-FMb">
-                                <rect key="frame" x="41" y="464" width="30" height="30"/>
+                                <rect key="frame" x="41" y="445" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask2:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="J71-Ok-npH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-Yo-LuE">
-                                <rect key="frame" x="158" y="520.5" width="30" height="30"/>
+                                <rect key="frame" x="158" y="501.5" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="bES-PJ-yKE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-jX-Rna">
-                                <rect key="frame" x="158" y="464" width="30" height="30"/>
+                                <rect key="frame" x="158" y="445" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="SCs-we-WTQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="KidsSaveOcean" customModuleProvider="target">
-                                <rect key="frame" x="205.5" y="423" width="140.5" height="166.5"/>
+                                <rect key="frame" x="205.5" y="404" width="140.5" height="166.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="155:184" id="APx-7i-Pc6"/>
                                 </constraints>
                                 <state key="normal" image="ACTION ALERT"/>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meterScale" translatesAutoresizingMaskIntoConstraints="NO" id="4br-dF-I5I">
-                                <rect key="frame" x="63" y="154" width="171" height="87.5"/>
+                                <rect key="frame" x="63" y="135" width="171" height="87.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4br-dF-I5I" secondAttribute="height" multiplier="192:98" id="aMW-E6-nIa"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pointer" translatesAutoresizingMaskIntoConstraints="NO" id="HDd-i0-FAy">
-                                <rect key="frame" x="63" y="231.5" width="171" height="10"/>
+                                <rect key="frame" x="63" y="206.5" width="171" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radical Meter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGt-A5-OM8">
-                                <rect key="frame" x="63" y="265" width="171" height="18"/>
+                                <rect key="frame" x="63" y="246" width="171" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="3dw-94-PqR"/>
                                 </constraints>
@@ -795,7 +795,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Golden Rules of Protesting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="msg-82-eBp" userLabel="Header">
-                                <rect key="frame" x="0.0" y="369" width="375" height="27"/>
+                                <rect key="frame" x="0.0" y="369" width="375" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="CDd-bY-D1B"/>
                                 </constraints>
@@ -807,7 +807,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1d-NM-tLJ" userLabel="Description">
-                                <rect key="frame" x="16" y="395" width="343" height="253"/>
+                                <rect key="frame" x="16" y="394" width="343" height="253"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="253" id="CAA-4C-25n"/>
                                 </constraints>
