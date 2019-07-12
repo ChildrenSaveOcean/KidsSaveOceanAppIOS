@@ -21,11 +21,10 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
     var userType: UserType?
 
-    override func loadPage() {
-        if webUrlString.isEmpty {
-            webUrlString = "https://www.youtube.com/embed/\(urlString)"
-        }
-        super.loadPage()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard !urlString.isEmpty else { return }
+        setURLString("https://www.youtube.com/embed/\(urlString)")
     }
 
     private func showActionButtons() {

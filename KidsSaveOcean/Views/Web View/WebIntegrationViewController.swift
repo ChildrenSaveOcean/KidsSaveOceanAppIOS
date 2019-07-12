@@ -72,13 +72,6 @@ class WebIntegrationViewController: UIViewController {
         navigationItem.rightBarButtonItem = forwardButton
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if checkInternetConnection(reachability: reachability!) {
-            loadPage()/////
-        }
-    }
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         webUrlString = ""
@@ -136,7 +129,7 @@ class WebIntegrationViewController: UIViewController {
         return
     }
 
-    func loadPage() {
+    private final func loadPage() {
         view.addSubview(progressBarView)
 
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -152,6 +145,12 @@ class WebIntegrationViewController: UIViewController {
         }
     }
 
+    func setURLString(_ string: String) {
+        if webUrlString.isEmpty {
+            self.webUrlString = string
+        }
+    }
+    
     @objc func reachabilityChanged(note: Notification) {
         guard let noteObject = note.object as? Reachability else {return}
         checkInternetConnection(reachability: noteObject)

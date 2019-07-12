@@ -14,12 +14,6 @@ class ResourcesViewController: WebIntegrationViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-    }
-
-    override func loadPage() {
-        if webUrlString.isEmpty {
-            webUrlString = "https://www.kidssaveocean.com/fatechanger-resources"
-        }
-        super.loadPage()
+        setURLString("https://www.kidssaveocean.com/fatechanger-resources")
     }
 }

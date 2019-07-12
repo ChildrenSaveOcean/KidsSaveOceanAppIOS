@@ -16,11 +16,9 @@ class MediaViewController: WebIntegrationViewController, Instantiatable, Notific
         clearNotificationForTarget(.policyChange)
     }
     
-    override func loadPage() {
-        if self.webUrlString.isEmpty {
-            self.webUrlString = "https://www.kidssaveocean.com/updates"
-        }
-        super.loadPage()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setURLString("https://www.kidssaveocean.com/updates")
     }
 }
 

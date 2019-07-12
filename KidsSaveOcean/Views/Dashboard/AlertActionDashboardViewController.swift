@@ -15,8 +15,8 @@ class AlertActionDashboardViewController: WebIntegrationViewController, Instanti
         clearNotificationForTarget(.actionAlert)
     }
     
-    override func loadPage() {
-        self.webUrlString = "https://www.kidssaveocean.com/action-alert"
-        super.loadPage()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setURLString("https://www.kidssaveocean.com/action-alert")
     }
 }
