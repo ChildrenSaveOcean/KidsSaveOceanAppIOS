@@ -12,12 +12,12 @@ class MediaViewController: WebIntegrationViewController, Instantiatable, Notific
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        clearNotificationForTarget(.newsAndMedia)
-        clearNotificationForTarget(.policyChange)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        clearNotificationForTarget(.newsAndMedia)
+        clearNotificationForTarget(.policyChange)
         setURLString("https://www.kidssaveocean.com/updates")
     }
 }
