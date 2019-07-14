@@ -28,15 +28,9 @@ class NotificationController {
     let googleNotificationNameIDKey = "google.c.a.c_l"
     let timeToLiveIDKey = "gcm.notification.time_to_live"
     
-    //lazy var application = UIApplication.shared
-    
     var target: NotificationTarget = .unknown
     var expirationDate: Date?
     var link: String?
-    
-    //convenience init(_  userInfo: [AnyHashable: Any] ) {
-    
-     //   self.init()
     
     func processNotification(with userInfo: [AnyHashable: Any] ) {
         self.target = .unknown
