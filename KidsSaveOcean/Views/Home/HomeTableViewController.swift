@@ -92,37 +92,26 @@ final class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
         if let hCell = (cell as? HomeTableViewCell) {
-
             hCell.titleLabel.sizeToFit()
-
             hCell.subTitleLabel.sizeToFit()
-
         }
 
         guard let cell = (cell as? NotificationBadgeProtocol)  else { return }
 
         switch indexPath.row {
-
         case 0:
-
             cell.checkNotificationStatusForTarget(.newsAndMedia)
-
             if cell.isNotificationActualForTarget(.newsAndMedia) != true {
-
                 cell.checkNotificationStatusForTarget(.policyChange)
-
             }
 
         case 3:
-
             cell.checkNotificationStatusForTarget(.actionAlert)
 
         case 4:
-
             cell.checkNotificationStatusForTarget(.newHighScore)
 
         default:
-
             break
 
         }
