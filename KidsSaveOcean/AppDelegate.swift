@@ -59,19 +59,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
         
+        // process notification if notification message has been pressed, but application was terminated
+        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
+                notificationController.processNotification(with: userInfo)
+                notificationController.saveNotificationStatus()
+        }
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         NotificationCenter.default.post(name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil, userInfo: nil)
     }
-    
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
         notificationController.openTargetViewController(in: window)
         completionHandler()
     }
