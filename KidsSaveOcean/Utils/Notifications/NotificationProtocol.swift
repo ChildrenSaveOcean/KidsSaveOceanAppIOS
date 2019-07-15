@@ -9,13 +9,20 @@
 import UIKit
 
 protocol NotificationProtocol {
+    
+    var notificationTargets: [NotificationTarget] { get }
+    
     func isNotificationActualForTarget(_ target: NotificationTarget) -> Bool?
     func checkNotificationStatusForTarget(_ target: NotificationTarget)
     func clearNotificationForTarget(_ target: NotificationTarget)
     func updateViews()
+    func clearNotifications() 
 }
 
 extension NotificationProtocol {
+    var notificationTargets: [NotificationTarget] {
+        return []
+    }
     
     func isNotificationActualForTarget(_ target: NotificationTarget) -> Bool? {
         guard let expDate = Settings.getNotificationStatusForTarget(target) else {return nil}
@@ -37,5 +44,11 @@ extension NotificationProtocol {
     
     func updateViews() {
         //
+    }
+    
+    func clearNotifications() {
+        for target in notificationTargets {
+            clearNotificationForTarget(target)
+        }
     }
 }

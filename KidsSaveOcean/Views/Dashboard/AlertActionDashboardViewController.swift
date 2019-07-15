@@ -9,10 +9,11 @@
 import UIKit
 
 class AlertActionDashboardViewController: WebIntegrationViewController, Instantiatable, NotificationProtocol {
-
+    var notificationTargets: [NotificationTarget] = [.actionAlert]
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        clearNotificationForTarget(.actionAlert)
+        clearNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {

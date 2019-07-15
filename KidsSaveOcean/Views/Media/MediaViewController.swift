@@ -9,16 +9,20 @@
 import UIKit
 
 class MediaViewController: WebIntegrationViewController, Instantiatable, NotificationProtocol {
-
+    var notificationTargets: [NotificationTarget] = [.newsAndMedia, .policyChange]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        clearNotificationForTarget(.newsAndMedia)
-        clearNotificationForTarget(.policyChange)
+        clearNotifications()
         setURLString("https://www.kidssaveocean.com/updates")
+    }
+    
+    func updateViews() {
+        clearNotifications()
     }
 }
 

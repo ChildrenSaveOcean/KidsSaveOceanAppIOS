@@ -36,10 +36,6 @@ final class HomeTableViewController: UITableViewController {
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
 
     NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name:
-    Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
-    
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -54,13 +50,8 @@ final class HomeTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        clearNotificationForTarget(.unknown)
-        clearNotificationForTarget(.signatureCampaign)
+        clearNotifications()
     }
-
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return HomeViewData.count
@@ -85,7 +76,7 @@ final class HomeTableViewController: UITableViewController {
             cell.setDarkLetters()
         }
         
-      return  cell
+      return cell
     }
   }
 
@@ -176,7 +167,12 @@ extension HomeTableViewController: UITabBarControllerDelegate {
 }
 
 extension HomeTableViewController: NotificationProtocol {
+    var notificationTargets: [NotificationTarget] {
+        return [.unknown, .signatureCampaign]
+    }
+    
     @objc func updateViews() {
+        clearNotifications()
         tableView.reloadData()
     }
 }
