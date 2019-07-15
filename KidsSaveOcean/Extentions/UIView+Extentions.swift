@@ -95,7 +95,7 @@ extension UIView {
         let animation = CABasicAnimation(keyPath: "backgroundColor")
         let startColor = backgroundColor?.cgColor ?? UIColor.clear.cgColor
         animation.fromValue = startColor
-        animation.toValue = UIColor.appCyan.cgColor //UIColor.appCyan.cgColor
+        animation.toValue = UIColor.appCyan.cgColor 
         animation.duration = 0.2
         animation.repeatCount = times
         layer.add(animation, forKey: "colourAnimation")
