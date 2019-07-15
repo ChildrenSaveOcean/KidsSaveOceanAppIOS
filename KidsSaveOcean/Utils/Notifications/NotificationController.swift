@@ -52,8 +52,12 @@ class NotificationController {
             if let linkFromNotification = userInfo["link"] as? String,
                 !linkFromNotification.isEmpty {
                 self.link = linkFromNotification
+            } else {
+                self.link = ""
             }
         }
+        
+        saveNotificationStatus()
     }
     
     func saveNotificationStatus() {
