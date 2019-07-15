@@ -14,7 +14,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var notificationController = NotificationController() // TODO ??
+    var notificationController = NotificationController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -57,18 +57,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
-        
         // process notification if notification message has been pressed, but application was terminated
         if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
                 notificationController.processNotification(with: userInfo)
-                notificationController.saveNotificationStatus()
         }
+        
+        processDeliveredNotifications(completionHandler: nil)
+
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        NotificationCenter.default.post(name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil, userInfo: nil)
+        processDeliveredNotifications(completionHandler: nil)
+    }
+    
+    private func processDeliveredNotifications(completionHandler: (() -> Void)? ) {
+        UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
+            for notification in notifications {
+                self.notificationController.processNotification(with: notification.request.content.userInfo)
+            }
+            DispatchQueue.main.async {
+                self.notificationController.refreshReferencedView(in: self.window)
+                UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
+                completionHandler?()
+            }
+        }
     }
 }
 
@@ -86,10 +99,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
         notificationController.processNotification(with: userInfo)
-        notificationController.saveNotificationStatus()
+        
         if application.applicationState == .active {
             notificationController.refreshReferencedView(in: window)
         }
+        completionHandler(UIBackgroundFetchResult.noData)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
