@@ -148,6 +148,7 @@ extension MapViewController: NotificationProtocol {
     }
     
     func updateViews() {
+        guard map != nil, tbvTop10 != nil else {return}
         reloadScores()
     }
 }
