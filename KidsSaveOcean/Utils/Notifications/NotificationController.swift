@@ -62,7 +62,6 @@ class NotificationController {
     
     func saveNotificationStatus() {
         Settings.saveNotificationStatusForTarget(target, date: expirationDate)
-        UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
     }
     
     func openTargetViewController(in window: UIWindow?) {

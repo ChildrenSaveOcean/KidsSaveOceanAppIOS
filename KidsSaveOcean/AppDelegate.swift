@@ -62,16 +62,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 notificationController.processNotification(with: userInfo)
         }
         
-        processDeliveredNotifications(completionHandler: nil)
+        processDeliveredNotifications()
 
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        processDeliveredNotifications(completionHandler: nil)
+        processDeliveredNotifications()
     }
     
-    private func processDeliveredNotifications(completionHandler: (() -> Void)? ) {
+    private func processDeliveredNotifications() {
         UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
             for notification in notifications {
                 self.notificationController.processNotification(with: notification.request.content.userInfo)
@@ -79,10 +79,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DispatchQueue.main.async {
                 self.notificationController.refreshReferencedView(in: self.window)
                 UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
-                completionHandler?()
             }
         }
     }
+    
+    //FirebaseAppDelegateProxyEnabled
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
