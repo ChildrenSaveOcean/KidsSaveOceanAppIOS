@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-//import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KSOAuthorization.anonymousAuthorization {
             UserViewModel.shared()
         }
-        //# MARK: - Check if user already opened the tutorial screen
+        
+        // MARK: - Check if user already opened the tutorial screen
         if Settings.isOnBoardingHasBeenShown() {
             window?.rootViewController = KSOTabViewController.instantiate()
         } else {
@@ -32,10 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         CountriesService.shared().setup()
         
+        // MARK: all about notifications here and below:
         Messaging.messaging().delegate = self
         NotificationController.shared().requestAuthorization()
 
-        //get application instance ID
+        // MARK: - Get application instance ID
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {
                 print("Error fetching remote instance ID: \(error)")
@@ -46,14 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        //  process notifications if application was terminated
-        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] { // notification alert view has been tapped
-            NotificationController.shared().processNotification(with: userInfo) {
-                    NotificationController.shared().refreshReferencedView()
-            }
-        } else { // terminated application has been launched by tapping on icon
-            NotificationController.shared().processDeliveredNotifications()
-        }
+        // MARK: - Get notification if application was terminated
+        let notificationInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any]
+        NotificationController.shared().processNotification(with: notificationInfo)
 
         return true
     }
@@ -63,9 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        NotificationController.shared().processNotification(with: userInfo) {
-            NotificationController.shared().refreshReferencedView()
-        }
+        NotificationController.shared().processNotification(with: userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
     

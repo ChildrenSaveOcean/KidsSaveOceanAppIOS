@@ -55,7 +55,12 @@ class NotificationController: NSObject {
         }
     }
     
-    func processNotification(with userInfo: [AnyHashable: Any], completionHandler: (() -> Void)? ) {
+    func processNotification(with userInfo: [AnyHashable: Any]?) {
+        
+        guard let userInfo = userInfo, userInfo.keys.count > 0 else {
+            processDeliveredNotifications()
+            return
+        }
         
         // check if the notification has been already processed
         guard let messageId = userInfo[messageIDKey] as? String,
@@ -72,9 +77,9 @@ class NotificationController: NSObject {
         self.expirationDate = expirationDate
 
         Settings.saveNotificationStatusForTarget(target, date: expirationDate)
-        //UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
+        UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
         
-        completionHandler?()
+        self.refreshReferencedView()
     }
     
     func refreshReferencedView() {
@@ -86,13 +91,15 @@ class NotificationController: NSObject {
     func processDeliveredNotifications() {
         UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
             for notification in notifications {
-                self.processNotification(with: notification.request.content.userInfo, completionHandler: nil)
+                DispatchQueue.main.sync {
+                    self.processNotification(with: notification.request.content.userInfo)
+                }
             }
-            DispatchQueue.main.async {
-                self.refreshReferencedView()
+            DispatchQueue.main.sync {
                 UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
             }
         }
+        
     }
     
     func openTargetViewController() {
