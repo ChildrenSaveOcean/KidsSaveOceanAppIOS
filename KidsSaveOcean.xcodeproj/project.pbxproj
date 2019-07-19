@@ -1022,11 +1022,13 @@
 				CODE_SIGN_ENTITLEMENTS = KidsSaveOcean/KidsSaveOcean.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ATY5UD3SW;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = KidsSaveOcean/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KidsSaveOcean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

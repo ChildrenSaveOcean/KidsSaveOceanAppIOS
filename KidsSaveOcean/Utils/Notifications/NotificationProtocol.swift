@@ -38,7 +38,7 @@ extension NotificationProtocol {
     }
     
     func clearNotificationForTarget(_ target: NotificationTarget) {
-        Settings.saveNotificationStatusForTarget(target, date: nil)
+        Settings.clearNotificationStatusForTarget(target)
         UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
     }
     

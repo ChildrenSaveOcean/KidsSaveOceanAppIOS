@@ -8,13 +8,12 @@
 
 import UIKit
 import Firebase
-import UserNotifications
+//import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var notificationController = NotificationController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -34,18 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CountriesService.shared().setup()
         
         Messaging.messaging().delegate = self
-        UNUserNotificationCenter.current().delegate = self
-        
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        NotificationController.shared().requestAuthorization()
 
-        //Solicit permission from the user to receive notifications
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { (_, error) in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-        }
-        
         //get application instance ID
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {
@@ -57,54 +46,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        // process notification if notification message has been pressed, but application was terminated
-        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
-                notificationController.processNotification(with: userInfo)
+        //  process notifications if application was terminated
+        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] { // notification alert view has been tapped
+            NotificationController.shared().processNotification(with: userInfo) {
+                    NotificationController.shared().refreshReferencedView()
+            }
+        } else { // terminated application has been launched by tapping on icon
+            NotificationController.shared().processDeliveredNotifications()
         }
-        
-        processDeliveredNotifications()
 
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        processDeliveredNotifications()
-    }
-    
-    private func processDeliveredNotifications() {
-        UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
-            for notification in notifications {
-                self.notificationController.processNotification(with: notification.request.content.userInfo)
-            }
-            DispatchQueue.main.async {
-                self.notificationController.refreshReferencedView(in: self.window)
-                UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
-            }
-        }
-    }
-    
-    //FirebaseAppDelegateProxyEnabled
-}
-
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        notificationController.openTargetViewController(in: window)
-        completionHandler()
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound, .badge])
+        NotificationController.shared().processDeliveredNotifications()
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-
-        notificationController.processNotification(with: userInfo)
-        
-        if application.applicationState == .active {
-            notificationController.refreshReferencedView(in: window)
+        NotificationController.shared().processNotification(with: userInfo) {
+            NotificationController.shared().refreshReferencedView()
         }
-        completionHandler(UIBackgroundFetchResult.noData)
+        completionHandler(UIBackgroundFetchResult.newData)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -119,8 +81,6 @@ extension AppDelegate: MessagingDelegate {
         
         let dataDict = ["token": fcmToken]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
         
         messaging.subscribe(toTopic: "all")
     }

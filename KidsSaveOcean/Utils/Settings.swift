@@ -58,10 +58,14 @@ class Settings: NSObject {
         return dateFormatter.date(from: expirationDate)
     }
     
-    class func saveNotificationStatusForTarget(_ target: NotificationTarget, date: Date?) {
-        let expirationDate = date != nil ? dateFormatter.string(from: date!) : nil
+    class func saveNotificationStatusForTarget(_ target: NotificationTarget, date: Date) {
+        let expirationDate = dateFormatter.string(from: date)
         UserDefaults.standard.set(expirationDate, forKey: target.decsription())
         UserDefaults.standard.synchronize()
     }
-
+    
+    class func clearNotificationStatusForTarget(_ target: NotificationTarget) {
+        UserDefaults.standard.removeObject(forKey: target.decsription())
+        UserDefaults.standard.synchronize()
+    }
 }
