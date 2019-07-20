@@ -58,7 +58,15 @@ class NotificationController: NSObject {
         }
         
         let link = userInfo["link"] as? String ?? ""
-        let expirationDate = getExpirationDate(from: userInfo[timeToLiveIDKey] as? String)
+        
+        let secondString = userInfo[timeToLiveIDKey] as? String
+        let expirationDate = getExpirationDate(from: secondString)
+        if expirationDate != nil, secondString != nil, let seconds = Double(secondString!) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+                self.refreshReferencedView()
+                UIApplication.shared.applicationIconBadgeNumber = self.notifications.count
+            }
+        }
         
         let notification = NotificationItem(id: messageId, target: target, link: link, expirationDate: expirationDate)
         notifications.append(notification)
@@ -142,15 +150,15 @@ class NotificationController: NSObject {
         }
     }
     
-    private func getExpirationDate(from seconds: String?) -> Date {
-        let expDate: Date
+    private func getExpirationDate(from seconds: String?) -> Date? {
+        let expDate: Date?
         if seconds != nil,
             !seconds!.isEmpty,
             let liveSecondsInt = Int(seconds!),
             liveSecondsInt > 0 {
             expDate = Date().addingTimeInterval(TimeInterval(liveSecondsInt))
         } else {
-            expDate = Date().addingTimeInterval(TimeInterval(Int32.max))
+            expDate = nil //Date().addingTimeInterval(TimeInterval(Int32.max))
         }
         return expDate
     }
