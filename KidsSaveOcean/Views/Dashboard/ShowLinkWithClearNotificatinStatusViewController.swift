@@ -9,5 +9,4 @@
 import UIKit
 
 class ShowLinkWithClearNotificatinStatusViewController: WebIntegrationViewController, NotificationProtocol {
-
 }

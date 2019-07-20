@@ -12,7 +12,7 @@ protocol NotificationProtocol {
     
     var notificationTargets: [NotificationTarget] { get }
     
-    func isNotificationActualForTarget(_ target: NotificationTarget) -> Bool?
+    func isNotificationActualForTarget(_ target: NotificationTarget) -> Bool
     func checkNotificationStatusForTarget(_ target: NotificationTarget)
     func clearNotificationForTarget(_ target: NotificationTarget)
     func updateViews()
@@ -24,31 +24,25 @@ extension NotificationProtocol {
         return []
     }
     
-    func isNotificationActualForTarget(_ target: NotificationTarget) -> Bool? {
-        guard let expDate = Settings.getNotificationStatusForTarget(target) else {return nil}
-        let notificationIsNotExpired = Date().compare(expDate) == ComparisonResult.orderedAscending
-        return notificationIsNotExpired
+    func isNotificationActualForTarget (_ target: NotificationTarget) -> Bool {
+        return NotificationController.shared().getNotificationStatusForTarget(target)
     }
     
     func checkNotificationStatusForTarget(_ target: NotificationTarget) {
-        guard let notificationIsActual = isNotificationActualForTarget(target) else {return}
-        if !notificationIsActual {
+        if !isNotificationActualForTarget(target) {
             clearNotificationForTarget(target)
         }
-    }
-    
-    func clearNotificationForTarget(_ target: NotificationTarget) {
-        Settings.clearNotificationStatusForTarget(target)
-        UIApplication.shared.applicationIconBadgeNumber = NotificationController.getNotificationCount()
     }
     
     func updateViews() {
         //
     }
     
+    func clearNotificationForTarget(_ target: NotificationTarget) {
+        NotificationController.shared().clearNotificationsWithTargets([target])
+    }
+    
     func clearNotifications() {
-        for target in notificationTargets {
-            clearNotificationForTarget(target)
-        }
+        NotificationController.shared().clearNotificationsWithTargets(notificationTargets)
     }
 }

@@ -41,6 +41,8 @@
 		16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768112215AD71100EE4E1F /* HomeTableViewCell.swift */; };
 		1679B06B21E935D100C15F2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679B06921E935D100C15F2A /* DashboardViewController.swift */; };
 		1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1679B06D21EA29E100C15F2A /* knobClick.mp3 */; };
+		1679C90622E26D8D00BC1A89 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679C90522E26D8D00BC1A89 /* NotificationItem.swift */; };
+		1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679C90722E270B700BC1A89 /* NotificationTarget.swift */; };
 		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
 		169D6CF222D73629008073DF /* WriteToWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D6CF122D73629008073DF /* WriteToWhereViewController.swift */; };
 		16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3B229027F100E36F25 /* UserViewModel.swift */; };
@@ -134,6 +136,8 @@
 		16768112215AD71100EE4E1F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		1679B06921E935D100C15F2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1679B06D21EA29E100C15F2A /* knobClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knobClick.mp3; sourceTree = "<group>"; };
+		1679C90522E26D8D00BC1A89 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
+		1679C90722E270B700BC1A89 /* NotificationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTarget.swift; sourceTree = "<group>"; };
 		168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionDashboardViewController.swift; sourceTree = "<group>"; };
 		169D6CF122D73629008073DF /* WriteToWhereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteToWhereViewController.swift; sourceTree = "<group>"; };
 		16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsSaveOcean.entitlements; sourceTree = "<group>"; };
@@ -410,6 +414,8 @@
 				16D4C27B22C1552F006DBC64 /* NotificationController.swift */,
 				16D4C28422C3FE10006DBC64 /* NotificationBadgeProtocol.swift */,
 				16D4C28222C3FDBE006DBC64 /* NotificationProtocol.swift */,
+				1679C90522E26D8D00BC1A89 /* NotificationItem.swift */,
+				1679C90722E270B700BC1A89 /* NotificationTarget.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -794,6 +800,7 @@
 				16D4C28322C3FDBE006DBC64 /* NotificationProtocol.swift in Sources */,
 				16D4C28522C3FE10006DBC64 /* NotificationBadgeProtocol.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
+				1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				163A07E422C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
@@ -835,6 +842,7 @@
 				1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */,
 				7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */,
 				16EA5FCE220CD5AD00DE062E /* MediaViewController.swift in Sources */,
+				1679C90622E26D8D00BC1A89 /* NotificationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

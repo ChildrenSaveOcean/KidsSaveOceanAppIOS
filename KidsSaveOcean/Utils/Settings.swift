@@ -18,6 +18,7 @@ class Settings: NSObject {
     static let onBoardingStoryboardName = "Onboarding"
 
     static let completionStatusKey = "completionStatusKey"
+    static let notificationsKey = "notificationsKey"
 
     static let CountriesHasBeenLoadedNotificationName = "CountriesHasBeenLoaded"
     static let UserHasBeenLoadedNotificationName  = "UserHasBeenLoaded"
@@ -53,19 +54,28 @@ class Settings: NSObject {
         return states
     }
     
-    class func getNotificationStatusForTarget(_ target: NotificationTarget) -> Date? {
-        guard let expirationDate = UserDefaults.standard.string(forKey: target.decsription()) else {return nil}
-        return dateFormatter.date(from: expirationDate)
+    class func saveNotifications(_ notifications: [NotificationItem]) {
+            UserDefaults.standard.set(notifications, forKey: notificationsKey)
+            UserDefaults.standard.synchronize()
     }
     
-    class func saveNotificationStatusForTarget(_ target: NotificationTarget, date: Date) {
-        let expirationDate = dateFormatter.string(from: date)
-        UserDefaults.standard.set(expirationDate, forKey: target.decsription())
-        UserDefaults.standard.synchronize()
+    class func getNotifications() -> [NotificationItem] {
+        return UserDefaults.standard.array(forKey: notificationsKey) as? [NotificationItem] ?? [NotificationItem]()
     }
     
-    class func clearNotificationStatusForTarget(_ target: NotificationTarget) {
-        UserDefaults.standard.removeObject(forKey: target.decsription())
-        UserDefaults.standard.synchronize()
-    }
+//    class func getNotificationStatusForTarget(_ target: NotificationTarget) -> Date? {
+//        guard let expirationDate = UserDefaults.standard.string(forKey: target.decsription()) else {return nil}
+//        return dateFormatter.date(from: expirationDate)
+//    }
+//
+//    class func saveNotificationStatusForTarget(_ target: NotificationTarget, date: Date) {
+//        let expirationDate = dateFormatter.string(from: date)
+//        UserDefaults.standard.set(expirationDate, forKey: target.decsription())
+//        UserDefaults.standard.synchronize()
+//    }
+//
+//    class func clearNotificationStatusForTarget(_ target: NotificationTarget) {
+//        UserDefaults.standard.removeObject(forKey: target.decsription())
+//        UserDefaults.standard.synchronize()
+//    }
 }
