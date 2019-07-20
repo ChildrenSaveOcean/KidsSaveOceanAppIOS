@@ -12,7 +12,14 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
-    var webUrlString: String = ""
+    var webUrlString: String = "" {
+        didSet(oldValue) {
+            if checkInternetConnection(reachability: reachability!) && !webUrlString.isEmpty {
+                loadPage()
+            }
+        }
+    }
+    
     private var reachability = Reachability()
 
     lazy var webView = { () -> WKWebView in
@@ -25,8 +32,8 @@ class WebIntegrationViewController: UIViewController {
 
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
-
-        let y = (navigationController?.navigationBar.frame.origin.y)! + ((navigationController?.navigationBar.isHidden)! ? 0 : (navigationController?.navigationBar.bounds.height)!)
+        let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
+        var y = frame.origin.y + frame.height
         pV.frame = CGRect(x: 0, y: y, width: view.bounds.width, height: 5)
         return pV
     }()
@@ -63,13 +70,6 @@ class WebIntegrationViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
         forwardButton.isEnabled = false
         navigationItem.rightBarButtonItem = forwardButton
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if checkInternetConnection(reachability: reachability!) {
-            loadPage()/////
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -129,7 +129,7 @@ class WebIntegrationViewController: UIViewController {
         return
     }
 
-    func loadPage() {
+    private final func loadPage() {
         view.addSubview(progressBarView)
 
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -140,11 +140,17 @@ class WebIntegrationViewController: UIViewController {
     }
 
     func checkURLString() {
-        if webUrlString.count == 0 {
+        if webUrlString.isEmpty {
             fatalError("Set the URL string up!")
         }
     }
 
+    func setURLString(_ string: String) {
+        if webUrlString.isEmpty {
+            self.webUrlString = string
+        }
+    }
+    
     @objc func reachabilityChanged(note: Notification) {
         guard let noteObject = note.object as? Reachability else {return}
         checkInternetConnection(reachability: noteObject)

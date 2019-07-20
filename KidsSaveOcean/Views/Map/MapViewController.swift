@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Instantiatable {
 
     //# MARK: Var, lets and outlets
 
@@ -24,6 +24,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         if sender.selectedSegmentIndex == 1 {
             self.map.isHidden = true
             self.tbvTop10.isHidden = false
+            blinkTopScoreCellIfNeed()
         } else {
             self.map.isHidden = false
             self.tbvTop10.isHidden = true
@@ -53,7 +54,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
 
         map.register(KSOCustomMapPin.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
@@ -92,7 +93,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         return cell
     }
-
+    
     func reloadMap() {
         _countriesData = nil
         addPinsInMap()
@@ -127,7 +128,27 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     @objc private func reloadScores() {
         _countriesData = nil
-        tbvTop10.reloadData()
+        tbvTop10?.reloadData()
         reloadMap()
+        blinkTopScoreCellIfNeed()
+    }
+    
+    private func blinkTopScoreCellIfNeed() {
+        guard isNotificationActualForTarget(.newHighScore) == true else {return}
+        guard tbvTop10.isHidden == false else { return }
+        guard let cell = self.tbvTop10.cellForRow(at: IndexPath(row: 0, section: 0)) as? KSOMapTop10TableViewCell else {return}
+        cell.blinkBackColor(times: 5)
+        clearNotifications()
+    }
+}
+
+extension MapViewController: NotificationProtocol {
+    var notificationTargets: [NotificationTarget] {
+        return [.newHighScore]
+    }
+    
+    func updateViews() {
+        guard map != nil, tbvTop10 != nil else {return}
+        reloadScores()
     }
 }

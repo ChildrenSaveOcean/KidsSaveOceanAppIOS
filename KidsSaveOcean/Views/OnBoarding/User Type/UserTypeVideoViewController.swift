@@ -21,9 +21,10 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
     var userType: UserType?
 
-    override func loadPage() {
-        self.webUrlString = "https://www.youtube.com/embed/\(urlString)"
-        super.loadPage()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard !urlString.isEmpty else { return }
+        setURLString("https://www.youtube.com/embed/\(urlString)")
     }
 
     private func showActionButtons() {
@@ -36,7 +37,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         goButton.frame = CGRect(x: shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
 
         goButton.addTargetClosure { (_) in
-            Settings.saveOnBoardingHasBeenShown()
+            UserDefaultsHelper.saveOnBoardingHasBeenShown()
 
             if self.userType != nil {
                 let userViewModel = UserViewModel.shared()
@@ -44,9 +45,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
                 userViewModel.saveUser()
             }
 
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
-            self.present(tabViewController, animated: true, completion: nil)
+            self.present(KSOTabViewController.instantiate(), animated: true, completion: nil)
         }
         webView.addSubview(goButton)
         webView.bringSubviewToFront(goButton)

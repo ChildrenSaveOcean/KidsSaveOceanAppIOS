@@ -31,7 +31,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var howButton: UIButton!
     @IBOutlet weak var didItButton: UIButton!
 
-    @IBOutlet weak var actionAlertButton: UIButton!
+    @IBOutlet weak var actionAlertButton: ActionAlertButton!
 
     @IBOutlet weak var wheelPositionButton1: UIButton!
     @IBOutlet weak var wheelPositionButton2: UIButton!
@@ -86,6 +86,9 @@ class DashboardViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         
+        actionAlertButton.delegate = self
+        actionAlertButton.setState()
+        
         actionAlertView.alpha = 0
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
         actionAlertView.addGestureRecognizer(tapGesture)
@@ -136,26 +139,16 @@ class DashboardViewController: UIViewController {
         chooseTaskWithNum(5)
     }
 
-    @IBAction func actionAlertAction(_ sender: Any) {
-        // show custom alert view
-        let alertActionVC = AlertActionDashboardViewController()
-        navigationController?.pushViewController(alertActionVC, animated: true)
-        actionAlertView.alpha = 0
-    }
-
-    @IBAction func showActionAlertView(_ sender: Any) {
-        actionAlertView.alpha = 1
-    }
-
     @IBAction func howToAction(_ sender: Any) {
         switch self.currentTaskSwitched {
         case 0:
-            self.tabBarController?.selectedIndex = 3
+            tabBarController?.switchToStudentResourcesScreen()
 
         case 1:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: Settings.countryContactController)
-            navigationController?.pushViewController(countryContactsViewController, animated: true)
+            
+            let taskViewController = WriteToWhereViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
 
         case 2:
             let objectsToShare = [URL(string: linkForSharing) as Any]
@@ -163,10 +156,19 @@ class DashboardViewController: UIViewController {
             self.present(activityVC, animated: true) {
                 self.chooseTaskWithNum(2)
             }
+            
+        case 3:
+            let taskViewController = ToolsWithTeethViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+            
+        case 4:
+            let taskViewController = PolicyViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
 
-        case 3, 4, 5:
-            let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-            let taskViewController = storyboard.instantiateViewController(withIdentifier: "task\(self.currentTaskSwitched + 1)ViewControllerId")
+        case 5:
+            let taskViewController = ActivistViewContoller.instantiate()
             taskViewController.title = ""
             navigationController?.pushViewController(taskViewController, animated: true)
 
@@ -179,7 +181,7 @@ class DashboardViewController: UIViewController {
         let newState = !completionTasksStates[currentTaskSwitched]
         completionTasksStates[currentTaskSwitched] = newState
 
-        Settings.saveCompletionTasksStatus(completionTasksStates)
+        UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
         UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
 
         topIcons[currentTaskSwitched]?.completed = newState
@@ -188,6 +190,10 @@ class DashboardViewController: UIViewController {
 
     }
 
+    @IBAction func actionAlertViewButtonAction(_ sender: Any) {
+        closeActionAlertView()
+    }
+    
     @objc func closeActionAlertView() {
         actionAlertView.alpha = 0
     }
@@ -300,19 +306,20 @@ class DashboardViewController: UIViewController {
     }
 }
 
-/*extension DashboardViewController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        refreshView()
+extension DashboardViewController: ActionAlertProtocol {
+    func showActionAlertView() {
+        actionAlertView.alpha = 1
     }
     
-    private func refreshView() {
-        if (self.navigationController?.viewControllers.count)! > 1 {
-            if let dashBoardVC = self.navigationController?.viewControllers.first as? DashboardViewController {
-                self.navigationController?.popToViewController(dashBoardVC, animated: true)
-            } else {
-                print("what the shit???")
-                return
-            }
-        }
+    func gotoActionAlertViewController() {
+        let alertActionVC = AlertActionDashboardViewController()
+        navigationController?.pushViewController(alertActionVC, animated: true)
+        actionAlertView.alpha = 0
     }
-}*/
+}
+
+extension DashboardViewController: NotificationProtocol {
+    func updateViews() {
+        actionAlertButton?.setState()
+    }
+}

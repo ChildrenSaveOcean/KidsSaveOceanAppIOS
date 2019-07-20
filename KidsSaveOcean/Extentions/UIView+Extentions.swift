@@ -61,5 +61,44 @@ extension UIView {
         layer.cornerRadius = radius
         clipsToBounds = true
     }
+    
+    func addRedBadge(with num: Int) {
+        
+        let r: CGFloat = 10
+        let frame = CGRect(x: self.frame.width - 3*r, y: r/2, width: 2*r, height: 2*r)
+        let circleView = UIView(frame: frame)
+        circleView.backgroundColor = .red
+        circleView.roundCornersWith(r)
+        
+        let numLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 2*r, height: 2*r))
+        numLabel.textColor = .white
+        numLabel.textAlignment = .center
+        numLabel.text = String(num)
+        
+        circleView.addSubview(numLabel)
+        circleView.restorationIdentifier = notificationBadgeId
+        self.addSubview(circleView)
+    }
 
+    func blinkOpacity(times: Float) {
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.duration = 0.2
+        animation.fromValue = 1
+        animation.toValue =  0.2
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        animation.autoreverses = true
+        animation.repeatCount = times
+        layer.add(animation, forKey: nil)
+    }
+    
+    func blinkBackColor(times: Float) {
+        let animation = CABasicAnimation(keyPath: "backgroundColor")
+        let startColor = backgroundColor?.cgColor ?? UIColor.clear.cgColor
+        animation.fromValue = startColor
+        animation.toValue = UIColor.appCyan.cgColor 
+        animation.duration = 0.2
+        animation.repeatCount = times
+        layer.add(animation, forKey: "colourAnimation")
+        layer.backgroundColor = startColor
+    }
 }

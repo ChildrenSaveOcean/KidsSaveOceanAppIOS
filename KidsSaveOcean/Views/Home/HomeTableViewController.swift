@@ -35,7 +35,7 @@ final class HomeTableViewController: UITableViewController {
     self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: homeCellIdenteficator)
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
 
-    NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -47,10 +47,11 @@ final class HomeTableViewController: UITableViewController {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
   }
-
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        clearNotifications()
+    }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return HomeViewData.count
@@ -63,41 +64,50 @@ final class HomeTableViewController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as? HomeScoreTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
 
-        let scores = CountriesService.shared().countriesContacts.filter({$0.letters_written > 0}).sorted { $0.letters_written > $1.letters_written}
-
-        if scores.count > 0 {
-            cell.country1NumLabel.text = "1"
-            cell.country1Label.text = scores[0].name
-            cell.country1ScoreLabel.text = String( scores[0].letters_written )
-        }
-
-        if scores.indices.contains(1) {
-            cell.country2NumLabel.text = "2"
-            cell.country2Label.text = scores[1].name
-            cell.country2ScoreLabel.text = String( scores[1].letters_written )
-        }
-
-        if scores.indices.contains(2) {
-            cell.country3NumLabel.text = "3"
-            cell.country3Label.text = scores[2].name
-            cell.country3ScoreLabel.text = String( scores[2].letters_written )
-        }
+        cell.configure(with: nil)
         return cell
 
     } else {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdenteficator, for: indexPath) as? HomeTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
         
-      cell.imageCover.image =  staticData?.image
-      cell.titleLabel.text = staticData?.title
-      cell.subTitleLabel.text = staticData?.subTitle
-
-      if indexPath.row == 2 { // TODO: need a better way
-        cell.titleLabel.textColor = .black
-        cell.subTitleLabel.textColor = .black
-      }
+        cell.configure(with: staticData as AnyObject?)
+        
+        if indexPath.row == 2 {
+            cell.setDarkLetters()
+        }
+        
       return cell
     }
   }
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        if let hCell = (cell as? HomeTableViewCell) {
+            hCell.titleLabel.sizeToFit()
+            hCell.subTitleLabel.sizeToFit()
+        }
+
+        guard let cell = (cell as? NotificationBadgeProtocol)  else { return }
+
+        switch indexPath.row {
+        case 0:
+            cell.checkNotificationStatusForTarget(.newsAndMedia)
+            if cell.isNotificationActualForTarget(.newsAndMedia) != true {
+                cell.checkNotificationStatusForTarget(.policyChange)
+            }
+
+        case 3:
+            cell.checkNotificationStatusForTarget(.actionAlert)
+
+        case 4:
+            cell.checkNotificationStatusForTarget(.newHighScore)
+
+        default:
+            break
+
+        }
+
+    }
 
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 8
@@ -110,21 +120,19 @@ final class HomeTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch indexPath.row {
     case 0:
-      tabBarController?.selectedIndex = 1
+        tabBarController?.switchToNewsAndMediaScreen()
 
     case 1:
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      let countryContactsViewController = storyboard.instantiateViewController(withIdentifier: Settings.countryContactController)
-      navigationController?.pushViewController(countryContactsViewController, animated: true)
+      navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
+        
+    case 2:
+        tabBarController?.switchToMapScreen()
 
     case 3:
-        tabBarController?.selectedIndex = 2
+        tabBarController?.switchToDashboardScreen()
 
-    case 2, 4:
-      tabBarController?.selectedIndex = 4
-      guard let navigationController = tabBarController?.selectedViewController as? UINavigationController else {return}
-      guard let mapVC = navigationController.viewControllers.first as? MapViewController else {return}
-      mapVC.segmentControlDefaultIndex = indexPath.row == 2 ? 0 : 1
+    case 4:
+        tabBarController?.switchToHighScoreScreen()
 
     default:
       return
@@ -152,18 +160,19 @@ final class HomeTableViewController: UITableViewController {
 }
 
 extension HomeTableViewController: UITabBarControllerDelegate {
-
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        refreshViewController(viewController)
+        tabBarController.refreshSelectedTab()
+        tabBarController.updateNotificationStatusOfSelectedViewController()
     }
+}
 
-    private func refreshViewController(_ viewController: UIViewController) {
-        guard let newNavController = viewController as? UINavigationController else {
-            return
-        }
-
-        if (newNavController.viewControllers.count) > 1 {
-            newNavController.popToViewController(newNavController.viewControllers.first!, animated: true)
-        }
+extension HomeTableViewController: NotificationProtocol {
+    var notificationTargets: [NotificationTarget] {
+        return [.unknown, .signatureCampaign]
+    }
+    
+    @objc func updateViews() {
+        clearNotifications()
+        tableView.reloadData()
     }
 }

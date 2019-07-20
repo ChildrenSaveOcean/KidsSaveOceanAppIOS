@@ -62,19 +62,12 @@ class UserTypeTableViewController: UITableViewController {
     videoViewController.urlString = videoAddressString
     videoViewController.delegate = self
     videoViewController.userType = userType
-    /*navigationController?.navigationBar.isHidden = false
-    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-    navigationController?.navigationBar.shadowImage = UIImage()
-    navigationController?.navigationBar.isTranslucent = true
-    navigationController?.navigationBar.backgroundColor = .clear
-    navigationController?.navigationBar.frame = CGRect(x:0, y:0, width:view.bounds.width, height: 40)*/
     navigationController?.pushViewController(videoViewController, animated: true)
   }
 
     internal func gotoTabViewController() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabViewController = storyBoard.instantiateViewController(withIdentifier: Settings.tabViewControllerId)
-        self.present(tabViewController, animated: true, completion: nil)
+        self.present(KSOTabViewController.instantiate(), animated: true, completion: nil)
     }
 
    func showErrorMessage(_ message: String, actionString: String) {
