@@ -127,9 +127,8 @@ class NotificationController: NSObject {
     }
     
     func getNotificationStatusForTarget(_ target: NotificationTarget) -> Bool {
-        guard let expirationDate = notifications.filter({$0.target == target}).first?.expirationDate else {
-            return false
-        }
+        guard let notification = notifications.filter({$0.target == target}).first else { return false }
+        guard let expirationDate = notification.expirationDate else { return true }
         return Date().compare(expirationDate) == ComparisonResult.orderedAscending
     }
     
