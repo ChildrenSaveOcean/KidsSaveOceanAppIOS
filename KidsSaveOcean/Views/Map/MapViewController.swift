@@ -54,7 +54,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
 
         map.register(KSOCustomMapPin.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)

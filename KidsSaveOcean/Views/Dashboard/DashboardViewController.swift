@@ -181,7 +181,7 @@ class DashboardViewController: UIViewController {
         let newState = !completionTasksStates[currentTaskSwitched]
         completionTasksStates[currentTaskSwitched] = newState
 
-        Settings.saveCompletionTasksStatus(completionTasksStates)
+        UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
         UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
 
         topIcons[currentTaskSwitched]?.completed = newState

@@ -10,6 +10,8 @@ import UIKit
 
 final class KSOStartPageViewController: UIPageViewController, Instantiatable {
 
+    let onBoardingStoryboardName = "Onboarding"
+    
     fileprivate lazy var pages: [UIViewController] = {
         return [
             self.getViewController(withIdentifier: "onBoardingPage1"),
@@ -21,7 +23,7 @@ final class KSOStartPageViewController: UIPageViewController, Instantiatable {
     private var pageControl = UIPageControl()
 
     private func getViewController(withIdentifier identifier: String) -> UIViewController {
-        return UIStoryboard(name: Settings.onBoardingStoryboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
+        return UIStoryboard(name: onBoardingStoryboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
     }
 
     override func viewDidLoad() {

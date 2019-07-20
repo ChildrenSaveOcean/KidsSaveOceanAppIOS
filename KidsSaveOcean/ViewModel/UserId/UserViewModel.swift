@@ -258,7 +258,7 @@ class UserViewModel {
     }
 
     func saveCompletionTaskStatuses(_ values: [Bool]) {
-        Settings.saveCompletionTasksStatus(values) // just for any case
+        UserDefaultsHelper.saveCompletionTasksStatus(values) // just for any case
         for (i, task) in DashboardTasksScopes.allCases.enumerated() {
             setTaskStatus(task: task, value: values[i])
         }

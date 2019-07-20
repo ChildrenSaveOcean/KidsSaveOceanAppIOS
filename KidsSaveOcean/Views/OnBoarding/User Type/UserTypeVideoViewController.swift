@@ -37,7 +37,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         goButton.frame = CGRect(x: shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
 
         goButton.addTargetClosure { (_) in
-            Settings.saveOnBoardingHasBeenShown()
+            UserDefaultsHelper.saveOnBoardingHasBeenShown()
 
             if self.userType != nil {
                 let userViewModel = UserViewModel.shared()

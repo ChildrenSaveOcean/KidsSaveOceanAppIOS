@@ -27,7 +27,7 @@ class CountriesService: NSObject {
 
     func setup() {
         self.fetchContacts(databaseReferenece: Database.database().reference()) {
-            NotificationCenter.default.post(name: Notification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
+            NotificationCenter.default.post(name: .countriesHasBeenLoaded, object: nil)
         }
     }
 

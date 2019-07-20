@@ -35,7 +35,7 @@ final class HomeTableViewController: UITableViewController {
     self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: homeCellIdenteficator)
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
 
-    NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: NSNotification.Name(Settings.CountriesHasBeenLoadedNotificationName), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
   }
 
   override func viewWillDisappear(_ animated: Bool) {

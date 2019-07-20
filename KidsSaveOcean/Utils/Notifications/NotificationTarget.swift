@@ -20,4 +20,11 @@ enum NotificationTarget: String, CaseIterable {
     func decsription() -> String {
         return self.rawValue
     }
+    
+    static func getTargetFromString(_ string: String?) -> NotificationTarget {
+        return NotificationTarget.allCases.filter({ (notificationTarget) -> Bool in
+            notificationTarget.decsription() == string
+        }).first ?? .unknown
+    }
+    
 }

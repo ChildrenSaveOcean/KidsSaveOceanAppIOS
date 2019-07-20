@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // MARK: - Check if user already opened the tutorial screen
-        if Settings.isOnBoardingHasBeenShown() {
+        if UserDefaultsHelper.isOnBoardingHasBeenShown() {
             window?.rootViewController = KSOTabViewController.instantiate()
         } else {
             window?.rootViewController = KSOStartPageViewController.instantiate()

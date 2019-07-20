@@ -27,7 +27,7 @@ class NotificationController: NSObject {
         return sharedNotificationController
     }
     
-    var notifications = Settings.getNotifications()
+    var notifications = UserDefaultsHelper.getNotifications()
     
     func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (_, error) in
@@ -46,17 +46,16 @@ class NotificationController: NSObject {
         }
         
         // check if the notification has been already processed
-        guard let messageId = userInfo[messageIDKey] as? String,
-                notifications.filter({$0.id == messageId}).count == 0 else {
+        guard let messageId = userInfo[messageIDKey] as? String else { return nil }
+        guard notifications.filter({$0.id == messageId}).count == 0 else {
+                removeDeliveredNotification(with: messageId)
                 return nil
         }
         
-        let target = getTargetFromString(userInfo["target"] as? String)
+        let target = NotificationTarget.getTargetFromString(userInfo["target"] as? String)
         if notifications.filter({$0.target == target}).count > 0 {
             clearNotificationsWithTargets([target])
         }
-        
-        print("process notification \(target) with id \(messageId) from UNUserNotificationCenter\n")
         
         let link = userInfo["link"] as? String ?? ""
         let expirationDate = getExpirationDate(from: userInfo[timeToLiveIDKey] as? String)
@@ -66,8 +65,8 @@ class NotificationController: NSObject {
         
         UIApplication.shared.applicationIconBadgeNumber = notifications.count
         
-        Settings.saveNotifications(notifications)
-        removeDeliveredNotification(notification)
+        UserDefaultsHelper.saveNotifications([notification])
+        removeDeliveredNotification(with: messageId)
         refreshReferencedView()
         return notification
     }
@@ -84,9 +83,6 @@ class NotificationController: NSObject {
                 DispatchQueue.main.sync {
                     self.processNotification(with: notification.request.content.userInfo)
                 }
-            }
-            DispatchQueue.main.sync {
-                UIApplication.shared.applicationIconBadgeNumber = self.notifications.count
             }
         }
     }
@@ -118,31 +114,32 @@ class NotificationController: NSObject {
     
     func clearNotificationsWithTargets(_ targets: [NotificationTarget]) {
         notifications.removeAll(where: {targets.contains($0.target)})
-        Settings.saveNotifications(notifications)
+        UserDefaultsHelper.saveNotifications(notifications)
+        UIApplication.shared.applicationIconBadgeNumber = self.notifications.count
     }
     
     func getNotificationStatusForTarget(_ target: NotificationTarget) -> Bool {
         guard let expirationDate = notifications.filter({$0.target == target}).first?.expirationDate else {
-            return true
+            return false
         }
         return Date().compare(expirationDate) == ComparisonResult.orderedAscending
     }
     
-        // MARK: Private methods
-    private func removeDeliveredNotification(_ notification: NotificationItem) {
-        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [notification.id])
-    }
-    
+    // MARK: Private methods
     private func clearNotifications(_ notification: NotificationItem) {
         if let index = notifications.index(of: notification) {
             notifications.remove(at: index)
         }
     }
     
-    private func getTargetFromString(_ string: String?) -> NotificationTarget {
-        return NotificationTarget.allCases.filter({ (notificationTarget) -> Bool in
-            notificationTarget.decsription() == string
-        }).first ?? .unknown
+    private func removeDeliveredNotification(with messageId: String) {
+        UNUserNotificationCenter.current().getDeliveredNotifications { deliveredNotifications in
+            guard let currentNotification = deliveredNotifications.filter({
+                guard let stringId = $0.request.content.userInfo[self.messageIDKey] as? String else { return false }
+                return stringId == messageId
+            }).first else { return }
+            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [currentNotification.request.identifier])
+        }
     }
     
     private func getExpirationDate(from seconds: String?) -> Date {
