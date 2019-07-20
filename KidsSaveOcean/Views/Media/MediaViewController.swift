@@ -20,9 +20,5 @@ class MediaViewController: WebIntegrationViewController, Instantiatable, Notific
         clearNotifications()
         setURLString("https://www.kidssaveocean.com/updates")
     }
-    
-    func updateViews() {
-        clearNotifications()
-    }
 }
 
