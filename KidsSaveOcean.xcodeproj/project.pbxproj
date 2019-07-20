@@ -318,19 +318,43 @@
 			path = KidsSaveOceanUITests;
 			sourceTree = "<group>";
 		};
-		1679B06821E935A400C15F2A /* Dashboard */ = {
+		1678F49022E3A80D00100FB1 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				16573D3621F7C70900332FFF /* Dashboard.storyboard */,
 				1679B06921E935D100C15F2A /* DashboardViewController.swift */,
+				164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		1678F49122E3A82300100FB1 /* Action Alert */ = {
+			isa = PBXGroup;
+			children = (
 				166F684C22C121860063C68B /* ActionAlertButton.swift */,
-				1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */,
 				168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */,
 				163A07E322C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift */,
-				16573D3621F7C70900332FFF /* Dashboard.storyboard */,
-				164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */,
+			);
+			path = "Action Alert";
+			sourceTree = "<group>";
+		};
+		1678F49222E3A84200100FB1 /* HowTo */ = {
+			isa = PBXGroup;
+			children = (
+				1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */,
 				16ECE46F2299F11D0099C406 /* PolicyViewController.swift */,
 				16664B1522C4149D00F332A7 /* ActivistViewContoller.swift */,
 				169D6CF122D73629008073DF /* WriteToWhereViewController.swift */,
+			);
+			path = HowTo;
+			sourceTree = "<group>";
+		};
+		1679B06821E935A400C15F2A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1678F49022E3A80D00100FB1 /* Dashboard */,
+				1678F49122E3A82300100FB1 /* Action Alert */,
+				1678F49222E3A84200100FB1 /* HowTo */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";

@@ -20,4 +20,5 @@ class AlertActionDashboardViewController: WebIntegrationViewController, Instanti
         super.viewWillAppear(animated)
         setURLString("https://www.kidssaveocean.com/action-alert")
     }
+
 }
