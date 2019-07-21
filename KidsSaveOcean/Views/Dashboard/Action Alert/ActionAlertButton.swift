@@ -35,6 +35,7 @@ class ActionAlertButton: UIButton, NotificationProtocol {
     }
     
     func setState() {
+        checkNotificationStatusForTarget(.actionAlert)
         actionAlertState = (isNotificationActualForTarget(.actionAlert) == true) ? .active : .inactive
     }
     
