@@ -33,7 +33,7 @@ class WebIntegrationViewController: UIViewController {
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
         let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
-        var y = frame.origin.y + frame.height
+        var y = max(frame.origin.y + frame.height, frame.height) //20)
         pV.frame = CGRect(x: 0, y: y, width: view.bounds.width, height: 5)
         return pV
     }()
@@ -47,6 +47,8 @@ class WebIntegrationViewController: UIViewController {
 
         super.viewDidLoad()
 
+        self.view.backgroundColor = .white
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
             try reachability!.startNotifier()
