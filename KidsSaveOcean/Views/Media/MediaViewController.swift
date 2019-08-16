@@ -18,6 +18,7 @@ class MediaViewController: WebIntegrationViewController, Instantiatable, Notific
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         clearNotifications()
+        navigationController?.navigationBar.isHidden = true
         setURLString("https://www.kidssaveocean.com/updates")
     }
 }
