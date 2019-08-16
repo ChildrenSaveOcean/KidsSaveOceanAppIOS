@@ -199,34 +199,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Letter in the Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-Ho-QN6">
-                                <rect key="frame" x="49.5" y="15" width="276" height="28"/>
+                                <rect key="frame" x="45.5" y="15" width="284" height="27"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written a letter, stamped, and mailed it off? You’re awesome. You’ve got fire in your belly and stood up to change fate. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-x5-j2M">
-                                <rect key="frame" x="15" y="58" width="345" height="61"/>
+                                <rect key="frame" x="15" y="57" width="345" height="59.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Submit only after you’ve mailed it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGn-ZY-2ux">
-                                <rect key="frame" x="32.5" y="461.5" width="310" height="21.5"/>
+                                <rect key="frame" x="28.5" y="462" width="318.5" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZA-gL-jic">
-                                <rect key="frame" x="20" y="129" width="335" height="322.5"/>
+                                <rect key="frame" x="20" y="126.5" width="335" height="325.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the country you wrote to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-Bo-uHv">
-                                        <rect key="frame" x="8" y="25" width="319" height="21"/>
+                                        <rect key="frame" x="8" y="25" width="319" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Qq-Pvl">
-                                        <rect key="frame" x="0.0" y="46" width="335" height="276.5"/>
+                                        <rect key="frame" x="0.0" y="45" width="335" height="280.5"/>
                                         <connections>
                                             <outlet property="dataSource" destination="hPe-St-gil" id="W46-YT-9Zh"/>
                                             <outlet property="delegate" destination="hPe-St-gil" id="7Bb-OT-DdA"/>
