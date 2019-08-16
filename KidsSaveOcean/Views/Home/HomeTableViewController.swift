@@ -123,7 +123,9 @@ final class HomeTableViewController: UITableViewController {
         tabBarController?.switchToNewsAndMediaScreen()
 
     case 1:
-      navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
+        let taskViewController = WriteToWhereViewController.instantiate()
+        taskViewController.title = ""
+        navigationController?.pushViewController(taskViewController, animated: true)
         
     case 2:
         tabBarController?.switchToMapScreen()
