@@ -14,8 +14,8 @@ class WebIntegrationViewController: UIViewController {
 
     var webUrlString: String = "" {
         didSet(oldValue) {
-            if checkInternetConnection(reachability: reachability!) && !webUrlString.isEmpty {
-                loadPage()
+            if !webUrlString.isEmpty {
+                checkInternetConnection(reachability: reachability!)
             }
         }
     }
@@ -41,7 +41,11 @@ class WebIntegrationViewController: UIViewController {
     lazy var backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "chevron-back"), style: .plain, target: self, action: #selector(goBack))
     lazy var forwardButton = UIBarButtonItem(image: #imageLiteral(resourceName: "chevron"), style: .plain, target: self, action: #selector(goForward))
 
-    lazy var noInternetConnectionImageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
+    lazy var noInternetConnectionImageView: UIImageView = { () -> UIImageView in
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
+        imageView.frame = self.webView.bounds
+        return imageView
+    }()
 
     override func viewDidLoad() {
 
@@ -121,6 +125,7 @@ class WebIntegrationViewController: UIViewController {
             return false
         } else {
             noInternetConnectionImageView.removeFromSuperview()
+            loadPage()
             return true
         }
     }
@@ -128,6 +133,7 @@ class WebIntegrationViewController: UIViewController {
     private func showNoInternetConnection() {
         navigationController?.navigationBar.isHidden = false
         webView.addSubview(noInternetConnectionImageView)
+        backButton.isEnabled = false
         return
     }
 
@@ -170,8 +176,8 @@ extension WebIntegrationViewController: WKUIDelegate {
 
 extension WebIntegrationViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        let title = (webView.title ?? "").contains("|") ? String((webView.title?.split(separator: "|").last)!): webView.title
-        navigationItem.title = title
+        //let title = (webView.title ?? "").contains("|") ? String((webView.title?.split(separator: "|").last)!): webView.title
+        //navigationItem.title = title
         checkNavigationButtons()
     }
 
