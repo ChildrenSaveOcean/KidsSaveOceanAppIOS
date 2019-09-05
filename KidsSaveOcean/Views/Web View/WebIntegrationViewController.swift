@@ -51,6 +51,7 @@ class WebIntegrationViewController: UIViewController {
     lazy var noInternetConnectionImageView: UIImageView = { () -> UIImageView in
         let imageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
         imageView.frame = self.webView.frame
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
