@@ -14,8 +14,15 @@ class WebIntegrationViewController: UIViewController {
 
     var webUrlString: String = "" {
         didSet(oldValue) {
-            if !webUrlString.isEmpty {
-                checkInternetConnection(reachability: reachability!)
+            
+            if webUrlString.isEmpty { return }
+            if reachability == nil { return }
+            
+            let internetConnection = checkInternetConnection(reachability: reachability!)
+            showInternetConnectionStatus(is: internetConnection)
+            
+            if internetConnection {
+                loadPage()
             }
         }
     }
@@ -43,7 +50,7 @@ class WebIntegrationViewController: UIViewController {
 
     lazy var noInternetConnectionImageView: UIImageView = { () -> UIImageView in
         let imageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
-        imageView.frame = self.webView.bounds
+        imageView.frame = self.webView.frame
         return imageView
     }()
 
@@ -120,26 +127,26 @@ class WebIntegrationViewController: UIViewController {
     }
 
     private func checkInternetConnection(reachability: Reachability) -> Bool {
-        if reachability.connection == .none {
-            showNoInternetConnection()
-            return false
-        } else {
-            noInternetConnectionImageView.removeFromSuperview()
-            loadPage()
-            return true
-        }
+        return reachability.connection != .none
     }
-
-    private func showNoInternetConnection() {
-        navigationController?.navigationBar.isHidden = false
-        webView.addSubview(noInternetConnectionImageView)
-        backButton.isEnabled = false
+    
+    private func showInternetConnectionStatus(is on: Bool) {
+        if on {
+            if view.contains(noInternetConnectionImageView) {
+                noInternetConnectionImageView.removeFromSuperview()
+                backButton.isEnabled = true
+            }
+        } else {
+            navigationController?.navigationBar.isHidden = false
+            view.addSubview(noInternetConnectionImageView)
+            backButton.isEnabled = false
+        }
         return
     }
 
     private final func loadPage() {
+        
         view.addSubview(progressBarView)
-
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         checkURLString()
         let myURL = URL(string: webUrlString)
@@ -160,8 +167,12 @@ class WebIntegrationViewController: UIViewController {
     }
     
     @objc func reachabilityChanged(note: Notification) {
-        guard let noteObject = note.object as? Reachability else {return}
-        checkInternetConnection(reachability: noteObject)
+        // unfortunately the notification about changing reachability does not came when the internet connection has been changed. That is why I temporary commented the behaviour.
+        
+//        guard let noteObject = note.object as? Reachability else {return}
+//        if reachability?.connection != noteObject.connection && checkInternetConnection(reachability: noteObject) {
+//            loadPage()
+//        }
     }
 }
 
