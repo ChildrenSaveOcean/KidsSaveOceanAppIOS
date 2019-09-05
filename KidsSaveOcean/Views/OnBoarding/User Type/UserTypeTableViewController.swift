@@ -10,7 +10,6 @@ import UIKit
 
 class UserTypeTableViewController: UITableViewController {
   let activityIndicator = UIActivityIndicatorView(style: .gray)
-  let webView = UIWebView()
 
   private let cellIdenteficator = "userIdCellIdentificator"
   override func viewDidLoad() {
