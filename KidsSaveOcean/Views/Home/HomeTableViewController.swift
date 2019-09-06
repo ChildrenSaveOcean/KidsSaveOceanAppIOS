@@ -58,26 +58,18 @@ final class HomeTableViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     let staticData = BaseTableViewData(dictionary: HomeViewData[indexPath.row])
-
-    if indexPath.row == 4 {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: scoreCellIdenteficator, for: indexPath) as? HomeScoreTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
-
-        cell.configure(with: nil)
-        return cell
-
-    } else {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdenteficator, for: indexPath) as? HomeTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
-        
-        cell.configure(with: staticData as AnyObject?)
-        
-        if indexPath.row == 2 {
-            cell.setDarkLetters()
-        }
-        
-      return cell
+    
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdenteficator, for: indexPath) as? HomeTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
+    
+    cell.configure(with: staticData as AnyObject?)
+    
+    if [2, 4].contains(indexPath.row) {
+        cell.setDarkLetters()
     }
+    
+    return cell
   }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -123,16 +115,19 @@ final class HomeTableViewController: UITableViewController {
         tabBarController?.switchToNewsAndMediaScreen()
 
     case 1:
-      navigationController?.pushViewController(CountryContactsViewController.instantiate(), animated: true)
+        let taskViewController = WriteToWhereViewController.instantiate()
+        taskViewController.title = ""
+        navigationController?.pushViewController(taskViewController, animated: true)
         
     case 2:
-        tabBarController?.switchToMapScreen()
+        // TODO!!!
+        return
 
     case 3:
         tabBarController?.switchToDashboardScreen()
 
     case 4:
-        tabBarController?.switchToHighScoreScreen()
+        tabBarController?.switchToMapScreen()
 
     default:
       return

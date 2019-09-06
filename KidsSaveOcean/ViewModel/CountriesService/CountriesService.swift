@@ -14,6 +14,7 @@ class CountriesService: NSObject {
     
     let childName = "COUNTRIES"
     var countriesContacts = [CountryContact]()
+    var contryContactsHasBeenLoaded = false
 
     private static var sharedCountriesService: CountriesService = {
         let countriesService = CountriesService()
@@ -27,7 +28,9 @@ class CountriesService: NSObject {
 
     func setup() {
         self.fetchContacts(databaseReferenece: Database.database().reference()) {
+            self.contryContactsHasBeenLoaded = true
             NotificationCenter.default.post(name: .countriesHasBeenLoaded, object: nil)
+            
         }
     }
 

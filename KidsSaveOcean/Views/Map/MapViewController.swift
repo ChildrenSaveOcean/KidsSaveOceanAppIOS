@@ -19,7 +19,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var lblNumberCountries: UILabel!
     @IBOutlet weak var tbvTop10: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             self.map.isHidden = true
@@ -53,7 +54,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activityIndicator.isHidden = true
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
 
         map.register(KSOCustomMapPin.self,
@@ -95,6 +97,13 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func reloadMap() {
+        if CountriesService.shared().contryContactsHasBeenLoaded {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+        } else {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        }
         _countriesData = nil
         addPinsInMap()
         self.map.reloadInputViews()

@@ -118,6 +118,9 @@
                                     <outlet property="delegate" destination="8N1-tj-3aY" id="Ivk-0g-hJd"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Gg1-8x-3aK">
+                                <rect key="frame" x="177.5" y="422.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -130,6 +133,7 @@
                             <constraint firstItem="cDL-4j-Qgq" firstAttribute="centerX" secondItem="iD3-nG-VcO" secondAttribute="centerX" id="8Le-KS-RzB"/>
                             <constraint firstItem="Q9e-Gs-fS6" firstAttribute="top" secondItem="UCF-gs-cAV" secondAttribute="top" multiplier="0.5" constant="30" id="9Bd-nK-8R4"/>
                             <constraint firstItem="USN-9K-Xm0" firstAttribute="centerY" secondItem="1lr-Pl-Wju" secondAttribute="centerY" id="APO-sU-iaj"/>
+                            <constraint firstItem="Gg1-8x-3aK" firstAttribute="centerX" secondItem="USN-9K-Xm0" secondAttribute="centerX" id="BXn-Ed-v7g"/>
                             <constraint firstItem="USN-9K-Xm0" firstAttribute="width" secondItem="1lr-Pl-Wju" secondAttribute="width" id="GEH-R0-ahF"/>
                             <constraint firstItem="1lr-Pl-Wju" firstAttribute="width" secondItem="oY4-dZ-3zN" secondAttribute="width" id="HKX-qM-KEJ"/>
                             <constraint firstItem="iD3-nG-VcO" firstAttribute="trailing" secondItem="GoT-fT-n3M" secondAttribute="trailing" id="Kbv-5W-cpX"/>
@@ -144,6 +148,7 @@
                             <constraint firstItem="GoT-fT-n3M" firstAttribute="top" secondItem="BA7-8e-158" secondAttribute="bottom" constant="10" id="gEF-l2-E3f"/>
                             <constraint firstItem="Z72-8X-284" firstAttribute="trailing" secondItem="UCF-gs-cAV" secondAttribute="trailing" id="hxA-sG-FMW"/>
                             <constraint firstItem="1lr-Pl-Wju" firstAttribute="top" secondItem="GoT-fT-n3M" secondAttribute="bottom" constant="20" id="iPj-YB-exR"/>
+                            <constraint firstItem="Gg1-8x-3aK" firstAttribute="centerY" secondItem="USN-9K-Xm0" secondAttribute="centerY" id="jM9-DL-6LA"/>
                             <constraint firstItem="ekq-hk-ASa" firstAttribute="width" secondItem="GoT-fT-n3M" secondAttribute="width" multiplier="0.4" id="kch-FD-ikN"/>
                             <constraint firstItem="ekq-hk-ASa" firstAttribute="top" relation="lessThanOrEqual" secondItem="Q9e-Gs-fS6" secondAttribute="bottom" constant="30" id="l52-UW-frg"/>
                             <constraint firstItem="USN-9K-Xm0" firstAttribute="height" secondItem="1lr-Pl-Wju" secondAttribute="height" id="m01-eA-OF3"/>
@@ -159,6 +164,7 @@
                     <navigationItem key="navigationItem" id="ULZ-Fg-mhx"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Gg1-8x-3aK" id="Fhb-fa-dp9"/>
                         <outlet property="lblLettersWritten" destination="ekq-hk-ASa" id="xCd-Ls-49q"/>
                         <outlet property="lblNumberCountries" destination="iD3-nG-VcO" id="q3u-Mu-lYR"/>
                         <outlet property="map" destination="1lr-Pl-Wju" id="XFb-hn-wcB"/>
@@ -199,13 +205,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Letter in the Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-Ho-QN6">
-                                <rect key="frame" x="49.5" y="15" width="276" height="28"/>
+                                <rect key="frame" x="49.5" y="15" width="276" height="27"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written a letter, stamped, and mailed it off? You’re awesome. You’ve got fire in your belly and stood up to change fate. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-x5-j2M">
-                                <rect key="frame" x="15" y="58" width="345" height="61"/>
+                                <rect key="frame" x="15" y="57" width="345" height="61"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -217,16 +223,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZA-gL-jic">
-                                <rect key="frame" x="20" y="129" width="335" height="322.5"/>
+                                <rect key="frame" x="20" y="128" width="335" height="323.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the country you wrote to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-Bo-uHv">
-                                        <rect key="frame" x="8" y="25" width="319" height="21"/>
+                                        <rect key="frame" x="8" y="25" width="319" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Qq-Pvl">
-                                        <rect key="frame" x="0.0" y="46" width="335" height="276.5"/>
+                                        <rect key="frame" x="0.0" y="45" width="335" height="278.5"/>
                                         <connections>
                                             <outlet property="dataSource" destination="hPe-St-gil" id="W46-YT-9Zh"/>
                                             <outlet property="delegate" destination="hPe-St-gil" id="7Bb-OT-DdA"/>
