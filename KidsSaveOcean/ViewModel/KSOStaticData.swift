@@ -36,7 +36,7 @@ let HomeViewData: KSODataArray = [["image": #imageLiteral(resourceName: "theWavE
                                      "title": "Write Letters, Multiply Impact",
                                      "subTitle": "DEMAND PROTECTION OF OUR PLANET",
                                      "action": ""],
-                                    ["image": #imageLiteral(resourceName: "Card 3"),
+                                    ["image": #imageLiteral(resourceName: "Imagery"),
                                         "title": "Create New Environmental Policy",
                                         "subTitle": "PLASTIC & CLIMATE EMERGENCIES",
                                         "action": ""],
