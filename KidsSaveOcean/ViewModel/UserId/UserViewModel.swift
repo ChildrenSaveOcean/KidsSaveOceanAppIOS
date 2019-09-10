@@ -48,7 +48,7 @@ enum DashboardTasksScopes: Int, CaseIterable {
         case .start_campaign:
             return "Start a letter writing campaign"
         case .local_politics:
-            return "Seek change through local government"
+            return "Help create new environmental laws"
         case .protest:
             return "Take part in or organize a protest"
         }
