@@ -58,6 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationController.shared().processDeliveredNotifications()
     }
     
+    func applicationWillResignActive(_ application: UIApplication) {
+        UserViewModel.shared().saveUser()
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        UserViewModel.shared().saveUser()
+    }
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         NotificationController.shared().processNotification(with: userInfo)
         completionHandler(UIBackgroundFetchResult.newData)

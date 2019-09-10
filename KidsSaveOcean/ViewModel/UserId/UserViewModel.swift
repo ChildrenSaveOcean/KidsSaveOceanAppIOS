@@ -18,7 +18,7 @@ enum UserType: Int { // we can get from from Firebase, bit it will stay here tem
 }
 
 enum DashboardTasksScopes: Int, CaseIterable {
-    case research, write_letter, share, start_campaign, local_politics, protest
+    case research, write_letter, share, start_campaign, local_politics, protest, write_letter_about_plastic, write_letter_about_climate
 
     var firebaseFieldName: String {
         switch self {
@@ -34,6 +34,10 @@ enum DashboardTasksScopes: Int, CaseIterable {
             return "dash_become_active_in_local_politics"
         case .protest:
             return "dash_protest"
+        case .write_letter_about_plastic:
+            return "dash_write_letter_about_plastic"
+        case .write_letter_about_climate:
+            return "dash_write_letter_about_climate"
         }
     }
 
@@ -51,6 +55,10 @@ enum DashboardTasksScopes: Int, CaseIterable {
             return "Help create new environmental laws"
         case .protest:
             return "Take part in or organize a protest"
+        case .write_letter_about_plastic:
+            return "Write your government a letter"
+        case .write_letter_about_climate:
+            return "Write your government a letter"
         }
     }
 }
@@ -69,6 +77,8 @@ class UserViewModel {
                                                   DashboardTasksScopes.start_campaign.firebaseFieldName: false,
                                                   DashboardTasksScopes.local_politics.firebaseFieldName: false,
                                                   DashboardTasksScopes.protest.firebaseFieldName: false,
+                                                  DashboardTasksScopes.write_letter_about_climate.firebaseFieldName: false,
+                                                  DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName: false,
                                                   lettersWrittenKey: 0,
                                                   userTypeKey: 0 ]
 
@@ -100,6 +110,17 @@ class UserViewModel {
     var write_letter: Bool = false {
         willSet(newValue) {
             parametersDisctionary[DashboardTasksScopes.write_letter.firebaseFieldName] = newValue
+        }
+    }
+    var write_letter_about_climate: Bool = false {
+        willSet(newValue) {
+            parametersDisctionary[DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName] = newValue
+
+        }
+    }
+    var write_letter_about_plastic: Bool = false {
+        willSet(newValue) {
+            parametersDisctionary[DashboardTasksScopes.write_letter_about_climate.firebaseFieldName] = newValue
         }
     }
     var letters_written: Int = 0 {
@@ -186,6 +207,16 @@ class UserViewModel {
                     guard let value = userFBData.value as? UserType else {continue}
                     self.user_type = value
                     continue
+                    
+                case DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName:
+                    guard let value = userFBData.value as? Bool else {continue}
+                    self.write_letter_about_plastic = value
+                    continue
+                    
+                case DashboardTasksScopes.write_letter_about_climate.firebaseFieldName:
+                    guard let value = userFBData.value as? Bool else {continue}
+                    self.write_letter_about_climate = value
+                    continue
 
                 default:
                     continue
@@ -221,6 +252,12 @@ class UserViewModel {
 
         case .protest:
             self.protest = value
+            
+        case .write_letter_about_plastic:
+            self.write_letter_about_plastic = value
+            
+        case .write_letter_about_climate:
+            self.write_letter_about_climate = value
         }
     }
 
@@ -243,6 +280,12 @@ class UserViewModel {
 
         case .protest:
             return self.protest
+            
+        case .write_letter_about_plastic:
+            return self.write_letter_about_plastic
+            
+        case .write_letter_about_climate:
+            return self.write_letter_about_climate
         }
     }
 
