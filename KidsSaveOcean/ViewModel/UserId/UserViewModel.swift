@@ -40,7 +40,7 @@ enum DashboardTasksScopes: Int, CaseIterable {
     var dashboardTasks: String {
         switch self {
         case .research:
-            return "Research plastic ocean pollution"
+            return "Research plastic & climate"
         case .write_letter:
             return "Write your government a letter"
         case .share:
