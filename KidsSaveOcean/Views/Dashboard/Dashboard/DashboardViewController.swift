@@ -272,13 +272,13 @@ class DashboardViewController: UIViewController {
 
         if twoCompletionStatesTask {
             if completionTasksStates[ 6] {
-                didItMiddleButton.setTitle("Not yet", for: .normal)
+                didItMiddleButton.setTitle("Not yet\nabout plastic", for: .normal)
             } else {
                 didItMiddleButton.setTitle("I did it about\nplastic!", for: .normal)
             }
             
             if completionTasksStates[7]  == true {
-                didItButton.setTitle("Not yet", for: .normal)
+                didItButton.setTitle("Not yet\nabout climate", for: .normal)
             } else {
                 didItButton.setTitle("I did it about\nclimate!", for: .normal)
             }
