@@ -12,6 +12,8 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
+    var originalWebUrlString: String { return "" }
+    
     var webUrlString: String = "" {
         didSet(oldValue) {
             
@@ -86,6 +88,12 @@ class WebIntegrationViewController: UIViewController {
         navigationItem.rightBarButtonItem = forwardButton
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        setURLString(originalWebUrlString)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         webUrlString = ""
@@ -174,6 +182,11 @@ class WebIntegrationViewController: UIViewController {
 //        if reachability?.connection != noteObject.connection && checkInternetConnection(reachability: noteObject) {
 //            loadPage()
 //        }
+    }
+    
+    func refreshView() {
+        self.webUrlString = ""
+        setURLString(originalWebUrlString)
     }
 }
 

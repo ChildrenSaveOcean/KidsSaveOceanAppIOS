@@ -155,6 +155,14 @@ final class HomeTableViewController: UITableViewController {
 }
 
 extension HomeTableViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if tabBarController.selectedViewController == viewController,
+            let webViewController = tabBarController.getSelectedTabMainViewController() as? WebIntegrationViewController {
+            webViewController.refreshView()
+        }
+        return true
+    }
+
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         tabBarController.refreshSelectedTab()
         tabBarController.updateNotificationStatusOfSelectedViewController()
