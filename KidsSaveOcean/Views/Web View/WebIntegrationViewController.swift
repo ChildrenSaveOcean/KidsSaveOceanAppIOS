@@ -12,6 +12,8 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
+    var originalWebUrlString: String { return "" }
+    
     var webUrlString: String = "" {
         didSet(oldValue) {
             
@@ -32,8 +34,11 @@ class WebIntegrationViewController: UIViewController {
     lazy var webView = { () -> WKWebView in
         let webConfiguration = WKWebViewConfiguration()
         let wV = WKWebView(frame: view.bounds, configuration: webConfiguration)
-        wV.isOpaque = false
-        wV.backgroundColor = .clear
+        wV.isOpaque = true
+        wV.backgroundColor = .white
+        wV.scrollView.bounces = false
+        wV.clearsContextBeforeDrawing = true
+        wV.loadHTMLString("", baseURL: nil)
         return wV
     }()
 
@@ -86,6 +91,12 @@ class WebIntegrationViewController: UIViewController {
         navigationItem.rightBarButtonItem = forwardButton
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        setURLString(originalWebUrlString)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         webUrlString = ""
@@ -162,9 +173,8 @@ class WebIntegrationViewController: UIViewController {
     }
 
     func setURLString(_ string: String) {
-        if webUrlString.isEmpty {
-            self.webUrlString = string
-        }
+        self.webUrlString = ""
+        self.webUrlString = string
     }
     
     @objc func reachabilityChanged(note: Notification) {
@@ -174,6 +184,10 @@ class WebIntegrationViewController: UIViewController {
 //        if reachability?.connection != noteObject.connection && checkInternetConnection(reachability: noteObject) {
 //            loadPage()
 //        }
+    }
+    
+    func refreshView() {
+        setURLString(originalWebUrlString)
     }
 }
 

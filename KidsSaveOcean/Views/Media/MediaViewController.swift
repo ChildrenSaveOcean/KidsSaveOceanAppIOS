@@ -11,15 +11,13 @@ import UIKit
 class MediaViewController: WebIntegrationViewController, Instantiatable, NotificationProtocol {
     var notificationTargets: [NotificationTarget] = [.newsAndMedia, .policyChange]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override var originalWebUrlString: String {
+        return "https://www.kidssaveocean.com/updates"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         clearNotifications()
-        navigationController?.navigationBar.isHidden = true
-        setURLString("https://www.kidssaveocean.com/updates")
     }
 }
 

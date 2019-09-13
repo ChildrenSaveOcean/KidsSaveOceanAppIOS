@@ -18,13 +18,11 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
     weak var delegate: UserTypeVideoDelegate?
     var urlString: String = ""
-
     var userType: UserType?
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        guard !urlString.isEmpty else { return }
-        setURLString("https://www.youtube.com/embed/\(urlString)")
+    
+    override var originalWebUrlString: String {
+        guard !urlString.isEmpty else { return "" }
+        return "https://www.youtube.com/embed/\(urlString)"
     }
 
     private func showActionButtons() {
@@ -45,7 +43,9 @@ class UserTypeVideoViewController: WebIntegrationViewController {
                 userViewModel.saveUser()
             }
 
-            self.present(KSOTabViewController.instantiate(), animated: true, completion: nil)
+            let tabBarController = KSOTabViewController.instantiate()
+            UIApplication.shared.keyWindow?.rootViewController = tabBarController
+            self.present(tabBarController, animated: true, completion: nil)
         }
         webView.addSubview(goButton)
         webView.bringSubviewToFront(goButton)

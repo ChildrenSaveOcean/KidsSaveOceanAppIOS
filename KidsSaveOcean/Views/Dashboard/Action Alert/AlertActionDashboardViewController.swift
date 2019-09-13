@@ -11,14 +11,13 @@ import UIKit
 class AlertActionDashboardViewController: WebIntegrationViewController, Instantiatable, NotificationProtocol {
     var notificationTargets: [NotificationTarget] = [.actionAlert]
     
+    override var originalWebUrlString: String {
+        return "https://www.kidssaveocean.com/action-alert"
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         clearNotifications()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setURLString("https://www.kidssaveocean.com/action-alert")
     }
 
 }

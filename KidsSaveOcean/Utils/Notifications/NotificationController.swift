@@ -97,7 +97,9 @@ class NotificationController: NSObject {
     
     func openTargetViewController(for notificationItem: NotificationItem) {
     
-        let tabBarController = KSOTabViewController.instantiate()
+        guard let tabBarController = UIApplication.shared.keyWindow?.rootViewController as? KSOTabViewController
+            else { return }
+        //KSOTabViewController.instantiate()
         
         switch notificationItem.target {
         case .policyChange:

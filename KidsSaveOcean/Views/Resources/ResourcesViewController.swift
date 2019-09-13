@@ -11,9 +11,7 @@ import WebKit
 
 class ResourcesViewController: WebIntegrationViewController {
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-        setURLString("https://www.kidssaveocean.com/fatechanger-resources")
+    override var originalWebUrlString: String {
+        return "https://www.kidssaveocean.com/fatechanger-resources"
     }
 }

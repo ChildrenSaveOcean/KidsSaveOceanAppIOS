@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */; };
+		16080B1E2327F7B6008F0AEF /* KSODidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16080B1D2327F7B6008F0AEF /* KSODidButton.swift */; };
 		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
 		161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A0C1122B291DC0047DD40 /* LocationService.swift */; };
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
@@ -98,6 +99,7 @@
 /* Begin PBXFileReference section */
 		10C28DDC38CD641F55A470AD /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsWithTeethViewController.swift; sourceTree = "<group>"; };
+		16080B1D2327F7B6008F0AEF /* KSODidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODidButton.swift; sourceTree = "<group>"; };
 		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		161A0C1122B291DC0047DD40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */,
 				161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */,
 				16649E9120FEC72B000BCB48 /* Notification+Extentions.swift */,
+				16080B1D2327F7B6008F0AEF /* KSODidButton.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -849,6 +852,7 @@
 				1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */,
 				163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */,
 				16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */,
+				16080B1E2327F7B6008F0AEF /* KSODidButton.swift in Sources */,
 				169D6CF222D73629008073DF /* WriteToWhereViewController.swift in Sources */,
 				16ECE4702299F11D0099C406 /* PolicyViewController.swift in Sources */,
 				16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */,
