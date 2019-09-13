@@ -43,7 +43,9 @@ class UserTypeVideoViewController: WebIntegrationViewController {
                 userViewModel.saveUser()
             }
 
-            self.present(KSOTabViewController.instantiate(), animated: true, completion: nil)
+            let tabBarController = KSOTabViewController.instantiate()
+            UIApplication.shared.keyWindow?.rootViewController = tabBarController
+            self.present(tabBarController, animated: true, completion: nil)
         }
         webView.addSubview(goButton)
         webView.bringSubviewToFront(goButton)
