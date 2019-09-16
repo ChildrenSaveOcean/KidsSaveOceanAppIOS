@@ -83,7 +83,7 @@ final class LetterTrackerViewController: UIViewController {
         let selectedCountry = countriesData[selectedCountryNum]
         CountriesService.shared().increaseLettersWrittenForCountry(selectedCountry)
         
-        let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratilations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
+        let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratulations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
         viewAlert.addAction(UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
             self.gotoDashBoard()
         }))
