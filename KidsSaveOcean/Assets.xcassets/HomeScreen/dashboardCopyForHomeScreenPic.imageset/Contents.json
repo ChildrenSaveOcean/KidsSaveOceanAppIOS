@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "dashboardCopyForHomeScreenPic.png",
+      "filename" : "Experience Activist Dashboard (1).png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dashboardCopyForHomeScreenPic@2x.png",
+      "filename" : "Experience Activist Dashboard@2x (1).png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dashboardCopyForHomeScreenPic@3x.png",
+      "filename" : "Experience Activist Dashboard@3x (1).png",
       "scale" : "3x"
     }
   ],

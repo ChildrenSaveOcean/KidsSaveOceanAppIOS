@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,10 +36,13 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News And Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8g-5b-bTj">
-                        <rect key="frame" x="32" y="39" width="161.5" height="27"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News and Media" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8g-5b-bTj">
+                        <rect key="frame" x="32" y="39" width="307" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="VlK-lM-ltI"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.99992686509999995" green="1" blue="0.99987357850000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -47,14 +50,15 @@
                     <constraint firstItem="Ie8-d2-ACW" firstAttribute="top" secondItem="Sxn-DY-xgT" secondAttribute="top" constant="8" id="0hY-AC-lc6"/>
                     <constraint firstAttribute="bottom" secondItem="Ie8-d2-ACW" secondAttribute="bottom" constant="8" id="3GQ-xm-6oO"/>
                     <constraint firstItem="V8g-5b-bTj" firstAttribute="leading" secondItem="e9F-id-S4T" secondAttribute="leading" id="5rF-s4-4oX"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="V8g-5b-bTj" secondAttribute="bottom" constant="107.5" id="7fC-oN-FGu"/>
                     <constraint firstItem="Ie8-d2-ACW" firstAttribute="centerX" secondItem="Sxn-DY-xgT" secondAttribute="centerX" id="AOt-zL-cyj"/>
                     <constraint firstItem="e9F-id-S4T" firstAttribute="top" secondItem="Sxn-DY-xgT" secondAttribute="top" constant="26" id="EPk-L7-ZZ2"/>
                     <constraint firstAttribute="trailing" secondItem="Ie8-d2-ACW" secondAttribute="trailing" constant="16" id="T4u-dM-yUU"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e9F-id-S4T" secondAttribute="trailing" constant="20" symbolic="YES" id="TM3-lR-JO1"/>
                     <constraint firstItem="e9F-id-S4T" firstAttribute="leading" secondItem="Sxn-DY-xgT" secondAttribute="leading" constant="32" id="W0C-XI-g9H"/>
                     <constraint firstItem="Ie8-d2-ACW" firstAttribute="centerY" secondItem="Sxn-DY-xgT" secondAttribute="centerY" id="Zb9-84-Etr"/>
+                    <constraint firstAttribute="trailing" secondItem="V8g-5b-bTj" secondAttribute="trailing" constant="36" id="c9H-5R-nwb"/>
                     <constraint firstAttribute="top" secondItem="V8g-5b-bTj" secondAttribute="top" constant="-39" id="nK4-Fz-zFd"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V8g-5b-bTj" secondAttribute="trailing" constant="20" symbolic="YES" id="oTJ-Bs-eU5"/>
                     <constraint firstItem="Ie8-d2-ACW" firstAttribute="leading" secondItem="Sxn-DY-xgT" secondAttribute="leading" constant="16" id="vl9-41-TqP"/>
                 </constraints>
             </tableViewCellContentView>
