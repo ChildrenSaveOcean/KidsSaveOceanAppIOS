@@ -67,6 +67,7 @@
 		7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD622232EC50033F251 /* CountriesService.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
 		7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */; };
+		7C4AF9A8233A8440006A8566 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AF9A7233A8440006A8566 /* TrackTableViewCell.swift */; };
 		7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */; };
 		7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7BBAC421B864B100C48D4E /* LetterTrackerViewController.swift */; };
 		7C9891632331264C00400CC5 /* YouthInitiativeProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9891622331264C00400CC5 /* YouthInitiativeProcessViewController.swift */; };
@@ -176,6 +177,7 @@
 		7C0B1CD622232EC50033F251 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
 		7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		7C4AF9A7233A8440006A8566 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContact.swift; sourceTree = "<group>"; };
 		7C7BBAC421B864B100C48D4E /* LetterTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterTrackerViewController.swift; sourceTree = "<group>"; };
 		7C9891622331264C00400CC5 /* YouthInitiativeProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouthInitiativeProcessViewController.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				7C98916A2331285100400CC5 /* MultiplympactViewController.swift */,
 				7C98916C2331289700400CC5 /* TrackTheHijackViewController.swift */,
 				7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */,
+				7C4AF9A7233A8440006A8566 /* TrackTableViewCell.swift */,
 			);
 			path = "New Policy";
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */,
 				7C9891632331264C00400CC5 /* YouthInitiativeProcessViewController.swift in Sources */,
+				7C4AF9A8233A8440006A8566 /* TrackTableViewCell.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				163A07E422C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,

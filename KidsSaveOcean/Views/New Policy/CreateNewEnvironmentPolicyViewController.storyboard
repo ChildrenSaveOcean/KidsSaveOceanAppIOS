@@ -46,8 +46,31 @@
                                 <rect key="frame" x="0.0" y="166" width="414" height="696"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackTableViewCell" id="bOk-M7-OjN" customClass="TrackTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bOk-M7-OjN" id="7pT-OB-EqX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Track" translatesAutoresizingMaskIntoConstraints="NO" id="14W-8U-vs2">
+                                                    <rect key="frame" x="35.5" y="0.0" width="343" height="157"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="343" id="6aA-Bh-5aL"/>
+                                                        <constraint firstAttribute="height" constant="157" id="JUv-QP-W58"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="14W-8U-vs2" firstAttribute="leading" secondItem="7pT-OB-EqX" secondAttribute="leading" constant="35.5" id="A9B-DK-eF4"/>
+                                                <constraint firstItem="14W-8U-vs2" firstAttribute="top" secondItem="7pT-OB-EqX" secondAttribute="top" id="TKn-7x-o70"/>
+                                                <constraint firstAttribute="bottom" secondItem="14W-8U-vs2" secondAttribute="bottom" id="Tp3-5O-z2B"/>
+                                                <constraint firstAttribute="trailing" secondItem="14W-8U-vs2" secondAttribute="trailing" constant="35.5" id="qCu-6K-34Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EnvironmentCell" rowHeight="70" id="qJX-dT-nQl" customClass="EnvironmentTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qJX-dT-nQl" id="dO4-ac-dyL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -62,7 +85,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZv-Jn-mFw">
                                                     <rect key="frame" x="50" y="21" width="334" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -263,4 +286,7 @@
             <point key="canvasLocation" x="2352" y="-589"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Track" width="343" height="157"/>
+    </resources>
 </document>

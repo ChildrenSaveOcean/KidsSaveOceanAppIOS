@@ -51,11 +51,13 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
             imageName = "SignUp"
         case 4:
             textTitle = "Multiply your Impact"
-            imageName = "Multiple"
+            imageName = "Multiply"
         case 5:
-            cell.environmentLabel.textColor = .black
-            textTitle = "Track the hijack"
-            imageName = "Track"
+            guard let trackCell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell", for: indexPath) as? TrackTableViewCell else { fatalError("Wrong cell type. There is expected TrackTableViewCell")}
+//            cell.environmentLabel.textColor = .black
+//            textTitle = "Track the hijack"
+//            imageName = "Track"
+            return trackCell
         default:
             textTitle = ""
             imageName = ""
