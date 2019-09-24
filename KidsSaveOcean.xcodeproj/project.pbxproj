@@ -78,6 +78,7 @@
 		7CB3FF5B232FF8F000415D75 /* CreateNewEnvironmentPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3FF5A232FF8F000415D75 /* CreateNewEnvironmentPolicyViewController.swift */; };
 		7CB3FF5D232FF9E300415D75 /* CreateNewEnvironmentPolicyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3FF5C232FF9E300415D75 /* CreateNewEnvironmentPolicyViewController.storyboard */; };
 		7CE89F9521A2005F00C2D6DA /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */; };
+		7CFF7BE22339455E00C7081E /* EnvironmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */; };
 		945A089120F643EB006ED13D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* MapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946847D82139E299007A1158 /* KSOCustomMapPin.swift */; };
@@ -188,6 +189,7 @@
 		7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTableViewCell.swift; sourceTree = "<group>"; };
 		945A089020F643EB006ED13D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		946847D82139E299007A1158 /* KSOCustomMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOCustomMapPin.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 				7C9891682331280800400CC5 /* SignUpUpdateViewController.swift */,
 				7C98916A2331285100400CC5 /* MultiplympactViewController.swift */,
 				7C98916C2331289700400CC5 /* TrackTheHijackViewController.swift */,
+				7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */,
 			);
 			path = "New Policy";
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				16D4C28322C3FDBE006DBC64 /* NotificationProtocol.swift in Sources */,
 				16D4C28522C3FE10006DBC64 /* NotificationBadgeProtocol.swift in Sources */,
 				7C98916B2331285100400CC5 /* MultiplympactViewController.swift in Sources */,
+				7CFF7BE22339455E00C7081E /* EnvironmentTableViewCell.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */,
 				7C9891632331264C00400CC5 /* YouthInitiativeProcessViewController.swift in Sources */,

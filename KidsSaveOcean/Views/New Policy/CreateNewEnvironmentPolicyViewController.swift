@@ -30,11 +30,41 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EnvironmentCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EnvironmentCell", for: indexPath) as? EnvironmentTableViewCell else { fatalError("Wrong cell type. There is expected EnvironmentTableViewCell") }
         
-        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        var textTitle = ""
+        var imageName = ""
+        cell.environmentLabel.textColor = .white
         
+        switch indexPath.row {
+        case 0:
+            textTitle = "How does it work?"
+            imageName = "How"
+        case 1:
+            textTitle = "Follow these 7 Steps"
+            imageName = "Follow"
+        case 2:
+            textTitle = "Vote now on a policy we'll push"
+            imageName = "Vote"
+        case 3:
+            textTitle = "Sing Up and update signatures"
+            imageName = "SignUp"
+        case 4:
+            textTitle = "Multiply your Impact"
+            imageName = "Multiple"
+        case 5:
+            cell.environmentLabel.textColor = .black
+            textTitle = "Track the hijack"
+            imageName = "Track"
+        default:
+            textTitle = ""
+            imageName = ""
+        }
+        
+        cell.environmentLabel.text = textTitle
+        cell.environmentImageView.image = UIImage(named: imageName)
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
