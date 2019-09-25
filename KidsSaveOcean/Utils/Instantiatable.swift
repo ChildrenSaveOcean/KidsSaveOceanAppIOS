@@ -18,7 +18,7 @@ extension Instantiatable where Self: UIViewController {
         let storyboardId = "\(self)"
 
         guard let genericViewContoller = UIStoryboard.getGenericViewController(with: storyboardId),
-            var gViewController = genericViewContoller as? Self else {
+            let gViewController = genericViewContoller as? Self else {
                 fatalError("Failed to instantiate '\(storyboardId)'")
         }
 

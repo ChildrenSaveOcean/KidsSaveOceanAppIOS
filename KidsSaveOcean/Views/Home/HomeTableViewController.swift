@@ -120,8 +120,9 @@ final class HomeTableViewController: UITableViewController {
         navigationController?.pushViewController(taskViewController, animated: true)
         
     case 2:
-        // TODO!!!
-        return
+        let taskViewController = CreateNewEnvironmentPolicyViewController.instantiate()
+        taskViewController.title = ""
+        navigationController?.pushViewController(taskViewController, animated: true)
 
     case 3:
         tabBarController?.switchToDashboardScreen()
