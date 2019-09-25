@@ -267,7 +267,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-oQ-UY8">
-                                <rect key="frame" x="0.0" y="44" width="414.00000000000006" height="106"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="RUn-gv-i3O"/>
                                 </constraints>
@@ -279,7 +279,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Steps, Change the World, Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-Zl-yNi">
-                                <rect key="frame" x="91.5" y="196" width="231" height="17"/>
+                                <rect key="frame" x="96.5" y="196" width="221" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
