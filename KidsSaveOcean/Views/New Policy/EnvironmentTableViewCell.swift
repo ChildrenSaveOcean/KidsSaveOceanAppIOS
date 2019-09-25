@@ -12,6 +12,7 @@ class EnvironmentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var environmentImageView: UIImageView!
     @IBOutlet weak var environmentLabel: UILabel!
+    @IBOutlet weak var playImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

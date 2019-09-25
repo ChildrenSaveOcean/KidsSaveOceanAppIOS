@@ -40,6 +40,7 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
         case 0:
             textTitle = "How does it work?"
             imageName = "How"
+            cell.playImageView.isHidden = false
         case 1:
             textTitle = "Follow these 7 Steps"
             imageName = "Follow"
