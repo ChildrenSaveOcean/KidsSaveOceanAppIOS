@@ -193,11 +193,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToT-cu-kYE">
-                                <rect key="frame" x="0.0" y="84" width="414" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="gh1-97-8X1"/>
-                                    <constraint firstAttribute="height" constant="26" id="q5C-fd-eIr"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="414" height="26"/>
                                 <string key="text">Youth-driven Environmental Policy
 </string>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="21"/>
@@ -205,13 +201,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track the Hijack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qde-ee-q8r">
-                                <rect key="frame" x="142.5" y="85" width="129" height="20"/>
+                                <rect key="frame" x="142.5" y="90" width="129" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yV4-lt-RvA">
-                                <rect key="frame" x="55.5" y="125" width="303" height="229.5"/>
+                                <rect key="frame" x="55.5" y="130" width="303" height="229.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="0gO-hk-ucR"/>
                                 </constraints>
@@ -225,7 +221,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spread" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-hl-Jdh">
-                                <rect key="frame" x="166.5" y="374.5" width="81" height="48"/>
+                                <rect key="frame" x="166.5" y="379.5" width="81" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="GcY-m2-aBZ"/>
                                     <constraint firstAttribute="height" constant="48" id="NZP-bf-I9K"/>
@@ -235,18 +231,18 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yV4-lt-RvA" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="92r-7d-a01"/>
+                            <constraint firstItem="ToT-cu-kYE" firstAttribute="bottom" secondItem="Qde-ee-q8r" secondAttribute="top" id="9A2-ca-Cfp"/>
                             <constraint firstItem="Qde-ee-q8r" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="B2t-o4-HWE"/>
                             <constraint firstItem="MHm-hl-Jdh" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="GnC-XS-0sp"/>
                             <constraint firstItem="MHm-hl-Jdh" firstAttribute="top" secondItem="yV4-lt-RvA" secondAttribute="bottom" constant="20" id="Isy-Ie-Tvf"/>
                             <constraint firstItem="ToT-cu-kYE" firstAttribute="trailing" secondItem="cyy-0E-bt1" secondAttribute="trailing" id="MNZ-9d-Lmc"/>
-                            <constraint firstItem="ToT-cu-kYE" firstAttribute="bottom" secondItem="Qde-ee-q8r" secondAttribute="top" constant="25" id="PeD-5D-YBH"/>
                             <constraint firstItem="ToT-cu-kYE" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="Sdw-4D-Yqn"/>
                             <constraint firstItem="3JW-ke-UM2" firstAttribute="height" secondItem="5N9-zc-M8L" secondAttribute="height" id="T3L-DN-tvA"/>
                             <constraint firstItem="3JW-ke-UM2" firstAttribute="top" secondItem="cyy-0E-bt1" secondAttribute="top" id="Xla-cg-2O1"/>
                             <constraint firstItem="3JW-ke-UM2" firstAttribute="width" secondItem="5N9-zc-M8L" secondAttribute="width" id="Y2Q-Ws-fNb"/>
                             <constraint firstItem="yV4-lt-RvA" firstAttribute="top" secondItem="Qde-ee-q8r" secondAttribute="bottom" constant="20" id="hTy-Wr-478"/>
                             <constraint firstItem="3JW-ke-UM2" firstAttribute="leading" secondItem="cyy-0E-bt1" secondAttribute="leading" id="jAz-Qz-HhH"/>
-                            <constraint firstItem="ToT-cu-kYE" firstAttribute="top" secondItem="cyy-0E-bt1" secondAttribute="top" constant="40" id="qmK-3C-RYY"/>
+                            <constraint firstItem="ToT-cu-kYE" firstAttribute="top" secondItem="cyy-0E-bt1" secondAttribute="top" constant="20" id="qmK-3C-RYY"/>
                             <constraint firstItem="cyy-0E-bt1" firstAttribute="trailing" secondItem="3JW-ke-UM2" secondAttribute="trailing" id="qrG-Zy-DOt"/>
                             <constraint firstItem="ToT-cu-kYE" firstAttribute="leading" secondItem="cyy-0E-bt1" secondAttribute="leading" id="wCc-6J-p1e"/>
                         </constraints>
@@ -385,8 +381,8 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                     <constraint firstAttribute="height" constant="106" id="kCo-Wv-XF4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which environmental policy do you feel      youth should try to get passed?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-37-vW8">
-                                <rect key="frame" x="20" y="150" width="414" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which environmental policy do you feel youth should try to get passed?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-37-vW8">
+                                <rect key="frame" x="-58" y="150" width="530" height="20.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
                                 <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -395,10 +391,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="trailing" secondItem="8Me-Sk-OEy" secondAttribute="trailing" id="7zk-sk-SkI"/>
-                            <constraint firstItem="eeT-37-vW8" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" constant="20" id="AGK-0d-CMc"/>
-                            <constraint firstItem="eeT-37-vW8" firstAttribute="trailing" secondItem="8Me-Sk-OEy" secondAttribute="trailing" constant="20" id="GnX-11-flP"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" id="Hkg-Ij-reU"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="width" secondItem="4gS-0Q-5WZ" secondAttribute="width" id="QjS-XR-bvj"/>
+                            <constraint firstItem="eeT-37-vW8" firstAttribute="centerX" secondItem="8Me-Sk-OEy" secondAttribute="centerX" id="gb0-J3-sju"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="top" secondItem="8Me-Sk-OEy" secondAttribute="top" id="lne-dd-CW6"/>
                             <constraint firstItem="eeT-37-vW8" firstAttribute="top" secondItem="qOy-rM-7NU" secondAttribute="bottom" id="lx9-cv-M25"/>
                         </constraints>
@@ -440,15 +435,53 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Multiply Impact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Poc-pB-fHP">
-                                <rect key="frame" x="0.0" y="437" width="414" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youthbg" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-J1-8ep">
+                                <rect key="frame" x="0.0" y="44" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfU-yc-foF">
+                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
+                                <string key="text">Multiply your Impact!
+</string>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuG-Rd-DHZ">
+                                <rect key="frame" x="55.5" y="113" width="303" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="Ayl-U4-E3b"/>
+                                </constraints>
+                                <string key="text">Collecting signatures yourself is brilliant. But let’s do a little math. 
+
+You = Bunch of signatures
+
+Now, say you get your girl scout troop or surf buddies or class to collect them too.
+
+Bunch     20-ish = Loads of signatures
+
+And ask them to multiply their impact…
+
+Loads     Multiplied = MONSTER IMPACT
+
+</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zNm-J1-8ep" firstAttribute="height" secondItem="HWc-wJ-wQU" secondAttribute="height" id="1NI-9d-8Jl"/>
+                            <constraint firstItem="FuG-Rd-DHZ" firstAttribute="centerX" secondItem="rEl-Mz-4MU" secondAttribute="centerX" id="4YQ-4R-dEN"/>
+                            <constraint firstItem="HfU-yc-foF" firstAttribute="leading" secondItem="rEl-Mz-4MU" secondAttribute="leading" id="Fk2-Dh-ctA"/>
+                            <constraint firstItem="HfU-yc-foF" firstAttribute="top" secondItem="rEl-Mz-4MU" secondAttribute="top" constant="20" id="Jdl-er-5h7"/>
+                            <constraint firstItem="zNm-J1-8ep" firstAttribute="leading" secondItem="rEl-Mz-4MU" secondAttribute="leading" id="NNW-B5-Gql"/>
+                            <constraint firstItem="FuG-Rd-DHZ" firstAttribute="top" secondItem="HfU-yc-foF" secondAttribute="bottom" constant="20" id="P1y-DA-ao0"/>
+                            <constraint firstItem="zNm-J1-8ep" firstAttribute="width" secondItem="HWc-wJ-wQU" secondAttribute="width" id="PNl-4W-kRV"/>
+                            <constraint firstItem="HfU-yc-foF" firstAttribute="trailing" secondItem="rEl-Mz-4MU" secondAttribute="trailing" id="bqg-8r-ohf"/>
+                            <constraint firstItem="zNm-J1-8ep" firstAttribute="top" secondItem="rEl-Mz-4MU" secondAttribute="top" id="dha-Pc-thI"/>
+                            <constraint firstItem="rEl-Mz-4MU" firstAttribute="trailing" secondItem="zNm-J1-8ep" secondAttribute="trailing" id="ppS-DU-1ye"/>
+                            <constraint firstItem="HfU-yc-foF" firstAttribute="centerX" secondItem="rEl-Mz-4MU" secondAttribute="centerX" id="xNp-Ul-Xu0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rEl-Mz-4MU"/>
                     </view>
                 </viewController>
