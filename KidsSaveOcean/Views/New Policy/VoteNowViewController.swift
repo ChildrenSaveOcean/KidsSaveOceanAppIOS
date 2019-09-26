@@ -16,6 +16,28 @@ class VoteNowViewController: UIViewController, Instantiatable {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func voteNowButton() {
+        let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy.", message: "", preferredStyle: .alert)
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            self.dismiss(animated: false, completion: nil)
+            
+        })
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+            self.dismiss(animated: false, completion: nil)
+        }
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
