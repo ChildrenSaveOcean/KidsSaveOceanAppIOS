@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         KSOAuthorization.anonymousAuthorization {
             UserViewModel.shared()
+            CountriesService.shared().setup()
         }
         
         // MARK: - Check if user already opened the tutorial screen
@@ -29,8 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             window?.rootViewController = KSOStartPageViewController.instantiate()
         }
-
-        CountriesService.shared().setup()
         
         // MARK: all about notifications here and below:
         Messaging.messaging().delegate = self
@@ -59,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        UserViewModel.shared().saveUser()
+    //
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
