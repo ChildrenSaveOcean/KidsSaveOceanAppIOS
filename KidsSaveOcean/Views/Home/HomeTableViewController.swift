@@ -17,13 +17,10 @@ final class HomeTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationController?.navigationBar.isHidden = true
-    navigationController?.navigationBar.isTranslucent = true
-    tableView.backgroundColor = UIColor.backgroundGray
     tableView.isScrollEnabled = true
     tableView.bounces = false
     tableView.isUserInteractionEnabled = true
     tableView.separatorStyle = .none
-    tableView.separatorColor = UIColor.backgroundGray
     tableView.showsVerticalScrollIndicator = false
     tableView.estimatedRowHeight = 172
     tableView.rowHeight = UITableView.automaticDimension
@@ -146,7 +143,7 @@ final class HomeTableViewController: UITableViewController {
 
   private func viewForHeaderAndFooter() -> UIView {
     let viewH = UIView()
-    viewH.backgroundColor = .white
+    viewH.backgroundColor = .backgroundGray
     return viewH
   }
 

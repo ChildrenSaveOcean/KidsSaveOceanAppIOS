@@ -115,11 +115,8 @@ extension LetterTrackerViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 extension LetterTrackerViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let label = UILabel()
-        label.text = countriesData[row].name
-        label.textAlignment = .center
-
-        return label
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: countriesData[row].name, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        return attributedString
     }
 }

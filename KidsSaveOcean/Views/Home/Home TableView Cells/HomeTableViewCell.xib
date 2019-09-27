@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,11 +13,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Bc-SL-ebo" id="Sxn-DY-xgT">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="171.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboardCopyForHomeScreenPic" translatesAutoresizingMaskIntoConstraints="NO" id="Ie8-d2-ACW">
-                        <rect key="frame" x="16" y="8" width="343" height="155.5"/>
+                        <rect key="frame" x="16" y="8" width="343" height="156"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Ie8-d2-ACW" secondAttribute="height" multiplier="343:140" priority="999" id="o3X-yN-Dal"/>
                         </constraints>
@@ -62,12 +60,13 @@
                     <constraint firstItem="Ie8-d2-ACW" firstAttribute="leading" secondItem="Sxn-DY-xgT" secondAttribute="leading" constant="16" id="vl9-41-TqP"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+            <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imageCover" destination="Ie8-d2-ACW" id="Ydz-M8-e3Z"/>
                 <outlet property="subTitleLabel" destination="e9F-id-S4T" id="WGk-nD-iBl"/>
                 <outlet property="titleLabel" destination="V8g-5b-bTj" id="pIx-DG-k3l"/>
             </connections>
+            <point key="canvasLocation" x="142" y="155"/>
         </tableViewCell>
     </objects>
     <resources>

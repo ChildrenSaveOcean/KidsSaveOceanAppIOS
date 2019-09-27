@@ -28,7 +28,7 @@ class KSOAuthorization: NSObject {
             }
 
             if authResult != nil, authResult?.user.uid != nil {
-                print("already signed in anonymously, UID: \(authResult!.user.uid)")
+                print("Get signed in anonymously, UID: \(authResult!.user.uid)")
                 completion?()
             }
         }
