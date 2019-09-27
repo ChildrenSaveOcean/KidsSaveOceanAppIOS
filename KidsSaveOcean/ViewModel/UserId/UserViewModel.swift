@@ -69,7 +69,7 @@ var userTypeKey: String {return "user_person_type"}
 class UserViewModel {
 
     let authorizedUser = Auth.auth().currentUser
-    let databaseReferenece: DatabaseReference //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
+    var databaseReferenece: DatabaseReference? //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
 ////// Zip2Sequence ? 
     var parametersDisctionary: [String: Any] = [ DashboardTasksScopes.research.firebaseFieldName: false,
                                                   DashboardTasksScopes.write_letter.firebaseFieldName: false,
@@ -135,18 +135,23 @@ class UserViewModel {
     }
 
     private static var sharedUserViewModel: UserViewModel = {
-        let viewModel = UserViewModel(databaseRef: Database.database().reference())
+        let viewModel = UserViewModel()
         return viewModel
     }()
 
     class func shared() -> UserViewModel {
+        if sharedUserViewModel.databaseReferenece == nil {
+            sharedUserViewModel.fetchUserFBData()
+        }
         return sharedUserViewModel
     }
 
-    init(databaseRef: DatabaseReference) {
-        self.databaseReferenece = databaseRef.child("USERS").child(Auth.auth().currentUser!.uid)
-        self.fetchUser {
-            //NotificationCenter.default.post(name: Notification.Name(Settings.UserHasBeenLoadedNotificationName), object: nil)
+    private func fetchUserFBData() {
+        if Auth.auth().currentUser?.uid != nil {
+            self.databaseReferenece = Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
+            self.fetchUser {
+                //NotificationCenter.default.post(name: Notification.Name(Settings.UserHasBeenLoadedNotificationName), object: nil)
+            }
         }
     }
 
@@ -154,7 +159,7 @@ class UserViewModel {
     // swiftlint:disable function_body_length
     func fetchUser(_ completion: (() -> Void)?) {
 
-        databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
+        databaseReferenece?.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 return
             }
@@ -291,8 +296,9 @@ class UserViewModel {
 
     func saveUser() {
         parametersDisctionary[userTypeKey] = self.user_type.rawValue
-        databaseReferenece.setValue(parametersDisctionary) { (error: Error?, _: DatabaseReference) in
+        databaseReferenece?.setValue(parametersDisctionary) { (error: Error?, _: DatabaseReference) in
             if error != nil {
+                print("parameters for update: \(self.parametersDisctionary)")
                 fatalError(error!.localizedDescription)  // TODO app should not crash if there is some problem with database
             } else {
                 print("\nUser saved successfully")

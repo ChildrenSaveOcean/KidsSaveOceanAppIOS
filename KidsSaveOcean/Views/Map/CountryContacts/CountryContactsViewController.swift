@@ -174,12 +174,9 @@ extension CountryContactsViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 extension CountryContactsViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let label = UILabel()
-        label.text = viewModel.allCountries?[row].name
-        label.textAlignment = .center
-
-        return label
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: viewModel.allCountries?[row].name ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        return attributedString
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
