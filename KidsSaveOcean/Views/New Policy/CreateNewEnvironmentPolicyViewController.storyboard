@@ -220,22 +220,26 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spread" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-hl-Jdh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJP-8L-LIa">
                                 <rect key="frame" x="166.5" y="379.5" width="81" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="GcY-m2-aBZ"/>
-                                    <constraint firstAttribute="height" constant="48" id="NZP-bf-I9K"/>
+                                    <constraint firstAttribute="height" constant="48" id="1ov-26-dok"/>
+                                    <constraint firstAttribute="width" constant="81" id="gbM-Es-j3L"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="Spread"/>
+                                <connections>
+                                    <action selector="spreadButton:" destination="ebV-c7-ckS" eventType="touchUpInside" id="MiX-sI-wGi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="aJP-8L-LIa" firstAttribute="top" secondItem="yV4-lt-RvA" secondAttribute="bottom" constant="20" id="1t6-qf-UIf"/>
                             <constraint firstItem="yV4-lt-RvA" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="92r-7d-a01"/>
                             <constraint firstItem="ToT-cu-kYE" firstAttribute="bottom" secondItem="Qde-ee-q8r" secondAttribute="top" id="9A2-ca-Cfp"/>
                             <constraint firstItem="Qde-ee-q8r" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="B2t-o4-HWE"/>
-                            <constraint firstItem="MHm-hl-Jdh" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="GnC-XS-0sp"/>
-                            <constraint firstItem="MHm-hl-Jdh" firstAttribute="top" secondItem="yV4-lt-RvA" secondAttribute="bottom" constant="20" id="Isy-Ie-Tvf"/>
                             <constraint firstItem="ToT-cu-kYE" firstAttribute="trailing" secondItem="cyy-0E-bt1" secondAttribute="trailing" id="MNZ-9d-Lmc"/>
+                            <constraint firstItem="aJP-8L-LIa" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="Ngh-mo-Dmx"/>
                             <constraint firstItem="ToT-cu-kYE" firstAttribute="centerX" secondItem="cyy-0E-bt1" secondAttribute="centerX" id="Sdw-4D-Yqn"/>
                             <constraint firstItem="3JW-ke-UM2" firstAttribute="height" secondItem="5N9-zc-M8L" secondAttribute="height" id="T3L-DN-tvA"/>
                             <constraint firstItem="3JW-ke-UM2" firstAttribute="top" secondItem="cyy-0E-bt1" secondAttribute="top" id="Xla-cg-2O1"/>
@@ -262,7 +266,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-oQ-UY8">
-                                <rect key="frame" x="0.0" y="44" width="414.00000000000006" height="106"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="RUn-gv-i3O"/>
                                 </constraints>
@@ -274,7 +278,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Steps, Change the World, Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-Zl-yNi">
-                                <rect key="frame" x="91.5" y="196" width="231" height="17"/>
+                                <rect key="frame" x="96.5" y="196" width="221" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

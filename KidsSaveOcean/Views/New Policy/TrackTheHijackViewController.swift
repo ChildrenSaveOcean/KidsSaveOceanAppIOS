@@ -10,14 +10,20 @@ import UIKit
 
 class TrackTheHijackViewController: UIViewController, Instantiatable {
 
-    @IBOutlet weak var tableView: UITableView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func spreadButton(_ sender: Any) {
+        let linkForSharing = "Some text"
+        let objectsToShare = [URL(string: linkForSharing) as Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        self.present(activityVC, animated: true) {
+//             self.chooseTaskWithNum(2)
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -29,55 +35,4 @@ class TrackTheHijackViewController: UIViewController, Instantiatable {
     }
     */
 
-}
-
-extension TrackTheHijackViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EnvironmentCell", for: indexPath) as? EnvironmentTableViewCell else { fatalError("Wrong cell type. There is expected EnvironmentTableViewCell") }
-        
-        var textTitle = ""
-        var imageName = ""
-        cell.environmentLabel.textColor = .white
-        
-        switch indexPath.row {
-        case 0:
-            textTitle = "How does it work?"
-            imageName = "How"
-        case 1:
-            textTitle = "Follow these 7 Steps"
-            imageName = "Follow"
-        case 2:
-            textTitle = "Vote now on a policy we'll push"
-            imageName = "Vote"
-        case 3:
-            textTitle = "Sing Up and update signatures"
-            imageName = "SignUp"
-        case 4:
-            textTitle = "Multiply your Impact"
-            imageName = "Multiply"
-        case 5:
-            guard let trackCell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell", for: indexPath) as? TrackTableViewCell else { fatalError("Wrong cell type. There is expected TrackTableViewCell")}
-            //            cell.environmentLabel.textColor = .black
-            //            textTitle = "Track the hijack"
-            //            imageName = "Track"
-            return trackCell
-        default:
-            textTitle = ""
-            imageName = ""
-        }
-        
-        //        cell.environmentLabel.text = textTitle
-        cell.environmentImageView.image = UIImage(named: imageName)
-        return cell
-        
-    }
 }
