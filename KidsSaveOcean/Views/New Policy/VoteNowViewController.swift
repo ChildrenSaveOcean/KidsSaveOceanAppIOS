@@ -10,6 +10,16 @@ import UIKit
 
 class VoteNowViewController: UIViewController, Instantiatable {
 
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
+    let pickerData = ["Policy 1 Explanation",
+                        "Policy 2 Explanation",
+                        "Policy 3 Explanation",
+                        "Policy 4 Explanation",
+                        "Policy 5 Explanation",
+                        "Policy 6 Explanation",
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +48,10 @@ class VoteNowViewController: UIViewController, Instantiatable {
         
         self.present(dialogMessage, animated: true, completion: nil)
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        summaryLabel.text = "\(pickerData[row])"
+    }
 
     /*
     // MARK: - Navigation
@@ -49,4 +63,23 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     */
 
+}
+
+// MARK: - UIPickerViewDataSource
+extension VoteNowViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+}
+
+// MARK: - UIPickerViewDelegate
+extension VoteNowViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        return attributedString
+    }
 }

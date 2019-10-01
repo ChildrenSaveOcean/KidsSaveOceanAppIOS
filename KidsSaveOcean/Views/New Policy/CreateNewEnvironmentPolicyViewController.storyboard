@@ -16,6 +16,9 @@
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
         </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Create New Environment Policy View Controller-->
@@ -27,16 +30,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-JJ-7zp">
-                                <rect key="frame" x="0.0" y="40" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="40" width="414" height="99.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQz-OP-WZ0">
-                                        <rect key="frame" x="43.5" y="40" width="327" height="26.5"/>
+                                        <rect key="frame" x="43.5" y="40" width="327" height="26"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bon-AO-InR">
-                                        <rect key="frame" x="83.5" y="66.5" width="247" height="28"/>
+                                        <rect key="frame" x="83.5" y="66" width="247" height="28"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="13"/>
                                         <state key="normal" title="Youth Citizen Initiative Hijack Headquarters">
                                             <color key="titleColor" red="0.29019607843137252" green="0.50588235294117645" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,7 +56,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CreateNewEnvironmentPolicyViewController" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-Ix-5q5">
-                                <rect key="frame" x="0.0" y="171.5" width="414" height="690.5"/>
+                                <rect key="frame" x="0.0" y="171" width="414" height="691"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrackTableViewCell" id="bOk-M7-OjN" customClass="TrackTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
@@ -71,13 +74,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF7-XT-Q1g">
-                                                    <rect key="frame" x="55" y="60" width="53.5" height="46"/>
+                                                    <rect key="frame" x="55" y="60" width="53" height="46"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="the Hijack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTh-O5-fpv">
-                                                    <rect key="frame" x="258.5" y="60" width="120.5" height="46"/>
+                                                    <rect key="frame" x="258" y="60" width="121" height="46"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -266,7 +269,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-oQ-UY8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="106"/>
+                                <rect key="frame" x="0.0" y="44" width="414.00000000000006" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="RUn-gv-i3O"/>
                                 </constraints>
@@ -278,7 +281,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Steps, Change the World, Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-Zl-yNi">
-                                <rect key="frame" x="96.5" y="196" width="221" height="17"/>
+                                <rect key="frame" x="91.5" y="196" width="231" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -386,19 +389,26 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which environmental policy do you feel youth should try to get passed?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-37-vW8">
-                                <rect key="frame" x="40" y="150" width="334" height="41"/>
+                                <rect key="frame" x="40" y="170" width="334" height="41"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
                                 <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvX-tZ-AvS">
-                                <rect key="frame" x="40" y="291" width="334" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9C-rs-sY8">
+                                <rect key="frame" x="0.0" y="231" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="J3p-xR-NMP" id="8ZK-sC-mv8"/>
+                                    <outlet property="delegate" destination="J3p-xR-NMP" id="Ysm-WK-MCi"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary of Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvX-tZ-AvS">
+                                <rect key="frame" x="40" y="427" width="334" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-kV-ffK">
-                                <rect key="frame" x="167" y="332" width="80" height="48"/>
+                                <rect key="frame" x="167" y="465" width="80" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="5WY-Rt-2KF"/>
                                     <constraint firstAttribute="height" constant="48" id="j1j-1K-uRG"/>
@@ -411,22 +421,29 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="C9C-rs-sY8" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" id="6gv-LG-aLI"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="trailing" secondItem="8Me-Sk-OEy" secondAttribute="trailing" id="7zk-sk-SkI"/>
                             <constraint firstItem="eeT-37-vW8" firstAttribute="leading" secondItem="4gS-0Q-5WZ" secondAttribute="leading" constant="40" id="D0R-Mm-zJf"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" id="Hkg-Ij-reU"/>
                             <constraint firstItem="8Me-Sk-OEy" firstAttribute="trailing" secondItem="fvX-tZ-AvS" secondAttribute="trailing" constant="40" id="JxE-60-xWQ"/>
+                            <constraint firstItem="C9C-rs-sY8" firstAttribute="trailing" secondItem="8Me-Sk-OEy" secondAttribute="trailing" id="MJz-SX-XbF"/>
                             <constraint firstAttribute="trailing" secondItem="eeT-37-vW8" secondAttribute="trailing" constant="40" id="MuS-Vi-Xx7"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="width" secondItem="4gS-0Q-5WZ" secondAttribute="width" id="QjS-XR-bvj"/>
                             <constraint firstItem="PKh-kV-ffK" firstAttribute="centerX" secondItem="8Me-Sk-OEy" secondAttribute="centerX" id="TbE-Ox-Go5"/>
                             <constraint firstItem="fvX-tZ-AvS" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" constant="40" id="Vli-yd-OfA"/>
                             <constraint firstItem="PKh-kV-ffK" firstAttribute="top" secondItem="fvX-tZ-AvS" secondAttribute="bottom" constant="20" id="YgN-Nc-Don"/>
+                            <constraint firstItem="C9C-rs-sY8" firstAttribute="top" secondItem="eeT-37-vW8" secondAttribute="bottom" constant="20" id="bf3-IU-vqY"/>
                             <constraint firstItem="eeT-37-vW8" firstAttribute="centerX" secondItem="8Me-Sk-OEy" secondAttribute="centerX" id="gb0-J3-sju"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="top" secondItem="8Me-Sk-OEy" secondAttribute="top" id="lne-dd-CW6"/>
-                            <constraint firstItem="eeT-37-vW8" firstAttribute="top" secondItem="qOy-rM-7NU" secondAttribute="bottom" id="lx9-cv-M25"/>
-                            <constraint firstItem="fvX-tZ-AvS" firstAttribute="top" secondItem="eeT-37-vW8" secondAttribute="bottom" constant="100" id="wYL-jO-fVr"/>
+                            <constraint firstItem="eeT-37-vW8" firstAttribute="top" secondItem="qOy-rM-7NU" secondAttribute="bottom" constant="20" id="lx9-cv-M25"/>
+                            <constraint firstItem="C9C-rs-sY8" firstAttribute="bottom" secondItem="fvX-tZ-AvS" secondAttribute="top" constant="20" id="v6a-nz-u4d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Me-Sk-OEy"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="C9C-rs-sY8" id="pW1-wq-Ai7"/>
+                        <outlet property="summaryLabel" destination="fvX-tZ-AvS" id="lws-ay-1bf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vP7-xc-I5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -440,17 +457,167 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up and Update" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUh-Pa-R3f">
-                                <rect key="frame" x="0.0" y="437" width="414" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-D7-gHh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="106"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="fBA-9A-i45"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Policy Control Center" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-O2-ILl">
+                                <rect key="frame" x="40" y="150" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
+                                <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up &amp; always Update" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-M1-Sfe">
+                                <rect key="frame" x="40" y="175.5" width="334" height="17"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
+                                <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59C-eg-g0Q">
+                                <rect key="frame" x="40" y="232.5" width="334" height="33.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Policy chosen: Establish a sustainable environment as a human right!">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="14" name="SFProText-Semibold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Campaigns: none - still building" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-eF-8Tp">
+                                <rect key="frame" x="40" y="286" width="334" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-Px-z3T">
+                                <rect key="frame" x="87" y="334" width="240" height="28"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="use-k2-zfK">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="28"/>
+                                        <state key="normal" image="LearnMore"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiV-7s-ZN7">
+                                        <rect key="frame" x="145" y="0.0" width="95" height="28"/>
+                                        <state key="normal" image="Share"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiR-I5-j5B">
+                                <rect key="frame" x="47" y="382" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tDG-09-Zbj"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="s88-Pg-fJT" id="E0l-n8-jO0"/>
+                                    <outlet property="delegate" destination="s88-Pg-fJT" id="ss7-kE-Xwd"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your location is currently not live, but you can already fill out your planned signatures below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-UY-Pzx">
+                                <rect key="frame" x="40" y="442" width="334" height="36"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-Fx-pDG">
+                                <rect key="frame" x="127.5" y="503" width="159" height="28"/>
+                                <state key="normal" title="Sign Up" image="SignUp!"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xyb-zo-Ffa">
+                                <rect key="frame" x="25.5" y="561" width="363.5" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Planned Signatures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQ7-Jx-anw">
+                                        <rect key="frame" x="0.0" y="3" width="147.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omn-0T-vUi">
+                                        <rect key="frame" x="147.5" y="0.0" width="91" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="YWJ-Ws-twQ"/>
+                                            <constraint firstAttribute="width" constant="91" id="aLR-hU-Q7t"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxR-E4-wpp">
+                                        <rect key="frame" x="238.5" y="0.5" width="125" height="23"/>
+                                        <state key="normal" title="Button" image="UpdateOrange"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kQ7-Jx-anw" firstAttribute="leading" secondItem="xyb-zo-Ffa" secondAttribute="leading" id="5Hs-Nx-78P"/>
+                                    <constraint firstAttribute="trailing" secondItem="mxR-E4-wpp" secondAttribute="trailing" id="fNU-ym-CUC"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ch8-iY-UXh">
+                                <rect key="frame" x="25" y="610" width="363.5" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected Signatures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-bJ-Zi5">
+                                        <rect key="frame" x="0.0" y="3" width="147.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-2o-ldU">
+                                        <rect key="frame" x="147.5" y="0.0" width="91" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="AIN-T9-IIt"/>
+                                            <constraint firstAttribute="width" constant="91" id="Dbz-zK-nRy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aus-Sy-b0u">
+                                        <rect key="frame" x="238.5" y="0.5" width="125" height="23"/>
+                                        <state key="normal" title="Button" image="UpdateWhite"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aus-Sy-b0u" firstAttribute="leading" secondItem="pNW-2o-ldU" secondAttribute="trailing" id="AhJ-cq-wry"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ESV-UY-Pzx" firstAttribute="bottom" secondItem="Uwb-Fx-pDG" secondAttribute="top" constant="-25" id="1WX-Ei-juh"/>
+                            <constraint firstItem="59C-eg-g0Q" firstAttribute="top" secondItem="Nlw-M1-Sfe" secondAttribute="bottom" constant="40" id="2Ga-AE-PFA"/>
+                            <constraint firstItem="ea7-D7-gHh" firstAttribute="width" secondItem="osP-Ck-fWg" secondAttribute="width" id="2PH-eo-S9g"/>
+                            <constraint firstItem="Nlw-M1-Sfe" firstAttribute="top" secondItem="2yi-O2-ILl" secondAttribute="bottom" constant="5" id="2XE-Tq-9lH"/>
+                            <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="Nlw-M1-Sfe" secondAttribute="trailing" constant="40" id="35R-w4-5CQ"/>
+                            <constraint firstItem="ch8-iY-UXh" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="ALG-Tk-afc"/>
+                            <constraint firstItem="ch8-iY-UXh" firstAttribute="width" secondItem="xyb-zo-Ffa" secondAttribute="width" id="B0f-K7-bct"/>
+                            <constraint firstItem="ch8-iY-UXh" firstAttribute="top" secondItem="xyb-zo-Ffa" secondAttribute="bottom" constant="20" id="Bah-93-yol"/>
+                            <constraint firstItem="ea7-D7-gHh" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" id="CPF-AI-KF4"/>
+                            <constraint firstItem="GiR-I5-j5B" firstAttribute="top" secondItem="Xtw-Px-z3T" secondAttribute="bottom" constant="20" id="CqC-Zn-W8d"/>
+                            <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="59C-eg-g0Q" secondAttribute="trailing" constant="40" id="MGR-wg-TU7"/>
+                            <constraint firstItem="ESV-UY-Pzx" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="20" id="QnQ-Ko-IBZ"/>
+                            <constraint firstItem="2yi-O2-ILl" firstAttribute="top" secondItem="ea7-D7-gHh" secondAttribute="bottom" id="Ufw-nz-cQ1"/>
+                            <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="UzH-v3-mah"/>
+                            <constraint firstItem="59C-eg-g0Q" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="VPb-lF-ENg"/>
+                            <constraint firstItem="GiR-I5-j5B" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="YXu-vZ-b0V"/>
+                            <constraint firstItem="Uwb-Fx-pDG" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="YlO-ES-CAM"/>
+                            <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="40" id="ZHN-f8-SvM"/>
+                            <constraint firstItem="2yi-O2-ILl" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="asg-AD-t19"/>
+                            <constraint firstItem="Nlw-M1-Sfe" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="cab-yw-ETr"/>
+                            <constraint firstItem="Xtw-Px-z3T" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="ePe-5t-tkU"/>
+                            <constraint firstItem="xyb-zo-Ffa" firstAttribute="top" secondItem="Uwb-Fx-pDG" secondAttribute="bottom" constant="30" id="fSI-Bf-Om8"/>
+                            <constraint firstItem="Y2Z-eF-8Tp" firstAttribute="top" secondItem="59C-eg-g0Q" secondAttribute="bottom" constant="20" id="gcY-ux-FUg"/>
+                            <constraint firstItem="2yi-O2-ILl" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="hzf-eh-lRs"/>
+                            <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="Y2Z-eF-8Tp" secondAttribute="trailing" constant="40" id="jCX-Z4-pZQ"/>
+                            <constraint firstItem="ea7-D7-gHh" firstAttribute="top" secondItem="Mt7-FH-RpK" secondAttribute="top" id="jdd-yn-aX7"/>
+                            <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="2yi-O2-ILl" secondAttribute="trailing" constant="40" id="mhx-dG-ejD"/>
+                            <constraint firstItem="Xtw-Px-z3T" firstAttribute="top" secondItem="Y2Z-eF-8Tp" secondAttribute="bottom" constant="30" id="qcZ-5m-nfZ"/>
+                            <constraint firstItem="ea7-D7-gHh" firstAttribute="trailing" secondItem="Mt7-FH-RpK" secondAttribute="trailing" id="sTW-4O-pVL"/>
+                            <constraint firstItem="xyb-zo-Ffa" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="wXY-jz-Vv5"/>
+                            <constraint firstItem="Y2Z-eF-8Tp" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="y4R-SJ-Ye1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mt7-FH-RpK"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="GiR-I5-j5B" id="XxN-CW-52r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zn5-Ms-pBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -557,8 +724,13 @@ Citizen Ballot Intiative Process</string>
     </scenes>
     <resources>
         <image name="Image" width="41" height="38"/>
+        <image name="LearnMore" width="95" height="28"/>
+        <image name="Share" width="95" height="28"/>
+        <image name="SignUp!" width="95" height="28"/>
         <image name="Spread" width="81" height="48"/>
         <image name="Track" width="343" height="157"/>
+        <image name="UpdateOrange" width="71" height="23"/>
+        <image name="UpdateWhite" width="71" height="23"/>
         <image name="girlbg" width="375" height="667"/>
         <image name="stepsbg" width="374" height="106"/>
         <image name="vote" width="81" height="48"/>
