@@ -12,12 +12,44 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var pickerView: UIPickerView!
     
+    @IBOutlet weak var policyLabel: UILabel!
+    
+    @IBOutlet weak var signaturesReqdTextField: UITextField!
+    
+    @IBOutlet weak var signaturesCollectedTextField: UITextField!
+    
+    @IBOutlet weak var liveLocationView: UIView!
+    @IBOutlet weak var chooseLocationView: UIView!
+    
+    @IBOutlet weak var signaturesRequiredLabel: UILabel!
+    @IBOutlet weak var deadlineLabel: UILabel!
+    @IBOutlet weak var signaturesTotalCollectedLabel: UILabel!
+    
     private lazy var countriesData = CountriesService.shared().countriesContacts.sorted(by: {$0.name < $1.name})
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        liveLocationView.isHidden = true
+        
+        let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
+        
+//        let length = attributedString.length
+//        let range = NSRange(location: 0, length: 14)
+//        let font =  UIFont(name: "SF-Pro-Text-Regular", size: 15) ?? UIFont.systemFont(ofSize: 20)
+//        
+//        attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
+//
+//        let boldFont =  UIFont(name: "SF-Pro-Text-Bold", size: 15) ?? UIFont.systemFont(ofSize: 20)
+//        let boldRange = NSRange(location: 14, length: length-1)
+//        attributedString.addAttribute(NSAttributedString.Key.font, value: boldFont, range: boldRange)
+//
+//        
+//        policyLabel.attributedText = attributedString
+        
+        pickerView.layer.borderColor = UIColor.darkGray.cgColor
+        pickerView.layer.borderWidth = 1
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,6 +73,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     }
     */
 
+    @IBAction func signUpButtonClicked(_ sender: Any) {
+    }
 }
 
 // MARK: - UIPickerViewDataSource

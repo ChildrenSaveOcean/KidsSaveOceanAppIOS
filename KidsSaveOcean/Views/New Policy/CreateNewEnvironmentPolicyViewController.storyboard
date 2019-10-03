@@ -281,7 +281,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Steps, Change the World, Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-Zl-yNi">
-                                <rect key="frame" x="91.5" y="196" width="231" height="17"/>
+                                <rect key="frame" x="96.5" y="196" width="221" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -458,25 +458,25 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-D7-gHh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="106"/>
+                                <rect key="frame" x="0.0" y="44" width="731" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="fBA-9A-i45"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Policy Control Center" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-O2-ILl">
-                                <rect key="frame" x="40" y="150" width="334" height="20.5"/>
+                                <rect key="frame" x="40" y="150" width="651" height="20.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
                                 <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up &amp; always Update" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-M1-Sfe">
-                                <rect key="frame" x="40" y="175.5" width="334" height="17"/>
+                                <rect key="frame" x="40" y="175.5" width="651" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59C-eg-g0Q">
-                                <rect key="frame" x="40" y="232.5" width="334" height="33.5"/>
+                                <rect key="frame" x="40" y="232.5" width="651" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Policy chosen: Establish a sustainable environment as a human right!">
                                         <attributes>
@@ -489,13 +489,13 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Campaigns: none - still building" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-eF-8Tp">
-                                <rect key="frame" x="40" y="286" width="334" height="18"/>
+                                <rect key="frame" x="40" y="259.5" width="651" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
                                 <color key="textColor" red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-Px-z3T">
-                                <rect key="frame" x="87" y="334" width="240" height="28"/>
+                                <rect key="frame" x="245.5" y="292.5" width="240" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="use-k2-zfK">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="28"/>
@@ -507,28 +507,125 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                     </button>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiR-I5-j5B">
-                                <rect key="frame" x="47" y="382" width="320" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UV-Fw-s6A">
+                                <rect key="frame" x="20" y="340.5" width="691" height="150"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiR-I5-j5B">
+                                        <rect key="frame" x="185.5" y="10" width="320" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="tDG-09-Zbj"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="s88-Pg-fJT" id="E0l-n8-jO0"/>
+                                            <outlet property="delegate" destination="s88-Pg-fJT" id="ss7-kE-Xwd"/>
+                                        </connections>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your location is currently not live, but you can already fill out your planned signatures below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-UY-Pzx">
+                                        <rect key="frame" x="20" y="30" width="651" height="110"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                        <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="tDG-09-Zbj"/>
+                                    <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="20" id="DNn-qF-meg"/>
+                                    <constraint firstItem="GiR-I5-j5B" firstAttribute="top" secondItem="6UV-Fw-s6A" secondAttribute="top" constant="10" id="FPY-m8-eYg"/>
+                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="20" id="hTi-fn-ZQH"/>
+                                    <constraint firstItem="GiR-I5-j5B" firstAttribute="centerX" secondItem="6UV-Fw-s6A" secondAttribute="centerX" id="les-eQ-ySS"/>
+                                    <constraint firstAttribute="bottom" secondItem="ESV-UY-Pzx" secondAttribute="bottom" constant="10" id="s4o-TM-JD5"/>
+                                    <constraint firstItem="GiR-I5-j5B" firstAttribute="bottom" secondItem="ESV-UY-Pzx" secondAttribute="top" constant="20" id="xKg-aT-thT"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="s88-Pg-fJT" id="E0l-n8-jO0"/>
-                                    <outlet property="delegate" destination="s88-Pg-fJT" id="ss7-kE-Xwd"/>
-                                </connections>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your location is currently not live, but you can already fill out your planned signatures below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-UY-Pzx">
-                                <rect key="frame" x="40" y="442" width="334" height="36"/>
-                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
-                                <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SD3-I2-kYz">
+                                <rect key="frame" x="20" y="340.5" width="691" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IlE-MA-WE3">
+                                        <rect key="frame" x="597" y="0.0" width="74" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="74" id="UI9-ap-IjE"/>
+                                            <constraint firstAttribute="height" constant="86" id="WVG-EJ-8fa"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9G3-O3-poY">
+                                        <rect key="frame" x="0.0" y="0.0" width="647" height="150"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-aY-gqB">
+                                                <rect key="frame" x="0.0" y="0.0" width="647" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Signatures required:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-7I-C3s">
+                                                        <rect key="frame" x="0.0" y="0.0" width="597" height="50"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP5-3b-3mN">
+                                                        <rect key="frame" x="597" y="0.0" width="50" height="50"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IoT-R5-3dE">
+                                                <rect key="frame" x="0.0" y="50" width="647" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Deadline: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1r-Og-vHo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="597" height="50"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmI-kN-WqN">
+                                                        <rect key="frame" x="597" y="0.0" width="50" height="50"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7e-bj-GhM">
+                                                <rect key="frame" x="0.0" y="100" width="647" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total collected:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cQ-Zy-cYi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="577" height="50"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shx-A6-Pe8">
+                                                        <rect key="frame" x="577" y="0.0" width="70" height="50"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Jxt-aY-gqB" firstAttribute="width" secondItem="9G3-O3-poY" secondAttribute="width" id="EWt-7U-QEg"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IlE-MA-WE3" firstAttribute="centerX" secondItem="SD3-I2-kYz" secondAttribute="centerX" id="bqL-OQ-uRX"/>
+                                    <constraint firstAttribute="trailing" secondItem="IlE-MA-WE3" secondAttribute="trailing" constant="20" id="eng-fU-QXJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="9G3-O3-poY" secondAttribute="bottom" id="gHI-aR-L7z"/>
+                                    <constraint firstItem="9G3-O3-poY" firstAttribute="top" secondItem="SD3-I2-kYz" secondAttribute="top" id="iUM-pj-Xzs"/>
+                                    <constraint firstItem="9G3-O3-poY" firstAttribute="trailing" secondItem="IlE-MA-WE3" secondAttribute="leading" constant="50" id="mrM-YV-Fbl"/>
+                                    <constraint firstItem="9G3-O3-poY" firstAttribute="leading" secondItem="SD3-I2-kYz" secondAttribute="leading" id="yjj-rf-MEf"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-Fx-pDG">
-                                <rect key="frame" x="127.5" y="503" width="159" height="28"/>
+                                <rect key="frame" x="286" y="510.5" width="159" height="28"/>
                                 <state key="normal" title="Sign Up" image="SignUp!"/>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="3qG-28-QnB"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xyb-zo-Ffa">
-                                <rect key="frame" x="33.5" y="561" width="347.5" height="30"/>
+                                <rect key="frame" x="192" y="568.5" width="347.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planned Signatures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQ7-Jx-anw">
                                         <rect key="frame" x="0.0" y="6" width="147.5" height="18"/>
@@ -544,6 +641,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="s88-Pg-fJT" id="hfs-a4-xJO"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxR-E4-wpp">
                                         <rect key="frame" x="238.5" y="3.5" width="109" height="23"/>
@@ -559,7 +659,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ch8-iY-UXh">
-                                <rect key="frame" x="33.5" y="611" width="347.5" height="30"/>
+                                <rect key="frame" x="192" y="618.5" width="347.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected Signatures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-bJ-Zi5">
                                         <rect key="frame" x="0.0" y="6" width="147.5" height="18"/>
@@ -575,6 +675,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="s88-Pg-fJT" id="zDm-Rx-pjZ"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aus-Sy-b0u">
                                         <rect key="frame" x="238.5" y="3.5" width="109" height="23"/>
@@ -591,34 +694,38 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ESV-UY-Pzx" firstAttribute="bottom" secondItem="Uwb-Fx-pDG" secondAttribute="top" constant="-25" id="1WX-Ei-juh"/>
                             <constraint firstItem="59C-eg-g0Q" firstAttribute="top" secondItem="Nlw-M1-Sfe" secondAttribute="bottom" constant="40" id="2Ga-AE-PFA"/>
                             <constraint firstItem="ea7-D7-gHh" firstAttribute="width" secondItem="osP-Ck-fWg" secondAttribute="width" id="2PH-eo-S9g"/>
                             <constraint firstItem="Nlw-M1-Sfe" firstAttribute="top" secondItem="2yi-O2-ILl" secondAttribute="bottom" constant="5" id="2XE-Tq-9lH"/>
                             <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="Nlw-M1-Sfe" secondAttribute="trailing" constant="40" id="35R-w4-5CQ"/>
+                            <constraint firstItem="SD3-I2-kYz" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="3wf-j5-UFf"/>
+                            <constraint firstItem="6UV-Fw-s6A" firstAttribute="leading" secondItem="osP-Ck-fWg" secondAttribute="leading" constant="20" id="6lD-c6-YWL"/>
+                            <constraint firstAttribute="trailing" secondItem="6UV-Fw-s6A" secondAttribute="trailing" constant="20" id="8CC-jR-GV8"/>
                             <constraint firstItem="ch8-iY-UXh" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="ALG-Tk-afc"/>
                             <constraint firstItem="ch8-iY-UXh" firstAttribute="width" secondItem="xyb-zo-Ffa" secondAttribute="width" id="B0f-K7-bct"/>
                             <constraint firstItem="ch8-iY-UXh" firstAttribute="top" secondItem="xyb-zo-Ffa" secondAttribute="bottom" constant="20" id="Bah-93-yol"/>
                             <constraint firstItem="ea7-D7-gHh" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" id="CPF-AI-KF4"/>
-                            <constraint firstItem="GiR-I5-j5B" firstAttribute="top" secondItem="Xtw-Px-z3T" secondAttribute="bottom" constant="20" id="CqC-Zn-W8d"/>
+                            <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="SD3-I2-kYz" secondAttribute="trailing" constant="20" id="FOM-SH-b8k"/>
                             <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="59C-eg-g0Q" secondAttribute="trailing" constant="40" id="MGR-wg-TU7"/>
-                            <constraint firstItem="ESV-UY-Pzx" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="20" id="QnQ-Ko-IBZ"/>
+                            <constraint firstItem="6UV-Fw-s6A" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="O0w-CW-8C8"/>
+                            <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="6UV-Fw-s6A" secondAttribute="bottom" constant="20" id="O9n-MC-4j9"/>
+                            <constraint firstItem="SD3-I2-kYz" firstAttribute="top" secondItem="Xtw-Px-z3T" secondAttribute="bottom" constant="20" id="PJm-31-ut9"/>
+                            <constraint firstItem="6UV-Fw-s6A" firstAttribute="top" secondItem="Xtw-Px-z3T" secondAttribute="bottom" constant="20" id="TAZ-k3-N84"/>
                             <constraint firstItem="2yi-O2-ILl" firstAttribute="top" secondItem="ea7-D7-gHh" secondAttribute="bottom" id="Ufw-nz-cQ1"/>
-                            <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="UzH-v3-mah"/>
                             <constraint firstItem="59C-eg-g0Q" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="VPb-lF-ENg"/>
-                            <constraint firstItem="GiR-I5-j5B" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="YXu-vZ-b0V"/>
                             <constraint firstItem="Uwb-Fx-pDG" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="YlO-ES-CAM"/>
-                            <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="40" id="ZHN-f8-SvM"/>
                             <constraint firstItem="2yi-O2-ILl" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="asg-AD-t19"/>
                             <constraint firstItem="Nlw-M1-Sfe" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="cab-yw-ETr"/>
+                            <constraint firstItem="SD3-I2-kYz" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="20" id="cbe-b3-2OF"/>
                             <constraint firstItem="Xtw-Px-z3T" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="ePe-5t-tkU"/>
                             <constraint firstItem="xyb-zo-Ffa" firstAttribute="top" secondItem="Uwb-Fx-pDG" secondAttribute="bottom" constant="30" id="fSI-Bf-Om8"/>
-                            <constraint firstItem="Y2Z-eF-8Tp" firstAttribute="top" secondItem="59C-eg-g0Q" secondAttribute="bottom" constant="20" id="gcY-ux-FUg"/>
+                            <constraint firstItem="Y2Z-eF-8Tp" firstAttribute="top" secondItem="59C-eg-g0Q" secondAttribute="bottom" constant="10" id="gcY-ux-FUg"/>
                             <constraint firstItem="2yi-O2-ILl" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="hzf-eh-lRs"/>
                             <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="Y2Z-eF-8Tp" secondAttribute="trailing" constant="40" id="jCX-Z4-pZQ"/>
                             <constraint firstItem="ea7-D7-gHh" firstAttribute="top" secondItem="Mt7-FH-RpK" secondAttribute="top" id="jdd-yn-aX7"/>
                             <constraint firstItem="Mt7-FH-RpK" firstAttribute="trailing" secondItem="2yi-O2-ILl" secondAttribute="trailing" constant="40" id="mhx-dG-ejD"/>
-                            <constraint firstItem="Xtw-Px-z3T" firstAttribute="top" secondItem="Y2Z-eF-8Tp" secondAttribute="bottom" constant="30" id="qcZ-5m-nfZ"/>
+                            <constraint firstItem="Xtw-Px-z3T" firstAttribute="top" secondItem="Y2Z-eF-8Tp" secondAttribute="bottom" constant="15" id="qcZ-5m-nfZ"/>
+                            <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="SD3-I2-kYz" secondAttribute="bottom" constant="20" id="qkj-I3-GUH"/>
                             <constraint firstItem="ea7-D7-gHh" firstAttribute="trailing" secondItem="Mt7-FH-RpK" secondAttribute="trailing" id="sTW-4O-pVL"/>
                             <constraint firstItem="xyb-zo-Ffa" firstAttribute="centerX" secondItem="Mt7-FH-RpK" secondAttribute="centerX" id="wXY-jz-Vv5"/>
                             <constraint firstItem="Y2Z-eF-8Tp" firstAttribute="leading" secondItem="Mt7-FH-RpK" secondAttribute="leading" constant="40" id="y4R-SJ-Ye1"/>
@@ -626,7 +733,12 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <viewLayoutGuide key="safeArea" id="Mt7-FH-RpK"/>
                     </view>
                     <connections>
+                        <outlet property="chooseLocationView" destination="6UV-Fw-s6A" id="u7D-q8-2e0"/>
+                        <outlet property="liveLocationView" destination="SD3-I2-kYz" id="iL3-4l-hGp"/>
                         <outlet property="pickerView" destination="GiR-I5-j5B" id="XxN-CW-52r"/>
+                        <outlet property="policyLabel" destination="59C-eg-g0Q" id="2k1-Je-hqo"/>
+                        <outlet property="signaturesCollectedTextField" destination="AW3-Ch-0Py" id="pBo-i7-Eaj"/>
+                        <outlet property="signaturesReqdTextField" destination="RgY-PP-uPE" id="KwT-BD-Osq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zn5-Ms-pBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
