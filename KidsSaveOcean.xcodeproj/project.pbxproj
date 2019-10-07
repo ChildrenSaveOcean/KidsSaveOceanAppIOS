@@ -20,6 +20,12 @@
 		163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20352170F12200069294 /* HomeScoreTableViewCell.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
+		164D7302234B4BA00080ACB7 /* HijackPoliciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7301234B4BA00080ACB7 /* HijackPoliciesViewModel.swift */; };
+		164D7304234B548D0080ACB7 /* HijackPLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7303234B548D0080ACB7 /* HijackPLocationViewModel.swift */; };
+		164D7306234B9E6A0080ACB7 /* HijackPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7305234B9E6A0080ACB7 /* HijackPolicy.swift */; };
+		164D7308234BA1FB0080ACB7 /* HijackLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7307234BA1FB0080ACB7 /* HijackLocation.swift */; };
+		164D730F234BA39D0080ACB7 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D730E234BA39D0080ACB7 /* Campaign.swift */; };
+		164D7311234BA56F0080ACB7 /* CampaignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7310234BA56F0080ACB7 /* CampaignViewModel.swift */; };
 		164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */; };
 		164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164F14E921F68BD400823FF3 /* Onboarding.storyboard */; };
 		164F14F521F6914D00823FF3 /* HomeScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */; };
@@ -122,6 +128,12 @@
 		163D20352170F12200069294 /* HomeScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScoreTableViewCell.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
+		164D7301234B4BA00080ACB7 /* HijackPoliciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPoliciesViewModel.swift; sourceTree = "<group>"; };
+		164D7303234B548D0080ACB7 /* HijackPLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPLocationViewModel.swift; sourceTree = "<group>"; };
+		164D7305234B9E6A0080ACB7 /* HijackPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPolicy.swift; sourceTree = "<group>"; };
+		164D7307234BA1FB0080ACB7 /* HijackLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackLocation.swift; sourceTree = "<group>"; };
+		164D730E234BA39D0080ACB7 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
+		164D7310234BA56F0080ACB7 /* CampaignViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignViewModel.swift; sourceTree = "<group>"; };
 		164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopIcon.swift; sourceTree = "<group>"; };
 		164F14E921F68BD400823FF3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScoreTableViewCell.xib; sourceTree = "<group>"; };
@@ -241,6 +253,43 @@
 				164F14ED21F690CA00823FF3 /* Home TableView Cells */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		164D7300234B4B820080ACB7 /* HijackPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				164D730B234BA25D0080ACB7 /* Campaign */,
+				164D7309234BA2440080ACB7 /* Policies */,
+				164D730A234BA24E0080ACB7 /* Location */,
+			);
+			path = HijackPolicy;
+			sourceTree = "<group>";
+		};
+		164D7309234BA2440080ACB7 /* Policies */ = {
+			isa = PBXGroup;
+			children = (
+				164D7301234B4BA00080ACB7 /* HijackPoliciesViewModel.swift */,
+				164D7305234B9E6A0080ACB7 /* HijackPolicy.swift */,
+			);
+			path = Policies;
+			sourceTree = "<group>";
+		};
+		164D730A234BA24E0080ACB7 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				164D7303234B548D0080ACB7 /* HijackPLocationViewModel.swift */,
+				164D7307234BA1FB0080ACB7 /* HijackLocation.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		164D730B234BA25D0080ACB7 /* Campaign */ = {
+			isa = PBXGroup;
+			children = (
+				164D7310234BA56F0080ACB7 /* CampaignViewModel.swift */,
+				164D730E234BA39D0080ACB7 /* Campaign.swift */,
+			);
+			path = Campaign;
 			sourceTree = "<group>";
 		};
 		164D8B0D20C6BC170067EE52 /* Resources */ = {
@@ -437,6 +486,7 @@
 		16CF5A2820AF1E5600C4E57E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				164D7300234B4B820080ACB7 /* HijackPolicy */,
 				16BA0A39229027B500E36F25 /* UserId */,
 				7C0B1CD522232E9C0033F251 /* CountriesService */,
 				16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */,
@@ -885,11 +935,14 @@
 				16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7CB51D38233A901D0014094C /* StepsTableViewCell.swift in Sources */,
+				164D7308234BA1FB0080ACB7 /* HijackLocation.swift in Sources */,
+				164D7306234B9E6A0080ACB7 /* HijackPolicy.swift in Sources */,
 				161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */,
 				16D4C28322C3FDBE006DBC64 /* NotificationProtocol.swift in Sources */,
 				16D4C28522C3FE10006DBC64 /* NotificationBadgeProtocol.swift in Sources */,
 				7C98916B2331285100400CC5 /* MultiplympactViewController.swift in Sources */,
 				7CFF7BE22339455E00C7081E /* EnvironmentTableViewCell.swift in Sources */,
+				164D7302234B4BA00080ACB7 /* HijackPoliciesViewModel.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */,
 				7C9891632331264C00400CC5 /* YouthInitiativeProcessViewController.swift in Sources */,
@@ -899,6 +952,7 @@
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */,
+				164D730F234BA39D0080ACB7 /* Campaign.swift in Sources */,
 				163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */,
 				16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
@@ -909,6 +963,7 @@
 				945A089120F643EB006ED13D /* MapViewController.swift in Sources */,
 				16D4C27E22C157AD006DBC64 /* Instantiatable.swift in Sources */,
 				16BA0A3E2290281A00E36F25 /* User.swift in Sources */,
+				164D7304234B548D0080ACB7 /* HijackPLocationViewModel.swift in Sources */,
 				7C9891652331274900400CC5 /* Follow7StepsViewController.swift in Sources */,
 				C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */,
 				16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */,
@@ -931,6 +986,7 @@
 				7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */,
 				C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */,
 				165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */,
+				164D7311234BA56F0080ACB7 /* CampaignViewModel.swift in Sources */,
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
 				7C989167233127A800400CC5 /* VoteNowViewController.swift in Sources */,
 				162572D422E37DEF00A702C4 /* UserDefaultsHelper.swift in Sources */,

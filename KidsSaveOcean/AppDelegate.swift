@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KSOAuthorization.anonymousAuthorization {
             UserViewModel.shared()
             CountriesService.shared().setup()
+            HijackPLocationViewModel.shared().setup()
+            HijackPoliciesViewModel.shared().setup()
+            CampaignViewModel.shared().setup()
         }
         
         // MARK: - Check if user already opened the tutorial screen

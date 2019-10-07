@@ -18,7 +18,7 @@ enum UserType: Int { // we can get from from Firebase, bit it will stay here tem
 }
 
 enum DashboardTasksScopes: Int, CaseIterable {
-    case research, write_letter, share, start_campaign, local_politics, protest, write_letter_about_plastic, write_letter_about_climate
+    case research, write_letter, share, start_campaign, local_politics, protest, write_letter_about_plastic, write_letter_about_climate, hijack_policy_selected, campaign
 
     var firebaseFieldName: String {
         switch self {
@@ -38,6 +38,10 @@ enum DashboardTasksScopes: Int, CaseIterable {
             return "dash_write_letter_about_plastic"
         case .write_letter_about_climate:
             return "dash_write_letter_about_climate"
+        case .hijack_policy_selected:
+            return "hijack_policy_selected"
+        case .campaign:
+            return "campaign"
         }
     }
 
@@ -59,15 +63,18 @@ enum DashboardTasksScopes: Int, CaseIterable {
             return "Write your government a letter"
         case .write_letter_about_climate:
             return "Write your government a letter"
+        default:
+            return ""
         }
     }
 }
 
 var lettersWrittenKey: String {return  "user_letters_written"}
 var userTypeKey: String {return "user_person_type"}
+var hijackPolicySelectedKey: String {return "hijack_policy_selected"}
+var campaignKey: String {return "campaign"}
 
 class UserViewModel {
-
     let authorizedUser = Auth.auth().currentUser
     var databaseReferenece: DatabaseReference? //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
 ////// Zip2Sequence ? 
@@ -80,7 +87,12 @@ class UserViewModel {
                                                   DashboardTasksScopes.write_letter_about_climate.firebaseFieldName: false,
                                                   DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName: false,
                                                   lettersWrittenKey: 0,
-                                                  userTypeKey: 0 ]
+                                                  userTypeKey: 0,
+                                                  hijackPolicySelectedKey: "",
+                                                  campaignKey: ["campaign_id": "",
+                                                  "signatures_collected": 0,
+                                                  "signatures_pledged": 0]
+                        ]
 
     var local_politics: Bool = false {
         willSet(newValue) {
@@ -131,6 +143,16 @@ class UserViewModel {
     var user_type: UserType = .student {
         willSet(newValue) {
             parametersDisctionary[userTypeKey] = newValue.rawValue
+        }
+    }
+    var hijack_policy_selected: String = "" {
+        willSet(newValue) {
+            parametersDisctionary[hijackPolicySelectedKey] = newValue
+        }
+    }
+    var campain: [String: Any] = [String: Any]() {
+        willSet(newValue) {
+            parametersDisctionary[campaignKey] = newValue
         }
     }
 
@@ -222,6 +244,16 @@ class UserViewModel {
                     guard let value = userFBData.value as? Bool else {continue}
                     self.write_letter_about_climate = value
                     continue
+                    
+                case hijackPolicySelectedKey:
+                    guard let value = userFBData.value as? String else {continue}
+                    self.hijack_policy_selected = value
+                    continue
+                    
+                case campaignKey:
+                    guard let value = userFBData.value as? [String: Any] else {continue}
+                    self.campain = value
+                    continue
 
                 default:
                     continue
@@ -263,6 +295,9 @@ class UserViewModel {
             
         case .write_letter_about_climate:
             self.write_letter_about_climate = value
+            
+        default:
+            break
         }
     }
 
@@ -291,10 +326,18 @@ class UserViewModel {
             
         case .write_letter_about_climate:
             return self.write_letter_about_climate
+            
+        default:
+            return false
         }
     }
 
     func saveUser() {
+        var p = HijackPoliciesViewModel.shared().hidjackPolicies[0]
+        p.updateVotes(to: 2)
+        print(p)
+        HijackPoliciesViewModel.shared().updateVotes(policy: p, value: 3)
+        
         parametersDisctionary[userTypeKey] = self.user_type.rawValue
         databaseReferenece?.setValue(parametersDisctionary) { (error: Error?, _: DatabaseReference) in
             if error != nil {
