@@ -333,11 +333,6 @@ class UserViewModel {
     }
 
     func saveUser() {
-        var p = HijackPoliciesViewModel.shared().hidjackPolicies[0]
-        p.updateVotes(to: 2)
-        print(p)
-        HijackPoliciesViewModel.shared().updateVotes(policy: p, value: 3)
-        
         parametersDisctionary[userTypeKey] = self.user_type.rawValue
         databaseReferenece?.setValue(parametersDisctionary) { (error: Error?, _: DatabaseReference) in
             if error != nil {
