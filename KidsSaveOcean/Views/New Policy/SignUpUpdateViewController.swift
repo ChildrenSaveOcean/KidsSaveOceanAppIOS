@@ -35,18 +35,18 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
         
-//        let length = attributedString.length
-//        let range = NSRange(location: 0, length: 14)
-//        let font =  UIFont(name: "SF-Pro-Text-Regular", size: 15) ?? UIFont.systemFont(ofSize: 20)
-//        
-//        attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
-//
-//        let boldFont =  UIFont(name: "SF-Pro-Text-Bold", size: 15) ?? UIFont.systemFont(ofSize: 20)
-//        let boldRange = NSRange(location: 14, length: length-1)
-//        attributedString.addAttribute(NSAttributedString.Key.font, value: boldFont, range: boldRange)
-//
-//        
-//        policyLabel.attributedText = attributedString
+        let length = attributedString.length
+        let range = NSRange(location: 0, length: 14)
+        let font =  UIFont(name: "SF-Pro-Text-Regular", size: 15) ?? UIFont.systemFont(ofSize: 20)
+        
+        attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
+
+        let boldFont =  UIFont(name: "SF-Pro-Text-SemiBold", size: 15) ?? UIFont.systemFont(ofSize: 20)
+        let boldRange = NSRange(location: range.length + 1, length: length-range.length - 2)
+        attributedString.addAttribute(NSAttributedString.Key.font, value: boldFont, range: boldRange)
+
+        
+        policyLabel.attributedText = attributedString
         
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
