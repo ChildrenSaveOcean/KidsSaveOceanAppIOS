@@ -13,17 +13,18 @@ class VoteNowViewController: UIViewController, Instantiatable {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var summaryLabel: UILabel!
     
-    let pickerData = ["Policy 1 Explanation",
-                        "Policy 2 Explanation",
-                        "Policy 3 Explanation",
-                        "Policy 4 Explanation",
-                        "Policy 5 Explanation",
-                        "Policy 6 Explanation",
-    ]
+    var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
+    
+    var selectedPolicy :HijackPolicy?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
     }
     
     @IBAction func voteNowButton() {
@@ -32,6 +33,10 @@ class VoteNowViewController: UIViewController, Instantiatable {
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             print("Ok button tapped")
+            if let selectedPolicy = self.selectedPolicy {
+                HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
+            }
+            self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
             self.dismiss(animated: false, completion: nil)
             
         })
@@ -50,7 +55,9 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        summaryLabel.text = "\(pickerData[row])"
+        let hijackPolicy = pickerData[row]
+        selectedPolicy = hijackPolicy
+        summaryLabel.text = hijackPolicy.summary
     }
 
     /*
@@ -79,7 +86,8 @@ extension VoteNowViewController: UIPickerViewDataSource {
 // MARK: - UIPickerViewDelegate
 extension VoteNowViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        let hijackPolicy = pickerData[row]
+        let attributedString = NSAttributedString(string: hijackPolicy.description, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         return attributedString
     }
 }
