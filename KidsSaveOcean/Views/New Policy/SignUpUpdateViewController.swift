@@ -25,7 +25,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet weak var signaturesTotalCollectedLabel: UILabel!
     
-    private lazy var countriesData = CountriesService.shared().countriesContacts.sorted(by: {$0.name < $1.name})
+    private lazy var citiesData = HijackPLocationViewModel.shared().hidjackPLocations
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,17 +50,16 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
+        signaturesReqdTextField.text = "\(String(describing: UserViewModel.shared().campain["signatures_pledged"]))"
+        signaturesCollectedTextField.text = "\(String(describing: UserViewModel.shared().campain["signatures_collected"]))"
+        
+        let campaigns = CampaignViewModel.shared().campaigns
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let nearestCountry = CountriesService.shared().getUserCountry(),
-            let indextOfCountry = countriesData.firstIndex(where: { (country) -> Bool in
-                country.name == nearestCountry.name
-            }) {
-            pickerView.selectRow(indextOfCountry, inComponent: 0, animated: true)
-        }
+        pickerView.selectRow(0, inComponent: 0, animated: true)
     }
 
     /*
@@ -74,7 +73,22 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     */
 
     @IBAction func signUpButtonClicked(_ sender: Any) {
+        signaturesReqdTextField.becomeFirstResponder()
     }
+    
+    @IBAction func plannedSignaturesClicked(_ sender: Any) {
+        if let signatures = signaturesReqdTextField.text {
+            UserViewModel.shared().campain["signatures_pledged"] = signatures
+        }
+    }
+    
+    @IBAction func collectedSignaturesClicked(_ sender: Any) {
+        if let signatures = signaturesCollectedTextField.text {
+            UserViewModel.shared().campain["signatures_collected"] = signatures
+        }
+    }
+    
+    
 }
 
 // MARK: - UIPickerViewDataSource
@@ -84,14 +98,14 @@ extension SignUpUpdateViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countriesData.count
+        return citiesData.count
     }
 }
 
 // MARK: - UIPickerViewDelegate
 extension SignUpUpdateViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: countriesData[row].name, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        let attributedString = NSAttributedString(string: citiesData[row].location  , attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         return attributedString
     }
 }

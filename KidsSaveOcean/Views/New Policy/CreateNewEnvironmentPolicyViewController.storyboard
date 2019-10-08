@@ -660,6 +660,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                             <constraint firstAttribute="width" constant="109" id="Urc-DS-NSt"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="UpdateOrange"/>
+                                        <connections>
+                                            <action selector="plannedSignaturesClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="IPQ-Td-v8q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -694,6 +697,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                             <constraint firstAttribute="width" constant="109" id="gXm-gL-Quo"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="UpdateWhite"/>
+                                        <connections>
+                                            <action selector="collectedSignaturesClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="M0G-qU-yUb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
