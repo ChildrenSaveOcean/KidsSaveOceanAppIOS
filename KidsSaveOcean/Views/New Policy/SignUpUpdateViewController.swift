@@ -33,6 +33,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         // Do any additional setup after loading the view.
         liveLocationView.isHidden = true
         
+        
         let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
         
         let length = attributedString.length
@@ -53,7 +54,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         signaturesReqdTextField.text = "\(String(describing: UserViewModel.shared().campain["signatures_pledged"]))"
         signaturesCollectedTextField.text = "\(String(describing: UserViewModel.shared().campain["signatures_collected"]))"
         
-        let campaigns = CampaignViewModel.shared().campaigns
+        let campaign = CampaignViewModel.shared().campaigns[0]
+        print(campaign)
+        signaturesRequiredLabel.text = campaign.signatures_required
+        deadlineLabel.text = campaign.signatures_pledged
+        signaturesTotalCollectedLabel.text = campaign.signatures_collected
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,7 +93,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         }
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(citiesData[row])
+    }
 }
 
 // MARK: - UIPickerViewDataSource
