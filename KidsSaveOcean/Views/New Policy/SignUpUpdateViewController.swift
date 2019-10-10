@@ -56,9 +56,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         let campaign = CampaignViewModel.shared().campaigns[0]
         print(campaign)
-        signaturesRequiredLabel.text = campaign.signatures_required
-        deadlineLabel.text = campaign.signatures_pledged
-        signaturesTotalCollectedLabel.text = campaign.signatures_collected
+        signaturesRequiredLabel.text = "\(campaign.signatures_required)"
+        deadlineLabel.text = "\(campaign.signatures_pledged)"
+        signaturesTotalCollectedLabel.text = "\(campaign.signatures_collected)"
     }
     
     override func viewDidAppear(_ animated: Bool) {
