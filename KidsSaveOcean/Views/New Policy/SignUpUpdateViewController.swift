@@ -25,13 +25,25 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet weak var signaturesTotalCollectedLabel: UILabel!
     
+    var selectedCountryForCampaign: HijackLocation?
     private lazy var citiesData = HijackPLocationViewModel.shared().hidjackPLocations
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        liveLocationView.isHidden = true
+        if UserViewModel.shared().campain["campaign_id"] != nil {
+            liveLocationView.isHidden = false
+            let campaign = UserViewModel.shared().campain
+            print(campaign)
+            signaturesRequiredLabel.text = "\(String(describing: campaign["signatures_required"]))"
+            deadlineLabel.text = "\(String(describing: campaign["signatures_pledged"]))"
+            signaturesTotalCollectedLabel.text = "\(String(describing: campaign["signatures_collected"]))"
+        } else {
+            liveLocationView.isHidden = true
+            signaturesReqdTextField.text = "0"
+            signaturesCollectedTextField.text = "0"
+        }
         
         
         let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
@@ -51,14 +63,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
-        signaturesReqdTextField.text = "\(String(describing: UserViewModel.shared().campain["signatures_pledged"]))"
-        signaturesCollectedTextField.text = "\(String(describing: UserViewModel.shared().campain["signatures_collected"]))"
         
-        let campaign = CampaignViewModel.shared().campaigns[0]
-        print(campaign)
-        signaturesRequiredLabel.text = "\(campaign.signatures_required)"
-        deadlineLabel.text = "\(campaign.signatures_pledged)"
-        signaturesTotalCollectedLabel.text = "\(campaign.signatures_collected)"
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,22 +84,47 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     */
 
     @IBAction func signUpButtonClicked(_ sender: Any) {
-        signaturesReqdTextField.becomeFirstResponder()
+        let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy.", message: "", preferredStyle: .alert)
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            //SEND it to backend or store in usermodel
+            if let selectedCountryForCampaign = self.selectedCountryForCampaign {
+                UserViewModel.shared().campain["campaign_id"] = selectedCountryForCampaign
+                UserViewModel.shared().saveUser()
+            }
+            self.dismiss(animated: false, completion: nil)
+            
+        })
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            self.dismiss(animated: false, completion: nil)
+        }
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesReqdTextField.text {
             UserViewModel.shared().campain["signatures_pledged"] = signatures
+            UserViewModel.shared().saveUser()
         }
     }
     
     @IBAction func collectedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesCollectedTextField.text {
             UserViewModel.shared().campain["signatures_collected"] = signatures
+            UserViewModel.shared().saveUser()
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCountryForCampaign = citiesData[row]
         print(citiesData[row])
     }
 }
