@@ -73,6 +73,12 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         pickerView.selectRow(0, inComponent: 0, animated: true)
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        UserViewModel.shared().saveUser()
+        super.viewDidDisappear(animated)
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -91,7 +97,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             //SEND it to backend or store in usermodel
             if let selectedCountryForCampaign = self.selectedCountryForCampaign {
                 UserViewModel.shared().campain["campaign_id"] = selectedCountryForCampaign
-                UserViewModel.shared().saveUser()
             }
             self.dismiss(animated: false, completion: nil)
             
@@ -112,14 +117,13 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesReqdTextField.text {
             UserViewModel.shared().campain["signatures_pledged"] = signatures
-            UserViewModel.shared().saveUser()
         }
     }
     
     @IBAction func collectedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesCollectedTextField.text {
             UserViewModel.shared().campain["signatures_collected"] = signatures
-            UserViewModel.shared().saveUser()
+//            UserViewModel.shared().saveUser()
         }
     }
     
