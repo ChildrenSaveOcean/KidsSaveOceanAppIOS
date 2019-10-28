@@ -36,9 +36,16 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             liveLocationView.isHidden = false
             let campaign = UserViewModel.shared().campain
             print(campaign)
-            signaturesRequiredLabel.text = "\(String(describing: campaign["signatures_required"]))"
-            deadlineLabel.text = "\(String(describing: campaign["signatures_pledged"]))"
-            signaturesTotalCollectedLabel.text = "\(String(describing: campaign["signatures_collected"]))"
+            if let signaturesRequired = campaign["signatures_required"] {
+                signaturesRequiredLabel.text = "\(signaturesRequired)"
+            }
+            if let signaturesPledged = campaign["signatures_pledged"] {
+                deadlineLabel.text = "\(signaturesPledged)"
+            }
+            if let signaturesCollected = campaign["signatures_collected"] {
+                signaturesTotalCollectedLabel.text = "\(signaturesCollected)"
+            }
+            
         } else {
             liveLocationView.isHidden = true
             signaturesReqdTextField.text = "0"
