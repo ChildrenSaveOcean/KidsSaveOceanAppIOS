@@ -45,7 +45,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             signaturesCollectedTextField.text = "0"
         }
         
-        
         let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
         
         let length = attributedString.length

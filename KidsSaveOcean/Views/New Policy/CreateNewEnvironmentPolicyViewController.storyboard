@@ -467,25 +467,25 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-D7-gHh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="106"/>
+                                <rect key="frame" x="0.0" y="44" width="380" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="fBA-9A-i45"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Policy Control Center" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-O2-ILl">
-                                <rect key="frame" x="40" y="155" width="334" height="20.5"/>
+                                <rect key="frame" x="40" y="155" width="300" height="20.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
                                 <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up &amp; always Update" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-M1-Sfe">
-                                <rect key="frame" x="40" y="180.5" width="334" height="17"/>
+                                <rect key="frame" x="40" y="180.5" width="300" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59C-eg-g0Q">
-                                <rect key="frame" x="40" y="222.5" width="334" height="33.5"/>
+                                <rect key="frame" x="40" y="222.5" width="300" height="33.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Policy chosen: Establish a sustainable environment as a human right!">
                                         <attributes>
@@ -498,13 +498,13 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Campaigns: none - still building" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-eF-8Tp">
-                                <rect key="frame" x="40" y="266" width="334" height="18"/>
+                                <rect key="frame" x="40" y="266" width="300" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
                                 <color key="textColor" red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-Px-z3T">
-                                <rect key="frame" x="87" y="299" width="240" height="28"/>
+                                <rect key="frame" x="70" y="299" width="240" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="use-k2-zfK">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="28"/>
@@ -520,21 +520,24 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <rect key="frame" x="20" y="340.5" width="414" height="150"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiR-I5-j5B">
-                                        <rect key="frame" x="27" y="10" width="320" height="216"/>
+                                        <rect key="frame" x="10" y="10" width="320" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="odv-bX-9q1"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="s88-Pg-fJT" id="smJ-Ew-euB"/>
                                             <outlet property="delegate" destination="s88-Pg-fJT" id="BSP-hs-fEN"/>
                                         </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-Fx-pDG">
-                                        <rect key="frame" x="113.5" y="236.5" width="147" height="28"/>
+                                        <rect key="frame" x="96.5" y="60.5" width="147" height="28"/>
                                         <state key="normal" image="ChooseLocation"/>
                                         <connections>
                                             <action selector="signUpButtonClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="KXA-oB-uPg"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your location is currently not live, but you can already fill out your planned signatures below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-UY-Pzx">
-                                        <rect key="frame" x="20" y="274.5" width="300" height="54"/>
+                                        <rect key="frame" x="20" y="98.5" width="300" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="3il-7D-OrA"/>
                                         </constraints>
@@ -559,26 +562,26 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <rect key="frame" x="20" y="340.5" width="414" height="150"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="LiveCampaign" translatesAutoresizingMaskIntoConstraints="NO" id="IlE-MA-WE3">
-                                        <rect key="frame" x="280" y="0.0" width="74" height="128"/>
+                                        <rect key="frame" x="246" y="0.0" width="74" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="UI9-ap-IjE"/>
                                             <constraint firstAttribute="height" constant="88" id="WVG-EJ-8fa"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9G3-O3-poY">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="296" height="150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-aY-gqB">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="296" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Signatures required:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-7I-C3s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP5-3b-3mN">
-                                                        <rect key="frame" x="280" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="246" y="0.0" width="50" height="50"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -586,7 +589,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IoT-R5-3dE">
-                                                <rect key="frame" x="0.0" y="50" width="330" height="50"/>
+                                                <rect key="frame" x="0.0" y="50" width="296" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Deadline: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1r-Og-vHo">
                                                         <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
@@ -595,7 +598,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmI-kN-WqN">
-                                                        <rect key="frame" x="66" y="0.0" width="264" height="50"/>
+                                                        <rect key="frame" x="66" y="0.0" width="230" height="50"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -603,7 +606,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7e-bj-GhM">
-                                                <rect key="frame" x="0.0" y="100" width="330" height="50"/>
+                                                <rect key="frame" x="0.0" y="100" width="296" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total collected:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cQ-Zy-cYi">
                                                         <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
@@ -612,7 +615,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shx-A6-Pe8">
-                                                        <rect key="frame" x="101" y="0.0" width="229" height="50"/>
+                                                        <rect key="frame" x="101" y="0.0" width="195" height="50"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -636,7 +639,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xyb-zo-Ffa">
-                                <rect key="frame" x="33.5" y="580" width="347.5" height="30"/>
+                                <rect key="frame" x="16.5" y="580" width="347.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planned Signatures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQ7-Jx-anw">
                                         <rect key="frame" x="0.0" y="6" width="147.5" height="18"/>
@@ -673,7 +676,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ch8-iY-UXh">
-                                <rect key="frame" x="33.5" y="630" width="347.5" height="30"/>
+                                <rect key="frame" x="16.5" y="630" width="347.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected Signatures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-bJ-Zi5">
                                         <rect key="frame" x="0.0" y="6" width="147.5" height="18"/>
@@ -773,7 +776,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <rect key="frame" x="0.0" y="44" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfU-yc-foF">
-                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="28"/>
                                 <string key="text">Multiply your Impact!
 </string>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
@@ -781,7 +784,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuG-Rd-DHZ">
-                                <rect key="frame" x="55.5" y="113" width="303" height="305.5"/>
+                                <rect key="frame" x="55.5" y="112" width="303" height="280"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="Ayl-U4-E3b"/>
                                 </constraints>
@@ -834,7 +837,7 @@ Loads X Multiplied = MONSTER IMPACT
                                 <rect key="frame" x="0.0" y="44" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifo-sD-i9H">
-                                <rect key="frame" x="40" y="74" width="334" height="40"/>
+                                <rect key="frame" x="40" y="74" width="334" height="41"/>
                                 <string key="text">How youth can Hack the 
 Citizen Ballot Intiative Process</string>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
