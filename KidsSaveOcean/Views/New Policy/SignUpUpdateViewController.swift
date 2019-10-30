@@ -31,26 +31,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        if UserViewModel.shared().campain["campaign_id"] != nil {
-            liveLocationView.isHidden = false
-            let campaign = UserViewModel.shared().campain
-            print(campaign)
-            if let signaturesRequired = campaign["signatures_required"] {
-                signaturesRequiredLabel.text = "\(signaturesRequired)"
-            }
-            if let signaturesPledged = campaign["signatures_pledged"] {
-                deadlineLabel.text = "\(signaturesPledged)"
-            }
-            if let signaturesCollected = campaign["signatures_collected"] {
-                signaturesTotalCollectedLabel.text = "\(signaturesCollected)"
-            }
-            
-        } else {
-            liveLocationView.isHidden = true
-            signaturesReqdTextField.text = "0"
-            signaturesCollectedTextField.text = "0"
-        }
         
         let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
         
@@ -75,6 +55,27 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // Do any additional setup after loading the view.
+        if UserViewModel.shared().campain["campaign_id"] != nil {
+            liveLocationView.isHidden = false
+            let campaign = UserViewModel.shared().campain
+            print(campaign)
+            if let signaturesRequired = campaign["signatures_required"] {
+                signaturesRequiredLabel.text = "\(signaturesRequired)"
+            }
+            if let signaturesPledged = campaign["signatures_pledged"] {
+                deadlineLabel.text = "\(signaturesPledged)"
+            }
+            if let signaturesCollected = campaign["signatures_collected"] {
+                signaturesTotalCollectedLabel.text = "\(signaturesCollected)"
+            }
+            
+        } else {
+            liveLocationView.isHidden = true
+            signaturesReqdTextField.text = "0"
+            signaturesCollectedTextField.text = "0"
+        }
         
         pickerView.selectRow(0, inComponent: 0, animated: true)
     }
@@ -102,7 +103,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             //SEND it to backend or store in usermodel
             if let selectedCountryForCampaign = self.selectedCountryForCampaign {
-                UserViewModel.shared().campain["campaign_id"] = selectedCountryForCampaign
+                UserViewModel.shared().campain["campaign_id"] = selectedCountryForCampaign.id
+                UserViewModel.shared().saveUser()
+                self.liveLocationView.isHidden = true
+                self.chooseLocationView.isHidden = false
+                self.view.setNeedsLayout()
             }
             self.dismiss(animated: false, completion: nil)
             
