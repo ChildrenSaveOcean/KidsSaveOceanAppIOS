@@ -9,14 +9,12 @@
 import UIKit
 
 class YouthInitiativeProcessViewController: UIViewController, Instantiatable {
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -29,5 +27,4 @@ class YouthInitiativeProcessViewController: UIViewController, Instantiatable {
     */
 
 }
-
 

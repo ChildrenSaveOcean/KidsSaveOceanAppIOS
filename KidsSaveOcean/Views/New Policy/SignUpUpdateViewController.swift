@@ -30,7 +30,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
         
@@ -43,13 +42,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let boldFont =  UIFont(name: "SF-Pro-Text-SemiBold", size: 15) ?? UIFont.systemFont(ofSize: 20)
         let boldRange = NSRange(location: range.length + 1, length: length-range.length - 2)
         attributedString.addAttribute(NSAttributedString.Key.font, value: boldFont, range: boldRange)
-
         
         policyLabel.attributedText = attributedString
         
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
-        
         
     }
     
@@ -100,7 +97,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy.", message: "", preferredStyle: .alert)
         
         // Create OK button with action handler
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             //SEND it to backend or store in usermodel
             if let selectedCountryForCampaign = self.selectedCountryForCampaign {
                 UserViewModel.shared().campain["campaign_id"] = selectedCountryForCampaign.id
@@ -114,7 +111,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         })
         
         // Create Cancel button with action handlder
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
             self.dismiss(animated: false, completion: nil)
         }
         
@@ -158,7 +155,7 @@ extension SignUpUpdateViewController: UIPickerViewDataSource {
 // MARK: - UIPickerViewDelegate
 extension SignUpUpdateViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: citiesData[row].location  , attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        let attributedString = NSAttributedString(string: citiesData[row].location, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         return attributedString
     }
 }

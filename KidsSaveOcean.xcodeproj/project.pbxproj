@@ -13,6 +13,7 @@
 		161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A0C1122B291DC0047DD40 /* LocationService.swift */; };
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
 		162572D422E37DEF00A702C4 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */; };
+		162602162373193D007B392D /* UINavigationController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162602152373193D007B392D /* UINavigationController+Extention.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638882D228DD6080084D8CA /* KSOAuthorization.swift */; };
@@ -121,6 +122,7 @@
 		161A0C1122B291DC0047DD40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
 		162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		162602152373193D007B392D /* UINavigationController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extention.swift"; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		1638882D228DD6080084D8CA /* KSOAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOAuthorization.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */,
+				162602152373193D007B392D /* UINavigationController+Extention.swift */,
 				16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */,
 				165FBFA120DB565500DB556F /* UIColor+Extentions.swift */,
 				165FBFA320DB567900DB556F /* UIImage+Extentions.swift */,
@@ -949,6 +952,7 @@
 				7C4AF9A8233A8440006A8566 /* TrackTableViewCell.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				163A07E422C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift in Sources */,
+				162602162373193D007B392D /* UINavigationController+Extention.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
 				7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */,

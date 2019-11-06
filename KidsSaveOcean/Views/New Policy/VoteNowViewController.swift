@@ -15,7 +15,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     
     var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
     
-    var selectedPolicy :HijackPolicy?
+    var selectedPolicy: HijackPolicy?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
         let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy.", message: "", preferredStyle: .alert)
         
         // Create OK button with action handler
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             print("Ok button tapped")
             if let selectedPolicy = self.selectedPolicy {
                 HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
@@ -42,7 +42,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
         })
         
         // Create Cancel button with action handlder
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
             print("Cancel button tapped")
             self.dismiss(animated: false, completion: nil)
         }
