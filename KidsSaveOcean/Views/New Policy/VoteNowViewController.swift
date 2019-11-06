@@ -12,6 +12,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var pickerViewHeightConstraint: NSLayoutConstraint!
     
     var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
     
@@ -19,12 +20,18 @@ class VoteNowViewController: UIViewController, Instantiatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if UIScreen.main.bounds.height > 800 {
+                self.pickerViewHeightConstraint.constant *= 2.1
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
+        
+        let num = pickerData.count/2
+        let policy = pickerData[num]
+        pickerView.selectedRow(inComponent: num)
+        setPolicyDetails(policy)
     }
     
     @IBAction func voteNowButton() {
@@ -56,20 +63,13 @@ class VoteNowViewController: UIViewController, Instantiatable {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let hijackPolicy = pickerData[row]
-        selectedPolicy = hijackPolicy
-        summaryLabel.text = hijackPolicy.summary
+        setPolicyDetails(hijackPolicy)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setPolicyDetails(_ policy: HijackPolicy) {
+        selectedPolicy = policy
+        summaryLabel.text = policy.summary
     }
-    */
-
 }
 
 // MARK: - UIPickerViewDataSource

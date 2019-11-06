@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="2cE-OJ-23i">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000006" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="7to-Sv-Od6"/>
                                 </constraints>
@@ -37,13 +37,13 @@
                                 <rect key="frame" x="0.0" y="150" width="414" height="69.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQz-OP-WZ0">
-                                        <rect key="frame" x="40.5" y="10" width="333" height="26"/>
+                                        <rect key="frame" x="43.5" y="10" width="327" height="26"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bon-AO-InR">
-                                        <rect key="frame" x="81.5" y="36" width="251" height="28"/>
+                                        <rect key="frame" x="83.5" y="36" width="247" height="28"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="13"/>
                                         <state key="normal" title="Youth Citizen Initiative Hijack Headquarters">
                                             <color key="titleColor" red="0.29019607843137252" green="0.50588235294117645" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="219.5" width="414" height="642.5"/>
                                 <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexTrackingBackgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrackTableViewCell" id="bOk-M7-OjN" customClass="TrackTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="166"/>
@@ -94,7 +94,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="the Hijack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTh-O5-fpv">
-                                                    <rect key="frame" x="281" y="60" width="98" height="46"/>
+                                                    <rect key="frame" x="282" y="60" width="97" height="46"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -285,19 +285,19 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-oQ-UY8">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000006" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="RUn-gv-i3O"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAz-Ed-rat">
-                                <rect key="frame" x="43.5" y="160" width="327.5" height="26"/>
+                                <rect key="frame" x="47" y="160" width="320.5" height="26"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                 <color key="textColor" red="0.27843137254901962" green="0.29803921568627451" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Steps, Change the World, Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-Zl-yNi">
-                                <rect key="frame" x="96.5" y="196" width="221" height="17"/>
+                                <rect key="frame" x="91.5" y="196" width="231" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -414,20 +414,24 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9C-rs-sY8">
-                                <rect key="frame" x="0.0" y="235.5" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="235.5" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="CNt-Df-4u9"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="J3p-xR-NMP" id="8ZK-sC-mv8"/>
                                     <outlet property="delegate" destination="J3p-xR-NMP" id="Ysm-WK-MCi"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary of Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvX-tZ-AvS">
-                                <rect key="frame" x="40" y="431.5" width="334" height="19.5"/>
+                                <rect key="frame" x="40" y="355.5" width="334" height="19.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-kV-ffK">
-                                <rect key="frame" x="167" y="512.5" width="80" height="48"/>
+                                <rect key="frame" x="167" y="794" width="80" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="5WY-Rt-2KF"/>
                                     <constraint firstAttribute="height" constant="48" id="j1j-1K-uRG"/>
@@ -437,23 +441,24 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                     <action selector="voteNowButton" destination="J3p-xR-NMP" eventType="touchUpInside" id="k83-Vs-Zsw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here will be placed summary of choosen location's campaign policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIR-vg-LtE">
-                                <rect key="frame" x="40" y="458.5" width="334" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIR-vg-LtE">
+                                <rect key="frame" x="40" y="382.5" width="334" height="90"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Here will be placed summary of choosen location's campaign policy. It can be pretty long and contains a few of lines, that why we need to consider the situation, when the button "Vote" will go down under tab bar.</string>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UIR-vg-LtE" firstAttribute="width" secondItem="eeT-37-vW8" secondAttribute="width" id="0pb-ae-fEC"/>
+                            <constraint firstItem="8Me-Sk-OEy" firstAttribute="bottom" secondItem="PKh-kV-ffK" secondAttribute="bottom" constant="20" id="2X5-O8-EkF"/>
                             <constraint firstItem="C9C-rs-sY8" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" id="6gv-LG-aLI"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="trailing" secondItem="8Me-Sk-OEy" secondAttribute="trailing" id="7zk-sk-SkI"/>
                             <constraint firstItem="UIR-vg-LtE" firstAttribute="leading" secondItem="fvX-tZ-AvS" secondAttribute="leading" id="BOY-nq-zy7"/>
                             <constraint firstItem="eeT-37-vW8" firstAttribute="leading" secondItem="4gS-0Q-5WZ" secondAttribute="leading" constant="40" id="D0R-Mm-zJf"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" id="Hkg-Ij-reU"/>
                             <constraint firstItem="8Me-Sk-OEy" firstAttribute="trailing" secondItem="fvX-tZ-AvS" secondAttribute="trailing" constant="40" id="JxE-60-xWQ"/>
-                            <constraint firstItem="PKh-kV-ffK" firstAttribute="top" secondItem="UIR-vg-LtE" secondAttribute="bottom" constant="18" id="Lsa-PI-skq"/>
                             <constraint firstItem="C9C-rs-sY8" firstAttribute="trailing" secondItem="8Me-Sk-OEy" secondAttribute="trailing" id="MJz-SX-XbF"/>
                             <constraint firstAttribute="trailing" secondItem="eeT-37-vW8" secondAttribute="trailing" constant="40" id="MuS-Vi-Xx7"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="width" secondItem="4gS-0Q-5WZ" secondAttribute="width" id="QjS-XR-bvj"/>
@@ -464,13 +469,14 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <constraint firstItem="UIR-vg-LtE" firstAttribute="top" secondItem="fvX-tZ-AvS" secondAttribute="bottom" constant="7.5" id="juM-UB-3pu"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="top" secondItem="4gS-0Q-5WZ" secondAttribute="top" id="lne-dd-CW6"/>
                             <constraint firstItem="eeT-37-vW8" firstAttribute="top" secondItem="qOy-rM-7NU" secondAttribute="bottom" constant="20" id="lx9-cv-M25"/>
-                            <constraint firstItem="C9C-rs-sY8" firstAttribute="bottom" secondItem="fvX-tZ-AvS" secondAttribute="top" constant="20" id="v6a-nz-u4d"/>
+                            <constraint firstItem="C9C-rs-sY8" firstAttribute="bottom" secondItem="fvX-tZ-AvS" secondAttribute="top" constant="-20" id="v6a-nz-u4d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Me-Sk-OEy"/>
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="C9C-rs-sY8" id="pW1-wq-Ai7"/>
-                        <outlet property="summaryLabel" destination="fvX-tZ-AvS" id="lws-ay-1bf"/>
+                        <outlet property="pickerViewHeightConstraint" destination="CNt-Df-4u9" id="SaB-nl-4tf"/>
+                        <outlet property="summaryLabel" destination="UIR-vg-LtE" id="nUL-Wc-JK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vP7-xc-I5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
