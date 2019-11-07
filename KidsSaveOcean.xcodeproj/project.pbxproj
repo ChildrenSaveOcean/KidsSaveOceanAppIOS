@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */; };
 		16080B1E2327F7B6008F0AEF /* KSODidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16080B1D2327F7B6008F0AEF /* KSODidButton.swift */; };
+		16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16129FF3237464DE00E677B3 /* CampaignSignatures.swift */; };
 		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
 		161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A0C1122B291DC0047DD40 /* LocationService.swift */; };
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
@@ -18,6 +19,7 @@
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638882D228DD6080084D8CA /* KSOAuthorization.swift */; };
 		163A07E422C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A07E322C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift */; };
+		163AA0892373731700E9C65E /* ViewController+ExtentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163AA0882373731700E9C65E /* ViewController+ExtentionViewController.swift */; };
 		163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20352170F12200069294 /* HomeScoreTableViewCell.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
@@ -118,6 +120,7 @@
 		0D4A7B094B39EBB0F76DA0F1 /* Pods_KidsSaveOcean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOcean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsWithTeethViewController.swift; sourceTree = "<group>"; };
 		16080B1D2327F7B6008F0AEF /* KSODidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODidButton.swift; sourceTree = "<group>"; };
+		16129FF3237464DE00E677B3 /* CampaignSignatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignSignatures.swift; sourceTree = "<group>"; };
 		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		161A0C1122B291DC0047DD40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		1638882D228DD6080084D8CA /* KSOAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOAuthorization.swift; sourceTree = "<group>"; };
 		163A07E322C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLinkWithClearNotificatinStatusViewController.swift; sourceTree = "<group>"; };
+		163AA0882373731700E9C65E /* ViewController+ExtentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ExtentionViewController.swift"; sourceTree = "<group>"; };
 		163D20352170F12200069294 /* HomeScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScoreTableViewCell.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 			children = (
 				164D7310234BA56F0080ACB7 /* CampaignViewModel.swift */,
 				164D730E234BA39D0080ACB7 /* Campaign.swift */,
+				16129FF3237464DE00E677B3 /* CampaignSignatures.swift */,
 			);
 			path = Campaign;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */,
 				16649E9120FEC72B000BCB48 /* Notification+Extentions.swift */,
 				16080B1D2327F7B6008F0AEF /* KSODidButton.swift */,
+				163AA0882373731700E9C65E /* ViewController+ExtentionViewController.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -947,6 +953,7 @@
 				7CFF7BE22339455E00C7081E /* EnvironmentTableViewCell.swift in Sources */,
 				164D7302234B4BA00080ACB7 /* HijackPoliciesViewModel.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
+				16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */,
 				1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */,
 				7C9891632331264C00400CC5 /* YouthInitiativeProcessViewController.swift in Sources */,
 				7C4AF9A8233A8440006A8566 /* TrackTableViewCell.swift in Sources */,
@@ -986,6 +993,7 @@
 				7C9891692331280800400CC5 /* SignUpUpdateViewController.swift in Sources */,
 				16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */,
 				16D4C28122C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift in Sources */,
+				163AA0892373731700E9C65E /* ViewController+ExtentionViewController.swift in Sources */,
 				16649E9220FEC72B000BCB48 /* Notification+Extentions.swift in Sources */,
 				7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */,
 				C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */,

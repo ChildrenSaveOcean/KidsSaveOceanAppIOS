@@ -89,9 +89,7 @@ class UserViewModel {
                                                   lettersWrittenKey: 0,
                                                   userTypeKey: 0,
                                                   hijackPolicySelectedKey: "",
-                                                  campaignKey: ["campaign_id": "",
-                                                  "signatures_collected": 0,
-                                                  "signatures_pledged": 0]
+                                                  campaignKey: CampaignSignatures(campaign_id: "", signatures_pledged: 0, signatures_collected: 0).dictionary()
                         ]
 
     var local_politics: Bool = false {
@@ -150,9 +148,19 @@ class UserViewModel {
             parametersDisctionary[hijackPolicySelectedKey] = newValue
         }
     }
-    var campain: [String: Any] = [String: Any]() {
+//    var campain: [String: Any] = [String: Any]() {
+//        willSet(newValue) {
+//            parametersDisctionary[campaignKey] = newValue
+//        }
+//    }
+    
+    var campain: CampaignSignatures? {
         willSet(newValue) {
-            parametersDisctionary[campaignKey] = newValue
+            //parametersDisctionary[campaignKey] = newValue
+            parametersDisctionary[campaignKey] = CampaignSignatures(campaign_id: newValue?.campaign_id ?? "",
+                                                                    signatures_pledged: newValue?.signatures_pledged ?? 0,
+                                                                    signatures_collected: newValue?.signatures_collected ?? 0)
+                .dictionary()
         }
     }
 
@@ -252,7 +260,8 @@ class UserViewModel {
                     
                 case campaignKey:
                     guard let value = userFBData.value as? [String: Any] else {continue}
-                    self.campain = value
+                    self.campain = CampaignSignatures(campaing: value)
+                    //value
                     continue
 
                 default:

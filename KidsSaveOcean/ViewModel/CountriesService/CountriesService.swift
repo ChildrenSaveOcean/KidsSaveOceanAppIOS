@@ -106,7 +106,7 @@ class CountriesService: NSObject {
         return  countriesContacts.filter({$0.code == NSLocale.current.regionCode}).first
     }
     
-    private func getNearestCountryToUserLocation() -> CountryContact? {
+    private func getNearestCountryToUserLocation() -> CountryContact? { // TODO
         
         guard CLLocationManager.locationServicesEnabled() else { return nil }
         

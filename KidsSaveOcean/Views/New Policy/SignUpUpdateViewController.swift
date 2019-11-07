@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class SignUpUpdateViewController: UIViewController, Instantiatable {
 
@@ -15,11 +16,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     @IBOutlet weak var policyLabel: UILabel!
     
     @IBOutlet weak var signaturesReqdTextField: UITextField!
-    
     @IBOutlet weak var signaturesCollectedTextField: UITextField!
     
     @IBOutlet weak var liveLocationView: UIView!
     @IBOutlet weak var chooseLocationView: UIView!
+    @IBOutlet weak var locationViewHeightConstraint: KSOLayoutConstraint!
     
     @IBOutlet weak var signaturesRequiredLabel: UILabel!
     @IBOutlet weak var deadlineLabel: UILabel!
@@ -30,6 +31,14 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(aNotification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(aNotification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(aNotification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        self.setHidingKeyboardWhenTappedAround()
         
         let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
         
@@ -48,50 +57,49 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
         
+        signaturesReqdTextField.layer.borderColor = UIColor.gray.cgColor
+        signaturesReqdTextField.layer.borderWidth = 1.0
+        signaturesReqdTextField.roundCorners()
+        
+        signaturesCollectedTextField.layer.borderColor = UIColor.gray.cgColor
+        signaturesCollectedTextField.layer.borderWidth = 1.0
+        signaturesCollectedTextField.roundCorners()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Do any additional setup after loading the view.
-        if UserViewModel.shared().campain["campaign_id"] != nil {
+        if UserViewModel.shared().campain?.campaign_id != nil {
+            
             liveLocationView.isHidden = false
-            let campaign = UserViewModel.shared().campain
-            print(campaign)
-            if let signaturesRequired = campaign["signatures_required"] {
-                signaturesRequiredLabel.text = "\(signaturesRequired)"
-            }
-            if let signaturesPledged = campaign["signatures_pledged"] {
-                deadlineLabel.text = "\(signaturesPledged)"
-            }
-            if let signaturesCollected = campaign["signatures_collected"] {
-                signaturesTotalCollectedLabel.text = "\(signaturesCollected)"
+            chooseLocationView.isHidden = true
+            
+            updateLiveLocationView()
+            
+            let locale = Locale.current
+            if let code = locale.regionCode,
+                let countryStr = locale.localizedString(forRegionCode: code) {
+                let country = countryStr == "United States" ? "USA" : countryStr
+                let i = citiesData.firstIndex(where: {$0.location.contains(country)}) ?? citiesData.count/2
+                pickerView.selectRow(i, inComponent: 0, animated: true)
             }
             
         } else {
+            
             liveLocationView.isHidden = true
+            chooseLocationView.isHidden = false
+            
             signaturesReqdTextField.text = "0"
             signaturesCollectedTextField.text = "0"
         }
-        
-        pickerView.selectRow(0, inComponent: 0, animated: true)
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
-        
+
         UserViewModel.shared().saveUser()
         super.viewDidDisappear(animated)
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func signUpButtonClicked(_ sender: Any) {
         let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy.", message: "", preferredStyle: .alert)
@@ -100,7 +108,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             //SEND it to backend or store in usermodel
             if let selectedCountryForCampaign = self.selectedCountryForCampaign {
-                UserViewModel.shared().campain["campaign_id"] = selectedCountryForCampaign.id
+                UserViewModel.shared().campain?.campaign_id = selectedCountryForCampaign.id
                 UserViewModel.shared().saveUser()
                 self.liveLocationView.isHidden = true
                 self.chooseLocationView.isHidden = false
@@ -124,20 +132,61 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesReqdTextField.text {
-            UserViewModel.shared().campain["signatures_pledged"] = signatures
+            UserViewModel.shared().campain?.signatures_pledged = Int(signatures) ?? 0
+            UserViewModel.shared().saveUser()
+            signaturesReqdTextField.text = ""
+            dismissKeyboard()
+            updateLiveLocationView()
         }
     }
     
     @IBAction func collectedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesCollectedTextField.text {
-            UserViewModel.shared().campain["signatures_collected"] = signatures
-//            UserViewModel.shared().saveUser()
+            UserViewModel.shared().campain?.signatures_collected = Int(signatures) ?? 0
+            UserViewModel.shared().saveUser()
+            signaturesCollectedTextField.text = ""
+            dismissKeyboard()
+            updateLiveLocationView()
         }
+    }
+    
+    private func updateLiveLocationView() {
+        let campaign = UserViewModel.shared().campain
+        signaturesRequiredLabel.text = String( campaign?.signatures_pledged ?? 0)
+        signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
+        deadlineLabel.text = "--" //campaign["signatures_pledged"] as? String ?? "--" // TODO
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCountryForCampaign = citiesData[row]
-        print(citiesData[row])
+    }
+    
+    // MARK: Keyboard Delegate methods
+    @objc func keyboardWillHide(aNotification: NSNotification) {
+        let size = UIScreen.main.bounds.size
+        UIView.animate(withDuration: 1.0) {
+            self.view.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        }
+    }
+    
+    @objc func keyboardWillShow(aNotification: NSNotification) {
+        guard let keyboardHeight = (aNotification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height else {
+            return
+        }
+        let size = UIScreen.main.bounds.size
+        UIView.animate(withDuration: 1.0) {
+            self.view.frame = CGRect(x: 0, y: -keyboardHeight, width: size.width, height: size.height)
+        }
+    }
+    
+    @objc func keyboardDidShow(aNotification: NSNotification) {
+        guard let keyboardHeight = (aNotification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height else {
+            return
+        }
+        let size = UIScreen.main.bounds.size
+        UIView.animate(withDuration: 1.0) {
+            self.view.frame = CGRect(x: 0, y: -keyboardHeight, width: size.width, height: size.height)
+        }
     }
 }
 
