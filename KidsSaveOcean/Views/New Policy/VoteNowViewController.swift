@@ -39,18 +39,16 @@ class VoteNowViewController: UIViewController, Instantiatable {
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
-            print("Ok button tapped")
             if let selectedPolicy = self.selectedPolicy {
                 HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
             }
             self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
             self.dismiss(animated: false, completion: nil)
-            
+            self.navigationController?.popViewController(animated: true)
         })
         
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
-            print("Cancel button tapped")
             self.dismiss(animated: false, completion: nil)
         }
         
