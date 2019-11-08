@@ -35,12 +35,14 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     @IBAction func voteNowButton() {
-        let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy.", message: "", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy?", message: "", preferredStyle: .alert)
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             if let selectedPolicy = self.selectedPolicy {
                 HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
+                UserViewModel.shared().hijack_policy_selected = selectedPolicy.id
+                UserViewModel.shared().saveUser()
             }
             self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
             self.dismiss(animated: false, completion: nil)

@@ -77,13 +77,13 @@ class CampaignViewModel {
         })
     }
     
-    func updatePlannedSignatures(campaign: Campaign, value: Int) {
-        Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_pledged").setValue(value)
-            setup()
-    }
-    
-    func updateCollectedSignatures(campaign: Campaign, value: Int) {
-        Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_collected").setValue(value)
-            setup()
-   }
+//    func updatePlannedSignatures(campaign: Campaign, value: Int) {
+//        Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_pledged").setValue(value)
+//            setup()
+//    }
+//
+//    func updateCollectedSignatures(campaign: Campaign, value: Int) {
+//        Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_collected").setValue(value)
+//            setup()
+//   }
 }
