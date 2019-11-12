@@ -467,6 +467,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <constraint firstItem="fvX-tZ-AvS" firstAttribute="leading" secondItem="8Me-Sk-OEy" secondAttribute="leading" constant="40" id="Vli-yd-OfA"/>
                             <constraint firstItem="C9C-rs-sY8" firstAttribute="top" secondItem="eeT-37-vW8" secondAttribute="bottom" constant="20" id="bf3-IU-vqY"/>
                             <constraint firstItem="eeT-37-vW8" firstAttribute="centerX" secondItem="8Me-Sk-OEy" secondAttribute="centerX" id="gb0-J3-sju"/>
+                            <constraint firstItem="PKh-kV-ffK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UIR-vg-LtE" secondAttribute="bottom" constant="20" id="izL-IA-Q6C"/>
                             <constraint firstItem="UIR-vg-LtE" firstAttribute="top" secondItem="fvX-tZ-AvS" secondAttribute="bottom" constant="7.5" id="juM-UB-3pu"/>
                             <constraint firstItem="qOy-rM-7NU" firstAttribute="top" secondItem="4gS-0Q-5WZ" secondAttribute="top" id="lne-dd-CW6"/>
                             <constraint firstItem="eeT-37-vW8" firstAttribute="top" secondItem="qOy-rM-7NU" secondAttribute="bottom" constant="20" id="lx9-cv-M25"/>
@@ -803,6 +804,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                     </view>
                     <connections>
                         <outlet property="BaseStackViewBottonConstraint" destination="thw-tD-cLA" id="ilz-cV-TOY"/>
+                        <outlet property="chooseLocationButton" destination="Uwb-Fx-pDG" id="mI8-RG-Sbd"/>
                         <outlet property="chooseLocationView" destination="6UV-Fw-s6A" id="u7D-q8-2e0"/>
                         <outlet property="collectedSingaturesUpdateButton" destination="aus-Sy-b0u" id="xpN-4o-dE0"/>
                         <outlet property="deadlineLabel" destination="jmI-kN-WqN" id="RSM-l2-jIF"/>

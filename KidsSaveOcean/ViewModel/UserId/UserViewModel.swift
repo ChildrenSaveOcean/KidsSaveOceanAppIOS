@@ -78,7 +78,7 @@ class UserViewModel {
     let authorizedUser = Auth.auth().currentUser
     var databaseReferenece: DatabaseReference? //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
 ////// Zip2Sequence ? 
-    var parametersDisctionary: [String: Any] = [ DashboardTasksScopes.research.firebaseFieldName: false,
+    var parametersDisctionary: [String: Any?] = [ DashboardTasksScopes.research.firebaseFieldName: false,
                                                   DashboardTasksScopes.write_letter.firebaseFieldName: false,
                                                   DashboardTasksScopes.share.firebaseFieldName: false,
                                                   DashboardTasksScopes.start_campaign.firebaseFieldName: false,
@@ -89,7 +89,7 @@ class UserViewModel {
                                                   lettersWrittenKey: 0,
                                                   userTypeKey: 0,
                                                   hijackPolicySelectedKey: "",
-                                                  campaignKey: CampaignSignatures(campaign_id: "", signatures_pledged: 0, signatures_collected: 0).dictionary()
+                                                  campaignKey: nil
                         ]
 
     var local_politics: Bool = false {
@@ -148,19 +148,24 @@ class UserViewModel {
             parametersDisctionary[hijackPolicySelectedKey] = newValue
         }
     }
-//    var campain: [String: Any] = [String: Any]() {
+    
+//    var campaign_id: String? {
 //        willSet(newValue) {
-//            parametersDisctionary[campaignKey] = newValue
+//            guard let campaign_id = newValue else {return}
+//            let campaign = CampaignViewModel.shared().campaigns.filter {$0.id == campaign_id}.first
+//            guard campaign != nil else {return}
+//            let campSignatures = CampaignSignatures(campaign_id: campaign_id, signatures_pledged: campaign!.signatures_pledged, signatures_collected: 0)
+//            parametersDisctionary[campaignKey] = campSignatures.dictionary()
 //        }
 //    }
     
-    var campain: CampaignSignatures? {
+    var campaign: CampaignSignatures? = CampaignSignatures(campaing: [String: Any]()) {
         willSet(newValue) {
-            //parametersDisctionary[campaignKey] = newValue
-            parametersDisctionary[campaignKey] = CampaignSignatures(campaign_id: newValue?.campaign_id ?? "",
-                                                                    signatures_pledged: newValue?.signatures_pledged ?? 0,
-                                                                    signatures_collected: newValue?.signatures_collected ?? 0)
-                .dictionary()
+            if let newCampaign = newValue {
+                parametersDisctionary[campaignKey] = newCampaign.dictionary()
+            } else {
+                parametersDisctionary[campaignKey] = nil
+            }
         }
     }
 
@@ -260,7 +265,7 @@ class UserViewModel {
                     
                 case campaignKey:
                     guard let value = userFBData.value as? [String: Any] else {continue}
-                    self.campain = CampaignSignatures(campaing: value)
+                    self.campaign = CampaignSignatures(campaing: value)
                     //value
                     continue
 

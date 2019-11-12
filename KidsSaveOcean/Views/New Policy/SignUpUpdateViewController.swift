@@ -12,6 +12,7 @@ import MapKit
 class SignUpUpdateViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var chooseLocationButton: UIButton!
     
     @IBOutlet weak var policyLabel: UILabel!
     
@@ -37,14 +38,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     var selectedCountryForCampaign: HijackLocation?
     
-    private lazy var citiesData = HijackPLocationViewModel.shared().hidjackPLocations
-//    private lazy var citiesData = { () -> [HijackLocation] in
-//        let userHijackPolicy = UserViewModel.shared().hijack_policy_selected
-//        let campaigns = CampaignViewModel.shared().campaigns.filter({$0.hijack_policy == userHijackPolicy}).map({$0.location_id})
-//        return HijackPLocationViewModel.shared().hidjackPLocations.filter({
-//            campaigns.contains($0.id)
-//        })
-//    }()
+    private lazy var userHijackPolicy = UserViewModel.shared().hijack_policy_selected
+    private lazy var campaigns = CampaignViewModel.shared().campaigns.filter({$0.hijack_policy == userHijackPolicy})
+    private lazy var campaignLocations = HijackPLocationViewModel.shared().hidjackPLocations.filter({ campaigns.map({$0.location_id}).contains($0.id) })
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,16 +101,23 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
-            //SEND it to backend or store in usermodel
-            if let selectedCountryForCampaign = self.selectedCountryForCampaign {
-                UserViewModel.shared().campain?.campaign_id = selectedCountryForCampaign.id
-                UserViewModel.shared().saveUser()
-                self.liveLocationView.isHidden = true
-                self.chooseLocationView.isHidden = false
-                self.showLocationView()
-                self.view.setNeedsLayout()
+
+            let num = self.pickerView.selectedRow(inComponent: 0)
+            guard let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first else {
+                return
             }
+            
+            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_pledged: campaign.signatures_pledged, signatures_collected: 0)
+            UserViewModel.shared().campaign = campSign
+            
+            UserViewModel.shared().saveUser()
+            
+            self.liveLocationView.isHidden = true
+            self.chooseLocationView.isHidden = false
+            self.showLocationView()
+            self.view.setNeedsLayout()
             self.dismiss(animated: false, completion: nil)
+            
         })
         
         // Create Cancel button with action handlder
@@ -131,7 +134,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesReqdTextField.text {
-            UserViewModel.shared().campain?.signatures_pledged = Int(signatures) ?? 0
+            UserViewModel.shared().campaign?.signatures_pledged = Int(signatures) ?? 0
             UserViewModel.shared().saveUser()
             signaturesReqdTextField.text = ""
             dismissKeyboard()
@@ -141,7 +144,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     @IBAction func collectedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesCollectedTextField.text {
-            UserViewModel.shared().campain?.signatures_collected = Int(signatures) ?? 0
+            UserViewModel.shared().campaign?.signatures_collected = Int(signatures) ?? 0
             UserViewModel.shared().saveUser()
             signaturesCollectedTextField.text = ""
             dismissKeyboard()
@@ -151,8 +154,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     // MARK: Private methods
     private func showLocationView() {
-        let userCampaign = UserViewModel.shared().campain
-        let campaignLive = userCampaign != nil ? CampaignViewModel.shared().campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.live : false
+        let userCampaign = UserViewModel.shared().campaign
+        let campaignLive = userCampaign != nil ? campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.live : false
         
         if campaignLive == true {
 
@@ -171,31 +174,45 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             
             var currentCampaignLocationNum = 0
             if userCampaign?.campaign_id != nil,
-                let userCampaignLocationId = CampaignViewModel.shared().campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.location_id {
-                currentCampaignLocationNum = citiesData.firstIndex(where: { (location) -> Bool in
+                let userCampaignLocationId = campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.location_id {
+                currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
                     return location.id == userCampaignLocationId
                 }) ?? 0
-                
+                pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
             }
             
-            if currentCampaignLocationNum == 0 {
-                let locale = Locale.current
-                if let code = locale.regionCode,
-                    let countryStr = locale.localizedString(forRegionCode: code) {
-                    let country = countryStr == "United States" ? "USA" : countryStr
-                    currentCampaignLocationNum = citiesData.firstIndex(where: {$0.location.contains(country)}) ?? citiesData.count/2
-                }
+            if campaignLocations.count == 0 || userHijackPolicy.isEmpty {
+                pickerView.isUserInteractionEnabled = false
+                chooseLocationButton.isEnabled = false
+                chooseLocationButton.alpha = 0.5
             }
             
-            pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
+//            if currentCampaignLocationNum == 0 {
+//                let locale = Locale.current
+//                if let code = locale.regionCode,
+//                    let countryStr = locale.localizedString(forRegionCode: code) {
+//                    let country = countryStr == "United States" ? "USA" : countryStr
+//                    currentCampaignLocationNum = citiesData.firstIndex(where: {$0.location.contains(country)}) ?? citiesData.count/2
+//                }
+//            }
+            
         }
         
-        signaturesBlock.alpha = userCampaign?.campaign_id != nil ? 1 : 0
+        if userCampaign != nil,
+            !(userCampaign!.campaign_id.isEmpty) {
+            signaturesBlock.alpha = 1
+        } else {
+            signaturesBlock.alpha = 0
+        }
         
     }
     
+    private func setCampaignLiveDescription() {
+
+    }
+    
     private func updateLiveLocationView() {
-        let campaign = UserViewModel.shared().campain
+        let campaign = UserViewModel.shared().campaign
         signaturesRequiredLabel.text = String( campaign?.signatures_pledged ?? 0)
         signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
         deadlineLabel.text = "--" //campaign["signatures_pledged"] as? String ?? "--" // TODO
@@ -237,24 +254,20 @@ extension SignUpUpdateViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return citiesData.count
+        return campaignLocations.count
     }
 }
 
 // MARK: - UIPickerViewDelegate
 extension SignUpUpdateViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: citiesData[row].location, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        let attributedString = NSAttributedString(string: campaignLocations[row].location, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         return attributedString
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCountryForCampaign = citiesData[row]
-        let userHijackPolicyChosen = UserViewModel.shared().hijack_policy_selected
-        let campaign = CampaignViewModel.shared().campaigns.filter({
-            $0.hijack_policy == userHijackPolicyChosen &&
-                $0.location_id == selectedCountryForCampaign?.id
-            }).first
+        selectedCountryForCampaign = campaignLocations[row]
+        let campaign = campaigns.filter({ $0.location_id == selectedCountryForCampaign?.id }).first
         
         if selectedCountryForCampaign != nil,
             campaign != nil,
@@ -263,13 +276,11 @@ extension SignUpUpdateViewController: UIPickerViewDelegate {
             liveCampaingStateLabel.text = liveCampaignLocationStateMessages[true]! + selectedCountryForCampaign!.location
             signaturesCollectedTextField.isEnabled = true
             collectedSingaturesUpdateButton.isEnabled = true
-            
         } else {
             unliveLocationMessageLabel.isHidden = false
             liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
             signaturesCollectedTextField.isEnabled = false
             collectedSingaturesUpdateButton.isEnabled = false
         }
-        
     }
 }

@@ -14,7 +14,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var pickerViewHeightConstraint: NSLayoutConstraint!
     
-    var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
+    var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies.sorted {$0.id < $1.id}
     
     var selectedPolicy: HijackPolicy?
     
@@ -26,11 +26,12 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
         
-        let num = pickerData.count/2
+        let userHijackPolicy = UserViewModel.shared().hijack_policy_selected
+        
+        let num = userHijackPolicy.isEmpty ? pickerData.count/2 : pickerData.firstIndex(where: {$0.id == userHijackPolicy}) ?? 0
         let policy = pickerData[num]
-        pickerView.selectedRow(inComponent: num)
+        pickerView.selectRow(num, inComponent: 0, animated: true)
         setPolicyDetails(policy)
     }
     
@@ -40,9 +41,13 @@ class VoteNowViewController: UIViewController, Instantiatable {
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             if let selectedPolicy = self.selectedPolicy {
-                HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
+                if UserViewModel.shared().hijack_policy_selected != selectedPolicy.id {
+                    UserViewModel.shared().campaign = nil
+                }
                 UserViewModel.shared().hijack_policy_selected = selectedPolicy.id
                 UserViewModel.shared().saveUser()
+                HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
+                
             }
             self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
             self.dismiss(animated: false, completion: nil)
