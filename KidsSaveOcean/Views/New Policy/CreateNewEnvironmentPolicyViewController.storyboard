@@ -31,14 +31,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="2cE-OJ-23i">
                                 <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="7to-Sv-Od6"/>
+                                    <constraint firstAttribute="height" constant="150" id="7to-Sv-Od6" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-JJ-7zp">
                                 <rect key="frame" x="0.0" y="150" width="375" height="69.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQz-OP-WZ0">
-                                        <rect key="frame" x="24" y="10" width="327" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="LQz-OP-WZ0">
+                                        <rect key="frame" x="10" y="10" width="355" height="26"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -53,11 +53,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LQz-OP-WZ0" secondAttribute="trailing" constant="10" id="3Jl-bz-BlJ"/>
                                     <constraint firstItem="bon-AO-InR" firstAttribute="centerX" secondItem="6ey-JJ-7zp" secondAttribute="centerX" id="5do-mg-vCl"/>
                                     <constraint firstAttribute="bottom" secondItem="bon-AO-InR" secondAttribute="bottom" constant="5.5" id="WwP-5P-1H5"/>
                                     <constraint firstItem="bon-AO-InR" firstAttribute="top" secondItem="LQz-OP-WZ0" secondAttribute="bottom" id="ZJk-9k-eIX"/>
                                     <constraint firstItem="LQz-OP-WZ0" firstAttribute="top" secondItem="6ey-JJ-7zp" secondAttribute="top" constant="10" id="oYC-jT-NN2"/>
                                     <constraint firstItem="LQz-OP-WZ0" firstAttribute="centerX" secondItem="6ey-JJ-7zp" secondAttribute="centerX" id="oiW-PX-iyE"/>
+                                    <constraint firstItem="LQz-OP-WZ0" firstAttribute="leading" secondItem="6ey-JJ-7zp" secondAttribute="leading" constant="10" id="rje-Lh-Z7j"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CreateNewEnvironmentPolicyViewController" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="10" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-Ix-5q5">
@@ -131,7 +133,7 @@
                                                         <constraint firstAttribute="height" constant="61" id="RmL-34-HjE"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZv-Jn-mFw">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iZv-Jn-mFw">
                                                     <rect key="frame" x="35" y="21" width="305" height="28"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -288,11 +290,11 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-oQ-UY8">
                                 <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="RUn-gv-i3O"/>
+                                    <constraint firstAttribute="height" constant="150" id="RUn-gv-i3O" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAz-Ed-rat">
-                                <rect key="frame" x="27.5" y="160" width="320.5" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="FAz-Ed-rat">
+                                <rect key="frame" x="10" y="160" width="355" height="26"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                 <color key="textColor" red="0.27843137254901962" green="0.29803921568627451" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -380,8 +382,10 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <constraint firstItem="Kpl-EV-apZ" firstAttribute="trailing" secondItem="o5K-3m-gy8" secondAttribute="trailing" id="TmO-fh-q9X"/>
                             <constraint firstItem="FAz-Ed-rat" firstAttribute="top" secondItem="C9R-oQ-UY8" secondAttribute="bottom" constant="10" id="UU1-lW-fS1"/>
                             <constraint firstItem="rxf-Zl-yNi" firstAttribute="centerX" secondItem="o5K-3m-gy8" secondAttribute="centerX" id="Uj5-g7-LGJ"/>
+                            <constraint firstItem="FAz-Ed-rat" firstAttribute="leading" secondItem="o5K-3m-gy8" secondAttribute="leading" constant="10" id="d1d-b9-4fG"/>
                             <constraint firstItem="o5K-3m-gy8" firstAttribute="bottom" secondItem="Kpl-EV-apZ" secondAttribute="bottom" constant="20" id="kod-xx-EvR"/>
                             <constraint firstItem="C9R-oQ-UY8" firstAttribute="top" secondItem="kJm-rQ-wM1" secondAttribute="top" id="ltO-V2-yKT"/>
+                            <constraint firstItem="o5K-3m-gy8" firstAttribute="trailing" secondItem="FAz-Ed-rat" secondAttribute="trailing" constant="10" id="nOX-Ec-oVg"/>
                             <constraint firstItem="Kpl-EV-apZ" firstAttribute="centerX" secondItem="o5K-3m-gy8" secondAttribute="centerX" id="ovO-FZ-uw9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o5K-3m-gy8"/>
@@ -405,7 +409,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-rM-7NU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="kCo-Wv-XF4"/>
+                                    <constraint firstAttribute="height" constant="150" id="kCo-Wv-XF4" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which environmental policy do you feel youth should try to get passed?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-37-vW8">
@@ -496,26 +500,26 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-D7-gHh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="coC-sB-OHV"/>
+                                    <constraint firstAttribute="height" constant="150" id="coC-sB-OHV" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="376-oP-hm0" userLabel="Base Stack View">
                                 <rect key="frame" x="0.0" y="160" width="375" height="502"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Policy Control Center" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-O2-ILl">
-                                        <rect key="frame" x="89.5" y="0.0" width="196" height="5.5"/>
+                                        <rect key="frame" x="89.5" y="0.0" width="196" height="20.5"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
                                         <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up &amp; always Update" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-M1-Sfe">
-                                        <rect key="frame" x="101.5" y="13.5" width="172" height="0.0"/>
+                                        <rect key="frame" x="101.5" y="28.5" width="172" height="17"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
                                         <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59C-eg-g0Q">
-                                        <rect key="frame" x="0.5" y="21.5" width="374" height="33.5"/>
+                                        <rect key="frame" x="0.5" y="53.5" width="374" height="33.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Policy chosen: Establish a sustainable environment as a human right!">
                                                 <attributes>
@@ -528,13 +532,13 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Campaigns: none - still building" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-eF-8Tp">
-                                        <rect key="frame" x="54" y="63" width="267" height="18"/>
+                                        <rect key="frame" x="54" y="95" width="267" height="18"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
                                         <color key="textColor" red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-Px-z3T">
-                                        <rect key="frame" x="67.5" y="89" width="240" height="28"/>
+                                        <rect key="frame" x="67.5" y="121" width="240" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="use-k2-zfK">
                                                 <rect key="frame" x="0.0" y="0.0" width="95" height="28"/>
@@ -553,19 +557,19 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k83-pG-NS9" userLabel="Location Views">
-                                        <rect key="frame" x="0.0" y="125" width="375" height="315"/>
+                                        <rect key="frame" x="0.0" y="157" width="375" height="273"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SD3-I2-kYz" userLabel="Live Location View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="273"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aZS-Oj-HIJ">
-                                                        <rect key="frame" x="20" y="0.0" width="250" height="315"/>
+                                                        <rect key="frame" x="20" y="0.0" width="250" height="273"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UxI-ba-HCB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="250" height="105"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="250" height="91"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signatures required:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-7I-C3s">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="91"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="150" id="JCn-up-AWV"/>
                                                                         </constraints>
@@ -574,7 +578,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP5-3b-3mN">
-                                                                        <rect key="frame" x="150" y="0.0" width="100" height="105"/>
+                                                                        <rect key="frame" x="150" y="0.0" width="100" height="91"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                                         <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -582,16 +586,16 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laG-9M-yyz">
-                                                                <rect key="frame" x="0.0" y="105" width="250" height="105"/>
+                                                                <rect key="frame" x="0.0" y="91" width="250" height="91"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1r-Og-vHo">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="91"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                                         <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmI-kN-WqN">
-                                                                        <rect key="frame" x="150" y="0.0" width="100" height="105"/>
+                                                                        <rect key="frame" x="150" y="0.0" width="100" height="91"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="Tjm-cT-c1h"/>
                                                                         </constraints>
@@ -602,16 +606,16 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONv-Vk-5lZ">
-                                                                <rect key="frame" x="0.0" y="210" width="250" height="105"/>
+                                                                <rect key="frame" x="0.0" y="182" width="250" height="91"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total collected:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cQ-Zy-cYi">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="91"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                                         <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shx-A6-Pe8">
-                                                                        <rect key="frame" x="150" y="0.0" width="100" height="105"/>
+                                                                        <rect key="frame" x="150" y="0.0" width="100" height="91"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="f4y-pM-szl"/>
                                                                         </constraints>
@@ -627,7 +631,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                         </constraints>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LiveCampaign" translatesAutoresizingMaskIntoConstraints="NO" id="IlE-MA-WE3">
-                                                        <rect key="frame" x="270" y="0.0" width="85" height="315"/>
+                                                        <rect key="frame" x="270" y="0.0" width="85" height="273"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -642,12 +646,12 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UV-Fw-s6A">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="273"/>
                                                 <subviews>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiR-I5-j5B">
                                                         <rect key="frame" x="10" y="0.0" width="355" height="100"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="rCb-yZ-qC9"/>
+                                                            <constraint firstAttribute="height" constant="100" id="rCb-yZ-qC9" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="dataSource" destination="s88-Pg-fJT" id="smJ-Ew-euB"/>
@@ -655,14 +659,17 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                         </connections>
                                                     </pickerView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-Fx-pDG">
-                                                        <rect key="frame" x="114" y="105" width="147" height="169"/>
+                                                        <rect key="frame" x="114" y="105" width="147" height="127"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="cTd-uB-3kd"/>
+                                                        </constraints>
                                                         <state key="normal" image="ChooseLocation"/>
                                                         <connections>
                                                             <action selector="signUpButtonClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="KXA-oB-uPg"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your location is currently not live, but you can already fill out your planned signatures below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-UY-Pzx">
-                                                        <rect key="frame" x="20" y="279" width="335" height="36"/>
+                                                        <rect key="frame" x="20" y="237" width="335" height="36"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                         <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -671,16 +678,16 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="ESV-UY-Pzx" secondAttribute="bottom" id="GJD-rw-T9A"/>
-                                                    <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="5" id="HBL-9G-QkP"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="20" id="NZD-oY-Vox"/>
-                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="20" id="Rnq-Ko-GvZ"/>
+                                                    <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="5" id="HBL-9G-QkP" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="20" id="NZD-oY-Vox" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="20" id="Rnq-Ko-GvZ" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                                     <constraint firstItem="GiR-I5-j5B" firstAttribute="top" secondItem="6UV-Fw-s6A" secondAttribute="top" id="bUL-IL-uDe"/>
-                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="top" secondItem="Uwb-Fx-pDG" secondAttribute="bottom" constant="5" id="ddL-l9-e9R"/>
-                                                    <constraint firstAttribute="trailing" secondItem="GiR-I5-j5B" secondAttribute="trailing" constant="10" id="kYv-0W-wRl"/>
+                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="top" secondItem="Uwb-Fx-pDG" secondAttribute="bottom" constant="5" id="ddL-l9-e9R" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GiR-I5-j5B" secondAttribute="trailing" constant="10" id="kYv-0W-wRl" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                                     <constraint firstItem="GiR-I5-j5B" firstAttribute="centerX" secondItem="6UV-Fw-s6A" secondAttribute="centerX" id="lkh-h4-56z"/>
                                                     <constraint firstItem="ESV-UY-Pzx" firstAttribute="centerX" secondItem="6UV-Fw-s6A" secondAttribute="centerX" id="rYx-bs-GRn"/>
                                                     <constraint firstItem="Uwb-Fx-pDG" firstAttribute="centerX" secondItem="6UV-Fw-s6A" secondAttribute="centerX" id="tay-uR-LMp"/>
-                                                    <constraint firstItem="GiR-I5-j5B" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="10" id="vCr-hQ-WhC"/>
+                                                    <constraint firstItem="GiR-I5-j5B" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="10" id="vCr-hQ-WhC" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -697,7 +704,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uDK-9v-CAQ">
-                                        <rect key="frame" x="0.0" y="448" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="438" width="375" height="64"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xyb-zo-Ffa">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
@@ -735,10 +742,10 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ch8-iY-UXh">
-                                                <rect key="frame" x="0.0" y="31" width="375" height="23"/>
+                                                <rect key="frame" x="0.0" y="31" width="375" height="33"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected Signatures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-bJ-Zi5">
-                                                        <rect key="frame" x="0.0" y="2.5" width="147.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="7.5" width="147.5" height="18"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="147.5" id="yVz-Pa-zvK"/>
@@ -748,7 +755,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AW3-Ch-0Py">
-                                                        <rect key="frame" x="157.5" y="0.0" width="91" height="23"/>
+                                                        <rect key="frame" x="157.5" y="0.0" width="91" height="33"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="91" id="wf0-T7-fRZ"/>
@@ -761,7 +768,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aus-Sy-b0u">
-                                                        <rect key="frame" x="258.5" y="0.0" width="116.5" height="23"/>
+                                                        <rect key="frame" x="258.5" y="5" width="116.5" height="23"/>
                                                         <state key="normal" title="Button" image="UpdateOrange"/>
                                                         <connections>
                                                             <action selector="collectedSignaturesClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="M0G-qU-yUb"/>
@@ -772,9 +779,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                         </subviews>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="ch8-iY-UXh" firstAttribute="leading" secondItem="uDK-9v-CAQ" secondAttribute="leading" constant="10" id="2II-2R-pq6"/>
+                                            <constraint firstItem="ch8-iY-UXh" firstAttribute="leading" secondItem="uDK-9v-CAQ" secondAttribute="leading" constant="10" id="2II-2R-pq6" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                             <constraint firstAttribute="trailing" secondItem="ch8-iY-UXh" secondAttribute="trailing" id="4Eu-KH-nSe"/>
-                                            <constraint firstItem="xyb-zo-Ffa" firstAttribute="leading" secondItem="uDK-9v-CAQ" secondAttribute="leading" constant="10" id="4hw-el-9gD"/>
+                                            <constraint firstItem="xyb-zo-Ffa" firstAttribute="leading" secondItem="uDK-9v-CAQ" secondAttribute="leading" constant="10" id="4hw-el-9gD" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                             <constraint firstAttribute="bottom" secondItem="ch8-iY-UXh" secondAttribute="bottom" id="HeD-6P-6Ot"/>
                                             <constraint firstAttribute="trailing" secondItem="xyb-zo-Ffa" secondAttribute="trailing" id="c3o-al-2R1"/>
                                             <constraint firstItem="xyb-zo-Ffa" firstAttribute="top" secondItem="uDK-9v-CAQ" secondAttribute="top" id="jOw-5R-brj"/>
