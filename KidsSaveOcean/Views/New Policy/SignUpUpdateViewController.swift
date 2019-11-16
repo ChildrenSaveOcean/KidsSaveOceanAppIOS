@@ -179,12 +179,14 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
                     return location.id == userCampaignLocationId
                 }) ?? 0
                 pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
-            }
-            
-            if campaignLocations.count == 0 || userHijackPolicy.isEmpty {
+                setCampaignLiveDescription(currentCampaignLocationNum)
+            } else if campaignLocations.count == 0 || userHijackPolicy.isEmpty {
                 pickerView.isUserInteractionEnabled = false
                 chooseLocationButton.isEnabled = false
                 chooseLocationButton.alpha = 0.5
+            } else {
+                pickerView.selectRow(0, inComponent: 0, animated: true)
+                setCampaignLiveDescription(0)
             }
             
 //            if currentCampaignLocationNum == 0 {
@@ -207,8 +209,24 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
     }
     
-    private func setCampaignLiveDescription() {
-
+    private func setCampaignLiveDescription(_ num: Int) {
+        selectedCountryForCampaign = campaignLocations[num]
+        
+        let campaign = campaigns.filter({ $0.location_id == selectedCountryForCampaign?.id }).first
+        
+        if selectedCountryForCampaign != nil,
+            campaign != nil,
+            campaign?.live == true {
+            unliveLocationMessageLabel.isHidden = true
+            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[true]! + selectedCountryForCampaign!.location
+            signaturesCollectedTextField.isEnabled = true
+            collectedSingaturesUpdateButton.isEnabled = true
+        } else {
+            unliveLocationMessageLabel.isHidden = false
+            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
+            signaturesCollectedTextField.isEnabled = false
+            collectedSingaturesUpdateButton.isEnabled = false
+        }
     }
     
     private func updateLiveLocationView() {
@@ -266,21 +284,22 @@ extension SignUpUpdateViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCountryForCampaign = campaignLocations[row]
-        let campaign = campaigns.filter({ $0.location_id == selectedCountryForCampaign?.id }).first
+        setCampaignLiveDescription(row)
         
-        if selectedCountryForCampaign != nil,
-            campaign != nil,
-            campaign?.live == true {
-            unliveLocationMessageLabel.isHidden = true
-            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[true]! + selectedCountryForCampaign!.location
-            signaturesCollectedTextField.isEnabled = true
-            collectedSingaturesUpdateButton.isEnabled = true
-        } else {
-            unliveLocationMessageLabel.isHidden = false
-            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
-            signaturesCollectedTextField.isEnabled = false
-            collectedSingaturesUpdateButton.isEnabled = false
-        }
+//        let campaign = campaigns.filter({ $0.location_id == selectedCountryForCampaign?.id }).first
+//
+//        if selectedCountryForCampaign != nil,
+//            campaign != nil,
+//            campaign?.live == true {
+//            unliveLocationMessageLabel.isHidden = true
+//            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[true]! + selectedCountryForCampaign!.location
+//            signaturesCollectedTextField.isEnabled = true
+//            collectedSingaturesUpdateButton.isEnabled = true
+//        } else {
+//            unliveLocationMessageLabel.isHidden = false
+//            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
+//            signaturesCollectedTextField.isEnabled = false
+//            collectedSingaturesUpdateButton.isEnabled = false
+//        }
     }
 }
