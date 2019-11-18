@@ -61,19 +61,19 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             baseStackViewBottonConstraint.constant = 20
         }
         
-        let attributedString = NSMutableAttributedString(string: "Policy chosen: Establish a sustainable environment as a human right!")
+        let attrPolicyStr = NSMutableAttributedString(string: "Policy chosen: ")
+        let font = UIFont.proRegular15
+        attrPolicyStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrPolicyStr.length))
         
-        let length = attributedString.length
-        let range = NSRange(location: 0, length: 14)
-        let font =  UIFont(name: "SF-Pro-Text-Regular", size: 15) ?? UIFont.systemFont(ofSize: 20)
-        
-        attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
+        let policyDescr = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == userHijackPolicy}.first?.description ?? ""
+        let attrPolicyDescrStr = NSMutableAttributedString(string: policyDescr)
+        let boldFont = UIFont.proSemiBold15
+        attrPolicyDescrStr.addAttribute(NSAttributedString.Key.font, value: boldFont, range: NSRange(location: 0, length: attrPolicyDescrStr.length))
 
-        let boldFont =  UIFont(name: "SF-Pro-Text-SemiBold", size: 15) ?? UIFont.systemFont(ofSize: 20)
-        let boldRange = NSRange(location: range.length + 1, length: length-range.length - 2)
-        attributedString.addAttribute(NSAttributedString.Key.font, value: boldFont, range: boldRange)
-
-        policyLabel.attributedText = attributedString
+        let resultPolicyStr = NSMutableAttributedString()
+        resultPolicyStr.append(attrPolicyStr)
+        resultPolicyStr.append(attrPolicyDescrStr)
+        policyLabel.attributedText =  resultPolicyStr //attributedString
         
         unliveLocationMessageLabel.isHidden = true
         liveCampaingStateLabel.text = ""

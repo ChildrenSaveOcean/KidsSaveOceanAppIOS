@@ -70,8 +70,7 @@ final class CountryContactsViewController: UIViewController, Instantiatable {
 
         let length = attributedString.length
         let range = NSRange(location: 0, length: length)
-        let font =  UIFont(name: "SF-Pro-Text-Regular", size: 20) ?? UIFont.systemFont(ofSize: 20)
-
+        let font = UIFont.proRegular20
         attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: fontColor, range: range)
 
