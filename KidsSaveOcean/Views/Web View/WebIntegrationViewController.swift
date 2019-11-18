@@ -87,7 +87,7 @@ class WebIntegrationViewController: UIViewController {
 
         //backButton.isEnabled = false
         navigationItem.leftBarButtonItem = backButton
-        forwardButton.isEnabled = false
+        //forwardButton.isEnabled = false
         navigationItem.rightBarButtonItem = forwardButton
     }
 
@@ -135,7 +135,7 @@ class WebIntegrationViewController: UIViewController {
     }
 
     private func canPopViewController() -> Bool {
-        return  (navigationController?.viewControllers.first != self)
+        return (webView.canGoBack == true) ?? (navigationController?.viewControllers.first != self)
     }
 
     private func checkInternetConnection(reachability: Reachability) -> Bool {
@@ -212,6 +212,10 @@ extension WebIntegrationViewController: WKNavigationDelegate {
     }
 
     func checkNavigationButtons() {
+        navigationController?.navigationBar.isHidden = webView.url?.host?.lowercased().hasPrefix("www.kidssaveocean.com") ?? false
+        view.setNeedsLayout() //layoutSubviews()
+        view.layoutIfNeeded()
+        
         var canGoBack = webView.canGoBack
         if !canGoBack {
             canGoBack = canPopViewController()
