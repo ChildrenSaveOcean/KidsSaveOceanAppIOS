@@ -16,15 +16,13 @@ class TrackTheHijackViewController: UIViewController, Instantiatable {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func spreadButton(_ sender: Any) {
+        let linkForSharing = "https://www.kidssaveocean.com/change-fate"
+        let objectsToShare = [URL(string: linkForSharing) as Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        self.present(activityVC, animated: true) {
+            //
+        }
     }
-    */
 
 }

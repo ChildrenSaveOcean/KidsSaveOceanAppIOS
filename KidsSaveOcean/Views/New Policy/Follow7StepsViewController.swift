@@ -14,22 +14,10 @@ class Follow7StepsViewController: UIViewController, Instantiatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = .backgroundWhite
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableView.automaticDimension
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension Follow7StepsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,18 +54,8 @@ extension Follow7StepsViewController: UITableViewDelegate, UITableViewDataSource
         
         cell.numberLabel.text = "\(indexPath.row + 1)"
         cell.textDescLabel.text = textTitle
+        cell.textDescLabel.lineBreakMode = .byWordWrapping
         return cell
         
-    }
-}
-
-
-import UIKit
-
-extension UIImageView {
-    
-    func setRounded() {
-        self.layer.cornerRadius = (self.frame.width / 2) //instead of let radius = CGRectGetWidth(self.frame) / 2
-        self.layer.masksToBounds = true
     }
 }

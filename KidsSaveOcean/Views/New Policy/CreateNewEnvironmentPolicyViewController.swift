@@ -15,7 +15,7 @@ class CreateNewEnvironmentPolicyViewController: UIViewController, Instantiatable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.backgroundColor = .backgroundWhite
     }
 
 }
@@ -55,9 +55,6 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
             imageName = "Multiply"
         case 5:
             guard let trackCell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell", for: indexPath) as? TrackTableViewCell else { fatalError("Wrong cell type. There is expected TrackTableViewCell")}
-//            cell.environmentLabel.textColor = .black
-//            textTitle = "Track the hijack"
-//            imageName = "Track"
             return trackCell
         default:
             textTitle = ""
@@ -76,30 +73,30 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
             let taskViewController = YouthInitiativeProcessViewController.instantiate()
             taskViewController.title = ""
             navigationController?.pushViewController(taskViewController, animated: true)
-            case 1:
-                let taskViewController = Follow7StepsViewController.instantiate()
-                taskViewController.title = ""
-                navigationController?.pushViewController(taskViewController, animated: true)
-            case 2:
-                let taskViewController = VoteNowViewController.instantiate()
-                taskViewController.title = ""
-                navigationController?.pushViewController(taskViewController, animated: true)
-            case 3:
-                let taskViewController = SignUpUpdateViewController.instantiate()
-                taskViewController.title = ""
-                navigationController?.pushViewController(taskViewController, animated: true)
-            case 4:
-                let taskViewController = MultiplympactViewController.instantiate()
-                taskViewController.title = ""
-                navigationController?.pushViewController(taskViewController, animated: true)
-            case 5:
-                let taskViewController = TrackTheHijackViewController.instantiate()
-                taskViewController.title = ""
-                navigationController?.pushViewController(taskViewController, animated: true)
-            default:
-                let taskViewController = YouthInitiativeProcessViewController.instantiate()
-                taskViewController.title = ""
-                navigationController?.pushViewController(taskViewController, animated: true)
+        case 1:
+            let taskViewController = Follow7StepsViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+        case 2:
+            let taskViewController = VoteNowViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+        case 3:
+            let taskViewController = SignUpUpdateViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+        case 4:
+            let taskViewController = MultiplympactViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+        case 5:
+            let taskViewController = TrackTheHijackViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
+        default:
+            let taskViewController = YouthInitiativeProcessViewController.instantiate()
+            taskViewController.title = ""
+            navigationController?.pushViewController(taskViewController, animated: true)
         }
     }
 }

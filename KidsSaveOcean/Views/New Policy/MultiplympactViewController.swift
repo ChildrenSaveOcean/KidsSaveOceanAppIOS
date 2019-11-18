@@ -15,7 +15,6 @@ class MultiplympactViewController: UIViewController, Instantiatable {
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
