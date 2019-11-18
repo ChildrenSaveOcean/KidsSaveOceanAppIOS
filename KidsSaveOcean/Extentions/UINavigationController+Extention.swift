@@ -17,8 +17,6 @@ extension UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = true
         navigationBar.backgroundColor = .clear
-        
-        print("\n\nwe are in the modified Navigation Controller\n\n")
     }
 
 }
