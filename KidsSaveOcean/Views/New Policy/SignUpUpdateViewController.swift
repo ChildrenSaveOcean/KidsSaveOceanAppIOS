@@ -38,9 +38,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     var selectedCountryForCampaign: HijackLocation?
     
-    private lazy var userHijackPolicy = UserViewModel.shared().hijack_policy_selected
-    private lazy var campaigns = CampaignViewModel.shared().campaigns.filter({$0.hijack_policy == userHijackPolicy})
-    private lazy var campaignLocations = HijackPLocationViewModel.shared().hidjackPLocations.filter({ campaigns.map({$0.location_id}).contains($0.id) })
+    //private lazy var userHijackPolicy = UserViewModel.shared().hijack_policy_selected //TODO
+    private lazy var campaigns = CampaignViewModel.shared().campaigns
+    private lazy var campaignLocations = HijackPLocationViewModel.shared().hidjackPLocations
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let font = UIFont.proRegular15
         attrPolicyStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrPolicyStr.length))
         
-        let policyDescr = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == userHijackPolicy}.first?.description ?? ""
+        let policyDescr = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == campaigns.first?.hijack_policy}.first?.description ?? ""
         let attrPolicyDescrStr = NSMutableAttributedString(string: policyDescr)
         let boldFont = UIFont.proSemiBold15
         attrPolicyDescrStr.addAttribute(NSAttributedString.Key.font, value: boldFont, range: NSRange(location: 0, length: attrPolicyDescrStr.length))
@@ -97,39 +97,21 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
 
     // MARK: Action methods
     @IBAction func signUpButtonClicked(_ sender: Any) {
-        let dialogMessage = UIAlertController(title: "Are you sure you want to choose this location?", message: "", preferredStyle: .alert)
+        let locale = Locale.current
+        guard let code = locale.regionCode else {
+            lockChoosenLocationForUser()
+            return
+        }
+        let countryStr = locale.localizedString(forRegionCode: code)
+        let country = countryStr == "United States" ? "USA" : countryStr
+        let choosenLocation = campaignLocations[pickerView.selectedRow(inComponent: 0)].location
         
-        // Create OK button with action handler
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
-
-            let num = self.pickerView.selectedRow(inComponent: 0)
-            guard let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first else {
-                return
-            }
-            
-            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_pledged: campaign.signatures_pledged, signatures_collected: 0)
-            UserViewModel.shared().campaign = campSign
-            
-            UserViewModel.shared().saveUser()
-            
-            self.liveLocationView.isHidden = true
-            self.chooseLocationView.isHidden = false
-            self.showLocationView()
-            self.view.setNeedsLayout()
-            self.dismiss(animated: false, completion: nil)
-            
-        })
-        
-        // Create Cancel button with action handlder
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
-            self.dismiss(animated: false, completion: nil)
+        guard choosenLocation == country else {
+            lockChoosenLocationForUser()
+            return
         }
         
-        //Add OK and Cancel button to dialog message
-        dialogMessage.addAction(ok)
-        dialogMessage.addAction(cancel)
-        
-        self.present(dialogMessage, animated: true, completion: nil)
+        singUpUserToTheLoaction()
     }
     
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
@@ -180,24 +162,13 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
                 }) ?? 0
                 pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
                 setCampaignLiveDescription(currentCampaignLocationNum)
-            } else if campaignLocations.count == 0 || userHijackPolicy.isEmpty {
+            } else if campaignLocations.count == 0 {
                 pickerView.isUserInteractionEnabled = false
-                chooseLocationButton.isEnabled = false
-                chooseLocationButton.alpha = 0.5
+                enableChooseLocationButton(false)
             } else {
                 pickerView.selectRow(0, inComponent: 0, animated: true)
                 setCampaignLiveDescription(0)
             }
-            
-//            if currentCampaignLocationNum == 0 {
-//                let locale = Locale.current
-//                if let code = locale.regionCode,
-//                    let countryStr = locale.localizedString(forRegionCode: code) {
-//                    let country = countryStr == "United States" ? "USA" : countryStr
-//                    currentCampaignLocationNum = citiesData.firstIndex(where: {$0.location.contains(country)}) ?? citiesData.count/2
-//                }
-//            }
-            
         }
         
         if userCampaign != nil,
@@ -234,6 +205,69 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         signaturesRequiredLabel.text = String( campaign?.signatures_pledged ?? 0)
         signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
         deadlineLabel.text = "--" //campaign["signatures_pledged"] as? String ?? "--" // TODO
+    }
+    
+    private func lockChoosenLocationForUser() {
+        let alertView = UIAlertController(title: "Are you sure this is your location?", message: "", preferredStyle: .alert)
+        
+        let yesButton = UIAlertAction(title: "YES", style: .default) { (_) in
+            self.singUpUserToTheLoaction()
+        }
+        
+        let noButton = UIAlertAction(title: "NO", style: .default) { (_) in
+            let explainAlertView = UIAlertController(title: nil, message: "I'm sorry, but the goverment of your location doesn't offer the opportunity for citizen ballon initiatives. But you can influence them with letters in our letter-writing campaign.", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            explainAlertView.addAction(okButton)
+            self.present(explainAlertView, animated: true) {
+                self.enableChooseLocationButton(false)
+            }
+        }
+        
+        alertView.addAction(yesButton)
+        alertView.addAction(noButton)
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
+    private func singUpUserToTheLoaction() {
+        let dialogMessage = UIAlertController(title: "Are you sure you want to choose this location?", message: "", preferredStyle: .alert)
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
+
+//            let num = self.pickerView.selectedRow(inComponent: 0)
+            guard let campaign = self.campaigns.first else { return }
+//            filter({$0.location_id == self.campaignLocations[num].id}).first else {
+//                return
+//            }
+            
+            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_pledged: campaign.signatures_pledged, signatures_collected: 0)
+            UserViewModel.shared().campaign = campSign
+            
+            UserViewModel.shared().saveUser()
+            
+            self.liveLocationView.isHidden = true
+            self.chooseLocationView.isHidden = false
+            self.showLocationView()
+            self.view.setNeedsLayout()
+            self.dismiss(animated: false, completion: nil)
+            
+        })
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
+            self.dismiss(animated: false, completion: nil)
+        }
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    private func enableChooseLocationButton(_ isOn: Bool) {
+        self.chooseLocationButton.isEnabled = isOn
+        self.chooseLocationButton.alpha = isOn ? 1 : 0.5
     }
     
     // MARK: Keyboard Delegate methods
@@ -285,21 +319,7 @@ extension SignUpUpdateViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         setCampaignLiveDescription(row)
-        
-//        let campaign = campaigns.filter({ $0.location_id == selectedCountryForCampaign?.id }).first
-//
-//        if selectedCountryForCampaign != nil,
-//            campaign != nil,
-//            campaign?.live == true {
-//            unliveLocationMessageLabel.isHidden = true
-//            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[true]! + selectedCountryForCampaign!.location
-//            signaturesCollectedTextField.isEnabled = true
-//            collectedSingaturesUpdateButton.isEnabled = true
-//        } else {
-//            unliveLocationMessageLabel.isHidden = false
-//            liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
-//            signaturesCollectedTextField.isEnabled = false
-//            collectedSingaturesUpdateButton.isEnabled = false
-//        }
+        enableChooseLocationButton(true)
     }
+    
 }

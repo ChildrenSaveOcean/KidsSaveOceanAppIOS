@@ -41,9 +41,9 @@ class VoteNowViewController: UIViewController, Instantiatable {
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             if let selectedPolicy = self.selectedPolicy {
-                if UserViewModel.shared().hijack_policy_selected != selectedPolicy.id {
-                    UserViewModel.shared().campaign = nil
-                }
+//                if UserViewModel.shared().hijack_policy_selected != selectedPolicy.id {
+//                    UserViewModel.shared().campaign = nil
+//                }
                 UserViewModel.shared().hijack_policy_selected = selectedPolicy.id
                 UserViewModel.shared().saveUser()
                 HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
