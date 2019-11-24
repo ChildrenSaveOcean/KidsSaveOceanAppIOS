@@ -134,6 +134,16 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         }
     }
     
+    @IBAction func shareAction(_ sender: Any) {
+        ShareKidsSaveOcean.share(target: self)
+    }
+    
+    @IBAction func learnMoreAction(_ sender: Any) {
+        let webViewController = WebIntegrationViewController()
+        webViewController.webUrlString = "https://www.kidssaveocean.com/projects"
+        self.present(webViewController, animated: true, completion: nil)
+    }
+    
     // MARK: Private methods
     private func showLocationView() {
         let userCampaign = UserViewModel.shared().campaign

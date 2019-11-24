@@ -60,6 +60,7 @@
 		16BA0A3E2290281A00E36F25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3D2290281A00E36F25 /* User.swift */; };
 		16CF1A162382377B001D099D /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */; };
 		16CF1A172382377E001D099D /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */; };
+		16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */; };
 		16D4C27C22C1552F006DBC64 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C27B22C1552F006DBC64 /* NotificationController.swift */; };
 		16D4C27E22C157AD006DBC64 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C27D22C157AC006DBC64 /* Instantiatable.swift */; };
 		16D4C28122C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C28022C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift */; };
@@ -178,6 +179,7 @@
 		16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsSaveOcean.entitlements; sourceTree = "<group>"; };
 		16BA0A3B229027F100E36F25 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		16BA0A3D2290281A00E36F25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareKidsSaveOcean.swift; sourceTree = "<group>"; };
 		16D4C27B22C1552F006DBC64 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		16D4C27D22C157AC006DBC64 /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		16D4C28022C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCellProtocol.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 		7C0B1CCD2223141D0033F251 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */,
 				16D4C27D22C157AC006DBC64 /* Instantiatable.swift */,
 				16D4C27A22C15518006DBC64 /* Notifications */,
 				162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */,
@@ -946,6 +949,7 @@
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
 				16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */,
+				16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7CB51D38233A901D0014094C /* StepsTableViewCell.swift in Sources */,
 				164D7308234BA1FB0080ACB7 /* HijackLocation.swift in Sources */,

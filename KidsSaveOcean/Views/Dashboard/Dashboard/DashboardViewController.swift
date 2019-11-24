@@ -57,8 +57,6 @@ class DashboardViewController: UIViewController {
     let taskScope: [String] = UserViewModel.getDashboardFullTasks() //DashboardTasksScopes.allCases.map { $0.dashboardTasks }
     let tasks: [DashboardTasksScopes] = UserViewModel.getDashboardTasks() //DashboardTasksScopes.allCases.map { $0.rawValue }
 
-    let linkForSharing = "https://www.kidssaveocean.com/change-fate"
-
     lazy var completionTasksStates =  UserViewModel.shared().getCompletionTasksStatuses() // Settings.getCompletionTasksStatus()//
 
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3, self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
@@ -155,9 +153,7 @@ class DashboardViewController: UIViewController {
             navigationController?.pushViewController(taskViewController, animated: true)
 
         case 2:
-            let objectsToShare = [URL(string: linkForSharing) as Any]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            self.present(activityVC, animated: true) {
+            ShareKidsSaveOcean.share(target: self) {
                 self.chooseTaskWithNum(2)
             }
             

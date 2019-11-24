@@ -546,6 +546,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                     <constraint firstAttribute="width" constant="95" id="an9-Za-zgW"/>
                                                 </constraints>
                                                 <state key="normal" image="LearnMore"/>
+                                                <connections>
+                                                    <action selector="learnMoreAction:" destination="s88-Pg-fJT" eventType="touchUpInside" id="sBA-h4-lZK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiV-7s-ZN7">
                                                 <rect key="frame" x="145" y="0.0" width="95" height="28"/>
@@ -553,6 +556,9 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                     <constraint firstAttribute="width" constant="95" id="I1K-st-HFs"/>
                                                 </constraints>
                                                 <state key="normal" image="Share"/>
+                                                <connections>
+                                                    <action selector="shareAction:" destination="s88-Pg-fJT" eventType="touchUpInside" id="YYN-uz-gbS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
