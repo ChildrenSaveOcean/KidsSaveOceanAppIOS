@@ -944,7 +944,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Write a letter &amp; spread the world" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QO7-fJ-3Ep" userLabel="Header">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Write a letter &amp; spread the word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QO7-fJ-3Ep" userLabel="Header">
                                 <rect key="frame" x="0.0" y="403.66666666666669" width="414" height="26.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="0aV-Sf-Vmd"/>
@@ -963,7 +963,7 @@
                                     <constraint firstAttribute="height" constant="51" id="g4h-cK-u20" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
-                                <state key="normal" title="Write to where">
+                                <state key="normal" title="Write to where?">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

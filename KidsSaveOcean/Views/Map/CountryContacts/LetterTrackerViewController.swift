@@ -6,8 +6,7 @@
 //  Copyright © 2018 KidsSaveOcean. All rights reserved.
 //
 
-import Foundation
-import SnapKit
+import UIKit
 
 final class LetterTrackerViewController: UIViewController {
 
@@ -20,12 +19,6 @@ final class LetterTrackerViewController: UIViewController {
         super.viewDidLoad()
 
         setupViewElements()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        updateViewConstraints()
     }
 
     override func viewDidAppear(_ animated: Bool) {
