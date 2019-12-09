@@ -254,7 +254,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
-            self.dismiss(animated: false, completion: nil)
+            self.alertMessageAboutWrongLocation()
         }
         
         //Add OK and Cancel button to dialog message
@@ -262,6 +262,15 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         dialogMessage.addAction(cancel)
         
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    private func alertMessageAboutWrongLocation() {
+        let alertView = UIAlertController(title: "", message: "I'm sorry, but the goverment of your location doesn't offer the opportunity for citizen ballot initiatives. But you can influence them with letters in our letter-writting campaign.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Got it", style: .cancel) { (_) in
+            self.dismiss(animated: false, completion: nil)
+        }
+        alertView.addAction(action)
+        self.present(alertView, animated: true, completion: nil)
     }
     
     private func enableChooseLocationButton(_ isOn: Bool) {
