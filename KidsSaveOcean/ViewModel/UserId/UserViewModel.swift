@@ -388,4 +388,10 @@ class UserViewModel {
     class func getDashboardFullTasks() -> [String] {
        return DashboardTasksScopes.allCases.map { $0.dashboardTasks }
     }
+    
+    func isUserLocationCampaignIsLive() -> Bool {
+        let campaignLive = campaign != nil ? CampaignViewModel.shared().campaigns.filter({$0.id == campaign?.campaign_id}).first?.live : false
+        return campaignLive ?? false
+        
+    }
 }

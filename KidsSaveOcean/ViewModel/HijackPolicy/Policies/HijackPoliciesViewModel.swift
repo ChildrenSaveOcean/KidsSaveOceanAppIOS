@@ -73,4 +73,20 @@ class HijackPoliciesViewModel {
          Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
              setup()
     }
+    
+    func getPolicyAttrString(for policy: HijackPolicy) -> NSMutableAttributedString {
+        let attrPolicyStr = NSMutableAttributedString(string: "Policy chosen: ")
+        let font = UIFont.proRegular15
+        attrPolicyStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrPolicyStr.length))
+        
+        let policyDescr = policy.description
+        let attrPolicyDescrStr = NSMutableAttributedString(string: policyDescr)
+        let boldFont = UIFont.proSemiBold15
+        attrPolicyDescrStr.addAttribute(NSAttributedString.Key.font, value: boldFont, range: NSRange(location: 0, length: attrPolicyDescrStr.length))
+
+        let resultPolicyStr = NSMutableAttributedString()
+        resultPolicyStr.append(attrPolicyStr)
+        resultPolicyStr.append(attrPolicyDescrStr)
+        return resultPolicyStr
+    }
 }

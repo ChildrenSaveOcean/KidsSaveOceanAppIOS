@@ -38,7 +38,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     var selectedCountryForCampaign: HijackLocation?
     
-    //private lazy var userHijackPolicy = UserViewModel.shared().hijack_policy_selected //TODO
     private lazy var campaigns = CampaignViewModel.shared().campaigns
     private lazy var campaignLocations = HijackPLocationViewModel.shared().hidjackPLocations
     
@@ -61,19 +60,10 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             baseStackViewBottonConstraint.constant = 20
         }
         
-        let attrPolicyStr = NSMutableAttributedString(string: "Policy chosen: ")
-        let font = UIFont.proRegular15
-        attrPolicyStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrPolicyStr.length))
-        
-        let policyDescr = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == campaigns.first?.hijack_policy}.first?.description ?? ""
-        let attrPolicyDescrStr = NSMutableAttributedString(string: policyDescr)
-        let boldFont = UIFont.proSemiBold15
-        attrPolicyDescrStr.addAttribute(NSAttributedString.Key.font, value: boldFont, range: NSRange(location: 0, length: attrPolicyDescrStr.length))
-
-        let resultPolicyStr = NSMutableAttributedString()
-        resultPolicyStr.append(attrPolicyStr)
-        resultPolicyStr.append(attrPolicyDescrStr)
-        policyLabel.attributedText =  resultPolicyStr //attributedString
+        let policy = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == campaigns.first?.hijack_policy}.first
+        if policy != nil {
+            policyLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy!) //policy != nil ?  : ""
+        }
         
         unliveLocationMessageLabel.isHidden = true
         liveCampaingStateLabel.text = ""
@@ -147,8 +137,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     // MARK: Private methods
     private func showLocationView() {
         let userCampaign = UserViewModel.shared().campaign
-        let campaignLive = userCampaign != nil ? campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.live : false
-        
+        let campaignLive = UserViewModel.shared().isUserLocationCampaignIsLive()
         if campaignLive == true {
 
             liveLocationView.isHidden = false
@@ -244,11 +233,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
 
-//            let num = self.pickerView.selectedRow(inComponent: 0)
-            guard let campaign = self.campaigns.first else { return }
-//            filter({$0.location_id == self.campaignLocations[num].id}).first else {
-//                return
-//            }
+            let num = self.pickerView.selectedRow(inComponent: 0)
+            guard let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first else {
+                return
+            }
+            //first else { return }
             
             let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_pledged: campaign.signatures_pledged, signatures_collected: 0)
             UserViewModel.shared().campaign = campSign

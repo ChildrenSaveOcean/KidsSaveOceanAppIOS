@@ -66,6 +66,7 @@
 		16D4C28122C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C28022C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift */; };
 		16D4C28322C3FDBE006DBC64 /* NotificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C28222C3FDBE006DBC64 /* NotificationProtocol.swift */; };
 		16D4C28522C3FE10006DBC64 /* NotificationBadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C28422C3FE10006DBC64 /* NotificationBadgeProtocol.swift */; };
+		16DDAA7D239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDAA7C239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift */; };
 		16EA5FCE220CD5AD00DE062E /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */; };
 		16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */; };
 		16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */; };
@@ -185,6 +186,7 @@
 		16D4C28022C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		16D4C28222C3FDBE006DBC64 /* NotificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProtocol.swift; sourceTree = "<group>"; };
 		16D4C28422C3FE10006DBC64 /* NotificationBadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBadgeProtocol.swift; sourceTree = "<group>"; };
+		16DDAA7C239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTheHijackLiveCampaignViewController.swift; sourceTree = "<group>"; };
 		16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIntegrationViewController.swift; sourceTree = "<group>"; };
 		16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeVideoViewController.swift; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				7C9891682331280800400CC5 /* SignUpUpdateViewController.swift */,
 				7C98916A2331285100400CC5 /* MultiplympactViewController.swift */,
 				7C98916C2331289700400CC5 /* TrackTheHijackViewController.swift */,
+				16DDAA7C239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift */,
 				7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */,
 				7C4AF9A7233A8440006A8566 /* TrackTableViewCell.swift */,
 				7CB51D37233A901D0014094C /* StepsTableViewCell.swift */,
@@ -949,6 +952,7 @@
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
 				16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */,
+				16DDAA7D239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift in Sources */,
 				16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7CB51D38233A901D0014094C /* StepsTableViewCell.swift in Sources */,
