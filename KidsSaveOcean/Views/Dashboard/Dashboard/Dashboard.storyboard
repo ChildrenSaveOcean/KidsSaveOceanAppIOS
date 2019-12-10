@@ -672,7 +672,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnb-ZD-ewT">
-                                <rect key="frame" x="108" y="641" width="198" height="51"/>
+                                <rect key="frame" x="108" y="655" width="198" height="51"/>
                                 <color key="backgroundColor" red="0.1256549656" green="0.76238316299999997" blue="0.87107938529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="req-Yf-hUV"/>
@@ -692,7 +692,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjO-EF-B6f" userLabel="Description">
-                                <rect key="frame" x="16" y="499" width="382" height="135"/>
+                                <rect key="frame" x="16" y="513" width="382" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="CT9-Ip-ebm"/>
                                 </constraints>
@@ -718,7 +718,7 @@
                         <constraints>
                             <constraint firstItem="tnb-ZD-ewT" firstAttribute="centerX" secondItem="eq6-sg-Bva" secondAttribute="centerX" id="2IO-Pf-FGP"/>
                             <constraint firstItem="EHJ-ZG-fgp" firstAttribute="centerX" secondItem="eq6-sg-Bva" secondAttribute="centerX" id="2iV-FM-23t"/>
-                            <constraint firstItem="eq6-sg-Bva" firstAttribute="bottom" secondItem="tnb-ZD-ewT" secondAttribute="bottom" constant="44" id="2ty-ES-Kj5" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="eq6-sg-Bva" firstAttribute="bottom" secondItem="tnb-ZD-ewT" secondAttribute="bottom" constant="30" id="2ty-ES-Kj5" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="lrw-Db-Vd8" firstAttribute="centerX" secondItem="eq6-sg-Bva" secondAttribute="centerX" id="36C-0U-aBZ"/>
                             <constraint firstItem="OsP-DH-HQs" firstAttribute="width" secondItem="oSQ-80-7Dz" secondAttribute="width" id="Lde-71-nOC"/>
                             <constraint firstItem="lrw-Db-Vd8" firstAttribute="height" secondItem="oSQ-80-7Dz" secondAttribute="height" multiplier="0.5" constant="20.5" id="OiT-JD-LuJ"/>
