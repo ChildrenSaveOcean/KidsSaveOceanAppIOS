@@ -74,13 +74,17 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
         
+        let campaign = UserViewModel.shared().campaign
+
         signaturesReqdTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesReqdTextField.layer.borderWidth = 1.0
         signaturesReqdTextField.roundCorners()
+        signaturesReqdTextField.text = String(campaign?.signatures_pledged ?? 0)
         
         signaturesCollectedTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesCollectedTextField.layer.borderWidth = 1.0
         signaturesCollectedTextField.roundCorners()
+        signaturesCollectedTextField.text = String(campaign?.signatures_collected ?? 0)
         
         showLocationView()
     }
@@ -108,7 +112,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         if let signatures = signaturesReqdTextField.text {
             UserViewModel.shared().campaign?.signatures_pledged = Int(signatures) ?? 0
             UserViewModel.shared().saveUser()
-            signaturesReqdTextField.text = ""
             dismissKeyboard()
             updateLiveLocationView()
         }
@@ -118,7 +121,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         if let signatures = signaturesCollectedTextField.text {
             UserViewModel.shared().campaign?.signatures_collected = Int(signatures) ?? 0
             UserViewModel.shared().saveUser()
-            signaturesCollectedTextField.text = ""
             dismissKeyboard()
             updateLiveLocationView()
         }
@@ -200,7 +202,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     }
     
     private func updateLiveLocationView() {
-        let campaign = UserViewModel.shared().campaign
+        let campaign = campaigns.filter { $0.id == UserViewModel.shared().campaign?.campaign_id }.first
         signaturesRequiredLabel.text = String( campaign?.signatures_pledged ?? 0)
         signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
         deadlineLabel.text = "--" //campaign["signatures_pledged"] as? String ?? "--" // TODO
