@@ -136,71 +136,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Occ-Eb-ARZ" userLabel="Action Alert View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platter" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-z1-sOr">
-                                        <rect key="frame" x="72" y="286.66666666666669" width="270" height="163"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="270" id="VWo-MB-xbN"/>
-                                            <constraint firstAttribute="height" constant="163" id="szd-Gv-kfr"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmQ-Ih-sjf">
-                                        <rect key="frame" x="217" y="299.66666666666669" width="112" height="137"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="112" id="MDJ-9R-LSf"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="ACTION ALERT LIVE"/>
-                                        <connections>
-                                            <action selector="actionAlertViewButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="l5T-PD-Lna"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTc-qX-7Hd" userLabel="Description">
-                                        <rect key="frame" x="85" y="286.66666666666669" width="125" height="163"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="125" id="MNK-S3-NOI"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Action Alerts     will call you         to support Fatechanger youth actions.
-                                                </string>
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="17" name="SFProText-Semibold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Unity is power.">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="17" name="SFProText-Semibold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgT-Ee-TtI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="PTc-qX-7Hd" firstAttribute="leading" secondItem="KxK-z1-sOr" secondAttribute="leading" constant="13" id="0oQ-NV-W5v"/>
-                                    <constraint firstItem="vmQ-Ih-sjf" firstAttribute="bottom" secondItem="KxK-z1-sOr" secondAttribute="bottom" constant="-13" id="18l-kr-vy2"/>
-                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="bottom" secondItem="PTc-qX-7Hd" secondAttribute="bottom" id="1H8-1R-XgI"/>
-                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="centerX" secondItem="Occ-Eb-ARZ" secondAttribute="centerX" id="7m2-KP-qpg"/>
-                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="top" secondItem="vmQ-Ih-sjf" secondAttribute="top" constant="-13" id="EdF-KB-tkT"/>
-                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="height" secondItem="Occ-Eb-ARZ" secondAttribute="height" id="Iuf-xe-w8f"/>
-                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="top" secondItem="PTc-qX-7Hd" secondAttribute="top" id="Wcc-zu-fHY"/>
-                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="centerY" secondItem="Occ-Eb-ARZ" secondAttribute="centerY" id="gm9-pK-WcH"/>
-                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="centerX" secondItem="Occ-Eb-ARZ" secondAttribute="centerX" id="jJc-yq-3Tv"/>
-                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="width" secondItem="Occ-Eb-ARZ" secondAttribute="width" id="kDS-Q9-dC2"/>
-                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="centerY" secondItem="Occ-Eb-ARZ" secondAttribute="centerY" id="mHA-AB-oLD"/>
-                                    <constraint firstItem="vmQ-Ih-sjf" firstAttribute="trailing" secondItem="KxK-z1-sOr" secondAttribute="trailing" constant="-13" id="wQ8-eh-T1H"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uP-1IW">
                                 <rect key="frame" x="88.666666666666686" y="373.33333333333331" width="263" height="33"/>
                                 <subviews>
@@ -381,6 +316,71 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Occ-Eb-ARZ" userLabel="Action Alert View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platter" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-z1-sOr">
+                                        <rect key="frame" x="72" y="286.66666666666669" width="270" height="163"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="VWo-MB-xbN"/>
+                                            <constraint firstAttribute="height" constant="163" id="szd-Gv-kfr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmQ-Ih-sjf">
+                                        <rect key="frame" x="217" y="299.66666666666669" width="112" height="137"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="112" id="MDJ-9R-LSf"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ACTION ALERT LIVE"/>
+                                        <connections>
+                                            <action selector="actionAlertViewButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="l5T-PD-Lna"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTc-qX-7Hd" userLabel="Description">
+                                        <rect key="frame" x="85" y="286.66666666666669" width="125" height="163"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="MNK-S3-NOI"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Action Alerts     will call you         to support Fatechanger youth actions.
+                                                </string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="17" name="SFProText-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Unity is power.">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="17" name="SFProText-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgT-Ee-TtI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PTc-qX-7Hd" firstAttribute="leading" secondItem="KxK-z1-sOr" secondAttribute="leading" constant="13" id="0oQ-NV-W5v"/>
+                                    <constraint firstItem="vmQ-Ih-sjf" firstAttribute="bottom" secondItem="KxK-z1-sOr" secondAttribute="bottom" constant="-13" id="18l-kr-vy2"/>
+                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="bottom" secondItem="PTc-qX-7Hd" secondAttribute="bottom" id="1H8-1R-XgI"/>
+                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="centerX" secondItem="Occ-Eb-ARZ" secondAttribute="centerX" id="7m2-KP-qpg"/>
+                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="top" secondItem="vmQ-Ih-sjf" secondAttribute="top" constant="-13" id="EdF-KB-tkT"/>
+                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="height" secondItem="Occ-Eb-ARZ" secondAttribute="height" id="Iuf-xe-w8f"/>
+                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="top" secondItem="PTc-qX-7Hd" secondAttribute="top" id="Wcc-zu-fHY"/>
+                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="centerY" secondItem="Occ-Eb-ARZ" secondAttribute="centerY" id="gm9-pK-WcH"/>
+                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="centerX" secondItem="Occ-Eb-ARZ" secondAttribute="centerX" id="jJc-yq-3Tv"/>
+                                    <constraint firstItem="PgT-Ee-TtI" firstAttribute="width" secondItem="Occ-Eb-ARZ" secondAttribute="width" id="kDS-Q9-dC2"/>
+                                    <constraint firstItem="KxK-z1-sOr" firstAttribute="centerY" secondItem="Occ-Eb-ARZ" secondAttribute="centerY" id="mHA-AB-oLD"/>
+                                    <constraint firstItem="vmQ-Ih-sjf" firstAttribute="trailing" secondItem="KxK-z1-sOr" secondAttribute="trailing" constant="-13" id="wQ8-eh-T1H"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.13855496048927307" green="0.63844740390777588" blue="0.99241381883621216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
