@@ -27,9 +27,10 @@ extension UITabBarController {
     
     func switchToActionAlertScreen() {
         self.selectedIndex = 2
-        guard let navigationController = getNavigationController() else {return}
-        let alertViewController = AlertActionDashboardViewController()
-        navigationController.pushViewController(alertViewController, animated: true)
+        let alertActionVC = AlertActionDashboardViewController()
+        present(alertActionVC, animated: true) {
+            self.updateNotificationStatusOfSelectedViewController()
+        }
     }
     
     func switchToResourcesScreen() {

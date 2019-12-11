@@ -384,7 +384,9 @@ extension DashboardViewController: ActionAlertProtocol {
     
     func gotoActionAlertViewController() {
         let alertActionVC = AlertActionDashboardViewController()
-        navigationController?.pushViewController(alertActionVC, animated: true)
+        present(alertActionVC, animated: true) {
+            self.updateViews()
+        }
         actionAlertView.alpha = 0
     }
 }
