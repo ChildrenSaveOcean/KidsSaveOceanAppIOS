@@ -22,6 +22,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
+        
         if sender.selectedSegmentIndex == 1 {
             self.map.isHidden = true
             self.tbvTop10.isHidden = false
@@ -55,6 +56,9 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
+        
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
 
