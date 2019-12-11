@@ -13,6 +13,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var pickerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var voteButton: UIButton!
     
     var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies.sorted {$0.id < $1.id}
     
@@ -29,9 +30,20 @@ class VoteNowViewController: UIViewController, Instantiatable {
         
         let userHijackPolicy = UserViewModel.shared().hijack_policy_selected
         
-        let num = userHijackPolicy.isEmpty ? pickerData.count/2 : pickerData.firstIndex(where: {$0.id == userHijackPolicy}) ?? 0
-        let policy = pickerData[num]
-        pickerView.selectRow(num, inComponent: 0, animated: true)
+        if !userHijackPolicy.isEmpty {
+            let alertMessage = UIAlertController(title: "", message: "You have voted already", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Got it", style: .cancel) { (_) in
+                //
+            }
+            alertMessage.addAction(action)
+            
+            self.present(alertMessage, animated: true) {
+                self.voteButton.isEnabled = false
+            }
+        }
+        
+        let policy = pickerData[0]
+        pickerView.selectRow(0, inComponent: 0, animated: true)
         setPolicyDetails(policy)
     }
     
