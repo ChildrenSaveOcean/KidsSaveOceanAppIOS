@@ -32,16 +32,16 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteDirectionLines" translatesAutoresizingMaskIntoConstraints="NO" id="Bqd-BT-4HJ">
-                                <rect key="frame" x="16" y="114.33333333333334" width="351" height="376.66666666666663"/>
+                                <rect key="frame" x="16" y="102" width="351" height="377"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bqd-BT-4HJ" secondAttribute="height" multiplier="312:335" id="qs0-Km-GdR"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="center" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kz5-ah-x5R">
-                                <rect key="frame" x="26" y="50" width="359" height="53.333333333333343"/>
+                                <rect key="frame" x="26" y="50" width="359" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-lA-40h" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="53.333333333333336" height="53.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g4b-lA-40h" secondAttribute="height" multiplier="1:1" id="oGN-nt-XBJ"/>
                                         </constraints>
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUO-am-qhv" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="61.333333333333329" y="0.0" width="53" height="53.333333333333336"/>
+                                        <rect key="frame" x="63.666666666666671" y="0.0" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XUO-am-qhv" secondAttribute="height" multiplier="1:1" id="epZ-yS-rYP"/>
                                         </constraints>
@@ -61,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-ym-lSy" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="122.33333333333333" y="0.0" width="53.333333333333329" height="53.333333333333336"/>
+                                        <rect key="frame" x="127.33333333333334" y="0.0" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TfB-ym-lSy" secondAttribute="height" multiplier="1:1" id="cvZ-aW-hMg"/>
                                         </constraints>
@@ -71,7 +71,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22F-dQ-MAC" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="183.66666666666666" y="0.0" width="53" height="53.333333333333336"/>
+                                        <rect key="frame" x="190.66666666666666" y="0.0" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="22F-dQ-MAC" secondAttribute="height" multiplier="1:1" id="7jy-Vg-DZM"/>
                                         </constraints>
@@ -81,7 +81,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLb-92-lzH" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="244.66666666666671" y="0.0" width="53.333333333333343" height="53.333333333333336"/>
+                                        <rect key="frame" x="254.33333333333331" y="0.0" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OLb-92-lzH" secondAttribute="height" multiplier="1:1" id="Ww5-72-pqj"/>
                                         </constraints>
@@ -91,7 +91,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-bt-1Cb" customClass="DashboardTopIcon" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="306" y="0.0" width="53" height="53.333333333333336"/>
+                                        <rect key="frame" x="318" y="0.0" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="H0c-bt-1Cb" secondAttribute="height" multiplier="1:1" id="QWi-RK-8rq"/>
                                         </constraints>
@@ -103,25 +103,25 @@
                                 </subviews>
                             </stackView>
                             <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main board" translatesAutoresizingMaskIntoConstraints="NO" id="Luv-j1-90t">
-                                <rect key="frame" x="43" y="144.33333333333334" width="354" height="294.33333333333326"/>
+                                <rect key="frame" x="43" y="131.99999999999997" width="354" height="294.33333333333326"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="height" multiplier="315:262" id="lcn-MS-daW"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Incomplete fist and writing" translatesAutoresizingMaskIntoConstraints="NO" id="cRy-QY-zOf">
-                                <rect key="frame" x="265.33333333333331" y="166.33333333333337" width="112.66666666666669" height="132.66666666666663"/>
+                                <rect key="frame" x="265.33333333333331" y="154" width="112.66666666666669" height="133.00000000000003"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cRy-QY-zOf" secondAttribute="height" multiplier="83:98" id="5OX-Aj-uMG"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seek change throuhg local goverment" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-l6-3J2">
-                                <rect key="frame" x="112" y="357.66666666666669" width="266" height="18"/>
+                                <rect key="frame" x="112" y="345.33333333333331" width="266" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TASK: " lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-kC-tnV">
-                                <rect key="frame" x="63" y="357.66666666666669" width="44" height="18"/>
+                                <rect key="frame" x="63" y="345.33333333333331" width="44" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="NL5-CF-6gI"/>
                                     <constraint firstAttribute="width" constant="44" id="Prc-Gw-ZhO"/>
@@ -131,186 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incomplete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gII-Qq-3yG">
-                                <rect key="frame" x="265.33333333333331" y="309.66666666666669" width="112.66666666666669" height="18"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uP-1IW">
-                                <rect key="frame" x="47" y="385.66666666666669" width="346" height="33"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-mB-t2e">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Lcc-mB-t2e" secondAttribute="height" multiplier="82:33" id="krp-8S-its"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
-                                        <state key="normal" title="How?" backgroundImage="Not yet blank">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="howToAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="BeU-tX-hAY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kpB-Rf-ORf" customClass="KSODidButton" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="92" y="0.0" width="82" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="kpB-Rf-ORf" secondAttribute="height" multiplier="82:33" id="Rdx-iR-4yP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="11"/>
-                                        <state key="normal" title="I did it about plastic!" backgroundImage="Not yet blank">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="completeMiddleButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="peW-Lx-5G1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-M1-UBW" customClass="KSODidButton" customModule="KidsSaveOcean" customModuleProvider="target">
-                                        <rect key="frame" x="184" y="0.0" width="162" height="33"/>
-                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="11"/>
-                                        <state key="normal" title="I did it about climate!" backgroundImage="Not yet blank">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="completeAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="Bgf-xs-FWx"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="FMt-pO-v6L" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                                    <constraint firstItem="kpB-Rf-ORf" firstAttribute="width" secondItem="kpB-Rf-ORf" secondAttribute="height" multiplier="82:33" id="lFe-CC-p2x"/>
-                                </constraints>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjn-Sh-ltB" userLabel="Wheel Volume views">
-                                <rect key="frame" x="41" y="473.66666666666669" width="162.33333333333334" height="178.33333333333331"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wheel Volume" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-Bc-xcX">
-                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="178.33333333333334"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="fKa-Bc-xcX" secondAttribute="height" multiplier="132:145" id="2uZ-fb-BUK"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheelVolumePoints" translatesAutoresizingMaskIntoConstraints="NO" id="IeY-ei-hQE">
-                                        <rect key="frame" x="69" y="99.999999999999943" width="9" height="9"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="9" id="Ple-cd-L8d"/>
-                                            <constraint firstAttribute="height" constant="9" id="k6w-am-zJB"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffm-wR-6iG" userLabel="Button 6_1">
-                                        <rect key="frame" x="102.33333333333334" y="93.333333333333314" width="30" height="30"/>
-                                        <connections>
-                                            <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="E2d-LZ-jDQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zq-Un-pN5" userLabel="Button 5_1">
-                                        <rect key="frame" x="102.33333333333334" y="49.999999999999943" width="30" height="30"/>
-                                        <connections>
-                                            <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="ld7-Gn-emh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaY-3H-kKZ" userLabel="Button 3_1">
-                                        <rect key="frame" x="40" y="30" width="30" height="30"/>
-                                        <connections>
-                                            <action selector="switchTask3:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="af0-86-Y3J"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-eY-HFC" userLabel="Button 2_1">
-                                        <rect key="frame" x="30" y="49.999999999999943" width="30" height="30"/>
-                                        <connections>
-                                            <action selector="switchTask2:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="Tjo-yb-CaI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-gg-nVY" userLabel="Button 4_1">
-                                        <rect key="frame" x="89.333333333333343" y="30" width="30" height="30"/>
-                                        <connections>
-                                            <action selector="switchTask4:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="PQG-hy-MZG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="wNX-gg-nVY" firstAttribute="centerY" secondItem="aaY-3H-kKZ" secondAttribute="centerY" id="2IQ-A6-b9z"/>
-                                    <constraint firstItem="8zq-Un-pN5" firstAttribute="centerX" secondItem="ffm-wR-6iG" secondAttribute="centerX" id="FM9-91-7gc"/>
-                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="width" secondItem="Fjn-Sh-ltB" secondAttribute="width" id="Na3-TU-f7N"/>
-                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="centerX" secondItem="Fjn-Sh-ltB" secondAttribute="centerX" id="Wmm-fB-3gE"/>
-                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="centerY" secondItem="Fjn-Sh-ltB" secondAttribute="centerY" id="ldR-ZY-mKu"/>
-                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="height" secondItem="Fjn-Sh-ltB" secondAttribute="height" id="r0T-1F-z3q"/>
-                                    <constraint firstItem="IeY-ei-hQE" firstAttribute="leading" secondItem="fKa-Bc-xcX" secondAttribute="leading" constant="69" id="rzP-Wt-rpU"/>
-                                    <constraint firstItem="8zq-Un-pN5" firstAttribute="centerY" secondItem="7MJ-eY-HFC" secondAttribute="centerY" id="tNK-OS-Stg"/>
-                                    <constraint firstItem="IeY-ei-hQE" firstAttribute="top" secondItem="fKa-Bc-xcX" secondAttribute="top" constant="100" id="xWq-c7-w8K"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-Xa-0a0">
-                                <rect key="frame" x="71" y="473.66666666666669" width="30" height="30"/>
-                                <connections>
-                                    <action selector="switchTask3:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="pc7-jF-lFA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-QJ-4bj">
-                                <rect key="frame" x="41" y="582" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="upi-QJ-4bj" secondAttribute="height" multiplier="1:1" id="3Id-VU-QAK"/>
-                                    <constraint firstAttribute="width" constant="30" id="qzU-sG-lYL"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="switchTask1:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="4YN-U3-WO7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMA-s0-b18" userLabel="Button 1_1">
-                                <rect key="frame" x="71" y="567" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="cAP-e8-jAN" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                                    <constraint firstAttribute="height" constant="30" id="upZ-r7-zhw" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="switchTask1:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="Oo0-PP-7al"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y0-IY-baO">
-                                <rect key="frame" x="140.33333333333334" y="473.66666666666669" width="30" height="30"/>
-                                <connections>
-                                    <action selector="switchTask4:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="3gI-rY-pe3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-lO-FMb">
-                                <rect key="frame" x="41" y="508.66666666666674" width="30" height="30"/>
-                                <connections>
-                                    <action selector="switchTask2:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="J71-Ok-npH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-Yo-LuE">
-                                <rect key="frame" x="173.33333333333334" y="582" width="30" height="30"/>
-                                <connections>
-                                    <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="bES-PJ-yKE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-jX-Rna">
-                                <rect key="frame" x="173.33333333333334" y="508.66666666666674" width="30" height="30"/>
-                                <connections>
-                                    <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="SCs-we-WTQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="KidsSaveOcean" customModuleProvider="target">
-                                <rect key="frame" x="230" y="477" width="155" height="184"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="155:184" id="APx-7i-Pc6"/>
-                                </constraints>
-                                <state key="normal" image="ACTION ALERT"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meterScale" translatesAutoresizingMaskIntoConstraints="NO" id="4br-dF-I5I">
-                                <rect key="frame" x="63.000000000000014" y="166.33333333333334" width="192.33333333333337" height="98.000000000000028"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4br-dF-I5I" secondAttribute="height" multiplier="192:98" id="aMW-E6-nIa"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pointer" translatesAutoresizingMaskIntoConstraints="NO" id="HDd-i0-FAy">
-                                <rect key="frame" x="63.000000000000014" y="244.33333333333334" width="192.33333333333337" height="20.000000000000028"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radical Meter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGt-A5-OM8">
-                                <rect key="frame" x="63.000000000000014" y="309.66666666666669" width="192.33333333333337" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="3dw-94-PqR"/>
-                                </constraints>
+                                <rect key="frame" x="265.33333333333331" y="297.33333333333331" width="112.66666666666669" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -318,10 +139,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Occ-Eb-ARZ" userLabel="Action Alert View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgT-Ee-TtI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platter" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-z1-sOr">
                                         <rect key="frame" x="72" y="286.66666666666669" width="270" height="163"/>
                                         <constraints>
@@ -364,6 +181,10 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgT-Ee-TtI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="PTc-qX-7Hd" firstAttribute="leading" secondItem="KxK-z1-sOr" secondAttribute="leading" constant="13" id="0oQ-NV-W5v"/>
@@ -380,26 +201,203 @@
                                     <constraint firstItem="vmQ-Ih-sjf" firstAttribute="trailing" secondItem="KxK-z1-sOr" secondAttribute="trailing" constant="-13" id="wQ8-eh-T1H"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uP-1IW">
+                                <rect key="frame" x="88.666666666666686" y="373.33333333333331" width="263" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-mB-t2e">
+                                        <rect key="frame" x="0.0" y="0.33333333333337123" width="81" height="32.666666666666664"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Lcc-mB-t2e" secondAttribute="height" multiplier="82:33" id="krp-8S-its"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                        <state key="normal" title="How?" backgroundImage="Not yet blank">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="howToAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="BeU-tX-hAY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kpB-Rf-ORf" customClass="KSODidButton" customModule="KidsSaveOcean" customModuleProvider="target">
+                                        <rect key="frame" x="91" y="0.33333333333337123" width="81" height="32.666666666666664"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="kpB-Rf-ORf" secondAttribute="height" multiplier="82:33" id="Rdx-iR-4yP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="9"/>
+                                        <state key="normal" title="I did it about plastic!" backgroundImage="Not yet blank">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="completeMiddleButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="peW-Lx-5G1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-M1-UBW" customClass="KSODidButton" customModule="KidsSaveOcean" customModuleProvider="target">
+                                        <rect key="frame" x="182" y="0.66666666666668561" width="81" height="32"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="9"/>
+                                        <state key="normal" title="I did it about climate!" backgroundImage="Not yet blank">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="completeAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="Bgf-xs-FWx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="FMt-pO-v6L" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                    <constraint firstItem="kpB-Rf-ORf" firstAttribute="width" secondItem="kpB-Rf-ORf" secondAttribute="height" multiplier="82:33" id="lFe-CC-p2x"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjn-Sh-ltB" userLabel="Wheel Volume views">
+                                <rect key="frame" x="41" y="461.33333333333331" width="162.33333333333334" height="178.33333333333331"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wheel Volume" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-Bc-xcX">
+                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="178.33333333333334"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fKa-Bc-xcX" secondAttribute="height" multiplier="132:145" id="2uZ-fb-BUK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheelVolumePoints" translatesAutoresizingMaskIntoConstraints="NO" id="IeY-ei-hQE">
+                                        <rect key="frame" x="69" y="100.00000000000006" width="9" height="9"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="9" id="Ple-cd-L8d"/>
+                                            <constraint firstAttribute="height" constant="9" id="k6w-am-zJB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffm-wR-6iG" userLabel="Button 6_1">
+                                        <rect key="frame" x="102.33333333333334" y="76.333333333333314" width="30" height="34"/>
+                                        <connections>
+                                            <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="E2d-LZ-jDQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zq-Un-pN5" userLabel="Button 5_1">
+                                        <rect key="frame" x="102.33333333333334" y="50" width="30" height="34"/>
+                                        <connections>
+                                            <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="ld7-Gn-emh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaY-3H-kKZ" userLabel="Button 3_1">
+                                        <rect key="frame" x="40" y="30" width="30" height="34"/>
+                                        <connections>
+                                            <action selector="switchTask3:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="af0-86-Y3J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-eY-HFC" userLabel="Button 2_1">
+                                        <rect key="frame" x="30" y="50" width="30" height="34"/>
+                                        <connections>
+                                            <action selector="switchTask2:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="Tjo-yb-CaI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-gg-nVY" userLabel="Button 4_1">
+                                        <rect key="frame" x="89.333333333333343" y="30" width="30" height="34"/>
+                                        <connections>
+                                            <action selector="switchTask4:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="PQG-hy-MZG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMA-s0-b18" userLabel="Button 1_1">
+                                        <rect key="frame" x="30" y="78.333333333333314" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="cAP-e8-jAN" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                            <constraint firstAttribute="height" constant="30" id="upZ-r7-zhw" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="switchTask1:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="Oo0-PP-7al"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wNX-gg-nVY" firstAttribute="centerY" secondItem="aaY-3H-kKZ" secondAttribute="centerY" id="2IQ-A6-b9z"/>
+                                    <constraint firstItem="8zq-Un-pN5" firstAttribute="centerX" secondItem="ffm-wR-6iG" secondAttribute="centerX" id="FM9-91-7gc"/>
+                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="width" secondItem="Fjn-Sh-ltB" secondAttribute="width" id="Na3-TU-f7N"/>
+                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="centerX" secondItem="Fjn-Sh-ltB" secondAttribute="centerX" id="Wmm-fB-3gE"/>
+                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="centerY" secondItem="Fjn-Sh-ltB" secondAttribute="centerY" id="ldR-ZY-mKu"/>
+                                    <constraint firstItem="ffm-wR-6iG" firstAttribute="centerY" secondItem="tMA-s0-b18" secondAttribute="centerY" id="pkE-by-hGX"/>
+                                    <constraint firstItem="fKa-Bc-xcX" firstAttribute="height" secondItem="Fjn-Sh-ltB" secondAttribute="height" id="r0T-1F-z3q"/>
+                                    <constraint firstItem="IeY-ei-hQE" firstAttribute="leading" secondItem="fKa-Bc-xcX" secondAttribute="leading" constant="69" id="rzP-Wt-rpU"/>
+                                    <constraint firstItem="8zq-Un-pN5" firstAttribute="centerY" secondItem="7MJ-eY-HFC" secondAttribute="centerY" id="tNK-OS-Stg"/>
+                                    <constraint firstItem="IeY-ei-hQE" firstAttribute="top" secondItem="fKa-Bc-xcX" secondAttribute="top" constant="100" id="xWq-c7-w8K"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-Xa-0a0">
+                                <rect key="frame" x="71" y="461.33333333333331" width="30" height="30"/>
+                                <connections>
+                                    <action selector="switchTask3:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="pc7-jF-lFA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-QJ-4bj">
+                                <rect key="frame" x="41" y="569.66666666666663" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="upi-QJ-4bj" secondAttribute="height" multiplier="1:1" id="3Id-VU-QAK"/>
+                                    <constraint firstAttribute="width" constant="30" id="qzU-sG-lYL"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="switchTask1:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="4YN-U3-WO7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y0-IY-baO">
+                                <rect key="frame" x="140.33333333333334" y="461.33333333333331" width="30" height="30"/>
+                                <connections>
+                                    <action selector="switchTask4:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="3gI-rY-pe3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-lO-FMb">
+                                <rect key="frame" x="41" y="496.33333333333331" width="30" height="29.999999999999943"/>
+                                <connections>
+                                    <action selector="switchTask2:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="J71-Ok-npH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-Yo-LuE">
+                                <rect key="frame" x="173.33333333333334" y="569.66666666666663" width="30" height="30"/>
+                                <connections>
+                                    <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="bES-PJ-yKE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-jX-Rna">
+                                <rect key="frame" x="173.33333333333334" y="496.33333333333331" width="30" height="29.999999999999943"/>
+                                <connections>
+                                    <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="SCs-we-WTQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="KidsSaveOcean" customModuleProvider="target">
+                                <rect key="frame" x="230" y="465" width="155" height="184"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="155:184" id="APx-7i-Pc6"/>
+                                </constraints>
+                                <state key="normal" image="ACTION ALERT"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meterScale" translatesAutoresizingMaskIntoConstraints="NO" id="4br-dF-I5I">
+                                <rect key="frame" x="63.000000000000014" y="154" width="192.33333333333337" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4br-dF-I5I" secondAttribute="height" multiplier="192:98" id="aMW-E6-nIa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pointer" translatesAutoresizingMaskIntoConstraints="NO" id="HDd-i0-FAy">
+                                <rect key="frame" x="63.000000000000014" y="242" width="192.33333333333337" height="10"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radical Meter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGt-A5-OM8">
+                                <rect key="frame" x="63.000000000000014" y="297.33333333333331" width="192.33333333333337" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="3dw-94-PqR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13855496048927307" green="0.63844740390777588" blue="0.99241381883621216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="width" secondItem="4br-dF-I5I" secondAttribute="width" id="0Of-WB-6qx"/>
-                            <constraint firstItem="aaY-3H-kKZ" firstAttribute="height" secondItem="tMA-s0-b18" secondAttribute="height" id="0Ra-h2-gxs"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="-16" id="18e-Iv-Ky3"/>
                             <constraint firstItem="Luv-j1-90t" firstAttribute="leading" secondItem="4br-dF-I5I" secondAttribute="leading" constant="-20" id="3to-nY-cz6" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="R9a-4H-YuA" firstAttribute="top" secondItem="Bqd-BT-4HJ" secondAttribute="bottom" constant="-14" id="41v-wk-4zb"/>
                             <constraint firstItem="Occ-Eb-ARZ" firstAttribute="height" secondItem="ScW-O5-Pi7" secondAttribute="height" id="4fO-IZ-km4"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="top" secondItem="cRy-QY-zOf" secondAttribute="bottom" constant="10.5" id="4vL-1f-OIL" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="hxb-kC-tnV" firstAttribute="leading" secondItem="Luv-j1-90t" secondAttribute="leading" constant="20" id="5PJ-sx-rqR" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="tMA-s0-b18" firstAttribute="leading" secondItem="upi-QJ-4bj" secondAttribute="trailing" id="5le-9L-RwP"/>
                             <constraint firstItem="R9a-4H-YuA" firstAttribute="trailing" secondItem="Kz5-ah-x5R" secondAttribute="trailing" id="6Am-B9-Wg7"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="height" secondItem="PpT-jX-Rna" secondAttribute="height" id="6GS-Yy-F38"/>
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="width" multiplier="0.75" priority="250" constant="-4.25" id="6Wq-3g-Lb0" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                            <constraint firstItem="7MJ-eY-HFC" firstAttribute="width" secondItem="tMA-s0-b18" secondAttribute="width" id="7X4-uN-PEn"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="height" secondItem="zGt-A5-OM8" secondAttribute="height" id="8Pe-hU-hPL"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="centerY" secondItem="PpT-jX-Rna" secondAttribute="centerY" id="9Eo-Qe-FJb"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="top" secondItem="Rr5-Xa-0a0" secondAttribute="bottom" constant="5" id="9gg-1w-956"/>
-                            <constraint firstItem="ffm-wR-6iG" firstAttribute="centerY" secondItem="tMA-s0-b18" secondAttribute="centerY" id="9s0-rp-Eep"/>
-                            <constraint firstItem="7MJ-eY-HFC" firstAttribute="height" secondItem="tMA-s0-b18" secondAttribute="height" id="AM7-5W-Hbx"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="bottom" secondItem="ixk-7e-iPf" secondAttribute="bottom" id="C5P-mh-VPb"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="centerY" secondItem="zGt-A5-OM8" secondAttribute="centerY" id="D9f-11-q2T"/>
                             <constraint firstItem="zGt-A5-OM8" firstAttribute="width" secondItem="HDd-i0-FAy" secondAttribute="width" id="EBW-1N-h7V"/>
@@ -408,7 +406,7 @@
                             <constraint firstItem="Fjn-Sh-ltB" firstAttribute="top" secondItem="Luv-j1-90t" secondAttribute="bottom" constant="35" id="Ggd-SY-Uqp" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="trailing" secondItem="Bqd-BT-4HJ" secondAttribute="trailing" constant="47" id="GxR-Eo-xHd"/>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="bottom" secondItem="4br-dF-I5I" secondAttribute="bottom" id="IKD-wD-qli"/>
-                            <constraint firstItem="ffm-wR-6iG" firstAttribute="height" secondItem="tMA-s0-b18" secondAttribute="height" id="J9c-UL-lqj"/>
+                            <constraint firstItem="tMA-s0-b18" firstAttribute="bottom" secondItem="upi-QJ-4bj" secondAttribute="top" id="IQc-xW-bva"/>
                             <constraint firstItem="Fjn-Sh-ltB" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="25" id="JWT-Do-8bb" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="wNX-gg-nVY" firstAttribute="leading" secondItem="1Y0-IY-baO" secondAttribute="leading" constant="-10" id="KDh-UV-4ft"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="width" secondItem="pnM-lO-FMb" secondAttribute="width" id="KWE-Cg-rkt"/>
@@ -425,7 +423,6 @@
                             <constraint firstItem="Occ-Eb-ARZ" firstAttribute="centerX" secondItem="ScW-O5-Pi7" secondAttribute="centerX" id="RCJ-I9-3R9"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="width" secondItem="PpT-jX-Rna" secondAttribute="width" id="Svx-h9-KlQ"/>
                             <constraint firstAttribute="trailing" secondItem="ixk-7e-iPf" secondAttribute="trailing" id="TNB-6d-bP7"/>
-                            <constraint firstItem="ffm-wR-6iG" firstAttribute="width" secondItem="tMA-s0-b18" secondAttribute="width" id="TZS-Zb-D7g"/>
                             <constraint firstItem="Luv-j1-90t" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="27" id="TdP-dT-bBu"/>
                             <constraint firstItem="Occ-Eb-ARZ" firstAttribute="width" secondItem="ScW-O5-Pi7" secondAttribute="width" id="Tef-fY-bRf"/>
                             <constraint firstItem="Occ-Eb-ARZ" firstAttribute="centerY" secondItem="ScW-O5-Pi7" secondAttribute="centerY" id="Ufz-2E-IB8"/>
@@ -435,15 +432,11 @@
                             <constraint firstItem="cRy-QY-zOf" firstAttribute="top" secondItem="4br-dF-I5I" secondAttribute="top" id="Vsr-wj-qu1"/>
                             <constraint firstItem="aaY-3H-kKZ" firstAttribute="top" secondItem="Rr5-Xa-0a0" secondAttribute="bottom" id="W6Z-5r-Cjw"/>
                             <constraint firstItem="aaY-3H-kKZ" firstAttribute="trailing" secondItem="Rr5-Xa-0a0" secondAttribute="trailing" constant="10" id="W88-ex-avD"/>
-                            <constraint firstItem="8zq-Un-pN5" firstAttribute="height" secondItem="tMA-s0-b18" secondAttribute="height" id="WYr-dJ-dGo"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="trailing" secondItem="Luv-j1-90t" secondAttribute="trailing" constant="-19" id="WsZ-pB-Wqz" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                            <constraint firstItem="wNX-gg-nVY" firstAttribute="width" secondItem="tMA-s0-b18" secondAttribute="width" id="XPn-Ll-QGO"/>
-                            <constraint firstItem="tMA-s0-b18" firstAttribute="leading" secondItem="upi-QJ-4bj" secondAttribute="trailing" id="Y1h-rL-73G"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="leading" secondItem="pnM-lO-FMb" secondAttribute="leading" id="YIP-Ut-Y8K"/>
                             <constraint firstItem="Kz5-ah-x5R" firstAttribute="trailing" secondItem="Bqd-BT-4HJ" secondAttribute="trailing" constant="18" id="YLF-JS-qX0"/>
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="height" secondItem="zGt-A5-OM8" secondAttribute="height" id="YSs-V6-pyZ"/>
                             <constraint firstItem="EN7-uP-1IW" firstAttribute="centerX" secondItem="Luv-j1-90t" secondAttribute="centerX" id="ami-Y3-BTj"/>
-                            <constraint firstItem="wNX-gg-nVY" firstAttribute="height" secondItem="tMA-s0-b18" secondAttribute="height" id="bbX-q4-Hsn"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="width" secondItem="pnM-lO-FMb" secondAttribute="width" id="cuL-en-J3Y"/>
                             <constraint firstItem="Cqh-Yo-LuE" firstAttribute="trailing" secondItem="Fjn-Sh-ltB" secondAttribute="trailing" id="dQS-ij-wro"/>
                             <constraint firstItem="EN7-uP-1IW" firstAttribute="top" secondItem="hxb-kC-tnV" secondAttribute="bottom" constant="10" id="dc9-8X-AsK" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
@@ -458,7 +451,6 @@
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="height" secondItem="pnM-lO-FMb" secondAttribute="height" id="oAq-dg-a5P"/>
                             <constraint firstItem="ixk-7e-iPf" firstAttribute="centerX" secondItem="ScW-O5-Pi7" secondAttribute="centerX" id="p3E-vl-bHi"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="leading" secondItem="pnM-lO-FMb" secondAttribute="trailing" id="pUY-2e-D6C"/>
-                            <constraint firstItem="8zq-Un-pN5" firstAttribute="width" secondItem="tMA-s0-b18" secondAttribute="width" id="pvZ-u8-gTv"/>
                             <constraint firstItem="hxb-kC-tnV" firstAttribute="centerY" secondItem="9zu-l6-3J2" secondAttribute="centerY" id="qJ3-kl-Hod"/>
                             <constraint firstItem="Kz5-ah-x5R" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="10" id="rRO-vg-Euq"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="top" secondItem="fKa-Bc-xcX" secondAttribute="top" id="sZU-Rf-2fP"/>
@@ -466,13 +458,11 @@
                             <constraint firstItem="1Y0-IY-baO" firstAttribute="width" secondItem="Rr5-Xa-0a0" secondAttribute="width" id="uef-YP-8co"/>
                             <constraint firstItem="PpT-jX-Rna" firstAttribute="leading" secondItem="1Y0-IY-baO" secondAttribute="trailing" constant="3" id="vwX-Wl-BB8"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="centerY" secondItem="Cqh-Yo-LuE" secondAttribute="centerY" id="wFW-JN-8Tu"/>
-                            <constraint firstItem="aaY-3H-kKZ" firstAttribute="width" secondItem="tMA-s0-b18" secondAttribute="width" id="wSF-ZJ-s6h"/>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="centerX" secondItem="zGt-A5-OM8" secondAttribute="centerX" id="x1i-zf-iGL"/>
                             <constraint firstItem="R9a-4H-YuA" firstAttribute="width" secondItem="Xm0-wL-XSG" secondAttribute="width" multiplier="155:414" id="x2Z-2U-oTA"/>
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="trailing" secondItem="gII-Qq-3yG" secondAttribute="trailing" id="xXi-dg-N5A"/>
                             <constraint firstItem="7MJ-eY-HFC" firstAttribute="leading" secondItem="pnM-lO-FMb" secondAttribute="trailing" id="xg3-hP-9GE"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Luv-j1-90t" secondAttribute="top" constant="-30" id="xnP-RN-Gf3"/>
-                            <constraint firstItem="upi-QJ-4bj" firstAttribute="top" secondItem="tMA-s0-b18" secondAttribute="bottom" constant="-15" id="z72-WA-00s"/>
                             <constraint firstItem="Cqh-Yo-LuE" firstAttribute="leading" secondItem="ffm-wR-6iG" secondAttribute="trailing" id="zdm-kb-ilb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xm0-wL-XSG"/>
