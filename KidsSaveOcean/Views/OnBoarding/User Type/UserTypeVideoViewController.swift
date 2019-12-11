@@ -22,7 +22,8 @@ class UserTypeVideoViewController: WebIntegrationViewController {
     
     override var originalWebUrlString: String {
         guard !urlString.isEmpty else { return "" }
-        return "https://www.youtube.com/embed/\(urlString)"
+        //return "https://youtu.be/5S0_1YJV064"
+        return "https://www.youtube.com/embed/5S0_1YJV064"
     }
 
     private func showActionButtons() {
