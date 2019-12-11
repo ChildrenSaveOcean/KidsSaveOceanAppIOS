@@ -14,8 +14,6 @@ class PolicyViewController: UIViewController, Instantiatable {
         tabBarController?.switchToHomeScreen()
         guard let homeViewController = tabBarController?.getSelectedTabMainViewController() as? HomeTableViewController else { return }
         
-        //tabBarController.
-        //homeViewController.tableView.selectRow(at: IndexPath(row: 2, section: 0), animated: true, scrollPosition: .middle)
         let taskViewController = CreateNewEnvironmentPolicyViewController.instantiate()
         taskViewController.title = ""
         homeViewController.navigationController?.pushViewController(taskViewController, animated: true)
