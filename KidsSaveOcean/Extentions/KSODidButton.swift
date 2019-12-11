@@ -32,7 +32,7 @@ class KSODidButton: UIButton {
         self.titleLabel?.alpha = 0 // or the text get blinking for moment but it is noticable
         
         guard let titleLength = title?.count else {return}
-        self.titleLabel?.font = self.titleLabel?.font.withSize(titleLength > 10 ? 11 : 16)
+        self.titleLabel?.font = self.titleLabel?.font.withSize(titleLength > 10 ? 9 : 16)
         super.setTitle(title, for: state)
         
         self.titleLabel?.alpha = 1
