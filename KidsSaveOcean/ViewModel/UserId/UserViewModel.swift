@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 import MapKit
 
 enum UserType: Int { // we can get from from Firebase, bit it will stay here temporary

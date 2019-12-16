@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
 import MapKit
 
 class CountriesService: NSObject {
