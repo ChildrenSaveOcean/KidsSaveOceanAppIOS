@@ -29,7 +29,7 @@ class WebIntegrationViewController: UIViewController {
         }
     }
     
-    private var reachability = Reachability()
+    private var reachability: Reachability? // = try Reachability()
 
     lazy var webView = { () -> WKWebView in
         let webConfiguration = WKWebViewConfiguration()
@@ -63,6 +63,10 @@ class WebIntegrationViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
+        if reachability == nil {
+            reachability = try? Reachability()
+        }
 
         self.view.backgroundColor = .white
         
@@ -103,7 +107,7 @@ class WebIntegrationViewController: UIViewController {
     }
 
     deinit {
-        reachability!.stopNotifier()
+        reachability?.stopNotifier()
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
 
