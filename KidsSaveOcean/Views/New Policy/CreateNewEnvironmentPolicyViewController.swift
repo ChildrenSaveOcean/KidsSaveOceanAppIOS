@@ -48,7 +48,7 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
             textTitle = "Vote now on a policy we'll push"
             imageName = "Vote"
         case 3:
-            textTitle = "Sing Up and update signatures"
+            textTitle = "Sign Up and update signatures"
             imageName = "SignUp"
         case 4:
             textTitle = "Multiply your Impact"

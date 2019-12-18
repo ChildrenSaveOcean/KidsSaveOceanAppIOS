@@ -105,7 +105,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             return
         }
         
-        singUpUserToTheLoaction()
+        signUpUserToTheLoaction()
     }
     
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
@@ -212,7 +212,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let alertView = UIAlertController(title: "Are you sure this is your location?", message: "", preferredStyle: .alert)
         
         let yesButton = UIAlertAction(title: "YES", style: .default) { (_) in
-            self.singUpUserToTheLoaction()
+            self.signUpUserToTheLoaction()
         }
         
         let noButton = UIAlertAction(title: "NO", style: .default) { (_) in
@@ -229,7 +229,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         self.present(alertView, animated: true, completion: nil)
     }
     
-    private func singUpUserToTheLoaction() {
+    private func signUpUserToTheLoaction() {
         let dialogMessage = UIAlertController(title: "Are you sure you want to choose this location?", message: "", preferredStyle: .alert)
         
         // Create OK button with action handler

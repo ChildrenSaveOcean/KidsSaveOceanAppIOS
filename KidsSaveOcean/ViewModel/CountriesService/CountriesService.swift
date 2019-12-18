@@ -31,7 +31,7 @@ class CountriesService: NSObject {
             ActionViewModel.shared().setup { () in
                 let actions = ActionViewModel.shared().actions
                 for action in actions {
-                    self.countriesContacts.filter{ $0.code == action.action_location }.first?.action = action
+                    self.countriesContacts.filter { $0.code == action.action_location }.first?.action = action
                 }
                 self.contryContactsHasBeenLoaded = true
                 NotificationCenter.default.post(name: .countriesHasBeenLoaded, object: nil)
