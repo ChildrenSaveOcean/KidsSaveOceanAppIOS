@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseInstanceID
+import FirebaseMessaging
 import Firebase
 
 @UIApplicationMain

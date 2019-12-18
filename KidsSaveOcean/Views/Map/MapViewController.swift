@@ -62,6 +62,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
 
+        map.delegate = self
         map.register(KSOCustomMapPin.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         tbvTop10.register(UINib(nibName: "KSOMapTop10TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -119,7 +120,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func addPinsInMap() {
         map.removeAnnotations(map.annotations)
         for country in countriesData where country.coordinates != nil {
-            let annotation = KSOPinOfLetters(with: country.name, country.coordinates!, country.letters_written)
+            let annotation = KSOPinOfLetters(with: country.name, country.coordinates!, country.letters_written, country.action)
             map.addAnnotation(annotation)
         }
     }
@@ -163,5 +164,19 @@ extension MapViewController: NotificationProtocol {
     func updateViews() {
         guard map != nil, tbvTop10 != nil else {return}
         reloadScores()
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+      
+        guard let annotation = view.annotation as? KSOPinOfLetters,
+            let action = annotation.action else { return }
+        
+        let webViewController = WebIntegrationViewController()
+        
+        self.present(webViewController, animated: true) {
+            webViewController.setURLString(action.action_link)
+      }
     }
 }

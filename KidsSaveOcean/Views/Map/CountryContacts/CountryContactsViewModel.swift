@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
 import MapKit
 
 final class CountryContactsViewModel: NSObject {

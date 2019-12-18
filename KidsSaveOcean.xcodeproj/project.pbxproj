@@ -15,6 +15,8 @@
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
 		162572D422E37DEF00A702C4 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */; };
 		162602162373193D007B392D /* UINavigationController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162602152373193D007B392D /* UINavigationController+Extention.swift */; };
+		162F6C2E23A725A400E709D5 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F6C2D23A725A400E709D5 /* ActionViewModel.swift */; };
+		162F6C3023A725B700E709D5 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F6C2F23A725B700E709D5 /* Action.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638882D228DD6080084D8CA /* KSOAuthorization.swift */; };
@@ -73,9 +75,9 @@
 		16ECE4702299F11D0099C406 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ECE46F2299F11D0099C406 /* PolicyViewController.swift */; };
 		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
+		16FB56D723A96C7C004C6277 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16FB56D623A96C7C004C6277 /* GoogleService-Info.plist */; };
 		63569386F4795D9DB1FF6BA3 /* Pods_KidsSaveOcean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D46D27A6B59B1557A69795B /* Pods_KidsSaveOcean.framework */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
-		7C0B1CD422232BE40033F251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */; };
 		7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD622232EC50033F251 /* CountriesService.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
 		7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */; };
@@ -132,6 +134,8 @@
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
 		162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		162602152373193D007B392D /* UINavigationController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extention.swift"; sourceTree = "<group>"; };
+		162F6C2D23A725A400E709D5 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
+		162F6C2F23A725B700E709D5 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		1638882D228DD6080084D8CA /* KSOAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOAuthorization.swift; sourceTree = "<group>"; };
@@ -195,11 +199,11 @@
 		16ECE46F2299F11D0099C406 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticDataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
+		16FB56D623A96C7C004C6277 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31F64CACCA5869098DB5EC66 /* Pods_KidsSaveOceanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ED5E343BB8EB620FEC0FC8 /* Pods-KidsSaveOcean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.debug.xcconfig"; sourceTree = "<group>"; };
 		60627274457D158C047F40BD /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C00FFB921185B7000320309 /* CountryContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewController.swift; sourceTree = "<group>"; };
-		7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C0B1CD622232EC50033F251 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
 		7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +262,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		162F6C2C23A7259200E709D5 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				162F6C2D23A725A400E709D5 /* ActionViewModel.swift */,
+				162F6C2F23A725B700E709D5 /* Action.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		163F23A220FCFC3800022B38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,7 +390,7 @@
 				16CF5A2620AF1E4100C4E57E /* Views */,
 				16559BD520ADF9D5002D4F78 /* Main.storyboard */,
 				1679B06D21EA29E100C15F2A /* knobClick.mp3 */,
-				7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */,
+				16FB56D623A96C7C004C6277 /* GoogleService-Info.plist */,
 				16559BD820ADF9D5002D4F78 /* Assets.xcassets */,
 				7CE89F9221A1FF5B00C2D6DA /* Supporting Files */,
 				16559BDA20ADF9D5002D4F78 /* LaunchScreen.storyboard */,
@@ -545,6 +558,15 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		16FB56D823A97007004C6277 /* NumberOfLetters */ = {
+			isa = PBXGroup;
+			children = (
+				945A089220F64520006ED13D /* KSOPinOfLetters.swift */,
+				946847D82139E299007A1158 /* KSOCustomMapPin.swift */,
+			);
+			path = NumberOfLetters;
+			sourceTree = "<group>";
+		};
 		7C0B1CCD2223141D0033F251 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +582,7 @@
 		7C0B1CD522232E9C0033F251 /* CountriesService */ = {
 			isa = PBXGroup;
 			children = (
+				162F6C2C23A7259200E709D5 /* Action */,
 				7C0B1CD622232EC50033F251 /* CountriesService.swift */,
 				161A0C1122B291DC0047DD40 /* LocationService.swift */,
 				7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */,
@@ -633,8 +656,7 @@
 			children = (
 				7C7BBAC721B864CF00C48D4E /* CountryContacts */,
 				945A089020F643EB006ED13D /* MapViewController.swift */,
-				945A089220F64520006ED13D /* KSOPinOfLetters.swift */,
-				946847D82139E299007A1158 /* KSOCustomMapPin.swift */,
+				16FB56D823A97007004C6277 /* NumberOfLetters */,
 				C55E06FA214EE222009B7BD6 /* cells */,
 			);
 			path = Map;
@@ -791,9 +813,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CF1A162382377B001D099D /* SF-Pro-Display-Semibold.otf in Resources */,
+				16FB56D723A96C7C004C6277 /* GoogleService-Info.plist in Resources */,
 				164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */,
 				164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */,
-				7C0B1CD422232BE40033F251 /* GoogleService-Info.plist in Resources */,
 				16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
 				16CF1A172382377E001D099D /* SF-Pro-Text-Semibold.otf in Resources */,
@@ -964,6 +986,7 @@
 				164D7302234B4BA00080ACB7 /* HijackPoliciesViewModel.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */,
+				162F6C2E23A725A400E709D5 /* ActionViewModel.swift in Sources */,
 				1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */,
 				7C9891632331264C00400CC5 /* YouthInitiativeProcessViewController.swift in Sources */,
 				7C4AF9A8233A8440006A8566 /* TrackTableViewCell.swift in Sources */,
@@ -1012,6 +1035,7 @@
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
 				7C989167233127A800400CC5 /* VoteNowViewController.swift in Sources */,
 				162572D422E37DEF00A702C4 /* UserDefaultsHelper.swift in Sources */,
+				162F6C3023A725B700E709D5 /* Action.swift in Sources */,
 				168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */,
 				16D4C27C22C1552F006DBC64 /* NotificationController.swift in Sources */,
 				16664B1622C4149D00F332A7 /* ActivistViewContoller.swift in Sources */,
