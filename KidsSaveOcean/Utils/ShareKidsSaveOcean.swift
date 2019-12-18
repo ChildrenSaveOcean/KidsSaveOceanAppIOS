@@ -14,8 +14,9 @@ class ShareKidsSaveOcean {
     }
     
     static func share(target: UIViewController, completion: (() -> Void)?) {
+        let textForSharing = "Check out this FateChanger app - we’re going to take back the future:\n"
         let linkForSharing = "https://www.kidssaveocean.com/change-fate"
-        let objectsToShare = [URL(string: linkForSharing) as Any]
+        let objectsToShare = [textForSharing as Any, URL(string: linkForSharing) as Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         target.present(activityVC, animated: true) {
             completion?()
