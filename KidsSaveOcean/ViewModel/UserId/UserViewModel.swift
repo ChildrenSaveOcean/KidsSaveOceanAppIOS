@@ -32,13 +32,13 @@ enum DashboardTasksScopes: Int, CaseIterable {
         case .start_campaign:
             return "dash_start_a_letter_writing_campaign"
         case .local_politics:
-            return "dash_become_active_in_local_politics"
+            return "dash_joined_a_policy_hijack_campaign"
         case .protest:
             return "dash_protest"
         case .write_letter_about_plastic:
-            return "dash_write_letter_about_plastic"
+            return "dash_wrote_a_letter_about_plastic"
         case .write_letter_about_climate:
-            return "dash_write_letter_about_climate"
+            return "dash_wrote_a_letter_about_climate"
         case .hijack_policy_selected:
             return "hijack_policy_selected"
         case .campaign:
@@ -74,24 +74,26 @@ var lettersWrittenKey: String {return  "user_letters_written"}
 var userTypeKey: String {return "user_person_type"}
 var hijackPolicySelectedKey: String {return "hijack_policy_selected"}
 var campaignKey: String {return "campaign"}
+var locationIdKey: String {return "location_id"}
+var signaturesPledgedKey: String {return "signatures_pledged"}
 
 class UserViewModel {
     let authorizedUser = Auth.auth().currentUser
     var databaseReferenece: DatabaseReference? //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
-////// Zip2Sequence ? 
-    var parametersDisctionary: [String: Any?] = [ DashboardTasksScopes.research.firebaseFieldName: false,
-                                                  DashboardTasksScopes.write_letter.firebaseFieldName: false,
-                                                  DashboardTasksScopes.share.firebaseFieldName: false,
-                                                  DashboardTasksScopes.start_campaign.firebaseFieldName: false,
+////// Zip2Sequence ?
+    var parametersDisctionary: [String: Any?] = [ campaignKey: nil,
                                                   DashboardTasksScopes.local_politics.firebaseFieldName: false,
+                                                  DashboardTasksScopes.research.firebaseFieldName: false,
                                                   DashboardTasksScopes.protest.firebaseFieldName: false,
+                                                  DashboardTasksScopes.share.firebaseFieldName: false,
                                                   DashboardTasksScopes.write_letter_about_climate.firebaseFieldName: false,
                                                   DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName: false,
-                                                  lettersWrittenKey: 0,
-                                                  userTypeKey: 0,
                                                   hijackPolicySelectedKey: "",
-                                                  campaignKey: nil
-                        ]
+                                                  locationIdKey: "",
+                                                  signaturesPledgedKey: 0,
+                                                  lettersWrittenKey: 0,
+                                                  userTypeKey: 0
+        ]
 
     var local_politics: Bool = false {
         willSet(newValue) {
