@@ -79,7 +79,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         signaturesReqdTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesReqdTextField.layer.borderWidth = 1.0
         signaturesReqdTextField.roundCorners()
-        signaturesReqdTextField.text = String(campaign?.signatures_pledged ?? 0)
+        signaturesReqdTextField.text = String(campaign?.signatures_required ?? 0)
         
         signaturesCollectedTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesCollectedTextField.layer.borderWidth = 1.0
@@ -110,7 +110,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesReqdTextField.text {
-            UserViewModel.shared().campaign?.signatures_pledged = Int(signatures) ?? 0
+            //UserViewModel.shared().campaign?.signatures_pledged = Int(signatures) ?? 0
+            UserViewModel.shared().signatures_pledged = Int(signatures) ?? 0
             UserViewModel.shared().saveUser()
             dismissKeyboard()
             updateLiveLocationView()
@@ -203,9 +204,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     private func updateLiveLocationView() {
         let campaign = campaigns.filter { $0.id == UserViewModel.shared().campaign?.campaign_id }.first
-        signaturesRequiredLabel.text = String( campaign?.signatures_pledged ?? 0)
+        signaturesRequiredLabel.text =  String( campaign?.signatures_required ?? 0)
         signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
-        deadlineLabel.text = "--" //campaign["signatures_pledged"] as? String ?? "--" // TODO
+        deadlineLabel.text = "--"
     }
     
     private func lockChoosenLocationForUser() {
@@ -241,8 +242,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             }
             //first else { return }
             
-            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_pledged: campaign.signatures_pledged, signatures_collected: 0)
+            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_required: campaign.signatures_required, signatures_collected: 0)
             UserViewModel.shared().campaign = campSign
+            UserViewModel.shared().location_id = campaign.location_id
             
             UserViewModel.shared().saveUser()
             

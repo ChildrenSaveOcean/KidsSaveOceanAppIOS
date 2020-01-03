@@ -59,14 +59,12 @@ class CampaignViewModel {
                 guard let sign_collected = value["signatures_collected"] as? Int else {
                     continue
                 }
-                guard let sign_pledged = value["signatures_pledged"] as? Int else {
-                    continue
-                }
+
                 guard let sigh_required = value["signatures_required"] as? Int else {
                     continue
                 }
                 
-                let campaignObj = Campaign(id: id, hijack_policy: policy, live: live, location_id: location, signatures_collected: sign_collected, signatures_pledged: sign_pledged, signatures_required: sigh_required)
+                let campaignObj = Campaign(id: id, hijack_policy: policy, live: live, location_id: location, signatures_collected: sign_collected, signatures_required: sigh_required)
                 
                 self.campaigns.append(campaignObj)
             }

@@ -34,11 +34,11 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
         let location = HijackPLocationViewModel.shared().hidjackPLocations.filter { $0.id == campaign.location_id }.first?.location ?? ""
         campaignLocation.text = "Campaign location: " + location
         
-        signatureRequiredLabel.text = "Signatures required: " + String( campaign.signatures_pledged)
+        signatureRequiredLabel.text = "Signatures required: " + String( campaign.signatures_required)
         totalCollectedSignaturesLabel.text = "Total collected so far: " + String(campaign.signatures_collected)
         deadlineLabel.text = "--"
         
-        userPlannedSignatures.text = "Your planned signatures: " + String( userCampaign?.signatures_pledged ?? 0)
+        userPlannedSignatures.text = "Your planned signatures: " + String( UserViewModel.shared().signatures_pledged)
         userCollectedSignatures.text = "Your collected signatures: " + String(userCampaign?.signatures_collected ?? 0)
         
     }

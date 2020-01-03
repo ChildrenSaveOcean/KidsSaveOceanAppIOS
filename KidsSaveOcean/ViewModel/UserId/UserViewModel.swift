@@ -152,6 +152,18 @@ class UserViewModel {
         }
     }
     
+    var signatures_pledged: Int = 0 {
+        willSet(newValue) {
+            parametersDisctionary[signaturesPledgedKey] = newValue
+        }
+    }
+    
+    var location_id: String = "" {
+        willSet(newValue) {
+            parametersDisctionary[locationIdKey] = newValue
+        }
+    }
+    
 //    var campaign_id: String? {
 //        willSet(newValue) {
 //            guard let campaign_id = newValue else {return}
