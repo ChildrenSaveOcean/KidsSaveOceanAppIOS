@@ -102,8 +102,11 @@ class DashboardViewController: UIViewController {
         view.layoutIfNeeded()
 
         setUpTopIcons()
-        let firstIncompetedTask = self.completionTasksStates.firstIndex(of: false)
-        self.chooseTaskWithNum(firstIncompetedTask ?? 0)
+        var firstIncompetedTask = self.completionTasksStates.firstIndex(of: false) ?? 0
+        if firstIncompetedTask >= 5 {
+            firstIncompetedTask = 0
+        }
+        self.chooseTaskWithNum(firstIncompetedTask)
     }
 
     override func viewDidLayoutSubviews() {
