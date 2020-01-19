@@ -57,7 +57,6 @@
 		1679C90622E26D8D00BC1A89 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679C90522E26D8D00BC1A89 /* NotificationItem.swift */; };
 		1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679C90722E270B700BC1A89 /* NotificationTarget.swift */; };
 		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
-		1690DEF723AA98F100CA256B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1690DEF623AA98F100CA256B /* GoogleService-Info.plist */; };
 		169D6CF222D73629008073DF /* WriteToWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D6CF122D73629008073DF /* WriteToWhereViewController.swift */; };
 		16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3B229027F100E36F25 /* UserViewModel.swift */; };
 		16BA0A3E2290281A00E36F25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3D2290281A00E36F25 /* User.swift */; };
@@ -182,7 +181,6 @@
 		1679C90522E26D8D00BC1A89 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
 		1679C90722E270B700BC1A89 /* NotificationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTarget.swift; sourceTree = "<group>"; };
 		168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionDashboardViewController.swift; sourceTree = "<group>"; };
-		1690DEF623AA98F100CA256B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		169D6CF122D73629008073DF /* WriteToWhereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteToWhereViewController.swift; sourceTree = "<group>"; };
 		16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsSaveOcean.entitlements; sourceTree = "<group>"; };
 		16BA0A3B229027F100E36F25 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -382,7 +380,6 @@
 		16559BCE20ADF9D5002D4F78 /* KidsSaveOcean */ = {
 			isa = PBXGroup;
 			children = (
-				1690DEF623AA98F100CA256B /* GoogleService-Info.plist */,
 				16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */,
 				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				7C0B1CCD2223141D0033F251 /* Utils */,
@@ -816,7 +813,6 @@
 				164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */,
 				164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */,
 				16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */,
-				1690DEF723AA98F100CA256B /* GoogleService-Info.plist in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
 				16CF1A172382377E001D099D /* SF-Pro-Text-Semibold.otf in Resources */,
 				1679B06E21EA29E200C15F2A /* knobClick.mp3 in Resources */,
@@ -912,23 +908,21 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
