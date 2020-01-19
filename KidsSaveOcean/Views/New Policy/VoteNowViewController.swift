@@ -102,9 +102,18 @@ extension VoteNowViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 extension VoteNowViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let hijackPolicy = pickerData[row]
-        let attributedString = NSAttributedString(string: hijackPolicy.description, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        return attributedString
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+
+        var label: UILabel
+        if let view = view as? UILabel { label = view }
+        else { label = UILabel() }
+
+        label.text = pickerData[row].description
+        label.textAlignment = .center
+        label.font = UIFont.proDisplaySemiBold15
+//        label.adjustsFontSizeToFitWidth = true
+//        label.minimumScaleFactor = 0.5
+
+        return label
     }
 }
