@@ -115,25 +115,24 @@ class UserViewModel {
             parametersDisctionary[DashboardTasksScopes.share.firebaseFieldName] = newValue
         }
     }
-    var start_campaign: Bool = false {
-        willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.start_campaign.firebaseFieldName] = newValue
-        }
-    }
-    var write_letter: Bool = false {
-        willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.write_letter.firebaseFieldName] = newValue
-        }
-    }
+    var start_campaign: Bool = false
+//    {
+//        willSet(newValue) {
+//            parametersDisctionary[DashboardTasksScopes.start_campaign.firebaseFieldName] = newValue
+//        }
+//    }
+    
+    var write_letter: Bool = false
     var write_letter_about_climate: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName] = newValue
-
+            parametersDisctionary[DashboardTasksScopes.write_letter_about_climate.firebaseFieldName] = newValue
+            setWrittingState()
         }
     }
     var write_letter_about_plastic: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.write_letter_about_climate.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName] = newValue
+            setWrittingState()
         }
     }
     var letters_written: Int = 0 {
@@ -200,11 +199,15 @@ class UserViewModel {
         if Auth.auth().currentUser?.uid != nil {
             self.databaseReferenece = Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
             self.fetchUser {
+                self.setWrittingState()
                 //NotificationCenter.default.post(name: Notification.Name(Settings.UserHasBeenLoadedNotificationName), object: nil)
             }
         }
     }
 
+    private func setWrittingState() {
+        self.write_letter = self.write_letter_about_plastic && self.write_letter_about_climate
+    }
     // swiftlint:disable cyclomatic_complexity
     // swiftlint:disable function_body_length
     func fetchUser(_ completion: (() -> Void)?) {
@@ -228,20 +231,20 @@ class UserViewModel {
                     self.research = value
                     continue
 
-                case DashboardTasksScopes.write_letter.firebaseFieldName:
-                    guard let value = userFBData.value as? Bool else {continue}
-                    self.write_letter = value
-                    continue
+//                case DashboardTasksScopes.write_letter.firebaseFieldName:
+//                    guard let value = userFBData.value as? Bool else {continue}
+//                    self.write_letter = value
+//                    continue
 
                 case DashboardTasksScopes.share.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.share = value
                     continue
 
-                case DashboardTasksScopes.start_campaign.firebaseFieldName:
-                    guard let value = userFBData.value as? Bool else {continue}
-                    self.start_campaign = value
-                    continue
+//                case DashboardTasksScopes.start_campaign.firebaseFieldName:
+//                    guard let value = userFBData.value as? Bool else {continue}
+//                    self.start_campaign = value
+//                    continue
 
                 case DashboardTasksScopes.local_politics.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
