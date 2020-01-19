@@ -79,7 +79,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         signaturesReqdTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesReqdTextField.layer.borderWidth = 1.0
         signaturesReqdTextField.roundCorners()
-        signaturesReqdTextField.text = String(campaign?.signatures_required ?? 0)
+        signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged)
         
         signaturesCollectedTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesCollectedTextField.layer.borderWidth = 1.0

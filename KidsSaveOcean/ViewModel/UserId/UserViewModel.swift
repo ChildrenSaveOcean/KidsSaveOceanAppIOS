@@ -286,6 +286,17 @@ class UserViewModel {
                     self.campaign = CampaignSignatures(campaing: value)
                     //value
                     continue
+                    
+                case signaturesPledgedKey:
+                    guard let value = userFBData.value as? Int else {continue}
+                    self.signatures_pledged = value
+                    //value
+                    continue
+                    
+                case locationIdKey:
+                    guard let value = userFBData.value as? String else {continue}
+                    self.location_id = value
+                    continue
 
                 default:
                     continue
