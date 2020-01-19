@@ -120,8 +120,22 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     @IBAction func collectedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesCollectedTextField.text {
-            UserViewModel.shared().campaign?.signatures_collected = Int(signatures) ?? 0
+            let signaturesAmount = Int(signatures) ?? 0
+            let currentCollectedAmount = UserViewModel.shared().campaign?.signatures_collected ?? 0
+            
+            let addedSignaturesAmount = signaturesAmount - currentCollectedAmount
+    
+            UserViewModel.shared().campaign?.signatures_collected = signaturesAmount
             UserViewModel.shared().saveUser()
+            
+            let location_id = UserViewModel.shared().location_id
+            let campaign = campaigns.filter{$0.location_id == location_id}.first
+            if campaign != nil {
+                let prevCollectedAmount = campaign!.signatures_collected
+                let newCollectedAmount = prevCollectedAmount + addedSignaturesAmount
+                CampaignViewModel.shared().updateCollectedSignatures(campaign: campaign!, value: newCollectedAmount)
+            }
+            
             dismissKeyboard()
             updateLiveLocationView()
         }
