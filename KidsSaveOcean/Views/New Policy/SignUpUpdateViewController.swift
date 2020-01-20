@@ -134,10 +134,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
                 let prevCollectedAmount = campaign!.signatures_collected
                 let newCollectedAmount = prevCollectedAmount + addedSignaturesAmount
                 CampaignViewModel.shared().updateCollectedSignatures(campaign: campaign!, value: newCollectedAmount)
+                signaturesTotalCollectedLabel.text = String(newCollectedAmount)
             }
             
             dismissKeyboard()
-            updateLiveLocationView()
+            //updateLiveLocationView()
         }
     }
     
