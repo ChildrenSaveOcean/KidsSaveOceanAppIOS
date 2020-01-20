@@ -6,6 +6,7 @@
 //  Copyright © 2019 KidsSaveOcean. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 import MapKit
 
@@ -89,7 +90,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         showLocationView()
     }
 
-    // MARK: Action methods
+    // MARK:- Action methods
     @IBAction func signUpButtonClicked(_ sender: Any) {
         let locale = Locale.current
         guard let code = locale.regionCode else {
@@ -114,7 +115,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             UserViewModel.shared().signatures_pledged = Int(signatures) ?? 0
             UserViewModel.shared().saveUser()
             dismissKeyboard()
-            updateLiveLocationView()
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
     }
     
@@ -138,7 +139,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             }
             
             dismissKeyboard()
-            //updateLiveLocationView()
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
     }
     
@@ -297,7 +298,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         self.chooseLocationButton.alpha = isOn ? 1 : 0.5
     }
     
-    // MARK: Keyboard Delegate methods
+    // MARK:- Keyboard Delegate methods
     @objc func keyboardWillHide(aNotification: NSNotification) {
         let size = UIScreen.main.bounds.size
         UIView.animate(withDuration: 1.0) {
