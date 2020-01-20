@@ -47,6 +47,10 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
         case 2:
             textTitle = "Vote now on a policy we'll push"
             imageName = "Vote"
+            if UserViewModel.shared().user_type != .student {
+                cell.isSelected = false
+                cell.environmentImageView.alpha = 0.5
+            }
         case 3:
             textTitle = "Sign Up and update signatures"
             imageName = "SignUp"
@@ -78,9 +82,11 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
             taskViewController.title = ""
             navigationController?.pushViewController(taskViewController, animated: true)
         case 2:
-            let taskViewController = VoteNowViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            if UserViewModel.shared().user_type == .student {
+                let taskViewController = VoteNowViewController.instantiate()
+                taskViewController.title = ""
+                navigationController?.pushViewController(taskViewController, animated: true)
+            }
         case 3:
             let taskViewController = SignUpUpdateViewController.instantiate()
             taskViewController.title = ""
