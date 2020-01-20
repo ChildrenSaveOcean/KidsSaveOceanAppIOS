@@ -19,30 +19,32 @@ enum UserType: Int { // we can get from from Firebase, bit it will stay here tem
 }
 
 enum DashboardTasksScopes: Int, CaseIterable {
-    case research, write_letter, share, start_campaign, local_politics, protest, write_letter_about_plastic, write_letter_about_climate, hijack_policy_selected, campaign
+    case research, write_letter_about_plastic, write_letter_about_climate, share, local_politics, protest,  hijack_policy_selected, campaign
 
     var firebaseFieldName: String {
         switch self {
         case .research:
             return "dash_learn_about_problem"
-        case .write_letter:
-            return "dash_write_a_letter"
-        case .share:
-            return "dash_share"
-        case .start_campaign:
-            return "dash_start_a_letter_writing_campaign"
-        case .local_politics:
-            return "dash_joined_a_policy_hijack_campaign"
-        case .protest:
-            return "dash_protest"
         case .write_letter_about_plastic:
             return "dash_wrote_a_letter_about_plastic"
         case .write_letter_about_climate:
             return "dash_wrote_a_letter_about_climate"
+        case .share:
+            return "dash_share"
+        case .local_politics:
+            return "dash_joined_a_policy_hijack_campaign"
+        case .protest:
+            return "dash_protest"
         case .hijack_policy_selected:
             return "hijack_policy_selected"
         case .campaign:
             return "campaign"
+//        case .write_letter:
+//            return "dash_write_a_letter"
+        
+//        case .start_campaign:
+//            return "dash_start_a_letter_writing_campaign"
+        
         }
     }
 
@@ -50,20 +52,20 @@ enum DashboardTasksScopes: Int, CaseIterable {
         switch self {
         case .research:
             return "Research plastic & climate"
-        case .write_letter:
-            return "Write your government a letter"
+//        case .write_letter:
+//            return "Write your government a letter"
         case .share:
             return "Spread Fatechanger by sharing"
-        case .start_campaign:
-            return "Start a letter writing campaign"
+//        case .start_campaign:
+//            return "Start a letter writing campaign"
         case .local_politics:
             return "Help create new environmental laws"
         case .protest:
             return "Take part in or organize a protest"
         case .write_letter_about_plastic:
-            return "Write your government a letter"
+            return "Write your government a letter about plastic"
         case .write_letter_about_climate:
-            return "Write your government a letter"
+            return "Write your government a letter about climate"
         default:
             return ""
         }
@@ -122,17 +124,17 @@ class UserViewModel {
 //        }
 //    }
     
-    var write_letter: Bool = false
+    //var write_letter: Bool = false
     var write_letter_about_climate: Bool = false {
         willSet(newValue) {
             parametersDisctionary[DashboardTasksScopes.write_letter_about_climate.firebaseFieldName] = newValue
-            setWrittingState()
+            //setWrittingState()
         }
     }
     var write_letter_about_plastic: Bool = false {
         willSet(newValue) {
             parametersDisctionary[DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName] = newValue
-            setWrittingState()
+            //setWrittingState()
         }
     }
     var letters_written: Int = 0 {
@@ -199,15 +201,15 @@ class UserViewModel {
         if Auth.auth().currentUser?.uid != nil {
             self.databaseReferenece = Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
             self.fetchUser {
-                self.setWrittingState()
+                //self.setWrittingState()
                 //NotificationCenter.default.post(name: Notification.Name(Settings.UserHasBeenLoadedNotificationName), object: nil)
             }
         }
     }
 
-    private func setWrittingState() {
-        self.write_letter = self.write_letter_about_plastic && self.write_letter_about_climate
-    }
+//    private func setWrittingState() {
+//        self.write_letter = self.write_letter_about_plastic && self.write_letter_about_climate
+//    }
     // swiftlint:disable cyclomatic_complexity
     // swiftlint:disable function_body_length
     func fetchUser(_ completion: (() -> Void)?) {
@@ -318,14 +320,14 @@ class UserViewModel {
         case .research:
             self.research = value
 
-        case .write_letter:
-            self.write_letter = value
+//        case .write_letter:
+//            self.write_letter = value
 
         case.share:
             self.share = value
 
-        case .start_campaign:
-            self.start_campaign = value
+//        case .start_campaign:
+//            self.start_campaign = value
 
         case .local_politics:
             self.local_politics = value
@@ -349,14 +351,14 @@ class UserViewModel {
         case .research:
             return self.research
 
-        case .write_letter:
-            return self.write_letter
+//        case .write_letter:
+//            return self.write_letter
 
         case.share:
             return self.share
 
-        case .start_campaign:
-            return self.start_campaign
+//        case .start_campaign:
+//            return self.start_campaign
 
         case .local_politics:
             return self.local_politics
