@@ -31,7 +31,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
         let userHijackPolicy = UserViewModel.shared().hijack_policy_selected
         
         if !userHijackPolicy.isEmpty {
-            let alertMessage = UIAlertController(title: "", message: "You have voted already", preferredStyle: .alert)
+            let alertMessage = UIAlertController(title: "", message: "Explore proposals FateChanger youth are considering for citizen ballot initiatives", preferredStyle: .alert)
             let action = UIAlertAction(title: "Got it", style: .cancel) { (_) in
                 //
             }
