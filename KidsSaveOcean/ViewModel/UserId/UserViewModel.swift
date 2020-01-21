@@ -201,12 +201,20 @@ class UserViewModel {
         if Auth.auth().currentUser?.uid != nil {
             self.databaseReferenece = Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
             self.fetchUser {
+                self.userDataHasBeenLoaded = true
                 //self.setWrittingState()
                 //NotificationCenter.default.post(name: Notification.Name(Settings.UserHasBeenLoadedNotificationName), object: nil)
             }
         }
     }
 
+    var userDataHasBeenLoaded = false {
+        didSet {
+            if userDataHasBeenLoaded {
+                NotificationCenter.default.post(name: .userDataHasBeenLoaded, object: nil)
+            }
+        }
+    }
 //    private func setWrittingState() {
 //        self.write_letter = self.write_letter_about_plastic && self.write_letter_about_climate
 //    }

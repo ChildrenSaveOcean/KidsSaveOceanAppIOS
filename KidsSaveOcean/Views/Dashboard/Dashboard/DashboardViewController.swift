@@ -47,7 +47,10 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var topSpaceContraint: KSOLayoutConstraint!
 
     @IBOutlet weak var actionAlertView: UIView!
-
+    
+    @IBOutlet weak var blur: UIVisualEffectView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
@@ -57,7 +60,21 @@ class DashboardViewController: UIViewController {
     let taskScope: [String] = UserViewModel.getDashboardFullTasks() //DashboardTasksScopes.allCases.map { $0.dashboardTasks }
     let tasks: [DashboardTasksScopes] = UserViewModel.getDashboardTasks() //DashboardTasksScopes.allCases.map { $0.rawValue }
 
-    lazy var completionTasksStates =  UserViewModel.shared().getCompletionTasksStatuses() // Settings.getCompletionTasksStatus()//
+    var _completionTasksStates: [Bool]?
+    var completionTasksStates: [Bool] {
+        get {
+            if _completionTasksStates != nil {
+                return _completionTasksStates!
+            } else {
+                _completionTasksStates = UserViewModel.shared().getCompletionTasksStatuses()
+
+                return _completionTasksStates!
+            }
+        }
+        set {
+            _completionTasksStates = newValue
+        }
+    }
 
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3, self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
 
@@ -78,6 +95,9 @@ class DashboardViewController: UIViewController {
             deviceXbackground.alpha = 0
         }
 
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setUserDataLoadingState), name: .userDataHasBeenLoaded, object: nil)
+        setUserDataLoadingState()
+        
         for _ in 0...2 {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
@@ -87,7 +107,6 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        
         actionAlertButton.delegate = self
         actionAlertButton.setState()
         
@@ -219,6 +238,7 @@ class DashboardViewController: UIViewController {
     }
     
     private func saveTaskStates() {
+        guard UserViewModel.shared().userDataHasBeenLoaded else { return }
         UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
         UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
         selectTopIcon()
@@ -230,6 +250,24 @@ class DashboardViewController: UIViewController {
     }
 
     // MARK: Private methods
+    @objc private func setUserDataLoadingState() {
+        if !UserViewModel.shared().userDataHasBeenLoaded {
+            blur.frame = view.bounds
+            blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blur.alpha = 1.0
+            activityIndicator.alpha = 1
+            activityIndicator.startAnimating()
+        } else {
+            blur.frame = .zero
+            blur.alpha = 0.0
+            activityIndicator.alpha = 0
+            activityIndicator.stopAnimating()
+            
+            _completionTasksStates = nil
+            setUpTopIcons()
+        }
+    }
+    
     private func chooseTaskWithNum(_ num: Int) {
 
         if num == currentTaskSwitched {

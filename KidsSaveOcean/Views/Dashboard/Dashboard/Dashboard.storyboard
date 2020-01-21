@@ -381,9 +381,32 @@
                                     <constraint firstItem="vmQ-Ih-sjf" firstAttribute="trailing" secondItem="KxK-z1-sOr" secondAttribute="trailing" constant="-13" id="wQ8-eh-T1H"/>
                                 </constraints>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-3P-qcj">
+                                <rect key="frame" x="87" y="301.66666666666669" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QkS-pS-Wdm">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nf2-wK-arC">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="u2p-JT-zpp">
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="s16-h4-yo0">
+                                <rect key="frame" x="197" y="355.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.13855496048927307" green="0.63844740390777588" blue="0.99241381883621216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="centerX" secondItem="Xm0-wL-XSG" secondAttribute="centerX" id="00f-38-gy0"/>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="width" secondItem="4br-dF-I5I" secondAttribute="width" id="0Of-WB-6qx"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="-16" id="18e-Iv-Ky3"/>
                             <constraint firstItem="Luv-j1-90t" firstAttribute="leading" secondItem="4br-dF-I5I" secondAttribute="leading" constant="-20" id="3to-nY-cz6" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
@@ -392,10 +415,12 @@
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="top" secondItem="cRy-QY-zOf" secondAttribute="bottom" constant="10.5" id="4vL-1f-OIL" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="hxb-kC-tnV" firstAttribute="leading" secondItem="Luv-j1-90t" secondAttribute="leading" constant="20" id="5PJ-sx-rqR" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="tMA-s0-b18" firstAttribute="leading" secondItem="upi-QJ-4bj" secondAttribute="trailing" id="5le-9L-RwP"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="centerY" secondItem="Xm0-wL-XSG" secondAttribute="centerY" id="66M-FP-3XR"/>
                             <constraint firstItem="R9a-4H-YuA" firstAttribute="trailing" secondItem="Kz5-ah-x5R" secondAttribute="trailing" id="6Am-B9-Wg7"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="height" secondItem="PpT-jX-Rna" secondAttribute="height" id="6GS-Yy-F38"/>
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="width" multiplier="0.75" priority="250" constant="-4.25" id="6Wq-3g-Lb0" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="height" secondItem="zGt-A5-OM8" secondAttribute="height" id="8Pe-hU-hPL"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="width" secondItem="Xm0-wL-XSG" secondAttribute="width" multiplier="0.57971" id="8UD-Bc-5qD"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="centerY" secondItem="PpT-jX-Rna" secondAttribute="centerY" id="9Eo-Qe-FJb"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="top" secondItem="Rr5-Xa-0a0" secondAttribute="bottom" constant="5" id="9gg-1w-956"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="bottom" secondItem="ixk-7e-iPf" secondAttribute="bottom" id="C5P-mh-VPb"/>
@@ -445,6 +470,7 @@
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="leading" secondItem="Fjn-Sh-ltB" secondAttribute="leading" id="fLo-72-mzG"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="trailing" secondItem="Luv-j1-90t" secondAttribute="trailing" constant="17" id="hwT-CT-My3"/>
                             <constraint firstItem="ixk-7e-iPf" firstAttribute="top" secondItem="Xm0-wL-XSG" secondAttribute="top" id="jsC-DD-mL1"/>
+                            <constraint firstItem="s16-h4-yo0" firstAttribute="centerX" secondItem="Xm0-wL-XSG" secondAttribute="centerX" id="jyG-fA-QP6"/>
                             <constraint firstItem="4br-dF-I5I" firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="width" multiplier="171:315" id="kRn-OM-KlO"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="bottom" secondItem="Fjn-Sh-ltB" secondAttribute="bottom" constant="-40" id="mDf-Pr-vVR"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Kz5-ah-x5R" secondAttribute="bottom" constant="11" id="mT6-3m-zSX"/>
@@ -455,6 +481,7 @@
                             <constraint firstItem="Kz5-ah-x5R" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="10" id="rRO-vg-Euq"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="top" secondItem="fKa-Bc-xcX" secondAttribute="top" id="sZU-Rf-2fP"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="height" secondItem="pnM-lO-FMb" secondAttribute="height" id="sjm-MK-10B"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="height" secondItem="Xm0-wL-XSG" secondAttribute="height" multiplier="0.199067" id="sjv-o9-aza"/>
                             <constraint firstItem="1Y0-IY-baO" firstAttribute="width" secondItem="Rr5-Xa-0a0" secondAttribute="width" id="uef-YP-8co"/>
                             <constraint firstItem="PpT-jX-Rna" firstAttribute="leading" secondItem="1Y0-IY-baO" secondAttribute="trailing" constant="3" id="vwX-Wl-BB8"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="centerY" secondItem="Cqh-Yo-LuE" secondAttribute="centerY" id="wFW-JN-8Tu"/>
@@ -463,6 +490,7 @@
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="trailing" secondItem="gII-Qq-3yG" secondAttribute="trailing" id="xXi-dg-N5A"/>
                             <constraint firstItem="7MJ-eY-HFC" firstAttribute="leading" secondItem="pnM-lO-FMb" secondAttribute="trailing" id="xg3-hP-9GE"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Luv-j1-90t" secondAttribute="top" constant="-30" id="xnP-RN-Gf3"/>
+                            <constraint firstItem="s16-h4-yo0" firstAttribute="centerY" secondItem="Xm0-wL-XSG" secondAttribute="centerY" id="yLC-qV-cWN"/>
                             <constraint firstItem="Cqh-Yo-LuE" firstAttribute="leading" secondItem="ffm-wR-6iG" secondAttribute="trailing" id="zdm-kb-ilb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xm0-wL-XSG"/>
@@ -471,6 +499,8 @@
                     <connections>
                         <outlet property="actionAlertButton" destination="R9a-4H-YuA" id="MXJ-dc-1IP"/>
                         <outlet property="actionAlertView" destination="Occ-Eb-ARZ" id="fpk-Ya-DWX"/>
+                        <outlet property="activityIndicator" destination="s16-h4-yo0" id="qQN-Y7-Gki"/>
+                        <outlet property="blur" destination="Exn-3P-qcj" id="HKU-XA-E5d"/>
                         <outlet property="completedFistImage" destination="cRy-QY-zOf" id="Y4e-GS-x2L"/>
                         <outlet property="completedLabel" destination="gII-Qq-3yG" id="TL6-q1-Xjn"/>
                         <outlet property="deviceXbackground" destination="ixk-7e-iPf" id="T9t-9f-RiU"/>

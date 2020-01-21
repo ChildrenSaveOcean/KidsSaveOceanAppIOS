@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-    //
+        UserViewModel.shared().saveUser()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
