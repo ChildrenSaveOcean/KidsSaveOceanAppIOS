@@ -81,7 +81,8 @@ class CampaignViewModel {
 //    }
 //
     func updateCollectedSignatures(campaign: Campaign, value: Int) {
-        Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_collected").setValue(value)
-            setup()
+        let newCollectedSignaturesNumber = (self.campaigns.filter{$0.id == campaign.id}.first?.signatures_collected ?? 0) + value
+        
+    Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_collected").setValue(newCollectedSignaturesNumber)
    }
 }

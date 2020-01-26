@@ -90,6 +90,10 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         showLocationView()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        CampaignViewModel.shared().setup()
+    }
+    
     // MARK:- Action methods
     @IBAction func signUpButtonClicked(_ sender: Any) {
         let locale = Locale.current
@@ -132,9 +136,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             let location_id = UserViewModel.shared().location_id
             let campaign = campaigns.filter{$0.location_id == location_id}.first
             if campaign != nil {
-                let prevCollectedAmount = campaign!.signatures_collected
-                let newCollectedAmount = prevCollectedAmount + addedSignaturesAmount
-                CampaignViewModel.shared().updateCollectedSignatures(campaign: campaign!, value: newCollectedAmount)
+                let newCollectedAmount = (Int(signaturesTotalCollectedLabel.text ?? "") ?? 0) + addedSignaturesAmount
+                CampaignViewModel.shared().updateCollectedSignatures(campaign: campaign!, value: addedSignaturesAmount)
                 signaturesTotalCollectedLabel.text = String(newCollectedAmount)
             }
             
