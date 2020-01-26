@@ -381,15 +381,17 @@
                                     <constraint firstItem="vmQ-Ih-sjf" firstAttribute="trailing" secondItem="KxK-z1-sOr" secondAttribute="trailing" constant="-13" id="wQ8-eh-T1H"/>
                                 </constraints>
                             </view>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-3P-qcj">
-                                <rect key="frame" x="87" y="301.66666666666669" width="240" height="128"/>
+                            <visualEffectView opaque="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-3P-qcj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QkS-pS-Wdm">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nf2-wK-arC">
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="608"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="u2p-JT-zpp">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="608"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -398,7 +400,7 @@
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="systemThinMaterial"/>
                             </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="s16-h4-yo0">
                                 <rect key="frame" x="197" y="355.66666666666669" width="20" height="20"/>
@@ -415,12 +417,11 @@
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="top" secondItem="cRy-QY-zOf" secondAttribute="bottom" constant="10.5" id="4vL-1f-OIL" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="hxb-kC-tnV" firstAttribute="leading" secondItem="Luv-j1-90t" secondAttribute="leading" constant="20" id="5PJ-sx-rqR" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="tMA-s0-b18" firstAttribute="leading" secondItem="upi-QJ-4bj" secondAttribute="trailing" id="5le-9L-RwP"/>
-                            <constraint firstItem="Exn-3P-qcj" firstAttribute="centerY" secondItem="Xm0-wL-XSG" secondAttribute="centerY" id="66M-FP-3XR"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="centerY" secondItem="ScW-O5-Pi7" secondAttribute="centerY" id="66M-FP-3XR"/>
                             <constraint firstItem="R9a-4H-YuA" firstAttribute="trailing" secondItem="Kz5-ah-x5R" secondAttribute="trailing" id="6Am-B9-Wg7"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="height" secondItem="PpT-jX-Rna" secondAttribute="height" id="6GS-Yy-F38"/>
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="width" multiplier="0.75" priority="250" constant="-4.25" id="6Wq-3g-Lb0" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="height" secondItem="zGt-A5-OM8" secondAttribute="height" id="8Pe-hU-hPL"/>
-                            <constraint firstItem="Exn-3P-qcj" firstAttribute="width" secondItem="Xm0-wL-XSG" secondAttribute="width" multiplier="0.57971" id="8UD-Bc-5qD"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="centerY" secondItem="PpT-jX-Rna" secondAttribute="centerY" id="9Eo-Qe-FJb"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="top" secondItem="Rr5-Xa-0a0" secondAttribute="bottom" constant="5" id="9gg-1w-956"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="bottom" secondItem="ixk-7e-iPf" secondAttribute="bottom" id="C5P-mh-VPb"/>
@@ -455,6 +456,7 @@
                             <constraint firstItem="7MJ-eY-HFC" firstAttribute="top" secondItem="pnM-lO-FMb" secondAttribute="top" constant="15" id="VEN-5j-Quz"/>
                             <constraint firstItem="1Y0-IY-baO" firstAttribute="centerY" secondItem="Rr5-Xa-0a0" secondAttribute="centerY" id="Vqq-0X-arl"/>
                             <constraint firstItem="cRy-QY-zOf" firstAttribute="top" secondItem="4br-dF-I5I" secondAttribute="top" id="Vsr-wj-qu1"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="top" secondItem="ScW-O5-Pi7" secondAttribute="top" id="Vvi-St-5nk"/>
                             <constraint firstItem="aaY-3H-kKZ" firstAttribute="top" secondItem="Rr5-Xa-0a0" secondAttribute="bottom" id="W6Z-5r-Cjw"/>
                             <constraint firstItem="aaY-3H-kKZ" firstAttribute="trailing" secondItem="Rr5-Xa-0a0" secondAttribute="trailing" constant="10" id="W88-ex-avD"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="trailing" secondItem="Luv-j1-90t" secondAttribute="trailing" constant="-19" id="WsZ-pB-Wqz" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
@@ -472,6 +474,7 @@
                             <constraint firstItem="ixk-7e-iPf" firstAttribute="top" secondItem="Xm0-wL-XSG" secondAttribute="top" id="jsC-DD-mL1"/>
                             <constraint firstItem="s16-h4-yo0" firstAttribute="centerX" secondItem="Xm0-wL-XSG" secondAttribute="centerX" id="jyG-fA-QP6"/>
                             <constraint firstItem="4br-dF-I5I" firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="width" multiplier="171:315" id="kRn-OM-KlO"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="leading" secondItem="Xm0-wL-XSG" secondAttribute="leading" id="kYV-K6-f3P"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="bottom" secondItem="Fjn-Sh-ltB" secondAttribute="bottom" constant="-40" id="mDf-Pr-vVR"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Kz5-ah-x5R" secondAttribute="bottom" constant="11" id="mT6-3m-zSX"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="height" secondItem="pnM-lO-FMb" secondAttribute="height" id="oAq-dg-a5P"/>
@@ -481,8 +484,9 @@
                             <constraint firstItem="Kz5-ah-x5R" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="10" id="rRO-vg-Euq"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="top" secondItem="fKa-Bc-xcX" secondAttribute="top" id="sZU-Rf-2fP"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="height" secondItem="pnM-lO-FMb" secondAttribute="height" id="sjm-MK-10B"/>
-                            <constraint firstItem="Exn-3P-qcj" firstAttribute="height" secondItem="Xm0-wL-XSG" secondAttribute="height" multiplier="0.199067" id="sjv-o9-aza"/>
                             <constraint firstItem="1Y0-IY-baO" firstAttribute="width" secondItem="Rr5-Xa-0a0" secondAttribute="width" id="uef-YP-8co"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="bottom" secondItem="ScW-O5-Pi7" secondAttribute="bottom" id="vWB-Wl-Bon"/>
+                            <constraint firstItem="Exn-3P-qcj" firstAttribute="trailing" secondItem="Xm0-wL-XSG" secondAttribute="trailing" id="vaI-Jr-AKM"/>
                             <constraint firstItem="PpT-jX-Rna" firstAttribute="leading" secondItem="1Y0-IY-baO" secondAttribute="trailing" constant="3" id="vwX-Wl-BB8"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="centerY" secondItem="Cqh-Yo-LuE" secondAttribute="centerY" id="wFW-JN-8Tu"/>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="centerX" secondItem="zGt-A5-OM8" secondAttribute="centerX" id="x1i-zf-iGL"/>
@@ -531,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1c-hU-kco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560.79999999999995" y="-183.05847076461771"/>
+            <point key="canvasLocation" x="559.4202898550725" y="-183.42391304347828"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="qQR-rk-CUl">
@@ -909,7 +913,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1d-NM-tLJ" userLabel="Description">
                                 <rect key="frame" x="16" y="413.66666666666674" width="382" height="215"/>
-                                <mutableString key="text">1) Only if your parents say it’s okay  2) Only if it’s legal in your country
+                                <string key="text">1) Only if your parents say it’s okay  2) Only if it’s legal in your country
 3) Always and only peacefully
 4) Communicate a clear message &amp; demands
 5) Use personal stories to get your message across
@@ -917,7 +921,7 @@
 7) 3 weeks before: notify other schools, environmental groups and kidssaveocean.com
 8) 3 days before: notify the press &amp; remind others
 9) If there’s any trouble, leave immediately
-10) Stand up for what you believe in. Though you may be shy, have steel determination</mutableString>
+10) Stand up for what you believe in. Though you may be shy, have steel determination</string>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>

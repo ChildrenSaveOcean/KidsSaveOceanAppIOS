@@ -254,7 +254,7 @@ class DashboardViewController: UIViewController {
         if !UserViewModel.shared().userDataHasBeenLoaded {
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            blur.alpha = 1.0
+            blur.alpha = 0.7
             activityIndicator.alpha = 1
             activityIndicator.startAnimating()
         } else {
