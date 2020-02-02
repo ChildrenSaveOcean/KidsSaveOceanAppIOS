@@ -15,6 +15,11 @@ class VoteNowViewController: UIViewController, Instantiatable {
     @IBOutlet weak var pickerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var voteButton: UIButton!
     
+    @IBOutlet weak var impactNumberLabel: UILabel!
+    @IBOutlet weak var difficultyNumberLabel: UILabel!
+    @IBOutlet weak var impactToDifficultyNumberLabel: UILabel!
+    
+    
     var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies.sorted {$0.id < $1.id}
     
     var selectedPolicy: HijackPolicy?
@@ -41,6 +46,10 @@ class VoteNowViewController: UIViewController, Instantiatable {
                 self.voteButton.isEnabled = false
             }
         }
+        
+        impactNumberLabel.text = String(12.0)
+        difficultyNumberLabel.text = String(2.0)
+        impactToDifficultyNumberLabel.text = String(6.0)
         
         let policy = pickerData[0]
         pickerView.selectRow(0, inComponent: 0, animated: true)
