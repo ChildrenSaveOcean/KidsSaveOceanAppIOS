@@ -23,17 +23,35 @@ class UserTypeVideoViewController: WebIntegrationViewController {
     override var originalWebUrlString: String {
         guard !urlString.isEmpty else { return "" }
         //return "https://youtu.be/5S0_1YJV064"
-        return "https://www.youtube.com/embed/5S0_1YJV064"
+        //return "https://www.youtube.com/embed/5S0_1YJV064"
+        switch userType {
+        case .student:
+             return "https://www.kidssaveocean.com/video-test"
+        default:
+            return "https://www.youtube.com/embed/5S0_1YJV064"
+            //"https://youtu.be/TueclrttB1o"
+        }
     }
 
     private func showActionButtons() {
-        let buttonsWidth: CGFloat = 100
+        let buttonsWidth: CGFloat = 50
         let buttonsHeight: CGFloat = 50
         let shiftY = self.view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top - buttonsHeight - 10
         let shiftX = (self.view.bounds.width - 2*buttonsWidth)/3
 
-        let goButton = self.createButtonWithTitle("GO AHEAD")
-        goButton.frame = CGRect(x: shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
+        let backButton = self.createButtonWithTitle("<")
+        backButton.frame = CGRect(x: shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
+
+        backButton.addTargetClosure { (_) in
+            self.webView.stopLoading()
+            self.webView.removeFromSuperview()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        webView.addSubview(backButton)
+        webView.bringSubviewToFront(backButton)
+        
+        let goButton = self.createButtonWithTitle(">")
+        goButton.frame = CGRect(x: self.view.bounds.width - buttonsWidth - shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
 
         goButton.addTargetClosure { (_) in
             UserDefaultsHelper.saveOnBoardingHasBeenShown()
@@ -51,22 +69,13 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         webView.addSubview(goButton)
         webView.bringSubviewToFront(goButton)
 
-        let backButton = self.createButtonWithTitle("BACK")
-        backButton.frame = CGRect(x: self.view.bounds.width - buttonsWidth - shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
-
-        backButton.addTargetClosure { (_) in
-            self.webView.stopLoading()
-            self.webView.removeFromSuperview()
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-        webView.addSubview(backButton)
-        webView.bringSubviewToFront(backButton)
     }
 
     private func createButtonWithTitle(_ title: String) -> UIButton {
         let button = UIButton()
-        button.backgroundColor = .gray
+        button.backgroundColor = .standardAppBlueColor
         button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.proDisplaySemiBold20
         button.titleLabel?.textColor = .black
         button.roundCorners()
         return button
