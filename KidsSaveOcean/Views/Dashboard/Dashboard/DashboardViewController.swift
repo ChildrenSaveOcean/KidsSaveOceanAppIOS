@@ -83,11 +83,6 @@ class DashboardViewController: UIViewController {
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.backgroundColor = .clear
 
         if UIScreen.main.bounds.height > 800 {
             deviceXbackground.alpha = 1

@@ -51,11 +51,6 @@ final class CountryContactsViewController: UIViewController, Instantiatable {
     private func setupNavigationBar() {
         title = "Country Contacts"
 
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.backgroundColor = .clear
-
         let fontColor = UIColor.white
         let titleLalel = UILabel()
 
