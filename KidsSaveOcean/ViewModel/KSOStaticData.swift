@@ -47,7 +47,12 @@ let HomeViewData: KSODataArray = [["image": #imageLiteral(resourceName: "theWavE
                                     ["image": #imageLiteral(resourceName: "mapForCampaign"),
                                      "title": "Letter Campaigns, Initiatives, Activism",
                                      "subTitle": "WATCH YOUTH IMPACT SPREAD",
-                                     "action": ""]]
+                                     "action": ""],
+                                    ["image": #imageLiteral(resourceName: "Share_like_a_boss"),
+                                    "title": "Tips to share like a Boss",
+                                    "subTitle": "CALL OUT TO THE PACK",
+                                    "action": ""
+                                    ]]
 
 let KSONewsViewData: KSODataArray = [["image": #imageLiteral(resourceName: "Map"),
                                      "title": "Letter Writing Campaign",

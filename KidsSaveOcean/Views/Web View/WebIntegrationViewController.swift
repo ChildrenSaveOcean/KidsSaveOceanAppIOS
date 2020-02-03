@@ -12,7 +12,7 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
-    var originalWebUrlString: String { return "" }
+    var originalWebUrlString: String { return webUrlString }
     
     var webUrlString: String = "" {
         didSet(oldValue) {
