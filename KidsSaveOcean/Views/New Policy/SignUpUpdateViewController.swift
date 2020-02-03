@@ -151,9 +151,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     }
     
     @IBAction func learnMoreAction(_ sender: Any) {
-        let webViewController = WebIntegrationViewController()
-        webViewController.webUrlString = "https://www.kidssaveocean.com/projects"
-        self.present(webViewController, animated: true, completion: nil)
+        tabBarController?.showLink("https://www.kidssaveocean.com/projects", clear: nil)
     }
     
     // MARK: Private methods
