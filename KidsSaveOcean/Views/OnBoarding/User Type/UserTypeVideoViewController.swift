@@ -15,6 +15,10 @@ protocol UserTypeVideoDelegate: AnyObject {
 }
 
 class UserTypeVideoViewController: WebIntegrationViewController {
+    
+    enum ButtonDirectionType {
+        case back, forward
+    }
 
     weak var delegate: UserTypeVideoDelegate?
     var urlString: String = ""
@@ -39,7 +43,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         let shiftY = self.view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top - buttonsHeight - 10
         let shiftX = (self.view.bounds.width - 2*buttonsWidth)/3
 
-        let backButton = self.createButtonWithTitle("<")
+        let backButton = self.createButtonWithTitle(.back)
         backButton.frame = CGRect(x: shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
 
         backButton.addTargetClosure { (_) in
@@ -50,7 +54,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         webView.addSubview(backButton)
         webView.bringSubviewToFront(backButton)
         
-        let goButton = self.createButtonWithTitle(">")
+        let goButton = self.createButtonWithTitle(.forward)
         goButton.frame = CGRect(x: self.view.bounds.width - buttonsWidth - shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
 
         goButton.addTargetClosure { (_) in
@@ -71,13 +75,10 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
     }
 
-    private func createButtonWithTitle(_ title: String) -> UIButton {
+    private func createButtonWithTitle(_ direction: ButtonDirectionType) -> UIButton {
         let button = UIButton()
-        button.backgroundColor = .standardAppBlueColor
-        button.setTitle(title, for: .normal)
-        button.titleLabel?.font = UIFont.proDisplaySemiBold20
-        button.titleLabel?.textColor = .black
-        button.roundCorners()
+        let image = direction == .back ? #imageLiteral(resourceName: "Back_video") : #imageLiteral(resourceName: "skip_video")
+        button.setImage(image, for: .normal)
         return button
     }
 
