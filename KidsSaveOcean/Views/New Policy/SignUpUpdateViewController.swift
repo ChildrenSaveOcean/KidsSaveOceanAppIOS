@@ -158,6 +158,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     private func showLocationView() {
         let userCampaign = UserViewModel.shared().campaign
         let campaignLive = UserViewModel.shared().isUserLocationCampaignIsLive()
+        let userCampaignLocationId = UserViewModel.shared().location_id
+        
         if campaignLive == true {
 
             liveLocationView.isHidden = false
@@ -170,12 +172,14 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             liveLocationView.isHidden = true
             chooseLocationView.isHidden = false
             
-            signaturesReqdTextField.text = "0"
+            signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged ?? 0 )
             signaturesCollectedTextField.text = "0"
             
             var currentCampaignLocationNum = 0
-            if userCampaign?.campaign_id != nil,
-                let userCampaignLocationId = campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.location_id {
+            
+            if userCampaign?.campaign_id != nil, userCampaignLocationId != nil {
+                //,
+                //let userCampaignLocationId = campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.location_id
                 currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
                     return location.id == userCampaignLocationId
                 }) ?? 0
@@ -190,8 +194,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             }
         }
         
-        if userCampaign != nil,
-            !(userCampaign!.campaign_id.isEmpty) {
+        if userCampaign != nil, !userCampaignLocationId.isEmpty {
+            //!(userCampaign!.campaign_id.isEmpty) {
             signaturesBlock.alpha = 1
         } else {
             signaturesBlock.alpha = 0
@@ -254,14 +258,23 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
 
             let num = self.pickerView.selectedRow(inComponent: 0)
-            guard let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first else {
-                return
-            }
+//            guard let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first else {
+//                return
+//            }
             //first else { return }
             
-            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_required: campaign.signatures_required, signatures_collected: 0)
-            UserViewModel.shared().campaign = campSign
-            UserViewModel.shared().location_id = campaign.location_id
+            let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first
+            if campaign != nil {
+                let campSign = CampaignSignatures(campaign_id: campaign!.id, signatures_required: campaign!.signatures_required, signatures_collected: 0)
+                UserViewModel.shared().campaign = campSign
+                UserViewModel.shared().location_id = campaign!.location_id
+            } else {
+                UserViewModel.shared().location_id = self.campaignLocations[num].id
+            }
+            
+//            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_required: campaign.signatures_required, signatures_collected: 0)
+//            UserViewModel.shared().campaign = campSign
+//            UserViewModel.shared().location_id = campaign.location_id
             
             UserViewModel.shared().saveUser()
             
