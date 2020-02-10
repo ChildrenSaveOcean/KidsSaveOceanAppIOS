@@ -47,9 +47,9 @@ class VoteNowViewController: UIViewController, Instantiatable {
             }
         }
         
-        impactNumberLabel.text = String(12.0)
-        difficultyNumberLabel.text = String(2.0)
-        impactToDifficultyNumberLabel.text = String(6.0)
+        impactNumberLabel.text = String(0.0)
+        difficultyNumberLabel.text = String(1.0)
+        impactToDifficultyNumberLabel.text = String(0.0)
         
         let policy = pickerData[0]
         pickerView.selectRow(0, inComponent: 0, animated: true)
@@ -95,6 +95,11 @@ class VoteNowViewController: UIViewController, Instantiatable {
     private func setPolicyDetails(_ policy: HijackPolicy) {
         selectedPolicy = policy
         summaryLabel.text = policy.summary
+        
+        let impact = Double(policy.votes)
+        impactNumberLabel.text = String(impact)
+        difficultyNumberLabel.text = String(1.0)
+        impactToDifficultyNumberLabel.text = String(impact / 1.0)
     }
 }
 
