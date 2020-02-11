@@ -224,6 +224,7 @@ class UserViewModel {
 
         databaseReferenece?.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
+                completion!()
                 return
             }
 
