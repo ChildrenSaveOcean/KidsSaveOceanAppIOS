@@ -30,9 +30,9 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         //return "https://www.youtube.com/embed/5S0_1YJV064"
         switch userType {
         case .student:
-             return "https://www.kidssaveocean.com/video-test"
+             return "https://www.youtube.com/embed/5S0_1YJV064"
         default:
-            return "https://www.youtube.com/embed/5S0_1YJV064"
+            return "https://www.kidssaveocean.com/video-test"
             //"https://youtu.be/TueclrttB1o"
         }
     }
