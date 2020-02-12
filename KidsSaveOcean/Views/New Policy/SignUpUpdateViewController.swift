@@ -21,6 +21,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     @IBOutlet weak var collectedSingaturesUpdateButton: UIButton!
     @IBOutlet weak var signaturesReqdTextField: UITextField!
     @IBOutlet weak var signaturesCollectedTextField: UITextField!
+    @IBOutlet weak var newSignaturesCollected: UITextField!
     
     @IBOutlet weak var liveLocationView: UIView!
     @IBOutlet weak var chooseLocationView: UIView!
@@ -82,10 +83,16 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         signaturesReqdTextField.roundCorners()
         signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged)
         
+        newSignaturesCollected.layer.borderColor = UIColor.gray.cgColor
+        newSignaturesCollected.layer.borderWidth = 1.0
+        newSignaturesCollected.roundCorners()
+        newSignaturesCollected.text = ""
+        
         signaturesCollectedTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesCollectedTextField.layer.borderWidth = 1.0
         signaturesCollectedTextField.roundCorners()
         signaturesCollectedTextField.text = String(campaign?.signatures_collected ?? 0)
+        signaturesCollectedTextField.isUserInteractionEnabled = false
         
         showLocationView()
     }
@@ -124,26 +131,33 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     }
     
     @IBAction func collectedSignaturesClicked(_ sender: Any) {
-        if let signatures = signaturesCollectedTextField.text {
-            let signaturesAmount = Int(signatures) ?? 0
-            let currentCollectedAmount = UserViewModel.shared().campaign?.signatures_collected ?? 0
+        guard let signatures = newSignaturesCollected.text,
+            let addedSignaturesAmount = Int(signatures), addedSignaturesAmount >= 0 else {
+            return
+        }
+        
+        //if let signatures = signaturesCollectedTextField.text {
+        //   let signaturesAmount = Int(signatures) ?? 0
+        let currentCollectedAmount = UserViewModel.shared().campaign?.signatures_collected ?? 0
             
-            let addedSignaturesAmount = signaturesAmount - currentCollectedAmount
+        //    let addedSignaturesAmount = signaturesAmount - currentCollectedAmount
     
-            UserViewModel.shared().campaign?.signatures_collected = signaturesAmount
-            UserViewModel.shared().saveUser()
-            
-            let location_id = UserViewModel.shared().location_id
-            let campaign = campaigns.filter{$0.location_id == location_id}.first
-            if campaign != nil {
-                let newCollectedAmount = (Int(signaturesTotalCollectedLabel.text ?? "") ?? 0) + addedSignaturesAmount
+        let userTotalSignatures = UserViewModel.shared().campaign!.signatures_collected + addedSignaturesAmount
+        UserViewModel.shared().campaign?.signatures_collected = userTotalSignatures
+        UserViewModel.shared().saveUser()
+        signaturesCollectedTextField.text = String(userTotalSignatures)
+        newSignaturesCollected.text = ""
+        
+        let location_id = UserViewModel.shared().location_id
+        let campaign = campaigns.filter{$0.location_id == location_id}.first
+        if campaign != nil {
+            let newCollectedAmount = (Int(signaturesTotalCollectedLabel.text ?? "") ?? 0) + addedSignaturesAmount
                 CampaignViewModel.shared().updateCollectedSignatures(campaign: campaign!, value: addedSignaturesAmount)
                 signaturesTotalCollectedLabel.text = String(newCollectedAmount)
-            }
-            
-            dismissKeyboard()
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
+        dismissKeyboard()
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        //}
     }
     
     @IBAction func shareAction(_ sender: Any) {
