@@ -24,6 +24,20 @@ class VoteNowViewController: UIViewController, Instantiatable {
     
     var selectedPolicy: HijackPolicy?
     
+    private var policyImpactDifficulties = [
+        "hijack_policy_01" : [7.2, 5.5, 1.3],
+        "hijack_policy_02" : [8.8, 6.0, 1.5],
+        "hijack_policy_03" : [6.8, 5.2, 1.3],
+        "hijack_policy_04" : [8.8, 7.8, 1.1],
+        "hijack_policy_05" : [8.0, 5.3, 1.5],
+        "hijack_policy_06" : [7.0, 6.0, 1.2],
+        "hijack_policy_07" : [8.5, 4.5, 1.9],
+        "hijack_policy_08" : [9.2, 5.3, 1.7],
+        "hijack_policy_09" : [7.2, 5.7, 1.3],
+        "hijack_policy_10" : [8.2, 6.0, 1.4]
+        
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if UIScreen.main.bounds.height > 800 {
@@ -46,10 +60,6 @@ class VoteNowViewController: UIViewController, Instantiatable {
                 self.voteButton.isEnabled = false
             }
         }
-        
-        impactNumberLabel.text = String(0.0)
-        difficultyNumberLabel.text = String(1.0)
-        impactToDifficultyNumberLabel.text = String(0.0)
         
         let policy = pickerData[0]
         pickerView.selectRow(0, inComponent: 0, animated: true)
@@ -96,10 +106,14 @@ class VoteNowViewController: UIViewController, Instantiatable {
         selectedPolicy = policy
         summaryLabel.text = policy.summary
         
-        let impact = Double(policy.votes)
-        impactNumberLabel.text = String(impact)
-        difficultyNumberLabel.text = String(1.0)
-        impactToDifficultyNumberLabel.text = String(impact / 1.0)
+        //let impact = Double(policy.votes)
+        
+        guard let policyNumbers = policyImpactDifficulties[policy.id] else {
+            return
+        }
+        impactNumberLabel.text = String(policyNumbers[0])
+        difficultyNumberLabel.text = String(policyNumbers[1])
+        impactToDifficultyNumberLabel.text = String(policyNumbers[2])
     }
 }
 
