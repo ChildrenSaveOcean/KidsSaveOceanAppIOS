@@ -159,12 +159,17 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let userCampaign = UserViewModel.shared().campaign
         let campaignLive = UserViewModel.shared().isUserLocationCampaignIsLive()
         let userCampaignLocationId = UserViewModel.shared().location_id
+        let currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
+            return location.id == userCampaignLocationId
+        }) ?? 0
+        
         
         if campaignLive == true {
 
             liveLocationView.isHidden = false
             chooseLocationView.isHidden = true
             
+            setCampaignLiveDescription(currentCampaignLocationNum)
             updateLiveLocationView()
             
         } else {
@@ -175,14 +180,14 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged)
             signaturesCollectedTextField.text = "0"
             
-            var currentCampaignLocationNum = 0
+            //var currentCampaignLocationNum = 0
             
             if !userCampaignLocationId.isEmpty {
                 //,
                 //let userCampaignLocationId = campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.location_id
-                currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
-                    return location.id == userCampaignLocationId
-                }) ?? 0
+//                currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
+//                    return location.id == userCampaignLocationId
+//                }) ?? 0
                 pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
                 setCampaignLiveDescription(currentCampaignLocationNum)
                 
