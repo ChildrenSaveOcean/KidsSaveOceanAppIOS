@@ -172,12 +172,12 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             liveLocationView.isHidden = true
             chooseLocationView.isHidden = false
             
-            signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged ?? 0 )
+            signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged)
             signaturesCollectedTextField.text = "0"
             
             var currentCampaignLocationNum = 0
             
-            if userCampaign?.campaign_id != nil, userCampaignLocationId != nil {
+            if !userCampaignLocationId.isEmpty {
                 //,
                 //let userCampaignLocationId = campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.location_id
                 currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
@@ -185,6 +185,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
                 }) ?? 0
                 pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
                 setCampaignLiveDescription(currentCampaignLocationNum)
+                
+                enableChooseLocationButton(false)
             } else if campaignLocations.count == 0 {
                 pickerView.isUserInteractionEnabled = false
                 enableChooseLocationButton(false)
@@ -192,6 +194,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
                 pickerView.selectRow(0, inComponent: 0, animated: true)
                 setCampaignLiveDescription(0)
             }
+            
         }
         
         if userCampaign != nil, !userCampaignLocationId.isEmpty {
@@ -219,6 +222,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             unliveLocationMessageLabel.isHidden = false
             liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
             signaturesCollectedTextField.isEnabled = false
+            signaturesCollectedTextField.alpha = 0.5
             collectedSingaturesUpdateButton.isEnabled = false
         }
     }
@@ -361,7 +365,7 @@ extension SignUpUpdateViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         setCampaignLiveDescription(row)
-        enableChooseLocationButton(true)
+        //enableChooseLocationButton(true)
     }
     
 }
