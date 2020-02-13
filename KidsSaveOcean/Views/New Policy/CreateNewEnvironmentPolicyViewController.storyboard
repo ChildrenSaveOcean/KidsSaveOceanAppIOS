@@ -960,39 +960,38 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LiveCampaign" translatesAutoresizingMaskIntoConstraints="NO" id="IlE-MA-WE3">
                                                         <rect key="frame" x="270" y="37" width="85" height="88"/>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always keep your planned and collected signatures updated below" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xca-b8-g6K">
+                                                        <rect key="frame" x="20" y="162" width="335" height="36"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="IlE-MA-WE3" firstAttribute="top" secondItem="SD3-I2-kYz" secondAttribute="top" constant="37" id="3QD-Gg-KY9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xca-b8-g6K" secondAttribute="bottom" id="4Gh-C2-Bzy"/>
+                                                    <constraint firstItem="xca-b8-g6K" firstAttribute="top" secondItem="aZS-Oj-HIJ" secondAttribute="bottom" id="Bhs-oV-Lpa"/>
+                                                    <constraint firstItem="xca-b8-g6K" firstAttribute="leading" secondItem="6cQ-Zy-cYi" secondAttribute="leading" id="ChY-zU-LFW"/>
                                                     <constraint firstItem="IlE-MA-WE3" firstAttribute="centerY" secondItem="aZS-Oj-HIJ" secondAttribute="centerY" id="Mf7-zG-q3C"/>
+                                                    <constraint firstItem="xca-b8-g6K" firstAttribute="trailing" secondItem="IlE-MA-WE3" secondAttribute="trailing" id="b0F-Ay-FRc"/>
                                                     <constraint firstItem="aZS-Oj-HIJ" firstAttribute="top" secondItem="SD3-I2-kYz" secondAttribute="top" id="d3S-Nt-Ev0"/>
                                                     <constraint firstItem="aZS-Oj-HIJ" firstAttribute="leading" secondItem="SD3-I2-kYz" secondAttribute="leading" constant="20" id="gFN-On-qxl"/>
                                                     <constraint firstItem="IlE-MA-WE3" firstAttribute="leading" secondItem="aZS-Oj-HIJ" secondAttribute="trailing" id="gd3-95-TXJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="IlE-MA-WE3" secondAttribute="trailing" constant="20" id="up8-lM-S3c"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always keep your planned and collected signatures updated below" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xca-b8-g6K">
-                                                <rect key="frame" x="20" y="162" width="335" height="36"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
-                                                <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="6UV-Fw-s6A" secondAttribute="trailing" id="CVp-VK-4hf"/>
-                                            <constraint firstItem="xca-b8-g6K" firstAttribute="trailing" secondItem="IlE-MA-WE3" secondAttribute="trailing" id="H0z-fI-FMd"/>
                                             <constraint firstAttribute="trailing" secondItem="SD3-I2-kYz" secondAttribute="trailing" id="NaP-Up-U7d"/>
                                             <constraint firstAttribute="height" constant="198" id="P25-pN-xEP"/>
-                                            <constraint firstItem="xca-b8-g6K" firstAttribute="top" secondItem="IlE-MA-WE3" secondAttribute="bottom" constant="37" id="TCT-fy-XZ8"/>
-                                            <constraint firstItem="aZS-Oj-HIJ" firstAttribute="bottom" secondItem="xca-b8-g6K" secondAttribute="top" id="ZcJ-fI-7Yr"/>
-                                            <constraint firstAttribute="bottom" secondItem="xca-b8-g6K" secondAttribute="bottom" id="bEW-QL-GqW"/>
                                             <constraint firstItem="SD3-I2-kYz" firstAttribute="top" secondItem="k83-pG-NS9" secondAttribute="top" id="lWA-h5-dJ0"/>
                                             <constraint firstItem="6UV-Fw-s6A" firstAttribute="leading" secondItem="k83-pG-NS9" secondAttribute="leading" id="m82-uT-6ik"/>
                                             <constraint firstItem="6UV-Fw-s6A" firstAttribute="top" secondItem="k83-pG-NS9" secondAttribute="top" id="mLa-TT-kbk"/>
                                             <constraint firstItem="SD3-I2-kYz" firstAttribute="leading" secondItem="k83-pG-NS9" secondAttribute="leading" id="nqQ-Ve-lzV"/>
                                             <constraint firstAttribute="bottom" secondItem="SD3-I2-kYz" secondAttribute="bottom" id="sHe-oe-ZUO"/>
                                             <constraint firstAttribute="bottom" secondItem="6UV-Fw-s6A" secondAttribute="bottom" id="sb2-CN-qBc"/>
-                                            <constraint firstItem="xca-b8-g6K" firstAttribute="leading" secondItem="6cQ-Zy-cYi" secondAttribute="leading" id="vHP-4n-TWg"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uDK-9v-CAQ">
@@ -1114,14 +1113,11 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycq-Pw-NI5">
-                                                        <rect key="frame" x="258.5" y="5.5" width="80" height="23"/>
+                                                        <rect key="frame" x="258.5" y="0.0" width="80" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="Hf1-fs-Ktp"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button" image="UpdateOrange"/>
-                                                        <connections>
-                                                            <action selector="collectedSignaturesClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="nk3-T3-SBs"/>
-                                                        </connections>
+                                                        <state key="normal" title="Button"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1289,7 +1285,6 @@ Citizen Ballot Intiative Process</string>
         <image name="LiveCampaign" width="74" height="88"/>
         <image name="Spread" width="81" height="48"/>
         <image name="Track" width="343" height="157"/>
-        <image name="UpdateOrange" width="71" height="23"/>
         <image name="girlbg" width="375" height="667"/>
         <image name="stepsbg" width="374" height="106"/>
         <image name="votebg" width="375" height="105"/>

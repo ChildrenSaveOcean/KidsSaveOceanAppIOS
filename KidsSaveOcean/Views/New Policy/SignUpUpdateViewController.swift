@@ -70,9 +70,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         unliveLocationMessageLabel.isHidden = true
         liveCampaingStateLabel.text = ""
         
-        let img: UIImage = #imageLiteral(resourceName: "UpdateWhite")
-        collectedSingaturesUpdateButton.setImage(img, for: .disabled)
-        
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
         
@@ -237,12 +234,18 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             liveCampaingStateLabel.text = liveCampaignLocationStateMessages[true]! + selectedCountryForCampaign!.location
             signaturesCollectedTextField.isEnabled = true
             collectedSingaturesUpdateButton.isEnabled = true
+            collectedSingaturesUpdateButton.alpha = 1.0
+            newSignaturesCollected.isUserInteractionEnabled = true
+            newSignaturesCollected.alpha = 1.0
         } else {
             unliveLocationMessageLabel.isHidden = false
             liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
             signaturesCollectedTextField.isEnabled = false
             signaturesCollectedTextField.alpha = 0.5
             collectedSingaturesUpdateButton.isEnabled = false
+            collectedSingaturesUpdateButton.alpha = 0.5
+            newSignaturesCollected.isUserInteractionEnabled = false
+            newSignaturesCollected.alpha = 0.5
         }
     }
     
