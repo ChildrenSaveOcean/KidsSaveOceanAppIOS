@@ -35,7 +35,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     @IBOutlet weak var liveCampaingStateLabel: UILabel!
     @IBOutlet weak var unliveLocationMessageLabel: UILabel!
     
-    let liveCampaignLocationStateMessages = [false: "Live campaigns: none - still building",
+    let liveCampaignLocationStateMessages = [false: "Live Campaigns: None - still building",
                                              true: "Your location is live: "]
     
     var selectedCountryForCampaign: HijackLocation?
