@@ -58,6 +58,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
             
             self.present(alertMessage, animated: true) {
                 self.voteButton.isEnabled = false
+                self.voteButton.alpha = 0.5
             }
         }
         
