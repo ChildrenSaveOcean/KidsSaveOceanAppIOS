@@ -47,10 +47,10 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
         case 2:
             textTitle = "Vote now on a policy we'll push"
             imageName = "Vote"
-            if UserViewModel.shared().user_type != .student {
-                cell.isSelected = false
-                cell.environmentImageView.alpha = 0.5
-            }
+//            if UserViewModel.shared().user_type != .student {
+//                cell.isSelected = false
+//                cell.environmentImageView.alpha = 0.5
+//            }
         case 3:
             textTitle = "Sign Up and update signatures"
             imageName = "SignUp"
