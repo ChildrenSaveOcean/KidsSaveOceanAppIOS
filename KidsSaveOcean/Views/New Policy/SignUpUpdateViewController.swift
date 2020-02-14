@@ -194,11 +194,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             //var currentCampaignLocationNum = 0
             
             if !userCampaignLocationId.isEmpty {
-                //,
-                //let userCampaignLocationId = campaigns.filter({$0.id == userCampaign?.campaign_id}).first?.location_id
-//                currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
-//                    return location.id == userCampaignLocationId
-//                }) ?? 0
                 pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
                 setCampaignLiveDescription(currentCampaignLocationNum)
                 
