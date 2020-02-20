@@ -8,23 +8,11 @@
 
 import UIKit
 
-class YouthInitiativeProcessViewController: UIViewController, Instantiatable {
+class YouthInitiativeProcessViewController: WebIntegrationViewController, Instantiatable {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override var originalWebUrlString: String {
+        return "https://www.kidssaveocean.com/hijackpolicy"
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
