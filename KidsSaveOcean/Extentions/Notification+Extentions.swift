@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     static let countriesHasBeenLoaded = Notification.Name("CountriesHasBeenLoaded")
     static let userDataHasBeenLoaded = Notification.Name("UserDataHasBeenLoaded")
+    static let policiesHaveBeenLoaded = Notification.Name("policiesHaveBeenLoaded")
 }

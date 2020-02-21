@@ -28,6 +28,14 @@ class HijackPoliciesViewModel {
         fetchPolicies(nil)
     }
     
+    var policiesHaveBeenLoaded = false {
+        didSet {
+            if policiesHaveBeenLoaded {
+                NotificationCenter.default.post(name: .policiesHaveBeenLoaded, object: nil)
+            }
+        }
+    }
+    
     func fetchPolicies(_ completion: (() -> Void)?) {
 
         hidjackPolicies.removeAll()
@@ -63,6 +71,7 @@ class HijackPoliciesViewModel {
                 self.hidjackPolicies.append(policy)
             }
     
+            self.policiesHaveBeenLoaded = true
             if completion != nil {
                 completion!()
             }
