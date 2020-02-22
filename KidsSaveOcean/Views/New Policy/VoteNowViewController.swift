@@ -19,8 +19,11 @@ class VoteNowViewController: UIViewController, Instantiatable {
     @IBOutlet weak var difficultyNumberLabel: UILabel!
     @IBOutlet weak var impactToDifficultyNumberLabel: UILabel!
     
+   
+    @IBOutlet weak var blur: UIVisualEffectView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var pickerData = HijackPoliciesViewModel.shared().hidjackPolicies.sorted {$0.id < $1.id}
+    var pickerData = [HijackPolicy]()
     
     var selectedPolicy: HijackPolicy?
     
@@ -43,26 +46,18 @@ class VoteNowViewController: UIViewController, Instantiatable {
         if UIScreen.main.bounds.height > 800 {
                 self.pickerViewHeightConstraint.constant *= 2.1
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setPolicyLoadingState), name: .policiesHaveBeenLoaded, object: nil)
+        setPolicyLoadingState()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        let userHijackPolicy = UserViewModel.shared().hijack_policy_selected
-        
-        if !userHijackPolicy.isEmpty {
-            let alertMessage = UIAlertController(title: "", message: "Explore proposals FateChanger youth are considering for citizen ballot initiatives", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Got it", style: .cancel, handler: nil)
-            alertMessage.addAction(action)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserViewModel.shared().user_type != .student {
+            voteButton.isEnabled = false
+            voteButton.alpha = 0.5
             
-            self.present(alertMessage, animated: true) {
-                self.voteButton.isEnabled = false
-                self.voteButton.alpha = 0.5
-            }
         }
-        
-        let policy = pickerData[0]
-        pickerView.selectRow(0, inComponent: 0, animated: true)
-        setPolicyDetails(policy)
     }
     
     @IBAction func voteNowButton() {
@@ -71,15 +66,12 @@ class VoteNowViewController: UIViewController, Instantiatable {
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             if let selectedPolicy = self.selectedPolicy {
-//                if UserViewModel.shared().hijack_policy_selected != selectedPolicy.id {
-//                    UserViewModel.shared().campaign = nil
-//                }
                 UserViewModel.shared().hijack_policy_selected = selectedPolicy.id
                 UserViewModel.shared().saveUser()
                 HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
                 
             }
-            self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
+            //self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
             self.dismiss(animated: false, completion: nil)
             self.navigationController?.popViewController(animated: true)
         })
@@ -97,6 +89,9 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard  pickerData.count > 0 else {
+            return
+        }
         let hijackPolicy = pickerData[row]
         setPolicyDetails(hijackPolicy)
     }
@@ -113,6 +108,47 @@ class VoteNowViewController: UIViewController, Instantiatable {
         impactNumberLabel.text = String(policyNumbers[0])
         difficultyNumberLabel.text = String(policyNumbers[1])
         impactToDifficultyNumberLabel.text = String(policyNumbers[2])
+    }
+    
+    @objc private func setPolicyLoadingState() {
+        if !HijackPoliciesViewModel.shared().policiesHaveBeenLoaded {
+            blur.frame = view.bounds
+            blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blur.alpha = 0.7
+            activityIndicator.alpha = 1
+            activityIndicator.startAnimating()
+            
+        } else {
+            pickerData = HijackPoliciesViewModel.shared().hidjackPolicies.sorted {$0.id < $1.id}
+            
+            blur.frame = .zero
+            blur.alpha = 0.0
+            activityIndicator.alpha = 0
+            activityIndicator.stopAnimating()
+
+            setPolicyControls()
+        }
+    }
+    
+    private func setPolicyControls() {
+        pickerView.reloadAllComponents()
+        
+        let userHijackPolicy = UserViewModel.shared().hijack_policy_selected
+        
+        if !userHijackPolicy.isEmpty {
+            let alertMessage = UIAlertController(title: "", message: "Explore proposals FateChanger youth are considering for citizen ballot initiatives", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Got it", style: .cancel, handler: nil)
+            alertMessage.addAction(action)
+            
+            self.present(alertMessage, animated: true) {
+                self.voteButton.isEnabled = false
+                self.voteButton.alpha = 0.5
+            }
+        }
+        
+        let policy = pickerData[0]
+        pickerView.selectRow(0, inComponent: 0, animated: true)
+        setPolicyDetails(policy)
     }
 }
 

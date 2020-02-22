@@ -79,8 +79,9 @@ class HijackPoliciesViewModel {
     }
     
     func updateVotes(policy: HijackPolicy, value: Int) {
-         Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
-             setup()
+        Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
+//        self.policiesHaveBeenLoaded = false
+//        setup()
     }
     
     func getPolicyAttrString(for policy: HijackPolicy) -> NSMutableAttributedString {
