@@ -12,6 +12,7 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
+    var hideNavigationBarByDefault: Bool { return webView.url?.host?.lowercased().hasPrefix("www.kidssaveocean.com") ?? false }
     var originalWebUrlString: String { return webUrlString }
     
     var webUrlString: String = "" {
@@ -46,7 +47,7 @@ class WebIntegrationViewController: UIViewController {
         let pV = UIProgressView(progressViewStyle: .default)
         let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
         var y = max(frame.origin.y + frame.height, frame.height) //20)
-        pV.frame = CGRect(x: 0, y: y, width: view.bounds.width, height: 5)
+        pV.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: 5)
         return pV
     }()
 
@@ -130,8 +131,8 @@ class WebIntegrationViewController: UIViewController {
     }
     
     func checkNavigationButtons() {
-        navigationController?.navigationBar.isHidden = webView.url?.host?.lowercased().hasPrefix("www.kidssaveocean.com") ?? false
-        view.setNeedsLayout() //layoutSubviews()
+        navigationController?.navigationBar.isHidden = hideNavigationBarByDefault
+        view.setNeedsLayout()
         view.layoutIfNeeded()
         
         var canGoBack = webView.canGoBack

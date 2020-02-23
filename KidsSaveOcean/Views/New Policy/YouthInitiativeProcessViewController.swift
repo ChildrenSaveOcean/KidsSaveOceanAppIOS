@@ -8,11 +8,6 @@
 
 import UIKit
 
-class YouthInitiativeProcessViewController: WebIntegrationViewController, Instantiatable {
-    
-    override var originalWebUrlString: String {
-        return "https://www.kidssaveocean.com/hijackpolicy"
-    }
-
+class YouthInitiativeProcessViewController:UIViewController, Instantiatable {
 }
 
