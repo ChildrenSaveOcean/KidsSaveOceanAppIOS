@@ -62,10 +62,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             baseStackViewBottonConstraint.constant = 20
         }
         
-        let policy = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == campaigns.first?.hijack_policy}.first
-        if policy != nil {
-            policyLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy!) //policy != nil ?  : ""
-        }
+        let policy = "none yet - still voting"
+//        let policy = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == campaigns.first?.hijack_policy}.first
+//        if policy != nil {
+            policyLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy) //policy != nil ?  : ""
+//        }
         
         unliveLocationMessageLabel.isHidden = true
         liveCampaingStateLabel.text = ""

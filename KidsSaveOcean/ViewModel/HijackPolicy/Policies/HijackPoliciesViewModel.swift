@@ -84,13 +84,13 @@ class HijackPoliciesViewModel {
 //        setup()
     }
     
-    func getPolicyAttrString(for policy: HijackPolicy) -> NSMutableAttributedString {
+    func getPolicyAttrString(for policy: String) -> NSMutableAttributedString {
         let attrPolicyStr = NSMutableAttributedString(string: "Policy chosen: ")
         let font = UIFont.proRegular15
         attrPolicyStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrPolicyStr.length))
         
-        let policyDescr = policy.description
-        let attrPolicyDescrStr = NSMutableAttributedString(string: policyDescr)
+        //let policyDescr = policy.description
+        let attrPolicyDescrStr = NSMutableAttributedString(string: policy)
         let boldFont = UIFont.proSemiBold15
         attrPolicyDescrStr.addAttribute(NSAttributedString.Key.font, value: boldFont, range: NSRange(location: 0, length: attrPolicyDescrStr.length))
 
