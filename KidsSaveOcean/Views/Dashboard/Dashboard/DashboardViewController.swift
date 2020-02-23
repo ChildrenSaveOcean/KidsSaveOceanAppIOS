@@ -171,7 +171,7 @@ class DashboardViewController: UIViewController {
 
         case 3:
             ShareKidsSaveOcean.share(target: self) {
-                self.chooseTaskWithNum(2)
+                //self.chooseTaskWithNum(3)
             }
             
 //        case 4:
