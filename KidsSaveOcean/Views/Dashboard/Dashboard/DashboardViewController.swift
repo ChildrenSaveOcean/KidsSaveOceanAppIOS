@@ -180,12 +180,12 @@ class DashboardViewController: UIViewController {
 //            navigationController?.pushViewController(taskViewController, animated: true)
             
         case 4:
-            tabBarController?.switchToHomeScreen()
-            guard let homeViewController = tabBarController?.getSelectedTabMainViewController() as? HomeTableViewController else { return }
+            //tabBarController?.switchToHomeScreen()
+            //guard let homeViewController = tabBarController?.getSelectedTabMainViewController() as? HomeTableViewController else { return }
             
             let taskViewController = CreateNewEnvironmentPolicyViewController.instantiate()
             taskViewController.title = ""
-            homeViewController.navigationController?.pushViewController(taskViewController, animated: true)
+            self.navigationController?.pushViewController(taskViewController, animated: true)
 
         case 5:
             let taskViewController = ActivistViewContoller.instantiate()
