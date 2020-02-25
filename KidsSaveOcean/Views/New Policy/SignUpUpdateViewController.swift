@@ -311,7 +311,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
-            self.alertMessageAboutWrongLocation()
+           // self.alertMessageAboutWrongLocation()
         }
         
         //Add OK and Cancel button to dialog message
