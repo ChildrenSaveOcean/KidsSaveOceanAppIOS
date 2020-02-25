@@ -29,14 +29,11 @@ class UserTypeVideoViewController: WebIntegrationViewController {
     
     override var originalWebUrlString: String {
         guard !urlString.isEmpty else { return "" }
-        //return "https://youtu.be/5S0_1YJV064"
-        //return "https://www.youtube.com/embed/5S0_1YJV064"
         switch userType {
         case .student:
-             return "https://www.youtube.com/embed/5S0_1YJV064"
+             return "https://www.kidssaveocean.com/fatechangeryouthintro"
         default:
             return "https://www.kidssaveocean.com/video-test"
-            //"https://youtu.be/TueclrttB1o"
         }
     }
 
