@@ -259,14 +259,15 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             self.signUpUserToTheLoaction()
         }
         
-        let noButton = UIAlertAction(title: "NO", style: .default) { (_) in
-            let explainAlertView = UIAlertController(title: nil, message: "I'm sorry, but the goverment of your location doesn't offer the opportunity for citizen ballon initiatives. But you can influence them with letters in our letter-writing campaign.", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            explainAlertView.addAction(okButton)
-            self.present(explainAlertView, animated: true) {
-                self.enableChooseLocationButton(false)
-            }
-        }
+        let noButton = UIAlertAction(title: "NO", style: .cancel, handler: nil)
+//        let noButton = UIAlertAction(title: "NO", style: .default) { (_) in
+//            let explainAlertView = UIAlertController(title: nil, message: "I'm sorry, but the goverment of your location doesn't offer the opportunity for citizen ballon initiatives. But you can influence them with letters in our letter-writing campaign.", preferredStyle: .alert)
+//            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//            explainAlertView.addAction(okButton)
+//            self.present(explainAlertView, animated: true) {
+//                self.enableChooseLocationButton(false)
+//            }
+//        }
         
         alertView.addAction(yesButton)
         alertView.addAction(noButton)
