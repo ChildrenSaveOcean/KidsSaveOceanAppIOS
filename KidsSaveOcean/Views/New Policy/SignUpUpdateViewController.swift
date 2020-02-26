@@ -159,11 +159,13 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        ShareKidsSaveOcean.share(target: self)
+        ShareKidsSaveOcean.share(target: self, text: "With this app (called FateChanger), kids might be able to force through environmental policies! Check it out...")
     }
     
     @IBAction func learnMoreAction(_ sender: Any) {
-        tabBarController?.showLink("https://www.kidssaveocean.com/projects", clear: nil)
+        //tabBarController?.showLink("https://www.kidssaveocean.com/projects", clear: nil)
+        let hijackVideoVC = YouthInitiativeProcessViewController.instantiate()
+        navigationController?.pushViewController(hijackVideoVC, animated: true)
     }
     
     // MARK: Private methods
