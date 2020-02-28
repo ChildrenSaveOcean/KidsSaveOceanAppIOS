@@ -97,6 +97,13 @@ class DashboardViewController: UIViewController {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
         }
+        
+        setUpTopIcons()
+               var firstIncompetedTask = self.completionTasksStates.firstIndex(of: false) ?? 0
+               if firstIncompetedTask >= 5 {
+                   firstIncompetedTask = 0
+               }
+        self.chooseTaskWithNum(firstIncompetedTask)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -115,12 +122,7 @@ class DashboardViewController: UIViewController {
 
         view.layoutIfNeeded()
 
-        setUpTopIcons()
-        var firstIncompetedTask = self.completionTasksStates.firstIndex(of: false) ?? 0
-        if firstIncompetedTask >= 5 {
-            firstIncompetedTask = 0
-        }
-        self.chooseTaskWithNum(firstIncompetedTask)
+       
     }
 
     override func viewDidLayoutSubviews() {
