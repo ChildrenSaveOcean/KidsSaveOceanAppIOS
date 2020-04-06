@@ -51,8 +51,10 @@ class UserDefaultsHelper {
     
     class func getNotifications() -> [NotificationItem] {
         guard let codedNotification = UserDefaults.standard.value(forKey: notificationsKey) as? NSData,
-            let notifications = NSKeyedUnarchiver.unarchiveObject(with: codedNotification as Data) as? [NotificationItem] else {
-                return [NotificationItem]()
+            let notificationData = codedNotification as? Data,
+            let notifications = NSKeyedUnarchiver.unarchiveObject(with: notificationData) as? [NotificationItem]
+        else {
+            return [NotificationItem]()
         }
         return notifications
     }
