@@ -17,6 +17,12 @@ extension UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = true
         navigationBar.backgroundColor = .clear
+        
+         if #available(iOS 13.0, *) {
+             navigationBar.standardAppearance.backgroundColor = .clear
+             navigationBar.standardAppearance.backgroundEffect = .none
+             navigationBar.standardAppearance.shadowColor = .clear
+         }
     }
 
 }
