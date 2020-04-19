@@ -101,6 +101,14 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
+     }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+       return CGFloat.leastNonzeroMagnitude
+     }
+    
     func reloadMap() {
         if CountriesService.shared().contryContactsHasBeenLoaded {
             activityIndicator.isHidden = true

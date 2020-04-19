@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
         <!--Home Table View Controller-->
         <scene sceneID="2K5-vm-IPU">
             <objects>
-                <tableViewController storyboardIdentifier="HomeTableViewController" extendedLayoutIncludesOpaqueBars="YES" id="xTw-bw-8TV" customClass="HomeTableViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HomeTableViewController" extendedLayoutIncludesOpaqueBars="YES" id="xTw-bw-8TV" customClass="HomeTableViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="GW6-gS-bFj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
         <!--Map View Controller-->
         <scene sceneID="O9p-MZ-ngk">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="8N1-tj-3aY" customClass="MapViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="8N1-tj-3aY" customClass="MapViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oY4-dZ-3zN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,9 +112,9 @@
                                     <segue destination="hPe-St-gil" kind="show" identifier="LetterTrackerViewControllerSegueId" id="uWB-M8-tXv"/>
                                 </connections>
                             </button>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="USN-9K-Xm0">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="USN-9K-Xm0">
                                 <rect key="frame" x="0.0" y="325.33333333333326" width="414" height="487.66666666666674"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8N1-tj-3aY" id="dj2-WD-HV4"/>
                                     <outlet property="delegate" destination="8N1-tj-3aY" id="Ivk-0g-hJd"/>
@@ -181,7 +181,7 @@
         <!--Letter Tracker View Controller-->
         <scene sceneID="DYQ-mA-REG">
             <objects>
-                <viewController id="hPe-St-gil" customClass="LetterTrackerViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hPe-St-gil" customClass="LetterTrackerViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ckn-Gu-8ym">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,16 +209,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Letter in the Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-Ho-QN6">
                                 <rect key="frame" x="69" y="15" width="276" height="27"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="23"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written a letter, stamped, and mailed it off? You’re awesome. You’ve got fire in your belly and stood up to change fate. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-x5-j2M">
                                 <rect key="frame" x="15" y="57" width="384" height="61"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Submit only after you’ve mailed it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGn-ZY-2ux">
                                 <rect key="frame" x="52" y="632.33333333333337" width="310" height="21.666666666666629"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZA-gL-jic">
@@ -227,6 +230,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the country you wrote to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-Bo-uHv">
                                         <rect key="frame" x="8" y="25" width="358" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Qq-Pvl">
@@ -286,7 +290,7 @@
         <!--TabBarController-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController storyboardIdentifier="KSOTabViewController" title="TabBarController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" customClass="KSOTabViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="KSOTabViewController" title="TabBarController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" customClass="KSOTabViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -308,7 +312,7 @@
         <!--Media View Controller-->
         <scene sceneID="14H-pd-rE5">
             <objects>
-                <viewController storyboardIdentifier="MediaViewController" id="vpe-vB-l0A" customClass="MediaViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MediaViewController" id="vpe-vB-l0A" customClass="MediaViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ts7-gb-nX6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,7 +328,7 @@
         <!--Country Contacts-->
         <scene sceneID="Zpc-k3-OMO">
             <objects>
-                <viewController storyboardIdentifier="CountryContactsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KwK-Pl-sqk" userLabel="Country Contacts" customClass="CountryContactsViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountryContactsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KwK-Pl-sqk" userLabel="Country Contacts" customClass="CountryContactsViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0V-Us-Xu3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,7 +354,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-pJ-npN">
                                 <rect key="frame" x="16" y="298" width="398" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOf-Kz-ga6">
@@ -433,7 +437,7 @@
         <!--Contact Details View Controller-->
         <scene sceneID="VET-k8-RaY">
             <objects>
-                <viewController storyboardIdentifier="ContactDetailsViewController" id="iKm-IV-Qdx" customClass="ContactDetailsViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactDetailsViewController" id="iKm-IV-Qdx" customClass="ContactDetailsViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6i6-zL-Zwl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -441,40 +445,41 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CountryDetailsHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="6NN-13-7KK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="6NN-13-7KK" secondAttribute="height" multiplier="414:365" id="8Bn-Cy-cha" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                    <constraint firstAttribute="width" secondItem="6NN-13-7KK" secondAttribute="height" multiplier="414:365" id="8Bn-Cy-cha" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a letter to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btf-6I-jX8">
-                                <rect key="frame" x="34" y="375" width="380" height="29"/>
+                                <rect key="frame" x="34" y="375" width="380" height="28"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-u6-ad9">
-                                <rect key="frame" x="34" y="419" width="346" height="20.333333333333314"/>
+                                <rect key="frame" x="34" y="418" width="346" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stamp, mail it off, and then enter it in the Fatechanger Map’s Tracker. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDm-rs-hRz">
-                                <rect key="frame" x="20" y="745" width="374" height="43"/>
+                                <rect key="frame" x="20" y="746" width="374" height="42"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="btf-6I-jX8" firstAttribute="leading" secondItem="seg-VP-4uH" secondAttribute="leading" constant="34" id="2jB-wI-IXa" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                            <constraint firstItem="btf-6I-jX8" firstAttribute="top" secondItem="6NN-13-7KK" secondAttribute="bottom" constant="10" id="3QG-Q5-Tl1" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                            <constraint firstItem="yDm-rs-hRz" firstAttribute="leading" secondItem="seg-VP-4uH" secondAttribute="leading" constant="20" id="6VC-0D-hmp" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="btf-6I-jX8" firstAttribute="leading" secondItem="seg-VP-4uH" secondAttribute="leading" constant="34" id="2jB-wI-IXa" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                            <constraint firstItem="btf-6I-jX8" firstAttribute="top" secondItem="6NN-13-7KK" secondAttribute="bottom" constant="10" id="3QG-Q5-Tl1" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                            <constraint firstItem="yDm-rs-hRz" firstAttribute="leading" secondItem="seg-VP-4uH" secondAttribute="leading" constant="20" id="6VC-0D-hmp" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
                             <constraint firstItem="6NN-13-7KK" firstAttribute="top" secondItem="6i6-zL-Zwl" secondAttribute="top" id="DD2-Ti-k5j"/>
-                            <constraint firstItem="7sH-u6-ad9" firstAttribute="top" secondItem="btf-6I-jX8" secondAttribute="bottom" constant="15" id="PfK-3z-xmE" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="7sH-u6-ad9" firstAttribute="top" secondItem="btf-6I-jX8" secondAttribute="bottom" constant="15" id="PfK-3z-xmE" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
                             <constraint firstItem="btf-6I-jX8" firstAttribute="leading" secondItem="7sH-u6-ad9" secondAttribute="leading" id="Q9A-NC-8IY"/>
                             <constraint firstItem="seg-VP-4uH" firstAttribute="trailing" secondItem="btf-6I-jX8" secondAttribute="trailing" id="WMu-kv-XOi"/>
                             <constraint firstItem="7sH-u6-ad9" firstAttribute="centerX" secondItem="seg-VP-4uH" secondAttribute="centerX" id="XKi-Tv-j2B"/>
                             <constraint firstItem="6NN-13-7KK" firstAttribute="trailing" secondItem="seg-VP-4uH" secondAttribute="trailing" id="jQI-Sg-df7"/>
-                            <constraint firstItem="seg-VP-4uH" firstAttribute="trailing" secondItem="yDm-rs-hRz" secondAttribute="trailing" constant="20" id="jbr-in-pt4" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
-                            <constraint firstItem="seg-VP-4uH" firstAttribute="bottom" secondItem="yDm-rs-hRz" secondAttribute="bottom" constant="20" id="nfY-QE-EKd" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="seg-VP-4uH" firstAttribute="trailing" secondItem="yDm-rs-hRz" secondAttribute="trailing" constant="20" id="jbr-in-pt4" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                            <constraint firstItem="seg-VP-4uH" firstAttribute="bottom" secondItem="yDm-rs-hRz" secondAttribute="bottom" constant="20" id="nfY-QE-EKd" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
                             <constraint firstItem="6NN-13-7KK" firstAttribute="leading" secondItem="seg-VP-4uH" secondAttribute="leading" id="znw-H1-Art"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="seg-VP-4uH"/>
@@ -511,7 +516,7 @@
         <!--Resources View Controller-->
         <scene sceneID="NqI-gC-3nU">
             <objects>
-                <viewController id="Y8c-d5-A0p" customClass="ResourcesViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y8c-d5-A0p" customClass="ResourcesViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m4U-wb-vMV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
