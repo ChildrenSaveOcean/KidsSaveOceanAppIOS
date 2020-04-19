@@ -174,6 +174,8 @@ extension VoteNowViewController: UIPickerViewDelegate {
         label.text = pickerData[row].description
         label.textAlignment = .center
         label.font = UIFont.proDisplaySemiBold15
+        
+        label.textColor = .black
 //        label.adjustsFontSizeToFitWidth = true
 //        label.minimumScaleFactor = 0.5
 

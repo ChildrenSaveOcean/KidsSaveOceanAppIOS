@@ -619,23 +619,6 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84g-YT-cri">
-                                <rect key="frame" x="0.0" y="149" width="375" height="518"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="r68-P4-pfZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZW8-6H-Vhu">
-                                            <rect key="frame" x="177.5" y="249" width="20" height="20"/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ZW8-6H-Vhu" firstAttribute="centerY" secondItem="r68-P4-pfZ" secondAttribute="centerY" id="Pt5-VY-KFD"/>
-                                        <constraint firstItem="ZW8-6H-Vhu" firstAttribute="centerX" secondItem="r68-P4-pfZ" secondAttribute="centerX" id="sSg-DU-USE"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-rM-7NU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
@@ -721,6 +704,23 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                     </label>
                                 </subviews>
                             </stackView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84g-YT-cri">
+                                <rect key="frame" x="0.0" y="149" width="375" height="518"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="r68-P4-pfZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZW8-6H-Vhu">
+                                            <rect key="frame" x="177.5" y="249" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZW8-6H-Vhu" firstAttribute="centerY" secondItem="r68-P4-pfZ" secondAttribute="centerY" id="Pt5-VY-KFD"/>
+                                        <constraint firstItem="ZW8-6H-Vhu" firstAttribute="centerX" secondItem="r68-P4-pfZ" secondAttribute="centerX" id="sSg-DU-USE"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
