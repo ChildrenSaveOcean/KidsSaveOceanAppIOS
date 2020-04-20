@@ -87,6 +87,7 @@ final class LetterTrackerViewController: UIViewController {
     }
 
     private func gotoDashBoard() {
+        tabBarController?.refreshSelectedTab()
         tabBarController?.switchToDashboardScreen()
         guard let dashboardVC: DashboardViewController = tabBarController?.getSelectedTabMainViewController() else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
