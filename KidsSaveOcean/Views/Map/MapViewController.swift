@@ -67,9 +67,6 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         tbvTop10.register(UINib(nibName: "KSOMapTop10TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
 
-        let summaryLettersWritten = countriesData.reduce(0) {$0 + $1.letters_written}
-        lblLettersWritten.text = String(summaryLettersWritten)
-        lblNumberCountries.text = String(countriesData.count)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +116,14 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         _countriesData = nil
         addPinsInMap()
+        
+        let summaryLettersWritten = countriesData.reduce(0) {$0 + $1.letters_written}
+        lblLettersWritten.text = summaryLettersWritten > 0 ? String(summaryLettersWritten) : String(UserDefaultsHelper.letterNumber())
+        lblNumberCountries.text = countriesData.count > 0 ? String(countriesData.count) : String(UserDefaultsHelper.countryLetterNumber())
+        
+        UserDefaultsHelper.saveLetterNumber(summaryLettersWritten)
+        UserDefaultsHelper.saveCountryLetterNumber(countriesData.count)
+        
         self.map.reloadInputViews()
         showMaxLettersScoreRegion()
         self.tbvTop10.reloadData()
