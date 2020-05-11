@@ -56,8 +56,12 @@ class WebIntegrationViewController: UIViewController {
 
     lazy var noInternetConnectionImageView: UIImageView = { () -> UIImageView in
         let imageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
-        imageView.frame = self.webView.frame
-        imageView.contentMode = .scaleAspectFit
+        var frame = self.webView.frame
+        if let newHeight = self.tabBarController?.tabBar.frame.height {
+            frame.size.height -= newHeight
+        }
+        imageView.frame = frame
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
 
