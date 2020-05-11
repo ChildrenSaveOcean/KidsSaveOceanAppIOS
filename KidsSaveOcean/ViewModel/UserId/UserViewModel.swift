@@ -273,7 +273,7 @@ class UserViewModel {
                     continue
 
                 case userTypeKey:
-                    guard let value = userFBData.value as? UserType else {continue}
+                    guard let value = UserType(rawValue: userFBData.value as! Int) else {continue}
                     self.user_type = value
                     continue
                     
