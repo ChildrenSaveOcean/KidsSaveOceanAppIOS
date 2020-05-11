@@ -125,7 +125,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         UserDefaultsHelper.saveCountryLetterNumber(countriesData.count)
         
         self.map.reloadInputViews()
-        showMaxLettersScoreRegion()
+        //showMaxLettersScoreRegion()
         self.tbvTop10.reloadData()
     }
 
