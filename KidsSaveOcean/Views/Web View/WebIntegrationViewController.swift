@@ -45,6 +45,7 @@ class WebIntegrationViewController: UIViewController {
 
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
+        pV.tintColor = .appCyan
         let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
         var y = max(frame.origin.y + frame.height, frame.height) //20)
         pV.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: 5)

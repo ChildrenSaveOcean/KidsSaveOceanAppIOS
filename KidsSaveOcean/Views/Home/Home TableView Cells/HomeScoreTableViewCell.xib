@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="scoreViewCellIdentificator" rowHeight="172" id="V5z-NA-Ptb" customClass="HomeScoreTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="scoreViewCellIdentificator" rowHeight="172" id="V5z-NA-Ptb" customClass="HomeScoreTableViewCell" customModule="FateChanger" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V5z-NA-Ptb" id="ZrT-Lj-JxZ">
@@ -40,16 +41,16 @@
                             <constraint firstAttribute="height" constant="21" id="DEc-xS-mIP"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="0.023529411760000001" green="0.76078431369999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" name="KidSaveOcean Blue"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,456" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-Jr-Roj">
                         <rect key="frame" x="210" y="72" width="115" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="115" id="0d4-h8-bE5" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstAttribute="width" constant="115" id="0d4-h8-bE5" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="0.023529411760000001" green="0.76078431369999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" name="KidSaveOcean Blue"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unated States" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZw-mI-hw1">
@@ -97,7 +98,7 @@
                             <constraint firstAttribute="width" constant="12" id="5Zq-iU-ilk"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="0.023529411760000001" green="0.76078431369999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" name="KidSaveOcean Blue"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -111,15 +112,15 @@
                     <constraint firstItem="ScZ-J9-Kdy" firstAttribute="height" secondItem="CLl-7a-FF9" secondAttribute="height" id="Db5-yc-lE8"/>
                     <constraint firstItem="ScZ-J9-Kdy" firstAttribute="centerY" secondItem="gZw-mI-hw1" secondAttribute="centerY" id="Ewt-3n-Ben"/>
                     <constraint firstItem="vNQ-Gt-bSW" firstAttribute="centerY" secondItem="gZw-mI-hw1" secondAttribute="centerY" id="FeZ-PH-Yvf"/>
-                    <constraint firstAttribute="trailing" secondItem="ScZ-J9-Kdy" secondAttribute="trailing" constant="50" id="Fjb-WA-3UR" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="ScZ-J9-Kdy" secondAttribute="trailing" constant="50" id="Fjb-WA-3UR" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                     <constraint firstItem="8Zq-C2-iVe" firstAttribute="leading" secondItem="vNQ-Gt-bSW" secondAttribute="leading" id="HaL-PV-BNV"/>
                     <constraint firstItem="8Zq-C2-iVe" firstAttribute="height" secondItem="aTQ-fR-eF2" secondAttribute="height" id="M9X-w2-g4g"/>
                     <constraint firstAttribute="trailing" secondItem="POz-RR-SZV" secondAttribute="trailing" constant="16" id="McU-cM-wZf"/>
-                    <constraint firstAttribute="trailing" secondItem="ucg-Jr-Roj" secondAttribute="trailing" constant="50" id="Nde-TT-acp" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="ucg-Jr-Roj" secondAttribute="trailing" constant="50" id="Nde-TT-acp" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                     <constraint firstItem="gZw-mI-hw1" firstAttribute="leading" secondItem="CLl-7a-FF9" secondAttribute="leading" id="PNE-dh-LVK"/>
                     <constraint firstAttribute="bottom" secondItem="POz-RR-SZV" secondAttribute="bottom" constant="8" id="RQH-ht-ei4"/>
                     <constraint firstItem="8Zq-C2-iVe" firstAttribute="top" secondItem="vNQ-Gt-bSW" secondAttribute="bottom" constant="0.67000000000000004" id="TgZ-uE-SoN"/>
-                    <constraint firstItem="LnT-5O-ISI" firstAttribute="leading" secondItem="ZrT-Lj-JxZ" secondAttribute="leading" constant="52" id="UMY-uI-4ui" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                    <constraint firstItem="LnT-5O-ISI" firstAttribute="leading" secondItem="ZrT-Lj-JxZ" secondAttribute="leading" constant="52" id="UMY-uI-4ui" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                     <constraint firstItem="CLl-7a-FF9" firstAttribute="centerY" secondItem="LnT-5O-ISI" secondAttribute="centerY" id="URK-mO-cUd"/>
                     <constraint firstItem="hV2-VR-qjB" firstAttribute="centerY" secondItem="aTQ-fR-eF2" secondAttribute="centerY" id="ZZy-uE-e7h"/>
                     <constraint firstItem="vNQ-Gt-bSW" firstAttribute="leading" secondItem="LnT-5O-ISI" secondAttribute="leading" id="c3G-C9-eXA"/>
@@ -130,7 +131,7 @@
                     <constraint firstItem="gZw-mI-hw1" firstAttribute="width" secondItem="CLl-7a-FF9" secondAttribute="width" id="iRN-Xk-emO"/>
                     <constraint firstItem="ScZ-J9-Kdy" firstAttribute="width" secondItem="ucg-Jr-Roj" secondAttribute="width" id="iZf-Z0-mQK"/>
                     <constraint firstItem="POz-RR-SZV" firstAttribute="top" secondItem="ZrT-Lj-JxZ" secondAttribute="top" constant="8" id="kJ8-wL-F7A"/>
-                    <constraint firstItem="cm7-tO-zce" firstAttribute="top" secondItem="ZrT-Lj-JxZ" secondAttribute="top" constant="26" id="kyr-6V-0m0" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                    <constraint firstItem="cm7-tO-zce" firstAttribute="top" secondItem="ZrT-Lj-JxZ" secondAttribute="top" constant="26" id="kyr-6V-0m0" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                     <constraint firstItem="ucg-Jr-Roj" firstAttribute="centerY" secondItem="CLl-7a-FF9" secondAttribute="centerY" id="l3y-gq-nYu"/>
                     <constraint firstItem="POz-RR-SZV" firstAttribute="leading" secondItem="ZrT-Lj-JxZ" secondAttribute="leading" constant="16" id="ltK-KJ-Akl"/>
                     <constraint firstItem="POz-RR-SZV" firstAttribute="centerX" secondItem="ZrT-Lj-JxZ" secondAttribute="centerX" id="nJa-ws-Oqu"/>
@@ -160,5 +161,8 @@
     </objects>
     <resources>
         <image name="top10card" width="343" height="140"/>
+        <namedColor name="KidSaveOcean Blue">
+            <color red="0.12549019607843137" green="0.76078431372549016" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
