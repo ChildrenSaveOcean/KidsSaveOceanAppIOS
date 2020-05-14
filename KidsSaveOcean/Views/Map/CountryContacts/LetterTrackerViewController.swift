@@ -62,10 +62,17 @@ final class LetterTrackerViewController: UIViewController {
 
     @IBAction func enterLetterInTheTracker(_ sender: Any) {
         let viewAlert = UIAlertController(title: "Are you certain you've stamped and mailed it?", message: "", preferredStyle: .alert)
-        viewAlert.addAction(UIAlertAction(title: "No, not yet", style: .cancel, handler: nil))
-        viewAlert.addAction(UIAlertAction(title: "Yes, I've already mailed it!", style: .default, handler: { _ in
+
+        let noAction = UIAlertAction(title: "No, not yet", style: .cancel, handler: nil)
+        noAction.setAppTextColor()
+        viewAlert.addAction(noAction)
+        
+        let yesAction = UIAlertAction(title: "Yes, I've already mailed it!", style: .default, handler: { _ in
             self.updateLettersTracker()
-        }))
+        })
+        yesAction.setAppTextColor()
+        viewAlert.addAction(yesAction)
+        
         self.present(viewAlert, animated: true, completion: nil)
 
     }
@@ -77,12 +84,14 @@ final class LetterTrackerViewController: UIViewController {
         CountriesService.shared().increaseLettersWrittenForCountry(selectedCountry)
         
         let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratulations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
-        viewAlert.addAction(UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
+        let action = UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
             let userLetterWritten = UserViewModel.shared().letters_written ?? 0
             UserViewModel.shared().letters_written = userLetterWritten + 1
             UserViewModel.shared().saveUser()
             self.gotoDashBoard()
-        }))
+        })
+        action.setAppTextColor()
+        viewAlert.addAction(action)
         self.present(viewAlert, animated: true, completion: nil)
     }
 

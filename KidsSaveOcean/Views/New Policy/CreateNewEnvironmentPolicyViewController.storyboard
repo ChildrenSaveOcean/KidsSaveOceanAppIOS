@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +24,7 @@
         <!--Create New Environment Policy View Controller-->
         <scene sceneID="vD2-Ch-Hjv">
             <objects>
-                <viewController storyboardIdentifier="CreateNewEnvironmentPolicyViewController" id="dc6-D3-Qcz" customClass="CreateNewEnvironmentPolicyViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateNewEnvironmentPolicyViewController" id="dc6-D3-Qcz" customClass="CreateNewEnvironmentPolicyViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iEe-nd-yGy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +32,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="2cE-OJ-23i">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="7to-Sv-Od6" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="150" id="7to-Sv-Od6" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-JJ-7zp">
@@ -68,17 +69,17 @@
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrackTableViewCell" id="bOk-M7-OjN" customClass="TrackTableViewCell" customModule="FateChange" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="166"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrackTableViewCell" id="bOk-M7-OjN" customClass="TrackTableViewCell" customModule="FateChanger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bOk-M7-OjN" id="7pT-OB-EqX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Track" translatesAutoresizingMaskIntoConstraints="NO" id="14W-8U-vs2">
-                                                    <rect key="frame" x="18" y="4.5" width="339" height="157"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Track" translatesAutoresizingMaskIntoConstraints="NO" id="14W-8U-vs2">
+                                                    <rect key="frame" x="18" y="4.5" width="339" height="95"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="157" id="JUv-QP-W58"/>
+                                                        <constraint firstAttribute="height" constant="95" id="JUv-QP-W58"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -87,8 +88,8 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF7-XT-Q1g">
-                                                    <rect key="frame" x="55" y="60" width="82" height="46"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF7-XT-Q1g">
+                                                    <rect key="frame" x="55" y="60" width="82" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="Mzy-3k-FJ5"/>
                                                     </constraints>
@@ -96,8 +97,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="the Hijack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTh-O5-fpv">
-                                                    <rect key="frame" x="242" y="60" width="98" height="46"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" verticalHuggingPriority="251" text="the Hijack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTh-O5-fpv">
+                                                    <rect key="frame" x="242" y="60" width="98" height="26"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -120,8 +121,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EnvironmentCell" rowHeight="70" id="qJX-dT-nQl" customClass="EnvironmentTableViewCell" customModule="FateChange" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="194" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EnvironmentCell" rowHeight="70" id="qJX-dT-nQl" customClass="EnvironmentTableViewCell" customModule="FateChanger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qJX-dT-nQl" id="dO4-ac-dyL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -133,13 +134,13 @@
                                                         <constraint firstAttribute="height" constant="61" id="RmL-34-HjE"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iZv-Jn-mFw">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iZv-Jn-mFw">
                                                     <rect key="frame" x="35" y="21" width="305" height="28"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="myb-B8-y92">
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="myb-B8-y92">
                                                     <rect key="frame" x="271" y="16" width="35" height="38"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="CtU-d4-pXq"/>
@@ -205,7 +206,7 @@
         <!--Track The Hijack View Controller-->
         <scene sceneID="g06-YV-exd">
             <objects>
-                <viewController storyboardIdentifier="TrackTheHijackViewController" id="ebV-c7-ckS" customClass="TrackTheHijackViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackTheHijackViewController" id="ebV-c7-ckS" customClass="TrackTheHijackViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5N9-zc-M8L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,11 +244,21 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJP-8L-LIa">
                                 <rect key="frame" x="147" y="335" width="81" height="48"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.76078431369999999" blue="0.87058823529999996" alpha="0.90724622479999995" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1ov-26-dok"/>
                                     <constraint firstAttribute="width" constant="81" id="gbM-Es-j3L"/>
                                 </constraints>
-                                <state key="normal" image="Spread"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
+                                <state key="normal" title="Spread"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.clipToBounds">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="spreadButton:" destination="ebV-c7-ckS" eventType="touchUpInside" id="MiX-sI-wGi"/>
                                 </connections>
@@ -281,7 +292,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
         <!--Track The Hijack Live Campaign View Controller-->
         <scene sceneID="Tob-z8-1hb">
             <objects>
-                <viewController storyboardIdentifier="TrackTheHijackLiveCampaignViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nJW-oo-yKE" customClass="TrackTheHijackLiveCampaignViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackTheHijackLiveCampaignViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nJW-oo-yKE" customClass="TrackTheHijackLiveCampaignViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WFU-F6-AGH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,26 +301,26 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyl-EC-M92">
-                                <rect key="frame" x="30" y="264" width="75.5" height="20.5"/>
+                                <rect key="frame" x="30" y="260" width="71.5" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfY-Ot-HOK">
-                                <rect key="frame" x="30" y="149.5" width="315" height="33.5"/>
+                                <rect key="frame" x="30" y="147" width="315" height="33"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Policy chosen: Establish a sustainable environment as a human right!">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="14" name="SFProText-Semibold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="641-Vt-LDA">
-                                <rect key="frame" x="28.5" y="85" width="318" height="25.5"/>
+                                <rect key="frame" x="27" y="84" width="321" height="24.5"/>
                                 <string key="text">Youth-driven Environmental Policy
 </string>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="21"/>
@@ -317,53 +328,60 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track the Hijack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-Q5-ciQ">
-                                <rect key="frame" x="123" y="110" width="129" height="20.5"/>
+                                <rect key="frame" x="127" y="108" width="121.5" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIVE!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li8-0D-tt8">
-                                <rect key="frame" x="148" y="20" width="79" height="41"/>
+                                <rect key="frame" x="148.5" y="20" width="78.5" height="40"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campaign location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNN-tL-N6c">
-                                <rect key="frame" x="30" y="203" width="229" height="20.5"/>
+                                <rect key="frame" x="30" y="200" width="229" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signatures required:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35U-s4-WBX">
-                                <rect key="frame" x="30" y="233.5" width="162.5" height="20.5"/>
+                                <rect key="frame" x="30" y="230" width="153" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total collected so far:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lty-AF-I0I">
-                                <rect key="frame" x="30" y="294.5" width="173" height="20.5"/>
+                                <rect key="frame" x="30" y="290" width="162.5" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Follow" translatesAutoresizingMaskIntoConstraints="NO" id="qVM-4u-AQz">
-                                <rect key="frame" x="20" y="335" width="335" height="66"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVM-4u-AQz">
+                                <rect key="frame" x="20" y="330" width="335" height="65"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.76078431369999999" blue="0.87058823529999996" alpha="0.90724622479999995" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your planned signatures:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSo-tV-Pf6">
-                                <rect key="frame" x="30" y="345" width="229" height="20.5"/>
+                                <rect key="frame" x="30" y="340" width="229" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your collected signatures:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCX-TG-QHs">
-                                <rect key="frame" x="30" y="370.5" width="229" height="20.5"/>
+                                <rect key="frame" x="30" y="365" width="229" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9T-oi-PNO">
-                                <rect key="frame" x="264" y="351.5" width="81" height="33"/>
-                                <color key="backgroundColor" red="0.68147563934326172" green="0.30186492204666138" blue="0.19639474153518677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="264" y="346.5" width="81" height="32"/>
+                                <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="arc-Q8-e4l"/>
                                 </constraints>
@@ -382,11 +400,11 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ehi-nR-xdX">
-                                <rect key="frame" x="264" y="203" width="81" height="112"/>
+                                <rect key="frame" x="264" y="200" width="81" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSJ-Ip-BuU">
-                                        <rect key="frame" x="0.0" y="0.0" width="81" height="33"/>
-                                        <color key="backgroundColor" red="0.68147563929999999" green="0.30186492199999998" blue="0.1963947415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="32"/>
+                                        <color key="backgroundColor" red="0.12549019610000001" green="0.76078431369999999" blue="0.87058823529999996" alpha="0.90724622479999995" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="81" id="cwN-hC-moi"/>
                                         </constraints>
@@ -403,8 +421,8 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIQ-pm-iiv">
-                                        <rect key="frame" x="0.0" y="79" width="81" height="33"/>
-                                        <color key="backgroundColor" red="0.68147563929999999" green="0.30186492199999998" blue="0.1963947415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="78" width="81" height="32"/>
+                                        <color key="backgroundColor" red="0.12549019610000001" green="0.76078431369999999" blue="0.87058823529999996" alpha="0.90724622479999995" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="81" id="WNh-1P-uSP"/>
                                         </constraints>
@@ -425,7 +443,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LiveCampaign" translatesAutoresizingMaskIntoConstraints="NO" id="UIR-Xh-nm3">
-                                <rect key="frame" x="264" y="435" width="81" height="88"/>
+                                <rect key="frame" x="264" y="429" width="81" height="88"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -495,7 +513,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
         <!--Follow7 Steps View Controller-->
         <scene sceneID="QpO-J5-Zff">
             <objects>
-                <viewController storyboardIdentifier="Follow7StepsViewController" id="Zfu-9o-Cne" customClass="Follow7StepsViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Follow7StepsViewController" id="Zfu-9o-Cne" customClass="Follow7StepsViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kJm-rQ-wM1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -503,7 +521,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepsbg" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-oQ-UY8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="RUn-gv-i3O" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="150" id="RUn-gv-i3O" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Environmental Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="FAz-Ed-rat">
@@ -525,7 +543,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StepsTableViewCell" rowHeight="45" id="SP1-NB-u2m" customClass="StepsTableViewCell" customModule="FateChange" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StepsTableViewCell" rowHeight="45" id="SP1-NB-u2m" customClass="StepsTableViewCell" customModule="FateChanger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SP1-NB-u2m" id="03D-L2-sqZ">
@@ -534,7 +552,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ezt-Xw-hC6">
                                                     <rect key="frame" x="16" y="9" width="27" height="27"/>
-                                                    <color key="backgroundColor" red="0.65098039215686276" green="0.22745098039215686" blue="0.14901960784313725" alpha="0.90724622483221473" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.12549019607843137" green="0.76078431372549016" blue="0.87058823529411766" alpha="0.90724622483221473" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="27" id="DW6-x4-ysa"/>
                                                         <constraint firstAttribute="width" secondItem="ezt-Xw-hC6" secondAttribute="height" multiplier="1:1" id="Nd9-vB-WAp"/>
@@ -614,7 +632,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
         <!--Vote Now View Controller-->
         <scene sceneID="yms-dr-dek">
             <objects>
-                <viewController storyboardIdentifier="VoteNowViewController" id="J3p-xR-NMP" customClass="VoteNowViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoteNowViewController" id="J3p-xR-NMP" customClass="VoteNowViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gS-0Q-5WZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -622,7 +640,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-rM-7NU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="kCo-Wv-XF4" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="150" id="kCo-Wv-XF4" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which environmental policy do you feel youth should try to get passed?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-37-vW8">
@@ -779,7 +797,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
         <!--Sign Up Update View Controller-->
         <scene sceneID="6lN-qt-uxw">
             <objects>
-                <viewController storyboardIdentifier="SignUpUpdateViewController" id="s88-Pg-fJT" customClass="SignUpUpdateViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpUpdateViewController" id="s88-Pg-fJT" customClass="SignUpUpdateViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="osP-Ck-fWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -787,7 +805,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votebg" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-D7-gHh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="coC-sB-OHV" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="150" id="coC-sB-OHV" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="376-oP-hm0" userLabel="Base Stack View">
@@ -874,7 +892,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiR-I5-j5B">
                                                         <rect key="frame" x="10" y="0.0" width="355" height="100"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="rCb-yZ-qC9" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                                            <constraint firstAttribute="height" constant="100" id="rCb-yZ-qC9" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="dataSource" destination="s88-Pg-fJT" id="smJ-Ew-euB"/>
@@ -898,16 +916,16 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="ESV-UY-Pzx" secondAttribute="bottom" id="GJD-rw-T9A"/>
-                                                    <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="5" id="HBL-9G-QkP" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="20" id="NZD-oY-Vox" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
-                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="20" id="Rnq-Ko-GvZ" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                                    <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="5" id="HBL-9G-QkP" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="20" id="NZD-oY-Vox" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
+                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="20" id="Rnq-Ko-GvZ" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                                     <constraint firstItem="GiR-I5-j5B" firstAttribute="top" secondItem="6UV-Fw-s6A" secondAttribute="top" id="bUL-IL-uDe"/>
-                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="top" secondItem="Uwb-Fx-pDG" secondAttribute="bottom" constant="5" id="ddL-l9-e9R" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
-                                                    <constraint firstAttribute="trailing" secondItem="GiR-I5-j5B" secondAttribute="trailing" constant="10" id="kYv-0W-wRl" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                                    <constraint firstItem="ESV-UY-Pzx" firstAttribute="top" secondItem="Uwb-Fx-pDG" secondAttribute="bottom" constant="5" id="ddL-l9-e9R" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GiR-I5-j5B" secondAttribute="trailing" constant="10" id="kYv-0W-wRl" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                                     <constraint firstItem="GiR-I5-j5B" firstAttribute="centerX" secondItem="6UV-Fw-s6A" secondAttribute="centerX" id="lkh-h4-56z"/>
                                                     <constraint firstItem="ESV-UY-Pzx" firstAttribute="centerX" secondItem="6UV-Fw-s6A" secondAttribute="centerX" id="rYx-bs-GRn"/>
                                                     <constraint firstItem="Uwb-Fx-pDG" firstAttribute="centerX" secondItem="6UV-Fw-s6A" secondAttribute="centerX" id="tay-uR-LMp"/>
-                                                    <constraint firstItem="GiR-I5-j5B" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="10" id="vCr-hQ-WhC" customClass="KSOLayoutConstraint" customModule="FateChange" customModuleProvider="target"/>
+                                                    <constraint firstItem="GiR-I5-j5B" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="10" id="vCr-hQ-WhC" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SD3-I2-kYz" userLabel="Live Location View">
@@ -1203,7 +1221,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
         <!--Multiplympact View Controller-->
         <scene sceneID="17q-uY-I2p">
             <objects>
-                <viewController storyboardIdentifier="MultiplympactViewController" id="p7b-2M-H6u" customClass="MultiplympactViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MultiplympactViewController" id="p7b-2M-H6u" customClass="MultiplympactViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HWc-wJ-wQU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1266,7 +1284,7 @@ Loads X Multiplied = MONSTER IMPACT
         <!--Youth Initiative Process View Controller-->
         <scene sceneID="pIU-Fs-cKw">
             <objects>
-                <viewController storyboardIdentifier="YouthInitiativeProcessViewController" id="DF4-qO-gaQ" customClass="YouthInitiativeProcessViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YouthInitiativeProcessViewController" id="DF4-qO-gaQ" customClass="YouthInitiativeProcessViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8I8-NA-LYB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1319,7 +1337,7 @@ Citizen Ballot Intiative Process</string>
         <!--Hijack Policy Video View Controller-->
         <scene sceneID="d5c-Xh-yZB">
             <objects>
-                <viewController storyboardIdentifier="HijackPolicyVideoViewController" id="noa-CC-mtN" customClass="HijackPolicyVideoViewController" customModule="FateChange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HijackPolicyVideoViewController" id="noa-CC-mtN" customClass="HijackPolicyVideoViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PAh-nt-qfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1335,14 +1353,15 @@ Citizen Ballot Intiative Process</string>
     <resources>
         <image name="ChooseLocation" width="147" height="28"/>
         <image name="Environmental_leader_feedback" width="332" height="70"/>
-        <image name="Follow" width="343" height="61"/>
         <image name="Image" width="41" height="38"/>
         <image name="LiveCampaign" width="74" height="88"/>
-        <image name="Spread" width="81" height="48"/>
-        <image name="Track" width="343" height="157"/>
+        <image name="Track" width="171.5" height="47.5"/>
         <image name="girlbg" width="375" height="667"/>
         <image name="stepsbg" width="374" height="106"/>
         <image name="votebg" width="375" height="105"/>
         <image name="youthbg" width="375" height="667"/>
+        <namedColor name="KidSaveOcean Blue">
+            <color red="0.12549019607843137" green="0.76078431372549016" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

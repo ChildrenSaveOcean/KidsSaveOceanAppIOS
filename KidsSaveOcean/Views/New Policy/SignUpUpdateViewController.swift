@@ -260,8 +260,10 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let yesButton = UIAlertAction(title: "YES", style: .default) { (_) in
             self.signUpUserToTheLoaction()
         }
+        yesButton.setAppTextColor()
         
         let noButton = UIAlertAction(title: "NO", style: .cancel, handler: nil)
+        noButton.setAppTextColor()
 //        let noButton = UIAlertAction(title: "NO", style: .default) { (_) in
 //            let explainAlertView = UIAlertController(title: nil, message: "I'm sorry, but the goverment of your location doesn't offer the opportunity for citizen ballon initiatives. But you can influence them with letters in our letter-writing campaign.", preferredStyle: .alert)
 //            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -310,11 +312,13 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             self.dismiss(animated: false, completion: nil)
             
         })
-        
+        ok.setAppTextColor()
+    
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
            // self.alertMessageAboutWrongLocation()
         }
+        cancel.setAppTextColor()
         
         //Add OK and Cancel button to dialog message
         dialogMessage.addAction(ok)
@@ -328,6 +332,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let action = UIAlertAction(title: "Got it", style: .cancel) { (_) in
             self.dismiss(animated: false, completion: nil)
         }
+        action.setAppTextColor()
+        
         alertView.addAction(action)
         self.present(alertView, animated: true, completion: nil)
     }

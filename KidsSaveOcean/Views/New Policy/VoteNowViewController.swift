@@ -75,11 +75,13 @@ class VoteNowViewController: UIViewController, Instantiatable {
             self.dismiss(animated: false, completion: nil)
             self.navigationController?.popViewController(animated: true)
         })
+        ok.setAppTextColor()
         
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) -> Void in
             self.dismiss(animated: false, completion: nil)
         }
+        cancel.setAppTextColor()
         
         //Add OK and Cancel button to dialog message
         dialogMessage.addAction(ok)
@@ -138,6 +140,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
         if !userHijackPolicy.isEmpty {
             let alertMessage = UIAlertController(title: "", message: "Explore proposals FateChanger youth are considering for citizen ballot initiatives", preferredStyle: .alert)
             let action = UIAlertAction(title: "Got it", style: .cancel, handler: nil)
+            action.setAppTextColor()
             alertMessage.addAction(action)
             
             self.present(alertMessage, animated: true) {
