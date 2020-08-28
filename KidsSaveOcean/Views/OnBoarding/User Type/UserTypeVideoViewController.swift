@@ -80,7 +80,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         let tintedImage = image.withRenderingMode(.alwaysTemplate)
         button.setImage(tintedImage, for: .normal)
         button.tintColor = .white
-        button.backgroundColor = UIColor.standardAppBlueColor
+        button.backgroundColor = UIColor.kidsSaveOceanBlue
         button.layer.cornerRadius = buttonWidth/2
         button.clipsToBounds = true
         return button

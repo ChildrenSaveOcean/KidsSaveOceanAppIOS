@@ -16,7 +16,7 @@ class KSOCustomMapPin: MKMarkerAnnotationView {
             canShowCallout = true
             calloutOffset = CGPoint(x: -5, y: 5)
             glyphText = String(annotation.getNumberOfLetters() )
-            markerTintColor = UIColor.standardAppBlueColor
+            markerTintColor = UIColor.kidsSaveOceanBlue
             
             guard let action = annotation.action else {
                 rightCalloutAccessoryView = UIButton(type: .roundedRect)

@@ -18,7 +18,7 @@ extension UINavigationController {
         navigationBar.isTranslucent = true
         navigationBar.backgroundColor = .clear
 
-        navigationBar.tintColor = UIColor.appCyan //UIColor.init(named: "KidSaveOcean Blue")
+        navigationBar.tintColor = UIColor.kidsSaveOceanBlue //UIColor.init(named: "KidSaveOcean Blue")
         
          if #available(iOS 13.0, *) {
             //navigationBar.standardAppearance.backButtonAppearance.bac

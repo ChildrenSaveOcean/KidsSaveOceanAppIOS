@@ -29,7 +29,7 @@ class KSOMapTop10TableViewCell: UITableViewCell {
     
     func blink(completion: (() -> Void)?) {
         UIView.animate(withDuration: 10, delay: 0, options: [.curveLinear, .repeat, .autoreverse], animations: {
-            self.backgroundColor = .appCyan })
+            self.backgroundColor = .kidsSaveOceanBlue })
     }
 
 }

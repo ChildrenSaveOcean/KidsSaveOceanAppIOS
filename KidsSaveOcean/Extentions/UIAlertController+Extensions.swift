@@ -13,7 +13,7 @@ extension UIAlertController {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         for action in self.actions {
-            action.setValue(UIColor.appCyan, forKey: "titleTextColor")
+            action.setValue(UIColor.kidsSaveOceanBlue, forKey: "titleTextColor")
         }
     }
 }

@@ -32,4 +32,8 @@ extension UIColor {
     @nonobjc class var standardAppBlueColor: UIColor {
         return UIColor(red: 47/255, green: 194/255, blue: 220/255, alpha: 1)
     }
+
+    @nonobjc class var kidsSaveOceanBlue: UIColor {
+        return UIColor(red: 31/255, green: 161/255, blue: 233/255, alpha: 1)
+    }
 }

@@ -58,9 +58,9 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         activityIndicator.isHidden = true
         
         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.appCyan], for: .normal)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.kidsSaveOceanBlue], for: .normal)
         segmentControl.layer.borderWidth = 1.0
-        segmentControl.layer.borderColor = UIColor.appCyan.cgColor
+        segmentControl.layer.borderColor = UIColor.kidsSaveOceanBlue.cgColor
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
 
