@@ -9,7 +9,6 @@ target 'KidsSaveOcean' do
     pod 'Firebase/Database'
     pod 'Firebase/Auth'
     pod 'Firebase/Messaging'
-    #pod 'SnapKit'
     pod 'ReachabilitySwift'
 
   target 'KidsSaveOceanTests' do

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D4FA6C3E757245B22039DA /* Pods_KidsSaveOceanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0E33435F70805F760260AE /* Pods_KidsSaveOceanTests.framework */; };
 		1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */; };
 		16080B1E2327F7B6008F0AEF /* KSODidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16080B1D2327F7B6008F0AEF /* KSODidButton.swift */; };
 		16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16129FF3237464DE00E677B3 /* CampaignSignatures.swift */; };
@@ -80,7 +81,6 @@
 		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		16FD4EEB23FE346200A1BA44 /* HijackPolicyVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */; };
-		63569386F4795D9DB1FF6BA3 /* Pods_KidsSaveOcean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D46D27A6B59B1557A69795B /* Pods_KidsSaveOcean.framework */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
 		7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD622232EC50033F251 /* CountriesService.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
@@ -102,11 +102,11 @@
 		945A089120F643EB006ED13D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* MapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946847D82139E299007A1158 /* KSOCustomMapPin.swift */; };
-		A9F5263956897973FADB21F1 /* Pods_KidsSaveOceanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230EEF9F7D69B84649D8B51 /* Pods_KidsSaveOceanTests.framework */; };
+		B3A06EBFEF728477BC302843 /* Pods_KidsSaveOcean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152049409E90A0422ACC592C /* Pods_KidsSaveOcean.framework */; };
 		C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */; };
 		C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E0701214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift */; };
 		C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55E0702214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib */; };
-		C733073C6D3C4734949D2E48 /* Pods_KidsSaveOceanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F64CACCA5869098DB5EC66 /* Pods_KidsSaveOceanUITests.framework */; };
+		F38D9D37A71AB48B286784F8 /* Pods_KidsSaveOceanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AF12697C6AEA1F1813AA09 /* Pods_KidsSaveOceanUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,9 +127,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008C19CBF4A40CF6B4BE4150 /* Pods-KidsSaveOceanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.debug.xcconfig"; sourceTree = "<group>"; };
-		0230EEF9F7D69B84649D8B51 /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		02DF6D3A88D2A8C5017AF491 /* Pods-KidsSaveOcean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.release.xcconfig"; sourceTree = "<group>"; };
+		152049409E90A0422ACC592C /* Pods_KidsSaveOcean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOcean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsWithTeethViewController.swift; sourceTree = "<group>"; };
 		16080B1D2327F7B6008F0AEF /* KSODidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODidButton.swift; sourceTree = "<group>"; };
 		16129FF3237464DE00E677B3 /* CampaignSignatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignSignatures.swift; sourceTree = "<group>"; };
@@ -208,9 +206,11 @@
 		16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticDataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
 		16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPolicyVideoViewController.swift; sourceTree = "<group>"; };
-		31F64CACCA5869098DB5EC66 /* Pods_KidsSaveOceanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		48ED5E343BB8EB620FEC0FC8 /* Pods-KidsSaveOcean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.debug.xcconfig"; sourceTree = "<group>"; };
-		60627274457D158C047F40BD /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
+		23A5EE056AEF1660EDCDD7F5 /* Pods-KidsSaveOceanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A0E33435F70805F760260AE /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71E67878F7137BDDECE58725 /* Pods-KidsSaveOceanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.release.xcconfig"; sourceTree = "<group>"; };
+		75AF12697C6AEA1F1813AA09 /* Pods_KidsSaveOceanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AF3BB91D1BE0320E4E115F8 /* Pods-KidsSaveOcean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.release.xcconfig"; sourceTree = "<group>"; };
 		7C00FFB921185B7000320309 /* CountryContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewController.swift; sourceTree = "<group>"; };
 		7C0B1CD622232EC50033F251 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
@@ -231,15 +231,15 @@
 		7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTableViewCell.swift; sourceTree = "<group>"; };
-		8D46D27A6B59B1557A69795B /* Pods_KidsSaveOcean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOcean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		945A089020F643EB006ED13D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		946847D82139E299007A1158 /* KSOCustomMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOCustomMapPin.swift; sourceTree = "<group>"; };
-		AFA56E18AFA97ADA4CA58A7D /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B47AE0AD879820BBA5F3B93F /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extentions.swift"; sourceTree = "<group>"; };
 		C55E0701214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapTop10TableViewCell.swift; sourceTree = "<group>"; };
 		C55E0702214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOMapTop10TableViewCell.xib; sourceTree = "<group>"; };
-		ED154C0A5CC0E260907A0C63 /* Pods-KidsSaveOceanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.release.xcconfig"; sourceTree = "<group>"; };
+		DDA3D3380C301B73BDFD5231 /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FCC29D71F4499EC08609E7AF /* Pods-KidsSaveOcean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,7 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63569386F4795D9DB1FF6BA3 /* Pods_KidsSaveOcean.framework in Frameworks */,
+				B3A06EBFEF728477BC302843 /* Pods_KidsSaveOcean.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F5263956897973FADB21F1 /* Pods_KidsSaveOceanTests.framework in Frameworks */,
+				00D4FA6C3E757245B22039DA /* Pods_KidsSaveOceanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C733073C6D3C4734949D2E48 /* Pods_KidsSaveOceanUITests.framework in Frameworks */,
+				F38D9D37A71AB48B286784F8 /* Pods_KidsSaveOceanUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +373,7 @@
 				16559BCD20ADF9D5002D4F78 /* Products */,
 				16D54E8920FE69D0003F5113 /* Recovered References */,
 				887A4DDCFD5890F63C59486A /* Pods */,
-				B1188F4A64879FD414D56981 /* Frameworks */,
+				FD5851DD5BBF88FB6CF984B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -653,12 +653,12 @@
 		887A4DDCFD5890F63C59486A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				48ED5E343BB8EB620FEC0FC8 /* Pods-KidsSaveOcean.debug.xcconfig */,
-				02DF6D3A88D2A8C5017AF491 /* Pods-KidsSaveOcean.release.xcconfig */,
-				008C19CBF4A40CF6B4BE4150 /* Pods-KidsSaveOceanTests.debug.xcconfig */,
-				ED154C0A5CC0E260907A0C63 /* Pods-KidsSaveOceanTests.release.xcconfig */,
-				AFA56E18AFA97ADA4CA58A7D /* Pods-KidsSaveOceanUITests.debug.xcconfig */,
-				60627274457D158C047F40BD /* Pods-KidsSaveOceanUITests.release.xcconfig */,
+				FCC29D71F4499EC08609E7AF /* Pods-KidsSaveOcean.debug.xcconfig */,
+				7AF3BB91D1BE0320E4E115F8 /* Pods-KidsSaveOcean.release.xcconfig */,
+				23A5EE056AEF1660EDCDD7F5 /* Pods-KidsSaveOceanTests.debug.xcconfig */,
+				71E67878F7137BDDECE58725 /* Pods-KidsSaveOceanTests.release.xcconfig */,
+				B47AE0AD879820BBA5F3B93F /* Pods-KidsSaveOceanUITests.debug.xcconfig */,
+				DDA3D3380C301B73BDFD5231 /* Pods-KidsSaveOceanUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -682,16 +682,6 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
-		B1188F4A64879FD414D56981 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8D46D27A6B59B1557A69795B /* Pods_KidsSaveOcean.framework */,
-				0230EEF9F7D69B84649D8B51 /* Pods_KidsSaveOceanTests.framework */,
-				31F64CACCA5869098DB5EC66 /* Pods_KidsSaveOceanUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C55E06FA214EE222009B7BD6 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,6 +691,16 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		FD5851DD5BBF88FB6CF984B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				152049409E90A0422ACC592C /* Pods_KidsSaveOcean.framework */,
+				3A0E33435F70805F760260AE /* Pods_KidsSaveOceanTests.framework */,
+				75AF12697C6AEA1F1813AA09 /* Pods_KidsSaveOceanUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -708,12 +708,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16559BF620ADF9D6002D4F78 /* Build configuration list for PBXNativeTarget "KidsSaveOcean" */;
 			buildPhases = (
-				E93B23CD15376EFF21F102FB /* [CP] Check Pods Manifest.lock */,
+				DEC87D200CFAA044B91CE6BF /* [CP] Check Pods Manifest.lock */,
 				16559BC820ADF9D5002D4F78 /* Sources */,
 				16559BC920ADF9D5002D4F78 /* Frameworks */,
 				16559BCA20ADF9D5002D4F78 /* Resources */,
 				169DA531229F65EF00A58E9B /* ShellScript */,
-				9B121A58A39637B6E1175634 /* [CP] Embed Pods Frameworks */,
+				3F1F9706E4E9603BBBFFB74A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -728,7 +728,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16559BF920ADF9D6002D4F78 /* Build configuration list for PBXNativeTarget "KidsSaveOceanTests" */;
 			buildPhases = (
-				8E12F4362EB8144995B76EA0 /* [CP] Check Pods Manifest.lock */,
+				13B4EB1ED542E8B68CA3F52D /* [CP] Check Pods Manifest.lock */,
 				16559BDE20ADF9D5002D4F78 /* Sources */,
 				16559BDF20ADF9D5002D4F78 /* Frameworks */,
 				16559BE020ADF9D5002D4F78 /* Resources */,
@@ -747,7 +747,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16559BFC20ADF9D6002D4F78 /* Build configuration list for PBXNativeTarget "KidsSaveOceanUITests" */;
 			buildPhases = (
-				7A004D9922F27F91CBB0B8A4 /* [CP] Check Pods Manifest.lock */,
+				81599892FED1DBD28E5B37CD /* [CP] Check Pods Manifest.lock */,
 				16559BE920ADF9D6002D4F78 /* Sources */,
 				16559BEA20ADF9D6002D4F78 /* Frameworks */,
 				16559BEB20ADF9D6002D4F78 /* Resources */,
@@ -858,46 +858,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		169DA531229F65EF00A58E9B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint --config .swiftlint.yml\n    swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		7A004D9922F27F91CBB0B8A4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KidsSaveOceanUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8E12F4362EB8144995B76EA0 /* [CP] Check Pods Manifest.lock */ = {
+		13B4EB1ED542E8B68CA3F52D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -919,7 +880,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9B121A58A39637B6E1175634 /* [CP] Embed Pods Frameworks */ = {
+		169DA531229F65EF00A58E9B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint --config .swiftlint.yml\n    swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		3F1F9706E4E9603BBBFFB74A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -949,7 +927,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E93B23CD15376EFF21F102FB /* [CP] Check Pods Manifest.lock */ = {
+		81599892FED1DBD28E5B37CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KidsSaveOceanUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC87D200CFAA044B91CE6BF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1222,7 +1222,7 @@
 		};
 		16559BF720ADF9D6002D4F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48ED5E343BB8EB620FEC0FC8 /* Pods-KidsSaveOcean.debug.xcconfig */;
+			baseConfigurationReference = FCC29D71F4499EC08609E7AF /* Pods-KidsSaveOcean.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsSaveOcean/KidsSaveOcean.entitlements;
@@ -1241,7 +1241,7 @@
 		};
 		16559BF820ADF9D6002D4F78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02DF6D3A88D2A8C5017AF491 /* Pods-KidsSaveOcean.release.xcconfig */;
+			baseConfigurationReference = 7AF3BB91D1BE0320E4E115F8 /* Pods-KidsSaveOcean.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsSaveOcean/KidsSaveOcean.entitlements;
@@ -1262,7 +1262,7 @@
 		};
 		16559BFA20ADF9D6002D4F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 008C19CBF4A40CF6B4BE4150 /* Pods-KidsSaveOceanTests.debug.xcconfig */;
+			baseConfigurationReference = 23A5EE056AEF1660EDCDD7F5 /* Pods-KidsSaveOceanTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1280,7 +1280,7 @@
 		};
 		16559BFB20ADF9D6002D4F78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED154C0A5CC0E260907A0C63 /* Pods-KidsSaveOceanTests.release.xcconfig */;
+			baseConfigurationReference = 71E67878F7137BDDECE58725 /* Pods-KidsSaveOceanTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1298,7 +1298,7 @@
 		};
 		16559BFD20ADF9D6002D4F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFA56E18AFA97ADA4CA58A7D /* Pods-KidsSaveOceanUITests.debug.xcconfig */;
+			baseConfigurationReference = B47AE0AD879820BBA5F3B93F /* Pods-KidsSaveOceanUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1315,7 +1315,7 @@
 		};
 		16559BFE20ADF9D6002D4F78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60627274457D158C047F40BD /* Pods-KidsSaveOceanUITests.release.xcconfig */;
+			baseConfigurationReference = DDA3D3380C301B73BDFD5231 /* Pods-KidsSaveOceanUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
