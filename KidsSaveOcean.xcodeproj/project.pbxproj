@@ -11,7 +11,6 @@
 		1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */; };
 		16080B1E2327F7B6008F0AEF /* KSODidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16080B1D2327F7B6008F0AEF /* KSODidButton.swift */; };
 		16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16129FF3237464DE00E677B3 /* CampaignSignatures.swift */; };
-		1616EB2E2408B83C005B1316 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1616EB2D2408B83C005B1316 /* GoogleService-Info.plist */; };
 		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
 		161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A0C1122B291DC0047DD40 /* LocationService.swift */; };
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
@@ -80,6 +79,7 @@
 		16ECE4702299F11D0099C406 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ECE46F2299F11D0099C406 /* PolicyViewController.swift */; };
 		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
+		16F35A35251F6B7100238F36 /* DashboardHelpVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F35A34251F6B7100238F36 /* DashboardHelpVideoViewController.swift */; };
 		16FD4EEB23FE346200A1BA44 /* HijackPolicyVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
 		7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD622232EC50033F251 /* CountriesService.swift */; };
@@ -131,7 +131,6 @@
 		1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsWithTeethViewController.swift; sourceTree = "<group>"; };
 		16080B1D2327F7B6008F0AEF /* KSODidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODidButton.swift; sourceTree = "<group>"; };
 		16129FF3237464DE00E677B3 /* CampaignSignatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignSignatures.swift; sourceTree = "<group>"; };
-		1616EB2D2408B83C005B1316 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		161A0C1122B291DC0047DD40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
@@ -205,6 +204,7 @@
 		16ECE46F2299F11D0099C406 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticDataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
+		16F35A34251F6B7100238F36 /* DashboardHelpVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHelpVideoViewController.swift; sourceTree = "<group>"; };
 		16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPolicyVideoViewController.swift; sourceTree = "<group>"; };
 		23A5EE056AEF1660EDCDD7F5 /* Pods-KidsSaveOceanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A0E33435F70805F760260AE /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,7 +390,6 @@
 		16559BCE20ADF9D5002D4F78 /* KidsSaveOcean */ = {
 			isa = PBXGroup;
 			children = (
-				1616EB2D2408B83C005B1316 /* GoogleService-Info.plist */,
 				16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */,
 				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				7C0B1CCD2223141D0033F251 /* Utils */,
@@ -430,6 +429,7 @@
 			children = (
 				16573D3621F7C70900332FFF /* Dashboard.storyboard */,
 				1679B06921E935D100C15F2A /* DashboardViewController.swift */,
+				16F35A34251F6B7100238F36 /* DashboardHelpVideoViewController.swift */,
 				164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */,
 			);
 			path = Dashboard;
@@ -837,7 +837,6 @@
 				16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */,
 				C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */,
 				7CB3FF5D232FF9E300415D75 /* CreateNewEnvironmentPolicyViewController.storyboard in Resources */,
-				1616EB2E2408B83C005B1316 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,6 +985,7 @@
 				16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7CB51D38233A901D0014094C /* StepsTableViewCell.swift in Sources */,
+				16F35A35251F6B7100238F36 /* DashboardHelpVideoViewController.swift in Sources */,
 				164D7308234BA1FB0080ACB7 /* HijackLocation.swift in Sources */,
 				164D7306234B9E6A0080ACB7 /* HijackPolicy.swift in Sources */,
 				164EB07F246CD0B9001FF26D /* UIAlertController+Extensions.swift in Sources */,

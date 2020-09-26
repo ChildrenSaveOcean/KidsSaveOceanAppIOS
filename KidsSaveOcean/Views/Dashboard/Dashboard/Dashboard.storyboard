@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rAD-4E-Sg9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rAD-4E-Sg9">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -138,40 +139,61 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uP-1IW">
-                                <rect key="frame" x="88.666666666666686" y="373.33333333333331" width="263" height="33"/>
+                                <rect key="frame" x="88.333333333333343" y="373.33333333333331" width="263.33333333333326" height="33"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-mB-t2e">
-                                        <rect key="frame" x="0.0" y="0.33333333333337123" width="81" height="32.666666666666664"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-mB-t2e">
+                                        <rect key="frame" x="0.0" y="0.66666666666668561" width="79.333333333333329" height="32"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.63137254899999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Lcc-mB-t2e" secondAttribute="height" multiplier="82:33" id="krp-8S-its"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
-                                        <state key="normal" title="How?" backgroundImage="Not yet blank">
+                                        <state key="normal" title="How?">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="howToAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="BeU-tX-hAY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kpB-Rf-ORf" customClass="KSODidButton" customModule="FateChanger" customModuleProvider="target">
-                                        <rect key="frame" x="91" y="0.33333333333337123" width="81" height="32.666666666666664"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kpB-Rf-ORf" customClass="KSODidButton" customModule="FateChanger" customModuleProvider="target">
+                                        <rect key="frame" x="89.333333333333314" y="0.0" width="82" height="33"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.63137254899999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kpB-Rf-ORf" secondAttribute="height" multiplier="82:33" id="Rdx-iR-4yP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="9"/>
-                                        <state key="normal" title="I did it about plastic!" backgroundImage="Not yet blank">
+                                        <state key="normal" title="I did it about plastic!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="completeMiddleButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="peW-Lx-5G1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-M1-UBW" customClass="KSODidButton" customModule="FateChanger" customModuleProvider="target">
-                                        <rect key="frame" x="182" y="0.66666666666668561" width="81" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-M1-UBW" customClass="KSODidButton" customModule="FateChanger" customModuleProvider="target">
+                                        <rect key="frame" x="181.33333333333337" y="0.0" width="82" height="33"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.63137254899999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="nTi-M1-UBW" secondAttribute="height" multiplier="82:33" id="6aW-0N-7ri"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="9"/>
-                                        <state key="normal" title="I did it about climate!" backgroundImage="Not yet blank">
+                                        <state key="normal" title="I did it about climate!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="completeAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="Bgf-xs-FWx"/>
                                         </connections>
@@ -179,7 +201,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="FMt-pO-v6L" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
-                                    <constraint firstItem="kpB-Rf-ORf" firstAttribute="width" secondItem="kpB-Rf-ORf" secondAttribute="height" multiplier="82:33" id="lFe-CC-p2x"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjn-Sh-ltB" userLabel="Wheel Volume views">
@@ -252,13 +273,13 @@
                                     <constraint firstItem="IeY-ei-hQE" firstAttribute="top" secondItem="fKa-Bc-xcX" secondAttribute="top" constant="100" id="xWq-c7-w8K"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-Xa-0a0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-Xa-0a0">
                                 <rect key="frame" x="71" y="461.33333333333331" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask3:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="pc7-jF-lFA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-QJ-4bj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-QJ-4bj">
                                 <rect key="frame" x="41" y="569.66666666666663" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="upi-QJ-4bj" secondAttribute="height" multiplier="1:1" id="3Id-VU-QAK"/>
@@ -268,35 +289,32 @@
                                     <action selector="switchTask1:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="4YN-U3-WO7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y0-IY-baO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y0-IY-baO">
                                 <rect key="frame" x="140.33333333333334" y="461.33333333333331" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask4:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="3gI-rY-pe3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-lO-FMb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-lO-FMb">
                                 <rect key="frame" x="41" y="496.33333333333331" width="30" height="29.999999999999943"/>
                                 <connections>
                                     <action selector="switchTask2:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="J71-Ok-npH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-Yo-LuE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-Yo-LuE">
                                 <rect key="frame" x="173.33333333333334" y="569.66666666666663" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="bES-PJ-yKE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-jX-Rna">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-jX-Rna">
                                 <rect key="frame" x="173.33333333333334" y="496.33333333333331" width="30" height="29.999999999999943"/>
                                 <connections>
                                     <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="SCs-we-WTQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="FateChanger" customModuleProvider="target">
-                                <rect key="frame" x="230" y="465" width="155" height="184"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="155:184" id="APx-7i-Pc6"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="FateChanger" customModuleProvider="target">
+                                <rect key="frame" x="230" y="503.66666666666674" width="155" height="136"/>
                                 <state key="normal" image="ACTION ALERT"/>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meterScale" translatesAutoresizingMaskIntoConstraints="NO" id="4br-dF-I5I">
@@ -308,6 +326,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pointer" translatesAutoresizingMaskIntoConstraints="NO" id="HDd-i0-FAy">
                                 <rect key="frame" x="63.000000000000014" y="242" width="192.33333333333337" height="10"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYL-td-fGV">
+                                <rect key="frame" x="364" y="637" width="30" height="30"/>
+                                <color key="backgroundColor" name="KidSaveOcean Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6H7-nS-lRq"/>
+                                    <constraint firstAttribute="height" constant="30" id="Mqx-UJ-Kbt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                <state key="normal" title="?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="kcH-o3-nx1" kind="show" id="YK2-Nl-F7T"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radical Meter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGt-A5-OM8">
                                 <rect key="frame" x="63.000000000000014" y="297.33333333333331" width="192.33333333333337" height="18"/>
                                 <constraints>
@@ -331,36 +370,27 @@
                                             <constraint firstAttribute="height" constant="163" id="szd-Gv-kfr"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmQ-Ih-sjf">
-                                        <rect key="frame" x="217" y="299.66666666666669" width="112" height="137"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmQ-Ih-sjf">
+                                        <rect key="frame" x="237" y="299.66666666666669" width="92" height="137"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="112" id="MDJ-9R-LSf"/>
+                                            <constraint firstAttribute="width" secondItem="vmQ-Ih-sjf" secondAttribute="height" multiplier="324:483" id="qRh-BU-Nm0"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="ACTION ALERT LIVE"/>
+                                        <state key="normal" image="ACTION ALERT LIVE"/>
                                         <connections>
                                             <action selector="actionAlertViewButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="l5T-PD-Lna"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTc-qX-7Hd" userLabel="Description">
-                                        <rect key="frame" x="85" y="286.66666666666669" width="125" height="163"/>
+                                        <rect key="frame" x="85" y="286.66666666666669" width="130" height="163"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="125" id="MNK-S3-NOI"/>
+                                            <constraint firstAttribute="width" constant="130" id="MNK-S3-NOI"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Action Alerts     will call you         to support Fatechanger youth actions.
-                                                </string>
+                                            <fragment content="FateChanger Action Alerts call you to support youth actions. Your unity is power.">
                                                 <attributes>
                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <font key="NSFont" size="17" name="SFProText-Semibold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Unity is power.">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="17" name="SFProText-Semibold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -407,13 +437,13 @@
                                 <rect key="frame" x="197" y="355.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xm0-wL-XSG"/>
                         <color key="backgroundColor" red="0.13855496048927307" green="0.63844740390777588" blue="0.99241381883621216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Exn-3P-qcj" firstAttribute="centerX" secondItem="Xm0-wL-XSG" secondAttribute="centerX" id="00f-38-gy0"/>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="width" secondItem="4br-dF-I5I" secondAttribute="width" id="0Of-WB-6qx"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="-16" id="18e-Iv-Ky3"/>
                             <constraint firstItem="Luv-j1-90t" firstAttribute="leading" secondItem="4br-dF-I5I" secondAttribute="leading" constant="-20" id="3to-nY-cz6" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
-                            <constraint firstItem="R9a-4H-YuA" firstAttribute="top" secondItem="Bqd-BT-4HJ" secondAttribute="bottom" constant="-14" id="41v-wk-4zb"/>
                             <constraint firstItem="Occ-Eb-ARZ" firstAttribute="height" secondItem="ScW-O5-Pi7" secondAttribute="height" id="4fO-IZ-km4"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="top" secondItem="cRy-QY-zOf" secondAttribute="bottom" constant="10.5" id="4vL-1f-OIL" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="hxb-kC-tnV" firstAttribute="leading" secondItem="Luv-j1-90t" secondAttribute="leading" constant="20" id="5PJ-sx-rqR" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
@@ -435,6 +465,7 @@
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="bottom" secondItem="4br-dF-I5I" secondAttribute="bottom" id="IKD-wD-qli"/>
                             <constraint firstItem="tMA-s0-b18" firstAttribute="bottom" secondItem="upi-QJ-4bj" secondAttribute="top" id="IQc-xW-bva"/>
                             <constraint firstItem="Fjn-Sh-ltB" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="25" id="JWT-Do-8bb" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
+                            <constraint firstItem="fKa-Bc-xcX" firstAttribute="bottom" secondItem="R9a-4H-YuA" secondAttribute="bottom" id="K1U-bP-8It"/>
                             <constraint firstItem="wNX-gg-nVY" firstAttribute="leading" secondItem="1Y0-IY-baO" secondAttribute="leading" constant="-10" id="KDh-UV-4ft"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="width" secondItem="pnM-lO-FMb" secondAttribute="width" id="KWE-Cg-rkt"/>
                             <constraint firstItem="1Y0-IY-baO" firstAttribute="height" secondItem="Rr5-Xa-0a0" secondAttribute="height" id="Kf6-rC-lcT"/>
@@ -448,6 +479,7 @@
                             <constraint firstItem="cRy-QY-zOf" firstAttribute="trailing" secondItem="Luv-j1-90t" secondAttribute="trailing" constant="-19" id="Q7b-Fy-dQE" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="centerX" secondItem="pnM-lO-FMb" secondAttribute="centerX" id="QRf-5J-Jio"/>
                             <constraint firstItem="Occ-Eb-ARZ" firstAttribute="centerX" secondItem="ScW-O5-Pi7" secondAttribute="centerX" id="RCJ-I9-3R9"/>
+                            <constraint firstItem="Xm0-wL-XSG" firstAttribute="bottom" secondItem="TYL-td-fGV" secondAttribute="bottom" constant="20" id="RRi-QS-SkC"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="width" secondItem="PpT-jX-Rna" secondAttribute="width" id="Svx-h9-KlQ"/>
                             <constraint firstAttribute="trailing" secondItem="ixk-7e-iPf" secondAttribute="trailing" id="TNB-6d-bP7"/>
                             <constraint firstItem="Luv-j1-90t" firstAttribute="leading" secondItem="Bqd-BT-4HJ" secondAttribute="leading" constant="27" id="TdP-dT-bBu"/>
@@ -479,6 +511,7 @@
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="bottom" secondItem="Fjn-Sh-ltB" secondAttribute="bottom" constant="-40" id="mDf-Pr-vVR"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Kz5-ah-x5R" secondAttribute="bottom" constant="11" id="mT6-3m-zSX"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="height" secondItem="pnM-lO-FMb" secondAttribute="height" id="oAq-dg-a5P"/>
+                            <constraint firstItem="Xm0-wL-XSG" firstAttribute="trailing" secondItem="TYL-td-fGV" secondAttribute="trailing" constant="20" id="oHI-hY-4st"/>
                             <constraint firstItem="ixk-7e-iPf" firstAttribute="centerX" secondItem="ScW-O5-Pi7" secondAttribute="centerX" id="p3E-vl-bHi"/>
                             <constraint firstItem="Rr5-Xa-0a0" firstAttribute="leading" secondItem="pnM-lO-FMb" secondAttribute="trailing" id="pUY-2e-D6C"/>
                             <constraint firstItem="hxb-kC-tnV" firstAttribute="centerY" secondItem="9zu-l6-3J2" secondAttribute="centerY" id="qJ3-kl-Hod"/>
@@ -498,7 +531,6 @@
                             <constraint firstItem="s16-h4-yo0" firstAttribute="centerY" secondItem="Xm0-wL-XSG" secondAttribute="centerY" id="yLC-qV-cWN"/>
                             <constraint firstItem="Cqh-Yo-LuE" firstAttribute="leading" secondItem="ffm-wR-6iG" secondAttribute="trailing" id="zdm-kb-ilb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xm0-wL-XSG"/>
                     </view>
                     <navigationItem key="navigationItem" id="AfB-mW-0Ql"/>
                     <connections>
@@ -594,7 +626,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR4-eT-XUd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR4-eT-XUd">
                                 <rect key="frame" x="108" y="556.66666666666663" width="198" height="51"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
@@ -637,6 +669,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2eo-k6-51s"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2eo-k6-51s" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QR4-eT-XUd" secondAttribute="bottom" constant="10" id="57h-YU-qdW" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
@@ -657,7 +690,6 @@
                             <constraint firstItem="QR4-eT-XUd" firstAttribute="top" secondItem="ojf-HD-MBp" secondAttribute="bottom" constant="40" id="uAU-wT-Dy6" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="Xco-uB-mr0" firstAttribute="centerX" secondItem="2eo-k6-51s" secondAttribute="centerX" id="udA-jk-pLW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2eo-k6-51s"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8r-CR-O7F" sceneMemberID="firstResponder"/>
@@ -696,7 +728,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnb-ZD-ewT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnb-ZD-ewT">
                                 <rect key="frame" x="108" y="655" width="198" height="51"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
@@ -739,6 +771,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eq6-sg-Bva"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tnb-ZD-ewT" firstAttribute="centerX" secondItem="eq6-sg-Bva" secondAttribute="centerX" id="2IO-Pf-FGP"/>
@@ -759,7 +792,6 @@
                             <constraint firstItem="OsP-DH-HQs" firstAttribute="top" secondItem="EHJ-ZG-fgp" secondAttribute="bottom" constant="2" id="vfj-bA-y5R"/>
                             <constraint firstItem="AjO-EF-B6f" firstAttribute="centerX" secondItem="OsP-DH-HQs" secondAttribute="centerX" id="xoG-mQ-I5w"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eq6-sg-Bva"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6j-Qg-DwM" sceneMemberID="firstResponder"/>
@@ -798,7 +830,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QA-Cd-JHi">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QA-Cd-JHi">
                                 <rect key="frame" x="108" y="547" width="198" height="51"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
@@ -840,7 +872,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDE-tK-aO5">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDE-tK-aO5">
                                 <rect key="frame" x="108" y="612" width="198" height="51"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
@@ -861,6 +893,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ost-Jl-c5E"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vDE-tK-aO5" firstAttribute="width" secondItem="4QA-Cd-JHi" secondAttribute="width" id="Ahp-jH-PmU"/>
@@ -885,7 +918,6 @@
                             <constraint firstItem="AVq-J1-HBV" firstAttribute="width" secondItem="Uik-6a-b4Y" secondAttribute="width" id="vny-JJ-6Sb"/>
                             <constraint firstItem="kiY-eY-Yn4" firstAttribute="top" secondItem="AVq-J1-HBV" secondAttribute="bottom" constant="2" id="yuO-7x-cfT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ost-Jl-c5E"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNc-kb-kCZ" sceneMemberID="firstResponder"/>
@@ -928,6 +960,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fgq-Sg-45v"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="29a-Oi-QOX" firstAttribute="top" secondItem="o0o-Jh-wp0" secondAttribute="top" id="0fC-cs-xoX"/>
@@ -942,7 +975,6 @@
                             <constraint firstItem="fgq-Sg-45v" firstAttribute="trailing" secondItem="t1d-NM-tLJ" secondAttribute="trailing" constant="16" id="hWR-as-5Kz" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="msg-82-eBp" firstAttribute="centerX" secondItem="fgq-Sg-45v" secondAttribute="centerX" id="zub-uS-AkL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fgq-Sg-45v"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3S-Yd-ljV" sceneMemberID="firstResponder"/>
@@ -981,7 +1013,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-hL-hpR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-hL-hpR">
                                 <rect key="frame" x="108" y="552.66666666666663" width="198" height="51"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
@@ -1024,6 +1056,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wtb-O4-n0o"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JzX-hL-hpR" firstAttribute="leading" secondItem="Wtb-O4-n0o" secondAttribute="leading" constant="108" id="0fb-Ix-Ot2" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
@@ -1043,23 +1076,37 @@
                             <constraint firstItem="SeY-Z1-t3D" firstAttribute="width" secondItem="nSF-K6-Cet" secondAttribute="width" id="yzs-WQ-7em"/>
                             <constraint firstItem="JzX-hL-hpR" firstAttribute="top" secondItem="fSg-Ll-TXe" secondAttribute="bottom" constant="30" id="zeZ-cd-z2B" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Wtb-O4-n0o"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGL-8n-tNg" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-370" y="1315"/>
         </scene>
+        <!--Dashboard Help Video View Controller-->
+        <scene sceneID="rC1-A9-WY4">
+            <objects>
+                <viewController storyboardIdentifier="HijackPolicyVideoViewController" id="kcH-o3-nx1" customClass="DashboardHelpVideoViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b4a-pe-Uzk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="I73-1y-Xeq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xgl-jJ-D6B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mer-OV-SRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1443" y="-181"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="ACTION ALERT" width="125" height="149"/>
-        <image name="ACTION ALERT LIVE" width="125" height="149"/>
+        <image name="ACTION ALERT" width="108" height="136"/>
+        <image name="ACTION ALERT LIVE" width="108" height="161"/>
         <image name="IPHONE X background" width="375" height="812"/>
         <image name="Incomplete fist and writing" width="85" height="98"/>
         <image name="Main board" width="317" height="263"/>
-        <image name="Not yet blank" width="81" height="32"/>
         <image name="Pointer" width="178" height="10"/>
-        <image name="Wheel Volume" width="147" height="146"/>
+        <image name="Wheel Volume" width="139" height="149"/>
         <image name="dashboardIconRedNotFinished" width="41" height="41"/>
         <image name="dashboardTabItem" width="48" height="32"/>
         <image name="golden_rules_cover" width="375" height="281"/>
@@ -1072,7 +1119,10 @@
         <image name="wheelVolumePoints" width="9" height="9"/>
         <image name="whiteDirectionLines" width="315" height="339"/>
         <namedColor name="KidSaveOcean Blue">
-            <color red="0.12156862745098039" green="0.63137254901960782" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.63099998235702515" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
