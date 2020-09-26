@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TaZ-WG-oKp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TaZ-WG-oKp">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--onBoarding3-->
         <scene sceneID="or5-mO-5MB">
             <objects>
-                <viewController storyboardIdentifier="onBoardingPage3" title="onBoarding3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SlK-gb-uRB" customClass="KSOStartViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onBoardingPage3" title="onBoarding3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SlK-gb-uRB" customClass="KSOStartViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wse-vl-wGc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="304.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stay connected for updates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-cl-Wl9" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="348" width="320" height="16"/>
+                                <rect key="frame" x="0.0" y="345.5" width="320" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.2901960784" green="0.50588235290000005" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -29,24 +41,24 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Engage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CfT-xy-gLK" userLabel="Header">
-                                <rect key="frame" x="0.0" y="319.5" width="320" height="26.5"/>
+                                <rect key="frame" x="0.0" y="319.5" width="320" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="FTv-tu-TWQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                 <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUx-WR-4EK">
-                                <rect key="frame" x="108" y="533" width="104" height="51"/>
-                                <color key="backgroundColor" red="0.1256549656" green="0.76238316299999997" blue="0.87107938529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="108" y="530.5" width="104" height="51"/>
+                                <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="zAK-JD-mTM" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="51" id="zAK-JD-mTM" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -61,7 +73,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-2e-fvH" userLabel="Description">
-                                <rect key="frame" x="16" y="380" width="288" height="80"/>
+                                <rect key="frame" x="35" y="377.5" width="250" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JF1-Y4-uJg"/>
                                 </constraints>
@@ -69,7 +81,7 @@
                                     <fragment content="Visit the app often to track our progress and get Action Alerts. Watch a growing army of determined kids change the world.">
                                         <attributes>
                                             <color key="NSColor" red="0.25882352941176473" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="15" name="SFProText-Semibold"/>
+                                            <font key="NSFont" size="15" name="SFMono-Regular"/>
                                             <real key="NSKern" value="-0.25"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -80,7 +92,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fpD-2e-fvH" firstAttribute="trailing" secondItem="nug-R7-MG4" secondAttribute="trailing" constant="-16" id="5mU-ro-ra6"/>
+                            <constraint firstItem="fpD-2e-fvH" firstAttribute="trailing" secondItem="nug-R7-MG4" secondAttribute="trailing" constant="-35" id="5mU-ro-ra6"/>
                             <constraint firstItem="9tf-cl-Wl9" firstAttribute="centerX" secondItem="nug-R7-MG4" secondAttribute="centerX" id="9pe-PS-jRw"/>
                             <constraint firstItem="fUx-WR-4EK" firstAttribute="centerX" secondItem="nug-R7-MG4" secondAttribute="centerX" id="9sc-ae-jN0"/>
                             <constraint firstItem="zil-Cj-jM6" firstAttribute="width" secondItem="wse-vl-wGc" secondAttribute="width" id="B3b-ur-VBn"/>
@@ -91,7 +103,7 @@
                             <constraint firstItem="CfT-xy-gLK" firstAttribute="width" secondItem="wse-vl-wGc" secondAttribute="width" id="TOs-mX-Wri"/>
                             <constraint firstItem="zil-Cj-jM6" firstAttribute="top" secondItem="wse-vl-wGc" secondAttribute="top" id="YqL-Fb-PAa"/>
                             <constraint firstItem="fpD-2e-fvH" firstAttribute="top" secondItem="9tf-cl-Wl9" secondAttribute="bottom" constant="16" id="f1h-G4-GbA"/>
-                            <constraint firstItem="fUx-WR-4EK" firstAttribute="top" secondItem="fpD-2e-fvH" secondAttribute="bottom" constant="73" id="gcH-3D-rar" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="fUx-WR-4EK" firstAttribute="top" secondItem="fpD-2e-fvH" secondAttribute="bottom" constant="73" id="gcH-3D-rar" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="9tf-cl-Wl9" firstAttribute="width" secondItem="wse-vl-wGc" secondAttribute="width" id="kuI-Wa-lFC"/>
                             <constraint firstItem="fUx-WR-4EK" firstAttribute="leading" secondItem="nug-R7-MG4" secondAttribute="leading" constant="108" id="o5a-V7-RPG"/>
                             <constraint firstItem="zil-Cj-jM6" firstAttribute="height" secondItem="wse-vl-wGc" secondAttribute="height" multiplier="0.5" constant="20.5" id="uAq-mQ-GuU"/>
@@ -107,7 +119,7 @@
         <!--Start Page View Controller-->
         <scene sceneID="oIO-Ra-2JL">
             <objects>
-                <pageViewController storyboardIdentifier="KSOStartPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TaZ-WG-oKp" customClass="KSOStartPageViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="KSOStartPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TaZ-WG-oKp" customClass="KSOStartPageViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYW-lx-AdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4110" y="-646"/>
@@ -115,7 +127,7 @@
         <!--onBoarding2-->
         <scene sceneID="CVf-jv-ZBy">
             <objects>
-                <viewController storyboardIdentifier="onBoardingPage2" title="onBoarding2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vD4-2j-dpo" customClass="KSOStartViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onBoardingPage2" title="onBoarding2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vD4-2j-dpo" customClass="KSOStartViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BNQ-NQ-qLZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,7 +136,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="304.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Write, Share, Engage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02o-s5-cXw" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="348" width="320" height="16"/>
+                                <rect key="frame" x="0.0" y="345.5" width="320" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.2901960784" green="0.50588235290000005" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -133,28 +145,28 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="How You Can Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kKJ-hd-bqH" userLabel="Header">
-                                <rect key="frame" x="0.0" y="319.5" width="320" height="26.5"/>
+                                <rect key="frame" x="0.0" y="319.5" width="320" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="bxA-1V-2B6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                 <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK1-G3-eP9" userLabel="Description">
-                                <rect key="frame" x="35" y="380" width="250" height="140"/>
+                                <rect key="frame" x="35" y="377.5" width="250" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="lOb-ZF-bzz"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">As a student, fight to protect the ocean or stop climate change by deeply engaging your government. We’ll show you how. As a teacher, we have rich and expanding resources. As a parent or individual, you can empower the kids</string>
+                                        <string key="content">As a student, fight to protect the ocean or stop climate change by deeply engaging your government. We’ll show you how. As a teacher, we have rich and expanding resources. As a parent or individual, you can empower the kids.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.25882352941176473" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="15" name="Helvetica"/>
+                                            <font key="NSFont" size="15" name="SFMono-Regular"/>
                                             <real key="NSKern" value="-0.25"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -169,7 +181,7 @@
                             <constraint firstItem="BFx-Vl-wwG" firstAttribute="width" secondItem="BNQ-NQ-qLZ" secondAttribute="width" id="5Js-Ge-Vly"/>
                             <constraint firstItem="BFx-Vl-wwG" firstAttribute="height" secondItem="BNQ-NQ-qLZ" secondAttribute="height" multiplier="0.5" constant="20.5" id="8p8-XJ-2HS"/>
                             <constraint firstItem="MK1-G3-eP9" firstAttribute="centerX" secondItem="1Da-I6-ULn" secondAttribute="centerX" id="JQw-en-quQ"/>
-                            <constraint firstItem="MK1-G3-eP9" firstAttribute="trailing" secondItem="1Da-I6-ULn" secondAttribute="trailing" constant="-35" id="Mj4-Pm-KLX" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="MK1-G3-eP9" firstAttribute="trailing" secondItem="1Da-I6-ULn" secondAttribute="trailing" constant="-35" id="Mj4-Pm-KLX" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="02o-s5-cXw" firstAttribute="centerX" secondItem="1Da-I6-ULn" secondAttribute="centerX" id="TMS-PH-Num"/>
                             <constraint firstItem="kKJ-hd-bqH" firstAttribute="width" secondItem="BNQ-NQ-qLZ" secondAttribute="width" id="Thz-P1-WBH"/>
                             <constraint firstItem="kKJ-hd-bqH" firstAttribute="top" secondItem="BFx-Vl-wwG" secondAttribute="bottom" constant="15" id="Y1x-zv-j4s"/>
@@ -189,7 +201,7 @@
         <!--onBoarding1-->
         <scene sceneID="ddg-MR-H6F">
             <objects>
-                <viewController storyboardIdentifier="onBoardingPage1" title="onBoarding1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VBs-1t-KLe" customClass="KSOStartViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onBoardingPage1" title="onBoarding1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VBs-1t-KLe" customClass="KSOStartViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mUX-fW-xku">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,7 +210,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="304.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="A Tool With Teeth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmH-E8-HZN" userLabel="AdditionalHeader">
-                                <rect key="frame" x="0.0" y="348" width="320" height="16"/>
+                                <rect key="frame" x="0.0" y="345.5" width="320" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.2901960784" green="0.50588235290000005" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -206,20 +218,20 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Welcome to Fatechanger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-tb-7HU" userLabel="Header">
-                                <rect key="frame" x="0.0" y="319.5" width="320" height="26.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Welcome to FateChanger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-tb-7HU" userLabel="Header">
+                                <rect key="frame" x="0.0" y="319.5" width="320" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Ft3-GC-zhJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                 <color key="textColor" red="0.2784313725" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO5-Oi-XHl" userLabel="Description">
-                                <rect key="frame" x="35" y="380" width="250" height="70"/>
+                                <rect key="frame" x="35" y="377.5" width="250" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="jHi-yo-HtA"/>
                                 </constraints>
@@ -228,7 +240,7 @@
                                         <string key="content">This app was designed with a single purpose: to give youth a powerful voice to protect our world’s environment. It is no ordinary app.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.25882352941176473" green="0.27450980392156865" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="15" name="Helvetica"/>
+                                            <font key="NSFont" size="15" name="SFMono-Regular"/>
                                             <real key="NSKern" value="-0.25"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -238,23 +250,23 @@
 Cg
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <font key="NSFont" size="15" name="SFMono-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20" maximumLineHeight="20" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ol-ex-ofq">
-                                <rect key="frame" x="108.5" y="455" width="103" height="7"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ol-ex-ofq">
+                                <rect key="frame" x="100" y="452.5" width="120" height="15.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QO5-Oi-XHl" firstAttribute="trailing" secondItem="jHu-la-qCT" secondAttribute="trailing" constant="-35" id="1Fk-We-ogK" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="QO5-Oi-XHl" firstAttribute="trailing" secondItem="jHu-la-qCT" secondAttribute="trailing" constant="-35" id="1Fk-We-ogK" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="d6U-Mc-DIt" firstAttribute="top" secondItem="mUX-fW-xku" secondAttribute="top" id="1mD-1F-wmn"/>
                             <constraint firstItem="JmH-E8-HZN" firstAttribute="top" secondItem="wiU-tb-7HU" secondAttribute="bottom" constant="2" id="7Zz-3c-oGO"/>
                             <constraint firstItem="JmH-E8-HZN" firstAttribute="centerX" secondItem="jHu-la-qCT" secondAttribute="centerX" id="97f-QD-OdA"/>
@@ -268,7 +280,7 @@ Cg
                             <constraint firstItem="wiU-tb-7HU" firstAttribute="width" secondItem="mUX-fW-xku" secondAttribute="width" id="aci-16-8lc"/>
                             <constraint firstItem="wiU-tb-7HU" firstAttribute="top" secondItem="d6U-Mc-DIt" secondAttribute="bottom" constant="15" id="g1v-B2-jvf"/>
                             <constraint firstItem="d6U-Mc-DIt" firstAttribute="height" secondItem="mUX-fW-xku" secondAttribute="height" multiplier="0.5" constant="20.5" id="hc5-6E-zCo"/>
-                            <constraint firstItem="jHu-la-qCT" firstAttribute="bottom" secondItem="8Ol-ex-ofq" secondAttribute="bottom" constant="106" id="hfx-qY-WY9" customClass="KSOLayoutConstraint" customModule="KidsSaveOcean" customModuleProvider="target"/>
+                            <constraint firstItem="jHu-la-qCT" firstAttribute="bottom" secondItem="8Ol-ex-ofq" secondAttribute="bottom" constant="100" id="hfx-qY-WY9" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="QO5-Oi-XHl" firstAttribute="centerX" secondItem="jHu-la-qCT" secondAttribute="centerX" id="pqI-hY-uR2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jHu-la-qCT"/>
@@ -281,7 +293,7 @@ Cg
         <!--User Type Table View Controller-->
         <scene sceneID="ChG-Gk-HGZ">
             <objects>
-                <tableViewController id="oh3-Xy-ZtB" customClass="UserTypeTableViewController" customModule="KidsSaveOcean" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="oh3-Xy-ZtB" customClass="UserTypeTableViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OBt-LE-Hc3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +301,7 @@ Cg
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userIdCellIdentificator" rowHeight="448" id="6OI-sN-FQ4" customClass="UserTypeTableViewCell" customModule="KidsSaveOcean" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userIdCellIdentificator" rowHeight="448" id="6OI-sN-FQ4" customClass="UserTypeTableViewCell" customModule="FateChanger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="320" height="448"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6OI-sN-FQ4" id="axg-1f-VgH">
@@ -406,5 +418,8 @@ Cg
         <image name="overlay" width="343" height="412"/>
         <image name="surferOnWave" width="375" height="343"/>
         <image name="turtleInNet" width="375" height="343"/>
+        <namedColor name="KidSaveOcean Blue">
+            <color red="0.12156862745098039" green="0.63137254901960782" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

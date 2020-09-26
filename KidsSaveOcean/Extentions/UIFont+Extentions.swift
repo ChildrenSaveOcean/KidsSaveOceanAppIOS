@@ -38,4 +38,8 @@ extension UIFont {
     class var proDisplaySemiBold20: UIFont {
         return UIFont(name: "SFProDisplay-Semibold", size: 20) ?? UIFont.systemFont(ofSize: 20)
     }
+    
+    class var proRegular11: UIFont {
+        return UIFont(name: "SFProText-Regular", size: 11) ?? UIFont.systemFont(ofSize: 11)
+    }
 }

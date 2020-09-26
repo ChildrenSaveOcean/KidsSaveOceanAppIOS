@@ -12,7 +12,8 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
-    var originalWebUrlString: String { return "" }
+    var hideNavigationBarByDefault: Bool { return webView.url?.host?.lowercased().hasPrefix("www.kidssaveocean.com") ?? false }
+    var originalWebUrlString: String { return webUrlString }
     
     var webUrlString: String = "" {
         didSet(oldValue) {
@@ -29,7 +30,7 @@ class WebIntegrationViewController: UIViewController {
         }
     }
     
-    private var reachability = Reachability()
+    private var reachability: Reachability? // = try Reachability()
 
     lazy var webView = { () -> WKWebView in
         let webConfiguration = WKWebViewConfiguration()
@@ -44,9 +45,10 @@ class WebIntegrationViewController: UIViewController {
 
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
+        pV.tintColor = .kidsSaveOceanBlue
         let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
         var y = max(frame.origin.y + frame.height, frame.height) //20)
-        pV.frame = CGRect(x: 0, y: y, width: view.bounds.width, height: 5)
+        pV.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: 5)
         return pV
     }()
 
@@ -55,14 +57,22 @@ class WebIntegrationViewController: UIViewController {
 
     lazy var noInternetConnectionImageView: UIImageView = { () -> UIImageView in
         let imageView = UIImageView(image: #imageLiteral(resourceName: "No Internet"))
-        imageView.frame = self.webView.frame
-        imageView.contentMode = .scaleAspectFit
+        var frame = self.webView.frame
+        if let newHeight = self.tabBarController?.tabBar.frame.height {
+            frame.size.height -= newHeight
+        }
+        imageView.frame = frame
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
+        if reachability == nil {
+            reachability = try? Reachability()
+        }
 
         self.view.backgroundColor = .white
         
@@ -79,21 +89,12 @@ class WebIntegrationViewController: UIViewController {
 
         view.addSubview(webView)
 
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.backgroundColor = .clear
-
-        //backButton.isEnabled = false
-        navigationItem.leftBarButtonItem = backButton
-        //forwardButton.isEnabled = false
-        navigationItem.rightBarButtonItem = forwardButton
+        setNavigationButtons()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+        //navigationController?.navigationBar.isHidden = true
         setURLString(originalWebUrlString)
     }
     
@@ -103,7 +104,7 @@ class WebIntegrationViewController: UIViewController {
     }
 
     deinit {
-        reachability!.stopNotifier()
+        reachability?.stopNotifier()
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
 
@@ -133,13 +134,26 @@ class WebIntegrationViewController: UIViewController {
     @objc func goForward() {
         webView.goForward()
     }
+    
+    func checkNavigationButtons() {
+        navigationController?.navigationBar.isHidden = hideNavigationBarByDefault
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
+        
+        var canGoBack = webView.canGoBack
+        if !canGoBack {
+            canGoBack = canPopViewController()
+        }
+        backButton.isEnabled = canGoBack ? true : false
+        forwardButton.isEnabled =  webView.canGoForward ? true : false
+    }
 
     private func canPopViewController() -> Bool {
-        return (webView.canGoBack == true) ?? (navigationController?.viewControllers.first != self)
+        return (webView.canGoBack == true) || (navigationController?.viewControllers.first != self)
     }
 
     private func checkInternetConnection(reachability: Reachability) -> Bool {
-        return reachability.connection != .none
+        return reachability.connection != .unavailable
     }
     
     private func showInternetConnectionStatus(is on: Bool) {
@@ -189,6 +203,13 @@ class WebIntegrationViewController: UIViewController {
     func refreshView() {
         setURLString(originalWebUrlString)
     }
+    
+    func setNavigationButtons() {
+        backButton.isEnabled = false
+        navigationItem.leftBarButtonItem = backButton
+        forwardButton.isEnabled = false
+        navigationItem.rightBarButtonItem = forwardButton
+    }
 }
 
 extension WebIntegrationViewController: WKUIDelegate {
@@ -209,18 +230,5 @@ extension WebIntegrationViewController: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         checkNavigationButtons()
-    }
-
-    func checkNavigationButtons() {
-        navigationController?.navigationBar.isHidden = webView.url?.host?.lowercased().hasPrefix("www.kidssaveocean.com") ?? false
-        view.setNeedsLayout() //layoutSubviews()
-        view.layoutIfNeeded()
-        
-        var canGoBack = webView.canGoBack
-        if !canGoBack {
-            canGoBack = canPopViewController()
-        }
-        backButton.isEnabled = canGoBack ? true : false
-        forwardButton.isEnabled =  webView.canGoForward ? true : false
     }
 }

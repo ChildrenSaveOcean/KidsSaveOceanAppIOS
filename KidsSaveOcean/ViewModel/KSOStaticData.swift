@@ -29,8 +29,8 @@ let UserTypeViewData: KSODataArray = [["image": #imageLiteral(resourceName: "Ska
 
 ///// Perhaps we will get it later dynamically from web-services from backend.
 let HomeViewData: KSODataArray = [["image": #imageLiteral(resourceName: "theWavEs"),
-                                     "title": "News And Media",
-                                     "subTitle": "KEEP UPDATED",
+                                     "title": "Activism News - Keep Updated!",
+                                     "subTitle": "CORONA ENDANGERS CLIMATE PROGRESS",
                                      "action": ""],
                                     ["image": #imageLiteral(resourceName: "homePic2"),
                                      "title": "Write Letters, Multiply Impact",
@@ -47,7 +47,12 @@ let HomeViewData: KSODataArray = [["image": #imageLiteral(resourceName: "theWavE
                                     ["image": #imageLiteral(resourceName: "mapForCampaign"),
                                      "title": "Letter Campaigns, Initiatives, Activism",
                                      "subTitle": "WATCH YOUTH IMPACT SPREAD",
-                                     "action": ""]]
+                                     "action": ""],
+                                    ["image": #imageLiteral(resourceName: "Share_like_a_boss"),
+                                    "title": "Tips to share like a Boss",
+                                    "subTitle": "CALL OUT TO THE PACK",
+                                    "action": ""
+                                    ]]
 
 let KSONewsViewData: KSODataArray = [["image": #imageLiteral(resourceName: "Map"),
                                      "title": "Letter Writing Campaign",

@@ -14,11 +14,13 @@ class KSOPinOfLetters: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var name: String
     var numberOfLetters: Int
+    var action: Action?
 
-    init(with name: String, _ location: CLLocationCoordinate2D, _ numberOfLetters: Int) {
+    init(with name: String, _ location: CLLocationCoordinate2D, _ numberOfLetters: Int, _ action: Action?) {
         self.name = name
         self.coordinate = location
         self.numberOfLetters = numberOfLetters
+        self.action = action
     }
 
     var title: String? {

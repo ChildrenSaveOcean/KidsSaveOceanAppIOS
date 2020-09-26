@@ -15,6 +15,8 @@ class UserDefaultsHelper {
     static let actionAlertStateKey = "UnreadNotificationNumber"
     static let notificationsKey = "notificationsKey"
     static let completionStatusKey = "completionStatusKey"
+    static let countryLetterNumberKey = "countryLetterNumber"
+    static let letterNumberKey = "letterNumber"
     
     static let dateFormatter: DateFormatter = {
         let datef = DateFormatter()
@@ -51,9 +53,27 @@ class UserDefaultsHelper {
     
     class func getNotifications() -> [NotificationItem] {
         guard let codedNotification = UserDefaults.standard.value(forKey: notificationsKey) as? NSData,
-            let notifications = NSKeyedUnarchiver.unarchiveObject(with: codedNotification as Data) as? [NotificationItem] else {
-                return [NotificationItem]()
+            let notificationData = codedNotification as? Data,
+            let notifications = NSKeyedUnarchiver.unarchiveObject(with: notificationData) as? [NotificationItem]
+        else {
+            return [NotificationItem]()
         }
         return notifications
+    }
+    
+    class func countryLetterNumber() -> Int {
+        return UserDefaults.standard.integer(forKey: countryLetterNumberKey) as Int
+    }
+    
+    class func saveCountryLetterNumber(_ value: Int) {
+        UserDefaults.standard.set(value, forKey: countryLetterNumberKey)
+    }
+    
+    class func letterNumber() -> Int {
+        return UserDefaults.standard.integer(forKey: letterNumberKey) as Int
+    }
+    
+    class func saveLetterNumber(_ value: Int) {
+         UserDefaults.standard.set(value, forKey: letterNumberKey)
     }
 }

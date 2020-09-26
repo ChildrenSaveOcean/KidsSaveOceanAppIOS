@@ -22,6 +22,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
+        
         if sender.selectedSegmentIndex == 1 {
             self.map.isHidden = true
             self.tbvTop10.isHidden = false
@@ -56,15 +57,18 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         activityIndicator.isHidden = true
         
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.kidsSaveOceanBlue], for: .normal)
+        segmentControl.layer.borderWidth = 1.0
+        segmentControl.layer.borderColor = UIColor.kidsSaveOceanBlue.cgColor
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadScores), name: .countriesHasBeenLoaded, object: nil)
 
+        map.delegate = self
         map.register(KSOCustomMapPin.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         tbvTop10.register(UINib(nibName: "KSOMapTop10TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
 
-        let summaryLettersWritten = countriesData.reduce(0) {$0 + $1.letters_written}
-        lblLettersWritten.text = String(summaryLettersWritten)
-        lblNumberCountries.text = String(countriesData.count)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +100,14 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
+     }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+       return CGFloat.leastNonzeroMagnitude
+     }
+    
     func reloadMap() {
         if CountriesService.shared().contryContactsHasBeenLoaded {
             activityIndicator.isHidden = true
@@ -106,8 +118,16 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         _countriesData = nil
         addPinsInMap()
+        
+        let summaryLettersWritten = countriesData.reduce(0) {$0 + $1.letters_written}
+        lblLettersWritten.text = summaryLettersWritten > 0 ? String(summaryLettersWritten) : String(UserDefaultsHelper.letterNumber())
+        lblNumberCountries.text = countriesData.count > 0 ? String(countriesData.count) : String(UserDefaultsHelper.countryLetterNumber())
+        
+        UserDefaultsHelper.saveLetterNumber(summaryLettersWritten)
+        UserDefaultsHelper.saveCountryLetterNumber(countriesData.count)
+        
         self.map.reloadInputViews()
-        showMaxLettersScoreRegion()
+        //showMaxLettersScoreRegion()
         self.tbvTop10.reloadData()
     }
 
@@ -115,7 +135,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func addPinsInMap() {
         map.removeAnnotations(map.annotations)
         for country in countriesData where country.coordinates != nil {
-            let annotation = KSOPinOfLetters(with: country.name, country.coordinates!, country.letters_written)
+            let annotation = KSOPinOfLetters(with: country.name, country.coordinates!, country.letters_written, country.action)
             map.addAnnotation(annotation)
         }
     }
@@ -159,5 +179,19 @@ extension MapViewController: NotificationProtocol {
     func updateViews() {
         guard map != nil, tbvTop10 != nil else {return}
         reloadScores()
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+      
+        guard let annotation = view.annotation as? KSOPinOfLetters,
+            let action = annotation.action else { return }
+        
+        let webViewController = WebIntegrationViewController()
+        
+        self.present(webViewController, animated: true) {
+            webViewController.setURLString(action.action_link)
+      }
     }
 }

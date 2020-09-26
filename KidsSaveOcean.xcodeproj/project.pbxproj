@@ -10,11 +10,14 @@
 		1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */; };
 		16080B1E2327F7B6008F0AEF /* KSODidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16080B1D2327F7B6008F0AEF /* KSODidButton.swift */; };
 		16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16129FF3237464DE00E677B3 /* CampaignSignatures.swift */; };
+		1616EB2E2408B83C005B1316 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1616EB2D2408B83C005B1316 /* GoogleService-Info.plist */; };
 		1617111121E25B5300BE9B2E /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617111021E25B5300BE9B2E /* ResourcesViewController.swift */; };
 		161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A0C1122B291DC0047DD40 /* LocationService.swift */; };
 		161D41AB21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */; };
 		162572D422E37DEF00A702C4 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */; };
 		162602162373193D007B392D /* UINavigationController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162602152373193D007B392D /* UINavigationController+Extention.swift */; };
+		162F6C2E23A725A400E709D5 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F6C2D23A725A400E709D5 /* ActionViewModel.swift */; };
+		162F6C3023A725B700E709D5 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F6C2F23A725B700E709D5 /* Action.swift */; };
 		163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FD215976E200C98646 /* UserTypeTableViewController.swift */; };
 		163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */; };
 		1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638882D228DD6080084D8CA /* KSOAuthorization.swift */; };
@@ -30,6 +33,9 @@
 		164D730F234BA39D0080ACB7 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D730E234BA39D0080ACB7 /* Campaign.swift */; };
 		164D7311234BA56F0080ACB7 /* CampaignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7310234BA56F0080ACB7 /* CampaignViewModel.swift */; };
 		164E6E2221EB785A00DEB99C /* DashboardTopIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */; };
+		164EB07F246CD0B9001FF26D /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EB07E246CD0B9001FF26D /* UIAlertController+Extensions.swift */; };
+		164EB081246CD1F1001FF26D /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EB080246CD1F1001FF26D /* UIAlertAction+Extensions.swift */; };
+		164EB083246CDBA4001FF26D /* UISegmentedControl+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EB082246CDBA4001FF26D /* UISegmentedControl+Extentions.swift */; };
 		164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164F14E921F68BD400823FF3 /* Onboarding.storyboard */; };
 		164F14F521F6914D00823FF3 /* HomeScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */; };
 		164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164F14F921F6919A00823FF3 /* HomeTableViewCell.xib */; };
@@ -60,21 +66,22 @@
 		16BA0A3E2290281A00E36F25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3D2290281A00E36F25 /* User.swift */; };
 		16CF1A162382377B001D099D /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */; };
 		16CF1A172382377E001D099D /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */; };
+		16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */; };
 		16D4C27C22C1552F006DBC64 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C27B22C1552F006DBC64 /* NotificationController.swift */; };
 		16D4C27E22C157AD006DBC64 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C27D22C157AC006DBC64 /* Instantiatable.swift */; };
 		16D4C28122C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C28022C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift */; };
 		16D4C28322C3FDBE006DBC64 /* NotificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C28222C3FDBE006DBC64 /* NotificationProtocol.swift */; };
 		16D4C28522C3FE10006DBC64 /* NotificationBadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4C28422C3FE10006DBC64 /* NotificationBadgeProtocol.swift */; };
+		16DDAA7D239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDAA7C239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift */; };
 		16EA5FCE220CD5AD00DE062E /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */; };
 		16EA5FD0220CD62A00DE062E /* WebIntegrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */; };
 		16EA5FD2220CDB7B00DE062E /* UserTypeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */; };
 		16ECE4702299F11D0099C406 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ECE46F2299F11D0099C406 /* PolicyViewController.swift */; };
 		16ED9DAA20C343DB005BF4E1 /* KSOStaticDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */; };
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
-		3836065AA4051485D34E13DD /* Pods_KidsSaveOceanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE9EDF84547614BBD872B31 /* Pods_KidsSaveOceanTests.framework */; };
-		55A9694322ABEF12EE3CB99E /* Pods_KidsSaveOcean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4A7B094B39EBB0F76DA0F1 /* Pods_KidsSaveOcean.framework */; };
+		16FD4EEB23FE346200A1BA44 /* HijackPolicyVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */; };
+		63569386F4795D9DB1FF6BA3 /* Pods_KidsSaveOcean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D46D27A6B59B1557A69795B /* Pods_KidsSaveOcean.framework */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
-		7C0B1CD422232BE40033F251 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */; };
 		7C0B1CD722232EC60033F251 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B1CD622232EC50033F251 /* CountriesService.swift */; };
 		7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */; };
 		7C312FD82118DFE5008CEDDA /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */; };
@@ -95,10 +102,11 @@
 		945A089120F643EB006ED13D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* MapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946847D82139E299007A1158 /* KSOCustomMapPin.swift */; };
-		AF0733B174CB6B38D278E954 /* Pods_KidsSaveOceanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188CDABD5EC2509FD5EB333C /* Pods_KidsSaveOceanUITests.framework */; };
+		A9F5263956897973FADB21F1 /* Pods_KidsSaveOceanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230EEF9F7D69B84649D8B51 /* Pods_KidsSaveOceanTests.framework */; };
 		C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */; };
 		C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E0701214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift */; };
 		C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55E0702214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib */; };
+		C733073C6D3C4734949D2E48 /* Pods_KidsSaveOceanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F64CACCA5869098DB5EC66 /* Pods_KidsSaveOceanUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,15 +127,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D4A7B094B39EBB0F76DA0F1 /* Pods_KidsSaveOcean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOcean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		008C19CBF4A40CF6B4BE4150 /* Pods-KidsSaveOceanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0230EEF9F7D69B84649D8B51 /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02DF6D3A88D2A8C5017AF491 /* Pods-KidsSaveOcean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.release.xcconfig"; sourceTree = "<group>"; };
 		1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsWithTeethViewController.swift; sourceTree = "<group>"; };
 		16080B1D2327F7B6008F0AEF /* KSODidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSODidButton.swift; sourceTree = "<group>"; };
 		16129FF3237464DE00E677B3 /* CampaignSignatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignSignatures.swift; sourceTree = "<group>"; };
+		1616EB2D2408B83C005B1316 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1617111021E25B5300BE9B2E /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		161A0C1122B291DC0047DD40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		161D41AA21EF614E0061B5A7 /* NSLayoutConstraint+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extentions.swift"; sourceTree = "<group>"; };
 		162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		162602152373193D007B392D /* UINavigationController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extention.swift"; sourceTree = "<group>"; };
+		162F6C2D23A725A400E709D5 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
+		162F6C2F23A725B700E709D5 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		163416FD215976E200C98646 /* UserTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewController.swift; sourceTree = "<group>"; };
 		163416FF2159772D00C98646 /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		1638882D228DD6080084D8CA /* KSOAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOAuthorization.swift; sourceTree = "<group>"; };
@@ -143,10 +156,13 @@
 		164D730E234BA39D0080ACB7 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		164D7310234BA56F0080ACB7 /* CampaignViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignViewModel.swift; sourceTree = "<group>"; };
 		164E6E2121EB785A00DEB99C /* DashboardTopIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopIcon.swift; sourceTree = "<group>"; };
+		164EB07E246CD0B9001FF26D /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		164EB080246CD1F1001FF26D /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
+		164EB082246CDBA4001FF26D /* UISegmentedControl+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extentions.swift"; sourceTree = "<group>"; };
 		164F14E921F68BD400823FF3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScoreTableViewCell.xib; sourceTree = "<group>"; };
 		164F14F921F6919A00823FF3 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-		16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSaveOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16559BCC20ADF9D5002D4F78 /* FateChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FateChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16559BD620ADF9D5002D4F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16559BD820ADF9D5002D4F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,23 +194,24 @@
 		16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsSaveOcean.entitlements; sourceTree = "<group>"; };
 		16BA0A3B229027F100E36F25 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		16BA0A3D2290281A00E36F25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareKidsSaveOcean.swift; sourceTree = "<group>"; };
 		16D4C27B22C1552F006DBC64 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		16D4C27D22C157AC006DBC64 /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		16D4C28022C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		16D4C28222C3FDBE006DBC64 /* NotificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProtocol.swift; sourceTree = "<group>"; };
 		16D4C28422C3FE10006DBC64 /* NotificationBadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBadgeProtocol.swift; sourceTree = "<group>"; };
+		16DDAA7C239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTheHijackLiveCampaignViewController.swift; sourceTree = "<group>"; };
 		16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		16EA5FCF220CD62A00DE062E /* WebIntegrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIntegrationViewController.swift; sourceTree = "<group>"; };
 		16EA5FD1220CDB7B00DE062E /* UserTypeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeVideoViewController.swift; sourceTree = "<group>"; };
 		16ECE46F2299F11D0099C406 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticDataStructures.swift; sourceTree = "<group>"; };
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
-		188CDABD5EC2509FD5EB333C /* Pods_KidsSaveOceanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4ECC16072F43E73465244A56 /* Pods-KidsSaveOcean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.release.xcconfig"; sourceTree = "<group>"; };
-		601C7F97CBFA2DC03E9A0D60 /* Pods-KidsSaveOcean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.debug.xcconfig"; sourceTree = "<group>"; };
-		6914C3C0778B663652C3BF7C /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPolicyVideoViewController.swift; sourceTree = "<group>"; };
+		31F64CACCA5869098DB5EC66 /* Pods_KidsSaveOceanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48ED5E343BB8EB620FEC0FC8 /* Pods-KidsSaveOcean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.debug.xcconfig"; sourceTree = "<group>"; };
+		60627274457D158C047F40BD /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C00FFB921185B7000320309 /* CountryContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewController.swift; sourceTree = "<group>"; };
-		7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C0B1CD622232EC50033F251 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		7C2B9A6E21188EEB00977E21 /* CountryContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryContactsViewModel.swift; sourceTree = "<group>"; };
 		7C312FD72118DFE5008CEDDA /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
@@ -214,16 +231,15 @@
 		7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		7CE89F9421A2005E00C2D6DA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTableViewCell.swift; sourceTree = "<group>"; };
+		8D46D27A6B59B1557A69795B /* Pods_KidsSaveOcean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOcean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		945A089020F643EB006ED13D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		946847D82139E299007A1158 /* KSOCustomMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOCustomMapPin.swift; sourceTree = "<group>"; };
-		998C89941F10610428F33BD9 /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9BE9EDF84547614BBD872B31 /* Pods_KidsSaveOceanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsSaveOceanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA56E18AFA97ADA4CA58A7D /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extentions.swift"; sourceTree = "<group>"; };
 		C55E0701214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapTop10TableViewCell.swift; sourceTree = "<group>"; };
 		C55E0702214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOMapTop10TableViewCell.xib; sourceTree = "<group>"; };
-		DD4C9487DF28835753C98C29 /* Pods-KidsSaveOceanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E5CCBD1C7FF8B85758105725 /* Pods-KidsSaveOceanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED154C0A5CC0E260907A0C63 /* Pods-KidsSaveOceanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55A9694322ABEF12EE3CB99E /* Pods_KidsSaveOcean.framework in Frameworks */,
+				63569386F4795D9DB1FF6BA3 /* Pods_KidsSaveOcean.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3836065AA4051485D34E13DD /* Pods_KidsSaveOceanTests.framework in Frameworks */,
+				A9F5263956897973FADB21F1 /* Pods_KidsSaveOceanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,13 +263,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF0733B174CB6B38D278E954 /* Pods_KidsSaveOceanUITests.framework in Frameworks */,
+				C733073C6D3C4734949D2E48 /* Pods_KidsSaveOceanUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		162F6C2C23A7259200E709D5 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				162F6C2D23A725A400E709D5 /* ActionViewModel.swift */,
+				162F6C2F23A725B700E709D5 /* Action.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		163F23A220FCFC3800022B38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,9 +356,9 @@
 			isa = PBXGroup;
 			children = (
 				16768112215AD71100EE4E1F /* HomeTableViewCell.swift */,
+				163D20352170F12200069294 /* HomeScoreTableViewCell.swift */,
 				164F14F921F6919A00823FF3 /* HomeTableViewCell.xib */,
 				164F14F321F6914D00823FF3 /* HomeScoreTableViewCell.xib */,
-				163D20352170F12200069294 /* HomeScoreTableViewCell.swift */,
 				16D4C28022C3E5A2006DBC64 /* HomeTableViewCellProtocol.swift */,
 			);
 			path = "Home TableView Cells";
@@ -348,14 +373,14 @@
 				16559BCD20ADF9D5002D4F78 /* Products */,
 				16D54E8920FE69D0003F5113 /* Recovered References */,
 				887A4DDCFD5890F63C59486A /* Pods */,
-				933E9D57CBD16D1650A9F6B9 /* Frameworks */,
+				B1188F4A64879FD414D56981 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		16559BCD20ADF9D5002D4F78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */,
+				16559BCC20ADF9D5002D4F78 /* FateChanger.app */,
 				16559BE220ADF9D5002D4F78 /* KidsSaveOceanTests.xctest */,
 				16559BED20ADF9D6002D4F78 /* KidsSaveOceanUITests.xctest */,
 			);
@@ -365,6 +390,7 @@
 		16559BCE20ADF9D5002D4F78 /* KidsSaveOcean */ = {
 			isa = PBXGroup;
 			children = (
+				1616EB2D2408B83C005B1316 /* GoogleService-Info.plist */,
 				16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */,
 				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				7C0B1CCD2223141D0033F251 /* Utils */,
@@ -373,7 +399,6 @@
 				16CF5A2620AF1E4100C4E57E /* Views */,
 				16559BD520ADF9D5002D4F78 /* Main.storyboard */,
 				1679B06D21EA29E100C15F2A /* knobClick.mp3 */,
-				7C0B1CD322232BE40033F251 /* GoogleService-Info.plist */,
 				16559BD820ADF9D5002D4F78 /* Assets.xcassets */,
 				7CE89F9221A1FF5B00C2D6DA /* Supporting Files */,
 				16559BDA20ADF9D5002D4F78 /* LaunchScreen.storyboard */,
@@ -518,6 +543,9 @@
 				16649E9120FEC72B000BCB48 /* Notification+Extentions.swift */,
 				16080B1D2327F7B6008F0AEF /* KSODidButton.swift */,
 				163AA0882373731700E9C65E /* ViewController+ExtentionViewController.swift */,
+				164EB07E246CD0B9001FF26D /* UIAlertController+Extensions.swift */,
+				164EB080246CD1F1001FF26D /* UIAlertAction+Extensions.swift */,
+				164EB082246CDBA4001FF26D /* UISegmentedControl+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -541,9 +569,19 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		16FB56D823A97007004C6277 /* NumberOfLetters */ = {
+			isa = PBXGroup;
+			children = (
+				945A089220F64520006ED13D /* KSOPinOfLetters.swift */,
+				946847D82139E299007A1158 /* KSOCustomMapPin.swift */,
+			);
+			path = NumberOfLetters;
+			sourceTree = "<group>";
+		};
 		7C0B1CCD2223141D0033F251 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */,
 				16D4C27D22C157AC006DBC64 /* Instantiatable.swift */,
 				16D4C27A22C15518006DBC64 /* Notifications */,
 				162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */,
@@ -555,6 +593,7 @@
 		7C0B1CD522232E9C0033F251 /* CountriesService */ = {
 			isa = PBXGroup;
 			children = (
+				162F6C2C23A7259200E709D5 /* Action */,
 				7C0B1CD622232EC50033F251 /* CountriesService.swift */,
 				161A0C1122B291DC0047DD40 /* LocationService.swift */,
 				7C4BAB9D211C94B00038BAF2 /* CountryContact.swift */,
@@ -568,11 +607,13 @@
 				7CB3FF5A232FF8F000415D75 /* CreateNewEnvironmentPolicyViewController.swift */,
 				7CB3FF5C232FF9E300415D75 /* CreateNewEnvironmentPolicyViewController.storyboard */,
 				7C9891622331264C00400CC5 /* YouthInitiativeProcessViewController.swift */,
+				16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */,
 				7C9891642331274800400CC5 /* Follow7StepsViewController.swift */,
 				7C989166233127A800400CC5 /* VoteNowViewController.swift */,
 				7C9891682331280800400CC5 /* SignUpUpdateViewController.swift */,
 				7C98916A2331285100400CC5 /* MultiplympactViewController.swift */,
 				7C98916C2331289700400CC5 /* TrackTheHijackViewController.swift */,
+				16DDAA7C239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift */,
 				7CFF7BE12339455E00C7081E /* EnvironmentTableViewCell.swift */,
 				7C4AF9A7233A8440006A8566 /* TrackTableViewCell.swift */,
 				7CB51D37233A901D0014094C /* StepsTableViewCell.swift */,
@@ -612,24 +653,14 @@
 		887A4DDCFD5890F63C59486A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				601C7F97CBFA2DC03E9A0D60 /* Pods-KidsSaveOcean.debug.xcconfig */,
-				4ECC16072F43E73465244A56 /* Pods-KidsSaveOcean.release.xcconfig */,
-				DD4C9487DF28835753C98C29 /* Pods-KidsSaveOceanTests.debug.xcconfig */,
-				E5CCBD1C7FF8B85758105725 /* Pods-KidsSaveOceanTests.release.xcconfig */,
-				6914C3C0778B663652C3BF7C /* Pods-KidsSaveOceanUITests.debug.xcconfig */,
-				998C89941F10610428F33BD9 /* Pods-KidsSaveOceanUITests.release.xcconfig */,
+				48ED5E343BB8EB620FEC0FC8 /* Pods-KidsSaveOcean.debug.xcconfig */,
+				02DF6D3A88D2A8C5017AF491 /* Pods-KidsSaveOcean.release.xcconfig */,
+				008C19CBF4A40CF6B4BE4150 /* Pods-KidsSaveOceanTests.debug.xcconfig */,
+				ED154C0A5CC0E260907A0C63 /* Pods-KidsSaveOceanTests.release.xcconfig */,
+				AFA56E18AFA97ADA4CA58A7D /* Pods-KidsSaveOceanUITests.debug.xcconfig */,
+				60627274457D158C047F40BD /* Pods-KidsSaveOceanUITests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		933E9D57CBD16D1650A9F6B9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0D4A7B094B39EBB0F76DA0F1 /* Pods_KidsSaveOcean.framework */,
-				9BE9EDF84547614BBD872B31 /* Pods_KidsSaveOceanTests.framework */,
-				188CDABD5EC2509FD5EB333C /* Pods_KidsSaveOceanUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		945A088F20F64355006ED13D /* Map */ = {
@@ -637,8 +668,7 @@
 			children = (
 				7C7BBAC721B864CF00C48D4E /* CountryContacts */,
 				945A089020F643EB006ED13D /* MapViewController.swift */,
-				945A089220F64520006ED13D /* KSOPinOfLetters.swift */,
-				946847D82139E299007A1158 /* KSOCustomMapPin.swift */,
+				16FB56D823A97007004C6277 /* NumberOfLetters */,
 				C55E06FA214EE222009B7BD6 /* cells */,
 			);
 			path = Map;
@@ -650,6 +680,16 @@
 				16EA5FCD220CD5AD00DE062E /* MediaViewController.swift */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		B1188F4A64879FD414D56981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D46D27A6B59B1557A69795B /* Pods_KidsSaveOcean.framework */,
+				0230EEF9F7D69B84649D8B51 /* Pods_KidsSaveOceanTests.framework */,
+				31F64CACCA5869098DB5EC66 /* Pods_KidsSaveOceanUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C55E06FA214EE222009B7BD6 /* cells */ = {
@@ -668,12 +708,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16559BF620ADF9D6002D4F78 /* Build configuration list for PBXNativeTarget "KidsSaveOcean" */;
 			buildPhases = (
-				9E3E84AAFF64D88D1D15B2DB /* [CP] Check Pods Manifest.lock */,
+				E93B23CD15376EFF21F102FB /* [CP] Check Pods Manifest.lock */,
 				16559BC820ADF9D5002D4F78 /* Sources */,
 				16559BC920ADF9D5002D4F78 /* Frameworks */,
 				16559BCA20ADF9D5002D4F78 /* Resources */,
 				169DA531229F65EF00A58E9B /* ShellScript */,
-				95946D3053AE223160E760F4 /* [CP] Embed Pods Frameworks */,
+				9B121A58A39637B6E1175634 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -681,14 +721,14 @@
 			);
 			name = KidsSaveOcean;
 			productName = KidsSaveOcean;
-			productReference = 16559BCC20ADF9D5002D4F78 /* KidsSaveOcean.app */;
+			productReference = 16559BCC20ADF9D5002D4F78 /* FateChanger.app */;
 			productType = "com.apple.product-type.application";
 		};
 		16559BE120ADF9D5002D4F78 /* KidsSaveOceanTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16559BF920ADF9D6002D4F78 /* Build configuration list for PBXNativeTarget "KidsSaveOceanTests" */;
 			buildPhases = (
-				62302D8EC27116DCB7E52503 /* [CP] Check Pods Manifest.lock */,
+				8E12F4362EB8144995B76EA0 /* [CP] Check Pods Manifest.lock */,
 				16559BDE20ADF9D5002D4F78 /* Sources */,
 				16559BDF20ADF9D5002D4F78 /* Frameworks */,
 				16559BE020ADF9D5002D4F78 /* Resources */,
@@ -707,7 +747,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16559BFC20ADF9D6002D4F78 /* Build configuration list for PBXNativeTarget "KidsSaveOceanUITests" */;
 			buildPhases = (
-				0315F2E95393003ED3FB3762 /* [CP] Check Pods Manifest.lock */,
+				7A004D9922F27F91CBB0B8A4 /* [CP] Check Pods Manifest.lock */,
 				16559BE920ADF9D6002D4F78 /* Sources */,
 				16559BEA20ADF9D6002D4F78 /* Frameworks */,
 				16559BEB20ADF9D6002D4F78 /* Resources */,
@@ -787,7 +827,6 @@
 				16CF1A162382377B001D099D /* SF-Pro-Display-Semibold.otf in Resources */,
 				164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */,
 				164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */,
-				7C0B1CD422232BE40033F251 /* GoogleService-Info.plist in Resources */,
 				16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
 				16CF1A172382377E001D099D /* SF-Pro-Text-Semibold.otf in Resources */,
@@ -798,6 +837,7 @@
 				16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */,
 				C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */,
 				7CB3FF5D232FF9E300415D75 /* CreateNewEnvironmentPolicyViewController.storyboard in Resources */,
+				1616EB2E2408B83C005B1316 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +858,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0315F2E95393003ED3FB3762 /* [CP] Check Pods Manifest.lock */ = {
+		169DA531229F65EF00A58E9B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint --config .swiftlint.yml\n    swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		7A004D9922F27F91CBB0B8A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -840,24 +897,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		169DA531229F65EF00A58E9B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint --config .swiftlint.yml\n    swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		62302D8EC27116DCB7E52503 /* [CP] Check Pods Manifest.lock */ = {
+		8E12F4362EB8144995B76EA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -879,32 +919,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95946D3053AE223160E760F4 /* [CP] Embed Pods Frameworks */ = {
+		9B121A58A39637B6E1175634 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -913,7 +949,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E3E84AAFF64D88D1D15B2DB /* [CP] Check Pods Manifest.lock */ = {
+		E93B23CD15376EFF21F102FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -946,10 +982,13 @@
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
 				16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */,
+				16DDAA7D239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift in Sources */,
+				16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7CB51D38233A901D0014094C /* StepsTableViewCell.swift in Sources */,
 				164D7308234BA1FB0080ACB7 /* HijackLocation.swift in Sources */,
 				164D7306234B9E6A0080ACB7 /* HijackPolicy.swift in Sources */,
+				164EB07F246CD0B9001FF26D /* UIAlertController+Extensions.swift in Sources */,
 				161A0C1222B291DC0047DD40 /* LocationService.swift in Sources */,
 				16D4C28322C3FDBE006DBC64 /* NotificationProtocol.swift in Sources */,
 				16D4C28522C3FE10006DBC64 /* NotificationBadgeProtocol.swift in Sources */,
@@ -958,14 +997,17 @@
 				164D7302234B4BA00080ACB7 /* HijackPoliciesViewModel.swift in Sources */,
 				7C4BAB9E211C94B00038BAF2 /* CountryContact.swift in Sources */,
 				16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */,
+				162F6C2E23A725A400E709D5 /* ActionViewModel.swift in Sources */,
 				1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */,
 				7C9891632331264C00400CC5 /* YouthInitiativeProcessViewController.swift in Sources */,
 				7C4AF9A8233A8440006A8566 /* TrackTableViewCell.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
+				164EB081246CD1F1001FF26D /* UIAlertAction+Extensions.swift in Sources */,
 				163A07E422C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift in Sources */,
 				162602162373193D007B392D /* UINavigationController+Extention.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,
 				946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */,
+				164EB083246CDBA4001FF26D /* UISegmentedControl+Extentions.swift in Sources */,
 				7C7BBAC521B864B100C48D4E /* LetterTrackerViewController.swift in Sources */,
 				164D730F234BA39D0080ACB7 /* Campaign.swift in Sources */,
 				163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */,
@@ -973,6 +1015,7 @@
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
 				1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */,
 				1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */,
+				16FD4EEB23FE346200A1BA44 /* HijackPolicyVideoViewController.swift in Sources */,
 				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,
 				7CB3FF5B232FF8F000415D75 /* CreateNewEnvironmentPolicyViewController.swift in Sources */,
 				945A089120F643EB006ED13D /* MapViewController.swift in Sources */,
@@ -1006,6 +1049,7 @@
 				16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */,
 				7C989167233127A800400CC5 /* VoteNowViewController.swift in Sources */,
 				162572D422E37DEF00A702C4 /* UserDefaultsHelper.swift in Sources */,
+				162F6C3023A725B700E709D5 /* Action.swift in Sources */,
 				168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */,
 				16D4C27C22C1552F006DBC64 /* NotificationController.swift in Sources */,
 				16664B1622C4149D00F332A7 /* ActivistViewContoller.swift in Sources */,
@@ -1178,18 +1222,18 @@
 		};
 		16559BF720ADF9D6002D4F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 601C7F97CBFA2DC03E9A0D60 /* Pods-KidsSaveOcean.debug.xcconfig */;
+			baseConfigurationReference = 48ED5E343BB8EB620FEC0FC8 /* Pods-KidsSaveOcean.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsSaveOcean/KidsSaveOcean.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 3ATY5UD3SW;
 				INFOPLIST_FILE = KidsSaveOcean/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KidsSaveOcean;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FateChanger;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1197,19 +1241,19 @@
 		};
 		16559BF820ADF9D6002D4F78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ECC16072F43E73465244A56 /* Pods-KidsSaveOcean.release.xcconfig */;
+			baseConfigurationReference = 02DF6D3A88D2A8C5017AF491 /* Pods-KidsSaveOcean.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsSaveOcean/KidsSaveOcean.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 3ATY5UD3SW;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = KidsSaveOcean/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KidsSaveOcean;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FateChanger;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1218,7 +1262,7 @@
 		};
 		16559BFA20ADF9D6002D4F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD4C9487DF28835753C98C29 /* Pods-KidsSaveOceanTests.debug.xcconfig */;
+			baseConfigurationReference = 008C19CBF4A40CF6B4BE4150 /* Pods-KidsSaveOceanTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1236,7 +1280,7 @@
 		};
 		16559BFB20ADF9D6002D4F78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5CCBD1C7FF8B85758105725 /* Pods-KidsSaveOceanTests.release.xcconfig */;
+			baseConfigurationReference = ED154C0A5CC0E260907A0C63 /* Pods-KidsSaveOceanTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1254,7 +1298,7 @@
 		};
 		16559BFD20ADF9D6002D4F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6914C3C0778B663652C3BF7C /* Pods-KidsSaveOceanUITests.debug.xcconfig */;
+			baseConfigurationReference = AFA56E18AFA97ADA4CA58A7D /* Pods-KidsSaveOceanUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1271,7 +1315,7 @@
 		};
 		16559BFE20ADF9D6002D4F78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 998C89941F10610428F33BD9 /* Pods-KidsSaveOceanUITests.release.xcconfig */;
+			baseConfigurationReference = 60627274457D158C047F40BD /* Pods-KidsSaveOceanUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

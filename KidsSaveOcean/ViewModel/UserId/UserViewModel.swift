@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 import MapKit
 
 enum UserType: Int { // we can get from from Firebase, bit it will stay here temporary
@@ -18,30 +19,32 @@ enum UserType: Int { // we can get from from Firebase, bit it will stay here tem
 }
 
 enum DashboardTasksScopes: Int, CaseIterable {
-    case research, write_letter, share, start_campaign, local_politics, protest, write_letter_about_plastic, write_letter_about_climate, hijack_policy_selected, campaign
+    case research, write_letter_about_plastic, write_letter_about_climate, share, local_politics, protest,  hijack_policy_selected, campaign
 
     var firebaseFieldName: String {
         switch self {
         case .research:
             return "dash_learn_about_problem"
-        case .write_letter:
-            return "dash_write_a_letter"
+        case .write_letter_about_plastic:
+            return "dash_wrote_a_letter_about_plastic"
+        case .write_letter_about_climate:
+            return "dash_wrote_a_letter_about_climate"
         case .share:
             return "dash_share"
-        case .start_campaign:
-            return "dash_start_a_letter_writing_campaign"
         case .local_politics:
-            return "dash_become_active_in_local_politics"
+            return "dash_joined_a_policy_hijack_campaign"
         case .protest:
             return "dash_protest"
-        case .write_letter_about_plastic:
-            return "dash_write_letter_about_plastic"
-        case .write_letter_about_climate:
-            return "dash_write_letter_about_climate"
         case .hijack_policy_selected:
             return "hijack_policy_selected"
         case .campaign:
             return "campaign"
+//        case .write_letter:
+//            return "dash_write_a_letter"
+        
+//        case .start_campaign:
+//            return "dash_start_a_letter_writing_campaign"
+        
         }
     }
 
@@ -49,20 +52,20 @@ enum DashboardTasksScopes: Int, CaseIterable {
         switch self {
         case .research:
             return "Research plastic & climate"
-        case .write_letter:
-            return "Write your government a letter"
+//        case .write_letter:
+//            return "Write your government a letter"
         case .share:
             return "Spread Fatechanger by sharing"
-        case .start_campaign:
-            return "Start a letter writing campaign"
+//        case .start_campaign:
+//            return "Start a letter writing campaign"
         case .local_politics:
             return "Help create new environmental laws"
         case .protest:
             return "Take part in or organize a protest"
         case .write_letter_about_plastic:
-            return "Write your government a letter"
+            return "Write your government a letter about plastic"
         case .write_letter_about_climate:
-            return "Write your government a letter"
+            return "Write your government a letter about climate"
         default:
             return ""
         }
@@ -73,24 +76,26 @@ var lettersWrittenKey: String {return  "user_letters_written"}
 var userTypeKey: String {return "user_person_type"}
 var hijackPolicySelectedKey: String {return "hijack_policy_selected"}
 var campaignKey: String {return "campaign"}
+var locationIdKey: String {return "location_id"}
+var signaturesPledgedKey: String {return "signatures_pledged"}
 
 class UserViewModel {
     let authorizedUser = Auth.auth().currentUser
     var databaseReferenece: DatabaseReference? //= Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
-////// Zip2Sequence ? 
-    var parametersDisctionary: [String: Any?] = [ DashboardTasksScopes.research.firebaseFieldName: false,
-                                                  DashboardTasksScopes.write_letter.firebaseFieldName: false,
-                                                  DashboardTasksScopes.share.firebaseFieldName: false,
-                                                  DashboardTasksScopes.start_campaign.firebaseFieldName: false,
+////// Zip2Sequence ?
+    var parametersDisctionary: [String: Any?] = [ campaignKey: nil,
                                                   DashboardTasksScopes.local_politics.firebaseFieldName: false,
+                                                  DashboardTasksScopes.research.firebaseFieldName: false,
                                                   DashboardTasksScopes.protest.firebaseFieldName: false,
+                                                  DashboardTasksScopes.share.firebaseFieldName: false,
                                                   DashboardTasksScopes.write_letter_about_climate.firebaseFieldName: false,
                                                   DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName: false,
-                                                  lettersWrittenKey: 0,
-                                                  userTypeKey: 0,
                                                   hijackPolicySelectedKey: "",
-                                                  campaignKey: nil
-                        ]
+                                                  locationIdKey: "",
+                                                  signaturesPledgedKey: 0,
+                                                  lettersWrittenKey: 0,
+                                                  userTypeKey: 0
+        ]
 
     var local_politics: Bool = false {
         willSet(newValue) {
@@ -112,25 +117,24 @@ class UserViewModel {
             parametersDisctionary[DashboardTasksScopes.share.firebaseFieldName] = newValue
         }
     }
-    var start_campaign: Bool = false {
-        willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.start_campaign.firebaseFieldName] = newValue
-        }
-    }
-    var write_letter: Bool = false {
-        willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.write_letter.firebaseFieldName] = newValue
-        }
-    }
+    var start_campaign: Bool = false
+//    {
+//        willSet(newValue) {
+//            parametersDisctionary[DashboardTasksScopes.start_campaign.firebaseFieldName] = newValue
+//        }
+//    }
+    
+    //var write_letter: Bool = false
     var write_letter_about_climate: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName] = newValue
-
+            parametersDisctionary[DashboardTasksScopes.write_letter_about_climate.firebaseFieldName] = newValue
+            //setWrittingState()
         }
     }
     var write_letter_about_plastic: Bool = false {
         willSet(newValue) {
-            parametersDisctionary[DashboardTasksScopes.write_letter_about_climate.firebaseFieldName] = newValue
+            parametersDisctionary[DashboardTasksScopes.write_letter_about_plastic.firebaseFieldName] = newValue
+            //setWrittingState()
         }
     }
     var letters_written: Int = 0 {
@@ -146,6 +150,18 @@ class UserViewModel {
     var hijack_policy_selected: String = "" {
         willSet(newValue) {
             parametersDisctionary[hijackPolicySelectedKey] = newValue
+        }
+    }
+    
+    var signatures_pledged: Int = 0 {
+        willSet(newValue) {
+            parametersDisctionary[signaturesPledgedKey] = newValue
+        }
+    }
+    
+    var location_id: String = "" {
+        willSet(newValue) {
+            parametersDisctionary[locationIdKey] = newValue
         }
     }
     
@@ -185,17 +201,30 @@ class UserViewModel {
         if Auth.auth().currentUser?.uid != nil {
             self.databaseReferenece = Database.database().reference().child("USERS").child(Auth.auth().currentUser!.uid)
             self.fetchUser {
+                self.userDataHasBeenLoaded = true
+                //self.setWrittingState()
                 //NotificationCenter.default.post(name: Notification.Name(Settings.UserHasBeenLoadedNotificationName), object: nil)
             }
         }
     }
 
+    var userDataHasBeenLoaded = false {
+        didSet {
+            if userDataHasBeenLoaded {
+                NotificationCenter.default.post(name: .userDataHasBeenLoaded, object: nil)
+            }
+        }
+    }
+//    private func setWrittingState() {
+//        self.write_letter = self.write_letter_about_plastic && self.write_letter_about_climate
+//    }
     // swiftlint:disable cyclomatic_complexity
     // swiftlint:disable function_body_length
     func fetchUser(_ completion: (() -> Void)?) {
 
         databaseReferenece?.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
+                completion!()
                 return
             }
 
@@ -213,20 +242,20 @@ class UserViewModel {
                     self.research = value
                     continue
 
-                case DashboardTasksScopes.write_letter.firebaseFieldName:
-                    guard let value = userFBData.value as? Bool else {continue}
-                    self.write_letter = value
-                    continue
+//                case DashboardTasksScopes.write_letter.firebaseFieldName:
+//                    guard let value = userFBData.value as? Bool else {continue}
+//                    self.write_letter = value
+//                    continue
 
                 case DashboardTasksScopes.share.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
                     self.share = value
                     continue
 
-                case DashboardTasksScopes.start_campaign.firebaseFieldName:
-                    guard let value = userFBData.value as? Bool else {continue}
-                    self.start_campaign = value
-                    continue
+//                case DashboardTasksScopes.start_campaign.firebaseFieldName:
+//                    guard let value = userFBData.value as? Bool else {continue}
+//                    self.start_campaign = value
+//                    continue
 
                 case DashboardTasksScopes.local_politics.firebaseFieldName:
                     guard let value = userFBData.value as? Bool else {continue}
@@ -244,7 +273,7 @@ class UserViewModel {
                     continue
 
                 case userTypeKey:
-                    guard let value = userFBData.value as? UserType else {continue}
+                    guard let value = UserType(rawValue: userFBData.value as! Int) else {continue}
                     self.user_type = value
                     continue
                     
@@ -268,6 +297,17 @@ class UserViewModel {
                     self.campaign = CampaignSignatures(campaing: value)
                     //value
                     continue
+                    
+                case signaturesPledgedKey:
+                    guard let value = userFBData.value as? Int else {continue}
+                    self.signatures_pledged = value
+                    //value
+                    continue
+                    
+                case locationIdKey:
+                    guard let value = userFBData.value as? String else {continue}
+                    self.location_id = value
+                    continue
 
                 default:
                     continue
@@ -289,14 +329,14 @@ class UserViewModel {
         case .research:
             self.research = value
 
-        case .write_letter:
-            self.write_letter = value
+//        case .write_letter:
+//            self.write_letter = value
 
         case.share:
             self.share = value
 
-        case .start_campaign:
-            self.start_campaign = value
+//        case .start_campaign:
+//            self.start_campaign = value
 
         case .local_politics:
             self.local_politics = value
@@ -320,14 +360,14 @@ class UserViewModel {
         case .research:
             return self.research
 
-        case .write_letter:
-            return self.write_letter
+//        case .write_letter:
+//            return self.write_letter
 
         case.share:
             return self.share
 
-        case .start_campaign:
-            return self.start_campaign
+//        case .start_campaign:
+//            return self.start_campaign
 
         case .local_politics:
             return self.local_politics
@@ -387,5 +427,11 @@ class UserViewModel {
 
     class func getDashboardFullTasks() -> [String] {
        return DashboardTasksScopes.allCases.map { $0.dashboardTasks }
+    }
+    
+    func isUserLocationCampaignIsLive() -> Bool {
+        let campaignLive = campaign != nil ? CampaignViewModel.shared().campaigns.filter({$0.id == campaign?.campaign_id}).first?.live : false
+        return campaignLive ?? false
+        
     }
 }

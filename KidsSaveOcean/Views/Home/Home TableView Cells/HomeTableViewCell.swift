@@ -19,7 +19,9 @@ class HomeTableViewCell: UITableViewCell, HomeTableViewCellProtocol, Notificatio
         
         imageCover.image =  viewModel.image
         titleLabel.text = viewModel.title
+        titleLabel.textColor = UIColor.backgroundWhite
         subTitleLabel.text = viewModel.subTitle
+        subTitleLabel.textColor = UIColor.backgroundWhite
     }
     
     func setDarkLetters() {

@@ -11,7 +11,13 @@ import UIKit
 class PolicyViewController: UIViewController, Instantiatable {
 
     @IBAction func policyToolkitAction(_ sender: Any) {
-        tabBarController?.switchToStudentResourcesScreen()
+        tabBarController?.switchToHomeScreen()
+        guard let homeViewController = tabBarController?.getSelectedTabMainViewController() as? HomeTableViewController else { return }
+        
+        let taskViewController = CreateNewEnvironmentPolicyViewController.instantiate()
+        taskViewController.title = ""
+        homeViewController.navigationController?.pushViewController(taskViewController, animated: true)
+        navigationController?.popViewController(animated: false)
     }
 
 }

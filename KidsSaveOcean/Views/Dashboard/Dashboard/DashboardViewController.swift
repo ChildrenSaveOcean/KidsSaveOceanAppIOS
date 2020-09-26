@@ -47,19 +47,34 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var topSpaceContraint: KSOLayoutConstraint!
 
     @IBOutlet weak var actionAlertView: UIView!
-
+    
+    @IBOutlet weak var blur: UIVisualEffectView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
     
-    let twoCompletionStatesTask = 1
+    //let twoCompletionStatesTask = 1
 
     let taskScope: [String] = UserViewModel.getDashboardFullTasks() //DashboardTasksScopes.allCases.map { $0.dashboardTasks }
     let tasks: [DashboardTasksScopes] = UserViewModel.getDashboardTasks() //DashboardTasksScopes.allCases.map { $0.rawValue }
 
-    let linkForSharing = "https://www.kidssaveocean.com/change-fate"
+    var _completionTasksStates: [Bool]?
+    var completionTasksStates: [Bool] {
+        get {
+            if _completionTasksStates != nil {
+                return _completionTasksStates!
+            } else {
+                _completionTasksStates = UserViewModel.shared().getCompletionTasksStatuses()
 
-    lazy var completionTasksStates =  UserViewModel.shared().getCompletionTasksStatuses() // Settings.getCompletionTasksStatus()//
+                return _completionTasksStates!
+            }
+        }
+        set {
+            _completionTasksStates = newValue
+        }
+    }
 
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3, self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
 
@@ -68,11 +83,6 @@ class DashboardViewController: UIViewController {
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.backgroundColor = .clear
 
         if UIScreen.main.bounds.height > 800 {
             deviceXbackground.alpha = 1
@@ -80,16 +90,25 @@ class DashboardViewController: UIViewController {
             deviceXbackground.alpha = 0
         }
 
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setUserDataLoadingState), name: .userDataHasBeenLoaded, object: nil)
+        setUserDataLoadingState()
+        
         for _ in 0...2 {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
         }
+        
+        setUpTopIcons()
+               var firstIncompetedTask = self.completionTasksStates.firstIndex(of: false) ?? 0
+               if firstIncompetedTask >= 5 {
+                   firstIncompetedTask = 0
+               }
+        self.chooseTaskWithNum(firstIncompetedTask)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        
         actionAlertButton.delegate = self
         actionAlertButton.setState()
         
@@ -103,9 +122,7 @@ class DashboardViewController: UIViewController {
 
         view.layoutIfNeeded()
 
-        setUpTopIcons()
-        let firstIncompetedTask = self.completionTasksStates.firstIndex(of: false)
-        self.chooseTaskWithNum(firstIncompetedTask ?? 0)
+       
     }
 
     override func viewDidLayoutSubviews() {
@@ -148,28 +165,29 @@ class DashboardViewController: UIViewController {
         case 0:
             tabBarController?.switchToStudentResourcesScreen()
 
-        case 1:
+        case 1, 2:
             
             let taskViewController = WriteToWhereViewController.instantiate()
             taskViewController.title = ""
             navigationController?.pushViewController(taskViewController, animated: true)
 
-        case 2:
-            let objectsToShare = [URL(string: linkForSharing) as Any]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            self.present(activityVC, animated: true) {
-                self.chooseTaskWithNum(2)
+        case 3:
+            ShareKidsSaveOcean.share(target: self) {
+                //self.chooseTaskWithNum(3)
             }
             
-        case 3:
-            let taskViewController = ToolsWithTeethViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+//        case 4:
+//            let taskViewController = ToolsWithTeethViewController.instantiate()
+//            taskViewController.title = ""
+//            navigationController?.pushViewController(taskViewController, animated: true)
             
         case 4:
-            let taskViewController = PolicyViewController.instantiate()
+            //tabBarController?.switchToHomeScreen()
+            //guard let homeViewController = tabBarController?.getSelectedTabMainViewController() as? HomeTableViewController else { return }
+            
+            let taskViewController = CreateNewEnvironmentPolicyViewController.instantiate()
             taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            self.navigationController?.pushViewController(taskViewController, animated: true)
 
         case 5:
             let taskViewController = ActivistViewContoller.instantiate()
@@ -183,33 +201,33 @@ class DashboardViewController: UIViewController {
 
     @IBAction func completeAction(_ sender: Any) {
         var newState: Bool
-        if isThisTwoCompletionStatesTask() {
-            newState = !UserViewModel.shared().write_letter_about_climate
-            completionTasksStates[7] = newState
-            let commonState = newState == UserViewModel.shared().write_letter_about_plastic ? newState : false
-            //if newState == UserViewModel.shared().write_letter_about_plastic {
-                completionTasksStates[currentTaskSwitched] = commonState
-                topIcons[currentTaskSwitched]?.completed = commonState
-            //}
-        } else {
+//        if isThisTwoCompletionStatesTask() {
+//            newState = !UserViewModel.shared().write_letter_about_climate
+//            completionTasksStates[7] = newState
+//            let commonState = newState == UserViewModel.shared().write_letter_about_plastic ? newState : false
+//            //if newState == UserViewModel.shared().write_letter_about_plastic {
+//                completionTasksStates[currentTaskSwitched] = commonState
+//                topIcons[currentTaskSwitched]?.completed = commonState
+//            //}
+//        } else {
             newState = !completionTasksStates[currentTaskSwitched]
             completionTasksStates[currentTaskSwitched] = newState
             topIcons[currentTaskSwitched]?.completed = newState
-        }
+ //       }
         
         saveTaskStates()
     }
     
     @IBAction func completeMiddleButtonAction(_ sender: Any) {
-        let newState = !UserViewModel.shared().write_letter_about_plastic
-        completionTasksStates[6] = newState
-        let commonState = newState == UserViewModel.shared().write_letter_about_climate ? newState : false
-        //if newState == UserViewModel.shared().write_letter_about_climate {
-            completionTasksStates[currentTaskSwitched] = commonState
-            topIcons[currentTaskSwitched]?.completed = commonState
-        //}
-        
-        saveTaskStates()
+//        let newState = !UserViewModel.shared().write_letter_about_plastic
+//        completionTasksStates[6] = newState
+//        let commonState = newState == UserViewModel.shared().write_letter_about_climate ? newState : false
+//        //if newState == UserViewModel.shared().write_letter_about_climate {
+//            completionTasksStates[currentTaskSwitched] = commonState
+//            topIcons[currentTaskSwitched]?.completed = commonState
+//        //}
+//
+//        saveTaskStates()
     }
 
     @IBAction func actionAlertViewButtonAction(_ sender: Any) {
@@ -217,6 +235,7 @@ class DashboardViewController: UIViewController {
     }
     
     private func saveTaskStates() {
+        guard UserViewModel.shared().userDataHasBeenLoaded else { return }
         UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
         UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
         selectTopIcon()
@@ -228,6 +247,24 @@ class DashboardViewController: UIViewController {
     }
 
     // MARK: Private methods
+    @objc private func setUserDataLoadingState() {
+        if !UserViewModel.shared().userDataHasBeenLoaded {
+            blur.frame = view.bounds
+            blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blur.alpha = 0.7
+            activityIndicator.alpha = 1
+            activityIndicator.startAnimating()
+        } else {
+            blur.frame = .zero
+            blur.alpha = 0.0
+            activityIndicator.alpha = 0
+            activityIndicator.stopAnimating()
+            
+            _completionTasksStates = nil
+            setUpTopIcons()
+        }
+    }
+    
     private func chooseTaskWithNum(_ num: Int) {
 
         if num == currentTaskSwitched {
@@ -259,8 +296,8 @@ class DashboardViewController: UIViewController {
 
     private func setUpDidItSection() {
         
-        let twoCompletionStatesTask = isThisTwoCompletionStatesTask()
-        getDidButtonsStackView(narrow: !twoCompletionStatesTask)
+        //let twoCompletionStatesTask = isThisTwoCompletionStatesTask()
+        getDidButtonsStackView(narrow: true) //!twoCompletionStatesTask)
         
         if completionTasksStates[currentTaskSwitched] {
             completedFistImage.image = #imageLiteral(resourceName: "fist_xvmush")
@@ -270,31 +307,31 @@ class DashboardViewController: UIViewController {
             completedLabel.text = "Incomplete"
         }
 
-        if twoCompletionStatesTask {
-            if completionTasksStates[ 6] {
-                didItMiddleButton.setTitle("Not yet\nabout plastic", for: .normal)
-            } else {
-                didItMiddleButton.setTitle("I did it about\nplastic!", for: .normal)
-            }
-            
-            if completionTasksStates[7]  == true {
-                didItButton.setTitle("Not yet\nabout climate", for: .normal)
-            } else {
-                didItButton.setTitle("I did it about\nclimate!", for: .normal)
-            }
-            
-        } else {
+//        if twoCompletionStatesTask {
+//            if completionTasksStates[ 6] {
+//                didItMiddleButton.setTitle("Not yet\nabout plastic", for: .normal)
+//            } else {
+//                didItMiddleButton.setTitle("I did it about\nplastic!", for: .normal)
+//            }
+//
+//            if completionTasksStates[7]  == true {
+//                didItButton.setTitle("Not yet\nabout climate", for: .normal)
+//            } else {
+//                didItButton.setTitle("I did it about\nclimate!", for: .normal)
+//            }
+//
+//        } else {
             if completionTasksStates[currentTaskSwitched] {
                 didItButton.setTitle("Not yet", for: .normal)
             } else {
                 didItButton.setTitle("I did it!", for: .normal)
             }
-        }
+//        }
     }
 
-    private func isThisTwoCompletionStatesTask() -> Bool {
-        return twoCompletionStatesTask == currentTaskSwitched
-    }
+//    private func isThisTwoCompletionStatesTask() -> Bool {
+//        return twoCompletionStatesTask == currentTaskSwitched
+//    }
     
     private func getDidButtonsStackView(narrow: Bool) {
         if didItMiddleButton.isHidden == narrow {
@@ -318,8 +355,10 @@ class DashboardViewController: UIViewController {
 
    private func rotateMeterPointer() {
 
-        let oneAngle = CGFloat.pi / CGFloat(6)
-        let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
+//        let oneAngle = CGFloat.pi / CGFloat(6)
+//        let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
+        let oneAngle = CGFloat.pi / CGFloat(5)
+        let angle = currentTaskSwitched < 2 ? oneAngle * CGFloat(currentTaskSwitched + 1) : oneAngle * CGFloat(currentTaskSwitched)
         let time = Double(abs(previousTaskSwitched - currentTaskSwitched)) * 0.2
         UIView.animate(withDuration: time) {
             self.meterPointer.transform = CGAffineTransform(rotationAngle: angle)
@@ -385,7 +424,9 @@ extension DashboardViewController: ActionAlertProtocol {
     
     func gotoActionAlertViewController() {
         let alertActionVC = AlertActionDashboardViewController()
-        navigationController?.pushViewController(alertActionVC, animated: true)
+        present(alertActionVC, animated: true) {
+            self.updateViews()
+        }
         actionAlertView.alpha = 0
     }
 }

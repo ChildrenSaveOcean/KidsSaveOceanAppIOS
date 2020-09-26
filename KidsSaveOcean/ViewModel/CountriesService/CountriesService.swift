@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
 import MapKit
 
 class CountriesService: NSObject {
@@ -28,9 +28,14 @@ class CountriesService: NSObject {
 
     func setup() {
         self.fetchContacts(databaseReferenece: Database.database().reference()) {
-            self.contryContactsHasBeenLoaded = true
-            NotificationCenter.default.post(name: .countriesHasBeenLoaded, object: nil)
-            
+            ActionViewModel.shared().setup { () in
+                let actions = ActionViewModel.shared().actions
+                for action in actions {
+                    self.countriesContacts.filter { $0.code == action.action_location }.first?.action = action
+                }
+                self.contryContactsHasBeenLoaded = true
+                NotificationCenter.default.post(name: .countriesHasBeenLoaded, object: nil)
+            }
         }
     }
 

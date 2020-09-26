@@ -17,12 +17,7 @@ class TrackTheHijackViewController: UIViewController, Instantiatable {
     }
     
     @IBAction func spreadButton(_ sender: Any) {
-        let linkForSharing = "https://www.kidssaveocean.com/change-fate"
-        let objectsToShare = [URL(string: linkForSharing) as Any]
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        self.present(activityVC, animated: true) {
-            //
-        }
+        ShareKidsSaveOcean.share(target: self)
     }
 
 }

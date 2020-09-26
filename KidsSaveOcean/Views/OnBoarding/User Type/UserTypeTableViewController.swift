@@ -78,10 +78,12 @@ class UserTypeTableViewController: UITableViewController {
     let tryAgainButton = UIAlertAction(title: "Cancel and Try again", style: .cancel) { (_:UIAlertAction) in
       //
     }
+    tryAgainButton.setAppTextColor()
 
     let goAheadButton = UIAlertAction(title: "GO AHEAD", style: .default) { (_:UIAlertAction) in
       self.gotoTabViewController()
     }
+    goAheadButton.setAppTextColor()
 
     warnMessage.addAction(goAheadButton)
     warnMessage.addAction(tryAgainButton)

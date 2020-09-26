@@ -15,24 +15,45 @@ protocol UserTypeVideoDelegate: AnyObject {
 }
 
 class UserTypeVideoViewController: WebIntegrationViewController {
+    
+    enum ButtonDirectionType {
+        case back, forward
+    }
 
     weak var delegate: UserTypeVideoDelegate?
     var urlString: String = ""
     var userType: UserType?
     
+    private let buttonWidth: CGFloat = 50
+    private let buttonHeight: CGFloat = 50
+    
     override var originalWebUrlString: String {
         guard !urlString.isEmpty else { return "" }
-        return "https://www.youtube.com/embed/\(urlString)"
+        switch userType {
+        case .student:
+             return "https://www.kidssaveocean.com/fatechangeryouthintro"
+        default:
+            return "https://www.kidssaveocean.com/video-test"
+        }
     }
 
     private func showActionButtons() {
-        let buttonsWidth: CGFloat = 100
-        let buttonsHeight: CGFloat = 50
-        let shiftY = self.view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top - buttonsHeight - 10
-        let shiftX = (self.view.bounds.width - 2*buttonsWidth)/3
+        let shiftY = self.view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top - buttonHeight - 10
+        let shiftX = (self.view.bounds.width - 2*buttonWidth)/3
 
-        let goButton = self.createButtonWithTitle("GO AHEAD")
-        goButton.frame = CGRect(x: shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
+        let backButton = self.createButtonWithTitle(.back)
+        backButton.frame = CGRect(x: shiftX, y: shiftY, width: buttonWidth, height: buttonHeight)
+
+        backButton.addTargetClosure { (_) in
+            self.webView.stopLoading()
+            self.webView.removeFromSuperview()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        webView.addSubview(backButton)
+        webView.bringSubviewToFront(backButton)
+        
+        let goButton = self.createButtonWithTitle(.forward)
+        goButton.frame = CGRect(x: self.view.bounds.width - buttonWidth - shiftX, y: shiftY, width: buttonWidth, height: buttonHeight)
 
         goButton.addTargetClosure { (_) in
             UserDefaultsHelper.saveOnBoardingHasBeenShown()
@@ -50,24 +71,18 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         webView.addSubview(goButton)
         webView.bringSubviewToFront(goButton)
 
-        let backButton = self.createButtonWithTitle("BACK")
-        backButton.frame = CGRect(x: self.view.bounds.width - buttonsWidth - shiftX, y: shiftY, width: buttonsWidth, height: buttonsHeight)
-
-        backButton.addTargetClosure { (_) in
-            self.webView.stopLoading()
-            self.webView.removeFromSuperview()
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-        webView.addSubview(backButton)
-        webView.bringSubviewToFront(backButton)
     }
 
-    private func createButtonWithTitle(_ title: String) -> UIButton {
+    private func createButtonWithTitle(_ direction: ButtonDirectionType) -> UIButton {
         let button = UIButton()
-        button.backgroundColor = .gray
-        button.setTitle(title, for: .normal)
-        button.titleLabel?.textColor = .black
-        button.roundCorners()
+        //let image = direction == .back ? #imageLiteral(resourceName: "Back_video") : #imageLiteral(resourceName: "skip_video")
+        let image = direction == .back ?  #imageLiteral(resourceName: "chevron-back") : #imageLiteral(resourceName: "chevron")
+        let tintedImage = image.withRenderingMode(.alwaysTemplate)
+        button.setImage(tintedImage, for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = UIColor.kidsSaveOceanBlue
+        button.layer.cornerRadius = buttonWidth/2
+        button.clipsToBounds = true
         return button
     }
 

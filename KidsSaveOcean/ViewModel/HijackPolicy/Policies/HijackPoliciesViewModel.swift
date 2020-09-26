@@ -28,6 +28,14 @@ class HijackPoliciesViewModel {
         fetchPolicies(nil)
     }
     
+    var policiesHaveBeenLoaded = false {
+        didSet {
+            if policiesHaveBeenLoaded {
+                NotificationCenter.default.post(name: .policiesHaveBeenLoaded, object: nil)
+            }
+        }
+    }
+    
     func fetchPolicies(_ completion: (() -> Void)?) {
 
         hidjackPolicies.removeAll()
@@ -63,6 +71,7 @@ class HijackPoliciesViewModel {
                 self.hidjackPolicies.append(policy)
             }
     
+            self.policiesHaveBeenLoaded = true
             if completion != nil {
                 completion!()
             }
@@ -70,7 +79,24 @@ class HijackPoliciesViewModel {
     }
     
     func updateVotes(policy: HijackPolicy, value: Int) {
-         Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
-             setup()
+        Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
+//        self.policiesHaveBeenLoaded = false
+//        setup()
+    }
+    
+    func getPolicyAttrString(for policy: String) -> NSMutableAttributedString {
+        let attrPolicyStr = NSMutableAttributedString(string: "Policy chosen: ")
+        let font = UIFont.proRegular15
+        attrPolicyStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrPolicyStr.length))
+        
+        //let policyDescr = policy.description
+        let attrPolicyDescrStr = NSMutableAttributedString(string: policy)
+        let boldFont = UIFont.proSemiBold15
+        attrPolicyDescrStr.addAttribute(NSAttributedString.Key.font, value: boldFont, range: NSRange(location: 0, length: attrPolicyDescrStr.length))
+
+        let resultPolicyStr = NSMutableAttributedString()
+        resultPolicyStr.append(attrPolicyStr)
+        resultPolicyStr.append(attrPolicyDescrStr)
+        return resultPolicyStr
     }
 }
