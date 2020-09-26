@@ -438,7 +438,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xm0-wL-XSG"/>
-                        <color key="backgroundColor" red="0.13855496048927307" green="0.63844740390777588" blue="0.99241381883621216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.31947043539999997" green="0.56047385930000004" blue="0.76080983879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Exn-3P-qcj" firstAttribute="centerX" secondItem="Xm0-wL-XSG" secondAttribute="centerX" id="00f-38-gy0"/>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="width" secondItem="4br-dF-I5I" secondAttribute="width" id="0Of-WB-6qx"/>
@@ -1102,7 +1102,7 @@
     <resources>
         <image name="ACTION ALERT" width="108" height="136"/>
         <image name="ACTION ALERT LIVE" width="108" height="161"/>
-        <image name="IPHONE X background" width="375" height="812"/>
+        <image name="IPHONE X background" width="457" height="894"/>
         <image name="Incomplete fist and writing" width="85" height="98"/>
         <image name="Main board" width="317" height="263"/>
         <image name="Pointer" width="178" height="10"/>
@@ -1111,7 +1111,7 @@
         <image name="dashboardTabItem" width="48" height="32"/>
         <image name="golden_rules_cover" width="375" height="281"/>
         <image name="meterScale" width="170.33332824707031" height="85.333335876464844"/>
-        <image name="platter" width="270" height="163"/>
+        <image name="platter" width="315" height="262"/>
         <image name="task2cover" width="375" height="413"/>
         <image name="task4cover" width="375" height="333"/>
         <image name="task5cover" width="375" height="332"/>

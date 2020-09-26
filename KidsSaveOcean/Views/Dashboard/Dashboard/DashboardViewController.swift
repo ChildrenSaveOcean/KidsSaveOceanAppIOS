@@ -85,9 +85,9 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
 
         if UIScreen.main.bounds.height > 800 {
-            deviceXbackground.alpha = 1
+            deviceXbackground.image = #imageLiteral(resourceName: "IPHONE X background")
         } else {
-            deviceXbackground.alpha = 0
+            deviceXbackground.image = #imageLiteral(resourceName: "blueMetalBackground")
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.setUserDataLoadingState), name: .userDataHasBeenLoaded, object: nil)

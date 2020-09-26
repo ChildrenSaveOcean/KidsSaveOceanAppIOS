@@ -137,6 +137,12 @@ class WebIntegrationViewController: UIViewController {
     
     func checkNavigationButtons() {
         navigationController?.navigationBar.isHidden = hideNavigationBarByDefault
+
+        let statusBarFrame = UIApplication.shared.statusBarFrame
+        let statusBarView = UIView(frame: statusBarFrame)
+        self.view.addSubview(statusBarView)
+        statusBarView.backgroundColor = .white
+
         view.setNeedsLayout()
         view.layoutIfNeeded()
         
