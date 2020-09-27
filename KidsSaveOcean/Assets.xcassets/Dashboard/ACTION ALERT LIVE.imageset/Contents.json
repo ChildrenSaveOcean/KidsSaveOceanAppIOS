@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ACTION ALERT LIVE.png",
+      "filename" : "ActionAlertRed.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ACTION ALERT LIVE@2x.png",
+      "filename" : "ActionAlertRed@3x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ACTION ALERT LIVE@3x.png",
+      "filename" : "ActionAlertRed@2x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

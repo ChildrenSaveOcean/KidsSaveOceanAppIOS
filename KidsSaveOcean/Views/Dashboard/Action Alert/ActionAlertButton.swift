@@ -22,7 +22,7 @@ class ActionAlertButton: UIButton, NotificationProtocol {
     
     var actionAlertState: ActionAlertState = .inactive {
         willSet(newValue) {
-            if newValue == .active { 
+            if newValue == .active {
                // self.setImage(#imageLiteral(resourceName: "ACTION ALERT LIVE"), for: .normal)
                 self.setBackgroundImage(#imageLiteral(resourceName: "ACTION ALERT LIVE"), for: .normal)
                 self.removeTarget(self, action: #selector(inactiveAction), for: .touchUpInside)
