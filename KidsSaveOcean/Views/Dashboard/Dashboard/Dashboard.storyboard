@@ -139,10 +139,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-uP-1IW">
-                                <rect key="frame" x="88.333333333333343" y="373.33333333333331" width="263.33333333333326" height="33"/>
+                                <rect key="frame" x="87" y="373.33333333333331" width="266" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-mB-t2e">
-                                        <rect key="frame" x="0.0" y="0.66666666666668561" width="79.333333333333329" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="33"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.63137254899999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Lcc-mB-t2e" secondAttribute="height" multiplier="82:33" id="krp-8S-its"/>
@@ -161,7 +161,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kpB-Rf-ORf" customClass="KSODidButton" customModule="FateChanger" customModuleProvider="target">
-                                        <rect key="frame" x="89.333333333333314" y="0.0" width="82" height="33"/>
+                                        <rect key="frame" x="92" y="0.0" width="82" height="33"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.63137254899999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kpB-Rf-ORf" secondAttribute="height" multiplier="82:33" id="Rdx-iR-4yP"/>
@@ -180,7 +180,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-M1-UBW" customClass="KSODidButton" customModule="FateChanger" customModuleProvider="target">
-                                        <rect key="frame" x="181.33333333333337" y="0.0" width="82" height="33"/>
+                                        <rect key="frame" x="184" y="0.0" width="82" height="33"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.63137254899999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nTi-M1-UBW" secondAttribute="height" multiplier="82:33" id="6aW-0N-7ri"/>
@@ -313,9 +313,12 @@
                                     <action selector="switchTask5:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="SCs-we-WTQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="FateChanger" customModuleProvider="target">
-                                <rect key="frame" x="230" y="503.66666666666674" width="155" height="136"/>
-                                <state key="normal" image="ACTION ALERT"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="FateChanger" customModuleProvider="target">
+                                <rect key="frame" x="254.66666666666666" y="488.33333333333331" width="120.33333333333334" height="151.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="324:408" id="4NY-qK-wMR"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ACTION ALERT"/>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meterScale" translatesAutoresizingMaskIntoConstraints="NO" id="4br-dF-I5I">
                                 <rect key="frame" x="63.000000000000014" y="154" width="192.33333333333337" height="98"/>
@@ -449,7 +452,7 @@
                             <constraint firstItem="hxb-kC-tnV" firstAttribute="leading" secondItem="Luv-j1-90t" secondAttribute="leading" constant="20" id="5PJ-sx-rqR" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="tMA-s0-b18" firstAttribute="leading" secondItem="upi-QJ-4bj" secondAttribute="trailing" id="5le-9L-RwP"/>
                             <constraint firstItem="Exn-3P-qcj" firstAttribute="centerY" secondItem="ScW-O5-Pi7" secondAttribute="centerY" id="66M-FP-3XR"/>
-                            <constraint firstItem="R9a-4H-YuA" firstAttribute="trailing" secondItem="Kz5-ah-x5R" secondAttribute="trailing" id="6Am-B9-Wg7"/>
+                            <constraint firstItem="R9a-4H-YuA" firstAttribute="trailing" secondItem="Kz5-ah-x5R" secondAttribute="trailing" constant="-10" id="6Am-B9-Wg7"/>
                             <constraint firstItem="pnM-lO-FMb" firstAttribute="height" secondItem="PpT-jX-Rna" secondAttribute="height" id="6GS-Yy-F38"/>
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="width" secondItem="Luv-j1-90t" secondAttribute="width" multiplier="0.75" priority="250" constant="-4.25" id="6Wq-3g-Lb0" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="gII-Qq-3yG" firstAttribute="height" secondItem="zGt-A5-OM8" secondAttribute="height" id="8Pe-hU-hPL"/>
@@ -510,6 +513,7 @@
                             <constraint firstItem="Exn-3P-qcj" firstAttribute="leading" secondItem="Xm0-wL-XSG" secondAttribute="leading" id="kYV-K6-f3P"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="bottom" secondItem="Fjn-Sh-ltB" secondAttribute="bottom" constant="-40" id="mDf-Pr-vVR"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Kz5-ah-x5R" secondAttribute="bottom" constant="11" id="mT6-3m-zSX"/>
+                            <constraint firstItem="R9a-4H-YuA" firstAttribute="height" secondItem="fKa-Bc-xcX" secondAttribute="height" multiplier="0.85" id="nyw-4z-ZVk"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="height" secondItem="pnM-lO-FMb" secondAttribute="height" id="oAq-dg-a5P"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="trailing" secondItem="TYL-td-fGV" secondAttribute="trailing" constant="20" id="oHI-hY-4st"/>
                             <constraint firstItem="ixk-7e-iPf" firstAttribute="centerX" secondItem="ScW-O5-Pi7" secondAttribute="centerX" id="p3E-vl-bHi"/>
@@ -524,7 +528,6 @@
                             <constraint firstItem="PpT-jX-Rna" firstAttribute="leading" secondItem="1Y0-IY-baO" secondAttribute="trailing" constant="3" id="vwX-Wl-BB8"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="centerY" secondItem="Cqh-Yo-LuE" secondAttribute="centerY" id="wFW-JN-8Tu"/>
                             <constraint firstItem="HDd-i0-FAy" firstAttribute="centerX" secondItem="zGt-A5-OM8" secondAttribute="centerX" id="x1i-zf-iGL"/>
-                            <constraint firstItem="R9a-4H-YuA" firstAttribute="width" secondItem="Xm0-wL-XSG" secondAttribute="width" multiplier="155:414" id="x2Z-2U-oTA"/>
                             <constraint firstItem="9zu-l6-3J2" firstAttribute="trailing" secondItem="gII-Qq-3yG" secondAttribute="trailing" id="xXi-dg-N5A"/>
                             <constraint firstItem="7MJ-eY-HFC" firstAttribute="leading" secondItem="pnM-lO-FMb" secondAttribute="trailing" id="xg3-hP-9GE"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Luv-j1-90t" secondAttribute="top" constant="-30" id="xnP-RN-Gf3"/>
@@ -627,7 +630,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR4-eT-XUd">
-                                <rect key="frame" x="108" y="556.66666666666663" width="198" height="51"/>
+                                <rect key="frame" x="108" y="575.66666666666663" width="198" height="51"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="DWO-7e-XaV" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
@@ -647,7 +650,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojf-HD-MBp" userLabel="Description">
-                                <rect key="frame" x="16" y="464" width="382" height="52.666666666666629"/>
+                                <rect key="frame" x="16" y="464" width="382" height="71.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="rg6-iD-bNJ"/>
                                 </constraints>
@@ -1014,7 +1017,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-hL-hpR">
-                                <rect key="frame" x="108" y="552.66666666666663" width="198" height="51"/>
+                                <rect key="frame" x="108" y="554.66666666666663" width="198" height="51"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="g4h-cK-u20" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
@@ -1034,7 +1037,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSg-Ll-TXe" userLabel="Description">
-                                <rect key="frame" x="16" y="448" width="382" height="74.666666666666629"/>
+                                <rect key="frame" x="16" y="448" width="382" height="76.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="bLX-QB-zAv"/>
                                 </constraints>
@@ -1102,7 +1105,7 @@
     <resources>
         <image name="ACTION ALERT" width="108" height="136"/>
         <image name="ACTION ALERT LIVE" width="108" height="161"/>
-        <image name="IPHONE X background" width="457" height="894"/>
+        <image name="IPHONE X background" width="375" height="812"/>
         <image name="Incomplete fist and writing" width="85" height="98"/>
         <image name="Main board" width="317" height="263"/>
         <image name="Pointer" width="178" height="10"/>

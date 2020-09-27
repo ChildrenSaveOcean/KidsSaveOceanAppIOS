@@ -22,5 +22,14 @@ class ShowLinkWithClearNotificatinStatusViewController: WebIntegrationViewContro
     
     override func checkNavigationButtons() {
         // we don't need to define the availability of custom navigation buttons
+
+        self.setStatusBarVisible()
+        self.navigationController?.navigationBar.backgroundColor = .white
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        self.navigationController?.navigationBar.backgroundColor = .clear
     }
 }

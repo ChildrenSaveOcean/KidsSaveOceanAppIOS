@@ -900,15 +900,26 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                             <outlet property="delegate" destination="s88-Pg-fJT" id="BSP-hs-fEN"/>
                                                         </connections>
                                                     </pickerView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-Fx-pDG">
-                                                        <rect key="frame" x="114" y="105" width="147" height="53"/>
-                                                        <state key="normal" image="ChooseLocation"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-Fx-pDG">
+                                                        <rect key="frame" x="120" y="115" width="135" height="30"/>
+                                                        <color key="backgroundColor" name="KidSaveOcean Blue"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="135" id="Rk5-W4-Ppi"/>
+                                                            <constraint firstAttribute="height" constant="30" id="nyJ-5O-wYd"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="15"/>
+                                                        <state key="normal" title="Choose location"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signUpButtonClicked:" destination="s88-Pg-fJT" eventType="touchUpInside" id="KXA-oB-uPg"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your location is currently not live, but you can already fill out your planned signatures below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-UY-Pzx">
-                                                        <rect key="frame" x="20" y="163" width="335" height="35"/>
+                                                        <rect key="frame" x="20" y="150" width="335" height="48"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                         <color key="textColor" red="0.32549019607843138" green="0.34509803921568627" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -917,7 +928,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="ESV-UY-Pzx" secondAttribute="bottom" id="GJD-rw-T9A"/>
-                                                    <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="5" id="HBL-9G-QkP" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
+                                                    <constraint firstItem="Uwb-Fx-pDG" firstAttribute="top" secondItem="GiR-I5-j5B" secondAttribute="bottom" constant="15" id="HBL-9G-QkP" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                                     <constraint firstAttribute="trailing" secondItem="ESV-UY-Pzx" secondAttribute="trailing" constant="20" id="NZD-oY-Vox" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                                     <constraint firstItem="ESV-UY-Pzx" firstAttribute="leading" secondItem="6UV-Fw-s6A" secondAttribute="leading" constant="20" id="Rnq-Ko-GvZ" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                                     <constraint firstItem="GiR-I5-j5B" firstAttribute="top" secondItem="6UV-Fw-s6A" secondAttribute="top" id="bUL-IL-uDe"/>
@@ -1352,7 +1363,6 @@ Citizen Ballot Intiative Process</string>
         </scene>
     </scenes>
     <resources>
-        <image name="ChooseLocation" width="147" height="28"/>
         <image name="Environmental_leader_feedback" width="332" height="70"/>
         <image name="Image" width="41" height="38"/>
         <image name="LiveCampaign" width="74" height="88"/>

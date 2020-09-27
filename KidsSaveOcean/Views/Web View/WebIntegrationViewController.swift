@@ -138,10 +138,7 @@ class WebIntegrationViewController: UIViewController {
     func checkNavigationButtons() {
         navigationController?.navigationBar.isHidden = hideNavigationBarByDefault
 
-        let statusBarFrame = UIApplication.shared.statusBarFrame
-        let statusBarView = UIView(frame: statusBarFrame)
-        self.view.addSubview(statusBarView)
-        statusBarView.backgroundColor = .white
+        setStatusBarVisible()
 
         view.setNeedsLayout()
         view.layoutIfNeeded()
@@ -174,6 +171,13 @@ class WebIntegrationViewController: UIViewController {
             backButton.isEnabled = false
         }
         return
+    }
+
+    func setStatusBarVisible() {
+        let statusBarFrame = UIApplication.shared.statusBarFrame
+        let statusBarView = UIView(frame: statusBarFrame)
+        self.view.addSubview(statusBarView)
+        statusBarView.backgroundColor = .white
     }
 
     private final func loadPage() {
