@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Wheel choose task.png",
+      "filename" : "background and x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Wheel choose task@2x.png",
+      "filename" : "background and x@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Wheel choose task@3x.png",
+      "filename" : "background and x@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

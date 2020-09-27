@@ -28,6 +28,7 @@ final class HomeTableViewController: UITableViewController {
     tableView.delegate   = self
 
     tabBarController?.delegate = self
+    navigationController
 
     self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: homeCellIdenteficator)
     self.tableView.register(UINib(nibName: "HomeScoreTableViewCell", bundle: nil), forCellReuseIdentifier: scoreCellIdenteficator)
@@ -43,6 +44,7 @@ final class HomeTableViewController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
+    navigationController?.setStatusBarColor(UIColor.backgroundGray)
   }
     
     override func viewDidAppear(_ animated: Bool) {

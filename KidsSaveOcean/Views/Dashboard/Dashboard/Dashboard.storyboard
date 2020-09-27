@@ -204,12 +204,12 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjn-Sh-ltB" userLabel="Wheel Volume views">
-                                <rect key="frame" x="41" y="461.33333333333331" width="162.33333333333334" height="178.33333333333331"/>
+                                <rect key="frame" x="41" y="461.33333333333331" width="162.33333333333334" height="176.33333333333331"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wheel Volume" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-Bc-xcX">
-                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="178.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="176.33333333333334"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="fKa-Bc-xcX" secondAttribute="height" multiplier="132:145" id="2uZ-fb-BUK"/>
+                                            <constraint firstAttribute="width" secondItem="fKa-Bc-xcX" secondAttribute="height" multiplier="139:151" id="2uZ-fb-BUK"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheelVolumePoints" translatesAutoresizingMaskIntoConstraints="NO" id="IeY-ei-hQE">
@@ -220,7 +220,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffm-wR-6iG" userLabel="Button 6_1">
-                                        <rect key="frame" x="102.33333333333334" y="76.333333333333314" width="30" height="34"/>
+                                        <rect key="frame" x="102.33333333333334" y="74.333333333333314" width="30" height="34"/>
                                         <connections>
                                             <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="E2d-LZ-jDQ"/>
                                         </connections>
@@ -250,7 +250,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMA-s0-b18" userLabel="Button 1_1">
-                                        <rect key="frame" x="30" y="78.333333333333314" width="30" height="30"/>
+                                        <rect key="frame" x="30" y="76.333333333333314" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="cAP-e8-jAN" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                                             <constraint firstAttribute="height" constant="30" id="upZ-r7-zhw" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
@@ -280,7 +280,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-QJ-4bj">
-                                <rect key="frame" x="41" y="569.66666666666663" width="30" height="30"/>
+                                <rect key="frame" x="41" y="567.66666666666663" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="upi-QJ-4bj" secondAttribute="height" multiplier="1:1" id="3Id-VU-QAK"/>
                                     <constraint firstAttribute="width" constant="30" id="qzU-sG-lYL"/>
@@ -302,7 +302,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-Yo-LuE">
-                                <rect key="frame" x="173.33333333333334" y="569.66666666666663" width="30" height="30"/>
+                                <rect key="frame" x="173.33333333333334" y="567.66666666666663" width="30" height="30"/>
                                 <connections>
                                     <action selector="switchTask6:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="bES-PJ-yKE"/>
                                 </connections>
@@ -314,9 +314,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-4H-YuA" customClass="ActionAlertButton" customModule="FateChanger" customModuleProvider="target">
-                                <rect key="frame" x="254.66666666666666" y="488.33333333333331" width="120.33333333333334" height="151.33333333333331"/>
+                                <rect key="frame" x="248.66666666666666" y="461.33333333333331" width="126.33333333333334" height="176.33333333333331"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="324:408" id="4NY-qK-wMR"/>
+                                    <constraint firstAttribute="width" secondItem="R9a-4H-YuA" secondAttribute="height" multiplier="109:152" id="Xhp-C8-21c"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="ACTION ALERT"/>
                             </button>
@@ -372,6 +372,12 @@
                                             <constraint firstAttribute="width" constant="270" id="VWo-MB-xbN"/>
                                             <constraint firstAttribute="height" constant="163" id="szd-Gv-kfr"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmQ-Ih-sjf">
                                         <rect key="frame" x="237" y="299.66666666666669" width="92" height="137"/>
@@ -400,6 +406,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="PTc-qX-7Hd" firstAttribute="leading" secondItem="KxK-z1-sOr" secondAttribute="leading" constant="13" id="0oQ-NV-W5v"/>
                                     <constraint firstItem="vmQ-Ih-sjf" firstAttribute="bottom" secondItem="KxK-z1-sOr" secondAttribute="bottom" constant="-13" id="18l-kr-vy2"/>
@@ -513,7 +520,7 @@
                             <constraint firstItem="Exn-3P-qcj" firstAttribute="leading" secondItem="Xm0-wL-XSG" secondAttribute="leading" id="kYV-K6-f3P"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="bottom" secondItem="Fjn-Sh-ltB" secondAttribute="bottom" constant="-40" id="mDf-Pr-vVR"/>
                             <constraint firstItem="Bqd-BT-4HJ" firstAttribute="top" secondItem="Kz5-ah-x5R" secondAttribute="bottom" constant="11" id="mT6-3m-zSX"/>
-                            <constraint firstItem="R9a-4H-YuA" firstAttribute="height" secondItem="fKa-Bc-xcX" secondAttribute="height" multiplier="0.85" id="nyw-4z-ZVk"/>
+                            <constraint firstItem="R9a-4H-YuA" firstAttribute="height" secondItem="fKa-Bc-xcX" secondAttribute="height" identifier="1" id="nyw-4z-ZVk"/>
                             <constraint firstItem="upi-QJ-4bj" firstAttribute="height" secondItem="pnM-lO-FMb" secondAttribute="height" id="oAq-dg-a5P"/>
                             <constraint firstItem="Xm0-wL-XSG" firstAttribute="trailing" secondItem="TYL-td-fGV" secondAttribute="trailing" constant="20" id="oHI-hY-4st"/>
                             <constraint firstItem="ixk-7e-iPf" firstAttribute="centerX" secondItem="ScW-O5-Pi7" secondAttribute="centerX" id="p3E-vl-bHi"/>
@@ -948,7 +955,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1d-NM-tLJ" userLabel="Description">
-                                <rect key="frame" x="16" y="413.66666666666674" width="382" height="215"/>
+                                <rect key="frame" x="16" y="413.66666666666674" width="382" height="210"/>
                                 <string key="text">1) Only if your parents say it’s okay  2) Only if it’s legal in your country
 3) Always and only peacefully
 4) Communicate a clear message &amp; demands
@@ -1103,13 +1110,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ACTION ALERT" width="108" height="136"/>
+        <image name="ACTION ALERT" width="109" height="152"/>
         <image name="ACTION ALERT LIVE" width="108" height="161"/>
         <image name="IPHONE X background" width="375" height="812"/>
         <image name="Incomplete fist and writing" width="85" height="98"/>
         <image name="Main board" width="317" height="263"/>
         <image name="Pointer" width="178" height="10"/>
-        <image name="Wheel Volume" width="139" height="149"/>
+        <image name="Wheel Volume" width="139" height="151"/>
         <image name="dashboardIconRedNotFinished" width="41" height="41"/>
         <image name="dashboardTabItem" width="48" height="32"/>
         <image name="golden_rules_cover" width="375" height="281"/>

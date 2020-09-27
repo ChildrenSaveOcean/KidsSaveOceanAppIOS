@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ACTION ALERT.png",
+      "filename" : "ACTION ALERT white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ACTION ALERT@2x.png",
+      "filename" : "ACTION ALERT white@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ACTION ALERT@3x.png",
+      "filename" : "ACTION ALERT white@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

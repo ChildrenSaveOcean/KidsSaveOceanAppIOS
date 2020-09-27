@@ -1238,7 +1238,7 @@ We’ll let you know what’s happening with notifications. But if we’re going
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youth_bg_blue" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-J1-8ep">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youth_bg_blue_X" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-J1-8ep">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfU-yc-foF">
@@ -1371,6 +1371,7 @@ Citizen Ballot Intiative Process</string>
         <image name="stepsbg" width="374" height="106"/>
         <image name="votebg" width="375" height="105"/>
         <image name="youth_bg_blue" width="354.5" height="627.5"/>
+        <image name="youth_bg_blue_X" width="375" height="667"/>
         <namedColor name="KidSaveOcean Blue">
             <color red="0.12200000137090683" green="0.63099998235702515" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
