@@ -359,7 +359,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Occ-Eb-ARZ" userLabel="Action Alert View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Occ-Eb-ARZ" userLabel="Action Alert View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgT-Ee-TtI">
@@ -380,11 +380,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmQ-Ih-sjf">
-                                        <rect key="frame" x="237" y="299.66666666666669" width="92" height="137"/>
+                                        <rect key="frame" x="213.66666666666666" y="299.66666666666669" width="118.33333333333334" height="137"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="vmQ-Ih-sjf" secondAttribute="height" multiplier="324:483" id="qRh-BU-Nm0"/>
+                                            <constraint firstAttribute="width" secondItem="vmQ-Ih-sjf" secondAttribute="height" multiplier="139:161" id="qRh-BU-Nm0"/>
                                         </constraints>
-                                        <state key="normal" image="ACTION ALERT LIVE"/>
+                                        <state key="normal" backgroundImage="ACTION ALERT LIVE"/>
                                         <connections>
                                             <action selector="actionAlertViewButtonAction:" destination="V2a-cZ-Hf8" eventType="touchUpInside" id="l5T-PD-Lna"/>
                                         </connections>
@@ -419,10 +419,10 @@
                                     <constraint firstItem="PgT-Ee-TtI" firstAttribute="centerX" secondItem="Occ-Eb-ARZ" secondAttribute="centerX" id="jJc-yq-3Tv"/>
                                     <constraint firstItem="PgT-Ee-TtI" firstAttribute="width" secondItem="Occ-Eb-ARZ" secondAttribute="width" id="kDS-Q9-dC2"/>
                                     <constraint firstItem="KxK-z1-sOr" firstAttribute="centerY" secondItem="Occ-Eb-ARZ" secondAttribute="centerY" id="mHA-AB-oLD"/>
-                                    <constraint firstItem="vmQ-Ih-sjf" firstAttribute="trailing" secondItem="KxK-z1-sOr" secondAttribute="trailing" constant="-13" id="wQ8-eh-T1H"/>
+                                    <constraint firstItem="vmQ-Ih-sjf" firstAttribute="trailing" secondItem="KxK-z1-sOr" secondAttribute="trailing" constant="-10" id="wQ8-eh-T1H"/>
                                 </constraints>
                             </view>
-                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-3P-qcj">
+                            <visualEffectView opaque="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-3P-qcj">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QkS-pS-Wdm">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -1110,7 +1110,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ACTION ALERT LIVE" width="139" height="161"/>
+        <image name="ACTION ALERT LIVE" width="92.666664123535156" height="107.33333587646484"/>
         <image name="IPHONE X background" width="375" height="812"/>
         <image name="Incomplete fist and writing" width="85" height="98"/>
         <image name="Main board" width="317" height="263"/>
