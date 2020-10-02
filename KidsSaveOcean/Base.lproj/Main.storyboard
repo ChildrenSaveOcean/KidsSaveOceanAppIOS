@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="68" y="35"/>
         </scene>
-        <!--Letter Tracker View Controller-->
+        <!--Contact Details View Controller-->
         <scene sceneID="DYQ-mA-REG">
             <objects>
-                <viewController id="hPe-St-gil" customClass="LetterTrackerViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hPe-St-gil" customClass="ContactDetailsViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ckn-Gu-8ym">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
