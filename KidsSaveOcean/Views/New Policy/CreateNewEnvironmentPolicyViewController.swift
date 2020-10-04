@@ -16,8 +16,8 @@ class CreateNewEnvironmentPolicyViewController: UIViewController, Instantiatable
         super.viewDidLoad()
 
         tableView.backgroundColor = .backgroundWhite
+        navigationController?.setStatusBarColor(UIColor.clear)
     }
-
 }
 
 extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITableViewDataSource {
