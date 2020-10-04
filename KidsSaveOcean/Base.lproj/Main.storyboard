@@ -47,7 +47,7 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="8N1-tj-3aY" customClass="MapViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oY4-dZ-3zN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1lr-Pl-Wju">
@@ -181,12 +181,12 @@
             </objects>
             <point key="canvasLocation" x="68" y="35"/>
         </scene>
-        <!--Contact Details View Controller-->
+        <!--Letter Tracker View Controller-->
         <scene sceneID="DYQ-mA-REG">
             <objects>
-                <viewController id="hPe-St-gil" customClass="ContactDetailsViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hPe-St-gil" customClass="LetterTrackerViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ckn-Gu-8ym">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-hr-raz">
@@ -210,25 +210,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Letter in the Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-Ho-QN6">
-                                <rect key="frame" x="65" y="15" width="284" height="27"/>
+                                <rect key="frame" x="69.333333333333343" y="15" width="275.66666666666663" height="27"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="23"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written a letter, stamped, and mailed it off? You’re awesome. You’ve got fire in your belly and stood up to change fate. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-x5-j2M">
-                                <rect key="frame" x="15" y="57" width="384" height="59.666666666666657"/>
+                                <rect key="frame" x="15" y="57" width="384" height="61"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Submit only after you’ve mailed it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGn-ZY-2ux">
-                                <rect key="frame" x="48" y="633" width="318.33333333333331" height="21"/>
+                                <rect key="frame" x="52" y="632.33333333333337" width="310" height="21.666666666666629"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZA-gL-jic">
-                                <rect key="frame" x="20" y="126.66666666666666" width="374" height="496.33333333333337"/>
+                                <rect key="frame" x="20" y="127.99999999999997" width="374" height="494.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the country you wrote to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-Bo-uHv">
                                         <rect key="frame" x="8" y="25" width="358" height="20"/>
@@ -237,7 +237,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Qq-Pvl">
-                                        <rect key="frame" x="0.0" y="45.000000000000028" width="374" height="451.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="44.999999999999972" width="374" height="449.33333333333326"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -370,7 +370,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGs-uz-wod">
-                                <rect key="frame" x="167" y="810" width="80" height="32"/>
+                                <rect key="frame" x="167" y="809" width="80" height="33"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="LOe-kY-BeC"/>
@@ -459,13 +459,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-u6-ad9">
-                                <rect key="frame" x="34" y="418" width="346" height="20"/>
+                                <rect key="frame" x="34" y="418" width="346" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stamp, mail it off, and then enter it in the Fatechanger Map’s Tracker. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDm-rs-hRz">
-                                <rect key="frame" x="20" y="746" width="374" height="42"/>
+                                <rect key="frame" x="20" y="745" width="374" height="43"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
