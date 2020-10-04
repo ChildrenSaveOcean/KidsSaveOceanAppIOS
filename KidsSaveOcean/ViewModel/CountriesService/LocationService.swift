@@ -42,6 +42,7 @@ class LocationService: NSObject {
             break
             
         case .authorizedAlways, .authorizedWhenInUse:
+            authorizationStatus = true
             completionHandler?()
         }
     }
