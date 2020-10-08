@@ -13,7 +13,7 @@ class DashboardHelpVideoViewController: WebIntegrationViewController {
     override var hideNavigationBarByDefault: Bool { return false }
 
     override var originalWebUrlString: String {
-        return "https://www.kidssaveocean.com/hijackpolicy"
+        return "https://www.kidssaveocean.com/dashboardtutorial"
     }
 
 }
