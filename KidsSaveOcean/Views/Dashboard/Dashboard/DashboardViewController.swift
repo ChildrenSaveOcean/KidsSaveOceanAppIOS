@@ -115,6 +115,8 @@ class DashboardViewController: UIViewController {
         actionAlertView.alpha = 0
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
         actionAlertView.addGestureRecognizer(tapGesture)
+
+        navigationController?.setStatusBarColor(UIColor.clear)
     }
 
     override func viewDidAppear(_ animated: Bool) {
