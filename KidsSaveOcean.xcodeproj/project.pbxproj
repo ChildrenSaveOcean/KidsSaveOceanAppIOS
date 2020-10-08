@@ -26,7 +26,6 @@
 		163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D20352170F12200069294 /* HomeScoreTableViewCell.swift */; };
 		163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */; };
 		163F23A120F7FC1C00022B38 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */; };
-		16447C432520EC6C00A5E669 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16447C422520EC6C00A5E669 /* GoogleService-Info.plist */; };
 		164D7302234B4BA00080ACB7 /* HijackPoliciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7301234B4BA00080ACB7 /* HijackPoliciesViewModel.swift */; };
 		164D7304234B548D0080ACB7 /* HijackPLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7303234B548D0080ACB7 /* HijackPLocationViewModel.swift */; };
 		164D7306234B9E6A0080ACB7 /* HijackPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D7305234B9E6A0080ACB7 /* HijackPolicy.swift */; };
@@ -148,7 +147,6 @@
 		163D20352170F12200069294 /* HomeScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScoreTableViewCell.swift; sourceTree = "<group>"; };
 		163F239E20F694FE00022B38 /* KSOStartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOStartPageViewController.swift; sourceTree = "<group>"; };
 		163F23A020F7FC1C00022B38 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
-		16447C422520EC6C00A5E669 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/KidsSaveOcean AlertAction images/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		164D7301234B4BA00080ACB7 /* HijackPoliciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPoliciesViewModel.swift; sourceTree = "<group>"; };
 		164D7303234B548D0080ACB7 /* HijackPLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPLocationViewModel.swift; sourceTree = "<group>"; };
 		164D7305234B9E6A0080ACB7 /* HijackPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPolicy.swift; sourceTree = "<group>"; };
@@ -371,7 +369,6 @@
 		16559BC320ADF9D5002D4F78 = {
 			isa = PBXGroup;
 			children = (
-				16447C422520EC6C00A5E669 /* GoogleService-Info.plist */,
 				16559BCE20ADF9D5002D4F78 /* KidsSaveOcean */,
 				16559BE520ADF9D5002D4F78 /* KidsSaveOceanTests */,
 				16559BF020ADF9D6002D4F78 /* KidsSaveOceanUITests */,
@@ -843,7 +840,6 @@
 				16559BD720ADF9D5002D4F78 /* Main.storyboard in Resources */,
 				C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */,
 				7CB3FF5D232FF9E300415D75 /* CreateNewEnvironmentPolicyViewController.storyboard in Resources */,
-				16447C432520EC6C00A5E669 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
