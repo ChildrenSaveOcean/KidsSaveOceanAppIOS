@@ -391,7 +391,7 @@ class UserViewModel {
         databaseReferenece?.setValue(parametersDisctionary) { (error: Error?, _: DatabaseReference) in
             if error != nil {
                 print("parameters for update: \(self.parametersDisctionary)")
-                fatalError(error!.localizedDescription)  // TODO app should not crash if there is some problem with database
+                // app should not crash if there is some problem with database
             } else {
                 print("\nUser saved successfully")
             }
