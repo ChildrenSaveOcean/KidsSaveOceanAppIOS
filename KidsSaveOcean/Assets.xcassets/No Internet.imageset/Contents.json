@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "No Internet.jpg",
+      "filename" : "10.15 No Internet.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "No Internet@2x.jpg",
+      "filename" : "10.15 No Internet@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "No Internet@3x.jpg",
+      "filename" : "10.15 No Internet@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
