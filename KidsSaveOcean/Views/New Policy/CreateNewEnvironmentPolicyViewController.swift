@@ -12,8 +12,8 @@ class CreateNewEnvironmentPolicyViewController: UIViewController, Instantiatable
 
     @IBOutlet weak var tableView: UITableView!
 
-    var cellHeight: CGFloat = UIScreen.main.bounds.size.height < 812 ? 60 : 70
-    var trackTheHijackButtonHeight: CGFloat = UIScreen.main.bounds.size.height < 812 ? 95 : 104
+    var cellHeight: CGFloat = UIScreen.main.bounds.size.height < 736 ? 60 : 70
+    var trackTheHijackButtonHeight: CGFloat = UIScreen.main.bounds.size.height < 736 ? 95 : 104
 
     override func viewDidLoad() {
         super.viewDidLoad()
