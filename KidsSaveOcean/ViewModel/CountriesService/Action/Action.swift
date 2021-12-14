@@ -9,8 +9,9 @@
 import Foundation
 
 struct Action: Codable {
-    var action_description: String
-    var action_link: String
-    var action_location: String
+
+    let action_description: String
+    let action_link: String
+    let action_location: String
 }
 
