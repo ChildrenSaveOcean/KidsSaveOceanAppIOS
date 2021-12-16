@@ -264,14 +264,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         let noButton = UIAlertAction(title: "NO", style: .cancel, handler: nil)
         noButton.setAppTextColor()
-//        let noButton = UIAlertAction(title: "NO", style: .default) { (_) in
-//            let explainAlertView = UIAlertController(title: nil, message: "I'm sorry, but the goverment of your location doesn't offer the opportunity for citizen ballon initiatives. But you can influence them with letters in our letter-writing campaign.", preferredStyle: .alert)
-//            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//            explainAlertView.addAction(okButton)
-//            self.present(explainAlertView, animated: true) {
-//                self.enableChooseLocationButton(false)
-//            }
-//        }
         
         alertView.addAction(yesButton)
         alertView.addAction(noButton)
@@ -285,10 +277,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
 
             let num = self.pickerView.selectedRow(inComponent: 0)
-//            guard let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first else {
-//                return
-//            }
-            //first else { return }
             
             let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first
             if campaign != nil {
@@ -298,11 +286,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             } else {
                 UserViewModel.shared().location_id = self.campaignLocations[num].id
             }
-            
-//            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_required: campaign.signatures_required, signatures_collected: 0)
-//            UserViewModel.shared().campaign = campSign
-//            UserViewModel.shared().location_id = campaign.location_id
-            
+
             UserViewModel.shared().saveUser()
             
             self.liveLocationView.isHidden = true

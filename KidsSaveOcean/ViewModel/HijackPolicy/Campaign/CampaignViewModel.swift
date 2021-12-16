@@ -27,51 +27,31 @@ class CampaignViewModel {
         fetchCampaigns(nil)
     }
     
-    // swiftlint:disable cyclomatic_complexity
     func fetchCampaigns(_ completion: (() -> Void)?) {
 
         campaigns.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
+                completion?()
+
                 return
             }
 
-            for campaign in snapshotValue {
+            self.campaigns = snapshotValue.compactMap({ (id, dictionary) in
 
-                guard let id = campaign.key as? String else {
-                    continue
-                }
-                
-                guard let value = campaign.value as? NSDictionary else {
-                    continue
+                guard let id = id as? String,
+                      let dictionary = dictionary as? Dictionary<String, Any> else {
+                    return nil
                 }
 
-                guard let policy = value["hijack_policy"] as? String else {
-                    continue
-                }
-                guard let live = value["live"] as? Bool else {
-                    continue
-                }
-                guard let location = value["location_id"] as? String else {
-                    continue
-                }
-                guard let sign_collected = value["signatures_collected"] as? Int else {
-                    continue
-                }
+                var campaign = Campaign(with: dictionary)
+                campaign?.id = id
+                return campaign
+            })
 
-                guard let sigh_required = value["signatures_required"] as? Int else {
-                    continue
-                }
-                
-                let campaignObj = Campaign(id: id, hijack_policy: policy, live: live, location_id: location, signatures_collected: sign_collected, signatures_required: sigh_required)
-                
-                self.campaigns.append(campaignObj)
-            }
-    
-            if completion != nil {
-                completion!()
-            }
+            completion?()
+
         })
     }
     
