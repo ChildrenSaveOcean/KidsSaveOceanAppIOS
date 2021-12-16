@@ -13,7 +13,7 @@ class HijackPoliciesViewModel {
     
     static var nodeName = "HIJACK_POLICIES"
     var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
-    var hidjackPolicies = [HijackPolicy]()
+    var hijackPolicies = [HijackPolicy]()
     
     private static var sharedHijackPolicyViewModel: HijackPoliciesViewModel = {
         let viewModel = HijackPoliciesViewModel()
@@ -38,38 +38,26 @@ class HijackPoliciesViewModel {
     
     func fetchPolicies(_ completion: (() -> Void)?) {
 
-        hidjackPolicies.removeAll()
+        hijackPolicies.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 return
             }
 
-            for policies in snapshotValue {
+            self.hijackPolicies = snapshotValue.compactMap({ (id, dictionary) in
 
-                guard let id = policies.key as? String else {
-                    continue
-                }
-                
-                guard let value = policies.value as? NSDictionary else {
-                    continue
+                guard let id = id as? String,
+                      let dictionary = dictionary as? Dictionary<String, Any> else {
+                    return nil
                 }
 
-                guard let description = value["description"] as? String else {
-                    continue
-                }
-                
-                guard let summary = value["summary"] as? String else {
-                    continue
-                }
-                
-                guard let votes = value["votes"] as? Int else {
-                    continue
-                }
-                
-                let policy = HijackPolicy(id: id, description: description, summary: summary, votes: votes)
-                self.hidjackPolicies.append(policy)
-            }
+                var policy = HijackPolicy(with: dictionary)
+                policy?.id = id
+                return policy
+            })
+
+            completion?()
     
             self.policiesHaveBeenLoaded = true
             if completion != nil {
@@ -80,8 +68,6 @@ class HijackPoliciesViewModel {
     
     func updateVotes(policy: HijackPolicy, value: Int) {
         Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
-//        self.policiesHaveBeenLoaded = false
-//        setup()
     }
     
     func getPolicyAttrString(for policy: String) -> NSMutableAttributedString {

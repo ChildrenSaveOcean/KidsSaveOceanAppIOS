@@ -8,18 +8,16 @@
 
 import Foundation
 
-struct HijackPolicy {
-    let id: String
+struct HijackPolicy: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case description, summary, votes
+    }
+
+    var id: String = ""
     let description: String
     let summary: String
     var votes: Int
-    
-    init(id: String, description: String, summary: String, votes: Int? ) {
-        self.id = id
-        self.description = description
-        self.summary = summary
-        self.votes = votes ?? 0
-    }
     
     mutating func updateVotes(to value: Int) {
         self.votes = value
