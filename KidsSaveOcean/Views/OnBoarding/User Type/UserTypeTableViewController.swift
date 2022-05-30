@@ -65,7 +65,6 @@ class UserTypeTableViewController: UITableViewController {
   }
 
     internal func gotoTabViewController() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         self.present(KSOTabViewController.instantiate(), animated: true, completion: nil)
     }
 

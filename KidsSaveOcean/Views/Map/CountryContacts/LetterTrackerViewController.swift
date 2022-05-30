@@ -85,8 +85,7 @@ final class LetterTrackerViewController: UIViewController {
         
         let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratulations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
-            let userLetterWritten = UserViewModel.shared.letters_written ?? 0
-            UserViewModel.shared.letters_written = userLetterWritten + 1
+            UserViewModel.shared.letters_written += 1
             UserViewModel.shared.saveUser()
             self.gotoDashBoard()
         })
@@ -110,6 +109,7 @@ final class LetterTrackerViewController: UIViewController {
 
 // MARK: - UIPickerViewDataSource
 extension LetterTrackerViewController: UIPickerViewDataSource {
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -121,6 +121,7 @@ extension LetterTrackerViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 extension LetterTrackerViewController: UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let attributedString = NSAttributedString(string: countriesData[row].name, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         return attributedString

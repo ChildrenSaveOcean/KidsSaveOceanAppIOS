@@ -10,9 +10,11 @@ import Foundation
 import MapKit
 
 class KSOCustomMapPin: MKMarkerAnnotationView {
+
     override var annotation: MKAnnotation? {
         willSet {
             guard let annotation = newValue as? KSOPinOfLetters else { return }
+
             canShowCallout = true
             calloutOffset = CGPoint(x: -5, y: 5)
             glyphText = String(annotation.getNumberOfLetters() )
