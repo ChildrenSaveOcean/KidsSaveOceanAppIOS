@@ -21,25 +21,25 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userCampaign = UserViewModel.shared().campaign
-        let campaign1 = CampaignViewModel.shared().campaigns.filter { $0.id == userCampaign?.campaign_id }.first
-        guard let campaign = campaign1, UserViewModel.shared().isUserLocationCampaignIsLive()
+        let userCampaign = UserViewModel.shared.campaign
+        let campaign1 = CampaignViewModel.shared().campaigns.filter { $0.id == userCampaign.campaign_id }.first
+        guard let campaign = campaign1, UserViewModel.shared.isUserLocationCampaignIsLive()
             else { return }
         
-        let policy = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == campaign.hijack_policy}.first
+        let policy = HijackPoliciesViewModel.shared().hijackPolicies.filter {$0.id == campaign.hijack_policy}.first
         if policy != nil {
             policyChosenLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy!.description)
         }
         
-        let location = HijackPLocationViewModel.shared().hidjackPLocations.filter { $0.id == campaign.location_id }.first?.location ?? ""
+        let location = HijackPLocationViewModel.shared().hijackPLocations.filter { $0.id == campaign.location_id }.first?.location ?? ""
         campaignLocation.text = "Campaign location: " + location
         
         signatureRequiredLabel.text = "Signatures required: " + String( campaign.signatures_required)
         totalCollectedSignaturesLabel.text = "Total collected so far: " + String(campaign.signatures_collected)
         deadlineLabel.text = "--"
         
-        userPlannedSignatures.text = "Your planned signatures: " + String( UserViewModel.shared().signatures_pledged)
-        userCollectedSignatures.text = "Your collected signatures: " + String(userCampaign?.signatures_collected ?? 0)
+        userPlannedSignatures.text = "Your planned signatures: " + String( UserViewModel.shared.signatures_pledged)
+        userCollectedSignatures.text = "Your collected signatures: " + String(userCampaign.signatures_collected)
         
     }
     

@@ -57,12 +57,9 @@ class HijackPoliciesViewModel {
                 return policy
             })
 
-            completion?()
-    
             self.policiesHaveBeenLoaded = true
-            if completion != nil {
-                completion!()
-            }
+            completion?()
+
         })
     }
     

@@ -12,7 +12,7 @@ import Firebase
 class HijackPLocationViewModel {
     
     var databaseReferenece: DatabaseReference = Database.database().reference().child("HIJACK_POLICY_LOCATIONS")
-    var hidjackPLocations = [HijackLocation]()
+    var hijackPLocations = [HijackLocation]()
     
     private static var sharedHijackPLocationViewModel: HijackPLocationViewModel = {
         let viewModel = HijackPLocationViewModel()
@@ -29,34 +29,26 @@ class HijackPLocationViewModel {
     
     func fetchPolicyLocations(_ completion: (() -> Void)?) {
 
-        hidjackPLocations.removeAll()
+        hijackPLocations.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 return
             }
 
-            for location in snapshotValue {
+            self.hijackPLocations = snapshotValue.compactMap({ (id, dictionary) in
 
-                guard let id = location.key as? String else {
-                    continue
-                }
-                
-                guard let value = location.value as? NSDictionary else {
-                    continue
+                guard let id = id as? String,
+                      let dictionary = dictionary as? Dictionary<String, Any> else {
+                    return nil
                 }
 
-                guard let location = value["location"] as? String else {
-                    continue
-                }
-                
-                let policyLocation = HijackLocation(id: id, location: location)
-                self.hidjackPLocations.append(policyLocation)
-            }
-    
-            if completion != nil {
-                completion!()
-            }
+                var policyLocation = HijackLocation(with: dictionary)
+                policyLocation?.id = id
+                return policyLocation
+            })
+
+            completion?()
         })
     }
 }
