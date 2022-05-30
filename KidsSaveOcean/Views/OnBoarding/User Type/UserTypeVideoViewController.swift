@@ -59,7 +59,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
             UserDefaultsHelper.saveOnBoardingHasBeenShown()
 
             if self.userType != nil {
-                let userViewModel = UserViewModel.shared()
+                let userViewModel = UserViewModel.shared
                 userViewModel.user_type = self.userType!
                 userViewModel.saveUser()
             }

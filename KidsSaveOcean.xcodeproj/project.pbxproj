@@ -53,6 +53,7 @@
 		1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */; };
 		16680E0E215A96EB00054CBC /* UIFont+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */; };
 		1668C08420C8503500E17DAF /* KSOTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C08320C8503500E17DAF /* KSOTabViewController.swift */; };
+		166A1ACD279DC9A3002BE81D /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A1ACC279DC9A3002BE81D /* UserActivity.swift */; };
 		166F684D22C121860063C68B /* ActionAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166F684C22C121860063C68B /* ActionAlertButton.swift */; };
 		16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768110215AD41D00EE4E1F /* HomeTableViewController.swift */; };
 		16768113215AD71100EE4E1F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16768112215AD71100EE4E1F /* HomeTableViewCell.swift */; };
@@ -185,6 +186,7 @@
 		1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 		16680E0D215A96EB00054CBC /* UIFont+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extentions.swift"; sourceTree = "<group>"; };
 		1668C08320C8503500E17DAF /* KSOTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOTabViewController.swift; sourceTree = "<group>"; };
+		166A1ACC279DC9A3002BE81D /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
 		166F684C22C121860063C68B /* ActionAlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAlertButton.swift; sourceTree = "<group>"; };
 		16768110215AD41D00EE4E1F /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		16768112215AD71100EE4E1F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 			children = (
 				16BA0A3B229027F100E36F25 /* UserViewModel.swift */,
 				16BA0A3D2290281A00E36F25 /* User.swift */,
+				166A1ACC279DC9A3002BE81D /* UserActivity.swift */,
 			);
 			path = UserId;
 			sourceTree = "<group>";
@@ -1028,6 +1031,7 @@
 				7C4AF9A8233A8440006A8566 /* TrackTableViewCell.swift in Sources */,
 				165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */,
 				164EB081246CD1F1001FF26D /* UIAlertAction+Extensions.swift in Sources */,
+				166A1ACD279DC9A3002BE81D /* UserActivity.swift in Sources */,
 				163A07E422C96F88006097E1 /* ShowLinkWithClearNotificatinStatusViewController.swift in Sources */,
 				162602162373193D007B392D /* UINavigationController+Extention.swift in Sources */,
 				163416FE215976E200C98646 /* UserTypeTableViewController.swift in Sources */,

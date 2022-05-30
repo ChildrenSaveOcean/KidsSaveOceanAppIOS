@@ -57,8 +57,8 @@ class DashboardViewController: UIViewController {
     
     //let twoCompletionStatesTask = 1
 
-    let taskScope: [String] = UserViewModel.getDashboardFullTasks() //DashboardTasksScopes.allCases.map { $0.dashboardTasks }
-    let tasks: [DashboardTasksScopes] = UserViewModel.getDashboardTasks() //DashboardTasksScopes.allCases.map { $0.rawValue }
+    let taskScope: [String] = UserViewModel.getDashboardTaskTitles()
+    let tasks: [DashboardTask] = UserViewModel.getDashboardTasks()
 
     var _completionTasksStates: [Bool]?
     var completionTasksStates: [Bool] {
@@ -66,7 +66,7 @@ class DashboardViewController: UIViewController {
             if _completionTasksStates != nil {
                 return _completionTasksStates!
             } else {
-                _completionTasksStates = UserViewModel.shared().getCompletionTasksStatuses()
+                _completionTasksStates = UserViewModel.shared.getCompletionTasksStatuses()
 
                 return _completionTasksStates!
             }
@@ -133,7 +133,7 @@ class DashboardViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserViewModel.shared().saveUser()
+        UserViewModel.shared.saveUser()
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -204,10 +204,10 @@ class DashboardViewController: UIViewController {
     @IBAction func completeAction(_ sender: Any) {
         var newState: Bool
 //        if isThisTwoCompletionStatesTask() {
-//            newState = !UserViewModel.shared().write_letter_about_climate
+//            newState = !UserViewModel.shared.write_letter_about_climate
 //            completionTasksStates[7] = newState
-//            let commonState = newState == UserViewModel.shared().write_letter_about_plastic ? newState : false
-//            //if newState == UserViewModel.shared().write_letter_about_plastic {
+//            let commonState = newState == UserViewModel.shared.write_letter_about_plastic ? newState : false
+//            //if newState == UserViewModel.shared.write_letter_about_plastic {
 //                completionTasksStates[currentTaskSwitched] = commonState
 //                topIcons[currentTaskSwitched]?.completed = commonState
 //            //}
@@ -221,10 +221,10 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func completeMiddleButtonAction(_ sender: Any) {
-//        let newState = !UserViewModel.shared().write_letter_about_plastic
+//        let newState = !UserViewModel.shared.write_letter_about_plastic
 //        completionTasksStates[6] = newState
-//        let commonState = newState == UserViewModel.shared().write_letter_about_climate ? newState : false
-//        //if newState == UserViewModel.shared().write_letter_about_climate {
+//        let commonState = newState == UserViewModel.shared.write_letter_about_climate ? newState : false
+//        //if newState == UserViewModel.shared.write_letter_about_climate {
 //            completionTasksStates[currentTaskSwitched] = commonState
 //            topIcons[currentTaskSwitched]?.completed = commonState
 //        //}
@@ -237,9 +237,9 @@ class DashboardViewController: UIViewController {
     }
     
     private func saveTaskStates() {
-        guard UserViewModel.shared().userDataHasBeenLoaded else { return }
+        guard UserViewModel.shared.userDataHasBeenLoaded else { return }
         UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
-        UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
+        UserViewModel.shared.saveCompletionTaskStatuses(completionTasksStates)
         selectTopIcon()
         setUpDidItSection()
     }
@@ -250,7 +250,7 @@ class DashboardViewController: UIViewController {
 
     // MARK: Private methods
     @objc private func setUserDataLoadingState() {
-        if !UserViewModel.shared().userDataHasBeenLoaded {
+        if !UserViewModel.shared.userDataHasBeenLoaded {
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blur.alpha = 0.7
@@ -414,7 +414,7 @@ class DashboardViewController: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
-        UserViewModel.shared().saveUser()
+        UserViewModel.shared.saveUser()
         super.didReceiveMemoryWarning()
     }
 }

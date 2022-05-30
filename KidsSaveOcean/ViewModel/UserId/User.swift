@@ -8,7 +8,14 @@
 
 import UIKit
 
-struct User {
+enum UserType: Int, Codable { // we can get from from Firebase, bit it will stay here temporary
+    case
+    student,
+    teacher,
+    other
+}
+
+struct User: Codable {
     var type: UserType
 
     init(type: UserType) {

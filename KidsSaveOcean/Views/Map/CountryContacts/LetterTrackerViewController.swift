@@ -85,9 +85,9 @@ final class LetterTrackerViewController: UIViewController {
         
         let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratulations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
-            let userLetterWritten = UserViewModel.shared().letters_written ?? 0
-            UserViewModel.shared().letters_written = userLetterWritten + 1
-            UserViewModel.shared().saveUser()
+            let userLetterWritten = UserViewModel.shared.letters_written ?? 0
+            UserViewModel.shared.letters_written = userLetterWritten + 1
+            UserViewModel.shared.saveUser()
             self.gotoDashBoard()
         })
         action.setAppTextColor()
