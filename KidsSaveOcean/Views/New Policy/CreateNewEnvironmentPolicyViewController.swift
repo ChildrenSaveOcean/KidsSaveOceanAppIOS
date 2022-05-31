@@ -11,13 +11,18 @@ import UIKit
 class CreateNewEnvironmentPolicyViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
+    var cellHeight: CGFloat = UIScreen.main.bounds.size.height < 736 ? 60 : 70
+    var trackTheHijackButtonHeight: CGFloat = UIScreen.main.bounds.size.height < 736 ? 95 : 104
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.backgroundColor = .backgroundWhite
-    }
+        navigationController?.setStatusBarColor(UIColor.clear)
 
+        //tableView.rowHeight = 50.0
+    }
 }
 
 extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITableViewDataSource {
@@ -29,7 +34,21 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
         return 6
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row < tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            return cellHeight
+        } else {
+            return trackTheHijackButtonHeight
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        if indexPath.row == 5 {
+            guard let trackCell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell", for: indexPath) as? TrackTableViewCell else { fatalError("Wrong cell type. There is expected TrackTableViewCell")}
+            return trackCell
+        }
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EnvironmentCell", for: indexPath) as? EnvironmentTableViewCell else { fatalError("Wrong cell type. There is expected EnvironmentTableViewCell") }
         
         var textTitle = ""
@@ -53,9 +72,8 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
         case 4:
             textTitle = "Multiply your Impact"
             imageName = "Multiply"
-        case 5:
-            guard let trackCell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell", for: indexPath) as? TrackTableViewCell else { fatalError("Wrong cell type. There is expected TrackTableViewCell")}
-            return trackCell
+       // case 5:
+            
         default:
             textTitle = ""
             imageName = ""

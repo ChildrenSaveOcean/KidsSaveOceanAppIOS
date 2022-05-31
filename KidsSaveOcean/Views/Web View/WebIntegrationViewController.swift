@@ -90,6 +90,7 @@ class WebIntegrationViewController: UIViewController {
         view.addSubview(webView)
 
         setNavigationButtons()
+        navigationController?.setStatusBarColor(UIColor.white)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -137,6 +138,7 @@ class WebIntegrationViewController: UIViewController {
     
     func checkNavigationButtons() {
         navigationController?.navigationBar.isHidden = hideNavigationBarByDefault
+
         view.setNeedsLayout()
         view.layoutIfNeeded()
         
@@ -159,11 +161,13 @@ class WebIntegrationViewController: UIViewController {
     private func showInternetConnectionStatus(is on: Bool) {
         if on {
             if view.contains(noInternetConnectionImageView) {
+                navigationController?.setStatusBarColor(.white)
                 noInternetConnectionImageView.removeFromSuperview()
                 backButton.isEnabled = true
             }
         } else {
             navigationController?.navigationBar.isHidden = false
+            navigationController?.setStatusBarColor(.clear)
             view.addSubview(noInternetConnectionImageView)
             backButton.isEnabled = false
         }
@@ -174,15 +178,9 @@ class WebIntegrationViewController: UIViewController {
         
         view.addSubview(progressBarView)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-        checkURLString()
-        let myURL = URL(string: webUrlString)
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
-    }
-
-    func checkURLString() {
-        if webUrlString.isEmpty {
-            fatalError("Set the URL string up!")
+        if let myURL = URL(string: webUrlString) {
+            let myRequest = URLRequest(url: myURL)
+            webView.load(myRequest)
         }
     }
 
@@ -192,8 +190,13 @@ class WebIntegrationViewController: UIViewController {
     }
     
     @objc func reachabilityChanged(note: Notification) {
-        // unfortunately the notification about changing reachability does not came when the internet connection has been changed. That is why I temporary commented the behaviour.
-        
+
+        let internetConnection = checkInternetConnection(reachability: reachability!)
+        showInternetConnectionStatus(is: internetConnection)
+        if internetConnection {
+            loadPage()
+        }
+
 //        guard let noteObject = note.object as? Reachability else {return}
 //        if reachability?.connection != noteObject.connection && checkInternetConnection(reachability: noteObject) {
 //            loadPage()

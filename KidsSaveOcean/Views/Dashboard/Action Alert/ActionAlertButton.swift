@@ -22,12 +22,14 @@ class ActionAlertButton: UIButton, NotificationProtocol {
     
     var actionAlertState: ActionAlertState = .inactive {
         willSet(newValue) {
-            if newValue == .active { 
-                self.setImage(#imageLiteral(resourceName: "ACTION ALERT LIVE"), for: .normal)
+            if newValue == .active {
+               // self.setImage(#imageLiteral(resourceName: "ACTION ALERT LIVE"), for: .normal)
+                self.setBackgroundImage(#imageLiteral(resourceName: "ACTION ALERT LIVE"), for: .normal)
                 self.removeTarget(self, action: #selector(inactiveAction), for: .touchUpInside)
                 self.addTarget(self, action: #selector(activeAction), for: .touchUpInside)
             } else {
-                self.setImage(#imageLiteral(resourceName: "ACTION ALERT"), for: .normal)
+                //self.setImage(#imageLiteral(resourceName: "ACTION ALERT"), for: .normal)
+                self.setBackgroundImage(#imageLiteral(resourceName: "ACTION ALERT"), for: .normal)
                 self.removeTarget(self, action: #selector(activeAction), for: .touchUpInside)
                 self.addTarget(self, action: #selector(inactiveAction), for: .touchUpInside)
             }

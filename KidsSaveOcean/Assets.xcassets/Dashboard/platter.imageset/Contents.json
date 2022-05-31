@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "platter.jpg",
       "idiom" : "universal",
-      "filename" : "platter.png",
       "scale" : "1x"
     },
     {
+      "filename" : "platter@2x.jpg",
       "idiom" : "universal",
-      "filename" : "platter@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "platter@3x.jpg",
       "idiom" : "universal",
-      "filename" : "platter@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

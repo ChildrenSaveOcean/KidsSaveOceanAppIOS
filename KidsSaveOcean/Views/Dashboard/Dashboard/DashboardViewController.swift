@@ -85,9 +85,9 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
 
         if UIScreen.main.bounds.height > 800 {
-            deviceXbackground.alpha = 1
+            deviceXbackground.image = #imageLiteral(resourceName: "IPHONE X background")
         } else {
-            deviceXbackground.alpha = 0
+            deviceXbackground.image = #imageLiteral(resourceName: "blueMetalBackground")
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.setUserDataLoadingState), name: .userDataHasBeenLoaded, object: nil)
@@ -115,6 +115,8 @@ class DashboardViewController: UIViewController {
         actionAlertView.alpha = 0
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeActionAlertView))
         actionAlertView.addGestureRecognizer(tapGesture)
+
+        navigationController?.setStatusBarColor(UIColor.clear)
     }
 
     override func viewDidAppear(_ animated: Bool) {

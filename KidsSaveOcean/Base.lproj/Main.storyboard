@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <color key="sectionIndexBackgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
                             <outlet property="dataSource" destination="xTw-bw-8TV" id="nmv-Xx-Eqt"/>
@@ -47,7 +47,7 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="8N1-tj-3aY" customClass="MapViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oY4-dZ-3zN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1lr-Pl-Wju">
@@ -85,7 +85,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Letters Written" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="BA7-8e-158">
-                                <rect key="frame" x="63" y="161" width="114" height="93"/>
+                                <rect key="frame" x="63.666666666666657" y="161" width="113" height="93"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoT-fT-n3M">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoT-fT-n3M">
                                 <rect key="frame" x="62" y="264" width="290" height="41.333333333333314"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
@@ -127,6 +127,7 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="UCF-gs-cAV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BA7-8e-158" firstAttribute="top" secondItem="ekq-hk-ASa" secondAttribute="bottom" constant="5" id="19o-Vg-Df3"/>
@@ -163,7 +164,6 @@
                             <constraint firstItem="Z72-8X-284" firstAttribute="top" secondItem="oY4-dZ-3zN" secondAttribute="top" id="xws-qG-3KK"/>
                             <constraint firstItem="Q9e-Gs-fS6" firstAttribute="width" secondItem="GoT-fT-n3M" secondAttribute="width" multiplier="0.8" id="yyO-Xx-REh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UCF-gs-cAV"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="ULZ-Fg-mhx"/>
@@ -186,7 +186,7 @@
             <objects>
                 <viewController id="hPe-St-gil" customClass="LetterTrackerViewController" customModule="FateChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ckn-Gu-8ym">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-hr-raz">
@@ -210,25 +210,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Letter in the Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-Ho-QN6">
-                                <rect key="frame" x="65" y="15" width="284" height="27"/>
+                                <rect key="frame" x="69.333333333333343" y="15" width="275.66666666666663" height="27"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="23"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written a letter, stamped, and mailed it off? You’re awesome. You’ve got fire in your belly and stood up to change fate. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-x5-j2M">
-                                <rect key="frame" x="15" y="57" width="384" height="59.666666666666657"/>
+                                <rect key="frame" x="15" y="57" width="384" height="61"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Submit only after you’ve mailed it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGn-ZY-2ux">
-                                <rect key="frame" x="48" y="633" width="318.33333333333331" height="21"/>
+                                <rect key="frame" x="52" y="632.33333333333337" width="310" height="21.666666666666629"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZA-gL-jic">
-                                <rect key="frame" x="20" y="126.66666666666666" width="374" height="496.33333333333337"/>
+                                <rect key="frame" x="20" y="127.99999999999997" width="374" height="494.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the country you wrote to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-Bo-uHv">
                                         <rect key="frame" x="8" y="25" width="358" height="20"/>
@@ -237,7 +237,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Qq-Pvl">
-                                        <rect key="frame" x="0.0" y="45.000000000000028" width="374" height="451.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="44.999999999999972" width="374" height="449.33333333333326"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,6 +261,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="KSF-TO-tWk"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9ia-hr-raz" firstAttribute="top" secondItem="MGn-ZY-2ux" secondAttribute="bottom" constant="12" id="BnY-5a-ua6"/>
@@ -278,7 +279,6 @@
                             <constraint firstItem="KSF-TO-tWk" firstAttribute="trailing" secondItem="3ZA-gL-jic" secondAttribute="trailing" constant="20" id="tQa-jl-Yl8"/>
                             <constraint firstItem="9ia-hr-raz" firstAttribute="centerX" secondItem="Ckn-Gu-8ym" secondAttribute="centerX" id="yKt-G0-g4B"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KSF-TO-tWk"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
@@ -320,8 +320,8 @@
                     <view key="view" contentMode="scaleToFill" id="ts7-gb-nX6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pdI-b3-vdo"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="ktm-Cw-c1N"/>
                 </viewController>
@@ -370,7 +370,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGs-uz-wod">
-                                <rect key="frame" x="167" y="810" width="80" height="32"/>
+                                <rect key="frame" x="167" y="809" width="80" height="33"/>
                                 <color key="backgroundColor" name="KidSaveOcean Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="LOe-kY-BeC"/>
@@ -393,6 +393,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="GMu-jm-5ap"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -415,7 +416,6 @@
                             <constraint firstItem="2Jv-W6-dOJ" firstAttribute="width" secondItem="E8I-Lv-iE7" secondAttribute="width" id="u4a-El-hD6"/>
                             <constraint firstItem="GMu-jm-5ap" firstAttribute="trailing" secondItem="HAf-pJ-npN" secondAttribute="trailing" id="xTD-9r-8Ia"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GMu-jm-5ap"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="e9p-UZ-oJ8" appends="YES" id="zCg-1i-VSY"/>
                         </connections>
@@ -459,18 +459,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-u6-ad9">
-                                <rect key="frame" x="34" y="418" width="346" height="20"/>
+                                <rect key="frame" x="34" y="418" width="346" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stamp, mail it off, and then enter it in the Fatechanger Map’s Tracker. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDm-rs-hRz">
-                                <rect key="frame" x="20" y="746" width="374" height="42"/>
+                                <rect key="frame" x="20" y="745" width="374" height="43"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="seg-VP-4uH"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="btf-6I-jX8" firstAttribute="leading" secondItem="seg-VP-4uH" secondAttribute="leading" constant="34" id="2jB-wI-IXa" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
@@ -486,7 +487,6 @@
                             <constraint firstItem="seg-VP-4uH" firstAttribute="bottom" secondItem="yDm-rs-hRz" secondAttribute="bottom" constant="20" id="nfY-QE-EKd" customClass="KSOLayoutConstraint" customModule="FateChanger" customModuleProvider="target"/>
                             <constraint firstItem="6NN-13-7KK" firstAttribute="leading" secondItem="seg-VP-4uH" secondAttribute="leading" id="znw-H1-Art"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="seg-VP-4uH"/>
                     </view>
                     <connections>
                         <outlet property="adressLabel" destination="7sH-u6-ad9" id="Dc2-1Z-Di8"/>
@@ -524,8 +524,8 @@
                     <view key="view" contentMode="scaleToFill" id="m4U-wb-vMV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="O5u-74-djI"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ify-N4-uYy"/>
                 </viewController>
@@ -615,7 +615,7 @@
         <image name="dashboardTabItem" width="48" height="32"/>
         <image name="mapViewB-1" width="866" height="574"/>
         <namedColor name="KidSaveOcean Blue">
-            <color red="0.12156862745098039" green="0.63137254901960782" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.63099998235702515" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

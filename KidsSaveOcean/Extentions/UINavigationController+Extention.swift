@@ -10,6 +10,8 @@ import UIKit
 
 extension UINavigationController {
 
+    var statusBarTag: Int { return 100500 }
+
     override open func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +28,15 @@ extension UINavigationController {
              navigationBar.standardAppearance.backgroundEffect = .none
              navigationBar.standardAppearance.shadowColor = .clear
          }
+
+        let statusBarFrame = UIApplication.shared.statusBarFrame
+        let statusBarView = UIView(frame: statusBarFrame)
+        statusBarView.tag = statusBarTag
+        self.view.addSubview(statusBarView)
+    }
+
+    func setStatusBarColor(_ color: UIColor) {
+        self.view.subviews.filter{ $0.tag == statusBarTag }.first?.backgroundColor = color
     }
 
 }

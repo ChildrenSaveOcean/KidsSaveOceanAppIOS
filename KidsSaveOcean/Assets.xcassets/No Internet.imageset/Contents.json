@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "10.15 No Internet.jpg",
       "idiom" : "universal",
-      "filename" : "No Internet.png",
       "scale" : "1x"
     },
     {
+      "filename" : "10.15 No Internet@2x.jpg",
       "idiom" : "universal",
-      "filename" : "No Internet@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "10.15 No Internet@3x.jpg",
       "idiom" : "universal",
-      "filename" : "No Internet@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

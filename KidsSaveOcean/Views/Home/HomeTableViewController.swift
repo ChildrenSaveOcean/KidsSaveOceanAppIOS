@@ -43,6 +43,7 @@ final class HomeTableViewController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
+    navigationController?.setStatusBarColor(UIColor.backgroundGray)
   }
     
     override func viewDidAppear(_ animated: Bool) {
