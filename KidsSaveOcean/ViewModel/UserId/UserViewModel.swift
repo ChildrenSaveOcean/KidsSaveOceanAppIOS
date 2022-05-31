@@ -18,8 +18,6 @@ enum DashboardTask: Int, CaseIterable {
         switch self {
         case .research:
             return "Research plastic & climate emergencies"
-//        case .write_letter:
-//            return "Write your government a letter"
         case .share:
             return "Spread Fatechanger by sharing"
         case .local_politics:
