@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		076BFD165C7B3DD2855EB5A3 /* Pods_KidsSaveOceanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826E93D0D871C042595D3979 /* Pods_KidsSaveOceanUITests.framework */; };
+		16023561284D6E4C009087AC /* UserTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16023560284D6E4C009087AC /* UserTaskViewModel.swift */; };
 		1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603778E2247C6BA008123BF /* ToolsWithTeethViewController.swift */; };
 		16080B1E2327F7B6008F0AEF /* KSODidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16080B1D2327F7B6008F0AEF /* KSODidButton.swift */; };
 		16129FF4237464DE00E677B3 /* CampaignSignatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16129FF3237464DE00E677B3 /* CampaignSignatures.swift */; };
@@ -63,7 +64,6 @@
 		1679C90822E270B700BC1A89 /* NotificationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679C90722E270B700BC1A89 /* NotificationTarget.swift */; };
 		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
 		169D6CF222D73629008073DF /* WriteToWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D6CF122D73629008073DF /* WriteToWhereViewController.swift */; };
-		16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3B229027F100E36F25 /* UserViewModel.swift */; };
 		16BA0A3E2290281A00E36F25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3D2290281A00E36F25 /* User.swift */; };
 		16CF1A162382377B001D099D /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */; };
 		16CF1A172382377E001D099D /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */; };
@@ -197,7 +197,6 @@
 		168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionDashboardViewController.swift; sourceTree = "<group>"; };
 		169D6CF122D73629008073DF /* WriteToWhereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteToWhereViewController.swift; sourceTree = "<group>"; };
 		16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsSaveOcean.entitlements; sourceTree = "<group>"; };
-		16BA0A3B229027F100E36F25 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		16BA0A3D2290281A00E36F25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareKidsSaveOcean.swift; sourceTree = "<group>"; };
 		16D2571A2527880F00CD1B0F /* WriteAboutWhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAboutWhatViewController.swift; sourceTree = "<group>"; };
@@ -502,7 +501,7 @@
 		16BA0A39229027B500E36F25 /* UserId */ = {
 			isa = PBXGroup;
 			children = (
-				16BA0A3B229027F100E36F25 /* UserViewModel.swift */,
+				16023560284D6E4C009087AC /* UserTaskViewModel.swift */,
 				16BA0A3D2290281A00E36F25 /* User.swift */,
 				166A1ACC279DC9A3002BE81D /* UserActivity.swift */,
 			);
@@ -1008,9 +1007,9 @@
 				16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */,
 				945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */,
 				163417012159772D00C98646 /* UserTypeTableViewCell.swift in Sources */,
-				16BA0A3C229027F100E36F25 /* UserViewModel.swift in Sources */,
 				16DDAA7D239B1131003FFCED /* TrackTheHijackLiveCampaignViewController.swift in Sources */,
 				16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */,
+				16023561284D6E4C009087AC /* UserTaskViewModel.swift in Sources */,
 				7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */,
 				7CB51D38233A901D0014094C /* StepsTableViewCell.swift in Sources */,
 				16F35A35251F6B7100238F36 /* DashboardHelpVideoViewController.swift in Sources */,

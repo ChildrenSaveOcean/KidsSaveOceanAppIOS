@@ -80,17 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: MessagingDelegate {
-
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        Messaging.messaging().apnsToken = deviceToken
-        Messaging.messaging().token { (token, error) in
-            if let error = error {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
-            } else if let token = token {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: token)
-            }
-        }
-    }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
@@ -100,8 +89,8 @@ extension AppDelegate: MessagingDelegate {
         
         messaging.subscribe(toTopic: "all")
     }
-
-//    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-//        print("Received data message: \(remoteMessage.appData)")
-//    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print("Received data message: \(remoteMessage.appData)")
+    }
 }
