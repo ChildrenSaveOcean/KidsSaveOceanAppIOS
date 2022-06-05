@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseInstanceID
 import FirebaseMessaging
 import Firebase
 
@@ -22,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LocationService.shared().autorizeLocation(completionHandler: nil)
         
         KSOAuthorization.anonymousAuthorization {
-            UserViewModel.fetchUserFBData()
+            UserTaskViewModel.fetchUserFBData()
             CountriesService.shared().setup()
             HijackPLocationViewModel.shared().setup()
             HijackPoliciesViewModel.shared().setup()
@@ -63,11 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        UserViewModel.shared.saveUser()
+        UserTaskViewModel.shared.saveUser()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        UserViewModel.shared.saveUser()
+        UserTaskViewModel.shared.saveUser()
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -81,6 +80,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: MessagingDelegate {
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+        Messaging.messaging().token { (token, error) in
+            if let error = error {
+                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
+            } else if let token = token {
+                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: token)
+            }
+        }
+    }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
@@ -90,8 +100,8 @@ extension AppDelegate: MessagingDelegate {
         
         messaging.subscribe(toTopic: "all")
     }
-    
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
-    }
+
+//    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+//        print("Received data message: \(remoteMessage.appData)")
+//    }
 }

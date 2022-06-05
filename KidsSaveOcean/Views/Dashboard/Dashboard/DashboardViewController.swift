@@ -55,28 +55,13 @@ class DashboardViewController: UIViewController {
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
 
-    let taskScope: [String] = UserViewModel.getDashboardTaskTitles()
-    let tasks: [DashboardTask] = UserViewModel.getDashboardTasks()
-
-    var _completionTasksStates: [Bool]?
-    var completionTasksStates: [Bool] {
-        get {
-            if _completionTasksStates != nil {
-                return _completionTasksStates!
-            } else {
-                _completionTasksStates = UserViewModel.shared.getCompletionTasksStatuses()
-
-                return _completionTasksStates!
-            }
-        }
-        set {
-            _completionTasksStates = newValue
-        }
-    }
+    let taskScope: [DashboardTask] = DashboardTask.allCases
 
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3, self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
 
     var audioPlayers = [AVAudioPlayer]()
+
+    let userTasks = UserTaskViewModel.shared
 
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
@@ -97,11 +82,9 @@ class DashboardViewController: UIViewController {
         }
         
         setUpTopIcons()
-               var firstIncompetedTask = self.completionTasksStates.firstIndex(of: false) ?? 0
-               if firstIncompetedTask >= 5 {
-                   firstIncompetedTask = 0
-               }
-        self.chooseTaskWithNum(firstIncompetedTask)
+
+        let firstIncompetedTask = taskScope.map{ userTasks.getTaskStatus($0) }.firstIndex(of: false) ?? 0
+        self.chooseTaskWithNum( firstIncompetedTask )
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -117,21 +100,9 @@ class DashboardViewController: UIViewController {
         navigationController?.setStatusBarColor(UIColor.clear)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        view.layoutIfNeeded()
-
-       
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserViewModel.shared.saveUser()
+        userTasks.saveUser()
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -192,9 +163,9 @@ class DashboardViewController: UIViewController {
     }
 
     @IBAction func completeAction(_ sender: Any) {
-        var newState: Bool
-        newState = !completionTasksStates[currentTaskSwitched]
-        completionTasksStates[currentTaskSwitched] = newState
+        let task = taskScope[currentTaskSwitched]
+        let newState = !userTasks.getTaskStatus(task)
+        userTasks.setTaskStatus(task: task, value: newState)
         topIcons[currentTaskSwitched]?.completed = newState
         
         saveTaskStates()
@@ -209,9 +180,8 @@ class DashboardViewController: UIViewController {
     }
     
     private func saveTaskStates() {
-        guard UserViewModel.shared.userDataHasBeenLoaded else { return }
-        UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
-        UserViewModel.shared.saveCompletionTaskStatuses(completionTasksStates)
+        guard userTasks.userDataHasBeenLoaded else { return }
+        userTasks.saveUser()
         selectTopIcon()
         setUpDidItSection()
     }
@@ -222,19 +192,20 @@ class DashboardViewController: UIViewController {
 
     // MARK: Private methods
     @objc private func setUserDataLoadingState() {
-        if !UserViewModel.shared.userDataHasBeenLoaded {
+
+        if !userTasks.userDataHasBeenLoaded {
+
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blur.alpha = 0.7
             activityIndicator.alpha = 1
             activityIndicator.startAnimating()
         } else {
+
             blur.frame = .zero
             blur.alpha = 0.0
             activityIndicator.alpha = 0
             activityIndicator.stopAnimating()
-            
-            _completionTasksStates = nil
             setUpTopIcons()
         }
     }
@@ -259,30 +230,26 @@ class DashboardViewController: UIViewController {
 
     private func setUpTopIcons() {
         for (num, icon) in topIcons.enumerated() {
-            icon?.completed = completionTasksStates[num]
+            icon?.completed =  userTasks.getTaskStatus( DashboardTask.allCases[num] )
             icon?.setUnselected()
         }
     }
 
     private func setTaskLabel() {
-        taskLabel.text = taskScope[currentTaskSwitched]
+        taskLabel.text = taskScope[currentTaskSwitched].title
     }
 
     private func setUpDidItSection() {
 
         getDidButtonsStackView(narrow: true)
-        
-        if completionTasksStates[currentTaskSwitched] {
+
+        if userTasks.getTaskStatus(taskScope[currentTaskSwitched]) {
             completedFistImage.image = #imageLiteral(resourceName: "fist_xvmush")
             completedLabel.text = "Completed!"
+            didItButton.setTitle("Not yet", for: .normal)
         } else {
             completedFistImage.image = #imageLiteral(resourceName: "Incomplete fist and writing")
             completedLabel.text = "Incomplete"
-        }
-
-        if completionTasksStates[currentTaskSwitched] {
-            didItButton.setTitle("Not yet", for: .normal)
-        } else {
             didItButton.setTitle("I did it!", for: .normal)
         }
     }
@@ -361,7 +328,7 @@ class DashboardViewController: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
-        UserViewModel.shared.saveUser()
+        userTasks.saveUser()
         super.didReceiveMemoryWarning()
     }
 }

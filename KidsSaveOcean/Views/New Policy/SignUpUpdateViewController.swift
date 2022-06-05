@@ -69,12 +69,12 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
         
-        let campaign = UserViewModel.shared.campaign
+        let campaign = UserTaskViewModel.shared.campaign
 
         signaturesReqdTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesReqdTextField.layer.borderWidth = 1.0
         signaturesReqdTextField.roundCorners()
-        signaturesReqdTextField.text = String(UserViewModel.shared.signatures_pledged)
+        signaturesReqdTextField.text = String(UserTaskViewModel.shared.signatures_pledged)
         
         newSignaturesCollected.layer.borderColor = UIColor.gray.cgColor
         newSignaturesCollected.layer.borderWidth = 1.0
@@ -116,8 +116,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesReqdTextField.text {
             //UserViewModel.shared.campaign?.signatures_pledged = Int(signatures) ?? 0
-            UserViewModel.shared.signatures_pledged = Int(signatures) ?? 0
-            UserViewModel.shared.saveUser()
+            UserTaskViewModel.shared.signatures_pledged = Int(signatures) ?? 0
+            UserTaskViewModel.shared.saveUser()
             dismissKeyboard()
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
@@ -129,13 +129,13 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             return
         }
 
-        let userTotalSignatures = UserViewModel.shared.campaign.signatures_collected + addedSignaturesAmount
-        UserViewModel.shared.campaign.signatures_collected = userTotalSignatures
-        UserViewModel.shared.saveUser()
+        let userTotalSignatures = UserTaskViewModel.shared.campaign.signatures_collected + addedSignaturesAmount
+        UserTaskViewModel.shared.campaign.signatures_collected = userTotalSignatures
+        UserTaskViewModel.shared.saveUser()
         signaturesCollectedTextField.text = String(userTotalSignatures)
         newSignaturesCollected.text = ""
         
-        let location_id = UserViewModel.shared.location_id
+        let location_id = UserTaskViewModel.shared.location_id
         let campaign = campaigns.filter{$0.location_id == location_id}.first
         if campaign != nil {
             let newCollectedAmount = (Int(signaturesTotalCollectedLabel.text ?? "") ?? 0) + addedSignaturesAmount
@@ -160,8 +160,8 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     // MARK: Private methods
     private func showLocationView() {
 
-        let campaignLive = UserViewModel.shared.isUserLocationCampaignIsLive()
-        let userCampaignLocationId = UserViewModel.shared.location_id
+        let campaignLive = UserTaskViewModel.shared.isUserLocationCampaignIsLive()
+        let userCampaignLocationId = UserTaskViewModel.shared.location_id
         let currentCampaignLocationNum = campaignLocations.firstIndex(where: { location -> Bool in
 
             return location.id == userCampaignLocationId
@@ -180,7 +180,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             liveLocationView.isHidden = true
             chooseLocationView.isHidden = false
             
-            signaturesReqdTextField.text = String(UserViewModel.shared.signatures_pledged)
+            signaturesReqdTextField.text = String(UserTaskViewModel.shared.signatures_pledged)
             signaturesCollectedTextField.text = "0"
 
             if !userCampaignLocationId.isEmpty {
@@ -237,7 +237,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     private func updateLiveLocationView() {
 
-        let campaign = campaigns.filter { $0.id == UserViewModel.shared.campaign.campaign_id }.first
+        let campaign = campaigns.filter { $0.id == UserTaskViewModel.shared.campaign.campaign_id }.first
         signaturesRequiredLabel.text =  String( campaign?.signatures_required ?? 0)
         signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
         deadlineLabel.text = "--"
@@ -273,13 +273,13 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first
             if let campaign = campaign {
                 let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_required: campaign.signatures_required, signatures_collected: 0)
-                UserViewModel.shared.campaign = campSign
-                UserViewModel.shared.location_id = campaign.location_id
+                UserTaskViewModel.shared.campaign = campSign
+                UserTaskViewModel.shared.location_id = campaign.location_id
             } else {
-                UserViewModel.shared.location_id = self.campaignLocations[num].id
+                UserTaskViewModel.shared.location_id = self.campaignLocations[num].id
             }
 
-            UserViewModel.shared.saveUser()
+            UserTaskViewModel.shared.saveUser()
             
             self.liveLocationView.isHidden = true
             self.chooseLocationView.isHidden = false

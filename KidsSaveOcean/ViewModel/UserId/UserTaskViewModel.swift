@@ -34,7 +34,7 @@ enum DashboardTask: Int, CaseIterable {
     }
 }
 
-class UserViewModel: Codable {
+class UserTaskViewModel: Codable {
 
     enum CodingKeys: String, CodingKey {
         case local_politics = "dash_joined_a_policy_hijack_campaign"
@@ -67,7 +67,7 @@ class UserViewModel: Codable {
 
     private let authorizedUser = Auth.auth().currentUser
 
-    static var shared = UserViewModel()
+    static var shared = UserTaskViewModel()
 
     static func fetchUserFBData() {
 
@@ -75,7 +75,7 @@ class UserViewModel: Codable {
         Database.database().reference().child("USERS").child( userId ).observeSingleEvent(of: .value) {  snapshot in
 
             guard let dictionary = snapshot.value as? Dictionary<String, Any>,
-                let userViewModel = UserViewModel(with: dictionary) else {
+                let userViewModel = UserTaskViewModel(with: dictionary) else {
                 return
             }
 
@@ -93,7 +93,7 @@ class UserViewModel: Codable {
         }
     }
 
-    private func setTaskStatus(task: DashboardTask, value: Bool) {
+    func setTaskStatus(task: DashboardTask, value: Bool) {
         switch task {
         case .research:
             self.research = value
@@ -118,7 +118,7 @@ class UserViewModel: Codable {
         }
     }
 
-    private func getTaskStatus(_ task: DashboardTask) -> Bool {
+    func getTaskStatus(_ task: DashboardTask) -> Bool {
         switch task {
         case .research:
             return self.research
@@ -144,6 +144,10 @@ class UserViewModel: Codable {
     }
 
     func saveUser() {
+
+        let completionTasksStates = DashboardTask.allCases.map{ getTaskStatus($0) }
+        UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
+        UserDefaultsHelper.saveLetterNumber(letters_written)
 
         guard let userId = Auth.auth().currentUser?.uid else { return }
 

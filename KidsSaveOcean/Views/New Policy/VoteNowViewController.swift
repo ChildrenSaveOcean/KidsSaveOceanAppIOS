@@ -53,7 +53,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserViewModel.shared.user_type != .student {
+        if UserTaskViewModel.shared.user_type != .student {
             voteButton.isEnabled = false
             voteButton.alpha = 0.5
             
@@ -66,8 +66,8 @@ class VoteNowViewController: UIViewController, Instantiatable {
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             if let selectedPolicy = self.selectedPolicy {
-                UserViewModel.shared.hijack_policy_selected = selectedPolicy.id
-                UserViewModel.shared.saveUser()
+                UserTaskViewModel.shared.hijack_policy_selected = selectedPolicy.id
+                UserTaskViewModel.shared.saveUser()
                 HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
                 
             }
@@ -135,7 +135,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     private func setPolicyControls() {
         pickerView.reloadAllComponents()
         
-        let userHijackPolicy = UserViewModel.shared.hijack_policy_selected
+        let userHijackPolicy = UserTaskViewModel.shared.hijack_policy_selected
         
         if !userHijackPolicy.isEmpty {
             let alertMessage = UIAlertController(title: "", message: "Explore proposals FateChanger youth are considering for citizen ballot initiatives", preferredStyle: .alert)
