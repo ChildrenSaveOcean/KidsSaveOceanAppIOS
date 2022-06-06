@@ -30,7 +30,7 @@ struct UserActivity: Codable {
     var research: Bool = false
     var protest: Bool = false
     var share: Bool = false
-    var start_campaign: Bool = false // ??
+    var start_campaign: Bool = false
     var write_letter_about_climate: Bool = false
     var write_letter_about_plastic: Bool = false
     var letters_written: Int = 0

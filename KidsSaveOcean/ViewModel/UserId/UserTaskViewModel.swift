@@ -69,10 +69,16 @@ class UserTaskViewModel: Codable {
 
     static var shared = UserTaskViewModel()
 
+    static var databaseRef: DatabaseReference? {
+
+        guard let userId = Auth.auth().currentUser?.uid else { return nil }
+
+        return Database.database().reference().child("USERS").child( userId )
+    }
+
     static func fetchUserFBData() {
 
-        guard let userId = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("USERS").child( userId ).observeSingleEvent(of: .value) {  snapshot in
+        databaseRef?.observeSingleEvent(of: .value) {  snapshot in
 
             guard let dictionary = snapshot.value as? Dictionary<String, Any>,
                 let userViewModel = UserTaskViewModel(with: dictionary) else {
@@ -149,12 +155,9 @@ class UserTaskViewModel: Codable {
         UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
         UserDefaultsHelper.saveLetterNumber(letters_written)
 
-        guard let userId = Auth.auth().currentUser?.uid else { return }
-
         let userModelDictionary = self.dictionaryRepresentation
 
-        Database.database().reference().child("USERS").child( userId )
-            .setValue(userModelDictionary) { (error: Error?, _: DatabaseReference) in
+        UserTaskViewModel.databaseRef?.setValue(userModelDictionary) { (error: Error?, _: DatabaseReference) in
 
             if let error = error {
                 print("UserViewModel saving failed, parameters for update: \(String(describing: userModelDictionary))")
@@ -163,24 +166,6 @@ class UserTaskViewModel: Codable {
 
             print("\nUser saved successfully")
         }
-    }
-
-    func saveCompletionTaskStatuses(_ values: [Bool]) {
-        UserDefaultsHelper.saveCompletionTasksStatus(values) // just for any case
-        for (i, task) in DashboardTask.allCases.enumerated() {
-            setTaskStatus(task: task, value: values[i])
-        }
-    }
-
-    func getCompletionTasksStatuses() -> [Bool] {
-
-        //var userDefsStatuses = Settings.getCompletionTasksStatus()
-        var taskStatuses = [Bool]()
-
-        for task in DashboardTask.allCases {
-            taskStatuses.append(getTaskStatus(task))
-        }
-        return taskStatuses
     }
 
     func increaseLetterWrittenCount() {

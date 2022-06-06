@@ -61,7 +61,7 @@ class DashboardViewController: UIViewController {
 
     var audioPlayers = [AVAudioPlayer]()
 
-    let userTasks = UserTaskViewModel.shared
+    lazy var userTasks = UserTaskViewModel.shared
 
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
