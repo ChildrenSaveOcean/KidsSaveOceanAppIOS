@@ -1,5 +1,5 @@
 //
-//  ViewController+ExtentionViewController.swift
+//  ViewController+Extentions.swift
 //  KidsSaveOcean
 //
 //  Created by Maria Soboleva on 11/6/19.
@@ -12,7 +12,7 @@ extension UIViewController {
     
     func setHidingKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = true //false
+        tap.cancelsTouchesInView = true
         view.addGestureRecognizer(tap)
     }
     

@@ -1,5 +1,5 @@
 //
-//  KSODidButton.swift
+//  DashboardDidButton.swift
 //  KidsSaveOcean
 //
 //  Created by Maria Soboleva on 9/10/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KSODidButton: UIButton {
+class DashboardDidButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

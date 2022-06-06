@@ -10,6 +10,7 @@ import UIKit
 typealias UIButtonTargetClosure = (UIButton) -> Void
 
 class ClosureWrapper: NSObject {
+
     let closure: UIButtonTargetClosure
     init(_ closure: @escaping UIButtonTargetClosure) {
         self.closure = closure

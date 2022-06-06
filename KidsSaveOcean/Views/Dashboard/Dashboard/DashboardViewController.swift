@@ -30,8 +30,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var didButtonsStackView: UIStackView!
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var howButton: UIButton!
-    @IBOutlet weak var didItButton: KSODidButton!
-    @IBOutlet weak var didItMiddleButton: KSODidButton!
+    @IBOutlet weak var didItButton: DashboardDidButton!
+    @IBOutlet weak var didItMiddleButton: DashboardDidButton!
     
     @IBOutlet weak var actionAlertButton: ActionAlertButton!
 

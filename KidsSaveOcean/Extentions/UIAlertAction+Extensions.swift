@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIAlertAction {
+
     func setAppTextColor() {
         self.setValue(UIColor.kidsSaveOceanBlue, forKey: "titleTextColor")
     }
