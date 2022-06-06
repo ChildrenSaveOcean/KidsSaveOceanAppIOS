@@ -65,6 +65,7 @@
 		168F9D58223DDEEA000A432D /* AlertActionDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168F9D57223DDEEA000A432D /* AlertActionDashboardViewController.swift */; };
 		169D6CF222D73629008073DF /* WriteToWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D6CF122D73629008073DF /* WriteToWhereViewController.swift */; };
 		16BA0A3E2290281A00E36F25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA0A3D2290281A00E36F25 /* User.swift */; };
+		16C329F5284DA7B500E42807 /* DashboardTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C329F4284DA7B500E42807 /* DashboardTask.swift */; };
 		16CF1A162382377B001D099D /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9121A1FF5100C2D6DA /* SF-Pro-Display-Semibold.otf */; };
 		16CF1A172382377E001D099D /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CE89F9021A1FF5100C2D6DA /* SF-Pro-Text-Semibold.otf */; };
 		16CF1A192389F9BB001D099D /* ShareKidsSaveOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */; };
@@ -108,11 +109,9 @@
 		945A089120F643EB006ED13D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089020F643EB006ED13D /* MapViewController.swift */; };
 		945A089320F64520006ED13D /* KSOPinOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A089220F64520006ED13D /* KSOPinOfLetters.swift */; };
 		946847D92139E299007A1158 /* KSOCustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946847D82139E299007A1158 /* KSOCustomMapPin.swift */; };
-		B3A06EBFEF728477BC302843 /* Pods_KidsSaveOcean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152049409E90A0422ACC592C /* Pods_KidsSaveOcean.framework */; };
 		C55E0700214EEAB9009B7BD6 /* CGFloat+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */; };
 		C55E0703214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E0701214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift */; };
 		C55E0704214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55E0702214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib */; };
-		F38D9D37A71AB48B286784F8 /* Pods_KidsSaveOceanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75AF12697C6AEA1F1813AA09 /* Pods_KidsSaveOceanUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +198,7 @@
 		169D6CF122D73629008073DF /* WriteToWhereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteToWhereViewController.swift; sourceTree = "<group>"; };
 		16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsSaveOcean.entitlements; sourceTree = "<group>"; };
 		16BA0A3D2290281A00E36F25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		16C329F4284DA7B500E42807 /* DashboardTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTask.swift; sourceTree = "<group>"; };
 		16CF1A182389F9BB001D099D /* ShareKidsSaveOcean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareKidsSaveOcean.swift; sourceTree = "<group>"; };
 		16D2571A2527880F00CD1B0F /* WriteAboutWhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAboutWhatViewController.swift; sourceTree = "<group>"; };
 		16D4C27B22C1552F006DBC64 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -247,12 +247,9 @@
 		945A089020F643EB006ED13D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		945A089220F64520006ED13D /* KSOPinOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOPinOfLetters.swift; sourceTree = "<group>"; };
 		946847D82139E299007A1158 /* KSOCustomMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOCustomMapPin.swift; sourceTree = "<group>"; };
-		B47AE0AD879820BBA5F3B93F /* Pods-KidsSaveOceanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C55E06FF214EEAB9009B7BD6 /* CGFloat+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extentions.swift"; sourceTree = "<group>"; };
 		C55E0701214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOMapTop10TableViewCell.swift; sourceTree = "<group>"; };
 		C55E0702214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KSOMapTop10TableViewCell.xib; sourceTree = "<group>"; };
-		DDA3D3380C301B73BDFD5231 /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
-		FCC29D71F4499EC08609E7AF /* Pods-KidsSaveOcean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOcean.debug.xcconfig"; path = "Target Support Files/Pods-KidsSaveOcean/Pods-KidsSaveOcean.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,6 +502,7 @@
 				16023560284D6E4C009087AC /* UserTaskViewModel.swift */,
 				16BA0A3D2290281A00E36F25 /* User.swift */,
 				166A1ACC279DC9A3002BE81D /* UserActivity.swift */,
+				16C329F4284DA7B500E42807 /* DashboardTask.swift */,
 			);
 			path = UserId;
 			sourceTree = "<group>";
@@ -716,16 +714,6 @@
 				C55E0702214EF0ED009B7BD6 /* KSOMapTop10TableViewCell.xib */,
 			);
 			path = cells;
-			sourceTree = "<group>";
-		};
-		FD5851DD5BBF88FB6CF984B1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				152049409E90A0422ACC592C /* Pods_KidsSaveOcean.framework */,
-				3A0E33435F70805F760260AE /* Pods_KidsSaveOceanTests.framework */,
-				75AF12697C6AEA1F1813AA09 /* Pods_KidsSaveOceanUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1042,6 +1030,7 @@
 				163D20362170F12200069294 /* HomeScoreTableViewCell.swift in Sources */,
 				16768111215AD41E00EE4E1F /* HomeTableViewController.swift in Sources */,
 				7C2B9A6F21188EEB00977E21 /* CountryContactsViewModel.swift in Sources */,
+				16C329F5284DA7B500E42807 /* DashboardTask.swift in Sources */,
 				1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */,
 				1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */,
 				16FD4EEB23FE346200A1BA44 /* HijackPolicyVideoViewController.swift in Sources */,

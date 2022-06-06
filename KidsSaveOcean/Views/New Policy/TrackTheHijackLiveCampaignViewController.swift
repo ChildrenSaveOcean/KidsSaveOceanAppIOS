@@ -38,7 +38,7 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
         totalCollectedSignaturesLabel.text = "Total collected so far: " + String(campaign.signatures_collected)
         deadlineLabel.text = "--"
         
-        userPlannedSignatures.text = "Your planned signatures: " + String( UserTaskViewModel.shared.signatures_pledged)
+        userPlannedSignatures.text = "Your planned signatures: " + String( UserTaskViewModel.shared.signaturesPledged)
         userCollectedSignatures.text = "Your collected signatures: " + String(userCampaign.signatures_collected)
         
     }

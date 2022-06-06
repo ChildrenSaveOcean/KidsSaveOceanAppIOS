@@ -11,61 +11,39 @@ import FirebaseAuth
 import FirebaseDatabase
 import MapKit
 
-enum DashboardTask: Int, CaseIterable {
-    case research, write_letter_about_plastic, write_letter_about_climate, share, local_politics, protest,  hijack_policy_selected, campaign
-
-    var title: String {
-        switch self {
-        case .research:
-            return "Research plastic & climate emergencies"
-        case .share:
-            return "Spread Fatechanger by sharing"
-        case .local_politics:
-            return "Help create new environmental laws"
-        case .protest:
-            return "Take part in or organize a protest"
-        case .write_letter_about_plastic:
-            return "Write your government a letter about plastic"
-        case .write_letter_about_climate:
-            return "Write your government a letter about climate"
-        default:
-            return ""
-        }
-    }
-}
-
 class UserTaskViewModel: Codable {
 
     enum CodingKeys: String, CodingKey {
-        case local_politics = "dash_joined_a_policy_hijack_campaign"
+
+        // Dashboard tasks
+        case localPolitics = "dash_joined_a_policy_hijack_campaign"
         case research = "dash_learn_about_problem"
         case protest = "dash_protest"
         case share = "dash_share"
-        case write_letter_about_climate = "dash_wrote_a_letter_about_climate"
-        case write_letter_about_plastic = "dash_wrote_a_letter_about_plastic"
+        case writeLetterAboutClimate = "dash_wrote_a_letter_about_climate"
+        case writeLetterAboutPlastic = "dash_wrote_a_letter_about_plastic"
 
-        case letters_written = "user_letters_written"
-        case user_type = "user_person_type"
-        case hijack_policy_selected = "hijack_policy_selected"
-        case signatures_pledged = "signatures_pledged"
-        case location_id = "location_id"
+        // Other properties
+        case lettersWritten = "user_letters_written"
+        case userType = "user_person_type"
+        case hijackPolicySelected = "hijack_policy_selected"
+        case signaturesPledged = "signatures_pledged"
+        case locationId = "location_id"
     }
 
-    var local_politics: Bool = false
+    var localPolitics: Bool = false
     var research: Bool = false
     var protest: Bool = false
     var share: Bool = false
-    var start_campaign: Bool = false
-    var write_letter_about_climate: Bool = false
-    var write_letter_about_plastic: Bool = false
-    var letters_written: Int = 0
-    var user_type: UserType = .student
-    var hijack_policy_selected: String = ""
-    var signatures_pledged: Int = 0
-    var location_id: String = ""
+    var startCampaign: Bool = false
+    var writeLetterAboutClimate: Bool = false
+    var writeLetterAboutPlastic: Bool = false
+    var lettersWritten: Int = 0
+    var userType: UserType = .student
+    var hijackPolicySelected: String = ""
+    var signaturesPledged: Int = 0
+    var locationId: String = ""
     var campaign = CampaignSignatures(campaing: [String: Any]())
-
-    private let authorizedUser = Auth.auth().currentUser
 
     static var shared = UserTaskViewModel()
 
@@ -108,16 +86,16 @@ class UserTaskViewModel: Codable {
             self.share = value
 
         case .local_politics:
-            self.local_politics = value
+            self.localPolitics = value
 
         case .protest:
             self.protest = value
             
         case .write_letter_about_plastic:
-            self.write_letter_about_plastic = value
+            self.writeLetterAboutPlastic = value
             
         case .write_letter_about_climate:
-            self.write_letter_about_climate = value
+            self.writeLetterAboutClimate = value
             
         default:
             break
@@ -133,16 +111,16 @@ class UserTaskViewModel: Codable {
             return self.share
 
         case .local_politics:
-            return self.local_politics
+            return self.localPolitics
 
         case .protest:
             return self.protest
             
         case .write_letter_about_plastic:
-            return self.write_letter_about_plastic
+            return self.writeLetterAboutPlastic
             
         case .write_letter_about_climate:
-            return self.write_letter_about_climate
+            return self.writeLetterAboutClimate
             
         default:
             return false
@@ -153,7 +131,7 @@ class UserTaskViewModel: Codable {
 
         let completionTasksStates = DashboardTask.allCases.map{ getTaskStatus($0) }
         UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
-        UserDefaultsHelper.saveLetterNumber(letters_written)
+        UserDefaultsHelper.saveLetterNumber(lettersWritten)
 
         let userModelDictionary = self.dictionaryRepresentation
 
@@ -169,7 +147,7 @@ class UserTaskViewModel: Codable {
     }
 
     func increaseLetterWrittenCount() {
-        letters_written += 1
+        lettersWritten += 1
         saveUser()
     }
 

@@ -85,7 +85,7 @@ final class LetterTrackerViewController: UIViewController {
         
         let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratulations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
-            UserTaskViewModel.shared.letters_written += 1
+            UserTaskViewModel.shared.lettersWritten += 1
             UserTaskViewModel.shared.saveUser()
             self.gotoDashBoard()
         })

@@ -60,7 +60,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
             if self.userType != nil {
                 let userViewModel = UserTaskViewModel.shared
-                userViewModel.user_type = self.userType!
+                userViewModel.userType = self.userType!
                 userViewModel.saveUser()
             }
 
