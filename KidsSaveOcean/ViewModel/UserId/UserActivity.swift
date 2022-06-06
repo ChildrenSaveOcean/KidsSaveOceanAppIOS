@@ -38,7 +38,7 @@ struct UserActivity: Codable {
     var hijack_policy_selected: String = ""
     var signatures_pledged: Int = 0
     var location_id: String = ""
-    var campaign: CampaignSignatures? = CampaignSignatures(campaing: [String: Any]())
+    var campaign: CampaignSignatures? = CampaignSignatures(with: [String: Any]())
     var userType: UserType = .other
 
 }

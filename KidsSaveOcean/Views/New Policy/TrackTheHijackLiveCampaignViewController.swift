@@ -22,24 +22,24 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
         super.viewDidLoad()
         
         let userCampaign = UserTaskViewModel.shared.campaign
-        let campaign1 = CampaignViewModel.shared().campaigns.filter { $0.id == userCampaign.campaign_id }.first
-        guard let campaign = campaign1, UserTaskViewModel.shared.isUserLocationCampaignIsLive()
+        let campaign = CampaignViewModel.shared.campaigns.filter { $0.id == userCampaign?.campaignId }.first
+        guard let userCampaign = userCampaign,
+              let campaign = campaign, UserTaskViewModel.shared.isUserLocationCampaignIsLive()
             else { return }
-        
-        let policy = HijackPoliciesViewModel.shared().hijackPolicies.filter {$0.id == campaign.hijack_policy}.first
-        if policy != nil {
-            policyChosenLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy!.description)
+
+        if let policy = HijackPoliciesViewModel.shared().hijackPolicies.filter {$0.id == campaign.hijackPolicy}.first {
+            policyChosenLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy.description)
         }
-        
-        let location = HijackPLocationViewModel.shared().hijackPLocations.filter { $0.id == campaign.location_id }.first?.location ?? ""
+
+        let location = HijackPLocationViewModel.shared().hijackPLocations.filter { $0.id == campaign.locationId }.first?.location ?? ""
         campaignLocation.text = "Campaign location: " + location
         
-        signatureRequiredLabel.text = "Signatures required: " + String( campaign.signatures_required)
-        totalCollectedSignaturesLabel.text = "Total collected so far: " + String(campaign.signatures_collected)
+        signatureRequiredLabel.text = "Signatures required: " + String( campaign.signaturesRequired)
+        totalCollectedSignaturesLabel.text = "Total collected so far: " + String(campaign.signaturesCollected)
         deadlineLabel.text = "--"
         
         userPlannedSignatures.text = "Your planned signatures: " + String( UserTaskViewModel.shared.signaturesPledged)
-        userCollectedSignatures.text = "Your collected signatures: " + String(userCampaign.signatures_collected)
+        userCollectedSignatures.text = "Your collected signatures: " + String(userCampaign.signaturesCollected)
         
     }
     

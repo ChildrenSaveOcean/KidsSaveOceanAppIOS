@@ -43,7 +43,7 @@ class UserTaskViewModel: Codable {
     var hijackPolicySelected: String = ""
     var signaturesPledged: Int = 0
     var locationId: String = ""
-    var campaign = CampaignSignatures(campaing: [String: Any]())
+    var campaign = CampaignSignatures(with: [String: Any]())
 
     static var shared = UserTaskViewModel()
 
@@ -160,7 +160,7 @@ class UserTaskViewModel: Codable {
     }
     
     func isUserLocationCampaignIsLive() -> Bool {
-        let campaignLive = CampaignViewModel.shared().campaigns.filter({$0.id == campaign.campaign_id}).first?.live
+        let campaignLive = CampaignViewModel.shared.campaigns.filter({$0.id == campaign?.campaignId}).first?.live
         return campaignLive ?? false
         
     }

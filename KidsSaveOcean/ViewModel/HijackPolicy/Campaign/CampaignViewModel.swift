@@ -10,35 +10,26 @@ import Foundation
 import Firebase
 
 class CampaignViewModel {
+
     static var nodeName = "CAMPAIGNS"
-    var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
+    static var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
     var campaigns = [Campaign]()
-    
-    private static var sharedCampaignsViewModel: CampaignViewModel = {
-        let viewModel = CampaignViewModel()
-        return viewModel
-    }()
 
-    class func shared() -> CampaignViewModel {
-        return sharedCampaignsViewModel
-    }
+    static var shared = CampaignViewModel()
     
-    func setup() {
-        fetchCampaigns(nil)
-    }
-    
-    func fetchCampaigns(_ completion: (() -> Void)?) {
+    static func fetchCampaigns(_ completion: (() -> Void)? = nil) {
 
-        campaigns.removeAll()
+        shared.campaigns.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
+
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 completion?()
 
                 return
             }
 
-            self.campaigns = snapshotValue.compactMap({ (id, dictionary) in
+            shared.campaigns = snapshotValue.compactMap({ (id, dictionary) in
 
                 guard let id = id as? String,
                       let dictionary = dictionary as? Dictionary<String, Any> else {
@@ -56,8 +47,8 @@ class CampaignViewModel {
     }
 
     func updateCollectedSignatures(campaign: Campaign, value: Int) {
-        let newCollectedSignaturesNumber = (self.campaigns.filter{$0.id == campaign.id}.first?.signatures_collected ?? 0) + value
-        
-    Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_collected").setValue(newCollectedSignaturesNumber)
+
+        let newCollectedSignaturesNumber = (self.campaigns.filter{$0.id == campaign.id}.first?.signaturesCollected ?? 0) + value
+        CampaignViewModel.databaseReferenece.child(campaign.id).child("signatures_collected").setValue(newCollectedSignaturesNumber)
    }
 }

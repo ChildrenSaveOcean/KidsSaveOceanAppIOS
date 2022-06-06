@@ -11,18 +11,18 @@ import Foundation
 struct Campaign: Codable {
 
     enum CodingKeys: String, CodingKey {
-        case hijack_policy, live, location_id, signatures_collected, signatures_required
+        case hijackPolicy, live, locationId, signaturesCollected, signaturesRequired
     }
 
     var id: String = ""
 
-    let hijack_policy: String
+    let hijackPolicy: String
     let live: Bool
-    let location_id: String
-    var signatures_collected: Int
-    let signatures_required: Int
+    let locationId: String
+    var signaturesCollected: Int
+    let signaturesRequired: Int
     
     mutating func updateSignagureCollected(to value: Int) {
-        self.signatures_collected = value
+        self.signaturesCollected = value
     }
 }

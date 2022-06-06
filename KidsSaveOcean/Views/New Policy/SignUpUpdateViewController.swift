@@ -40,7 +40,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     var selectedCountryForCampaign: HijackLocation?
     
-    private lazy var campaigns = CampaignViewModel.shared().campaigns
+    private lazy var campaigns = CampaignViewModel.shared.campaigns
     private lazy var campaignLocations = HijackPLocationViewModel.shared().hijackPLocations.sorted { $0.location < $1.location }
     
     override func viewDidLoad() {
@@ -84,14 +84,14 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         signaturesCollectedTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesCollectedTextField.layer.borderWidth = 1.0
         signaturesCollectedTextField.roundCorners()
-        signaturesCollectedTextField.text = String(campaign.signatures_collected)
+        signaturesCollectedTextField.text = String(campaign?.signaturesCollected ?? 0)
         signaturesCollectedTextField.isUserInteractionEnabled = false
         
         showLocationView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        CampaignViewModel.shared().setup()
+        CampaignViewModel.fetchCampaigns()
     }
     
     // MARK:- Action methods
@@ -129,17 +129,17 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             return
         }
 
-        let userTotalSignatures = UserTaskViewModel.shared.campaign.signatures_collected + addedSignaturesAmount
-        UserTaskViewModel.shared.campaign.signatures_collected = userTotalSignatures
+        let userTotalSignatures = (UserTaskViewModel.shared.campaign?.signaturesCollected ?? 0) + addedSignaturesAmount
+        UserTaskViewModel.shared.campaign?.signaturesCollected = userTotalSignatures
         UserTaskViewModel.shared.saveUser()
         signaturesCollectedTextField.text = String(userTotalSignatures)
         newSignaturesCollected.text = ""
         
         let location_id = UserTaskViewModel.shared.locationId
-        let campaign = campaigns.filter{$0.location_id == location_id}.first
+        let campaign = campaigns.filter{$0.locationId == location_id}.first
         if campaign != nil {
             let newCollectedAmount = (Int(signaturesTotalCollectedLabel.text ?? "") ?? 0) + addedSignaturesAmount
-                CampaignViewModel.shared().updateCollectedSignatures(campaign: campaign!, value: addedSignaturesAmount)
+                CampaignViewModel.shared.updateCollectedSignatures(campaign: campaign!, value: addedSignaturesAmount)
                 signaturesTotalCollectedLabel.text = String(newCollectedAmount)
         }
         dismissKeyboard()
@@ -206,7 +206,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
 
         selectedCountryForCampaign = campaignLocations[num]
         
-        let campaign = campaigns.filter({ $0.location_id == selectedCountryForCampaign?.id }).first
+        let campaign = campaigns.filter({ $0.locationId == selectedCountryForCampaign?.id }).first
         
         if selectedCountryForCampaign != nil,
             campaign != nil,
@@ -237,9 +237,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     private func updateLiveLocationView() {
 
-        let campaign = campaigns.filter { $0.id == UserTaskViewModel.shared.campaign.campaign_id }.first
-        signaturesRequiredLabel.text =  String( campaign?.signatures_required ?? 0)
-        signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
+        let campaign = campaigns.filter { $0.id == UserTaskViewModel.shared.campaign?.campaignId }.first
+        signaturesRequiredLabel.text =  String( campaign?.signaturesRequired ?? 0)
+        signaturesTotalCollectedLabel.text = String(campaign?.signaturesCollected ?? 0)
         deadlineLabel.text = "--"
 
     }
@@ -270,11 +270,11 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
 
             let num = self.pickerView.selectedRow(inComponent: 0)
             
-            let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first
+            let campaign = self.campaigns.filter({$0.locationId == self.campaignLocations[num].id}).first
             if let campaign = campaign {
-                let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_required: campaign.signatures_required, signatures_collected: 0)
+                let campSign = CampaignSignatures(campaignId: campaign.id, signaturesRequired: campaign.signaturesRequired, signaturesCollected: 0)
                 UserTaskViewModel.shared.campaign = campSign
-                UserTaskViewModel.shared.locationId = campaign.location_id
+                UserTaskViewModel.shared.locationId = campaign.locationId
             } else {
                 UserTaskViewModel.shared.locationId = self.campaignLocations[num].id
             }

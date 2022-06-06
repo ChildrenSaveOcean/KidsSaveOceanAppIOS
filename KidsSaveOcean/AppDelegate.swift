@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             CountriesService.shared().setup()
             HijackPLocationViewModel.shared().setup()
             HijackPoliciesViewModel.shared().setup()
-            CampaignViewModel.shared().setup()
+            CampaignViewModel.fetchCampaigns()
         }
         
         // MARK: - Check if user already opened the tutorial screen
