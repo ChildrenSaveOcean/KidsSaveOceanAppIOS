@@ -61,7 +61,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         }
         
         let policy = "none yet - still voting"
-        policyLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy)
+        policyLabel.attributedText = HijackPoliciesViewModel.shared.getPolicyAttrString(for: policy)
         
         unliveLocationMessageLabel.isHidden = true
         liveCampaingStateLabel.text = ""

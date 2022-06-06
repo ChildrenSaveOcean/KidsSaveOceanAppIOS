@@ -68,7 +68,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
             if let selectedPolicy = self.selectedPolicy {
                 UserTaskViewModel.shared.hijackPolicySelected = selectedPolicy.id
                 UserTaskViewModel.shared.saveUser()
-                HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
+                HijackPoliciesViewModel.shared.updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
                 
             }
             //self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
@@ -113,7 +113,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     @objc private func setPolicyLoadingState() {
-        if !HijackPoliciesViewModel.shared().policiesHaveBeenLoaded {
+        if !HijackPoliciesViewModel.shared.policiesHaveBeenLoaded {
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blur.alpha = 0.7
@@ -121,7 +121,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
             activityIndicator.startAnimating()
             
         } else {
-            pickerData = HijackPoliciesViewModel.shared().hijackPolicies.sorted {$0.id < $1.id}
+            pickerData = HijackPoliciesViewModel.shared.hijackPolicies.sorted {$0.id < $1.id}
             
             blur.frame = .zero
             blur.alpha = 0.0

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserTaskViewModel.fetchUserFBData()
             CountriesService.shared().setup()
             HijackPLocationViewModel.shared().setup()
-            HijackPoliciesViewModel.shared().setup()
+            HijackPoliciesViewModel.fetchPolicies()
             CampaignViewModel.fetchCampaigns()
         }
         

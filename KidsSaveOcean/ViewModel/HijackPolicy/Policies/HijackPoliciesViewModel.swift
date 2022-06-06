@@ -12,22 +12,11 @@ import Firebase
 class HijackPoliciesViewModel {
     
     static var nodeName = "HIJACK_POLICIES"
-    var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
+    static var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
     var hijackPolicies = [HijackPolicy]()
     
-    private static var sharedHijackPolicyViewModel: HijackPoliciesViewModel = {
-        let viewModel = HijackPoliciesViewModel()
-        return viewModel
-    }()
+    static var shared = HijackPoliciesViewModel()
 
-    class func shared() -> HijackPoliciesViewModel {
-        return sharedHijackPolicyViewModel
-    }
-    
-    func setup() {
-        fetchPolicies(nil)
-    }
-    
     var policiesHaveBeenLoaded = false {
         didSet {
             if policiesHaveBeenLoaded {
@@ -35,17 +24,17 @@ class HijackPoliciesViewModel {
             }
         }
     }
-    
-    func fetchPolicies(_ completion: (() -> Void)?) {
 
-        hijackPolicies.removeAll()
+    static func fetchPolicies(_ completion: (() -> Void)? = nil) {
+
+        shared.hijackPolicies.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 return
             }
 
-            self.hijackPolicies = snapshotValue.compactMap({ (id, dictionary) in
+            shared.hijackPolicies = snapshotValue.compactMap({ (id, dictionary) in
 
                 guard let id = id as? String,
                       let dictionary = dictionary as? Dictionary<String, Any> else {
@@ -57,16 +46,16 @@ class HijackPoliciesViewModel {
                 return policy
             })
 
-            self.policiesHaveBeenLoaded = true
+            shared.policiesHaveBeenLoaded = true
             completion?()
 
         })
     }
     
     func updateVotes(policy: HijackPolicy, value: Int) {
-        Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
+        HijackPoliciesViewModel.databaseReferenece.child(policy.id).child("votes").setValue(value)
     }
-    
+
     func getPolicyAttrString(for policy: String) -> NSMutableAttributedString {
         let attrPolicyStr = NSMutableAttributedString(string: "Policy chosen: ")
         let font = UIFont.proRegular15
