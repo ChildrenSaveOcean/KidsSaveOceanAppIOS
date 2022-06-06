@@ -31,7 +31,7 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
             policyChosenLabel.attributedText = HijackPoliciesViewModel.shared.getPolicyAttrString(for: policy.description)
         }
 
-        let location = HijackPLocationViewModel.shared().hijackPLocations.filter { $0.id == campaign.locationId }.first?.location ?? ""
+        let location = HijackPLocationViewModel.shared.hijackPLocations.filter { $0.id == campaign.locationId }.first?.location ?? ""
         campaignLocation.text = "Campaign location: " + location
         
         signatureRequiredLabel.text = "Signatures required: " + String( campaign.signaturesRequired)

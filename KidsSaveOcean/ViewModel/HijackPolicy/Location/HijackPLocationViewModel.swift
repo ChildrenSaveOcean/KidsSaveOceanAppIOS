@@ -11,32 +11,21 @@ import Firebase
 
 class HijackPLocationViewModel {
     
-    var databaseReferenece: DatabaseReference = Database.database().reference().child("HIJACK_POLICY_LOCATIONS")
+    static var databaseReferenece: DatabaseReference = Database.database().reference().child("HIJACK_POLICY_LOCATIONS")
+    static var shared = HijackPLocationViewModel()
+
     var hijackPLocations = [HijackLocation]()
-    
-    private static var sharedHijackPLocationViewModel: HijackPLocationViewModel = {
-        let viewModel = HijackPLocationViewModel()
-        return viewModel
-    }()
 
-    class func shared() -> HijackPLocationViewModel {
-        return sharedHijackPLocationViewModel
-    }
-    
-    func setup() {
-        fetchPolicyLocations(nil)
-    }
-    
-    func fetchPolicyLocations(_ completion: (() -> Void)?) {
+    static func fetchPolicyLocations(_ completion: (() -> Void)? = nil) {
 
-        hijackPLocations.removeAll()
+        shared.hijackPLocations.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 return
             }
 
-            self.hijackPLocations = snapshotValue.compactMap({ (id, dictionary) in
+            shared.hijackPLocations = snapshotValue.compactMap({ (id, dictionary) in
 
                 guard let id = id as? String,
                       let dictionary = dictionary as? Dictionary<String, Any> else {

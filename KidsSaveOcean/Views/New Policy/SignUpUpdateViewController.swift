@@ -41,7 +41,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     var selectedCountryForCampaign: HijackLocation?
     
     private lazy var campaigns = CampaignViewModel.shared.campaigns
-    private lazy var campaignLocations = HijackPLocationViewModel.shared().hijackPLocations.sorted { $0.location < $1.location }
+    private lazy var campaignLocations = HijackPLocationViewModel.shared.hijackPLocations.sorted { $0.location < $1.location }
     
     override func viewDidLoad() {
         super.viewDidLoad()

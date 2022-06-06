@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KSOAuthorization.anonymousAuthorization {
             UserTaskViewModel.fetchUserFBData()
             CountriesService.shared().setup()
-            HijackPLocationViewModel.shared().setup()
+            HijackPLocationViewModel.fetchPolicyLocations()
             HijackPoliciesViewModel.fetchPolicies()
             CampaignViewModel.fetchCampaigns()
         }
