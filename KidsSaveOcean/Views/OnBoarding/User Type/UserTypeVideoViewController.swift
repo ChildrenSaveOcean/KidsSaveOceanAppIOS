@@ -38,6 +38,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
     }
 
     private func showActionButtons() {
+
         let shiftY = self.view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top - buttonHeight - 10
         let shiftX = (self.view.bounds.width - 2*buttonWidth)/3
 
@@ -74,8 +75,8 @@ class UserTypeVideoViewController: WebIntegrationViewController {
     }
 
     private func createButtonWithTitle(_ direction: ButtonDirectionType) -> UIButton {
+
         let button = UIButton()
-        //let image = direction == .back ? #imageLiteral(resourceName: "Back_video") : #imageLiteral(resourceName: "skip_video")
         let image = direction == .back ?  #imageLiteral(resourceName: "chevron-back") : #imageLiteral(resourceName: "chevron")
         let tintedImage = image.withRenderingMode(.alwaysTemplate)
         button.setImage(tintedImage, for: .normal)

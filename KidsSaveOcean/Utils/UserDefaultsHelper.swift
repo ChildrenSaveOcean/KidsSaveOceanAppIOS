@@ -25,20 +25,24 @@ class UserDefaultsHelper {
     }()
     
     class func saveOnBoardingHasBeenShown() {
+
         UserDefaults.standard.set(true, forKey: onBoardingKey)
         UserDefaults.standard.synchronize()
     }
     
     class func isOnBoardingHasBeenShown() -> Bool {
+
         return UserDefaults.standard.bool(forKey: onBoardingKey)
     }
     
     class func saveCompletionTasksStatus(_ states: [Bool]) {
+
         UserDefaults.standard.set(states, forKey: completionStatusKey)
         UserDefaults.standard.synchronize()
     }
     
     class func getCompletionTasksStatus() -> [Bool] {
+
         guard let states = UserDefaults.standard.array(forKey: completionStatusKey) as? [Bool] else {
             return Array.init(repeating: false, count: 6)
         }
@@ -46,18 +50,21 @@ class UserDefaultsHelper {
     }
     
     class func saveNotifications(_ notifications: [NotificationItem]) {
+
         let codedNotifications = NSKeyedArchiver.archivedData(withRootObject: notifications)
         UserDefaults.standard.set(codedNotifications, forKey: notificationsKey)
         UserDefaults.standard.synchronize()
     }
     
     class func getNotifications() -> [NotificationItem] {
+
         guard let codedNotification = UserDefaults.standard.value(forKey: notificationsKey) as? NSData,
               let notificationData = codedNotification as? Data,
             let notifications = NSKeyedUnarchiver.unarchiveObject(with: notificationData) as? [NotificationItem]
         else {
             return [NotificationItem]()
         }
+
         return notifications
     }
     

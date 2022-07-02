@@ -144,7 +144,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         }
         dismissKeyboard()
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        //}
     }
     
     @IBAction func shareAction(_ sender: Any) {
@@ -184,14 +183,17 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             signaturesCollectedTextField.text = "0"
 
             if !userCampaignLocationId.isEmpty {
+
                 pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
                 setCampaignLiveDescription(currentCampaignLocationNum)
                 
                 enableChooseLocationButton(false)
             } else if campaignLocations.count == 0 {
+
                 pickerView.isUserInteractionEnabled = false
                 enableChooseLocationButton(false)
             } else {
+
                 pickerView.selectRow(0, inComponent: 0, animated: true)
                 setCampaignLiveDescription(0)
             }

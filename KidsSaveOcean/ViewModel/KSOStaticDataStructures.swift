@@ -17,20 +17,22 @@ struct BaseViewData {
     let action: String
 
     init?(dictionary: KSODataDictionary) {
-        if
-            let imageNew = dictionary["image"] as? UIImage,
+
+        guard let imageNew = dictionary["image"] as? UIImage,
             let titleStr = dictionary["title"] as? String,
             let subTitleStr = dictionary["subTitle"] as? String,
             let descriptionStr = dictionary["description"] as? String,
-            let actionStr = dictionary["action"] as? String {
-            self.image = imageNew
-            self.title = titleStr
-            self.subTitle = subTitleStr
-            self.decription = descriptionStr
-            self.action = actionStr
-        } else {
+            let actionStr = dictionary["action"] as? String else {
+            
             return nil
         }
+            
+        self.image = imageNew
+        self.title = titleStr
+        self.subTitle = subTitleStr
+        self.decription = descriptionStr
+        self.action = actionStr
+
     }
 }
 

@@ -38,7 +38,6 @@ class VoteNowViewController: UIViewController, Instantiatable {
         "hijack_policy_08" : [9.2, 5.3, 1.7],
         "hijack_policy_09" : [7.2, 5.7, 1.3],
         "hijack_policy_10" : [8.2, 6.0, 1.4]
-        
     ]
     
     override func viewDidLoad() {
@@ -56,11 +55,11 @@ class VoteNowViewController: UIViewController, Instantiatable {
         if UserTaskViewModel.shared.userType != .student {
             voteButton.isEnabled = false
             voteButton.alpha = 0.5
-            
         }
     }
     
     @IBAction func voteNowButton() {
+
         let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy?", message: "", preferredStyle: .alert)
         
         // Create OK button with action handler
@@ -91,28 +90,31 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
         guard  pickerData.count > 0 else {
             return
         }
+
         let hijackPolicy = pickerData[row]
         setPolicyDetails(hijackPolicy)
     }
     
     private func setPolicyDetails(_ policy: HijackPolicy) {
+
         selectedPolicy = policy
         summaryLabel.text = policy.summary
-        
-        //let impact = Double(policy.votes)
         
         guard let policyNumbers = policyImpactDifficulties[policy.id] else {
             return
         }
+
         impactNumberLabel.text = String(policyNumbers[0])
         difficultyNumberLabel.text = String(policyNumbers[1])
         impactToDifficultyNumberLabel.text = String(policyNumbers[2])
     }
     
     @objc private func setPolicyLoadingState() {
+
         if !HijackPoliciesViewModel.shared.policiesHaveBeenLoaded {
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -133,6 +135,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     private func setPolicyControls() {
+
         pickerView.reloadAllComponents()
         
         let userHijackPolicy = UserTaskViewModel.shared.hijackPolicySelected
@@ -157,6 +160,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
 
 // MARK: - UIPickerViewDataSource
 extension VoteNowViewController: UIPickerViewDataSource {
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -168,6 +172,7 @@ extension VoteNowViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 extension VoteNowViewController: UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 
         var label: UILabel
@@ -179,9 +184,6 @@ extension VoteNowViewController: UIPickerViewDelegate {
         label.font = UIFont.proDisplaySemiBold15
         
         label.textColor = .black
-//        label.adjustsFontSizeToFitWidth = true
-//        label.minimumScaleFactor = 0.5
-
         return label
     }
 }

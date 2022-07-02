@@ -8,6 +8,6 @@
 
 import UIKit
 
-class YouthInitiativeProcessViewController:UIViewController, Instantiatable {
+class YouthInitiativeProcessViewController: UIViewController, Instantiatable {
 }
 

@@ -22,6 +22,7 @@ enum NotificationTarget: String, CaseIterable {
     }
     
     static func getTargetFromString(_ string: String?) -> NotificationTarget {
+
         return NotificationTarget.allCases.filter({ (notificationTarget) -> Bool in
             notificationTarget.decsription() == string
         }).first ?? .unknown
