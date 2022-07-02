@@ -87,8 +87,8 @@ class NotificationController: NSObject {
     
     func processDeliveredNotifications() {
         UNUserNotificationCenter.current().getDeliveredNotifications { deliveredNotifications in
-            for notification in deliveredNotifications {
-                DispatchQueue.main.sync {
+            DispatchQueue.main.async {
+                for notification in deliveredNotifications {
                     self.processNotification(with: notification.request.content.userInfo)
                 }
             }
