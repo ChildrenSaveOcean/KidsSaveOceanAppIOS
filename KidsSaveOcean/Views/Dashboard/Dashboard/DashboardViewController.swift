@@ -80,11 +80,9 @@ class DashboardViewController: UIViewController {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
         }
-        
-        setUpTopIcons()
 
-        let firstIncompetedTask = taskScope.map{ userTasks.getTaskStatus($0) }.firstIndex(of: false) ?? 0
-        self.chooseTaskWithNum( firstIncompetedTask )
+        setUpTopIcons()
+        self.chooseTaskWithNum( 0 )
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +96,14 @@ class DashboardViewController: UIViewController {
         actionAlertView.addGestureRecognizer(tapGesture)
 
         navigationController?.setStatusBarColor(UIColor.clear)
+
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let firstIncompetedTask = taskScope.map{ userTasks.getTaskStatus($0) }.firstIndex(of: false) ?? 0
+        self.chooseTaskWithNum( firstIncompetedTask )
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -163,6 +169,7 @@ class DashboardViewController: UIViewController {
     }
 
     @IBAction func completeAction(_ sender: Any) {
+
         let task = taskScope[currentTaskSwitched]
         let newState = !userTasks.getTaskStatus(task)
         userTasks.setTaskStatus(task: task, value: newState)
@@ -212,11 +219,6 @@ class DashboardViewController: UIViewController {
     
     private func chooseTaskWithNum(_ num: Int) {
 
-        if num == currentTaskSwitched {
-            selectTopIcon()
-            return
-        }
-
         previousTaskSwitched = currentTaskSwitched
         currentTaskSwitched = num
 
@@ -229,6 +231,7 @@ class DashboardViewController: UIViewController {
     }
 
     private func setUpTopIcons() {
+
         for (num, icon) in topIcons.enumerated() {
             icon?.completed =  userTasks.getTaskStatus( DashboardTask.allCases[num] )
             icon?.setUnselected()
@@ -255,6 +258,7 @@ class DashboardViewController: UIViewController {
     }
     
     private func getDidButtonsStackView(narrow: Bool) {
+
         if didItMiddleButton.isHidden == narrow {
             return
         }
@@ -285,6 +289,7 @@ class DashboardViewController: UIViewController {
     }
 
     private func switchWheelPointerPosition() {
+
         let keyFrameAnimation = CAKeyframeAnimation()
         let path = CGMutablePath()
 
@@ -309,6 +314,7 @@ class DashboardViewController: UIViewController {
     }
 
     private func setUpAudioPlayer() -> AVAudioPlayer? {
+
         do {
             guard let soundURL = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else {return nil}
             let audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
@@ -321,6 +327,7 @@ class DashboardViewController: UIViewController {
     }
 
     private func playSound() {
+
         let audioPlayerNum = currentTaskSwitched.remainderReportingOverflow(dividingBy: 3).partialValue
         let audioPlayer: AVAudioPlayer = audioPlayers[audioPlayerNum]
         guard audioPlayers.indices.contains(audioPlayerNum) else { return }
