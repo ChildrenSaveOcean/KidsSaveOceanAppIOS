@@ -46,9 +46,6 @@ class WebIntegrationViewController: UIViewController {
     lazy var progressBarView = { () -> UIProgressView in
         let pV = UIProgressView(progressViewStyle: .default)
         pV.tintColor = .kidsSaveOceanBlue
-        let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
-        var y = max(frame.origin.y + frame.height, frame.height) //20)
-        pV.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: 5)
         return pV
     }()
 
@@ -175,8 +172,12 @@ class WebIntegrationViewController: UIViewController {
     }
 
     private final func loadPage() {
-        
+
+        let frame = navigationController?.navigationBar.frame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
+        let y = max(frame.origin.y + frame.height, frame.height) //20)
+        progressBarView.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: 5)
         view.addSubview(progressBarView)
+
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         if let myURL = URL(string: webUrlString) {
             let myRequest = URLRequest(url: myURL)
