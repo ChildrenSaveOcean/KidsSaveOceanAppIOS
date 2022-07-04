@@ -82,7 +82,7 @@ class DashboardViewController: UIViewController {
         }
 
         setUpTopIcons()
-        self.chooseTaskWithNum( 0 )
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +96,7 @@ class DashboardViewController: UIViewController {
         actionAlertView.addGestureRecognizer(tapGesture)
 
         navigationController?.setStatusBarColor(UIColor.clear)
+        self.chooseTaskWithNum( 0 )
 
     }
 
@@ -270,12 +271,14 @@ class DashboardViewController: UIViewController {
     }
     
     private func selectTopIcon() {
+
         guard let selectedIcon = topIcons[currentTaskSwitched] else { return }
-        selectedIcon.setSelected()
+
         // clear previous icon
         if topIcons.indices.contains(previousTaskSwitched) {
             topIcons[previousTaskSwitched]!.setUnselected()
         }
+        selectedIcon.setSelected()
     }
 
    private func rotateMeterPointer() {
