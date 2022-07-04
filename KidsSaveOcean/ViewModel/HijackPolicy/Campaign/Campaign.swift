@@ -11,7 +11,11 @@ import Foundation
 struct Campaign: Codable {
 
     enum CodingKeys: String, CodingKey {
-        case hijackPolicy, live, locationId, signaturesCollected, signaturesRequired
+        case hijackPolicy = "hijack_policy"
+        case signaturesCollected = "signatures_collected"
+        case signaturesRequired = "signatures_required"
+        case locationId = "location_id"
+        case live
     }
 
     var id: String = ""
