@@ -33,7 +33,7 @@ class UserTypeTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdenteficator, for: indexPath) as? UserTypeTableViewCell else { fatalError("Wrong cell type. There is expected UserTypeTableViewCell")}
 
-    let staticData = BaseViewData(dictionary: UserTypeViewData[indexPath.row])
+    var staticData = BaseViewData(with: UserTypeViewData[indexPath.row])
     cell.coverImage.image =  staticData?.image
     cell.titleLabel.text = staticData?.title
     cell.subTitleLabel.text = staticData?.subTitle
@@ -50,7 +50,7 @@ class UserTypeTableViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let videoURL = BaseViewData(dictionary: UserTypeViewData[indexPath.row])?.action else {
+    guard let videoURL = BaseViewData(with: UserTypeViewData[indexPath.row])?.action else {
       return
     }
     self.showVideo(videoURL, userType: UserType(rawValue: indexPath.row)!)

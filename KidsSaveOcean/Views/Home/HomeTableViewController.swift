@@ -57,7 +57,7 @@ final class HomeTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let staticData = BaseTableViewData(dictionary: HomeViewData[indexPath.row])
+    let staticData = BaseTableViewData(with: HomeViewData[indexPath.row])
     
     guard let cell = tableView.dequeueReusableCell(withIdentifier: homeCellIdenteficator, for: indexPath) as? HomeTableViewCell else { fatalError("Wrong cell type. There is expected HomeScoreTableViewCell") }
     

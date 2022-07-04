@@ -280,6 +280,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16157A7428739D8100A375FE /* Home Screen Data */ = {
+			isa = PBXGroup;
+			children = (
+				16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */,
+				16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */,
+			);
+			path = "Home Screen Data";
+			sourceTree = "<group>";
+		};
 		162F6C2C23A7259200E709D5 /* Action */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,8 +547,7 @@
 				164D7300234B4B820080ACB7 /* HijackPolicy */,
 				16BA0A39229027B500E36F25 /* UserId */,
 				7C0B1CD522232E9C0033F251 /* CountriesService */,
-				16ED9DA920C343DB005BF4E1 /* KSOStaticDataStructures.swift */,
-				16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */,
+				16157A7428739D8100A375FE /* Home Screen Data */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
