@@ -27,7 +27,7 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
               let campaign = campaign, UserTaskViewModel.shared.isUserLocationCampaignIsLive()
             else { return }
 
-        if let policy = HijackPoliciesViewModel.shared.hijackPolicies.filter {$0.id == campaign.hijackPolicy}.first {
+        if let policy = HijackPoliciesViewModel.shared.hijackPolicies.filter ({$0.id == campaign.hijackPolicy}).first {
             policyChosenLabel.attributedText = HijackPoliciesViewModel.shared.getPolicyAttrString(for: policy.description)
         }
 

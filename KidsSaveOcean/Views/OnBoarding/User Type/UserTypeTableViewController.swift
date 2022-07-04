@@ -9,7 +9,7 @@
 import UIKit
 
 class UserTypeTableViewController: UITableViewController {
-  let activityIndicator = UIActivityIndicatorView(style: .gray)
+    let activityIndicator = UIActivityIndicatorView(style: .medium)
 
   private let cellIdenteficator = "userIdCellIdentificator"
   override func viewDidLoad() {
