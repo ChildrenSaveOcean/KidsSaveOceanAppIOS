@@ -51,16 +51,19 @@ class UserDefaultsHelper {
     
     class func saveNotifications(_ notifications: [NotificationItem]) {
 
-        let codedNotifications = NSKeyedArchiver.archivedData(withRootObject: notifications)
+        let encoder = JSONEncoder()
+
+        let codedNotifications = try? encoder.encode(notifications)
         UserDefaults.standard.set(codedNotifications, forKey: notificationsKey)
         UserDefaults.standard.synchronize()
     }
     
     class func getNotifications() -> [NotificationItem] {
 
-        guard let codedNotification = UserDefaults.standard.value(forKey: notificationsKey) as? NSData,
-              let notificationData = codedNotification as? Data,
-            let notifications = NSKeyedUnarchiver.unarchiveObject(with: notificationData) as? [NotificationItem]
+        let decoder = JSONDecoder()
+
+        guard let notificationData = UserDefaults.standard.value(forKey: notificationsKey) as? Data,
+              let notifications = try? decoder.decode([NotificationItem].self, from: notificationData)
         else {
             return [NotificationItem]()
         }

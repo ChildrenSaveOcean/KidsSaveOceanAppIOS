@@ -8,7 +8,12 @@
 
 import Foundation
 
-class NotificationItem: NSObject, NSCoding { //, Equatable
+class NotificationItem: NSObject, NSCoding, Codable { //, Equatable //
+
+    enum CodingKeys: String, CodingKey {
+        case target, expirationDate, link, id
+    }
+
     var target: NotificationTarget = .unknown
     var expirationDate: Date?
     var link: String?

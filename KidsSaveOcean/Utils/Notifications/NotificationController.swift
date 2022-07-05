@@ -146,7 +146,7 @@ class NotificationController: NSObject {
     // MARK: Private methods
     private func clearNotifications(_ notification: NotificationItem) {
 
-        if let index = notifications.index(of: notification) {
+        if let index = notifications.firstIndex(of: notification) {
             notifications.remove(at: index)
         }
     }

@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum NotificationTarget: String, CaseIterable {
+enum NotificationTarget: String, CaseIterable, Codable {
+
     case
     unknown = " ",
     actionAlert = "ActionAlert",
