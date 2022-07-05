@@ -1,6 +1,26 @@
 #!/opt/homebrew/bin/python3
 # -*- coding: utf-8 -*-
 
+#  This script sends the notification to Firebase for our applications.
+# The Firebase console notification composer is not good for iOS notifications because there is no opportunity to send two very important parameters:
+# - content_available (for manipulating with notification in the background mode of the app) and
+# - time_to_live (for limiting some notification by time).
+#
+# Also important parameter in it is target for detecting the notification type in the app.
+#
+# - For security reasons, I deleted the api_access_key value.
+#   It can be gotten from Firebase -> Project -> Project settings -> Cloud Messaging -> Legacy server key
+#
+# - Help call:
+#  ./send_push_notification.py --help
+#
+#- Example usage:
+#  ./send_push_notification.py --target 1 --title ‘Action Alert’ --text ‘Alert Alert Notification’ --broadcast 1
+#
+# - For sending notification for all devices I’m subscribing each iOS device, which is registered in the system, to topic “all” (messaging.subscribe(toTopic: "all"))
+#   But also it possible to send notification for one devices where you test. (edited)
+
+
 import argparse
 import json
 import requests
