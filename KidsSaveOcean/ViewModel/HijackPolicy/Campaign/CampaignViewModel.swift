@@ -46,9 +46,9 @@ class CampaignViewModel {
         })
     }
 
-    func updateCollectedSignatures(campaign: Campaign, value: Int) {
+    func updateCollectedSignatures(campaignId: String, value: Int) {
 
-        let newCollectedSignaturesNumber = (self.campaigns.filter{$0.id == campaign.id}.first?.signaturesCollected ?? 0) + value
-        CampaignViewModel.databaseReferenece.child(campaign.id).child("signatures_collected").setValue(newCollectedSignaturesNumber)
+        let newCollectedSignaturesNumber = (self.campaigns.filter{$0.id == campaignId}.first?.signaturesCollected ?? 0) + value
+        CampaignViewModel.databaseReferenece.child(campaignId).child("signatures_collected").setValue(newCollectedSignaturesNumber)
    }
 }

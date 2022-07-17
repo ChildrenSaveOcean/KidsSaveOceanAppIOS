@@ -61,7 +61,7 @@ class DashboardViewController: UIViewController {
 
     var audioPlayers = [AVAudioPlayer]()
 
-    lazy var userTasks = UserTaskViewModel.shared
+    lazy var userTasks = User.shared
 
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
@@ -109,7 +109,7 @@ class DashboardViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        userTasks.saveUser()
+        userTasks.save()
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -189,7 +189,7 @@ class DashboardViewController: UIViewController {
     
     private func saveTaskStates() {
         guard userTasks.userDataHasBeenLoaded else { return }
-        userTasks.saveUser()
+        userTasks.save()
         selectTopIcon()
         setUpDidItSection()
     }
@@ -338,7 +338,7 @@ class DashboardViewController: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
-        userTasks.saveUser()
+        userTasks.save()
         super.didReceiveMemoryWarning()
     }
 }

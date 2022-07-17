@@ -108,7 +108,7 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
             taskViewController.title = ""
             navigationController?.pushViewController(taskViewController, animated: true)
         case 5:
-            let liveCampaign = UserTaskViewModel.shared.isUserLocationCampaignIsLive()
+            let liveCampaign = User.shared.isUserLocationCampaignIsLive()
             let taskViewController = liveCampaign ? TrackTheHijackLiveCampaignViewController.instantiate() : TrackTheHijackViewController.instantiate()
             taskViewController.title = ""
             navigationController?.pushViewController(taskViewController, animated: true)

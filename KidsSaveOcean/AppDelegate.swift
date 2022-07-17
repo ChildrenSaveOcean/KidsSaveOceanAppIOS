@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LocationService.shared().autorizeLocation(completionHandler: nil)
         
         KSOAuthorization.anonymousAuthorization {
-            UserTaskViewModel.fetchUserFBData()
+            User.fetchUserFBData()
             CountriesService.shared().setup()
             HijackPLocationViewModel.fetchPolicyLocations()
             HijackPoliciesViewModel.fetchPolicies()
@@ -62,11 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        UserTaskViewModel.shared.saveUser()
+        User.shared.save()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        UserTaskViewModel.shared.saveUser()
+        User.shared.save()
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

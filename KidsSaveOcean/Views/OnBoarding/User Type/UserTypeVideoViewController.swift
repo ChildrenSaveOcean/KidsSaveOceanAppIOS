@@ -56,13 +56,12 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         let goButton = self.createButtonWithTitle(.forward)
         goButton.frame = CGRect(x: self.view.bounds.width - buttonWidth - shiftX, y: shiftY, width: buttonWidth, height: buttonHeight)
 
-        goButton.addTargetClosure { (_) in
+        goButton.addTargetClosure { _ in
             UserDefaultsHelper.saveOnBoardingHasBeenShown()
 
-            if self.userType != nil {
-                let userViewModel = UserTaskViewModel.shared
-                userViewModel.userType = self.userType!
-                userViewModel.saveUser()
+            if let userType = self.userType {
+                User.shared.userType = userType
+                User.shared.save()
             }
 
             let tabBarController = KSOTabViewController.instantiate()

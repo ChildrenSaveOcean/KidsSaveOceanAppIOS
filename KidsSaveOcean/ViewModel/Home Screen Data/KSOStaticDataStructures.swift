@@ -11,13 +11,13 @@ import UIKit
 struct BaseViewData: Codable {
 
     enum CodingKeys: String, CodingKey {
-        case image_name, title, subTitle, decription, action
+        case image_name, title, subTitle, description, action
     }
 
     let image_name: String
     let title: String
     let subTitle: String
-    let decription: String
+    let description: String
     let action: String
 
     lazy var image = UIImage(named: image_name)

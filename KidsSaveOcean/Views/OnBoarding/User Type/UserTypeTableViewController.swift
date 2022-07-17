@@ -37,7 +37,7 @@ class UserTypeTableViewController: UITableViewController {
     cell.coverImage.image =  staticData?.image
     cell.titleLabel.text = staticData?.title
     cell.subTitleLabel.text = staticData?.subTitle
-    cell.descriptionLabel.text = staticData?.decription
+    cell.descriptionLabel.text = staticData?.description
     return cell
   }
 

@@ -27,7 +27,7 @@ class KSOCustomMapPin: MKMarkerAnnotationView {
             }
             
             rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            let subtitleText = annotation.subtitle! + "\n" + action.action_description
+            let subtitleText = (annotation.subtitle ?? "") + "\n" + action.action_description
             let subtitleLabel = UILabel()
             subtitleLabel.font = UIFont.proRegular11
             subtitleLabel.textColor = .gray

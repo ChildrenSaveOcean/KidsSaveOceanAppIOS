@@ -21,10 +21,10 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userCampaign = UserTaskViewModel.shared.campaign
-        let campaign = CampaignViewModel.shared.campaigns.filter { $0.id == userCampaign?.campaignId }.first
+        let userCampaign = User.shared.campaign
+        let campaign = CampaignViewModel.shared.campaigns.filter { $0.id == userCampaign?.id }.first
         guard let userCampaign = userCampaign,
-              let campaign = campaign, UserTaskViewModel.shared.isUserLocationCampaignIsLive()
+              let campaign = campaign, User.shared.isUserLocationCampaignIsLive()
             else { return }
 
         if let policy = HijackPoliciesViewModel.shared.hijackPolicies.filter ({$0.id == campaign.hijackPolicy}).first {
@@ -38,7 +38,7 @@ class TrackTheHijackLiveCampaignViewController: UIViewController, Instantiatable
         totalCollectedSignaturesLabel.text = "Total collected so far: " + String(campaign.signaturesCollected)
         deadlineLabel.text = "--"
         
-        userPlannedSignatures.text = "Your planned signatures: " + String( UserTaskViewModel.shared.signaturesPledged)
+        userPlannedSignatures.text = "Your planned signatures: " + String( User.shared.signaturesPledged)
         userCollectedSignatures.text = "Your collected signatures: " + String(userCampaign.signaturesCollected)
         
     }
