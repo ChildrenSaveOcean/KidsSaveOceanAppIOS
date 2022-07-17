@@ -16,6 +16,7 @@ class EnvironmentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
         environmentImageView.roundCorners()
     }
 

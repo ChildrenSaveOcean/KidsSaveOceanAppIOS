@@ -11,17 +11,10 @@ import MapKit
 
 class LocationService: NSObject {
     
-    private static var sharedLocationService: LocationService = {
-        let locationService = LocationService()
-        
-        return locationService
-    }()
-    
-    class func shared() -> LocationService {
-        return sharedLocationService
-    }
+    static var shared = LocationService()
     
     lazy var locationManager = { () -> CLLocationManager in
+
         let lmanager = CLLocationManager()
         lmanager.delegate = self
         return lmanager
@@ -31,27 +24,25 @@ class LocationService: NSObject {
     
     func autorizeLocation(completionHandler: (() -> Void)?) {
         
-        //guard CLLocationManager.locationServicesEnabled() else { return }
-        
         let status = CLLocationManager.authorizationStatus()
+
         switch status {
+
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
-            
-        case .denied, .restricted:
-            break
             
         case .authorizedAlways, .authorizedWhenInUse:
             authorizationStatus = true
             completionHandler?()
 
-        @unknown default:
+        default:
             break
         }
     }
 }
 
 extension LocationService: CLLocationManagerDelegate {
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         authorizationStatus = [.authorizedAlways, .authorizedWhenInUse].contains(status)
     }

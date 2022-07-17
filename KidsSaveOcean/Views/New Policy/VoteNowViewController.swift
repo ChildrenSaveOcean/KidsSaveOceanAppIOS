@@ -52,6 +52,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         if User.shared.userType != .student {
             voteButton.isEnabled = false
             voteButton.alpha = 0.5

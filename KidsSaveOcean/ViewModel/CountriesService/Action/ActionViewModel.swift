@@ -12,17 +12,11 @@ import FirebaseDatabase
 class ActionViewModel {
     
     var actions = [Action]()
-    
-    private static var sharedActionViewModel: ActionViewModel = {
-        let viewModel = ActionViewModel()
-        return viewModel
-    }()
 
-    class func shared() -> ActionViewModel {
-        return sharedActionViewModel
-    }
+    static var shared = ActionViewModel()
     
     func setup(_ completion: (() -> Void)?) {
+
         self.fetchActions(databaseReferenece: Database.database().reference()) {
             completion?()
         }

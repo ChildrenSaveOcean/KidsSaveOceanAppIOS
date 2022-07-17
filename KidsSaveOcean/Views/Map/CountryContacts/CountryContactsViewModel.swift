@@ -37,7 +37,8 @@ final class CountryContactsViewModel: NSObject {
         })
     }
 
-    func fetchContacts(from service: CountriesService = CountriesService.shared(), _ completion: (() -> Void)?) {
+    func fetchContacts(from service: CountriesService = CountriesService.shared, _ completion: (() -> Void)?) {
+
         if service.countriesContacts.count > 0 {
             countriesContacts = service.countriesContacts
             completion?()

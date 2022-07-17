@@ -39,7 +39,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             if _countriesData != nil {
                 return _countriesData!
             } else {
-                _countriesData = CountriesService.shared()
+                _countriesData = CountriesService.shared
                     .countriesContacts
                     .filter({$0.letters_written > 0})
                     .sorted { $0.letters_written > $1.letters_written }
@@ -109,7 +109,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
      }
     
     func reloadMap() {
-        if CountriesService.shared().contryContactsHasBeenLoaded {
+        if CountriesService.shared.contryContactsHasBeenLoaded {
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
         } else {

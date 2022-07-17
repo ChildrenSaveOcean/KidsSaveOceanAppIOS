@@ -28,7 +28,7 @@ final class CountryContactsViewController: UIViewController, Instantiatable {
 
         viewModel.fetchCountries()
         setupViewElements()
-        selectedCountry = CountriesService.shared().getUserCountry()
+        selectedCountry = CountriesService.shared.getUserCountry()
     }
 
     override func viewDidAppear(_ animated: Bool) {

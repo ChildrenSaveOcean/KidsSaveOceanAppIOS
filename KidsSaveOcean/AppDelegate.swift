@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
-        LocationService.shared().autorizeLocation(completionHandler: nil)
+        LocationService.shared.autorizeLocation(completionHandler: nil)
         
         KSOAuthorization.anonymousAuthorization {
             User.fetchUserFBData()
-            CountriesService.shared().setup()
+            CountriesService.shared.setup()
             HijackPLocationViewModel.fetchPolicyLocations()
             HijackPoliciesViewModel.fetchPolicies()
             CampaignViewModel.fetchCampaigns()

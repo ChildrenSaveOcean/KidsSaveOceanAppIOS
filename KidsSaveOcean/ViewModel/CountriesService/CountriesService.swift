@@ -16,23 +16,20 @@ class CountriesService: NSObject {
     var countriesContacts = [CountryContact]()
     var contryContactsHasBeenLoaded = false
 
-    private static var sharedCountriesService: CountriesService = {
-        let countriesService = CountriesService()
-
-        return countriesService
-    }()
-
-    class func shared() -> CountriesService {
-        return sharedCountriesService
-    }
+    static var shared = CountriesService()
 
     func setup() {
+
         self.fetchContacts(databaseReferenece: Database.database().reference()) {
-            ActionViewModel.shared().setup { () in
-                let actions = ActionViewModel.shared().actions
+
+            ActionViewModel.shared.setup { () in
+    
+                let actions = ActionViewModel.shared.actions
+
                 for action in actions {
                     self.countriesContacts.filter { $0.code == action.action_location }.first?.action = action
                 }
+
                 self.contryContactsHasBeenLoaded = true
                 NotificationCenter.default.post(name: .countriesHasBeenLoaded, object: nil)
             }
@@ -84,7 +81,7 @@ class CountriesService: NSObject {
         
         guard CLLocationManager.locationServicesEnabled() else { return nil }
         
-        let locationService = LocationService.shared()
+        let locationService = LocationService.shared
         guard locationService.authorizationStatus else { return nil }
         guard let userLocation = locationService.locationManager.location else { return nil }
         
