@@ -17,6 +17,7 @@ class UserDefaultsHelper {
     static let completionStatusKey = "completionStatusKey"
     static let countryLetterNumberKey = "countryLetterNumber"
     static let letterNumberKey = "letterNumber"
+    static let forceShowingNotificationKey = "forceShowingNotification"
     
     static let dateFormatter: DateFormatter = {
         let datef = DateFormatter()
@@ -85,5 +86,16 @@ class UserDefaultsHelper {
     
     class func saveLetterNumber(_ value: Int) {
          UserDefaults.standard.set(value, forKey: letterNumberKey)
+    }
+
+    class var forceShowingNotificationItem: NotificationItem? {
+        get {
+            let notificationItem = UserDefaults.standard.value(forKey: forceShowingNotificationKey) as? NotificationItem
+            UserDefaults.standard.set(nil, forKey: forceShowingNotificationKey)
+            return notificationItem
+        }
+        set {
+            UserDefaults.standard.set(forceShowingNotificationItem, forKey: forceShowingNotificationKey)
+        }
     }
 }

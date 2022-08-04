@@ -23,7 +23,7 @@ extension NotificationBadgeProtocol where Self: UIView {
         if notificationIsActual && redBadgeView == nil {
             self.addRedBadge(with: 1)
         } else if !notificationIsActual && redBadgeView != nil {
-            redBadgeView?.removeFromSuperview()
+            clearRedBadge()
             clearNotificationForTarget(target)
         }
     }

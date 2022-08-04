@@ -48,6 +48,11 @@ final class HomeTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        if let notificationItem = UserDefaultsHelper.forceShowingNotificationItem {
+            NotificationController.shared.openTargetViewController(for: notificationItem)
+        }
+
         clearNotifications()
     }
 

@@ -101,6 +101,12 @@ class NotificationController: NSObject {
     func openTargetViewController(for notificationItem: NotificationItem) {
     
         guard let tabBarController = UIApplication.shared.keyWindow?.rootViewController as? KSOTabViewController
+            else {
+
+            // We can reach this point earlier then the tabVC is loaded. Let's save that the user tapped on the notificaiton card when it appeared.
+            UserDefaultsHelper.forceShowingNotificationItem = notificationItem
+            return
+        }
         
         switch notificationItem.target {
         case .policyChange:
