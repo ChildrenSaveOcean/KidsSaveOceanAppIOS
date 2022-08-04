@@ -37,28 +37,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: all about notifications here and below:
         Messaging.messaging().delegate = self
-        NotificationController.shared().requestAuthorization()
-
-//        // MARK: - Get application instance ID
-//        InstanceID.instanceID().instanceID { (result, error) in
-//            if let error = error {
-//                print("Error fetching remote instance ID: \(error)")
-//            } else if let result = result {
-//                print("Remote instance ID token: \(result.token)")
-//            }
-//        }
+        NotificationController.shared.requestAuthorization()
         
         application.registerForRemoteNotifications()
         
         // MARK: - Get notification if application was terminated
         let notificationInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any]
-        NotificationController.shared().processNotification(with: notificationInfo)
+        NotificationController.shared.processNotification(with: notificationInfo)
 
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        NotificationController.shared().processDeliveredNotifications()
+        NotificationController.shared.processDeliveredNotifications()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -70,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        NotificationController.shared().processNotification(with: userInfo)
+        NotificationController.shared.processNotification(with: userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
@@ -89,8 +80,4 @@ extension AppDelegate: MessagingDelegate {
         
         messaging.subscribe(toTopic: "all")
     }
-    
-//    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-//        print("Received data message: \(remoteMessage.appData)")
-//    }
 }

@@ -17,15 +17,11 @@ class NotificationController: NSObject {
     let timeToLiveIDKey = "gcm.notification.time_to_live"
     let messageIDKey = "gcm.message_id"
     
-    private static var sharedNotificationController: NotificationController = {
+    static var shared: NotificationController = {
         let notificationController = NotificationController()
         UNUserNotificationCenter.current().delegate = notificationController
         return notificationController
     }()
-    
-    class func shared() -> NotificationController {
-        return sharedNotificationController
-    }
     
     var notifications = UserDefaultsHelper.getNotifications()
     
@@ -105,8 +101,6 @@ class NotificationController: NSObject {
     func openTargetViewController(for notificationItem: NotificationItem) {
     
         guard let tabBarController = UIApplication.shared.keyWindow?.rootViewController as? KSOTabViewController
-            else { return }
-        //KSOTabViewController.instantiate()
         
         switch notificationItem.target {
         case .policyChange:
