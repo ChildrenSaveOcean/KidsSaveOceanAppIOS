@@ -201,21 +201,27 @@ class DashboardViewController: UIViewController {
     // MARK: Private methods
     @objc private func setUserDataLoadingState() {
 
-        if !userTasks.userDataHasBeenLoaded {
+        guard User.shared.userDataHasBeenLoaded else {
 
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blur.alpha = 0.7
             activityIndicator.alpha = 1
             activityIndicator.startAnimating()
-        } else {
 
-            blur.frame = .zero
-            blur.alpha = 0.0
-            activityIndicator.alpha = 0
-            activityIndicator.stopAnimating()
-            setUpTopIcons()
+            return
+
         }
+
+        userTasks = User.shared
+
+        blur.frame = .zero
+        blur.alpha = 0.0
+        activityIndicator.alpha = 0
+        activityIndicator.stopAnimating()
+
+        setUpTopIcons()
+
     }
     
     private func chooseTaskWithNum(_ num: Int) {
