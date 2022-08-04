@@ -31,7 +31,7 @@ parser = argparse.ArgumentParser(
                                  epilog="""Usage example: ./send_push_notification.py --target 3 --title 'Hello, ocean!' --text 'Exciting news are coming!' --time_to_live '1d' --broadcast 1""")
 
 parser.add_argument('--target', type=int, help='Target is a final code word for processing notification in the mobile application.Target can be \
-                    PolicyChange (print 0), ActionAlert (print 1), NewsAndMedia (print 2), NewHighScore (print 3), SignatureCompaign (print 4)')
+                    PolicyChange (0), ActionAlert (1), NewsAndMedia (2), NewHighScore (3), SignatureCompaign (4)')
 
 parser.add_argument('--title', type=str, help='Title is a title of notification message, will be shown on the top of the notification badge')
 parser.add_argument('--text', type=str, help='Notificatin main message')
@@ -39,7 +39,7 @@ parser.add_argument('--text', type=str, help='Notificatin main message')
 parser.add_argument('--device', nargs='?', help='Optional parameter. Put here the device token for sending the notification directly to this device')
 parser.add_argument('--time_to_live', nargs='?', help='Optional parameter, print 4d or 2w or 1h or 30s or 5m (min) of actual time the notification. The maximum is 4w or 28d')
 parser.add_argument('--broadcast', nargs='?', help='Optional parameter, just call it with any argument for sending notification for all registered deiveces.')
-parser.add_argument('--link', nargs='?', help='Optional parameter, type link which is supposed to be open by user.')
+parser.add_argument('--link', nargs='?', help='Optional parameter, type URL link which is supposed to be open by user.')
 
 
 args = parser.parse_args()
