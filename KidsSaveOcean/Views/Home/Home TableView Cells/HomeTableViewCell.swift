@@ -15,8 +15,11 @@ class HomeTableViewCell: UITableViewCell, HomeTableViewCellProtocol, Notificatio
   @IBOutlet weak var titleLabel: UILabel!
 
     func configure(with viewModel: AnyObject?) {
+
+        clearRedBadge()
+
         guard let viewModel = viewModel as? BaseTableViewData else {return}
-        
+
         imageCover.image = viewModel.image
         titleLabel.text = viewModel.title
         titleLabel.textColor = UIColor.backgroundWhite
