@@ -48,6 +48,7 @@ targets = [ "PolicyChange", "ActionAlert", "NewsAndMedia", "NewHighScore", "Sign
 time_units = {"w": 604800, "d": 86400, "m": 60, "h": 3600, "s": 1}
 
 device_token = ""
+# For security reasons, I deleted the api_access_key value. It can be gotten from Firebase -> Project -> Project settings -> Cloud Messaging -> Legacy server key.
 api_access_key = "DON't FORGET TO ADD API ACCESS KEY FROM Firebase Console Project Settings"
 url = "https://fcm.googleapis.com/fcm/send"
 
@@ -97,3 +98,7 @@ print(res.text)
 print("\n\n")
 
 
+#curl -X POST \
+#https://fcm.googleapis.com/fcm/send \
+#-H 'Authorization: key=AAAAvdWKfCY:api_access_key - see above' \
+#-H 'Content-type: application/json' \
