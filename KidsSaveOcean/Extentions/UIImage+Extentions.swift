@@ -22,4 +22,15 @@ extension UIImage {
         guard let cgImage = image?.cgImage else { return nil }
         self.init(cgImage: cgImage)
     }
+
+    var inverted: UIImage {
+
+        let ciImage = CIImage(image: self)
+        var iImage = self
+        if let filter = CIFilter(name: "CIColorInvert") {
+            filter.setValue(ciImage, forKey: kCIInputImageKey)
+            iImage = UIImage(ciImage: filter.outputImage!)
+        }
+        return iImage
+    }
 }
