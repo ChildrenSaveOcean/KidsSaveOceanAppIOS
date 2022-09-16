@@ -49,6 +49,18 @@ final class HomeTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(openNotificationTargetIfNeeded), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openNotificationTargetIfNeeded), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc private func openNotificationTargetIfNeeded() {
+
         if let notificationItem = UserDefaultsHelper.forceShowingNotificationItem {
             NotificationController.shared.openTargetViewController(for: notificationItem)
         }

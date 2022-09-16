@@ -82,7 +82,7 @@ if args.link is not None:
     jsonAgrs["data"]["link"] = args.link
 
 jsonAgrs["to"] = to
-jsonAgrs["content_available"] = bool(True)
+jsonAgrs["content-available"] = bool(True)
 jsonAgrs["priority"] = "normal"
 jsonAgrs["notification"] =  { "body" : args.text,
                               "title": args.title,
