@@ -17,19 +17,16 @@ class NotificationController: NSObject {
     let timeToLiveIDKey = "gcm.notification.time_to_live"
     let messageIDKey = "gcm.message_id"
     
-    private static var sharedNotificationController: NotificationController = {
+    static var shared: NotificationController = {
         let notificationController = NotificationController()
         UNUserNotificationCenter.current().delegate = notificationController
         return notificationController
     }()
     
-    class func shared() -> NotificationController {
-        return sharedNotificationController
-    }
-    
     var notifications = UserDefaultsHelper.getNotifications()
     
     func requestAuthorization() {
+
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (_, error) in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -80,15 +77,21 @@ class NotificationController: NSObject {
     }
     
     func refreshReferencedView() {
+
         guard let window = UIApplication.shared.delegate?.window as? UIWindow,
-            let tabBarController = window.rootViewController as? KSOTabViewController else {return}
+            let tabBarController = window.rootViewController as? KSOTabViewController else { return }
+
         tabBarController.updateNotificationStatusOfSelectedViewController()
     }
     
     func processDeliveredNotifications() {
+
         UNUserNotificationCenter.current().getDeliveredNotifications { deliveredNotifications in
-            for notification in deliveredNotifications {
-                DispatchQueue.main.sync {
+
+            DispatchQueue.main.async {
+
+                for notification in deliveredNotifications {
+    
                     self.processNotification(with: notification.request.content.userInfo)
                 }
             }
@@ -98,8 +101,12 @@ class NotificationController: NSObject {
     func openTargetViewController(for notificationItem: NotificationItem) {
     
         guard let tabBarController = UIApplication.shared.keyWindow?.rootViewController as? KSOTabViewController
-            else { return }
-        //KSOTabViewController.instantiate()
+            else {
+
+            // We can reach this point earlier then the tabVC is loaded. Let's save that the user tapped on the notificaiton card when it appeared.
+            UserDefaultsHelper.forceShowingNotificationItem = notificationItem
+            return
+        }
         
         switch notificationItem.target {
         case .policyChange:
@@ -123,12 +130,14 @@ class NotificationController: NSObject {
     }
     
     func clearNotificationsWithTargets(_ targets: [NotificationTarget]) {
+
         notifications.removeAll(where: {targets.contains($0.target)})
         UserDefaultsHelper.saveNotifications(notifications)
         UIApplication.shared.applicationIconBadgeNumber = self.notifications.count
     }
     
     func getNotificationStatusForTarget(_ target: NotificationTarget) -> Bool {
+
         guard let notification = notifications.filter({$0.target == target}).first else { return false }
         guard let expirationDate = notification.expirationDate else { return true }
         return Date().compare(expirationDate) == ComparisonResult.orderedAscending
@@ -136,12 +145,14 @@ class NotificationController: NSObject {
     
     // MARK: Private methods
     private func clearNotifications(_ notification: NotificationItem) {
-        if let index = notifications.index(of: notification) {
+
+        if let index = notifications.firstIndex(of: notification) {
             notifications.remove(at: index)
         }
     }
     
     private func removeDeliveredNotification(with messageId: String) {
+
         UNUserNotificationCenter.current().getDeliveredNotifications { deliveredNotifications in
             guard let currentNotification = deliveredNotifications.filter({
                 guard let stringId = $0.request.content.userInfo[self.messageIDKey] as? String else { return false }
@@ -152,6 +163,7 @@ class NotificationController: NSObject {
     }
     
     private func getExpirationDate(from seconds: String?) -> Date? {
+
         let expDate: Date?
         if seconds != nil,
             !seconds!.isEmpty,
@@ -177,6 +189,7 @@ extension NotificationController: UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
         completionHandler([.alert, .badge, .sound])
     }
 }

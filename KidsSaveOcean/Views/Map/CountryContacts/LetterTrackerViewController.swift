@@ -13,7 +13,7 @@ final class LetterTrackerViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
 
-    private lazy var countriesData = CountriesService.shared().countriesContacts.sorted(by: {$0.name < $1.name})
+    private lazy var countriesData = CountriesService.shared.countriesContacts.sorted(by: {$0.name < $1.name})
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ final class LetterTrackerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let nearestCountry = CountriesService.shared().getUserCountry(),
+        if let nearestCountry = CountriesService.shared.getUserCountry(),
             let indextOfCountry = countriesData.firstIndex(where: { (country) -> Bool in
                 country.name == nearestCountry.name
             }) {
@@ -81,13 +81,12 @@ final class LetterTrackerViewController: UIViewController {
 
         let selectedCountryNum = pickerView.selectedRow(inComponent: 0)
         let selectedCountry = countriesData[selectedCountryNum]
-        CountriesService.shared().increaseLettersWrittenForCountry(selectedCountry)
+        CountriesService.shared.increaseLettersWrittenForCountry(selectedCountry)
         
         let viewAlert = UIAlertController(title: "Your Letter Has Been Recorded", message: "Congratulations! You're one of us now. A Fatechanger.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Fatechangers click here", style: .default, handler: { _ in
-            let userLetterWritten = UserViewModel.shared().letters_written ?? 0
-            UserViewModel.shared().letters_written = userLetterWritten + 1
-            UserViewModel.shared().saveUser()
+            User.shared.lettersWritten += 1
+            User.shared.save()
             self.gotoDashBoard()
         })
         action.setAppTextColor()
@@ -110,6 +109,7 @@ final class LetterTrackerViewController: UIViewController {
 
 // MARK: - UIPickerViewDataSource
 extension LetterTrackerViewController: UIPickerViewDataSource {
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -121,6 +121,7 @@ extension LetterTrackerViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 extension LetterTrackerViewController: UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let attributedString = NSAttributedString(string: countriesData[row].name, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         return attributedString

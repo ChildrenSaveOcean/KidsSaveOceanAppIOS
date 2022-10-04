@@ -30,8 +30,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var didButtonsStackView: UIStackView!
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var howButton: UIButton!
-    @IBOutlet weak var didItButton: KSODidButton!
-    @IBOutlet weak var didItMiddleButton: KSODidButton!
+    @IBOutlet weak var didItButton: DashboardDidButton!
+    @IBOutlet weak var didItMiddleButton: DashboardDidButton!
     
     @IBOutlet weak var actionAlertButton: ActionAlertButton!
 
@@ -54,31 +54,14 @@ class DashboardViewController: UIViewController {
     var currentTaskSwitched = -1
     var previousTaskSwitched = -1
     let halfOfPi = CGFloat.pi/CGFloat(2)
-    
-    //let twoCompletionStatesTask = 1
 
-    let taskScope: [String] = UserViewModel.getDashboardFullTasks() //DashboardTasksScopes.allCases.map { $0.dashboardTasks }
-    let tasks: [DashboardTasksScopes] = UserViewModel.getDashboardTasks() //DashboardTasksScopes.allCases.map { $0.rawValue }
-
-    var _completionTasksStates: [Bool]?
-    var completionTasksStates: [Bool] {
-        get {
-            if _completionTasksStates != nil {
-                return _completionTasksStates!
-            } else {
-                _completionTasksStates = UserViewModel.shared().getCompletionTasksStatuses()
-
-                return _completionTasksStates!
-            }
-        }
-        set {
-            _completionTasksStates = newValue
-        }
-    }
+    let taskScope: [DashboardTask] = DashboardTask.allCases
 
     lazy var topIcons = [self.topTaskIcon1, self.topTaskIcon2, self.topTaskIcon3, self.topTaskIcon4, self.topTaskIcon5, self.topTaskIcon6]
 
     var audioPlayers = [AVAudioPlayer]()
+
+    lazy var userTasks = User.shared
 
     // MARK: Lifecyrcle methods
     override func viewDidLoad() {
@@ -97,13 +80,9 @@ class DashboardViewController: UIViewController {
             guard let audioPlayer = setUpAudioPlayer() else {continue}
             audioPlayers.append(audioPlayer)
         }
-        
+
         setUpTopIcons()
-               var firstIncompetedTask = self.completionTasksStates.firstIndex(of: false) ?? 0
-               if firstIncompetedTask >= 5 {
-                   firstIncompetedTask = 0
-               }
-        self.chooseTaskWithNum(firstIncompetedTask)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -117,23 +96,20 @@ class DashboardViewController: UIViewController {
         actionAlertView.addGestureRecognizer(tapGesture)
 
         navigationController?.setStatusBarColor(UIColor.clear)
+        self.chooseTaskWithNum( 0 )
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        view.layoutIfNeeded()
-
-       
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        let firstIncompetedTask = taskScope.map{ userTasks.getTaskStatus($0) }.firstIndex(of: false) ?? 0
+        self.chooseTaskWithNum( firstIncompetedTask )
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserViewModel.shared().saveUser()
+        userTasks.save()
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -178,15 +154,7 @@ class DashboardViewController: UIViewController {
                 //self.chooseTaskWithNum(3)
             }
             
-//        case 4:
-//            let taskViewController = ToolsWithTeethViewController.instantiate()
-//            taskViewController.title = ""
-//            navigationController?.pushViewController(taskViewController, animated: true)
-            
         case 4:
-            //tabBarController?.switchToHomeScreen()
-            //guard let homeViewController = tabBarController?.getSelectedTabMainViewController() as? HomeTableViewController else { return }
-            
             let taskViewController = CreateNewEnvironmentPolicyViewController.instantiate()
             taskViewController.title = ""
             self.navigationController?.pushViewController(taskViewController, animated: true)
@@ -202,34 +170,17 @@ class DashboardViewController: UIViewController {
     }
 
     @IBAction func completeAction(_ sender: Any) {
-        var newState: Bool
-//        if isThisTwoCompletionStatesTask() {
-//            newState = !UserViewModel.shared().write_letter_about_climate
-//            completionTasksStates[7] = newState
-//            let commonState = newState == UserViewModel.shared().write_letter_about_plastic ? newState : false
-//            //if newState == UserViewModel.shared().write_letter_about_plastic {
-//                completionTasksStates[currentTaskSwitched] = commonState
-//                topIcons[currentTaskSwitched]?.completed = commonState
-//            //}
-//        } else {
-            newState = !completionTasksStates[currentTaskSwitched]
-            completionTasksStates[currentTaskSwitched] = newState
-            topIcons[currentTaskSwitched]?.completed = newState
- //       }
+
+        let task = taskScope[currentTaskSwitched]
+        let newState = !userTasks.getTaskStatus(task)
+        userTasks.setTaskStatus(task: task, value: newState)
+        topIcons[currentTaskSwitched]?.completed = newState
         
         saveTaskStates()
     }
     
     @IBAction func completeMiddleButtonAction(_ sender: Any) {
-//        let newState = !UserViewModel.shared().write_letter_about_plastic
-//        completionTasksStates[6] = newState
-//        let commonState = newState == UserViewModel.shared().write_letter_about_climate ? newState : false
-//        //if newState == UserViewModel.shared().write_letter_about_climate {
-//            completionTasksStates[currentTaskSwitched] = commonState
-//            topIcons[currentTaskSwitched]?.completed = commonState
-//        //}
-//
-//        saveTaskStates()
+        // ?
     }
 
     @IBAction func actionAlertViewButtonAction(_ sender: Any) {
@@ -237,9 +188,8 @@ class DashboardViewController: UIViewController {
     }
     
     private func saveTaskStates() {
-        guard UserViewModel.shared().userDataHasBeenLoaded else { return }
-        UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
-        UserViewModel.shared().saveCompletionTaskStatuses(completionTasksStates)
+        guard userTasks.userDataHasBeenLoaded else { return }
+        userTasks.save()
         selectTopIcon()
         setUpDidItSection()
     }
@@ -250,29 +200,31 @@ class DashboardViewController: UIViewController {
 
     // MARK: Private methods
     @objc private func setUserDataLoadingState() {
-        if !UserViewModel.shared().userDataHasBeenLoaded {
+
+        guard User.shared.userDataHasBeenLoaded else {
+
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blur.alpha = 0.7
             activityIndicator.alpha = 1
             activityIndicator.startAnimating()
-        } else {
-            blur.frame = .zero
-            blur.alpha = 0.0
-            activityIndicator.alpha = 0
-            activityIndicator.stopAnimating()
-            
-            _completionTasksStates = nil
-            setUpTopIcons()
+
+            return
+
         }
+
+        userTasks = User.shared
+
+        blur.frame = .zero
+        blur.alpha = 0.0
+        activityIndicator.alpha = 0
+        activityIndicator.stopAnimating()
+
+        setUpTopIcons()
+
     }
     
     private func chooseTaskWithNum(_ num: Int) {
-
-        if num == currentTaskSwitched {
-            selectTopIcon()
-            return
-        }
 
         previousTaskSwitched = currentTaskSwitched
         currentTaskSwitched = num
@@ -286,56 +238,34 @@ class DashboardViewController: UIViewController {
     }
 
     private func setUpTopIcons() {
+
         for (num, icon) in topIcons.enumerated() {
-            icon?.completed = completionTasksStates[num]
+            icon?.completed =  userTasks.getTaskStatus( DashboardTask.allCases[num] )
             icon?.setUnselected()
         }
     }
 
     private func setTaskLabel() {
-        taskLabel.text = taskScope[currentTaskSwitched]
+        taskLabel.text = taskScope[currentTaskSwitched].title
     }
 
     private func setUpDidItSection() {
-        
-        //let twoCompletionStatesTask = isThisTwoCompletionStatesTask()
-        getDidButtonsStackView(narrow: true) //!twoCompletionStatesTask)
-        
-        if completionTasksStates[currentTaskSwitched] {
+
+        getDidButtonsStackView(narrow: true)
+
+        if userTasks.getTaskStatus(taskScope[currentTaskSwitched]) {
             completedFistImage.image = #imageLiteral(resourceName: "fist_xvmush")
             completedLabel.text = "Completed!"
+            didItButton.setTitle("Not yet", for: .normal)
         } else {
             completedFistImage.image = #imageLiteral(resourceName: "Incomplete fist and writing")
             completedLabel.text = "Incomplete"
+            didItButton.setTitle("I did it!", for: .normal)
         }
-
-//        if twoCompletionStatesTask {
-//            if completionTasksStates[ 6] {
-//                didItMiddleButton.setTitle("Not yet\nabout plastic", for: .normal)
-//            } else {
-//                didItMiddleButton.setTitle("I did it about\nplastic!", for: .normal)
-//            }
-//
-//            if completionTasksStates[7]  == true {
-//                didItButton.setTitle("Not yet\nabout climate", for: .normal)
-//            } else {
-//                didItButton.setTitle("I did it about\nclimate!", for: .normal)
-//            }
-//
-//        } else {
-            if completionTasksStates[currentTaskSwitched] {
-                didItButton.setTitle("Not yet", for: .normal)
-            } else {
-                didItButton.setTitle("I did it!", for: .normal)
-            }
-//        }
     }
-
-//    private func isThisTwoCompletionStatesTask() -> Bool {
-//        return twoCompletionStatesTask == currentTaskSwitched
-//    }
     
     private func getDidButtonsStackView(narrow: Bool) {
+
         if didItMiddleButton.isHidden == narrow {
             return
         }
@@ -347,18 +277,18 @@ class DashboardViewController: UIViewController {
     }
     
     private func selectTopIcon() {
+
         guard let selectedIcon = topIcons[currentTaskSwitched] else { return }
-        selectedIcon.setSelected()
+
         // clear previous icon
         if topIcons.indices.contains(previousTaskSwitched) {
             topIcons[previousTaskSwitched]!.setUnselected()
         }
+        selectedIcon.setSelected()
     }
 
    private func rotateMeterPointer() {
 
-//        let oneAngle = CGFloat.pi / CGFloat(6)
-//        let angle = oneAngle * CGFloat(currentTaskSwitched + 1)
         let oneAngle = CGFloat.pi / CGFloat(5)
         let angle = currentTaskSwitched < 2 ? oneAngle * CGFloat(currentTaskSwitched + 1) : oneAngle * CGFloat(currentTaskSwitched)
         let time = Double(abs(previousTaskSwitched - currentTaskSwitched)) * 0.2
@@ -368,6 +298,7 @@ class DashboardViewController: UIViewController {
     }
 
     private func switchWheelPointerPosition() {
+
         let keyFrameAnimation = CAKeyframeAnimation()
         let path = CGMutablePath()
 
@@ -389,12 +320,10 @@ class DashboardViewController: UIViewController {
         let newPosition = CGPoint(x: path.currentPoint.x - wheelPoint.bounds.width/2, y: path.currentPoint.y - wheelPoint.bounds.width/2)
         wheelPointConstraintX.constant = newPosition.x
         wheelPointConstraintY.constant = newPosition.y
-        /*var frame = wheelPoint.frame
-        frame.origin = newPosition
-        wheelPoint.frame = frame*/
     }
 
     private func setUpAudioPlayer() -> AVAudioPlayer? {
+
         do {
             guard let soundURL = Bundle.main.url(forResource: "knobClick", withExtension: "mp3") else {return nil}
             let audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
@@ -407,6 +336,7 @@ class DashboardViewController: UIViewController {
     }
 
     private func playSound() {
+
         let audioPlayerNum = currentTaskSwitched.remainderReportingOverflow(dividingBy: 3).partialValue
         let audioPlayer: AVAudioPlayer = audioPlayers[audioPlayerNum]
         guard audioPlayers.indices.contains(audioPlayerNum) else { return }
@@ -414,7 +344,7 @@ class DashboardViewController: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
-        UserViewModel.shared().saveUser()
+        userTasks.save()
         super.didReceiveMemoryWarning()
     }
 }

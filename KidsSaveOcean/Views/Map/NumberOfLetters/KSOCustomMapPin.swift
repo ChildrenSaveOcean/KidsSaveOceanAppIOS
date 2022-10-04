@@ -10,9 +10,11 @@ import Foundation
 import MapKit
 
 class KSOCustomMapPin: MKMarkerAnnotationView {
+
     override var annotation: MKAnnotation? {
         willSet {
             guard let annotation = newValue as? KSOPinOfLetters else { return }
+
             canShowCallout = true
             calloutOffset = CGPoint(x: -5, y: 5)
             glyphText = String(annotation.getNumberOfLetters() )
@@ -25,7 +27,7 @@ class KSOCustomMapPin: MKMarkerAnnotationView {
             }
             
             rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            let subtitleText = annotation.subtitle! + "\n" + action.action_description
+            let subtitleText = (annotation.subtitle ?? "") + "\n" + action.action_description
             let subtitleLabel = UILabel()
             subtitleLabel.font = UIFont.proRegular11
             subtitleLabel.textColor = .gray

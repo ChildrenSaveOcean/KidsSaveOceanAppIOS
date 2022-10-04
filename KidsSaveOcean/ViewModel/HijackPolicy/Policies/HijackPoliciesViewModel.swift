@@ -12,22 +12,11 @@ import Firebase
 class HijackPoliciesViewModel {
     
     static var nodeName = "HIJACK_POLICIES"
-    var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
-    var hidjackPolicies = [HijackPolicy]()
+    static var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
+    var hijackPolicies = [HijackPolicy]()
     
-    private static var sharedHijackPolicyViewModel: HijackPoliciesViewModel = {
-        let viewModel = HijackPoliciesViewModel()
-        return viewModel
-    }()
+    static var shared = HijackPoliciesViewModel()
 
-    class func shared() -> HijackPoliciesViewModel {
-        return sharedHijackPolicyViewModel
-    }
-    
-    func setup() {
-        fetchPolicies(nil)
-    }
-    
     var policiesHaveBeenLoaded = false {
         didSet {
             if policiesHaveBeenLoaded {
@@ -35,56 +24,40 @@ class HijackPoliciesViewModel {
             }
         }
     }
-    
-    func fetchPolicies(_ completion: (() -> Void)?) {
 
-        hidjackPolicies.removeAll()
+    static func fetchPolicies(_ completion: (() -> Void)? = nil) {
+
+        shared.hijackPolicies.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshotValue = snapshot.value as? NSDictionary else {
                 return
             }
 
-            for policies in snapshotValue {
+            shared.hijackPolicies = snapshotValue.compactMap({ (id, dictionary) in
 
-                guard let id = policies.key as? String else {
-                    continue
-                }
-                
-                guard let value = policies.value as? NSDictionary else {
-                    continue
+                guard let id = id as? String,
+                      let dictionary = dictionary as? Dictionary<String, Any> else {
+                    return nil
                 }
 
-                guard let description = value["description"] as? String else {
-                    continue
-                }
-                
-                guard let summary = value["summary"] as? String else {
-                    continue
-                }
-                
-                guard let votes = value["votes"] as? Int else {
-                    continue
-                }
-                
-                let policy = HijackPolicy(id: id, description: description, summary: summary, votes: votes)
-                self.hidjackPolicies.append(policy)
-            }
-    
-            self.policiesHaveBeenLoaded = true
-            if completion != nil {
-                completion!()
-            }
+                var policy = HijackPolicy(with: dictionary)
+                policy?.id = id
+                return policy
+            })
+
+            shared.policiesHaveBeenLoaded = true
+            completion?()
+
         })
     }
     
     func updateVotes(policy: HijackPolicy, value: Int) {
-        Database.database().reference().child(HijackPoliciesViewModel.nodeName).child(policy.id).child("votes").setValue(value)
-//        self.policiesHaveBeenLoaded = false
-//        setup()
+        HijackPoliciesViewModel.databaseReferenece.child(policy.id).child("votes").setValue(value)
     }
-    
+
     func getPolicyAttrString(for policy: String) -> NSMutableAttributedString {
+
         let attrPolicyStr = NSMutableAttributedString(string: "Policy chosen: ")
         let font = UIFont.proRegular15
         attrPolicyStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrPolicyStr.length))

@@ -95,10 +95,19 @@ extension UIView {
         let animation = CABasicAnimation(keyPath: "backgroundColor")
         let startColor = backgroundColor?.cgColor ?? UIColor.clear.cgColor
         animation.fromValue = startColor
-        animation.toValue = UIColor.kidsSaveOceanBlue.cgColor 
+        animation.toValue = UIColor.kidsSaveOceanBlue.cgColor
         animation.duration = 0.2
         animation.repeatCount = times
         layer.add(animation, forKey: "colourAnimation")
         layer.backgroundColor = startColor
+    }
+
+    func captureView(in rect: CGRect) -> UIImage? {
+
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        let newRect = CGRect(x: -rect.origin.x, y: -rect.origin.y, width: bounds.size.width, height: bounds.size.height)
+        self.drawHierarchy(in: newRect, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        return image
     }
 }

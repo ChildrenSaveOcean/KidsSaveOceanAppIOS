@@ -47,8 +47,8 @@ final class KSOStartPageViewController: UIPageViewController, Instantiatable {
     }
 
     func configurePageControl() {
-        pageControl = UIPageControl(frame: CGRect(x: UIScreen.main.bounds.maxX - 130, //180,
-                                                  y: UIScreen.main.bounds.maxY - 50, //100,
+        pageControl = UIPageControl(frame: CGRect(x: UIScreen.main.bounds.maxX - 130,
+                                                  y: UIScreen.main.bounds.maxY - 50,
                                                   width: 200,
                                                   height: 50))
         pageControl.numberOfPages = pages.count
@@ -72,7 +72,7 @@ final class KSOStartPageViewController: UIPageViewController, Instantiatable {
 extension KSOStartPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
-        guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
+        guard let viewControllerIndex = pages.firstIndex(of: viewController) else { return nil }
         let previousIndex = viewControllerIndex - 1
         guard previousIndex >= 0          else { return nil }
         guard pages.count > previousIndex else { return nil }
@@ -80,7 +80,7 @@ extension KSOStartPageViewController: UIPageViewControllerDataSource {
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
+        guard let viewControllerIndex = pages.firstIndex(of: viewController) else { return nil }
         let nextIndex = viewControllerIndex + 1
         guard nextIndex < pages.count else { return nil }
         guard pages.count > nextIndex else { return nil }
@@ -89,7 +89,7 @@ extension KSOStartPageViewController: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
-        self.pageControl.currentPage = pages.index(of: pageContentViewController)!
+        self.pageControl.currentPage = pages.firstIndex(of: pageContentViewController)!
     }
 }
 

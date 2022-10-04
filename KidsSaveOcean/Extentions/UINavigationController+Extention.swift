@@ -21,13 +21,10 @@ extension UINavigationController {
         navigationBar.backgroundColor = .clear
 
         navigationBar.tintColor = UIColor.kidsSaveOceanBlue //UIColor.init(named: "KidSaveOcean Blue")
-        
-         if #available(iOS 13.0, *) {
-            //navigationBar.standardAppearance.backButtonAppearance.bac
-             navigationBar.standardAppearance.backgroundColor = .clear
-             navigationBar.standardAppearance.backgroundEffect = .none
-             navigationBar.standardAppearance.shadowColor = .clear
-         }
+
+        navigationBar.standardAppearance.backgroundColor = .clear
+        navigationBar.standardAppearance.backgroundEffect = .none
+        navigationBar.standardAppearance.shadowColor = .clear
 
         let statusBarFrame = UIApplication.shared.statusBarFrame
         let statusBarView = UIView(frame: statusBarFrame)

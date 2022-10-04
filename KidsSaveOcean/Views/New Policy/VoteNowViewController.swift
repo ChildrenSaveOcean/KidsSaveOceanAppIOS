@@ -38,7 +38,6 @@ class VoteNowViewController: UIViewController, Instantiatable {
         "hijack_policy_08" : [9.2, 5.3, 1.7],
         "hijack_policy_09" : [7.2, 5.7, 1.3],
         "hijack_policy_10" : [8.2, 6.0, 1.4]
-        
     ]
     
     override func viewDidLoad() {
@@ -53,22 +52,23 @@ class VoteNowViewController: UIViewController, Instantiatable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserViewModel.shared().user_type != .student {
+
+        if User.shared.userType != .student {
             voteButton.isEnabled = false
             voteButton.alpha = 0.5
-            
         }
     }
     
     @IBAction func voteNowButton() {
+
         let dialogMessage = UIAlertController(title: "Are you sure you want to vote for this policy?", message: "", preferredStyle: .alert)
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
             if let selectedPolicy = self.selectedPolicy {
-                UserViewModel.shared().hijack_policy_selected = selectedPolicy.id
-                UserViewModel.shared().saveUser()
-                HijackPoliciesViewModel.shared().updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
+                User.shared.hijackPolicySelected = selectedPolicy.id
+                User.shared.save()
+                HijackPoliciesViewModel.shared.updateVotes(policy: selectedPolicy, value: selectedPolicy.votes + 1)
                 
             }
             //self.pickerData = HijackPoliciesViewModel.shared().hidjackPolicies
@@ -91,29 +91,32 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
         guard  pickerData.count > 0 else {
             return
         }
+
         let hijackPolicy = pickerData[row]
         setPolicyDetails(hijackPolicy)
     }
     
     private func setPolicyDetails(_ policy: HijackPolicy) {
+
         selectedPolicy = policy
         summaryLabel.text = policy.summary
-        
-        //let impact = Double(policy.votes)
         
         guard let policyNumbers = policyImpactDifficulties[policy.id] else {
             return
         }
+
         impactNumberLabel.text = String(policyNumbers[0])
         difficultyNumberLabel.text = String(policyNumbers[1])
         impactToDifficultyNumberLabel.text = String(policyNumbers[2])
     }
     
     @objc private func setPolicyLoadingState() {
-        if !HijackPoliciesViewModel.shared().policiesHaveBeenLoaded {
+
+        if !HijackPoliciesViewModel.shared.policiesHaveBeenLoaded {
             blur.frame = view.bounds
             blur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blur.alpha = 0.7
@@ -121,7 +124,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
             activityIndicator.startAnimating()
             
         } else {
-            pickerData = HijackPoliciesViewModel.shared().hidjackPolicies.sorted {$0.id < $1.id}
+            pickerData = HijackPoliciesViewModel.shared.hijackPolicies.sorted {$0.id < $1.id}
             
             blur.frame = .zero
             blur.alpha = 0.0
@@ -133,9 +136,10 @@ class VoteNowViewController: UIViewController, Instantiatable {
     }
     
     private func setPolicyControls() {
+
         pickerView.reloadAllComponents()
         
-        let userHijackPolicy = UserViewModel.shared().hijack_policy_selected
+        let userHijackPolicy = User.shared.hijackPolicySelected
         
         if !userHijackPolicy.isEmpty {
             let alertMessage = UIAlertController(title: "", message: "Explore proposals FateChanger youth are considering for citizen ballot initiatives", preferredStyle: .alert)
@@ -157,6 +161,7 @@ class VoteNowViewController: UIViewController, Instantiatable {
 
 // MARK: - UIPickerViewDataSource
 extension VoteNowViewController: UIPickerViewDataSource {
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -168,6 +173,7 @@ extension VoteNowViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 extension VoteNowViewController: UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 
         var label: UILabel
@@ -179,9 +185,6 @@ extension VoteNowViewController: UIPickerViewDelegate {
         label.font = UIFont.proDisplaySemiBold15
         
         label.textColor = .black
-//        label.adjustsFontSizeToFitWidth = true
-//        label.minimumScaleFactor = 0.5
-
         return label
     }
 }

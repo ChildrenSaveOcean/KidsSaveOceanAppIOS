@@ -39,7 +39,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             if _countriesData != nil {
                 return _countriesData!
             } else {
-                _countriesData = CountriesService.shared()
+                _countriesData = CountriesService.shared
                     .countriesContacts
                     .filter({$0.letters_written > 0})
                     .sorted { $0.letters_written > $1.letters_written }
@@ -69,6 +69,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         tbvTop10.register(UINib(nibName: "KSOMapTop10TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
 
+        tbvTop10.delegate = self
+        tbvTop10.dataSource = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -109,7 +111,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
      }
     
     func reloadMap() {
-        if CountriesService.shared().contryContactsHasBeenLoaded {
+        if CountriesService.shared.contryContactsHasBeenLoaded {
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
         } else {
@@ -156,18 +158,35 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 
     @objc private func reloadScores() {
-        _countriesData = nil
-        tbvTop10?.reloadData()
-        reloadMap()
-        blinkTopScoreCellIfNeed()
+        DispatchQueue.main.async {
+            self.reloadMap()
+            self.blinkTopScoreCellIfNeed()
+        }
     }
     
     private func blinkTopScoreCellIfNeed() {
-        guard isNotificationActualForTarget(.newHighScore) == true else {return}
-        guard tbvTop10.isHidden == false else { return }
-        guard let cell = self.tbvTop10.cellForRow(at: IndexPath(row: 0, section: 0)) as? KSOMapTop10TableViewCell else {return}
-        cell.blinkBackColor(times: 5)
-        clearNotifications()
+
+        guard isNotificationActualForTarget(.newHighScore) == true, tbvTop10.isHidden == false else { return }
+
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cellRect = tbvTop10.rectForRow(at: indexPath)
+        let absRect = view.convert(cellRect, to: self.view)
+
+        guard let image = tbvTop10.captureView(in: absRect)?.inverted else { return }
+
+        let view = UIImageView(image: image)
+        view.frame = absRect
+
+        tbvTop10.addSubview(view)
+
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            view.removeFromSuperview()
+            self.clearNotifications()
+        })
+
+        view.blinkOpacity(times: 5)
+        CATransaction.commit()
     }
 }
 
@@ -177,7 +196,7 @@ extension MapViewController: NotificationProtocol {
     }
     
     func updateViews() {
-        guard map != nil, tbvTop10 != nil else {return}
+        guard map != nil, tbvTop10 != nil else { return }
         reloadScores()
     }
 }

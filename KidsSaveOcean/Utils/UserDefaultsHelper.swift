@@ -17,6 +17,7 @@ class UserDefaultsHelper {
     static let completionStatusKey = "completionStatusKey"
     static let countryLetterNumberKey = "countryLetterNumber"
     static let letterNumberKey = "letterNumber"
+    static let forceShowingNotificationKey = "forceShowingNotification"
     
     static let dateFormatter: DateFormatter = {
         let datef = DateFormatter()
@@ -25,20 +26,24 @@ class UserDefaultsHelper {
     }()
     
     class func saveOnBoardingHasBeenShown() {
+
         UserDefaults.standard.set(true, forKey: onBoardingKey)
         UserDefaults.standard.synchronize()
     }
     
     class func isOnBoardingHasBeenShown() -> Bool {
+
         return UserDefaults.standard.bool(forKey: onBoardingKey)
     }
     
     class func saveCompletionTasksStatus(_ states: [Bool]) {
+
         UserDefaults.standard.set(states, forKey: completionStatusKey)
         UserDefaults.standard.synchronize()
     }
     
     class func getCompletionTasksStatus() -> [Bool] {
+
         guard let states = UserDefaults.standard.array(forKey: completionStatusKey) as? [Bool] else {
             return Array.init(repeating: false, count: 6)
         }
@@ -46,18 +51,24 @@ class UserDefaultsHelper {
     }
     
     class func saveNotifications(_ notifications: [NotificationItem]) {
-        let codedNotifications = try? NSKeyedArchiver.archivedData(withRootObject: notifications)
+
+        let encoder = JSONEncoder()
+
+        let codedNotifications = try? encoder.encode(notifications)
         UserDefaults.standard.set(codedNotifications, forKey: notificationsKey)
         UserDefaults.standard.synchronize()
     }
     
     class func getNotifications() -> [NotificationItem] {
-        guard let codedNotification = UserDefaults.standard.value(forKey: notificationsKey) as? NSData,
-            let notificationData = codedNotification as? Data,
-            let notifications = NSKeyedUnarchiver.unarchiveObject(with: notificationData) as? [NotificationItem]
+
+        let decoder = JSONDecoder()
+
+        guard let notificationData = UserDefaults.standard.value(forKey: notificationsKey) as? Data,
+              let notifications = try? decoder.decode([NotificationItem].self, from: notificationData)
         else {
             return [NotificationItem]()
         }
+
         return notifications
     }
     
@@ -75,5 +86,16 @@ class UserDefaultsHelper {
     
     class func saveLetterNumber(_ value: Int) {
          UserDefaults.standard.set(value, forKey: letterNumberKey)
+    }
+
+    class var forceShowingNotificationItem: NotificationItem? {
+        get {
+            let notificationItem = UserDefaults.standard.value(forKey: forceShowingNotificationKey) as? NotificationItem
+            UserDefaults.standard.set(nil, forKey: forceShowingNotificationKey)
+            return notificationItem
+        }
+        set {
+            UserDefaults.standard.set(forceShowingNotificationItem, forKey: forceShowingNotificationKey)
+        }
     }
 }

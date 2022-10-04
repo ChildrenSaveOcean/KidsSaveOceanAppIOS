@@ -38,6 +38,7 @@ class UserTypeVideoViewController: WebIntegrationViewController {
     }
 
     private func showActionButtons() {
+
         let shiftY = self.view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top - buttonHeight - 10
         let shiftX = (self.view.bounds.width - 2*buttonWidth)/3
 
@@ -55,13 +56,12 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         let goButton = self.createButtonWithTitle(.forward)
         goButton.frame = CGRect(x: self.view.bounds.width - buttonWidth - shiftX, y: shiftY, width: buttonWidth, height: buttonHeight)
 
-        goButton.addTargetClosure { (_) in
+        goButton.addTargetClosure { _ in
             UserDefaultsHelper.saveOnBoardingHasBeenShown()
 
-            if self.userType != nil {
-                let userViewModel = UserViewModel.shared()
-                userViewModel.user_type = self.userType!
-                userViewModel.saveUser()
+            if let userType = self.userType {
+                User.shared.userType = userType
+                User.shared.save()
             }
 
             let tabBarController = KSOTabViewController.instantiate()
@@ -74,8 +74,8 @@ class UserTypeVideoViewController: WebIntegrationViewController {
     }
 
     private func createButtonWithTitle(_ direction: ButtonDirectionType) -> UIButton {
+
         let button = UIButton()
-        //let image = direction == .back ? #imageLiteral(resourceName: "Back_video") : #imageLiteral(resourceName: "skip_video")
         let image = direction == .back ?  #imageLiteral(resourceName: "chevron-back") : #imageLiteral(resourceName: "chevron")
         let tintedImage = image.withRenderingMode(.alwaysTemplate)
         button.setImage(tintedImage, for: .normal)

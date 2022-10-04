@@ -14,6 +14,7 @@ class Follow7StepsViewController: UIViewController, Instantiatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.backgroundColor = .backgroundWhite
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableView.automaticDimension

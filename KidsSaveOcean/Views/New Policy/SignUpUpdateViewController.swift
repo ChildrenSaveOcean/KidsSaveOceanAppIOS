@@ -40,16 +40,14 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     var selectedCountryForCampaign: HijackLocation?
     
-    private lazy var campaigns = CampaignViewModel.shared().campaigns
-    private lazy var campaignLocations = HijackPLocationViewModel.shared().hidjackPLocations.sorted { $0.location < $1.location }
+    private lazy var campaigns = CampaignViewModel.shared.campaigns
+    private lazy var campaignLocations = HijackPLocationViewModel.shared.hijackPLocations.sorted { $0.location < $1.location }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(aNotification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(aNotification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(aNotification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         self.setHidingKeyboardWhenTappedAround()
@@ -63,10 +61,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         }
         
         let policy = "none yet - still voting"
-//        let policy = HijackPoliciesViewModel.shared().hidjackPolicies.filter {$0.id == campaigns.first?.hijack_policy}.first
-//        if policy != nil {
-            policyLabel.attributedText = HijackPoliciesViewModel.shared().getPolicyAttrString(for: policy) //policy != nil ?  : ""
-//        }
+        policyLabel.attributedText = HijackPoliciesViewModel.shared.getPolicyAttrString(for: policy)
         
         unliveLocationMessageLabel.isHidden = true
         liveCampaingStateLabel.text = ""
@@ -74,12 +69,10 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         pickerView.layer.borderColor = UIColor.darkGray.cgColor
         pickerView.layer.borderWidth = 1
         
-        let campaign = UserViewModel.shared().campaign
-
         signaturesReqdTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesReqdTextField.layer.borderWidth = 1.0
         signaturesReqdTextField.roundCorners()
-        signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged)
+        signaturesReqdTextField.text = String(User.shared.signaturesPledged)
         
         newSignaturesCollected.layer.borderColor = UIColor.gray.cgColor
         newSignaturesCollected.layer.borderWidth = 1.0
@@ -89,14 +82,14 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         signaturesCollectedTextField.layer.borderColor = UIColor.gray.cgColor
         signaturesCollectedTextField.layer.borderWidth = 1.0
         signaturesCollectedTextField.roundCorners()
-        signaturesCollectedTextField.text = String(campaign?.signatures_collected ?? 0)
+        signaturesCollectedTextField.text = String(User.shared.campaign?.signaturesCollected ?? 0)
         signaturesCollectedTextField.isUserInteractionEnabled = false
         
         showLocationView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        CampaignViewModel.shared().setup()
+        CampaignViewModel.fetchCampaigns()
     }
     
     // MARK:- Action methods
@@ -120,42 +113,36 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     @IBAction func plannedSignaturesClicked(_ sender: Any) {
         if let signatures = signaturesReqdTextField.text {
-            //UserViewModel.shared().campaign?.signatures_pledged = Int(signatures) ?? 0
-            UserViewModel.shared().signatures_pledged = Int(signatures) ?? 0
-            UserViewModel.shared().saveUser()
+            User.shared.signaturesPledged = Int(signatures) ?? 0
+            User.shared.save()
             dismissKeyboard()
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
     }
     
     @IBAction func collectedSignaturesClicked(_ sender: Any) {
+
         guard let signatures = newSignaturesCollected.text,
-            let addedSignaturesAmount = Int(signatures), addedSignaturesAmount >= 0 else {
+            let addedSignaturesAmount = Int(signatures), addedSignaturesAmount >= 0,
+            let campaign = User.shared.campaign else {
+
+            newSignaturesCollected.text = ""
             return
         }
-        
-        //if let signatures = signaturesCollectedTextField.text {
-        //   let signaturesAmount = Int(signatures) ?? 0
-        let currentCollectedAmount = UserViewModel.shared().campaign?.signatures_collected ?? 0
-            
-        //    let addedSignaturesAmount = signaturesAmount - currentCollectedAmount
-    
-        let userTotalSignatures = UserViewModel.shared().campaign!.signatures_collected + addedSignaturesAmount
-        UserViewModel.shared().campaign?.signatures_collected = userTotalSignatures
-        UserViewModel.shared().saveUser()
+
+        let userTotalSignatures = (User.shared.campaign?.signaturesCollected ?? 0) + addedSignaturesAmount
+        User.shared.campaign?.signaturesCollected = userTotalSignatures
+        User.shared.save()
+
         signaturesCollectedTextField.text = String(userTotalSignatures)
         newSignaturesCollected.text = ""
         
-        let location_id = UserViewModel.shared().location_id
-        let campaign = campaigns.filter{$0.location_id == location_id}.first
-        if campaign != nil {
-            let newCollectedAmount = (Int(signaturesTotalCollectedLabel.text ?? "") ?? 0) + addedSignaturesAmount
-                CampaignViewModel.shared().updateCollectedSignatures(campaign: campaign!, value: addedSignaturesAmount)
-                signaturesTotalCollectedLabel.text = String(newCollectedAmount)
-        }
+        let newCollectedAmount = (Int(signaturesTotalCollectedLabel.text ?? "") ?? 0) + addedSignaturesAmount
+        CampaignViewModel.shared.updateCollectedSignatures(campaignId: campaign.id, value: addedSignaturesAmount)
+        signaturesTotalCollectedLabel.text = String(newCollectedAmount)
+
         dismissKeyboard()
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        //}
     }
     
     @IBAction func shareAction(_ sender: Any) {
@@ -170,13 +157,13 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     
     // MARK: Private methods
     private func showLocationView() {
-        let userCampaign = UserViewModel.shared().campaign
-        let campaignLive = UserViewModel.shared().isUserLocationCampaignIsLive()
-        let userCampaignLocationId = UserViewModel.shared().location_id
-        let currentCampaignLocationNum = campaignLocations.firstIndex(where: { (location) -> Bool in
+
+        let campaignLive = User.shared.isUserLocationCampaignIsLive()
+        let userCampaignLocationId = User.shared.locationId
+        let currentCampaignLocationNum = campaignLocations.firstIndex(where: { location -> Bool in
+
             return location.id == userCampaignLocationId
         }) ?? 0
-        
         
         if campaignLive == true {
 
@@ -191,43 +178,41 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             liveLocationView.isHidden = true
             chooseLocationView.isHidden = false
             
-            signaturesReqdTextField.text = String(UserViewModel.shared().signatures_pledged)
+            signaturesReqdTextField.text = String(User.shared.signaturesPledged)
             signaturesCollectedTextField.text = "0"
-            
-            //var currentCampaignLocationNum = 0
-            
+
             if !userCampaignLocationId.isEmpty {
+
                 pickerView.selectRow(currentCampaignLocationNum, inComponent: 0, animated: true)
                 setCampaignLiveDescription(currentCampaignLocationNum)
                 
                 enableChooseLocationButton(false)
             } else if campaignLocations.count == 0 {
+
                 pickerView.isUserInteractionEnabled = false
                 enableChooseLocationButton(false)
             } else {
+
                 pickerView.selectRow(0, inComponent: 0, animated: true)
                 setCampaignLiveDescription(0)
             }
             
         }
         
-        if userCampaign != nil, !userCampaignLocationId.isEmpty {
-            //!(userCampaign!.campaign_id.isEmpty) {
-            signaturesBlock.alpha = 1
-        } else {
-            signaturesBlock.alpha = 0
-        }
-        
+        signaturesBlock.alpha = userCampaignLocationId.isEmpty ? 0 : 1
+
     }
     
     private func setCampaignLiveDescription(_ num: Int) {
+
         selectedCountryForCampaign = campaignLocations[num]
         
-        let campaign = campaigns.filter({ $0.location_id == selectedCountryForCampaign?.id }).first
+        let campaign = campaigns.filter({ $0.locationId == selectedCountryForCampaign?.id }).first
         
         if selectedCountryForCampaign != nil,
             campaign != nil,
             campaign?.live == true {
+
             unliveLocationMessageLabel.isHidden = true
             liveCampaingStateLabel.text = liveCampaignLocationStateMessages[true]! + selectedCountryForCampaign!.location
             signaturesCollectedTextField.isEnabled = true
@@ -235,7 +220,9 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             collectedSingaturesUpdateButton.alpha = 1.0
             newSignaturesCollected.isUserInteractionEnabled = true
             newSignaturesCollected.alpha = 1.0
+
         } else {
+
             unliveLocationMessageLabel.isHidden = false
             liveCampaingStateLabel.text = liveCampaignLocationStateMessages[false]
             signaturesCollectedTextField.isEnabled = false
@@ -244,17 +231,22 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             collectedSingaturesUpdateButton.alpha = 0.5
             newSignaturesCollected.isUserInteractionEnabled = false
             newSignaturesCollected.alpha = 0.5
+
         }
+
     }
     
     private func updateLiveLocationView() {
-        let campaign = campaigns.filter { $0.id == UserViewModel.shared().campaign?.campaign_id }.first
-        signaturesRequiredLabel.text =  String( campaign?.signatures_required ?? 0)
-        signaturesTotalCollectedLabel.text = String(campaign?.signatures_collected ?? 0)
+
+        let campaign = campaigns.filter { $0.id == User.shared.campaign?.id }.first
+        signaturesRequiredLabel.text =  String( campaign?.signaturesRequired ?? 0)
+        signaturesTotalCollectedLabel.text = String(campaign?.signaturesCollected ?? 0)
         deadlineLabel.text = "--"
+
     }
     
     private func lockChoosenLocationForUser() {
+
         let alertView = UIAlertController(title: "Are you sure this is your location?", message: "", preferredStyle: .alert)
         
         let yesButton = UIAlertAction(title: "YES", style: .default) { (_) in
@@ -264,14 +256,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
         
         let noButton = UIAlertAction(title: "NO", style: .cancel, handler: nil)
         noButton.setAppTextColor()
-//        let noButton = UIAlertAction(title: "NO", style: .default) { (_) in
-//            let explainAlertView = UIAlertController(title: nil, message: "I'm sorry, but the goverment of your location doesn't offer the opportunity for citizen ballon initiatives. But you can influence them with letters in our letter-writing campaign.", preferredStyle: .alert)
-//            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//            explainAlertView.addAction(okButton)
-//            self.present(explainAlertView, animated: true) {
-//                self.enableChooseLocationButton(false)
-//            }
-//        }
         
         alertView.addAction(yesButton)
         alertView.addAction(noButton)
@@ -279,31 +263,23 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     }
     
     private func signUpUserToTheLoaction() {
+
         let dialogMessage = UIAlertController(title: "Are you sure you want to choose this location?", message: "", preferredStyle: .alert)
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) -> Void in
 
             let num = self.pickerView.selectedRow(inComponent: 0)
-//            guard let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first else {
-//                return
-//            }
-            //first else { return }
             
-            let campaign = self.campaigns.filter({$0.location_id == self.campaignLocations[num].id}).first
-            if campaign != nil {
-                let campSign = CampaignSignatures(campaign_id: campaign!.id, signatures_required: campaign!.signatures_required, signatures_collected: 0)
-                UserViewModel.shared().campaign = campSign
-                UserViewModel.shared().location_id = campaign!.location_id
+            let campaign = self.campaigns.filter({$0.locationId == self.campaignLocations[num].id}).first
+            if let campaign = campaign {
+                User.shared.locationId = campaign.locationId
+                User.shared.campaign = UserCampaign(id: campaign.id, signaturesCollected: 0)
             } else {
-                UserViewModel.shared().location_id = self.campaignLocations[num].id
+                User.shared.locationId = self.campaignLocations[num].id
             }
-            
-//            let campSign = CampaignSignatures(campaign_id: campaign.id, signatures_required: campaign.signatures_required, signatures_collected: 0)
-//            UserViewModel.shared().campaign = campSign
-//            UserViewModel.shared().location_id = campaign.location_id
-            
-            UserViewModel.shared().saveUser()
+
+            User.shared.save()
             
             self.liveLocationView.isHidden = true
             self.chooseLocationView.isHidden = false
@@ -312,6 +288,7 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
             self.dismiss(animated: false, completion: nil)
             
         })
+
         ok.setAppTextColor()
     
         // Create Cancel button with action handlder
@@ -392,7 +369,6 @@ extension SignUpUpdateViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         setCampaignLiveDescription(row)
-        //enableChooseLocationButton(true)
     }
     
 }

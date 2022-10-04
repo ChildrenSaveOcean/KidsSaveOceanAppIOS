@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
+
     public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
@@ -20,5 +21,16 @@ extension UIImage {
 
         guard let cgImage = image?.cgImage else { return nil }
         self.init(cgImage: cgImage)
+    }
+
+    var inverted: UIImage {
+
+        let ciImage = CIImage(image: self)
+        var iImage = self
+        if let filter = CIFilter(name: "CIColorInvert") {
+            filter.setValue(ciImage, forKey: kCIInputImageKey)
+            iImage = UIImage(ciImage: filter.outputImage!)
+        }
+        return iImage
     }
 }

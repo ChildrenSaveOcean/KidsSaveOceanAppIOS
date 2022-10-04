@@ -9,12 +9,6 @@
 import UIKit
 
 class TrackTheHijackViewController: UIViewController, Instantiatable {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     @IBAction func spreadButton(_ sender: Any) {
         ShareKidsSaveOcean.share(target: self)

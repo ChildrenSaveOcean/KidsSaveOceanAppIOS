@@ -10,79 +10,45 @@ import Foundation
 import Firebase
 
 class CampaignViewModel {
+
     static var nodeName = "CAMPAIGNS"
-    var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
+    static var databaseReferenece: DatabaseReference = Database.database().reference().child(nodeName)
     var campaigns = [Campaign]()
-    
-    private static var sharedCampaignsViewModel: CampaignViewModel = {
-        let viewModel = CampaignViewModel()
-        return viewModel
-    }()
 
-    class func shared() -> CampaignViewModel {
-        return sharedCampaignsViewModel
-    }
+    static var shared = CampaignViewModel()
     
-    func setup() {
-        fetchCampaigns(nil)
-    }
-    
-    // swiftlint:disable cyclomatic_complexity
-    func fetchCampaigns(_ completion: (() -> Void)?) {
+    static func fetchCampaigns(_ completion: (() -> Void)? = nil) {
 
-        campaigns.removeAll()
+        shared.campaigns.removeAll()
         
         databaseReferenece.observeSingleEvent(of: .value, with: { (snapshot) in
+
             guard let snapshotValue = snapshot.value as? NSDictionary else {
+                completion?()
+
                 return
             }
 
-            for campaign in snapshotValue {
+            shared.campaigns = snapshotValue.compactMap({ (id, dictionary) in
 
-                guard let id = campaign.key as? String else {
-                    continue
-                }
-                
-                guard let value = campaign.value as? NSDictionary else {
-                    continue
+                guard let id = id as? String,
+                      let dictionary = dictionary as? Dictionary<String, Any> else {
+                    return nil
                 }
 
-                guard let policy = value["hijack_policy"] as? String else {
-                    continue
-                }
-                guard let live = value["live"] as? Bool else {
-                    continue
-                }
-                guard let location = value["location_id"] as? String else {
-                    continue
-                }
-                guard let sign_collected = value["signatures_collected"] as? Int else {
-                    continue
-                }
+                var campaign = Campaign(with: dictionary)
+                campaign?.id = id
+                return campaign
+            })
 
-                guard let sigh_required = value["signatures_required"] as? Int else {
-                    continue
-                }
-                
-                let campaignObj = Campaign(id: id, hijack_policy: policy, live: live, location_id: location, signatures_collected: sign_collected, signatures_required: sigh_required)
-                
-                self.campaigns.append(campaignObj)
-            }
-    
-            if completion != nil {
-                completion!()
-            }
+            completion?()
+
         })
     }
-    
-//    func updatePlannedSignatures(campaign: Campaign, value: Int) {
-//        Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_pledged").setValue(value)
-//            setup()
-//    }
-//
-    func updateCollectedSignatures(campaign: Campaign, value: Int) {
-        let newCollectedSignaturesNumber = (self.campaigns.filter{$0.id == campaign.id}.first?.signatures_collected ?? 0) + value
-        
-    Database.database().reference().child(CampaignViewModel.nodeName).child(campaign.id).child("signatures_collected").setValue(newCollectedSignaturesNumber)
+
+    func updateCollectedSignatures(campaignId: String, value: Int) {
+
+        let newCollectedSignaturesNumber = (self.campaigns.filter{$0.id == campaignId}.first?.signaturesCollected ?? 0) + value
+        CampaignViewModel.databaseReferenece.child(campaignId).child("signatures_collected").setValue(newCollectedSignaturesNumber)
    }
 }

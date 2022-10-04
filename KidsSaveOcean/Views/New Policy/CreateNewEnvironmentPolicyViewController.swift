@@ -26,6 +26,7 @@ class CreateNewEnvironmentPolicyViewController: UIViewController, Instantiatable
 }
 
 extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITableViewDataSource {
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -86,36 +87,34 @@ extension CreateNewEnvironmentPolicyViewController: UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        let taskViewController: UIViewController
         switch indexPath.row {
         case 0:
-            let taskViewController = YouthInitiativeProcessViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            taskViewController = YouthInitiativeProcessViewController.instantiate()
+            
         case 1:
-            let taskViewController = Follow7StepsViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            taskViewController = Follow7StepsViewController.instantiate()
+
         case 2:
-            let taskViewController = VoteNowViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            taskViewController = VoteNowViewController.instantiate()
+
         case 3:
-            let taskViewController = SignUpUpdateViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            taskViewController = SignUpUpdateViewController.instantiate()
+
         case 4:
-            let taskViewController = MultiplympactViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            taskViewController = MultiplympactViewController.instantiate()
+
         case 5:
-            let liveCampaign = UserViewModel.shared().isUserLocationCampaignIsLive()
-            let taskViewController = liveCampaign ? TrackTheHijackLiveCampaignViewController.instantiate() : TrackTheHijackViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            let liveCampaign = User.shared.isUserLocationCampaignIsLive()
+            taskViewController = liveCampaign ? TrackTheHijackLiveCampaignViewController.instantiate() : TrackTheHijackViewController.instantiate()
+
         default:
-            let taskViewController = YouthInitiativeProcessViewController.instantiate()
-            taskViewController.title = ""
-            navigationController?.pushViewController(taskViewController, animated: true)
+            taskViewController = YouthInitiativeProcessViewController.instantiate()
+
         }
+
+        taskViewController.title = ""
+        navigationController?.pushViewController(taskViewController, animated: true)
     }
 }

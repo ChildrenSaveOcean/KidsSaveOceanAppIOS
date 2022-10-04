@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HijackPolicyVideoViewController:  WebIntegrationViewController, Instantiatable {
+class HijackPolicyVideoViewController: WebIntegrationViewController, Instantiatable {
 
     override var hideNavigationBarByDefault: Bool { return false }
     

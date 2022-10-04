@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct HijackLocation {
-    let id: String
-    let location: String
-    
-    init(id: String, location: String) {
-        self.id = id
-        self.location = location
+struct HijackLocation: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case location
     }
+
+    var id: String = ""
+    let location: String
+
 }

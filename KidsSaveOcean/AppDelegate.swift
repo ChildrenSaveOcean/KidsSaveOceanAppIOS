@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseInstanceID
 import FirebaseMessaging
 import Firebase
 
@@ -19,14 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
-        LocationService.shared().autorizeLocation(completionHandler: nil)
+        LocationService.shared.autorizeLocation(completionHandler: nil)
         
         KSOAuthorization.anonymousAuthorization {
-            UserViewModel.shared()
-            CountriesService.shared().setup()
-            HijackPLocationViewModel.shared().setup()
-            HijackPoliciesViewModel.shared().setup()
-            CampaignViewModel.shared().setup()
+            User.fetchUserFBData()
+            CountriesService.shared.setup()
+            HijackPLocationViewModel.fetchPolicyLocations()
+            HijackPoliciesViewModel.fetchPolicies()
+            CampaignViewModel.fetchCampaigns()
         }
         
         // MARK: - Check if user already opened the tutorial screen
@@ -38,40 +37,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: all about notifications here and below:
         Messaging.messaging().delegate = self
-        NotificationController.shared().requestAuthorization()
-
-        // MARK: - Get application instance ID
-        InstanceID.instanceID().instanceID { (result, error) in
-            if let error = error {
-                print("Error fetching remote instance ID: \(error)")
-            } else if let result = result {
-                print("Remote instance ID token: \(result.token)")
-            }
-        }
+        NotificationController.shared.requestAuthorization()
         
         application.registerForRemoteNotifications()
         
         // MARK: - Get notification if application was terminated
         let notificationInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any]
-        NotificationController.shared().processNotification(with: notificationInfo)
+        NotificationController.shared.processNotification(with: notificationInfo)
 
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        NotificationController.shared().processDeliveredNotifications()
+        NotificationController.shared.processDeliveredNotifications()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        UserViewModel.shared().saveUser()
+        User.shared.save()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        UserViewModel.shared().saveUser()
+        User.shared.save()
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        NotificationController.shared().processNotification(with: userInfo)
+        NotificationController.shared.processNotification(with: userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
@@ -82,16 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: MessagingDelegate {
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         print("Firebase registration token: \(fcmToken)")
         
         let dataDict = ["token": fcmToken]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         
         messaging.subscribe(toTopic: "all")
-    }
-    
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
     }
 }

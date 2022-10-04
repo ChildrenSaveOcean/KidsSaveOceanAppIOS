@@ -25,7 +25,7 @@ extension NotificationProtocol {
     }
     
     func isNotificationActualForTarget (_ target: NotificationTarget) -> Bool {
-        return NotificationController.shared().getNotificationStatusForTarget(target)
+        return NotificationController.shared.getNotificationStatusForTarget(target)
     }
     
     func checkNotificationStatusForTarget(_ target: NotificationTarget) {
@@ -39,10 +39,10 @@ extension NotificationProtocol {
     }
     
     func clearNotificationForTarget(_ target: NotificationTarget) {
-        NotificationController.shared().clearNotificationsWithTargets([target])
+        NotificationController.shared.clearNotificationsWithTargets([target])
     }
     
     func clearNotifications() {
-        NotificationController.shared().clearNotificationsWithTargets(notificationTargets)
+        NotificationController.shared.clearNotificationsWithTargets(notificationTargets)
     }
 }

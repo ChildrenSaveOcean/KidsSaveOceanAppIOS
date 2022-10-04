@@ -8,24 +8,25 @@
 
 import Foundation
 
-struct Campaign {
-    let id: String
-    let hijack_policy: String
-    let live: Bool
-    let location_id: String
-    var signatures_collected: Int
-    let signatures_required: Int
-    
-    init(id: String, hijack_policy: String, live: Bool, location_id: String, signatures_collected: Int, signatures_required: Int) {
-        self.id = id
-        self.hijack_policy = hijack_policy
-        self.live = live
-        self.location_id = location_id
-        self.signatures_collected = signatures_collected
-        self.signatures_required = signatures_required
+struct Campaign: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case hijackPolicy = "hijack_policy"
+        case signaturesCollected = "signatures_collected"
+        case signaturesRequired = "signatures_required"
+        case locationId = "location_id"
+        case live
     }
+
+    var id: String = ""
+
+    let hijackPolicy: String
+    let live: Bool
+    let locationId: String
+    var signaturesCollected: Int
+    let signaturesRequired: Int
     
     mutating func updateSignagureCollected(to value: Int) {
-        self.signatures_collected = value
+        self.signaturesCollected = value
     }
 }

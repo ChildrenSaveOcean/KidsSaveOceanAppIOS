@@ -8,7 +8,12 @@
 
 import Foundation
 
-class NotificationItem: NSObject, NSCoding { //, Equatable
+class NotificationItem: NSObject, NSCoding, Codable { //, Equatable //
+
+    enum CodingKeys: String, CodingKey {
+        case target, expirationDate, link, id
+    }
+
     var target: NotificationTarget = .unknown
     var expirationDate: Date?
     var link: String?
@@ -22,6 +27,7 @@ class NotificationItem: NSObject, NSCoding { //, Equatable
     }
     
     required convenience init?(coder decoder: NSCoder) {
+
         guard let id = decoder.decodeObject(forKey: "id") as? String else { return nil }
         guard let targetString = decoder.decodeObject(forKey: "target") as? String else { return nil }
         let target = NotificationTarget.getTargetFromString(targetString)
@@ -31,6 +37,7 @@ class NotificationItem: NSObject, NSCoding { //, Equatable
     }
     
     func encode(with aCoder: NSCoder) {
+
         aCoder.encode(self.id, forKey: "id")
         aCoder.encode(self.expirationDate, forKey: "expirationDate")
         aCoder.encode(self.link, forKey: "link")
