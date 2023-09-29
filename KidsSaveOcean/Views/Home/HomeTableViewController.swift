@@ -146,7 +146,7 @@ final class HomeTableViewController: UITableViewController {
         tabBarController?.switchToMapScreen()
 
     case 5:
-        tabBarController?.showLink("https://www.kidssaveocean.com/sharelikeaboss", clear: nil)
+        tabBarController?.showLink( ServerPath.sharelikeaboss.string, clear: nil)
         
     default:
       return

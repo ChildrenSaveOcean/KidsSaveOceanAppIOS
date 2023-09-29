@@ -48,6 +48,7 @@
 		16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16573D3621F7C70900332FFF /* Dashboard.storyboard */; };
 		165FBFA220DB565500DB556F /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA120DB565500DB556F /* UIColor+Extentions.swift */; };
 		165FBFA420DB567900DB556F /* UIImage+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FBFA320DB567900DB556F /* UIImage+Extentions.swift */; };
+		16602EF92AC618960097FA1F /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16602EF82AC618960097FA1F /* ServiceConstants.swift */; };
 		16649E9220FEC72B000BCB48 /* Notification+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16649E9120FEC72B000BCB48 /* Notification+Extentions.swift */; };
 		16664B1622C4149D00F332A7 /* ActivistViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16664B1522C4149D00F332A7 /* ActivistViewContoller.swift */; };
 		1666720420B6E2AB0098C5FC /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */; };
@@ -82,7 +83,6 @@
 		16ED9DAC20C34730005BF4E1 /* KSOStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */; };
 		16F35A35251F6B7100238F36 /* DashboardHelpVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F35A34251F6B7100238F36 /* DashboardHelpVideoViewController.swift */; };
 		16FD4EEB23FE346200A1BA44 /* HijackPolicyVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */; };
-		16FE95762769467F006DA324 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16FE95752769467E006DA324 /* GoogleService-Info.plist */; };
 		16FE957A27694C83006DA324 /* Codable+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE957927694C83006DA324 /* Codable+Extentions.swift */; };
 		541EBA0BC83BC6057A45B335 /* Pods_KidsSaveOceanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4157AF14EE20A989F20EE8 /* Pods_KidsSaveOceanTests.framework */; };
 		7C00FFBA21185B7000320309 /* CountryContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C00FFB921185B7000320309 /* CountryContactsViewController.swift */; };
@@ -180,6 +180,7 @@
 		16573D3621F7C70900332FFF /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		165FBFA120DB565500DB556F /* UIColor+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extentions.swift"; sourceTree = "<group>"; };
 		165FBFA320DB567900DB556F /* UIImage+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extentions.swift"; sourceTree = "<group>"; };
+		16602EF82AC618960097FA1F /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		16649E9120FEC72B000BCB48 /* Notification+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extentions.swift"; sourceTree = "<group>"; };
 		16664B1522C4149D00F332A7 /* ActivistViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivistViewContoller.swift; sourceTree = "<group>"; };
 		1666720320B6E2AB0098C5FC /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
@@ -213,7 +214,6 @@
 		16ED9DAB20C34730005BF4E1 /* KSOStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSOStaticData.swift; sourceTree = "<group>"; };
 		16F35A34251F6B7100238F36 /* DashboardHelpVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHelpVideoViewController.swift; sourceTree = "<group>"; };
 		16FD4EEA23FE346200A1BA44 /* HijackPolicyVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijackPolicyVideoViewController.swift; sourceTree = "<group>"; };
-		16FE95752769467E006DA324 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16FE957927694C83006DA324 /* Codable+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extentions.swift"; sourceTree = "<group>"; };
 		33E38356CD2675920151988B /* Pods-KidsSaveOceanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanTests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanTests/Pods-KidsSaveOceanTests.release.xcconfig"; sourceTree = "<group>"; };
 		5EEC99C75874474903940C1D /* Pods-KidsSaveOceanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsSaveOceanUITests.release.xcconfig"; path = "Target Support Files/Pods-KidsSaveOceanUITests/Pods-KidsSaveOceanUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -406,7 +406,6 @@
 		16559BCE20ADF9D5002D4F78 /* KidsSaveOcean */ = {
 			isa = PBXGroup;
 			children = (
-				16FE95752769467E006DA324 /* GoogleService-Info.plist */,
 				16B5203322A956F000E41F7D /* KidsSaveOcean.entitlements */,
 				16559BCF20ADF9D5002D4F78 /* AppDelegate.swift */,
 				7C0B1CCD2223141D0033F251 /* Utils */,
@@ -617,6 +616,7 @@
 				16D4C27A22C15518006DBC64 /* Notifications */,
 				162572D322E37DEF00A702C4 /* UserDefaultsHelper.swift */,
 				16C7E61B228DA7F800B30B52 /* Auth */,
+				16602EF82AC618960097FA1F /* ServiceConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -847,7 +847,6 @@
 			files = (
 				16CF1A162382377B001D099D /* SF-Pro-Display-Semibold.otf in Resources */,
 				164F14FB21F6919A00823FF3 /* HomeTableViewCell.xib in Resources */,
-				16FE95762769467F006DA324 /* GoogleService-Info.plist in Resources */,
 				164F14EA21F68BD400823FF3 /* Onboarding.storyboard in Resources */,
 				16573D3721F7C70900332FFF /* Dashboard.storyboard in Resources */,
 				16559BDC20ADF9D5002D4F78 /* LaunchScreen.storyboard in Resources */,
@@ -1053,6 +1052,7 @@
 				1638882E228DD6080084D8CA /* KSOAuthorization.swift in Sources */,
 				1603778F2247C6BA008123BF /* ToolsWithTeethViewController.swift in Sources */,
 				16FD4EEB23FE346200A1BA44 /* HijackPolicyVideoViewController.swift in Sources */,
+				16602EF92AC618960097FA1F /* ServiceConstants.swift in Sources */,
 				163F239F20F694FF00022B38 /* KSOStartPageViewController.swift in Sources */,
 				7CB3FF5B232FF8F000415D75 /* CreateNewEnvironmentPolicyViewController.swift in Sources */,
 				945A089120F643EB006ED13D /* MapViewController.swift in Sources */,

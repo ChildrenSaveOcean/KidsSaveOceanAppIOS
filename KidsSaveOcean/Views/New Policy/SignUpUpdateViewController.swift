@@ -150,7 +150,6 @@ class SignUpUpdateViewController: UIViewController, Instantiatable {
     }
     
     @IBAction func learnMoreAction(_ sender: Any) {
-        //tabBarController?.showLink("https://www.kidssaveocean.com/projects", clear: nil)
         let hijackVideoVC = YouthInitiativeProcessViewController.instantiate()
         navigationController?.pushViewController(hijackVideoVC, animated: true)
     }

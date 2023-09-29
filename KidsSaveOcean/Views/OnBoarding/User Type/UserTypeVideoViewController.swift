@@ -31,9 +31,9 @@ class UserTypeVideoViewController: WebIntegrationViewController {
         guard !urlString.isEmpty else { return "" }
         switch userType {
         case .student:
-             return "https://www.kidssaveocean.com/fatechangeryouthintro"
+            return ServerPath.fatechangeryouthintro.string
         default:
-            return "https://www.kidssaveocean.com/video-test"
+            return ServerPath.video_test.string
         }
     }
 

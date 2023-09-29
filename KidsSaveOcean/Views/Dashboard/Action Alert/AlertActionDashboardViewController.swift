@@ -12,7 +12,7 @@ class AlertActionDashboardViewController: WebIntegrationViewController, Instanti
     var notificationTargets: [NotificationTarget] = [.actionAlert]
     
     override var originalWebUrlString: String {
-        return "https://www.kidssaveocean.com/action-alert"
+        return  ServerPath.action_alert.string
     }
     
     override func viewDidAppear(_ animated: Bool) {

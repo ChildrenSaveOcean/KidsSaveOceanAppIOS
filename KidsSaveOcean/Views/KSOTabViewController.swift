@@ -40,7 +40,7 @@ extension UITabBarController {
     func switchToStudentResourcesScreen() {
         switchToResourcesScreen()
         if let resources = getSelectedTabMainViewController() as? ResourcesViewController {
-            resources.webUrlString = "https://www.kidssaveocean.com/studentresources"
+            resources.webUrlString = ServerPath.studentresources.string
         }
     }
     
