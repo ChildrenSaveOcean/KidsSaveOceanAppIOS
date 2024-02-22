@@ -12,7 +12,7 @@ import Reachability
 
 class WebIntegrationViewController: UIViewController {
 
-    var hideNavigationBarByDefault: Bool { return webView.url?.host?.lowercased().hasPrefix("www.kidssaveocean.com") ?? false }
+    var hideNavigationBarByDefault: Bool { return webView.url?.host?.lowercased().hasPrefix(ServerPathBase) ?? false }
     var originalWebUrlString: String { return webUrlString }
     
     var webUrlString: String = "" {

@@ -12,7 +12,7 @@ class WriteAboutWhatViewController: WebIntegrationViewController, Instantiatable
     var notificationTargets: [NotificationTarget] = [.actionAlert]
     
     override var originalWebUrlString: String {
-        return "https://www.kidssaveocean.com/copy-of-write-letters-with-your-kid"
+        return ServerPath.copy_of_write_letters_with_your_kid.string
     }
 
     override func viewDidAppear(_ animated: Bool) {

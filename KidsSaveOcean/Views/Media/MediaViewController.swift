@@ -12,7 +12,7 @@ class MediaViewController: WebIntegrationViewController, Instantiatable, Notific
     var notificationTargets: [NotificationTarget] = [.newsAndMedia, .policyChange]
     
     override var originalWebUrlString: String {
-        return "https://www.kidssaveocean.com/updates"
+        return ServerPath.updates.string
     }
     
     override func viewWillAppear(_ animated: Bool) {

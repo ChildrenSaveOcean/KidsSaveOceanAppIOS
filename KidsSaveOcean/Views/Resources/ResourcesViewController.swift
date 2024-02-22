@@ -12,6 +12,6 @@ import WebKit
 class ResourcesViewController: WebIntegrationViewController {
 
     override var originalWebUrlString: String {
-        return "https://www.kidssaveocean.com/fatechanger-resources"
+        return ServerPath.fatechanger_resources.string
     }
 }
