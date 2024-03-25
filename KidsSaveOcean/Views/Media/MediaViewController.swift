@@ -9,7 +9,10 @@
 import UIKit
 
 class MediaViewController: WebIntegrationViewController, Instantiatable, NotificationProtocol {
+
     var notificationTargets: [NotificationTarget] = [.newsAndMedia, .policyChange]
+
+    override var hideNavigationBarByDefault: Bool { return true }
     
     override var originalWebUrlString: String {
         return ServerPath.updates.string

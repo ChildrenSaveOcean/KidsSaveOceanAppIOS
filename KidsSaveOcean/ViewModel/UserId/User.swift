@@ -129,7 +129,7 @@ class User: Codable {
         }
     }
 
-    func save() {
+    func save(_ completion: (() -> ())? = nil) {
 
         let completionTasksStates = DashboardTask.allCases.map{ getTaskStatus($0) }
         UserDefaultsHelper.saveCompletionTasksStatus(completionTasksStates)
@@ -145,6 +145,7 @@ class User: Codable {
             }
 
             print("\nUser saved successfully")
+            completion?()
         }
     }
 

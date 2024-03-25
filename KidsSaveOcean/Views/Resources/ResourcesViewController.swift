@@ -11,6 +11,8 @@ import WebKit
 
 class ResourcesViewController: WebIntegrationViewController {
 
+    override var hideNavigationBarByDefault: Bool { return true }
+
     override var originalWebUrlString: String {
         return ServerPath.fatechanger_resources.string
     }
