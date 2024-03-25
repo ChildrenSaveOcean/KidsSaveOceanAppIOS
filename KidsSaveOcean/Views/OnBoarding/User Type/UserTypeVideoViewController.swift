@@ -61,7 +61,10 @@ class UserTypeVideoViewController: WebIntegrationViewController {
 
             if let userType = self.userType {
                 User.shared.userType = userType
-                User.shared.save()
+                User.shared.save() {
+                    // For brand new users this parameter is still `false` at this point
+                    User.shared.userDataHasBeenLoaded = true
+                }
             }
 
             let tabBarController = KSOTabViewController.instantiate()
